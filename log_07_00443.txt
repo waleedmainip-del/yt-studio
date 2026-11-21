@@ -1,0 +1,60 @@
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.030
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.031
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.032
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.033
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.034
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing c
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing c.001
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.035
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.036
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing c.002
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing c.003
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.037
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.038
+Fra:486 Mem:60.26M (Peak 101.07M) | Time:00:00.08 | Syncing p.039
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.040
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.041
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.042
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.043
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.044
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.045
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.046
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.047
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.048
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.049
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.050
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.051
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.052
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.053
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.054
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.055
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.056
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing c.004
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing c.005
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.057
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.058
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.059
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.060
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing c.006
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.061
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.062
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.063
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.064
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.065
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.066
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.067
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing e.007
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.068
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.069
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.070
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.071
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.08 | Syncing p.072
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:00.10 | Rendering 1 / 5 samples
+Fra:486 Mem:60.29M (Peak 101.07M) | Time:00:09.04 | Rendering 5 / 5 samples
+Saved: '/home/claude/huss/frames/S07/f00486.png'
+Time: 00:11.85 (Saving: 00:00.38)
+
+FRAME 1 591.4
+SHOT_DONE 7
+
+Blender quit
