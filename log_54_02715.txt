@@ -1,0 +1,60 @@
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing c.148
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing c.149
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing c.150
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing p.1126
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing c.151
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing c.152
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing e.099
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing p.1127
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing p.1128
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing p.1129
+Fra:2777 Mem:215.03M (Peak 264.92M) | Time:00:00.05 | Syncing p.1130
+Fra:2777 Mem:215.02M (Peak 264.92M) | Time:00:00.07 | Rendering 1 / 4 samples
+Fra:2777 Mem:215.01M (Peak 264.92M) | Time:00:01.87 | Rendering 4 / 4 samples
+Fra:2777 Mem:213.41M (Peak 264.92M) | Time:00:02.53 | Compositing
+Fra:2777 Mem:213.41M (Peak 264.92M) | Time:00:02.53 | Compositing | Determining resolution
+Fra:2777 Mem:213.41M (Peak 264.92M) | Time:00:02.53 | Compositing | Initializing execution
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 1-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 2-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 3-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 4-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 5-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 6-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 7-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.53 | Compositing | Tile 8-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 9-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 10-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 11-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 12-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 13-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 14-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 15-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 16-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 17-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 18-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 19-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 20-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 21-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 22-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 23-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 24-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 25-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 26-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 27-28
+Fra:2777 Mem:236.33M (Peak 264.92M) | Time:00:02.54 | Compositing | Tile 28-28
+Fra:2777 Mem:236.27M (Peak 264.92M) | Time:00:02.54 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S54/f02777.png'
+Time: 00:02.70 (Saving: 00:00.15)
+
+Traceback (most recent call last):
+  File "/home/claude/fsd/film_fs.py", line 15, in _h
+    upd_all(scene.frame_current/FPS-T0); print('FRAME',scene.frame_current,round(time.time()-t0w,1),flush=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/fsd/film_fs.py", line 7, in upd_all
+    TNOW[0]=t; spec['upd'](t); fx.upd(t)
+               ^^^^^^^^^^^^^^
+  File "<string>", line 444, in upd
+TypeError: cannot unpack non-iterable NoneType object
+SHOT_DONE 54
+
+Blender quit
