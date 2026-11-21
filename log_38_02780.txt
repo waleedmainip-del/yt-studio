@@ -1,0 +1,60 @@
+Time: 00:09.38 (Saving: 00:00.41)
+
+FRAME 2808 262.9
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing cam
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing e
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing Sun
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing e.001
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing p
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing p.001
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t.001
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t.002
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c.001
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c.002
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:00.10 | Rendering 1 / 8 samples
+Fra:2808 Mem:45.52M (Peak 86.38M) | Time:00:07.69 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S38/f02808.png'
+Time: 00:09.35 (Saving: 00:00.42)
+
+FRAME 2809 272.3
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing cam
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing e
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing Sun
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing e.001
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing p
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing p.001
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t.001
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t.002
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c.001
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c.002
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:00.10 | Rendering 1 / 8 samples
+Fra:2809 Mem:45.52M (Peak 86.38M) | Time:00:07.66 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S38/f02809.png'
+Time: 00:09.32 (Saving: 00:00.41)
+
+FRAME 2810 281.6
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing cam
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing e
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing Sun
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing e.001
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing p
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing p.001
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t.001
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing t.002
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c.001
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.07 | Syncing c.002
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:00.10 | Rendering 1 / 8 samples
+Fra:2810 Mem:45.52M (Peak 86.38M) | Time:00:07.69 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S38/f02810.png'
+Time: 00:09.35 (Saving: 00:00.41)
+
+FRAME 1 291.0
+SHOT_DONE 38
+
+Blender quit
