@@ -34,8 +34,14 @@ def rest(H,t=0,a=-12):
 def breathe(H,t): H['root'].location[2]+=.006*math.sin(t*2.1+H['seed'])
 def nod(H,t,amp=5,rate=5): H['head'].rotation_euler[0]=R(amp)*math.sin(t*rate)
 def headpos(H): u=H['u']; return tuple(root_mat(H)@Vector((0,0,4.75*u)))
-def cam_head(H,off,lens=40,fs=2.8,dz=0.0,lead=(0,0,0)):
-    h=headpos(H); camset((h[0]+off[0],h[1]+off[1],h[2]+off[2]),(h[0]+lead[0],h[1]+lead[1],h[2]+dz+lead[2]),lens,fs,focus=h)
+def cam_head(H,off,lens=40,fs=2.8,dz=0.0,lead=(0,0,0),q=None,ang=26,dist=2.6):
+    h=headpos(H); rz=H['root'].rotation_euler[2]; best=None
+    for a in (R(ang),-R(ang)):
+        f=(math.sin(rz+a),-math.cos(rz+a)); d=(f[0],f[1])
+        sc_=d[0]*off[0]+d[1]*off[1]
+        if best is None or sc_>best[0]: best=(sc_,f)
+    f=best[1]; cz=H.get('camdz',.06)+dz
+    camset((h[0]+f[0]*dist,h[1]+f[1]*dist,h[2]+cz),(h[0]+lead[0]*.3,h[1]+lead[1]*.3,h[2]-.2),lens*.85,fs,focus=h)
 def pick(H,t,a,b,key):
     """quick reaction gesture while speaking"""
     pass
@@ -104,7 +110,7 @@ def SH_cloth():
     return dict(upd=upd)
 SHOTS['H_cloth']=SH_cloth
 def SH_mill():
-    L_=mill(); W_=idlers([(-8.6,-.5,0,'idle'),(5.0,-.5,0,'idle'),(-5.0,2.7,0,'idle'),(8.7,5.9,0,'idle')],3)
+    L_=mill(); B.done('mill'); W_=idlers([(-8.6,-.5,0,'idle'),(5.0,-.5,0,'idle'),(-5.0,2.7,0,'idle'),(8.7,5.9,0,'idle')],3)
     def upd(t):
         loom_run(L_,t); idlers_upd(W_,t); q=t/DUR; camset((L(-12,-9,q),-8.5,3.2),(L(-4,0,q),3,1.2),22,6.0)
     return dict(upd=upd)
@@ -145,7 +151,7 @@ def plaza_scene(dusk=False,sz_stand=True,dhaba_on=False,n_idle=6):
     S_,w,rp,bg=setup_render('sunset' if dusk else 'golden',res=PCT,samples=SAMPLES,shadow_dist=60)
     if dusk:
         for k in range(4): an=2*pi*k/4+pi/4; point((9.45*math.cos(an),9.45*math.sin(an),4.0),220,(1,.72,.42),.3,shadow=False)
-        point((8.5,-11.5,2.4),180,(1,.7,.42),.3,shadow=False)
+        point((8.5,-11.5,2.4),60,(1,.7,.42),.3,shadow=False)
     S={}
     S['sz']=person((0,-7.6,0),180,SHAHZAIB,'smile',name='shahzaib'); S['pp']=person((.75,-6.3,0),0,PAPPU,'smile',name='pappu'); S['nm']=person((-.75,-6.3,0),0,NOMI,'smile',name='nomi')
     S['ch']=person((8.9,-10.9,0),-45,CHAIWALA,'smile',name='chaiwala')
@@ -163,7 +169,7 @@ def plaza_base(S,t,sz='stand',sit_all=False):
 def cam_sz(t,q,lens=40,dx=0.0): h=headpos(S_['sz']) if False else None
 def SH_plaza(view):
     KEY='I_'+view; sit_all=False
-    S=plaza_scene(); sz,pp,nm=S['sz'],S['pp'],S['nm']
+    S=plaza_scene(); sz,pp,nm=S['sz'],S['pp'],S['nm']; sz['camdz']=.32
     def upd(t):
         plaza_base(S,t,sz='walk' if view=='jump' else 'stand')
         hz=headpos(sz); hn=headpos(nm); hp=headpos(pp); q=ease(t/DUR)
@@ -321,7 +327,7 @@ for v in ('borrow','stall','cust','kitne','price','market','bclass','plane','lau
 # ============================================================ MILL (scene 4)
 JM=(0,-5.3); BOYS={'sz':(0,-7.6,180),'pp':(-1.05,-7.75,168),'nm':(1.05,-7.8,192)}
 def SH_factory(view):
-    KEY='F_'+view; L_=mill(); W_=idlers([(-8.6,-.5,0,'idle'),(5.0,-.5,0,'idle'),(-5.0,2.7,0,'idle'),(8.7,5.9,0,'idle'),(-1.8,4.0,0,'idle')],3)
+    KEY='F_'+view; L_=mill(); B.done('mill'); W_=idlers([(-8.6,-.5,0,'idle'),(5.0,-.5,0,'idle'),(-5.0,2.7,0,'idle'),(8.7,5.9,0,'idle'),(-1.8,4.0,0,'idle')],3)
     jm=person((0,-5.3,0),0,CHACHA,'flat',name='chacha'); sz=person((0,-7.6,0),180,SHAHZAIB,'smile',name='shahzaib'); pp=person((-1.05,-7.75,0),168,PAPPU,'smile',name='pappu'); nm=person((1.05,-7.8,0),192,NOMI,'smile',name='nomi')
     cart=obox((0,0,0),(.4,.3,.05),M('#3E6FB0',.5,metal=.4),.01)
     wk=person((-11,-2,0),0,local(97),'smile',name='wk')
@@ -389,7 +395,7 @@ def SH_phone(view):
         if view=='ring':
             k=ease((t-.6)/.4); phone_ear(k); sz['root'].location[2]+=.0; face(sz,mouth='o' if t<.6 else 'smile',brow=.03)
             vib=.006*math.sin(t*90)*(1 if t<.6 else 0); ph.location[0]+=vib
-            camset((L(-14.3,-14.1,q),L(-2.2,-1.9,q),L(1.6,1.85,q)),(-13.8,-.4,L(1.4,1.85,q)),40,2.6,focus=(-13.8,-.4,1.6))
+            camset((L(-14.3,-14.1,q),L(-2.2,-1.9,q),L(1.6,1.85,q)),(-13.8,-.4,L(1.4,1.85,q)),30,2.6,focus=(-13.8,-.4,1.6))
         elif view=='what':
             phone_ear(1); talk(sz,t,259,261,KEY,rest='O',shapes=('shout','O','shout','O')); face(sz,brow=.07,eyes=1.35); sz['root'].rotation_euler[0]=R(-6); sz['arm'][-1].rotation_euler=(R(-60),0,R(30))
             cam_head(sz,(L(.4,.3,q),L(-1.6,-1.2,q),-.05),lens=42)
@@ -510,11 +516,11 @@ def SH_dusk(view):
             cam_head(sz,(L(-.7,-.5,q),L(-1.9,-1.6,q),0),lens=36,lead=(.4,0,0))
         elif view=='over':
             k=ease((t-.3)/.4); ch['head'].rotation_euler=(0,0,R(0)); look_at(ch,hz,k); arms(ch,-55*(1-k),0,-10,-30,0,8); ch['root'].rotation_euler[2]=R(L(-45,-60,k)); face(ch,mouth='flat',brow=-.02,brow_r=12)
-            camset((L(6.2,6.6,q),L(-8.9,-9.3,q),1.95),(hc[0],hc[1],hc[2]-.1),34,3.0,focus=hc)
+            cam_head(ch,(-1,1,0),lens=40,ang=34)
         elif view=='paise2':
             ch['root'].rotation_euler[2]=R(-60); look_at(ch,hz); talk(ch,t,410,417,KEY,rest='flat',rate=6); arms(ch,-30,0,8,-95,0,40-15*math.sin(t*4)); face(ch,brow=-.02,brow_r=14)
             for H in (sz,pp,nm): look_at(H,hc); face(H,mouth='o',eyes=1.1)
-            camset((L(6.5,6.8,q),L(-8.6,-8.9,q),2.0),(hc[0],hc[1],hc[2]-.1),34,3.0,focus=hc)
+            cam_head(ch,(-1,1,0),lens=40,ang=40)
         elif view=='look':
             a=0.0; b=wl(418,KEY)
             for i,H in enumerate((sz,pp,nm)):
