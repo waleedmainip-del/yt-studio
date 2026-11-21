@@ -1,0 +1,60 @@
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1343
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1344
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1345
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing c.168
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing c.169
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1346
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1347
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing c.170
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing c.171
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1348
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1349
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1350
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1351
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1352
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1353
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1354
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1355
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1356
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1357
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1358
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1359
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1360
+Fra:1923 Mem:216.67M (Peak 243.84M) | Time:00:00.05 | Syncing p.1361
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1362
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1363
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1364
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1365
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1366
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing c.172
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing c.173
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1367
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1368
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1369
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1370
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing c.174
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1371
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1372
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1373
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1374
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1375
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1376
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1377
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1378
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1379
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing c.175
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing c.176
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing c.177
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1380
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1381
+Fra:1923 Mem:216.78M (Peak 243.84M) | Time:00:00.05 | Syncing p.1382
+Fra:1923 Mem:216.81M (Peak 243.84M) | Time:00:00.05 | Syncing p.1383
+Fra:1923 Mem:216.81M (Peak 243.84M) | Time:00:00.06 | Rendering 1 / 4 samples
+Fra:1923 Mem:216.81M (Peak 243.84M) | Time:00:01.86 | Rendering 4 / 4 samples
+Saved: '/home/claude/fsd/frames/S38/f01923.png'
+Time: 00:02.67 (Saving: 00:00.16)
+
+FRAME 1 158.1
+SHOT_DONE 38
+
+Blender quit
