@@ -16,6 +16,6 @@ else:
     bpy.app.handlers.frame_change_pre.append(_h)
     sc.frame_start=G0; sc.frame_end=G1-1
     if len(args)>5: sc.frame_start=int(args[4]); sc.frame_end=int(args[5])-1
-     sc.render.use_overwrite=False; sc.render.image_settings.file_format='PNG'; sc.render.image_settings.compression=15
+    sc.render.use_overwrite=False; sc.render.image_settings.file_format='PNG'; sc.render.image_settings.compression=15
     sc.render.fps=FPS; sc.render.filepath=out+'/f#####'
     bpy.ops.render.render(animation=True); print('SHOT_DONE',SN,flush=True)
