@@ -381,6 +381,6 @@ def SH_Z(view):
             D['arm'][1].rotation_euler=(R(-165),0,R(20)); S['arm'][-1].rotation_euler=(R(-100),0,R(-40))
             F['root'].location=(1.8,1.6,.008); F['z0']=0; sit(F,1,.42,90); F['root'].rotation_euler[2]=R(200); plate.scale=(1,1,1); plate.location=(1.6,1.0,.8)
             F['arm'][1].rotation_euler=(R(-90-30*abs(math.sin(t*5))),0,0); face(F,mouth='O' if (t*5)%1<.5 else 'grin')
-            q=ease(t/DUR); camset((L(-.2,0,q),L(-5.4,-7.6,q),L(1.6,2.6,q)),(0,-1.0,L(1.9,2.4,q)),L(26,22,q),6.0)
+            q=ease(t/DUR); camset((L(-.2,0,q),L(-4.4,-5.4,q),L(1.6,2.8,q)),(0,-.6,L(1.9,2.2,q)),L(24,20,q),6.0)
     return dict(upd=upd)
 for v in ('Z_food','Z_bilal','Z_dil','Z_rishta','Z_call','Z_settle','Z_final'): SHOTS[v]=(lambda v=v: SH_Z(v))
