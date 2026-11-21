@@ -1,0 +1,60 @@
+Fra:78 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.005
+Fra:78 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing Sun
+Fra:78 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing Sun.001
+Fra:78 Mem:46.63M (Peak 89.60M) | Time:00:00.07 | Rendering 1 / 5 samples
+Fra:78 Mem:46.63M (Peak 89.60M) | Time:00:01.10 | Rendering 5 / 5 samples
+Saved: '/home/claude/karachi/frames/S01/f00078.png'
+Time: 00:01.61 (Saving: 00:00.17)
+
+FRAME 79 55.8
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing cam
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing e
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing space
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing space.001
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing space.002
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing space.003
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing space.004
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing space.005
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing Sun
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.04 | Syncing Sun.001
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:00.07 | Rendering 1 / 5 samples
+Fra:79 Mem:46.63M (Peak 89.60M) | Time:00:01.12 | Rendering 5 / 5 samples
+Saved: '/home/claude/karachi/frames/S01/f00079.png'
+Time: 00:01.64 (Saving: 00:00.18)
+
+FRAME 80 57.4
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing cam
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing e
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.001
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.002
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.003
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.004
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.005
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing Sun
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing Sun.001
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:00.07 | Rendering 1 / 5 samples
+Fra:80 Mem:46.63M (Peak 89.60M) | Time:00:01.13 | Rendering 5 / 5 samples
+Saved: '/home/claude/karachi/frames/S01/f00080.png'
+Time: 00:01.65 (Saving: 00:00.18)
+
+FRAME 81 59.1
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing cam
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing e
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.001
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.002
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.003
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.004
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing space.005
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing Sun
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.05 | Syncing Sun.001
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:00.07 | Rendering 1 / 5 samples
+Fra:81 Mem:46.63M (Peak 89.60M) | Time:00:01.14 | Rendering 5 / 5 samples
+Saved: '/home/claude/karachi/frames/S01/f00081.png'
+Time: 00:01.66 (Saving: 00:00.18)
+
+FRAME 1 60.8
+SHOT_DONE 1
+
+Blender quit
