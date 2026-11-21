@@ -1,0 +1,6 @@
+Blender 4.0.2
+  File "/home/claude/rf/film_rf.py", line 19
+    sc.render.use_overwrite=False; sc.render.image_settings.file_format='PNG'; sc.render.image_settings.compression=15
+IndentationError: unexpected indent
+
+Blender quit
