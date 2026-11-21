@@ -1,0 +1,60 @@
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.517
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing c.078
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.518
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.519
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.520
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.521
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.522
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.523
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.524
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.525
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.526
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing c.079
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing c.080
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing c.081
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.527
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.528
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.529
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.530
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.04 | Syncing p.531
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:00.06 | Rendering 1 / 4 samples
+Fra:139 Mem:131.73M (Peak 181.92M) | Time:00:01.74 | Rendering 4 / 4 samples
+Fra:139 Mem:130.48M (Peak 181.92M) | Time:00:02.36 | Compositing
+Fra:139 Mem:130.48M (Peak 181.92M) | Time:00:02.36 | Compositing | Determining resolution
+Fra:139 Mem:130.48M (Peak 181.92M) | Time:00:02.36 | Compositing | Initializing execution
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 1-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 2-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 3-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 4-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 5-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 6-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 7-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 8-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.36 | Compositing | Tile 9-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 10-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 11-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 12-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 13-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 14-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 15-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 16-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 17-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 18-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 19-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 20-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 21-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 22-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 23-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 24-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 25-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 26-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 27-28
+Fra:139 Mem:153.41M (Peak 181.92M) | Time:00:02.37 | Compositing | Tile 28-28
+Fra:139 Mem:153.34M (Peak 181.92M) | Time:00:02.37 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S02/f00139.png'
+Time: 00:02.54 (Saving: 00:00.16)
+
+FRAME 1 88.8
+SHOT_DONE 2
+
+Blender quit
