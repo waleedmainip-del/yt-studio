@@ -1,0 +1,60 @@
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.186
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.187
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.188
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.189
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.190
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.191
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.192
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.193
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.194
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.195
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.196
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.197
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.198
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.199
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.200
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.201
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.202
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.203
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing c.020
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing c.021
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.204
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.205
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.206
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.207
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing c.022
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.208
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.209
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.210
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.211
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.212
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.213
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.214
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.215
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.216
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing c.023
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing c.024
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing c.025
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.217
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.218
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.219
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.220
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.221
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.222
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.223
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.224
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing e.021
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.225
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.226
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing e.022
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.227
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.06 | Syncing p.228
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:00.08 | Rendering 1 / 5 samples
+Fra:2140 Mem:81.52M (Peak 124.35M) | Time:00:02.95 | Rendering 5 / 5 samples
+Saved: '/home/claude/karachi/frames/S25/f02140.png'
+Time: 00:03.96 (Saving: 00:00.22)
+
+FRAME 1 132.8
+SHOT_DONE 25
+
+Blender quit
