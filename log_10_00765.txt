@@ -1,0 +1,60 @@
+Fra:849 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p.005
+Fra:849 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.006
+Fra:849 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.007
+Fra:849 Mem:48.09M (Peak 88.95M) | Time:00:00.09 | Rendering 1 / 8 samples
+Fra:849 Mem:48.09M (Peak 88.95M) | Time:00:08.12 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S10/f00849.png'
+Time: 00:09.84 (Saving: 00:00.42)
+
+FRAME 850 770.2
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing cam
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing e
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing Sun
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing e.001
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p.001
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p.002
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.001
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.002
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.003
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p.003
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.004
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p.004
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.005
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing p.005
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.006
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.06 | Syncing t.007
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:00.09 | Rendering 1 / 8 samples
+Fra:850 Mem:48.09M (Peak 88.95M) | Time:00:08.12 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S10/f00850.png'
+Time: 00:09.84 (Saving: 00:00.42)
+
+FRAME 851 780.0
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing cam
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing e
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing Sun
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing e.001
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing p
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing p.001
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing p.002
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.001
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.002
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.003
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing p.003
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.004
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing p.004
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.005
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing p.005
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.006
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.07 | Syncing t.007
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:00.10 | Rendering 1 / 8 samples
+Fra:851 Mem:48.09M (Peak 88.95M) | Time:00:08.12 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S10/f00851.png'
+Time: 00:09.85 (Saving: 00:00.42)
+
+FRAME 1 789.9
+SHOT_DONE 10
+
+Blender quit
