@@ -1,0 +1,11 @@
+FRAME 3323 0.1
+Blender 4.0.2
+Fra:3323 Mem:176.70M (Peak 177.75M) | Time:00:08.21 | Syncing cam
+Fra:3323 Mem:176.70M (Peak 177.75M) | Time:00:08.21 | Syncing e
+Fra:3323 Mem:176.70M (Peak 177.75M) | Time:00:08.21 | Syncing food
+Fra:3323 Mem:176.74M (Peak 177.75M) | Time:00:08.94 | Syncing food.001
+Fra:3323 Mem:176.76M (Peak 177.75M) | Time:00:10.11 | Syncing food.002
+Fra:3323 Mem:176.88M (Peak 177.75M) | Time:00:10.52 | Syncing food.003
+Fra:3323 Mem:176.91M (Peak 177.75M) | Time:00:10.52 | Syncing food.004
+Fra:3323 Mem:176.94M (Peak 177.75M) | Time:00:10.52 | Syncing food.005
+Fra:3323 Mem:177.10M (Peak 177.75M) | Time:00:10.52 | Syncing food.006
