@@ -1,0 +1,12 @@
+# Cast for "Everyone Wants a Lahori Baddie" (all new looks)
+_HZ=dict(skin='#C99468',hair='#1E1612',eye='#2A1A12',brow_c='#1E1612',brow_t=1.2,brow_w=1.05,h=.98)
+HAMZA_A=dict(_HZ,hairstyle='fringe',top='#8FB5D9',trim='#6F95B9',pants='#6E7078',shoes='#3A2A1E',accent='#2A1E14',sole='#2A1E14',glasses=True,short=True)
+HAMZA_B=dict(_HZ,hairstyle='quiff',textured=True,jacket='#15161B',top='#F4F1EA',trim='#22242B',pants='#1E2A44',shoes='#F4F5FA',accent='#C8372D',sole='#F4F5FA',chain=True,shades='eyes',watch=True)
+HAMZA_C=dict(HAMZA_B,shades='up')
+ZOYA=dict(skin='#E2B08A',hair='#3A2418',hairstyle='long',highlights='#8A5A36',lashes=True,earrings=True,bangles=True,top='#EFE2CF',trim='#C9A27A',pants='#EFE2CF',kurta=True,
+          dupatta='#B8456A',dupatta_trim='#E6C25A',shoes='#B8456A',accent='#E6C25A',sole='#3A2A1E',eye='#3A2418',brow_c='#3A2418',brow_t=.9,h=.94,shades='up',shade_c='#F4F1EA',handbag='#B8456A',button='#E6C25A')
+ALI=dict(skin='#B97A4E',hair='#15120F',hairstyle='short',top='#9AA4B0',trim='#7A8490',pants='#9AA4B0',kurta=True,shalwar=True,cuff=True,sandals='#5E3A1E',stache='#15120F',eye='#2A1A12',brow_t=1.3,h=1.0,button='#6A747E')
+SAAD=dict(skin='#D9A074',hair='#2A1B14',hairstyle='cap',cap='#35975A',top='#35975A',trim='#257A45',pants='#3A3D47',shoes='#F4F5FA',accent='#22242B',sole='#F0F1F5',eye='#2A1A12',h=1.03,short=True,freckles=True)
+COUSIN=dict(skin='#B5794E',hair='#1B1512',hairstyle='short',neat=True,beard='#1B1512',top='#27365A',trim='#1B2640',pants='#C9B48A',shoes='#5E3A1E',accent='#3A2A1E',sole='#2A1E14',eye='#2A1A12',brow_t=1.4,h=1.05,wide=1.08)
+WAITER=dict(skin='#C98F62',hair='#15120F',hairstyle='short',neat=True,top='#F4F1EA',trim='#D9D4C6',pants='#16171C',waistcoat='#16171C',bowtie='#7A1F2E',shoes='#16171C',accent='#16171C',sole='#16171C',eye='#2A1A12',h=1.02,cuff=True)
+AMMI=dict(skin='#C9905F',hair='#A2A2AA',hairstyle='bun',top='#B9A6D9',trim='#8A76B0',pants='#F4F1EA',kurta=True,shalwar=True,dupatta='#F4F1EA',dupatta_trim='#C9CED8',glasses=True,sandals='#5E3A1E',eye='#2A1A12',h=.86,wide=1.1,button='#8A76B0')
