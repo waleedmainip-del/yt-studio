@@ -169,7 +169,7 @@ def restaurant(door_open=0.0,light=True):
 def set_doors(DR,k):
     for s,e in DR: e.rotation_euler[2]=R(s*k*-78)
 # ---------------------------------------------------------------- food + props (object based, parent empties)
-GLASSM=M('#DCEFF4',.03,spec=1.0,alpha=.2); ICE=M('#EAF6FA',.05,spec=1.0,alpha=.55); PEACH=M('#F59A4A',.18,spec=.9,alpha=.9); PEACHS=M('#FFB36A',.35,emit=.35)
+GLASSM=M('#DCEFF4',.03,spec=1.0,alpha=.2); ICE=M('#EAF6FA',.05,spec=1.0,alpha=.55); PEACH=M('#EE8E44',.25,spec=.6,emit=.22); PEACHS=M('#FFB36A',.35,emit=.35)
 def tea(loc,fill=1.0,scale=1.0,drops=True,seed=1):
     """OUII peach iced tea: clear plastic cup (h .46) with dome lid, white logo, straw, ice, peach slices"""
     e=empty(loc); e.scale=(scale,)*3; r=random.Random(seed)
@@ -332,7 +332,7 @@ def boulevard(night=False,aerial=False,seed=9):
     for i in range(-int(L/9),int(L/9)+1):
         xx=i*9+4.5
         if abs(xx)>7: palm(xx,3.1,r.uniform(.9,1.15),i)
-        palm(xx+2,-8.6,r.uniform(.9,1.15),i+50)
+        if abs(xx+2)>7: palm(xx+2,-8.6,r.uniform(.9,1.15),i+50)
         if abs(i*9)>6: streetlamp(i*9,2.8,1)
         if abs(i*9+4.5)>9 or not aerial: streetlamp(i*9+4.5,-8.3,-1)
     if aerial:

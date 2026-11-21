@@ -28,7 +28,7 @@ def rest(H,t=0,a=-14):
     s=H['seed']; b=1.5*math.sin(t*1.3+s); arms(H,a+b,0,5,a-b,0,-5)
 def breathe(H,t):
     H['root'].location[2]+=.006*math.sin(t*2.1+H['seed']); H['root'].rotation_euler[1]=R(1.0)*math.sin(t*.8+H['seed'])
-def nod(H,t,amp=5,rate=5): H['head'].rotation_euler[0]+=R(amp)*math.sin(t*rate)
+def nod(H,t,amp=5,rate=5): H['head'].rotation_euler[0]=R(amp)*math.sin(t*rate)
 def flash(loc,t0,e=2500):
     p=point(loc,0,(1,1,1),.2,shadow=False)
     def fn(o,t): o.data.energy=e*max(0,1-abs(t-t0)/.07)
@@ -88,10 +88,10 @@ def cam3(q,z=2.5,y=-5.75,lens=24,fs=5.6,tz=1.62): camset((.0,y+.35*q,z),(0,.3,tz
 def street(night=False,aerial=False,mood='golden'):
     DR=boulevard(night=night,aerial=aerial); B.done('street'); S_,w,rp,bg=setup_render(mood,res=PCT,samples=SAMPLES,shadow_dist=170 if aerial else 70)
     if aerial: w.mist_settings.start=90; w.mist_settings.depth=330
-    cars=[car(-30,-.4,'#C9302C',0),car(28,-5.2,'#F4F1EA',180),car(-55,-.4,'#2B58C9',0),car(60,-5.2,'#2B2C33',180)]
+    cars=[car(-30,-.4,'#C9302C',0),car(46,-5.2,'#F4F1EA',180),car(-62,-.4,'#2B58C9',0),car(86,-5.2,'#2B2C33',180)]
     def cu(t,sp=7.0):
         for i,c in enumerate(cars):
-            d=1 if i%2==0 else -1; x0=(-30,28,-55,60)[i]; c.location[0]=x0+d*sp*t
+            d=1 if i%2==0 else -1; x0=(-30,46,-62,86)[i]; c.location[0]=x0+d*sp*t
     return DR,cu
 def SH_aerial():
     DR,cu=street(aerial=True)
@@ -128,7 +128,7 @@ def friends_out(xs=(-1.0,.15,1.2)):
     return (person((xs[0],3.3,0),180,HAMZA,'smile',name='hamza'),person((xs[1],2.9,0),180,BILAL,'smile',name='bilal'),person((xs[2],3.4,0),180,SHERRY,'smile',name='sherry'))
 def SH_ewalk():
     DR,cu=street(); Hm,Bi,Sh=friends_out(); ped=[person((9,4.9,0),-90,design(700),'smile',name='pd1'),person((-16,2.9,0),90,local(41,female=True),'smile',name='pd2')]
-    P={'hm':[(-10,3.9),(-3,3.9),(-1.6,3.7)],'bi':[(-11.9,5.0),(-5,5.0),(-3.5,4.9)],'sh':[(-12.1,2.9),(-5.2,2.9),(-3.7,2.9)]}
+    P={'hm':[(-10,3.9),(-3,3.9),(-1.6,3.7)],'bi':[(-8.6,5.05),(-1.7,5.05),(-.2,4.95)],'sh':[(-12.1,2.9),(-5.2,2.9),(-3.7,2.9)]}
     def upd(t):
         cu(t,6)
         for k,H in (('hm',Hm),('bi',Bi),('sh',Sh)):

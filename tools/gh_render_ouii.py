@@ -6,7 +6,7 @@ status = []
 for shot, f0, f1 in pieces:
     nn = '%02d' % int(shot); t0 = time.time(); lp = out + '/log_%s_%05d.txt' % (nn, f0)
     with open(lp, 'w') as log:
-        r = subprocess.run(['xvfb-run', '-a', 'blender', '-b', '-P', RF + '/film_ou.py', '--', shot, '100', '6', 'anim', str(f0), str(f1)],
+        r = subprocess.run(['xvfb-run', '-a', 'blender', '-b', '-P', RF + '/film_ou.py', '--', shot, '85', '4', 'anim', str(f0), str(f1)],
                            stdout=log, stderr=subprocess.STDOUT, env=dict(os.environ, BSEG='1', FPS='24'))
     lines = open(lp, errors='ignore').read().splitlines(); open(lp, 'w').write('\n'.join(lines[-60:]) + '\n')
     have = [RF + '/frames/S%s/f%05d.png' % (nn, k) for k in range(f0, f1) if os.path.exists(RF + '/frames/S%s/f%05d.png' % (nn, k))]
