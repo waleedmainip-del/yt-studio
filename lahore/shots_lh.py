@@ -104,18 +104,18 @@ def SH_home(view):
         H['root'].location=(-3.0,1.05,.008); H['z0']=0; ph=phone(H,1)
         def upd(t):
             blink(H,t); sit(H,1,.52,90); H['root'].rotation_euler[2]=R(-20)
-            arm_reach(H,1,H['head'].matrix_world@Vector((.42,-.62,-.05)),1.0); arms_k=0
+            H['arm'][1].rotation_euler=(R(-75),0,R(-25)); ph.location=(.5*H['u'],-.12*H['u'],-2.05*H['u']); ph.rotation_euler=(R(-60),0,0)
             H['arm'][-1].rotation_euler=(R(-20),0,R(-10))
-            talk(H,t,60,63,KEY,rest='grin'); look_at(H,hand_pos(H,1),1.0)
+            talk(H,t,60,63,KEY,rest='grin'); H['head'].rotation_euler=(R(10),0,R(-18))
             face(H,brow=.04,brow_r=-10)
-            q=ease(t/DUR); camset((-1.5,-1.3,1.3),(-3.0,1.0,1.15),26,4.0,focus=(-3.0,1.0,1.2))
+            q=ease(t/DUR); camset((-2.5,-1.5,1.3),(-3.0,1.0,1.25),26,4.0,focus=(-3.0,1.0,1.3))
         return dict(upd=upd)
     if view=='mom2':
         Mo['root'].location=(1.6,.4,.008); Mo['root'].rotation_euler[2]=R(-110)
         def upd(t):
             blink(Mo,t); stand(Mo,t); talk(Mo,t,64,74,KEY,rest='frown',rate=7,shapes=('O','flat','shout','o'))
-            arms(Mo,-20,0,60,-20,0,-60); Mo['arm'][1].rotation_euler=(R(-15),R(-35),R(70)); Mo['arm'][-1].rotation_euler=(R(-15),R(35),R(-70))
-            if t>wl(68,KEY): Mo['arm'][1].rotation_euler=(R(-90),0,R(30*math.sin(t*6)))
+            arms(Mo,-10,0,8,-10,0,-8)
+            pass
             face(Mo,brow=-.04,brow_r=20); Mo['head'].rotation_euler[1]=R(8*math.sin(t*5))
             q=ease(t/DUR); camset((L(-.6,-.3,q),-1.4,1.45),(1.6,.4,1.75),30,4.0,focus=(1.6,.4,1.7))
         return dict(upd=upd)
@@ -189,7 +189,7 @@ def SH_fr(view):
         def upd(t):
             base(t); H['root'].location=(FX0-2.4,-1.2,.008); H['root'].rotation_euler[2]=R(30); talk(H,t,127,133,KEY,rest='smirk')
             a=wl(128,KEY); k=ease((t-a)/.2) if t>a else 0
-            arms(H,-40-50*k,0,-45*k,-40-50*k,0,45*k) if t>a else arms(H,-60,0,30,-60,0,-30)
+            (arm_reach(H,1,H['root'].matrix_world@Vector((.15*H['u'],-.7*H['u'],3.4*H['u'])),k), H['arm'][-1].__setattr__('rotation_euler',(R(-15),R(35),R(-70)))) if t>a else arms(H,-20,0,10,-20,0,-10)
             H['root'].scale=(1+.04*k,1+.04*k,1); H['head'].rotation_euler[0]=R(-10*k)
             face(H,brow=.03,brow_r=-10); look_at(f1,(FX0-2.4,-1.2,1.9)); look_at(f3,(FX0-2.4,-1.2,1.9))
             q=ease(t/DUR); camset((FX0-1.6,-3.8,1.0),(FX0-2.4,-1.2,1.85),26,3.5,focus=(FX0-2.4,-1.2,1.9))
@@ -261,11 +261,11 @@ def SH_tour(view):
         def upd(t):
             bz_bg(cs,t); blink(H,t); blink(T,t); stand(H,t); stand(T,t)
             T['root'].location=(HX-1.0,.25,.008); T['root'].rotation_euler[2]=R(80); H['root'].rotation_euler[2]=R(-80)
-            arm_reach(H,-1,T['root'].matrix_world@Vector((.45*T['u'],0,3.9*T['u'])),ease(t/.4))
+            H['arm'][1].rotation_euler=(R(-10),0,0)
             talk(H,t,191,203,KEY,rest='flat',rate=6.5); big=t>wl(196,KEY)
-            if big: k=ease((t-wl(196,KEY))/.25); H['arm'][1].rotation_euler=(R(-150*k),0,R(15)); H['head'].rotation_euler[0]=R(-8*k)
+            if big: k=ease((t-wl(196,KEY))/.25); H['arm'][-1].rotation_euler=(R(-178*k),0,R(8)); H['head'].rotation_euler[0]=R(-8*k)
             face(H,brow=-.03 if big else .03,brow_r=18 if big else -6); face(T,mouth='o',brow=.06)
-            q=ease(t/DUR); camset((L(HX-1.4,HX-1.0,q),-2.4+.8*q,L(1.0,1.3,q)),(HX-.5,.3,1.95),L(26,32,q),4.0,focus=(HX,.4,2.0))
+            q=ease(t/DUR); camset((HX-.9,L(-1.9,-1.5,q),L(1.6,1.7,q)),(HX,.4,2.05),L(28,32,q),4.0,focus=(HX,.4,2.0))
             SHAKE[0]=.012 if big else 0
     elif view=='what':
         def upd(t):
@@ -393,10 +393,10 @@ def SH_z(view):
     def upd(t):
         blink(T,t); blink(H,t); stand(T,t); stand(H,t); H['root'].location=(1.0,-16.0,.008); H['root'].rotation_euler[2]=R(195)
         if view=='adjust':
-            k=ease((t-.4)/.5); arm_reach(T,1,T['head'].matrix_world@Vector((.25*T['u'],-.75*T['u'],.72*T['u'])),k)
+            k=ease((t-.4)/.5); arm_reach(T,1,T['head'].matrix_world@Vector((.85*T['u'],-.2*T['u'],.72*T['u'])),k)
             T['shades'].location=Vector(T['shades']['base'])+Vector((0,0,.03*math.sin(pi*min(1,max(0,(t-.6)/.6)))))
             face(T,mouth='smirk',brow=-.01,brow_r=-8); look_at(T,(1.0,-16,2.0),ease((t-1.6)/.6)); hideH(H) if t<0 else None
-            q=ease(t/DUR); camset((L(-.9,-.6,q),-16.2,L(1.2,1.35,q)),(0,-14,2.0),L(30,40,q),2.8,focus=(0,-14,2.05))
+            q=ease(t/DUR); camset((L(-2.6,-2.3,q),-16.4,L(1.5,1.6,q)),(0,-14,2.0),L(34,40,q),2.8,focus=(0,-14,2.05))
         elif view=='pawa':
             talk(T,t,290,297,KEY,rest='smirk'); T['arm'][1].rotation_euler=(R(-15),R(-35),R(70)); T['arm'][-1].rotation_euler=(R(-15),R(35),R(-70))
             if t>wl(294,KEY): T['arm'][1].rotation_euler=(R(-60),0,R(-30)); T['root'].scale=(1.03,1.03,1)
@@ -417,7 +417,7 @@ def SH_z(view):
             for i,c in enumerate(big):
                 blink(c,t); stand(c,t); kk=ease((t-wl(319,KEY)-i*.02)/.3) if t>wl(319,KEY)-.1 else 0
                 arms(c,-165*kk,0,20,-165*kk,0,-20); c['root'].location[2]=.008+.12*kk*max(0,math.sin(t*8+i)); face(c,mouth='shout' if kk>.2 else 'O')
-            q=ease(t/DUR); camset((L(1.2,4.5,q),L(-19.5,-24,q),L(1.0,4.5,q)),(0,-14,L(2.4,2.0,q)),L(26,20,q),8.0)
+            q=ease(t/DUR); camset((L(3.4,9.5,q),L(-14.6,-15.8,q),L(1.3,4.6,q)),(0,-14,L(2.3,2.0,q)),L(24,20,q),8.0)
         elif view=='final':
             T['root'].location=(-1.2,-13.0,.008); face(T,mouth='grin')
             H['root'].rotation_euler[2]=R(0); H['root'].location=(1.0,-16.0,.008)
