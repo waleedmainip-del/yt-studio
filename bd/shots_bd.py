@@ -600,8 +600,8 @@ def folder(H):
 def WAITER_():
     S=cafe_set(1); Wt=S['Wt']; fd=folder(Wt)
     def upd(t):
-        cafe_idle(S,t); walk_path(Wt,[(-6.0,.2),(-3.4,.3),(-1.9,.6)],t,-1.6,DUR,step=.5); blink(Wt,t); Wt['arm'][1].rotation_euler=(R(-75),0,R(8)); face(Wt,mouth='smile')
-        face(S['Hm'],mouth='strain',brow=.06,brow_r=16); S['Hm']['head'].rotation_euler=(0,0,R(-40*tl(t,.4,.9))); face(S['Zy'],mouth='smirk'); two(S,t)
+        cafe_idle(S,t); walk_path(Wt,[(-6.5,-3.1),(-3.6,-2.6),(-2.2,-1.5)],t,-1.8,DUR,step=.5); blink(Wt,t); Wt['arm'][1].rotation_euler=(R(-75),0,R(8)); face(Wt,mouth='smile')
+        face(S['Hm'],mouth='strain',brow=.06,brow_r=16); S['Hm']['head'].rotation_euler=(0,0,R(-60*tl(t,.4,.9))); face(S['Zy'],mouth='smirk'); two(S,t)
     return dict(upd=upd)
 SHOTS['WAITER']=WAITER_
 def TOTAL_():
@@ -617,11 +617,11 @@ SHOTS['TOTAL']=TOTAL_
 def WHISPER_():
     S=cafe_set(1); Hm,Wt,Zy=S['Hm'],S['Wt'],S['Zy']; fd=folder(Wt)
     def upd(t):
-        cafe_idle(S,t); Wt['root'].location=(-1.9,.6,.008); Wt['root'].rotation_euler=(R(8*tl(t,.5,1.2)),0,R(45)); Wt['arm'][1].rotation_euler=(R(-75),0,R(8)); look_at(Wt,HH(S),.8); face(Wt,mouth='o' if t>3.2 else 'smile',brow=.05)
-        k=tl(t,.3,1.0); Hm['root'].rotation_euler[2]=R(90+60*k); Hm['head'].rotation_euler=(R(-20*k),0,R(20*k)); talk(Hm,t,135.37,137.3); face(Hm,brow=.06,brow_r=18,eyes=.9)
+        cafe_idle(S,t); Wt['root'].location=(-2.2,-1.5,.008); Wt['root'].rotation_euler=(R(8*tl(t,.5,1.2)),0,R(65)); Wt['arm'][1].rotation_euler=(R(-75),0,R(8)); look_at(Wt,HH(S),.8); face(Wt,mouth='o' if t>3.2 else 'smile',brow=.05)
+        k=tl(t,.3,1.0); Hm['root'].rotation_euler[2]=R(90-105*k); Hm['head'].rotation_euler=(R(-18*k),0,R(-20*k)); talk(Hm,t,135.37,137.3); face(Hm,brow=.06,brow_r=18,eyes=.9)
         hp=Hm['head'].matrix_world@Vector((.55*Hm['u'],-.8*Hm['u'],.35*Hm['u'])); arm_to(Hm,1,hp,k,base=(R(-38),0,R(-6)))
         face(Zy,mouth='smirk'); Zy['head'].rotation_euler=(R(10),0,R(20))
-        q=ease(t/DUR); camset(LV((.9,2.5,1.8),(.7,2.2,1.82),q),(-1.4,0,1.8),30,4.0)
+        q=ease(t/DUR); camset(LV((.3,-3.5,1.75),(.1,-3.2,1.78),q),(-1.55,-1.1,1.8),34,4.0)
     return dict(upd=upd)
 SHOTS['WHISPER']=WHISPER_
 def BLACK_():
