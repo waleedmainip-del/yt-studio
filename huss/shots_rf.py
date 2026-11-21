@@ -21,7 +21,7 @@ def ST_(view):
             q=ease(t/DUR); camset((0,-3.3+.3*q,1.55),(0,-1,2.2),40,4.0,focus=(0,-1.3,2.2))
     elif view=='city':
         H,g=mkhuss((-7,5.4,0),-90)
-        cs=people([(-1,5.0,90,False),(0,6.0,80,False),(1.6,5.2,100,True),(1.0,6.4,90,False),(2.2,4.6,95,False)],citizen)
+        cs=people([(-1,5.0,90,False),(0,6.0,80,False),(1.6,5.2,100,True),(1.0,6.4,90,False),(-3.5,6.4,95,False)],citizen)
         def upd(t):
             blink(H,t); walker(H,(-7,5.4,0),-90+180,1.2,t,arm=12); face(H,mouth='flat',brow=-.02,brow_r=12)
             for i,c in enumerate(cs):
@@ -29,20 +29,20 @@ def ST_(view):
                 k=ease((2.6-d)/1.2); c['root'].location[1]=c['y']+(1.3 if c['y']>5.5 else -1.0)*k; c['root'].rotation_euler[2]=R(c['rz']+(-90 if c['y']>5.5 else 90)*k*.5)
                 look_at(c,(hx,5.4,1.9)); face(c,mouth='o' if k>.2 else 'smile',brow=.08*k)
                 if k>.3 and i%2==0: shock(c,min(1,k)*.6)
-            q=ease(t/DUR); camset((4.6,3.2,1.3),(-2.0,5.6,2.0),24,8.0)
+            q=ease(t/DUR); camset((5.4,2.4,1.45),(-2.0,5.6,2.0),22,8.0)
     elif view=='name':
         H,g=mkhuss((0,0,0),0)
         def upd(t):
             blink(H,t,0); stand(H,t); face(H,mouth='smirk' if t>1.0 else 'flat',brow=-.02,brow_r=14); H['arm'][1].rotation_euler=(R(-8),0,R(6)); H['arm'][-1].rotation_euler=(R(-8),0,R(-6))
             q=ease(t/DUR); camset((.9-.5*q,-2.7,.35),(0,0,2.4+.5*q),18,8.0)
     elif view=='why':
-        a,b=people([(-.4,6.0,160,False),(.5,6.1,200,False)],citizen)
+        a,b=people([(-.4,6.0,-20,False),(.5,6.1,20,False)],citizen)
         def upd(t):
             for i,c in enumerate((a,b)):
                 blink(c,t); stand(c,t); k=ease((t-.3-i*.2)/.4)
                 c['arm'][1].rotation_euler=(R(-40*k),0,R(55*k)); c['arm'][-1].rotation_euler=(R(-40*k),0,R(-55*k)); c['head'].rotation_euler=(0,R(12*k*(1 if i else -1)),0)
                 face(c,mouth='frown' if i else 'flat',brow=.1*k,brow_r=-14*k)
-            q=ease(t/DUR); camset((.1,3.3,1.75),(0,6.0,1.75),30,5.0,focus=(0,6.0,1.8))
+            q=ease(t/DUR); camset((1.1,3.35,1.75),(0,6.0,1.75),30,5.0,focus=(0,6.0,1.8))
     elif view=='lambo':
         cr=car(0,1.8,'#F07A1A',rz=0,sport=True); H,g=mkhuss((0,-1.4,0),-90)
         def upd(t):
@@ -105,7 +105,7 @@ def ST_(view):
             def upd(t):
                 for i,m in enumerate(mins): blink(m,t); flee(m,t,90,5.0,t0=.1*(i%3)); face(m,mouth='O',brow=.12)
                 camset((-1.0,-4.5,1.4),(6,0,1.6),22,8.0)
-    elif view in ('step1','step2','faster','glasses','nobody','ask','look','whisper','inhaler','end'):
+    elif view in ('step1','step2','faster','glasses','nobody','ask','look','whisper','end'):
         H,g=mkhuss((-3,0,0),90)
         V=av((.8,0,0),-90,VILL,{'mouth':'O'},name='vill') if view in ('step1','step2','faster','nobody') else None
         cops=[av((x,y,0),rz,cop(i),{'mouth':'o'},name='c%d'%i) for i,(x,y,rz) in enumerate([(-4.6,-2.2,-30),(-1.5,-2.4,30),(-3.0,-2.9,0)])] if view in ('nobody','ask','look','whisper','inhaler','end') else []
@@ -151,7 +151,7 @@ def ST_(view):
                     q=ease(t/DUR); camset((-3.4,-2.0,2.3),(-3,0,2.35),40+6*q,3.0,focus=(-3,0,2.3))
                 elif view=='whisper':
                     hide(g); H['root'].rotation_euler[2]=R(20); face(H,mouth='o' if hw<t<hw+.5 else 'flat',brow=.02,brow_r=-6,eyes=.9); H['head'].rotation_euler[0]=R(6)
-                    q=ease(t/DUR); camset((-3.15,-1.05,2.35),(-3,0,2.32),55+10*q,2.4,focus=(-3,-.2,2.3))
+                    q=ease(t/DUR); camset((-3.0,-1.55,2.38),(-3,0,2.3),38+8*q,2.4,focus=(-3,-.2,2.3))
                 elif view=='end':
                     hide(g); H['root'].rotation_euler[2]=R(20); k=ease(t/.25); arm_to(H,1,tuple(H['head'].matrix_world@Vector((0,-.9*H['u'],.3*H['u']))),k)
                     face(H,mouth='O' if any(0<=t-h<.25 for h in hs) else 'flat',brow=.05,brow_r=-8,eyes=1.1)
@@ -175,6 +175,7 @@ def AP_(view):
     moon=area((-4.2,1.8,2.2),300,(1.5,1.2),(.55,.7,1.0),rot=(R(-90),0,0)); fill=point((1.5,-1.0,2.6),40,(.6,.7,1.0),.5,shadow=False)
     if view=='clock': point((-1.15,1.6,.9),3,(1,.25,.2),.1,shadow=False); point((-2.6,-.2,2.5),70,(.55,.65,1.0),.4,shadow=False)
     if view in ('brush','mirror'): point((1.5,1.6,2.6),45,(1,.95,.85),.2)
+    if view=='mirror': point((2.4,.9,2.4),70,(1,.92,.8),.3,shadow=False); point((1.5,2.3,2.0),25,(.8,.9,1.0),.2,shadow=False)
     if view=='break': point((5.0,1.5,2.6),45,(1,.9,.75),.2)
     H,g=mkhuss((-2.6,1.4,0),0)
     if view=='clock':
@@ -203,13 +204,13 @@ def AP_(view):
             face(H,mouth='O' if any(0<=t-h<.25 for h in hs) else 'flat',brow=-.03,brow_r=16)
             k=max([max(0,1-abs(t-h-.08)/.18) for h in hs]+[0]); H['root'].scale=(1+.03*k,1+.03*k,1)
             fog=min(1,sum(max(0,t-h) for h in hs)*.5); mb.inputs['Roughness'].default_value=.03+.6*fog; mb.inputs['Base Color'].default_value=tuple(L(a,b,fog) for a,b in zip(hexc('#BFD0E0'),hexc('#EEF2F5')))
-            q=ease(t/DUR); camset((2.75,1.2,2.3),(1.4,2.05,2.3),24+6*q,4.0,focus=(1.5,1.7,2.3))
+            q=ease(t/DUR); camset((2.6,.85,2.4),(1.45,2.2,2.2),26+6*q,4.0,focus=(1.5,1.7,2.3))
     return dict(upd=upd)
 for _v in ('clock','brush','break','mirror'): SHOTS['A_'+_v]=(lambda v=_v: AP_(v))
 
 # =================================================================== PARK (south side of the avenue)
 def PK_(view):
-    street(); day(); KEY='P_'+view
+    CLEARP[0]=(view=='400'); street(); day(); KEY='P_'+view
     H,g=mkhuss((24,-8.65,0),180)
     if view=='400':
         H['root'].location=(28,-14,.12); H['z0']=.12; H['root'].rotation_euler[2]=R(0)
@@ -240,13 +241,13 @@ def PK_(view):
             if view=='never': hideH(T); q=ease(t/DUR); camset((25.4,-6.4,1.5),(24,-8.8,1.3),28,6.0)
             elif view=='approach':
                 d=walk_path(T,[(19.5,-7.2),(22.9,-7.2)],t,0,DUR*.85); face(T,mouth='smirk',brow=-.04,brow_r=16); T['arm'][1].rotation_euler[0]+=R(-30)
-                q=ease(t/DUR); camset((25.6,-11.8,1.5),(22.4,-7.6,1.4),24,8.0)
+                q=ease(t/DUR); camset((21.3,-5.0,1.7),(23.9,-8.6,1.2),24,8.0)
             elif view=='huss':
                 T['root'].location=(22.9,-7.2,.12); T['root'].rotation_euler[2]=R(120)
                 face(H,mouth='O' if any(0<=t-h<.2 for h in hs) else 'strain',brow=-.04,brow_r=16); H['arm'][1].rotation_euler=(R(-30),0,R(10))
-                camset((23.7,-7.3,1.6),(24,-8.65,1.55),40,3.2,focus=(24,-8.6,1.6))
+                camset((23.8,-6.5,1.75),(24,-8.65,1.6),32,3.2,focus=(24,-8.6,1.6))
             elif view=='run':
-                T['x']=22.9; T['y']=-7.2; flee(T,t,-90,6.0,t0=.15); face(T,mouth='O',brow=.14,eyes=1.3); T['root'].location[2]=.12
-                camset((26.2,-5.6,1.7),(20.5,-7.2,1.5),24,8.0)
+                T['x']=22.9; T['y']=-7.2; flee(T,t,-135,6.0,t0=.15); face(T,mouth='O',brow=.14,eyes=1.3); T['root'].location[2]=.12
+                camset((26.8,-8.6,3.6),(21.0,-6.2,.8),22,8.0)
     return dict(upd=upd)
 for _v in ('400','never','approach','huss','run'): SHOTS['P_'+_v]=(lambda v=_v: PK_(v))

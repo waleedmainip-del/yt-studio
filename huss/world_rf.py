@@ -35,6 +35,7 @@ def building(x,yface,side,w,d,h,col,seed,shop=True):
         B.box((x,fy-side*.02,1.5),(w/2-.4,.03,1.2),M('#9FC7D8',.08,spec=1.0),0)
         B.box((x,fy-side*.25,3.0),(w/2-.2,.3,.08),M(sc,.6),.02,rot=(R(-12*side),0,0))
         B.box((x,fy-side*.06,3.45),(w/2-.6,.05,.28),M(sc,.5,emit=.4),.02)
+CLEARP=[False]
 def street(night=False):
     ROAD=M('#3A3D44',.85,kind='asphalt'); SW=M('#B9B4AA',.7,kind='concrete',sc=1.2); CURB=M('#9A968E',.6); LINE=M('#F2F0E6',.5); YEL=M('#F2C12E',.5)
     B.box((0,0,-.05),(80,4,.05),ROAD,0)
@@ -64,7 +65,10 @@ def street(night=False):
     # park (south side gap)
     GR=M('#5E9E40',.85,kind='grass',h2='#4A8A34')
     B.box((28,-14,.06),(10,7,.06),GR,0)
-    for i in range(9): tree(r.uniform(19,37),r.uniform(-9,-20),.1,r.uniform(1.0,1.4),i+500)
+    for i in range(9):
+        tx,ty=r.uniform(19,37),r.uniform(-9,-20); ts=r.uniform(1.0,1.4)
+        if CLEARP[0] and math.hypot(tx-28,ty+14)<8: continue
+        tree(tx,ty,.1,ts,i+500)
     for x in (24,30): B.box((x,-8.6,.45),(1.2,.3,.05),M('#8A5A3A',.6,kind='wood',sc=3),.02); B.box((x,-8.85,.75),(1.2,.05,.3),M('#8A5A3A',.6,kind='wood',sc=3),.02); B.box((x,-8.6,.22),(1.1,.25,.22),M('#3E4652',.5,metal=.6),.02)
     B.cyl((32,-15,.4),1.6,.8,M('#BDB5A6',.7,kind='concrete',sc=.5),seg=24); B.cyl((32,-15,.78),1.4,.04,M('#5EB6E0',.1,emit=.3,spec=1.0),seg=24)
     # parked cars
