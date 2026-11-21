@@ -232,7 +232,9 @@ def mill(light=True):
     for k in range(7):
         y0=-10+k*3.0; B.box((0,y0+1.5,7.0),(14.2,1.55,.06),M('#9AA6AE',.5,metal=.4),.01,rot=(R(-22),0,0)); B.box((0,y0+2.85,7.4),(14.2,.05,.55),M('#FFF2D8',.3,emit=2.4),0)
     for xx in range(-12,13,6):
-        for yy in (-6,0,6): B.cyl((xx,yy,3.5),.14,7.0,M('#3E6FB0',.5,metal=.4),seg=8)
+        for yy in (-6,0,6):
+            if yy==-6 and xx==0: continue
+            B.cyl((xx,yy,3.5),.14,7.0,M('#3E6FB0',.5,metal=.4),seg=8)
     for xx in range(-12,13,6): B.box((xx,0,6.6),(.15,10,.2),M('#3E6FB0',.5,metal=.4),.01)
     for xx in range(-9,10,6):
         for yy in (-4,3):

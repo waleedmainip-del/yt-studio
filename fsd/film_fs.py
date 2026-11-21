@@ -5,6 +5,9 @@ SN=int(SHOT); KEY,T0=SEQ[SN-1]; T1=SEQ[SN][1] if SN<len(SEQ) else END; DUR=T1-T0
 make_cam(); spec=SHOTS[KEY](); sc=bpy.context.scene
 def upd_all(t):
     TNOW[0]=t; spec['upd'](t); fx.upd(t)
+upd_all(DUR*.5)
+def upd_all(t):
+    TNOW[0]=t; spec['upd'](t); fx.upd(t)
 if MODE=='still':
     for t in [float(x) for x in args[4].split(',')]:
         if t<0: t=DUR+t
