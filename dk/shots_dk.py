@@ -241,12 +241,12 @@ def TRUCK_():
         blink(Dk,t)
         if t<hit: walk_path(Dk,[(10.0,.6),(10.0,-.9)],t,-.6,hit,step=.5); face(Dk,mouth='smile')
         else:
-            tt=t-hit; z=max(0,6.0*tt-4.9*tt*tt); Dk['root'].location=(10+5.0*min(tt,1.0)*.9,-1.2,z+.008); legs0(Dk)
+            tt=t-hit; z=max(0,6.0*tt-4.9*tt*tt); Dk['root'].location=(10+6.0*min(tt,1.05),-.9+1.5*min(tt,1.05),z+.008); legs0(Dk)
             sp=min(1,tt/1.05); Dk['root'].rotation_euler=(R(-360*sp*1.0),R(30*sp),R(180)); arms(Dk,-160,0,40,-150,0,-40); face(Dk,mouth='O',eyes=1.3)
             if tt>1.1:
                 q=tl(tt,1.15,1.5); Dk['root'].rotation_euler=(R(-90*(1-q)),0,R(180)); Dk['root'].location[2]=.008+.2*(1-q); arms(Dk,-90*(1-q),0,10,-20,0,-10); face(Dk,mouth='grin')
         SHAKE[0]=.06*math.exp(-max(0,t-hit)*6) if t>hit else 0
-        camset((14.5,5.2,2.3),(10.0,-1.4,2.2),24,16)
+        camset((18.5,3.6,2.0),(12.0,-.6,1.9),22,16)
     return dict(upd=upd)
 SHOTS['TRUCK']=TRUCK_
 
@@ -282,7 +282,7 @@ def LUCKY_():
 SHOTS['LUCKY']=LUCKY_
 
 def MISTAKE_():
-    C,T=street('city',crowd_n=8,traffic_n=6,seed=7,avoid=((-10,0,4.6,7.2),),lanes=((-2.1,-1),))
+    C,T=street('city',crowd_n=8,traffic_n=6,seed=7,avoid=((-12,2,4.4,7.4),),lanes=((-2.1,-1),),walk_frac=0)
     Dk=derek((-4.5,5.0,.14),90,counter=False); De=avatar_dk((-6.6,6.2,.14),90,DEATH,name='death'); sc_=De['props']['scythe']
     bend=(.35,1.6); sw=(.55,.95)
     def upd(t):
@@ -292,7 +292,7 @@ def MISTAKE_():
         stand(De,t); s=tl(t,sw[0],sw[1]); De['arm'][-1].rotation_euler=(R(-60-60*math.sin(pi*s)),0,R(-90*s+20)); De['root'].rotation_euler[2]=R(90-30*s)
         face(De,mouth='frown' if t>1.3 else 'flat',brow=-.03,brow_r=-20 if t<1.3 else 12)
         if t>1.5: De['arm'][1].rotation_euler=(R(-150*tl(t,1.5,1.8)),0,R(-30)); De['head'].rotation_euler[0]=R(25*tl(t,1.5,1.8))
-        camset((-3.0,1.2,1.9),(-5.2,5.1,2.0),26,5.0)
+        camset((-4.6,.4,1.7),(-5.4,5.4,1.6),24,5.0)
     return dict(upd=upd)
 SHOTS['MISTAKE']=MISTAKE_
 
@@ -304,7 +304,7 @@ def WALK_():
         upd_crowd(C,t+24); blink(Dk,t); walk_path(Dk,[(-9,5.0),(-2.2,5.0)],t,0,DUR+.6,step=.55,ease_out_=.05); face(Dk,mouth='smile',brow=.03)
         P['root'].rotation_euler[2]=R(180+4*math.sin(t*1.3)); P['root'].location[2]=9.2+.05*math.sin(t*2)
         for i,H in enumerate(Mv): stand(H,t+i); face(H,mouth='strain'); arms(H,-80,0,10,-80,0,-10)
-        x=Dk['root'].location[0]; camset((x+1.0,-5.4,1.5),(x+2.6,5.0,4.6),20,16)
+        x=Dk['root'].location[0]; camset((x+1.2,-2.6,1.3),(x+2.4,5.0,4.4),20,16)
     return dict(upd=upd)
 SHOTS['WALK']=WALK_
 def FALL_():
@@ -625,7 +625,7 @@ def EXPLO_():
         s=L(30,48,ease_out(tl(t,0,2.0))); fb.scale=(s,s,s*.7); fb.location=(0,2.2,4+6*tl(t,0,3))
         c=s*.55*(1-tl(t,1.0,2.6)); core.scale=(c,c,c*.7)
         blend_mood('doom','ash',tl(t,1.2,3.2)); SHAKE[0]=.35*math.exp(-t*1.2)
-        camset((-40,-4,4.0),(0,3,10),22,16)
+        camset((-40,-1.5,4.0),(0,3,10),22,16)
     return dict(upd=upd)
 SHOTS['EXPLO']=EXPLO_
 
@@ -750,39 +750,40 @@ def FROZE_():
 SHOTS['FROZE']=FROZE_
 def BEHIND_():
     De,ph0=death_after(); hide(ph0); ph=death_phone(De)
-    Dk=derek((1.6,3.2,0),-150,counter=True,n=47); sw=in_hand(Dk,1,lambda e: sandwich(e,(0,-.08,.05),1.4))
+    Dk=derek((-1.6,3.2,0),150,counter=True,n=47); sw=in_hand(Dk,1,lambda e: sandwich(e,(0,-.08,.05),1.4))
     for o in bpy.data.objects:
         if o.name.startswith('derek') or (o.parent and o.parent.name.startswith('derek')): pass
     def upd(t):
         legs0(De); idle(De,0); ear=root_mat(De)@Vector((1.15*De['u'],-2.1*De['u'],3.9*De['u'])); arm_to(De,1,ear,1.0,base=(0,0,0)); face(De,mouth='strain',brow=.06,brow_r=14)
         for o in De['xeyes']: o.scale=(.55,.55,1)
-        walk_path(Dk,[(2.6,4.2),(1.2,2.9)],t,0,1.3,step=.5); stand(Dk,t) if t>1.3 else None; blink(Dk,t); upd_counter(Dk)
+        walk_path(Dk,[(-2.8,4.2),(-1.35,2.7)],t,0,1.3,step=.5); stand(Dk,t) if t>1.3 else None; blink(Dk,t); upd_counter(Dk)
+        if t>1.0: Dk['root'].rotation_euler[2]=R(lerp_angle(math.degrees(Dk['root'].rotation_euler[2]),20,tl(t,1.0,1.4)))
         bite=(int(t*1.6)%2==0) and t>1.4; Dk['arm'][1].rotation_euler=(R(-110 if bite else -70),0,R(20)); face(Dk,mouth='grin' if not bite else 'o',brow=.03)
         set_counter(Dk,47 if t<2.0 else 48)
-        camset((.3,-1.6,2.2),(.6,2.4,2.3),30,4.0,focus=(1.2,2.9,2.0) if t>1.0 else (0,1.6,2.7))
+        camset((-.9,-2.3,2.1),(-.85,2.4,2.15),26,4.0,focus=(-1.3,2.7,2.0) if t>1.0 else (0,1.6,2.7))
     return dict(upd=upd)
 SHOTS['BEHIND']=BEHIND_
 def FRIEND_():
     De,ph0=death_after(); hide(ph0); ph=death_phone(De)
-    Dk=derek((.95,1.85,0),-35,counter=True,n=48); sw=in_hand(Dk,-1,lambda e: sandwich(e,(0,-.08,.05),1.4))
+    Dk=derek((-1.05,1.9,0),30,counter=True,n=48); sw=in_hand(Dk,-1,lambda e: sandwich(e,(0,-.08,.05),1.4))
     def upd(t):
         legs0(De); idle(De,0); ear=root_mat(De)@Vector((1.15*De['u'],-2.1*De['u'],3.9*De['u'])); arm_to(De,1,ear,1.0,base=(0,0,0)); face(De,mouth='flat',brow=.05,brow_r=16,eyes=.8)
         stand(Dk,t); blink(Dk,t); upd_counter(Dk); talk(Dk,t,92.06-T0,93.36-T0); face(Dk,brow=.04)
         sh=root_mat(De)@Vector((-.9*De['u'],0,4.0*De['u'])); arm_to(Dk,1,sh,1.0,base=(0,0,0)); look_at(Dk,ph.matrix_world.translation,.7)
-        Dk['root'].rotation_euler[1]=R(-6)
-        camset((.4,-2.7,2.3),(.45,1.7,2.35),32,4.0)
+        Dk['root'].rotation_euler[1]=R(6)
+        camset((-.9,-2.9,2.15),(-.7,1.7,2.15),27,4.0)
     return dict(upd=upd)
 SHOTS['FRIEND']=FRIEND_
 def WHISPER_():
     De,ph0=death_after(); hide(ph0); ph=death_phone(De)
-    Dk=derek((.95,1.85,0),-35,counter=False); sw=in_hand(Dk,-1,lambda e: sandwich(e,(0,-.08,.05),1.4))
+    Dk=derek((-1.05,1.9,0),30,counter=False); sw=in_hand(Dk,-1,lambda e: sandwich(e,(0,-.08,.05),1.4))
     def upd(t):
         legs0(De); idle(De,0); ear=root_mat(De)@Vector((1.15*De['u'],-2.1*De['u'],3.9*De['u'])); arm_to(De,1,ear,1.0,base=(0,0,0))
         k=tl(t,.2,1.5); face(De,brow=.05,brow_r=18*k,eyes=1.0-.35*k); talk(De,t,95.57-T0,97.43-T0)
         for o in De['xeyes']: o.scale=(1-.5*k,1-.5*k,1)
         De['head'].rotation_euler=(R(10*k),R(-6*k),0); stand(Dk,t); blink(Dk,t); face(Dk,mouth='grin')
         sh=root_mat(De)@Vector((-.9*De['u'],0,4.0*De['u'])); arm_to(Dk,1,sh,1.0,base=(0,0,0))
-        q=ease(t/DUR); camset(LV((-.1,-1.6,2.8),(-.05,-.9,2.82),q),(0,1.6,2.8),36,2.8)
+        q=ease(t/DUR); camset(LV((-.3,-1.8,2.7),(-.2,-1.1,2.75),q),(-.15,1.6,2.7),34,2.8)
     return dict(upd=upd)
 SHOTS['WHISPER']=WHISPER_
 def OUT_():
