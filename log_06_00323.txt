@@ -1,0 +1,60 @@
+Fra:360 Mem:99.71M (Peak 150.15M) | Time:00:00.04 | Syncing i.015
+Fra:360 Mem:99.71M (Peak 150.15M) | Time:00:00.04 | Syncing i.016
+Fra:360 Mem:99.71M (Peak 150.15M) | Time:00:00.04 | Syncing i.017
+Fra:360 Mem:99.71M (Peak 150.15M) | Time:00:00.04 | Syncing i.018
+Fra:360 Mem:99.71M (Peak 150.15M) | Time:00:00.04 | Syncing i.019
+Fra:360 Mem:99.71M (Peak 150.15M) | Time:00:00.04 | Syncing i.020
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.021
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.022
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.023
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.024
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.025
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.026
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.027
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.028
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.029
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.030
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.031
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.032
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.04 | Syncing i.033
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:00.06 | Rendering 1 / 4 samples
+Fra:360 Mem:99.74M (Peak 150.15M) | Time:00:01.07 | Rendering 4 / 4 samples
+Fra:360 Mem:98.71M (Peak 150.15M) | Time:00:01.47 | Compositing
+Fra:360 Mem:98.71M (Peak 150.15M) | Time:00:01.47 | Compositing | Determining resolution
+Fra:360 Mem:98.71M (Peak 150.15M) | Time:00:01.47 | Compositing | Initializing execution
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 1-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 2-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 3-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 4-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 5-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 6-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 7-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 8-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 9-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 10-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.47 | Compositing | Tile 11-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 12-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 13-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 14-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 15-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 16-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 17-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 18-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 19-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 20-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 21-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 22-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 23-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 24-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 25-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 26-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 27-28
+Fra:360 Mem:121.64M (Peak 150.15M) | Time:00:01.48 | Compositing | Tile 28-28
+Fra:360 Mem:121.57M (Peak 150.15M) | Time:00:01.48 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S06/f00360.png'
+Time: 00:01.65 (Saving: 00:00.16)
+
+FRAME 1 73.2
+SHOT_DONE 6
+
+Blender quit
