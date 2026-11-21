@@ -1,0 +1,60 @@
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.543
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.544
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.545
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.546
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.547
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.548
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.549
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.550
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.551
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.552
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.05 | Syncing p.553
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.554
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.555
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.556
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.557
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.558
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.559
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.560
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.561
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.562
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.563
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.564
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.565
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.566
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.567
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.568
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.569
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.570
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.571
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.572
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.573
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.574
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.575
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.576
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.577
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.578
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.579
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.580
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.581
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.582
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.583
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.584
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.585
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.586
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.587
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.588
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.589
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.590
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.591
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.592
+Fra:1974 Mem:112.48M (Peak 153.06M) | Time:00:00.06 | Syncing p.593
+Fra:1974 Mem:112.47M (Peak 153.06M) | Time:00:00.08 | Rendering 1 / 5 samples
+Fra:1974 Mem:112.47M (Peak 153.06M) | Time:00:07.07 | Rendering 5 / 5 samples
+Saved: '/home/claude/dome/frames/S28/f01974.png'
+Time: 00:09.24 (Saving: 00:00.32)
+
+FRAME 1 224.0
+SHOT_DONE 28
+
+Blender quit

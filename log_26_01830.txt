@@ -1,0 +1,60 @@
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.413
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing e.016
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.414
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.415
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.416
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing e.017
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.417
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.418
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.419
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing e.018
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.420
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.421
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.422
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.423
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.424
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.425
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.014
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.015
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.426
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.427
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.016
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.017
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.428
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.429
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.430
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.431
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.432
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.433
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.434
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.435
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.436
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.437
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.438
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.439
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.440
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.441
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.442
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.443
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.444
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.445
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.446
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.018
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.019
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.447
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.448
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.449
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.450
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing c.020
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.451
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.452
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.06 | Syncing p.453
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:00.08 | Rendering 1 / 5 samples
+Fra:1870 Mem:97.67M (Peak 138.39M) | Time:00:06.56 | Rendering 5 / 5 samples
+Saved: '/home/claude/dome/frames/S26/f01870.png'
+Time: 00:08.60 (Saving: 00:00.31)
+
+FRAME 1 333.6
+SHOT_DONE 26
+
+Blender quit
