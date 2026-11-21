@@ -239,7 +239,7 @@ def POLICE_():
 SHOTS['POLICE']=POLICE_
 
 def TEASE_():
-    W,C,T=street_set(crowd_n=16,traffic_n=8,seed=5,avoid=((2.6,6.4,3.8,6.9),)); A=avatar_lh((4.4,4.55,.07),0,mars_design(5),name='tease')
+    W,C,T=street_set(crowd_n=16,traffic_n=0,seed=5,avoid=((2.6,6.4,3.8,6.9),)); T=make_traffic(8,5,lanes=((-2.0,-1),)); A=avatar_lh((4.4,4.55,.07),0,mars_design(5),name='tease')
     jl=in_hand(A,-1,lambda e: oico((0,-.1,.04),.09,M('#F2A11A',.35,emit=.3),e,sc=(1,1,.45),sub=1)); th=thumb(A,1); th.scale=(0,0,0)
     def upd(t):
         tg=T0+t; upd_crowd(C,tg); upd_traffic(T,tg); stand(A,tg); blink(A,tg); ta=9.41-T0
@@ -397,7 +397,7 @@ def UNCLE_():
         tg=T0+t; upd_crowd(C,tg,freeze=T0-6,look=(-18,0,2.5)); ship_lights(S,t); stand(Z,T0); blink(Z,tg); face(Z,mouth='flat',brow=-.04,brow_r=-24,eyes=.85)
         for i,A in enumerate(CL): stand(A,T0); look_at(A,Hc['root'].location+Vector((0,0,2)),1); face(A,mouth='o',brow=.03); blink(A,tg+i)
         walk_path(Hc,[(-12.6,.6),(-16.75,.2)],t,0,DUR+.4,step=.42,arm=0); arms(Hc,-48,0,12,-48,0,-12); face(Hc,mouth='flat',brow=0); blink(Hc,tg)
-        x=Hc['root'].location[0]; camset((x-.5,-4.4,1.6),(x-.6,.3,1.65),32,16)
+        x=Hc['root'].location[0]; camset((x-.5,-3.75,1.6),(x-.6,.3,1.65),32,16)
     return dict(upd=upd)
 SHOTS['UNCLE']=UNCLE_
 
