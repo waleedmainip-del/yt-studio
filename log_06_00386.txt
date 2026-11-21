@@ -1,0 +1,60 @@
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.044
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.045
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.046
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.047
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.048
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.049
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.050
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing c.004
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing c.005
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.051
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.052
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.053
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.054
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing c.006
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.055
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.056
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.057
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.058
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.059
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.060
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.061
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.062
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.063
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing c.007
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing c.008
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing c.009
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.064
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.065
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.066
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.067
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.068
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.069
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.070
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.071
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing e.007
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing p.072
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.001
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.002
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.003
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.004
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.005
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.006
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.007
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.008
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.009
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.010
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.011
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.012
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.013
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.07 | Syncing i.014
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:00.10 | Rendering 1 / 6 samples
+Fra:424 Mem:63.19M (Peak 104.01M) | Time:00:08.76 | Rendering 6 / 6 samples
+Saved: '/home/claude/lahore/frames/S06/f00424.png'
+Time: 00:11.04 (Saving: 00:00.40)
+
+FRAME 1 441.6
+SHOT_DONE 6
+
+Blender quit
