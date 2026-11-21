@@ -1,0 +1,60 @@
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1101
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing c.143
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1102
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1103
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1104
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1105
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1106
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1107
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1108
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1109
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1110
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing c.144
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing c.145
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing c.146
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing e.099
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1111
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1112
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1113
+Fra:1252 Mem:208.58M (Peak 258.41M) | Time:00:00.05 | Syncing p.1114
+Fra:1252 Mem:208.57M (Peak 258.41M) | Time:00:00.07 | Rendering 1 / 4 samples
+Fra:1252 Mem:208.57M (Peak 258.41M) | Time:00:02.23 | Rendering 4 / 4 samples
+Fra:1252 Mem:206.97M (Peak 258.41M) | Time:00:03.01 | Compositing
+Fra:1252 Mem:206.97M (Peak 258.41M) | Time:00:03.01 | Compositing | Determining resolution
+Fra:1252 Mem:206.97M (Peak 258.41M) | Time:00:03.01 | Compositing | Initializing execution
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 1-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 3-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 4-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 2-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 5-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 6-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 7-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 8-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 9-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 10-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 11-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 12-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 13-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 14-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.01 | Compositing | Tile 15-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 16-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 17-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 18-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 19-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 20-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 21-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 22-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 23-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 24-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 26-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 27-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 28-28
+Fra:1252 Mem:229.89M (Peak 258.41M) | Time:00:03.02 | Compositing | Tile 25-28
+Fra:1252 Mem:229.83M (Peak 258.41M) | Time:00:03.02 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S26/f01252.png'
+Time: 00:03.19 (Saving: 00:00.16)
+
+FRAME 1 211.9
+SHOT_DONE 26
+
+Blender quit
