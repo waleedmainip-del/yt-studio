@@ -1,0 +1,60 @@
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.848
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.849
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.850
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.851
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.110
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.111
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.112
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.852
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.853
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.854
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.855
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.856
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.857
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.858
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.113
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.114
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.115
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing c.116
+Fra:1098 Mem:179.86M (Peak 229.75M) | Time:00:00.05 | Syncing p.859
+Fra:1098 Mem:179.85M (Peak 229.75M) | Time:00:00.07 | Rendering 1 / 4 samples
+Fra:1098 Mem:179.85M (Peak 229.75M) | Time:00:01.81 | Rendering 4 / 4 samples
+Fra:1098 Mem:178.31M (Peak 229.75M) | Time:00:02.45 | Compositing
+Fra:1098 Mem:178.31M (Peak 229.75M) | Time:00:02.45 | Compositing | Determining resolution
+Fra:1098 Mem:178.31M (Peak 229.75M) | Time:00:02.45 | Compositing | Initializing execution
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.45 | Compositing | Tile 1-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.45 | Compositing | Tile 2-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.45 | Compositing | Tile 3-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.45 | Compositing | Tile 4-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.45 | Compositing | Tile 5-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.45 | Compositing | Tile 6-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 7-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 8-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 9-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 10-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 11-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 12-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 13-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 14-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 15-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 16-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 17-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 18-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 19-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 20-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 21-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 22-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 23-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 24-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 25-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 26-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 27-28
+Fra:1098 Mem:201.24M (Peak 229.75M) | Time:00:02.46 | Compositing | Tile 28-28
+Fra:1098 Mem:201.17M (Peak 229.75M) | Time:00:02.46 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S22/f01098.png'
+Time: 00:02.63 (Saving: 00:00.16)
+
+FRAME 1 144.2
+SHOT_DONE 22
+
+Blender quit
