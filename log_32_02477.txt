@@ -1,0 +1,60 @@
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing p.1362
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing p.1363
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing p.1364
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing p.1365
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing p.1366
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing c.182
+Fra:2519 Mem:308.92M (Peak 380.28M) | Time:00:00.09 | Syncing p.1367
+Fra:2519 Mem:308.91M (Peak 380.28M) | Time:00:00.13 | Rendering 1 / 8 samples
+Fra:2519 Mem:308.91M (Peak 380.28M) | Time:00:17.89 | Rendering 8 / 8 samples
+Fra:2519 Mem:306.97M (Peak 380.28M) | Time:00:20.64 | Compositing
+Fra:2519 Mem:306.97M (Peak 380.28M) | Time:00:20.64 | Compositing | Determining resolution
+Fra:2519 Mem:306.97M (Peak 380.28M) | Time:00:20.64 | Compositing | Initializing execution
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.64 | Compositing | Tile 1-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.64 | Compositing | Tile 2-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.64 | Compositing | Tile 3-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.65 | Compositing | Tile 4-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.65 | Compositing | Tile 5-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.66 | Compositing | Tile 6-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.66 | Compositing | Tile 7-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.66 | Compositing | Tile 8-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.66 | Compositing | Tile 9-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.67 | Compositing | Tile 10-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.67 | Compositing | Tile 11-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.67 | Compositing | Tile 12-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.67 | Compositing | Tile 13-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.67 | Compositing | Tile 14-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.68 | Compositing | Tile 15-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.68 | Compositing | Tile 16-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.68 | Compositing | Tile 17-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.68 | Compositing | Tile 18-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.68 | Compositing | Tile 19-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.68 | Compositing | Tile 20-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 21-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 22-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 23-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 24-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 25-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 26-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.69 | Compositing | Tile 27-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 28-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 29-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 30-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 31-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 32-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 33-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.70 | Compositing | Tile 34-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.71 | Compositing | Tile 35-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.71 | Compositing | Tile 36-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.71 | Compositing | Tile 37-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.71 | Compositing | Tile 38-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.71 | Compositing | Tile 39-40
+Fra:2519 Mem:338.68M (Peak 380.28M) | Time:00:20.71 | Compositing | Tile 40-40
+Fra:2519 Mem:338.62M (Peak 380.28M) | Time:00:20.71 | Compositing | De-initializing execution
+Saved: '/home/runner/work/yt-studio/yt-studio/lh/render/frames/S32/f02519.png'
+Time: 00:21.19 (Saving: 00:00.48)
+
+FRAME 1 911.9
+SHOT_DONE 32
+
+Blender quit
