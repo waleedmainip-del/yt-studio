@@ -1,0 +1,60 @@
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing t.012
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing e.060
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing p.536
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing t.013
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing e.061
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing p.537
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.09 | Syncing t.014
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:00.13 | Rendering 1 / 8 samples
+Fra:1265 Mem:149.95M (Peak 222.01M) | Time:00:13.95 | Rendering 8 / 8 samples
+Fra:1265 Mem:148.70M (Peak 222.01M) | Time:00:16.13 | Compositing
+Fra:1265 Mem:148.70M (Peak 222.01M) | Time:00:16.13 | Compositing | Determining resolution
+Fra:1265 Mem:148.70M (Peak 222.01M) | Time:00:16.13 | Compositing | Initializing execution
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.14 | Compositing | Tile 1-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.14 | Compositing | Tile 2-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.14 | Compositing | Tile 3-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.14 | Compositing | Tile 4-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.14 | Compositing | Tile 5-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.14 | Compositing | Tile 6-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 7-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 8-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 9-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 10-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 11-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 12-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.15 | Compositing | Tile 13-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 14-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 15-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 16-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 17-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 18-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 19-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 20-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.16 | Compositing | Tile 21-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 22-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 23-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 24-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 25-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 26-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 27-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 28-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 29-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.17 | Compositing | Tile 30-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 31-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 32-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 33-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 34-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 35-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 36-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 37-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.18 | Compositing | Tile 38-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.19 | Compositing | Tile 39-40
+Fra:1265 Mem:180.41M (Peak 222.01M) | Time:00:16.19 | Compositing | Tile 40-40
+Fra:1265 Mem:180.35M (Peak 222.01M) | Time:00:16.19 | Compositing | De-initializing execution
+Saved: '/home/runner/work/yt-studio/yt-studio/bd/render/frames/S16/f01265.png'
+Time: 00:16.60 (Saving: 00:00.41)
+
+FRAME 1 614.7
+SHOT_DONE 16
+
+Blender quit
