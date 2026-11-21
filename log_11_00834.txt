@@ -1,0 +1,60 @@
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing p.1982
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing c.307
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing e.175
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing e.176
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing c.308
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing c.309
+Fra:866 Mem:384.66M (Peak 455.70M) | Time:00:00.21 | Syncing c.310
+Fra:866 Mem:384.65M (Peak 455.70M) | Time:00:00.25 | Rendering 1 / 8 samples
+Fra:866 Mem:384.61M (Peak 455.70M) | Time:00:15.92 | Rendering 8 / 8 samples
+Fra:866 Mem:382.30M (Peak 455.70M) | Time:00:18.13 | Compositing
+Fra:866 Mem:382.30M (Peak 455.70M) | Time:00:18.13 | Compositing | Determining resolution
+Fra:866 Mem:382.30M (Peak 455.70M) | Time:00:18.13 | Compositing | Initializing execution
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.13 | Compositing | Tile 1-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.13 | Compositing | Tile 2-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.13 | Compositing | Tile 3-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.13 | Compositing | Tile 4-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 5-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 6-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 7-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 8-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 9-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 10-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.14 | Compositing | Tile 11-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.15 | Compositing | Tile 12-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.15 | Compositing | Tile 13-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.15 | Compositing | Tile 14-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.15 | Compositing | Tile 15-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 16-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 17-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 18-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 19-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 20-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 21-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.16 | Compositing | Tile 22-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 23-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 24-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 25-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 26-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 27-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 28-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.17 | Compositing | Tile 29-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 30-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 31-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 32-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 33-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 34-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 35-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 36-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.18 | Compositing | Tile 37-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.19 | Compositing | Tile 38-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.19 | Compositing | Tile 39-40
+Fra:866 Mem:414.01M (Peak 455.70M) | Time:00:18.19 | Compositing | Tile 40-40
+Fra:866 Mem:413.95M (Peak 455.70M) | Time:00:18.19 | Compositing | De-initializing execution
+Saved: '/home/runner/work/yt-studio/yt-studio/lh/render/frames/S11/f00866.png'
+Time: 00:18.67 (Saving: 00:00.47)
+
+FRAME 1 615.4
+SHOT_DONE 11
+
+Blender quit
