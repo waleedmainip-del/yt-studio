@@ -1,0 +1,60 @@
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.034
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.035
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.036
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.037
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.038
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.039
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.040
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.041
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.042
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.043
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.044
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.045
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.046
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.047
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.048
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.049
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.004
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.005
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.050
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.051
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.052
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.053
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.006
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.054
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.055
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.056
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.057
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.058
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.059
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.060
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.061
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.062
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.007
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.008
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.009
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.063
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.064
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.065
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.066
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.067
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.068
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.069
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.010
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.011
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.012
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.013
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.070
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing e.007
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing c.014
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.071
+Fra:603 Mem:62.43M (Peak 103.21M) | Time:00:00.07 | Syncing p.072
+Fra:603 Mem:62.42M (Peak 103.21M) | Time:00:00.10 | Rendering 1 / 6 samples
+Fra:603 Mem:62.42M (Peak 103.21M) | Time:00:06.50 | Rendering 6 / 6 samples
+Saved: '/home/claude/lahore/frames/S09/f00603.png'
+Time: 00:08.25 (Saving: 00:00.34)
+
+FRAME 1 384.1
+SHOT_DONE 9
+
+Blender quit
