@@ -1,0 +1,63 @@
+[
+{
+"t": 1.0,
+"a": "waleed",
+"b": "STATIC",
+"n": 1214,
+"objs": [
+"p.233",
+"yard.011",
+"yard.013"
+]
+},
+{
+"t": 1.0,
+"a": "waleed",
+"b": "dadi",
+"n": 90
+},
+{
+"t": 1.0,
+"a": "ammi",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"yard"
+]
+},
+{
+"t": 1.0,
+"a": "dadi",
+"b": "STATIC",
+"n": 20,
+"objs": [
+"yard"
+]
+},
+{
+"t": 0.4,
+"a": "waleed",
+"b": "STATIC",
+"n": 1219,
+"objs": [
+"p.233",
+"yard.011",
+"yard.013"
+]
+},
+{
+"t": 0.4,
+"a": "waleed",
+"b": "dadi",
+"n": 90
+},
+{
+"t": 0.4,
+"a": "dadi",
+"b": "STATIC",
+"n": 76,
+"objs": [
+"yard"
+]
+}
+]
