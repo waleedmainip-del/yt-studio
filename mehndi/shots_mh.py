@@ -261,7 +261,7 @@ def SH_S(view):
                 crowd_upd(t,'wild'); dance(DA,t,'dadi'); face(DA,mouth='grin',eyes=.8,brow=.08); face(W,mouth='O',brow=.14,eyes=1.3)
                 [look_at(H,headpos(DA),.6) for H in (W,BL,SH,CH)]; q=ease(t/DUR); cf(DA,d=L(3.0,2.4,q),lat=.6,dz=.35,lens=30)
             elif view=='W_crowd':
-                crowd_upd(t,'wild'); dance(DA,t,'dadi'); dance(CH,t,'cheer'); face(W,mouth='flat',eyes=.8,brow=-.02); q=ease(t/DUR); camset((L(1.5,-1.5,q),.8,3.2),(L(5.5,-5.5,q),-5.0,1.3),22,8.0)
+                crowd_upd(t,'wild'); dance(DA,t,'dadi'); dance(CH,t,'cheer'); face(W,mouth='flat',eyes=.8,brow=-.02); q=ease(t/DUR); camset((L(1.6,2.4,q),.6,2.6),(5.0,-4.4,1.3),26,8.0)
             elif view=='W_seven':
                 crowd_upd(t); dance(DA,t,'dadi'); W['root'].rotation_euler[2]=R(-25); talk(W,t,266,271,KEY,rest='frown',rate=5); face(W,brow=.06,brow_r=-18,eyes=.8); W['head'].rotation_euler[0]=R(14)
                 handsdown(W); cf(W,d=2.0,lat=.4,lens=30)
