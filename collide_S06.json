@@ -1,0 +1,29 @@
+[
+{
+"t": 1.0,
+"a": "waleed",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"back"
+]
+},
+{
+"t": 1.0,
+"a": "bilal",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"back"
+]
+},
+{
+"t": 1.0,
+"a": "sherry",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"back"
+]
+}
+]
