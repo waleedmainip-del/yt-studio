@@ -232,34 +232,34 @@ def marigold(a,b,n,seed=0):
 def hanging_strand(x,y,z,l,seed=0):
     r=random.Random(seed)
     for k in range(int(l/.13)): B.cyl((x,y,z-k*.13),.06,.11,M(r.choice(('#F28C18','#F2B705','#E86A10','#C9302C')),.85,kind='fabric'),rot=(0,0,0),seg=8)
-def chair_plastic(x,y,rz,col='#C9302C'):
+def chair_plastic(x,y,rz,col='#C9302C',k=1.6):
     e=empty((x,y,0),rot=(0,0,R(rz))); m=M(col,.4)
-    obox((0,0,.44),(.23,.22,.03),m,.02,e); obox((0,.2,.72),(.23,.03,.26),m,.03,e,rot=(R(-8),0,0))
+    obox((0,0,.43),(.23*k,.22*k,.03),m,.02,e); obox((0,.24*k,.72),(.23*k,.03,.28),m,.03,e,rot=(R(-8),0,0))
     for sx in (-1,1):
-        for sy in (-1,1): obox((sx*.19,sy*.18,.22),(.025,.025,.22),m,.01,e)
+        for sy in (-1,1): obox((sx*.19*k,sy*.18*k,.21),(.025,.025,.21),m,.01,e)
     return e
 def sofa_chair(x,y,rz,col='#F4EEDD',trim='#C9A24A'):
     e=empty((x,y,0),rot=(0,0,R(rz)))
-    obox((0,0,.22),(.36,.33,.2),M(col,.7,kind='fabric'),.05,e); obox((0,.3,.7),(.36,.06,.38),M(col,.7,kind='fabric'),.06,e)
-    for sx in (-1,1): obox((sx*.36,0,.5),(.05,.33,.12),M(trim,.35,metal=.6),.02,e)
+    obox((0,0,.21),(.55,.38,.2),M(col,.7,kind='fabric'),.05,e); obox((0,.44,.72),(.6,.07,.42),M(col,.7,kind='fabric'),.06,e)
+    obox((0,.44,1.15),(.62,.08,.05),M(trim,.35,metal=.6),.02,e)
     return e
 def mehndi_venue(seed=11):
     """night lawn. stage x -4.5..4.5, y 2..6.2, top z=.6. front row sofa chairs at y=-.6 facing +y. DJ booth at (6.3,2.6). lawn extends y -14..9"""
     r=random.Random(seed)
-    B.box((0,-3,-.05),(22,16,.05),M('#3E6A2E',.95,kind='grass',sc=.6),0)
+    B.box((0,-3,-.05),(24,16,.05),M('#3E6A2E',.95,kind='grass',sc=.6),0)
     B.box((0,-3,.006),(1.1,12,.006),M('#9E1B2E',.9,kind='fabric'),0)
     for s in (-1,1): B.box((s*1.12,-3,.012),(.05,12,.006),M('#E8C25A',.5),0)
     # stage
-    STG=M('#7A1E2E',.8,kind='fabric'); B.box((0,4.1,.3),(4.6,2.1,.3),STG,.02); B.box((0,1.98,.3),(4.6,.02,.3),M('#E8C25A',.4,metal=.6),0)
+    STG=M('#7A1E2E',.8,kind='fabric'); B.box((0,4.1,.3),(6.6,2.1,.3),STG,.02); B.box((0,1.98,.3),(6.6,.02,.3),M('#E8C25A',.4,metal=.6),0)
     for k in range(3): B.box((0,1.75-k*.25,.1+k*.0),(1.0,.13,.1+.1*(2-k)),M('#5A1420',.8,kind='fabric'),.01) if False else None
     B.box((0,1.85,.4),(1.0,.14,.2),M('#5A1420',.8,kind='fabric'),.01); B.box((0,1.6,.2),(1.0,.14,.2),M('#5A1420',.8,kind='fabric'),.01)
-    B.box((0,4.1,.605),(4.4,1.95,.005),M('#F4EEDD',.85,kind='fabric'),0)
-    for x in range(-4,5,2): B.box((x+.5,4.1,.612),(.5,1.9,.004),M('#E8C25A',.85,kind='fabric'),0)
+    B.box((0,4.1,.605),(6.4,1.95,.005),M('#F4EEDD',.85,kind='fabric'),0)
+    for x in range(-6,7,2): B.box((x+.5,4.1,.612),(.5,1.9,.004),M('#E8C25A',.85,kind='fabric'),0)
     # backdrop drapes
     cols=('#F2B705','#E86A10','#C9302C','#2E8B57','#F2B705','#E86A10','#D63384')
-    for k in range(19): x=-4.5+k*.5; B.box((x,6.25,2.4),(.24,.06+.04*(k%2),2.0),M(cols[k%len(cols)],.85,kind='fabric'),.05)
-    B.box((0,6.35,4.5),(4.8,.1,.15),M('#C9A24A',.3,metal=.7),.02)
-    for k in range(12): hanging_strand(-4.4+k*.8,6.1,4.3,1.6+.6*(k%3),seed+k)
+    for k in range(27): x=-6.5+k*.5; B.box((x,6.25,2.4),(.24,.06+.04*(k%2),2.0),M(cols[k%len(cols)],.85,kind='fabric'),.05)
+    B.box((0,6.35,4.5),(6.8,.1,.15),M('#C9A24A',.3,metal=.7),.02)
+    for k in range(16): hanging_strand(-6.2+k*.82,6.1,4.3,1.6+.6*(k%3),seed+k)
     # round frame with title
     B.cyl((0,6.12,3.0),1.25,.08,M('#C9A24A',.3,metal=.75),rot=(R(90),0,0),seg=40); B.cyl((0,6.08,3.0),1.12,.06,M('#5A1420',.7,kind='fabric'),rot=(R(90),0,0),seg=40)
     for k in range(24): a=k/24*2*math.pi; B.cyl((1.2*math.cos(a),6.02,3.0+1.2*math.sin(a)),.07,.1,M(('#F28C18','#F2B705')[k%2],.85),rot=(R(90),0,0),seg=8)
@@ -271,81 +271,81 @@ def mehndi_venue(seed=11):
         B.cyl((s*1.35,5.4,2.6),.04,4.0,M('#C9A24A',.35,metal=.7),seg=8)
         for k in range(6): B.cyl((s*1.35,5.4,1.0+k*.6),.09,.12,M('#F2B705',.85),rot=(0,0,0),seg=8)
     # dhol + mehndi thaal on stage
-    B.cyl((3.5,5.2,.85),.25,.55,M('#8A2A1E',.5,kind='wood'),rot=(0,R(90),0),seg=18)
-    for s in (-1,1): B.cyl((3.5+s*.28,5.2,.85),.26,.03,M('#E8D8B0',.6),rot=(0,R(90),0),seg=18)
-    B.cyl((-3.4,5.3,.66),.35,.04,M('#C9A24A',.3,metal=.8),rot=(0,0,0),seg=24)
-    for k in range(6): a=k/6*2*math.pi; B.cyl((-3.4+.22*math.cos(a),5.3+.22*math.sin(a),.75),.04,.12,M('#F4EEDD',.4,emit=2.0),rot=(0,0,0),seg=8)
+    B.cyl((5.2,5.4,.85),.25,.55,M('#8A2A1E',.5,kind='wood'),rot=(0,R(90),0),seg=18)
+    for s in (-1,1): B.cyl((5.2+s*.28,5.4,.85),.26,.03,M('#E8D8B0',.6),rot=(0,R(90),0),seg=18)
+    B.cyl((-5.2,5.4,.66),.35,.04,M('#C9A24A',.3,metal=.8),rot=(0,0,0),seg=24)
+    for k in range(6): a=k/6*2*math.pi; B.cyl((-5.2+.22*math.cos(a),5.4+.22*math.sin(a),.75),.04,.12,M('#F4EEDD',.4,emit=2.0),rot=(0,0,0),seg=8)
     # pillars + uplights
     for s in (-1,1):
         for y in (2.1,6.1):
-            B.cyl((s*4.5,y,2.6),.12,5.2,M('#F4EEDD',.6),seg=12)
-            for k in range(14): B.cyl((s*4.5,y-.13,.4+k*.33),.06,.08,M(('#F28C18','#F2B705')[k%2],.85),rot=(0,0,0),seg=8)
+            B.cyl((s*6.5,y,2.6),.12,5.2,M('#F4EEDD',.6),seg=12)
+            for k in range(14): B.cyl((s*6.5,y-.13,.4+k*.33),.06,.08,M(('#F28C18','#F2B705')[k%2],.85),rot=(0,0,0),seg=8)
     # light canopy over lawn
     for k in range(9):
-        y=6.0-k*2.0; bulbs((-9,y,5.2),(9,y,5.2),40,.8,('#FFE9A8','#FFD34D','#FFF2D8'),seed+k)
-    for x in (-9,-4.5,0,4.5,9): bulbs((x,6.2,5.4),(x,-12,5.4),44,.6,('#FFE9A8','#FF9F43'),seed+50+int(x))
+        y=6.0-k*2.0; bulbs((-11,y,5.4),(11,y,5.4),40,.8,('#FFE9A8','#FFD34D','#FFF2D8'),seed+k)
+    for x in (-11,-5.5,0,5.5,11): bulbs((x,6.2,5.6),(x,-12,5.6),44,.6,('#FFE9A8','#FF9F43'),seed+50+int(x))
     for k in range(10): marigold((-4.5+k*.0,2.05,4.9) if False else (-4.5,2.05,5.0),(4.5,2.05,5.0),30,seed+77) if k==0 else None
     # DJ booth stage-right
-    B.box((6.3,2.6,.5),(.9,.45,.5),M('#1E1E24',.4),.03); B.box((6.3,2.15,.55),(.88,.01,.42),M('#2B2C33',.3,metal=.5),0)
-    sign('DJ ZAIN',(6.3,2.13,.6),(0,-1,0),1.4,.4,fg='#7FD3FF',emit=2.0)
-    B.box((6.3,2.7,1.02),(.5,.25,.03),M('#2B2C33',.3,metal=.6),.01)
-    for s in (-1,1): B.cyl((6.3+s*.25,2.7,1.06),.1,.02,M('#111216',.3,metal=.6),rot=(0,0,0),seg=18)
-    B.box((6.3,2.85,1.2),(.14,.01,.1),M('#9FD8FF',.3,emit=1.5),0,rot=(R(-15),0,0))
-    for x in (5.2,7.4):
+    B.box((8.6,2.6,.5),(.9,.45,.5),M('#1E1E24',.4),.03); B.box((8.6,2.15,.55),(.88,.01,.42),M('#2B2C33',.3,metal=.5),0)
+    sign('DJ ZAIN',(8.6,2.13,.6),(0,-1,0),1.4,.4,fg='#7FD3FF',emit=2.0)
+    B.box((8.6,2.7,1.02),(.5,.25,.03),M('#2B2C33',.3,metal=.6),.01)
+    for s in (-1,1): B.cyl((8.6+s*.25,2.7,1.06),.1,.02,M('#111216',.3,metal=.6),rot=(0,0,0),seg=18)
+    B.box((8.6,2.75,1.12),(.14,.01,.08),M('#9FD8FF',.3,emit=1.5),0,rot=(R(-15),0,0))
+    for x in (7.5,9.7):
         B.box((x,2.9,.75),(.35,.35,.75),M('#141418',.5),.02)
         for z in (.45,1.05): B.cyl((x,2.54,z),.22,.03,M('#2B2C33',.6),rot=(R(90),0,0),seg=18); B.cyl((x,2.52,z),.08,.03,M('#5A5F66',.4,metal=.5),rot=(R(90),0,0),seg=12)
-    for x in (5.0,7.6): B.cyl((x,3.4,1.5),.04,3.0,M('#2B2C33',.4,metal=.6),seg=8); B.box((x,3.4,3.1),(.12,.12,.15),M('#2B2C33',.4),.02); B.cyl((x,3.28,3.05),.08,.05,M('#C59BFF',.3,emit=6.0),rot=(R(90),0,0),seg=10)
+    for x in (7.3,9.9): B.cyl((x,3.4,1.5),.04,3.0,M('#2B2C33',.4,metal=.6),seg=8); B.box((x,3.4,3.1),(.12,.12,.15),M('#2B2C33',.4),.02); B.cyl((x,3.28,3.05),.08,.05,M('#C59BFF',.3,emit=6.0),rot=(R(90),0,0),seg=10)
     # front row sofa chairs + rows of plastic chairs
-    for x in (-3.0,-2.0,-1.0,1.0,2.0,3.0): sofa_chair(x,-.8,180,('#F4EEDD','#E8C25A','#F4EEDD')[int(x)%3])
-    for row,y in enumerate((-2.6,-3.8,-5.0)):
-        for x in (-4.2,-3.4,-2.6,-1.8,1.8,2.6,3.4,4.2): chair_plastic(x+r.uniform(-.05,.05),y,180+r.uniform(-8,8),('#C9302C','#F4F1EA','#2E6E9E')[row])
+    for x in (-5.2,-3.2,3.2,5.2): sofa_chair(x,-1.0,180,'#F4EEDD' if x<0 else '#E8C25A')
+    for row,y in enumerate((-3.3,-5.5,-7.7)):
+        for x in (-7,-5,-3,3,5,7): chair_plastic(x+r.uniform(-.05,.05),y,180+r.uniform(-8,8),('#C9302C','#F4F1EA','#2E6E9E')[row])
     # round tables at sides
-    for (x,y) in ((-8,-2),(-8,-6),(8,-2),(8,-6),(-7.5,2),(9,1)):
+    for (x,y) in ((-11,-3),(-11,-8),(11,-3),(11,-8)):
         B.cyl((x,y,.38),.7,.76,M('#F4F1EA',.6,kind='fabric'),rot=(0,0,0),seg=24); B.cyl((x,y,.78),.72,.02,M('#E8C25A',.5,kind='fabric'),rot=(0,0,0),seg=24)
         B.cyl((x,y,.86),.12,.14,M('#F28C18',.8),rot=(0,0,0),seg=12)
-        for k in range(5): a=k/5*2*math.pi; chair_plastic(x+1.05*math.cos(a),y+1.05*math.sin(a),math.degrees(a)-90,'#F4F1EA')
+        for k in range(4): a=k/4*2*math.pi+.4; chair_plastic(x+1.3*math.cos(a),y+1.3*math.sin(a),math.degrees(a)-90,'#F4F1EA')
     # trees with lights around
-    for (x,y) in ((-12,-10),(-12,-3),(-12,4),(12,-10),(12,-3),(12,4),(-6,8.5),(6,8.5),(0,9.5)):
+    for (x,y) in ((-14,-10),(-14,-3),(-14,4),(14,-10),(14,-3),(14,4),(-8,8.5),(8,8.5),(0,9.5)):
         tree(x,y,0,1.3,r.randint(0,999))
         for k in range(5): bulbs((x-1,y-1,1.5+k*.6),(x+1,y+1,1.6+k*.6),10,.2,('#FFE9A8',),k)
     # back walls of the lawn (house + boundary) for depth
-    B.box((0,10.5,3.5),(16,.3,3.5),M('#E8D8C0',.9,kind='wall'),0)
+    B.box((0,10.5,3.5),(18,.3,3.5),M('#E8D8C0',.9,kind='wall'),0)
     for k in range(7): B.box((-12+k*4,10.18,4.2),(.7,.02,.6),M('#FFE6B8',.3,emit=1.8),0)
-    for x in (-16,16): B.box((x,-3,1.5),(.25,14,1.5),M('#D8C8B0',.9,kind='wall'),0)
-    B.box((0,-17,1.5),(16,.25,1.5),M('#D8C8B0',.9,kind='wall'),0)
+    for x in (-18,18): B.box((x,-3,1.5),(.25,14,1.5),M('#D8C8B0',.9,kind='wall'),0)
+    B.box((0,-17,1.5),(18,.25,1.5),M('#D8C8B0',.9,kind='wall'),0)
     B.done('venue')
 
 def backstage(seed=12):
     """shamiana tent room behind the stage: floor x -3..3, y -2.5..2.5. back panel y=2.5. opening at x=3 (right) showing venue lights"""
     r=random.Random(seed)
-    B.box((0,0,-.05),(3.4,2.9,.05),M('#9E1B2E',.9,kind='fabric'),0); B.box((0,0,.006),(2.6,2.0,.004),M('#C9A24A',.9,kind='fabric'),0)
-    for k in range(13):
-        x=-3+k*.5; B.box((x,2.55,1.4),(.25,.04,1.4),M(('#F4EEDD','#9E1B2E')[k%2],.9,kind='fabric'),0)
+    B.box((0,0,-.05),(4.4,2.9,.05),M('#9E1B2E',.9,kind='fabric'),0); B.box((0,0,.006),(3.4,2.0,.004),M('#C9A24A',.9,kind='fabric'),0)
+    for k in range(17):
+        x=-4+k*.5; B.box((x,2.55,1.4),(.25,.04,1.4),M(('#F4EEDD','#9E1B2E')[k%2],.9,kind='fabric'),0)
     for k in range(11):
-        y=-2.5+k*.5; B.box((-3.05,y,1.4),(.04,.25,1.4),M(('#F4EEDD','#9E1B2E')[k%2],.9,kind='fabric'),0)
-    for k in range(5): y=1.0+k*.36; B.box((3.05,y,1.4),(.04,.18,1.4),M(('#F4EEDD','#9E1B2E')[k%2],.9,kind='fabric'),0)
-    B.box((0,0,2.85),(3.4,2.9,.05),M('#F4EEDD',.9,kind='fabric'),0)
-    for k in range(6): B.box((0,-2.5+k*1.0,2.78),(3.0,.03,.03),M('#C9A24A',.4,metal=.6),0)
+        y=-2.5+k*.5; B.box((-4.05,y,1.4),(.04,.25,1.4),M(('#F4EEDD','#9E1B2E')[k%2],.9,kind='fabric'),0)
+    for k in range(5): y=1.0+k*.36; B.box((4.05,y,1.4),(.04,.18,1.4),M(('#F4EEDD','#9E1B2E')[k%2],.9,kind='fabric'),0)
+    B.box((0,0,3.0),(4.4,2.9,.05),M('#F4EEDD',.9,kind='fabric'),0)
+    for k in range(6): B.box((0,-2.5+k*1.0,2.93),(4.0,.03,.03),M('#C9A24A',.4,metal=.6),0)
     # tube light + fairy lights
     B.box((-1,2.48,2.4),(.6,.03,.03),M('#F4F8FF',.2,emit=6.0),0)
-    bulbs((-2.9,2.45,2.6),(2.9,2.45,2.6),26,.3,('#FFE9A8','#FFD34D'),seed)
+    bulbs((-3.9,2.45,2.7),(3.9,2.45,2.7),26,.3,('#FFE9A8','#FFD34D'),seed)
     # mirror on stand
-    B.box((-2.2,2.3,1.3),(.45,.03,.7),M('#C9A24A',.3,metal=.7),.02); B.box((-2.2,2.26,1.3),(.4,.01,.65),M('#C8D8E8',.02,metal=1.0,spec=1.0),0)
-    B.box((-2.2,2.3,.3),(.04,.04,.3),M('#3A3A40',.4),0)
+    B.box((-3.0,2.3,1.3),(.45,.03,.7),M('#C9A24A',.3,metal=.7),.02); B.box((-3.0,2.26,1.3),(.4,.01,.65),M('#C8D8E8',.02,metal=1.0,spec=1.0),0)
+    B.box((-3.0,2.3,.3),(.04,.04,.3),M('#3A3A40',.4),0)
     # clothes rack with kurtas
-    for s in (-1,1): B.cyl((-2.6,.4+s*.8,.9),.025,1.8,M('#8A8F99',.3,metal=.8),seg=8)
-    B.cyl((-2.6,.4,1.8),.025,1.6,M('#8A8F99',.3,metal=.8),rot=(R(90),0,0),seg=8)
-    for k,c in enumerate(('#F2C14E','#2E8B57','#E8742A','#F4F1EA','#D63384','#F2B705')): B.box((-2.6,-.2+k*.24,1.35),(.03,.1,.42),M(c,.85,kind='fabric'),.02)
+    for s in (-1,1): B.cyl((-3.6,.4+s*.8,.9),.025,1.8,M('#8A8F99',.3,metal=.8),seg=8)
+    B.cyl((-3.6,.4,1.8),.025,1.6,M('#8A8F99',.3,metal=.8),rot=(R(90),0,0),seg=8)
+    for k,c in enumerate(('#F2C14E','#2E8B57','#E8742A','#F4F1EA','#D63384','#F2B705')): B.box((-3.6,-.2+k*.24,1.35),(.03,.1,.42),M(c,.85,kind='fabric'),.02)
     # soft-drink crates + marigold baskets + plastic chairs
-    for k in range(3): B.box((2.3,-1.8+k*.0,.15+k*.3),(.3,.22,.14),M(('#C9302C','#2E6E9E','#C9302C')[k],.5),.02)
+    for k in range(3): B.box((3.3,-1.9,.15+k*.3),(.3,.22,.14),M(('#C9302C','#2E6E9E','#C9302C')[k],.5),.02)
     for k in range(6): B.cyl((2.15+k%3*.12,-1.8,1.0+(k//3)*0.0),.03,.16,M('#1E1E22',.2,alpha=.6),rot=(0,0,0),seg=8) if False else None
-    for (x,y) in ((1.0,2.0),(1.6,2.0)):
+    for (x,y) in ((1.6,2.0),(2.3,2.0)):
         B.cyl((x,y,.15),.22,.3,M('#8A6A3A',.8,kind='wood'),rot=(0,0,0),seg=14)
         for k in range(8): B.cyl((x+.12*math.cos(k),y+.12*math.sin(k),.33),.06,.08,M(('#F28C18','#F2B705')[k%2],.85),rot=(0,0,0),seg=8)
-    chairs=[chair_plastic(-1.2,1.6,15,'#F4F1EA'),chair_plastic(.9,-.2,30,'#C9302C'),chair_plastic(1.6,1.2,-20,'#F4F1EA')]
+    chairs=[chair_plastic(-1.5,1.7,15,'#F4F1EA'),chair_plastic(1.15,-.55,30,'#C9302C'),chair_plastic(2.8,1.3,-20,'#F4F1EA')]
     # glimpse of venue through opening
-    for k in range(20): B.cyl((6+r.uniform(0,6),r.uniform(-3,0),r.uniform(2,4.5)),.05,.07,M('#FFE9A8',.3,emit=5),rot=(0,0,0),seg=6)
-    B.box((9,-1,0),(4,4,.02),M('#2E4A24',.9),0)
+    for k in range(20): B.cyl((7+r.uniform(0,6),r.uniform(-3,0),r.uniform(2,4.5)),.05,.07,M('#FFE9A8',.3,emit=5),rot=(0,0,0),seg=6)
+    B.box((10,-1,0),(4,4,.02),M('#2E4A24',.9),0)
     B.done('back'); return chairs
 
 def courtyard(seed=13):
