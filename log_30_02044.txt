@@ -1,0 +1,60 @@
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2491
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2492
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2493
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2494
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2495
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2496
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2497
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.384
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.385
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2498
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2499
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.386
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.387
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2500
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2501
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2502
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2503
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2504
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2505
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2506
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2507
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2508
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2509
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2510
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2511
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2512
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2513
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2514
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2515
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2516
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2517
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2518
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2519
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.388
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.389
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2520
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2521
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2522
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2523
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.390
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2524
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2525
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2526
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2527
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.391
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2528
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2529
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing p.2530
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing c.392
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing i
+Fra:2088 Mem:393.44M (Peak 434.87M) | Time:00:00.08 | Syncing Point
+Fra:2088 Mem:393.43M (Peak 434.87M) | Time:00:00.11 | Rendering 1 / 4 samples
+Fra:2088 Mem:393.43M (Peak 434.87M) | Time:00:02.59 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S30/f02088.png'
+Time: 00:03.72 (Saving: 00:00.22)
+
+FRAME 1 171.3
+SHOT_DONE 30
+
+Blender quit

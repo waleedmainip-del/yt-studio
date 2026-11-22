@@ -1,0 +1,60 @@
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.108
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.109
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.716
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.717
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.110
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.111
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.718
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.719
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.720
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.721
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.722
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.723
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.724
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.725
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.726
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.727
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.728
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.729
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.730
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.731
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.732
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.733
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.734
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.735
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.736
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.737
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.112
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.113
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.738
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.739
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.740
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.741
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing c.114
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.742
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.743
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.744
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.745
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.746
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.747
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.748
+Fra:520 Mem:178.06M (Peak 220.55M) | Time:00:00.07 | Syncing p.749
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing p.750
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing c.115
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing c.116
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing c.117
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing p.751
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing i
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing i.001
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing i.002
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing i.003
+Fra:520 Mem:178.09M (Peak 220.55M) | Time:00:00.07 | Syncing i.004
+Fra:520 Mem:178.08M (Peak 220.55M) | Time:00:00.09 | Rendering 1 / 4 samples
+Fra:520 Mem:178.08M (Peak 220.55M) | Time:00:02.66 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S07/f00520.png'
+Time: 00:03.82 (Saving: 00:00.22)
+
+FRAME 1 216.5
+SHOT_DONE 7
+
+Blender quit
