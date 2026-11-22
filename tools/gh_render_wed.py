@@ -13,7 +13,7 @@ for shot, f0, f1 in pieces:
     st = dict(shot=nn, f0=f0, f1=f1, need=f1 - f0, have=len(have), rc=r.returncode, sec=round(time.time() - t0))
     if len(have) == f1 - f0:
         mp4 = out + '/piece_%s_%05d_%05d.mp4' % (nn, f0, f1)
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-framerate', '24', '-start_number', str(f0), '-i', RF + '/frames/S%s/f%%05d.png' % nn,
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-framerate', '30', '-start_number', str(f0), '-i', RF + '/frames/S%s/f%%05d.png' % nn,
                         '-frames:v', str(f1 - f0), '-c:v', 'libx264', '-crf', '10', '-preset', 'veryfast', '-pix_fmt', 'yuv420p', mp4], check=True)
         st['encoded'] = int(subprocess.check_output(['ffprobe', '-v', 'error', '-count_frames', '-select_streams', 'v:0', '-show_entries',
                                                      'stream=nb_read_frames', '-of', 'csv=p=0', mp4]).strip())

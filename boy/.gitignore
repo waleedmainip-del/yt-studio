@@ -1,0 +1,10 @@
+frames/
+stills/
+sheets/
+audio/raw.mp3
+audio/narr.wav
+audio/narr_nopause.wav
+audio/words_full.json
+audio/words_raw.json
+_hdr.py
+_body.py
