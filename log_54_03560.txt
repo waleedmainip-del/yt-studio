@@ -1,0 +1,60 @@
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing c.036
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing c.037
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.259
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.260
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.261
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.262
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.263
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.264
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.265
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.266
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.267
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.268
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.269
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.270
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.271
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.272
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.273
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.274
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.275
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.276
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.277
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing c.038
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing c.039
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.278
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.279
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.280
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.281
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing c.040
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.282
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.283
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.284
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing e.026
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.285
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.286
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.287
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing e.027
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.288
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.289
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.290
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing e.028
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.291
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.292
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.293
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.294
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing e.029
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.295
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.296
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing e.030
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.297
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.298
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.08 | Syncing p.299
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:00.10 | Rendering 1 / 5 samples
+Fra:3608 Mem:96.58M (Peak 139.34M) | Time:00:03.88 | Rendering 5 / 5 samples
+Saved: '/home/claude/rishta/frames/S54/f03608.png'
+Time: 00:05.17 (Saving: 00:00.28)
+
+FRAME 1 251.3
+SHOT_DONE 54
+
+Blender quit
