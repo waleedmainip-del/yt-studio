@@ -1,0 +1,60 @@
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.389
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.390
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.391
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.392
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.393
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.394
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.395
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.396
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.397
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing c.082
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing c.083
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.398
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.399
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.400
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.401
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing c.084
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.402
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.403
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.04 | Syncing p.404
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:00.06 | Rendering 1 / 4 samples
+Fra:52 Mem:126.64M (Peak 176.85M) | Time:00:01.45 | Rendering 4 / 4 samples
+Fra:52 Mem:125.41M (Peak 176.85M) | Time:00:01.98 | Compositing
+Fra:52 Mem:125.41M (Peak 176.85M) | Time:00:01.98 | Compositing | Determining resolution
+Fra:52 Mem:125.41M (Peak 176.85M) | Time:00:01.98 | Compositing | Initializing execution
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 1-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 2-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 4-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 3-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 5-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 6-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 7-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 8-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 9-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 10-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.98 | Compositing | Tile 11-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 12-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 13-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 14-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 15-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 16-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 17-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 18-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 19-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 20-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 21-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 22-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 23-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 24-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 25-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 26-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 27-28
+Fra:52 Mem:148.33M (Peak 176.85M) | Time:00:01.99 | Compositing | Tile 28-28
+Fra:52 Mem:148.27M (Peak 176.85M) | Time:00:01.99 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S01/f00052.png'
+Time: 00:02.16 (Saving: 00:00.16)
+
+FRAME 1 114.2
+SHOT_DONE 1
+
+Blender quit
