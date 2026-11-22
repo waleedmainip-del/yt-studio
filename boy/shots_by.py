@@ -183,7 +183,7 @@ def SH_A(view):
             c=Vector(ph.location)+Vector((.3,-.2,.28)); _camset(tuple(c),tuple(ph.location),30,1.5,focus=tuple(ph.location))
         elif view=='ammi':
             dr.update(edge); talk(am,t,27,33,KEY,rest='shout',shapes=('shout','O','shout','O')); face(am,brow=-.06,brow_r=22,eyes=1.25)
-            camset((L(.4,.6,q),L(.2,0,q),2.0),(2.0,-1.9,1.7),26,4,focus=ha)
+            camset((L(-.3,-.1,q),L(.7,.5,q),2.05),(2.0,-1.9,1.6),22,4,focus=ha)
         elif view=='five':
             dr.update(edge); mumble(w,t,34,37,KEY); face(w,eyes=.0,brow=.02); w['head'].rotation_euler[2]=R(-15)
             cam_lying(hw,1.0)
