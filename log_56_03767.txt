@@ -1,0 +1,60 @@
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1877
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1878
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1879
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1880
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1881
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1882
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1883
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1884
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1885
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.292
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.293
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1886
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1887
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1888
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1889
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.294
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1890
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1891
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1892
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1893
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1894
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1895
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1896
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1897
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1898
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.295
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.296
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.297
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1899
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1900
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1901
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1902
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1903
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1904
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1905
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.298
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.299
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.300
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing c.301
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1906
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing e.163
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1907
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1908
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1909
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1910
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing p.1911
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing i.018
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing i.019
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing i.020
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing i.021
+Fra:3831 Mem:322.56M (Peak 364.26M) | Time:00:00.10 | Syncing i.022
+Fra:3831 Mem:322.55M (Peak 364.26M) | Time:00:00.13 | Rendering 1 / 4 samples
+Fra:3831 Mem:322.55M (Peak 364.26M) | Time:00:02.82 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S56/f03831.png'
+Time: 00:04.02 (Saving: 00:00.23)
+
+FRAME 1 261.7
+SHOT_DONE 56
+
+Blender quit

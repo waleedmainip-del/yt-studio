@@ -1,0 +1,60 @@
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2154
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2155
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2156
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2157
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2158
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.341
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.342
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2159
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2160
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.343
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.344
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2161
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2162
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2163
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2164
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2165
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2166
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2167
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2168
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2169
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2170
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2171
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2172
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2173
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2174
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2175
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2176
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2177
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2178
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2179
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2180
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.345
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.346
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2181
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2182
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2183
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2184
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.347
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2185
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2186
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2187
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2188
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.348
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2189
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2190
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2191
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2192
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing p.2193
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing c.349
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing i.018
+Fra:5568 Mem:358.21M (Peak 399.70M) | Time:00:00.08 | Syncing Point
+Fra:5568 Mem:358.20M (Peak 399.70M) | Time:00:00.10 | Rendering 1 / 4 samples
+Fra:5568 Mem:358.20M (Peak 399.70M) | Time:00:02.89 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S86/f05568.png'
+Time: 00:04.11 (Saving: 00:00.21)
+
+FRAME 1 323.4
+SHOT_DONE 86
+
+Blender quit
