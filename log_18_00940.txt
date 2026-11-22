@@ -1,0 +1,60 @@
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing p.261
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing p.262
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing p.263
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.019
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.032
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.033
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.034
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.035
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.036
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.020
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.037
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.038
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.039
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.021
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.040
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.041
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.042
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.043
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.022
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.044
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.045
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.046
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.047
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.048
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.023
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.049
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.001
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.002
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.003
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.004
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.005
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.006
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.007
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.008
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.024
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.050
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.051
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.052
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.053
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing e.025
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing c.054
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.009
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.010
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.011
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.012
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.013
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.014
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.015
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.016
+Fra:966 Mem:88.94M (Peak 131.73M) | Time:00:00.06 | Syncing i.017
+Fra:966 Mem:88.93M (Peak 131.73M) | Time:00:00.08 | Rendering 1 / 8 samples
+Fra:966 Mem:88.93M (Peak 131.73M) | Time:00:06.44 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/pw/render/frames/S18/f00966.png'
+Time: 00:07.64 (Saving: 00:00.22)
+
+FRAME 1 217.5
+SHOT_DONE 18
+
+Blender quit
