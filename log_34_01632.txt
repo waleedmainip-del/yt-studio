@@ -1,0 +1,60 @@
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1101
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing c.143
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1102
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1103
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1104
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1105
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1106
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1107
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1108
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1109
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1110
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing c.144
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing c.145
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing c.146
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing e.099
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1111
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1112
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1113
+Fra:1682 Mem:218.66M (Peak 268.49M) | Time:00:00.04 | Syncing p.1114
+Fra:1682 Mem:218.65M (Peak 268.49M) | Time:00:00.07 | Rendering 1 / 4 samples
+Fra:1682 Mem:218.65M (Peak 268.49M) | Time:00:01.93 | Rendering 4 / 4 samples
+Fra:1682 Mem:217.05M (Peak 268.49M) | Time:00:02.61 | Compositing
+Fra:1682 Mem:217.05M (Peak 268.49M) | Time:00:02.61 | Compositing | Determining resolution
+Fra:1682 Mem:217.05M (Peak 268.49M) | Time:00:02.61 | Compositing | Initializing execution
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 1-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 2-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 3-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 4-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 5-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 6-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 7-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 8-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.61 | Compositing | Tile 9-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 10-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 11-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 12-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 13-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 14-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 15-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 16-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 17-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 18-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 19-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 20-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 21-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 22-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 23-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 24-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 25-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 26-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 27-28
+Fra:1682 Mem:239.97M (Peak 268.49M) | Time:00:02.62 | Compositing | Tile 28-28
+Fra:1682 Mem:239.91M (Peak 268.49M) | Time:00:02.62 | Compositing | De-initializing execution
+Saved: '/home/claude/fsd/frames/S34/f01682.png'
+Time: 00:02.80 (Saving: 00:00.17)
+
+FRAME 1 145.7
+SHOT_DONE 34
+
+Blender quit
