@@ -1,0 +1,60 @@
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.026
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.027
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.028
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing e.006
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.029
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.030
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.031
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.032
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.033
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.034
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.035
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.036
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c.001
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.037
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.038
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c.002
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c.003
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.039
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.040
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.041
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.042
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.043
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.044
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.045
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.046
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.047
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.048
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.049
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.050
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.051
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.052
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.053
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.054
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.055
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.056
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.057
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c.004
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c.005
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.058
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.059
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.060
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.061
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing c.006
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.062
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.063
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.064
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.065
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.066
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.067
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.05 | Syncing p.068
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:00.08 | Rendering 1 / 5 samples
+Fra:3511 Mem:57.79M (Peak 100.71M) | Time:00:03.12 | Rendering 5 / 5 samples
+Saved: '/home/claude/rishta/frames/S53/f03511.png'
+Time: 00:04.16 (Saving: 00:00.20)
+
+FRAME 1 167.3
+SHOT_DONE 53
+
+Blender quit
