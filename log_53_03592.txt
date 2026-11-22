@@ -1,0 +1,60 @@
+Fra:3612 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e.001
+Fra:3612 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t
+Fra:3612 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t.001
+Fra:3612 Mem:44.25M (Peak 87.22M) | Time:00:00.07 | Rendering 1 / 8 samples
+Fra:3612 Mem:44.25M (Peak 87.22M) | Time:00:01.24 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ll/render/frames/S53/f03612.png'
+Time: 00:01.67 (Saving: 00:00.19)
+
+FRAME 3613 35.7
+Fra:3613 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing cam
+Fra:3613 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e
+Fra:3613 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing Sun
+Fra:3613 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e.001
+Fra:3613 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t
+Fra:3613 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t.001
+Fra:3613 Mem:44.25M (Peak 87.22M) | Time:00:00.07 | Rendering 1 / 8 samples
+Fra:3613 Mem:44.25M (Peak 87.22M) | Time:00:01.24 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ll/render/frames/S53/f03613.png'
+Time: 00:01.67 (Saving: 00:00.19)
+
+FRAME 3614 37.4
+Fra:3614 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing cam
+Fra:3614 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e
+Fra:3614 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing Sun
+Fra:3614 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e.001
+Fra:3614 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t
+Fra:3614 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t.001
+Fra:3614 Mem:44.25M (Peak 87.22M) | Time:00:00.07 | Rendering 1 / 8 samples
+Fra:3614 Mem:44.25M (Peak 87.22M) | Time:00:01.24 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ll/render/frames/S53/f03614.png'
+Time: 00:01.67 (Saving: 00:00.19)
+
+FRAME 3615 39.0
+Fra:3615 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing cam
+Fra:3615 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e
+Fra:3615 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing Sun
+Fra:3615 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e.001
+Fra:3615 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t
+Fra:3615 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t.001
+Fra:3615 Mem:44.25M (Peak 87.22M) | Time:00:00.07 | Rendering 1 / 8 samples
+Fra:3615 Mem:44.25M (Peak 87.22M) | Time:00:01.23 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ll/render/frames/S53/f03615.png'
+Time: 00:01.67 (Saving: 00:00.19)
+
+FRAME 3616 40.7
+Fra:3616 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing cam
+Fra:3616 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e
+Fra:3616 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing Sun
+Fra:3616 Mem:44.24M (Peak 87.22M) | Time:00:00.05 | Syncing e.001
+Fra:3616 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t
+Fra:3616 Mem:44.25M (Peak 87.22M) | Time:00:00.05 | Syncing t.001
+Fra:3616 Mem:44.25M (Peak 87.22M) | Time:00:00.07 | Rendering 1 / 8 samples
+Fra:3616 Mem:44.25M (Peak 87.22M) | Time:00:01.24 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ll/render/frames/S53/f03616.png'
+Time: 00:01.67 (Saving: 00:00.19)
+
+FRAME 1 42.4
+SHOT_DONE 53
+
+Blender quit
