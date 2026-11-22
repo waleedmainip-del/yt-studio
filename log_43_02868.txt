@@ -1,0 +1,60 @@
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing e.187
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2152
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2153
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2154
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2155
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2156
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.339
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.340
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2157
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2158
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.341
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.342
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2159
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2160
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2161
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2162
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2163
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2164
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2165
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2166
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2167
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2168
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2169
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2170
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2171
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2172
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2173
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2174
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2175
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2176
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2177
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2178
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.343
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.344
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2179
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2180
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2181
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2182
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.345
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2183
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2184
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2185
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2186
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2187
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2188
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2189
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2190
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing p.2191
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.346
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.347
+Fra:2919 Mem:332.90M (Peak 374.43M) | Time:00:00.10 | Syncing c.348
+Fra:2919 Mem:332.89M (Peak 374.43M) | Time:00:00.13 | Rendering 1 / 4 samples
+Fra:2919 Mem:332.89M (Peak 374.43M) | Time:00:03.48 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S43/f02919.png'
+Time: 00:04.99 (Saving: 00:00.29)
+
+FRAME 1 271.3
+SHOT_DONE 43
+
+Blender quit
