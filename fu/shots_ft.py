@@ -1,7 +1,7 @@
 # Shots for "Faisalabad: The Textile Kingdom". Cuts sit on narration sentence starts (audio/words.json).
 SHOTS={}
-END=114.8
-SEQ=[('OPEN', 0.0), ('EMPIRE', 4.38), ('MEET', 6.65), ('SHOP', 7.86), ('FATHER', 12.02), ('DREAMS', 15.2), ('BILLION', 17.19), ('ABU', 20.33), ('PEHLE', 22.64), ('TWELVE', 24.39), ('NINE', 26.36), ('BRAND', 27.95), ('NAMES', 30.01), ('IFG', 31.32), ('THREE', 32.57), ('BILAL', 34.71), ('BIRYANI', 37.74), ('ROOF', 39.25), ('BG', 40.37), ('OYE', 43.5), ('INSTA', 46.02), ('PIN', 47.04), ('ACROSS', 47.94), ('BIGSIGN', 49.84), ('COPY', 54.94), ('PUTTAR', 57.26), ('BUYER', 60.27), ('TENK', 63.61), ('CELEB', 66.78), ('DANCE', 68.99), ('MOTHER', 70.2), ('CAR', 71.56), ('ORDER', 73.33), ('CALM', 75.01), ('KAPRA', 77.29), ('SILENCE', 78.38), ('MILLRUN', 80.07), ('LOOMS', 82.61), ('OWNER', 84.25), ('DAS', 85.54), ('POCKET', 87.21), ('RUPEES', 88.77), ('BACK', 91.64), ('ADVANCE', 94.11), ('SMILE', 96.14), ('PUTTARF', 98.89), ('DISCOUNT', 101.62), ('REPLY', 103.15), ('CHARGES', 104.56), ('PAYS', 109.6), ('FAINT', 111.37)]
+END=117.7
+SEQ=[('OPEN', 0.0), ('EMPIRE', 4.32), ('MEET', 6.59), ('SHOP', 7.79), ('FATHER', 11.85), ('DREAMS', 15.2), ('BILLION', 17.38), ('ABU', 20.46), ('PEHLE', 22.81), ('TWELVE', 24.67), ('NINE', 26.81), ('BRAND', 28.39), ('NAMES', 30.53), ('IFG', 31.72), ('THREE', 33.28), ('BILAL', 35.44), ('BIRYANI', 38.48), ('ROOF', 40.0), ('BG', 41.23), ('OYE', 44.56), ('INSTA', 46.64), ('PIN', 47.87), ('ACROSS', 48.96), ('BIGSIGN', 50.89), ('COPY', 56.14), ('PUTTAR', 57.83), ('BUYER', 60.77), ('TENK', 63.87), ('CELEB', 67.24), ('DANCE', 69.38), ('MOTHER', 70.79), ('CAR', 72.11), ('ORDER', 74.06), ('CALM', 75.82), ('KAPRA', 78.38), ('SILENCE', 79.59), ('MILLRUN', 81.52), ('LOOMS', 84.09), ('OWNER', 85.53), ('DAS', 86.89), ('POCKET', 88.51), ('RUPEES', 90.26), ('BACK', 93.5), ('ADVANCE', 96.37), ('SMILE', 98.64), ('PUTTARF', 101.42), ('DISCOUNT', 104.09), ('REPLY', 105.79), ('CHARGES', 107.41), ('PAYS', 112.22), ('FAINT', 114.14)]
 def hide(o): o.scale=(0,0,0)
 def tl(t,a,b): return ease((t-a)/max(1e-3,b-a))
 def hand_loc(H,s=1): u=H['u']; return (s*.5*u,-.05*u,-2.08*u)
@@ -196,7 +196,7 @@ SHOTS['BILLION']=BILLION_
 def ABU_():
     fan,Ra,Ju=shop_set()
     def upd(t):
-        sidle(Ra,Ju,t,fan); facep(Ju,(0,1.95)); talk(Ju,t,*ln(66,73)); face(Ju,brow=.06,brow_r=8); gest(Ju,t,1,1.2,8,-80); gest(Ju,t+1,-1,1.0,8,-70)
+        sidle(Ra,Ju,t,fan); facep(Ju,(0,1.95)); talk(Ju,t,*ln(67,74)); face(Ju,brow=.06,brow_r=8); gest(Ju,t,1,1.2,8,-80); gest(Ju,t+1,-1,1.0,8,-70)
         measure(Ra,t)
         q=ease(t/DUR); camset(LV((-.3,1.2,1.95),(-.25,1.05,1.95),q),hp(Ju,-.05),36,2.8)
     return dict(upd=upd)
@@ -204,7 +204,7 @@ SHOTS['ABU']=ABU_
 def PEHLE_():
     fan,Ra,Ju=shop_set()
     def upd(t):
-        sidle(Ra,Ju,t,fan); facep(Ju,(0,1.95)); facep(Ra,(1.3,.35),.6,cam=(.9,-.3)); talk(Ra,t,*ln(74,81)); face(Ra,brow=-.05,brow_r=-16); arm_to(Ra,1,hp(Ju,-.1),tl(t,.2,.5),base=(-30,0,0)); Ra['arm'][-1].rotation_euler=(R(-50),0,R(20))
+        sidle(Ra,Ju,t,fan); facep(Ju,(0,1.95)); facep(Ra,(1.3,.35),.6,cam=(.9,-.3)); talk(Ra,t,*ln(75,82)); face(Ra,brow=-.05,brow_r=-16); arm_to(Ra,1,hp(Ju,-.1),tl(t,.2,.5),base=(-30,0,0)); Ra['arm'][-1].rotation_euler=(R(-50),0,R(20))
         q=ease(t/DUR); camset(LV((.95,-.25,1.95),(.9,-.05,1.95),q),hp(Ra,-.05),40,2.8)
     return dict(upd=upd)
 SHOTS['PEHLE']=PEHLE_
@@ -299,14 +299,14 @@ SHOTS['BG']=BG_
 def OYE_():
     K,Bi,Ju,ph=rf_set(); Da=mk(DANISH,-2.2,-.4,90,'danish'); label('DANISH',(-2.2,-.4,2.55),.1,size=.18,col='#1F4D3A',bg='#DFF5E1')
     def upd(t):
-        ridle(K,Bi,Ju,t); pose(Bi,t,2); stand(Da,t); blink(Da,t); facep(Da,(-.3,-1.2),.4,cam=(-1.2,-3)); talk(Da,t,*ln(147,151)); laugh(Da,t,.6); face(Da,brow=.06,brow_r=12); arm_to(Da,1,hp(Ju,-.5),tl(t,.1,.4),base=(-30,0,0))
+        ridle(K,Bi,Ju,t); pose(Bi,t,2); stand(Da,t); blink(Da,t); facep(Da,(-.3,-1.2),.4,cam=(-1.2,-3)); talk(Da,t,*ln(149,153)); laugh(Da,t,.6); face(Da,brow=.06,brow_r=12); arm_to(Da,1,hp(Ju,-.5),tl(t,.1,.4),base=(-30,0,0))
         q=ease(t/DUR); camset(LV((-2.0,-2.4,1.85),(-2.0,-2.1,1.85),q),hp(Da,-.05),36,2.8)
     return dict(upd=upd)
 SHOTS['OYE']=OYE_
 def INSTA_():
     K,Bi,Ju,ph=rf_set()
     def upd(t):
-        ridle(K,Bi,Ju,t); pose(Bi,t,0); facep(Ju,(-2.2,-.4),.6,cam=(-.8,-3)); talk(Ju,t,*ln(152,158)); face(Ju,brow=.05,brow_r=-6,eyes=.8); hold_phone(Ju,1,.6); Ju['arm'][-1].rotation_euler=(R(-40),0,R(30))
+        ridle(K,Bi,Ju,t); pose(Bi,t,0); facep(Ju,(-2.2,-.4),.6,cam=(-.8,-3)); talk(Ju,t,*ln(154,160)); face(Ju,brow=.05,brow_r=-6,eyes=.8); hold_phone(Ju,1,.6); Ju['arm'][-1].rotation_euler=(R(-40),0,R(30))
         q=ease(t/DUR); camset(LV((-.7,-2.6,1.9),(-.65,-2.35,1.9),q),hp(Ju,-.05),38,2.8)
     return dict(upd=upd)
 SHOTS['INSTA']=INSTA_
@@ -339,7 +339,7 @@ SHOTS['BIGSIGN']=BIGSIGN_
 def COPY_():
     hands,W,Sa,Ju,bn=street(); gb=global_banner()
     def upd(t):
-        upd_walkers(W,t+20); stand(Sa,t); blink(Sa,t); stand(Ju,t); blink(Ju,t); Ju['root'].location=(-.3,1.2,0); facep(Ju,(.4,-2.9)); talk(Ju,t,*ln(183,188)); face(Ju,brow=-.06,brow_r=-22)
+        upd_walkers(W,t+20); stand(Sa,t); blink(Sa,t); stand(Ju,t); blink(Ju,t); Ju['root'].location=(-.3,1.2,0); facep(Ju,(.4,-2.9)); talk(Ju,t,*ln(185,190)); face(Ju,brow=-.06,brow_r=-22)
         arm_to(Ju,1,(.4,-3.6,3.2),tl(t,.1,.35),base=(-30,0,0)); g=math.sin(t*9); Ju['arm'][-1].rotation_euler=(R(-60-20*g),0,R(30)); Ju['root'].location[2]=.04*abs(g)
         q=ease(t/DUR); camset(LV((-.9,-.5,1.9),(-.85,-.3,1.9),q),hp(Ju,-.05),38,2.8)
     return dict(upd=upd)
@@ -347,7 +347,7 @@ SHOTS['COPY']=COPY_
 def PUTTAR_():
     hands,W,Sa,Ju,bn=street(crowd=0); gb=global_banner()
     def upd(t):
-        upd_walkers(W,t+24); stand(Sa,t); blink(Sa,t); stand(Ju,t); blink(Ju,t); facep(Sa,(-.6,2.9)); talk(Sa,t,*ln(189,196),rest='grin'); laugh(Sa,t,.7)
+        upd_walkers(W,t+24); stand(Sa,t); blink(Sa,t); stand(Ju,t); blink(Ju,t); facep(Sa,(-.6,2.9)); talk(Sa,t,*ln(191,198),rest='grin'); laugh(Sa,t,.7)
         g=math.sin(t*5); Sa['arm'][1].rotation_euler=(R(-70-20*g),0,R(-30)); Sa['arm'][-1].rotation_euler=(R(-20),0,R(40)); Sa['root'].rotation_euler[1]=R(3*g)
         q=ease(t/DUR); camset(LV((.75,-.7,1.95),(.7,-.95,1.95),q),hp(Sa,-.08),36,2.8)
     return dict(upd=upd)
@@ -408,7 +408,7 @@ SHOTS['CAR']=CAR_
 def ORDER_():
     fan,Ra,Ju,Bu,sh=shop2()
     def upd(t):
-        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); facep(Ju,(0,1.95)); talk(Ju,t,*ln(246,249),shapes=('O','O','o','O')); face(Ju,brow=.08,brow_r=10); k=tl(t,0,.3)
+        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); facep(Ju,(0,1.95)); talk(Ju,t,*ln(247,250),shapes=('O','O','o','O')); face(Ju,brow=.08,brow_r=10); k=tl(t,0,.3)
         Ju['arm'][1].rotation_euler=(R(-170*k),0,R(-20)); Ju['arm'][-1].rotation_euler=(R(-170*k),0,R(20)); Ju['root'].location[2]=.1*abs(math.sin(t*7))
         q=ease(t/DUR); camset(LV((-.25,1.2,1.95),(-.2,1.0,1.95),q),hp(Ju,-.1),32,2.8)
     return dict(upd=upd)
@@ -423,7 +423,7 @@ SHOTS['CALM']=CALM_
 def KAPRA_():
     fan,Ra,Ju,Bu,sh=shop2()
     def upd(t):
-        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); facep(Ra,(1.3,.35),.5,cam=(.5,-1)); talk(Ra,t,*ln(258,260)); face(Ra,brow=-.02,brow_r=-6,eyes=.7); Ra['arm'][1].rotation_euler=(R(-40),0,R(-40)); Ra['arm'][-1].rotation_euler=(R(-40),0,R(40))
+        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); facep(Ra,(1.3,.35),.5,cam=(.5,-1)); talk(Ra,t,*ln(259,261)); face(Ra,brow=-.02,brow_r=-6,eyes=.7); Ra['arm'][1].rotation_euler=(R(-40),0,R(-40)); Ra['arm'][-1].rotation_euler=(R(-40),0,R(40))
         camset((.45,-.1,1.95),hp(Ra,-.03),46,2.8)
     return dict(upd=upd)
 SHOTS['KAPRA']=KAPRA_
@@ -467,7 +467,7 @@ SHOTS['OWNER']=OWNER_
 def DAS_():
     beaters,Mu,Ju=ml_set()
     def upd(t):
-        bt(beaters,t); stand(Mu,t); blink(Mu,t); stand(Ju,t); blink(Ju,t); Ju['root'].location=(3.7,-11.3,0); facep(Mu,(3.7,-11.3)); talk(Mu,t,*ln(285,289),shapes=('O','o','O','flat')); face(Mu,brow=-.06,brow_r=-20)
+        bt(beaters,t); stand(Mu,t); blink(Mu,t); stand(Ju,t); blink(Ju,t); Ju['root'].location=(3.7,-11.3,0); facep(Mu,(3.7,-11.3)); talk(Mu,t,*ln(287,291),shapes=('O','o','O','flat')); face(Mu,brow=-.06,brow_r=-20)
         arm_to(Mu,1,hp(Ju,-.6),tl(t,1.0,1.3),base=(-30,0,0)); Mu['root'].location[2]=0
         q=ease(t/DUR); camset(LV((4.4,-10.7,2.05),(4.45,-10.55,2.05),q),hp(Mu,-.05),38,2.8)
     return dict(upd=upd)
@@ -499,7 +499,7 @@ SHOTS['BACK']=BACK_
 def ADVANCE_():
     fan,Ra,Ju,Bu,sh=shop2()
     def upd(t):
-        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); facep(Ju,(0,1.95)); talk(Ju,t,*ln(316,321)); face(Ju,brow=.03,brow_r=-8,eyes=.8); Ju['head'].rotation_euler[0]=R(6)
+        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); facep(Ju,(0,1.95)); talk(Ju,t,*ln(319,324)); face(Ju,brow=.03,brow_r=-8,eyes=.8); Ju['head'].rotation_euler[0]=R(6)
         q=ease(t/DUR); camset(LV((-.25,1.15,1.95),(-.2,1.0,1.95),q),hp(Ju,-.05),38,2.8)
     return dict(upd=upd)
 SHOTS['ADVANCE']=ADVANCE_
@@ -513,7 +513,7 @@ SHOTS['SMILE']=SMILE_
 def PUTTARF_():
     fan,Ra,Ju,Bu,sh=shop2()
     def upd(t):
-        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); Ra['root'].location=(1.1,1.6,0); facep(Ra,(1.3,.35)); talk(Ra,t,*ln(330,337),rest='smile'); face(Ra,brow=.03)
+        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); Ra['root'].location=(1.1,1.6,0); facep(Ra,(1.3,.35)); talk(Ra,t,*ln(333,340),rest='smile'); face(Ra,brow=.03)
         arm_to(Ra,-1,(1.25,.45,1.75),tl(t,.3,.8),base=(-30,0,0)); facep(Ju,(1.1,1.6)); face(Ju,mouth='smile',brow=.04)
         q=ease(t/DUR); camset(LV((2.6,.2,1.9),(2.4,.3,1.9),q),(1.2,1.0,1.8),30,4)
     return dict(upd=upd)
@@ -537,7 +537,7 @@ def CHARGES_():
     for i,(txt,t0) in enumerate((('DISCOUNT: ALAG',.1),('DELIVERY: ALAG',1.55),('PACKING: ALAG',2.65),('BREATHING: ALAG',4.0))):
         cards.append(label(txt,(.25,-.2,2.75-.33*i),t0,size=.16,col='#7A1F1F',bg='#FFF3B0'))
     def upd(t):
-        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); shk(Ju,1); facep(Ju,(-1.2,.5),.4,cam=(.6,-2.6)); talk(Ju,t,*ln(348,362),rate=10); face(Ju,brow=.03,brow_r=-6); gest(Ju,t,1,1.3,11,-80); gest(Ju,t+.5,-1,1.0,11,-60)
+        sidle(Ra,Ju,t,fan); stand(Bu,t); blink(Bu,t); shk(Ju,1); facep(Ju,(-1.2,.5),.4,cam=(.6,-2.6)); talk(Ju,t,*ln(351,365),rate=10); face(Ju,brow=.03,brow_r=-6); gest(Ju,t,1,1.3,11,-80); gest(Ju,t+.5,-1,1.0,11,-60)
         facep(Bu,(1.3,.35)); face(Bu,mouth='O',brow=.07,brow_r=16)
         q=ease(t/DUR); camset(LV((.4,-2.8,1.85),(.4,-2.4,1.85),q),(.4,.3,1.85),28,8)
     return dict(upd=upd)
