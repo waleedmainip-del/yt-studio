@@ -1,0 +1,60 @@
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing c.221
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1408
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1409
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing c.222
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing c.223
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1410
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1411
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1412
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1413
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1414
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1415
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1416
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1417
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1418
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1419
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1420
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1421
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1422
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1423
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1424
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1425
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1426
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1427
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1428
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing c.224
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing c.225
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1429
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1430
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1431
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1432
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing c.226
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1433
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1434
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1435
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1436
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1437
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1438
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1439
+Fra:201 Mem:256.69M (Peak 298.69M) | Time:00:00.10 | Syncing p.1440
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1441
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing c.227
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing c.228
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing c.229
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1442
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1443
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1444
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1445
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1446
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1447
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1448
+Fra:201 Mem:256.73M (Peak 298.69M) | Time:00:00.10 | Syncing p.1449
+Fra:201 Mem:256.72M (Peak 298.69M) | Time:00:00.12 | Rendering 1 / 4 samples
+Fra:201 Mem:256.72M (Peak 298.69M) | Time:00:02.61 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S02/f00201.png'
+Time: 00:03.77 (Saving: 00:00.24)
+
+FRAME 1 275.6
+SHOT_DONE 2
+
+Blender quit
