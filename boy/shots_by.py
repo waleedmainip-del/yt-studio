@@ -183,7 +183,7 @@ def SH_A(view):
             c=Vector(ph.location)+Vector((.3,-.2,.28)); _camset(tuple(c),tuple(ph.location),30,1.5,focus=tuple(ph.location))
         elif view=='ammi':
             dr.update(edge); talk(am,t,27,33,KEY,rest='shout',shapes=('shout','O','shout','O')); face(am,brow=-.06,brow_r=22,eyes=1.25)
-            camset((L(-.3,-.1,q),L(.7,.5,q),2.05),(2.0,-1.9,1.6),22,4,focus=ha)
+            _camset((L(-.3,-.1,q),L(.7,.5,q),2.05),(2.0,-1.9,1.6),22,4,focus=ha)
         elif view=='five':
             dr.update(edge); mumble(w,t,34,37,KEY); face(w,eyes=.0,brow=.02); w['head'].rotation_euler[2]=R(-15)
             cam_lying(hw,1.0)
@@ -376,7 +376,7 @@ def SH_E(view):
             camset((LX+.6,.6,1.7),hu,30,3,focus=hu)
         elif view=='sus':
             look_at(am,hw); face(am,mouth='flat',brow=-.03,brow_r=-14,eyes=.55); am['head'].rotation_euler[1]=R(8)
-            cam_close(am,1,2.0,30)
+            camset((LX+.45,.35,2.05),hm,30,3,focus=hm)
         else:
             look_at(am,hu); talk(am,t,248,258,KEY,rest='smirk'); face(am,brow=.03,brow_r=-12,eyes=.65); arms(am,-62,0,-58,-90,0,-30)
             look_at(un,hw); look_at(au,hw); face(un,mouth='O',eyes=1.2); face(au,mouth='o')
