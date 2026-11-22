@@ -198,7 +198,7 @@ def SH_A(view):
         W_=walkers([([(-1.0,-29),(-.4,-15.0)],-1,9),([(1.0,-31),(.5,-15.2)],0,10),([(-5,-25),(-1.2,-18),(-.6,-15)],-.5,8),([(5.5,-26),(1.4,-18.5),(.7,-15.2)],1.0,10),([(.2,-34),(0,-16)],1.5,12)],1)
         S_=standers([(-3.2,-16.5,140,'talk'),(-2.6,-17.3,-40,'talk'),(3.0,-16.2,200,'selfie'),(4.2,-19.5,0,'talk')],1)
         def upd(t):
-            walkers_upd(W_,t); standers_upd(S_,t); q=ease(t/DUR); _camset((L(.8,0,q),L(-30,-22.5,q),L(2.8,1.7,q)),(0,-14,L(4.0,2.8,q)),24,10)
+            walkers_upd(W_,t); standers_upd(S_,t); q=ease(t/DUR); _camset((L(.8,0,q),L(-30,-25,q),L(2.9,2.4,q)),(0,-14,L(4.0,2.9,q)),24,10)
         return dict(upd=upd)
     if view=='clothes':
         base,D=hall_scene(16,2,stand=[(-2.3,-9.5,90,'talk'),(-1.6,-9.5,-90,'talk')],walk=[([(-.5,-13.6),(-.4,-6)],-.5,6),([(.5,-13.8),(.6,-6.5)],.0,6.5),([(-.1,-14.2),(0,-7.5)],.6,7)])
@@ -262,7 +262,7 @@ def SH_B(view):
     KEY='B_'+view; room=room_scene()
     hz=person((GX,GY+1.1,0),180,HAMZA,'flat',name='hamza'); bl=person((GX+.62,GY+.6,0),200,BILAL,'grin',name='bilal'); ab=person((GX+2.8,GY-1.2,0),-90,ABBU,'flat',name='abbu'); nb=notebook(ab)
     comb=obox((0,0,0),(.08,.012,.025),M('#1A1B22',.4),.004)
-    pre=view in ('mirror','bro','relax','bill')
+    pre=view in ('mirror','bro','relax','bill'); comb_on=view in ('mirror','bro','bill')
     def upd(t):
         room(t); q=ease(t/DUR)
         for H in (hz,bl,ab): H['z0']=0
@@ -282,7 +282,7 @@ def SH_B(view):
             standH(hz,HZ2[0],HZ2[1],heading_to(hz,(AB2[0],AB2[1],0)),t); standH(bl,BL2[0],BL2[1],heading_to(bl,(GX+.6,GY-.3,0)),t); standH(ab,AB2[0],AB2[1],heading_to(ab,(HZ2[0],HZ2[1],0)),t); rest(hz,t)
         for H in (hz,bl,ab): blink(H,t)
         hh=headpos(hz); hb=headpos(bl)
-        if pre:
+        if comb_on:
             arm_reach(bl,-1,(hh[0]+.12*math.sin(t*5),hh[1]-.05,hh[2]+.32)); bl['arm'][1].rotation_euler=(R(-40),0,R(10)); carry(comb,bl,-1,(0,0,.05)); look_at(bl,(hh[0],hh[1],hh[2]+.3))
         else: rest(bl,t); comb.location=(GX+.7,GY+2.2,.9)
         ab['arm'][-1].rotation_euler=(R(-70),0,R(10)); ab['arm'][1].rotation_euler=(R(-10),0,R(5)); p=hand_w(ab,-1); nb.location=(p.x,p.y,p.z+.05); nb.rotation_euler=(R(-60),0,ab['root'].rotation_euler[2])
@@ -296,7 +296,7 @@ def SH_B(view):
             camset((GX-1.05,GY+2.35,1.85),hh,24,2.8,focus=hh)
         elif view=='relax':
             talk(bl,t,82,86,KEY,rest='grin'); face(bl,brow=.04); face(hz,mouth='flat')
-            camset((GX+1.95,GY+1.7,2.1),hb,28,2.8,focus=hb)
+            camset((GX+.3,GY+2.4,2.05),(GX+.4,GY+.75,1.8),22,2.8,focus=hb)
         elif view=='bill':
             talk(hz,t,87,99,KEY,rest='flat'); face(hz,eyes=1.15,brow=.05,brow_r=16); look_at(hz,(GX,GY+2.6,1.8)); nod(hz,t,-3,3)
             camset((GX-1.0,GY+2.35,1.85),hh,28,2.8,focus=hh)
@@ -310,10 +310,10 @@ def SH_B(view):
             talk(hz,t,107,108,KEY,rest='flat'); look_at(hz,ha); face(hz,eyes=1.1,brow=.03)
             camset((GX+.6,GY-2.1,1.95),hh,30,2.8,focus=hh)
         elif view=='adv':
-            look_at(ab,(p.x,p.y,p.z)); talk(ab,t,109,112,KEY,rest='flat',rate=6); talk(hz,t,113,113,KEY,rest='flat'); face(ab,brow=-.02,eyes=.85); look_at(hz,ha)
+            look_at(ab,(p.x,p.y,p.z),.35); talk(ab,t,109,112,KEY,rest='flat',rate=6); talk(hz,t,113,113,KEY,rest='flat'); face(ab,brow=-.02,eyes=.85); look_at(hz,ha)
             camset((GX-1.5,GY+.3,2.0),ha,26,2.8,focus=ha)
         elif view=='hall':
-            look_at(ab,(p.x,p.y,p.z)); talk(ab,t,114,117,KEY,rest='flat',rate=6); face(ab,brow=-.02,eyes=.85); look_at(hz,ha)
+            look_at(ab,(p.x,p.y,p.z),.35); talk(ab,t,114,117,KEY,rest='flat',rate=6); face(ab,brow=-.02,eyes=.85); look_at(hz,ha)
             camset((GX-1.4,GY+.2,1.95),ha,32,2.8,focus=ha)
         elif view=='acct':
             talk(hz,t,118,123,KEY,rest='flat',shapes=('O','o','flat','O')); look_at(hz,ha); face(hz,brow=-.02,brow_r=14,eyes=1.1); arms(hz,-30,0,8,-75,0,-45+10*math.sin(t*5))
@@ -426,7 +426,7 @@ def SH_D(view):
             cam_head(ph,(1,1,0),lens=40)
         elif view=='turn':
             k=ease((t-.1)/.5); hz['root'].rotation_euler[2]=R(L(0,-75,k)); look_at(hz,(4,7.2,1.9),k); face(hz,mouth='flat',eyes=.8,brow=-.02,brow_r=10); flash(t,[.8,.95,1.1])
-            camset((L(-.9,-.7,q),L(4.0,4.3,q),1.85),(0,7.3,1.6),32,3.5,focus=hz_h)
+            camset((L(-2.3,-2.1,q),L(4.6,4.8,q),1.95),(0,7.3,1.6),30,3.5,focus=hz_h)
         elif view=='perfect':
             hz['root'].rotation_euler[2]=R(-75); look_at(hz,(4,7.2,1.9)); face(hz,mouth='flat',eyes=.8)
             talk(ph,t,243,249,KEY,rest='grin',shapes=('shout','O','grin','O')); k=ease(t/.25); ph['root'].location[2]+=.12*abs(math.sin(t*9))*(1 if t<.6 else 0); face(ph,brow=.07,eyes=1.3); flash(t,[.1,.3,.5,.7,.9,1.1,1.3])
@@ -434,18 +434,18 @@ def SH_D(view):
         elif view=='lean':
             hz['root'].rotation_euler[2]=R(-75); k=ease(t/.6); bl['root'].rotation_euler[2]=R(L(-20,-60,k)); bl['root'].rotation_euler[0]=R(12*k); look_at(bl,hz_h); face(bl,mouth='smirk',eyes=.85)
             face(hz,mouth='flat',eyes=.85)
-            camset((L(3.4,3.2,q),L(5.6,5.9,q),1.95),(.7,7.4,1.7),30,3.5,focus=hb)
+            camset((L(3.0,2.8,q),L(4.5,4.8,q),2.1),(.7,7.4,1.7),28,3.5,focus=hb)
         else:
             hz['root'].rotation_euler[2]=R(-75); bl['root'].rotation_euler[2]=R(-60); bl['root'].rotation_euler[0]=R(12); look_at(bl,hz_h); talk(bl,t,253,266,KEY,rest='smirk'); face(bl,brow=.04,brow_r=-10)
             look_at(hz,hb,.8); face(hz,mouth='flat',eyes=.7); flash(t,[.8,2.2,3.0])
-            cam_head(bl,(1,-1,0),lens=40)
+            camset((-1.2,5.6,2.05),hb,30,3,focus=hb)
     return dict(upd=upd)
 for v in ('walk','smile','smiles','natural','again','emo','conf','cand','turn','perfect','lean','400'): SHOTS['D_'+v]=(lambda v=v: SH_D(v))
 # ============================================================ 5. DANCE FLOOR
 HZD=(-.9,.9); BLD=(.9,.9); UDP=(1.5,2.9)
 def SH_E(view):
     KEY='E_'+view
-    fr=[(x,y,rz,'dance') for (x,y,rz) in ((-2.4,2.6,150),(2.6,2.9,200),(-2.8,-.6,40),(2.9,-.4,-40),(-.6,3.6,180),(-3.4,1.2,90))]
+    fr=[(x,y,rz,'dance') for (x,y,rz) in ((-2.4,2.6,150),(2.6,2.9,200),(-3.0,3.4,140),(3.3,3.6,-140),(-.6,3.6,180),(-3.4,1.2,90))]
     base,D=hall_scene(18,10,stand=fr+[(-5.2,-2.0,60,'clap'),(5.2,-1.6,-60,'clap'),(-5.0,4.0,110,'clap'),(5.1,3.8,-110,'selfie')],dance=True)
     hz=person((HZD[0],HZD[1],0),0,HAMZA,'flat',name='hamza'); bl=person((BLD[0],BLD[1],0),0,BILAL,'grin',name='bilal'); ud=person((5.5,-2.0,0),0,UNCLED,'grin',name='uncled')
     def upd(t):
@@ -477,7 +477,7 @@ def SH_E(view):
             cam_head(bl,(1,-1,0),lens=36)
         elif view=='nahi':
             talk(hz,t,284,287,KEY,rest='O',shapes=('O','o','O')); arms(hz,-60,0,-40+10*math.sin(t*9),-60,0,40-10*math.sin(t*9)); face(hz,brow=.07,brow_r=18,eyes=1.3); look_at(hz,hb)
-            cam_head(hz,(-1,-1,0),lens=38)
+            camset((-2.6,-1.6,2.0),hh,30,3,focus=hh)
         elif view=='kya':
             talk(bl,t,288,297,KEY,rest='grin'); look_at(bl,hh); arms(bl,-30,0,-60,-30,0,60); face(bl,brow=.05,brow_r=-10); rest(hz,t); face(hz,mouth='flat',eyes=1.1); look_at(hz,hb)
             cam_head(bl,(1,-1,0),lens=38)
@@ -509,7 +509,7 @@ def SH_E(view):
         else:
             look_at(bl,hh); arms(bl,-62,0,-58,-62,0,58); talk(bl,t,341,346,KEY,rest='o'); face(bl,brow=.06,eyes=1.1); look_at(hz,hb); face(hz,mouth='flat')
             w=t*8; arms(ud,-160,0,-20*math.sin(w),-160,0,20*math.sin(w)); ud['root'].location[2]+=.08*abs(math.sin(w)); face(ud,mouth='grin',eyes=.4)
-            cam_head(bl,(1,-1,0),lens=40)
+            camset((2.6,-1.5,2.0),hb,30,3,focus=hb)
     return dict(upd=upd)
 for v in ('music','grab','chal','nahi','kya','wild','uncle','karte','beta','move','watch','pro'): SHOTS['E_'+v]=(lambda v=v: SH_E(v))
 # ============================================================ 6. BIRYANI WAR (buffet)
@@ -639,11 +639,11 @@ def SH_G(view):
                 w=t*5; arm_reach(hz,1,(hh[0]+.32,hh[1]-.1,hh[2]-1.15+.08*math.sin(w))); arm_reach(hz,-1,(hh[0]-.32,hh[1]-.1,hh[2]-1.15+.08*math.sin(w+1))); look_at(hz,(hh[0],hh[1]-.4,hh[2]-1.4)); face(hz,mouth='strain',eyes=1.2,brow=.06)
                 b=wl(497,KEY)
                 if t>b: hz['head'].rotation_euler[0]=R(0); look_at(hz,ha); face(hz,mouth='O',eyes=1.3); arms(hz,-30,0,-60,-30,0,60)
-                camset((L(-1.0,-.9,q),L(4.2,4.4,q),1.85),(-1.9,7.0,1.5),28,4,focus=hh) if t<wl(498,KEY) else None
+                camset((-3.1,5.5,1.95),hh,30,3,focus=hh) if t<wl(498,KEY) else None
                 if t>=wl(498,KEY):
                     arm_reach(bl,1,(hb[0]+.3,hb[1],hb[2]-1.15+.08*math.sin(w))); arm_reach(bl,-1,(hb[0]-.3,hb[1],hb[2]-1.15)); look_at(bl,(hb[0],hb[1]-.3,hb[2]-1.4)); face(bl,mouth='strain',eyes=1.15)
-                    camset((L(.4,.6,q),L(4.0,4.2,q),1.85),(-1.1,6.8,1.5),28,4,focus=hb)
-            elif view=='photo': face(ph,mouth='grin'); look_at(ph,hh); face(hz,mouth='flat',eyes=1.1); look_at(hz,hp,ease((t-wl(505,KEY))/.4)); camset((L(1.4,1.0,q),L(3.0,3.3,q),1.95),(-1.4,5.8,1.5),26,4,focus=hp)
+                    camset((-1.5,4.8,1.95),hb,30,3,focus=hb)
+            elif view=='photo': face(ph,mouth='grin'); look_at(ph,hh); face(hz,mouth='flat',eyes=1.1); look_at(hz,hp,ease((t-wl(505,KEY))/.4)); camset((-4.2,3.0,2.0),(-1.6,5.6,1.6),26,4,focus=hp)
             elif view=='last': talk(ph,t,507,510,KEY,rest='grin',shapes=('grin','O','o')); look_at(ph,hh); face(ph,brow=.05,eyes=1.15); flash(t,[1.1],e=2200); look_at(hz,hp); cam_head(ph,(1,-1,0),lens=40)
             elif view=='gum': talk(hz,t,511,515,KEY,rest='frown',shapes=('shout','O','shout','frown')); look_at(hz,hp); arms(hz,-150,0,-30+15*math.sin(t*8),-60,0,40); face(hz,brow=-.06,brow_r=22,eyes=1.3); flash(t,[.6,1.2],e=2200); cam_head(hz,(1,-1,0),lens=36)
             else: talk(ph,t,516,523,KEY,rest='grin',rate=6); look_at(ph,hh); face(ph,brow=.02,eyes=.8,mouth=None); flash(t,[2.4,2.55,2.7],e=2400); face(hz,mouth='frown',brow=-.06,brow_r=22); cam_head(ph,(1,-1,0),lens=40)
@@ -709,11 +709,11 @@ def SH_H(view):
         elif view=='abhi':
             look_at(hz,hm); talk(hz,t,566,571,KEY,rest='O',shapes=('shout','O','shout','frown')); face(hz,brow=-.05,brow_r=22,eyes=1.35); arms(hz,-62,0,-12,-150,0,-25+15*math.sin(t*8)); cam_head(hz,(1,-1,0),lens=36)
         elif view=='abbu':
-            look_at(hz,ha); face(hz,mouth='O'); face(ab,mouth='flat',brow=-.02); cam_head(ab,(1,-1,0),lens=36)
+            look_at(hz,ha); face(hz,mouth='O'); face(ab,mouth='flat',brow=-.02); camset((-4.4,8.7,2.6),(-2.7,10.7,2.1),30,4,focus=ha)
         elif view=='payment':
             talk(ab,t,576,581,KEY,rest='flat',rate=6); look_at(ab,hh); face(ab,brow=-.02,eyes=.85); look_at(hz,ha); face(hz,mouth='O',eyes=1.2); cam_head(ab,(-1,-1,0),lens=40)
         elif view=='aunty':
-            look_at(hz,hu,ease((t-1.0)/.5)); face(hz,mouth='flat',eyes=1.2); face(au,mouth='smirk'); cam_head(au,(-1,-1,0),lens=36)
+            look_at(hz,hu,ease((t-1.0)/.5)); face(hz,mouth='flat',eyes=1.2); face(au,mouth='smirk'); camset((-.2,8.6,2.6),(1.7,10.0,2.1),30,4,focus=hu)
         elif view=='cousin':
             talk(au,t,587,595,KEY,rest='smirk'); look_at(au,hh); arms(au,-14,0,5,-90,0,-25); face(au,brow=.04,brow_r=-10,eyes=.85); look_at(hz,hu); face(hz,mouth='flat',eyes=1.25); cam_head(au,(1,-1,0),lens=40)
         elif view=='down':
@@ -740,7 +740,7 @@ def SH_Z(view):
         def upd(t):
             hz['z0']=0; bl['z0']=0; walk_path(hz,[(0,-15.2),(-1.5,-19),(-7.6,-22.6)],t,.2,DUR-.3,step=.7,arm=34,run_=True); walk_path(bl,[(.8,-15.2),(-.6,-19.4),(-7.0,-23.6)],t,.0,DUR-.5,step=.7,arm=34,run_=True)
             blink(hz,t); blink(bl,t); face(hz,mouth='grin',eyes=1.1); face(bl,mouth='grin')
-            q=ease(t/DUR); _camset((L(4.5,2.5,q),L(-27,-29,q),L(2.4,3.4,q)),(L(-.5,-5,q),L(-16,-21,q),1.2),24,8)
+            q=ease(t/DUR); _camset((L(1.6,1.0,q),L(-27,-29,q),L(2.4,3.4,q)),(L(-.5,-5,q),L(-16,-21,q),1.2),24,8)
         return dict(upd=upd)
     stand=[(x,y,rz,'dance') for (x,y,rz) in ((-1.6,.2,10),(1.2,.4,-20),(-.2,2.4,180),(1.9,2.6,200),(0.3,-.8,0))]+[(-1.5,-9.5,90,'talk'),(-.9,-9.5,-90,'talk'),(2.0,-4.0,0,'selfie'),(-12.2,-6.5,-90,'idle'),(-12.0,-5.0,-90,'talk')]
     base,D=hall_scene(28,14,stand=stand,dance=True)
@@ -749,7 +749,7 @@ def SH_Z(view):
         def upd(t):
             base(t); seatH(hz,0,11.6,0,sh=1.12); arms(hz,-30,0,8,-30,0,-8); face(hz,mouth='flat',eyes=.6); blink(hz,t); hh=headpos(hz)
             for H,(x,y) in ((am,AMS),(ab,ABS),(au,AUS),(bl,BLS)): on_stage(H,x,y,heading_to(H,(0,11.6,0)),t); blink(H,t); rest(H,t); look_at(H,hh); face(H,mouth=('o','flat','O','smile')[int(t*6+H['seed'])%4])
-            q=ease(t/DUR); _camset((L(.3,0,q),L(4.5,1.0,q),L(2.0,3.0,q)),(0,11.2,1.6),L(30,24,q),5)
+            q=ease(t/DUR); _camset((L(.3,0,q),L(5.0,4.0,q),L(2.4,3.2,q)),(0,11.2,1.6),L(30,26,q),5)
         return dict(upd=upd)
     if view=='montage':
         def upd(t):
