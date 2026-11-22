@@ -362,7 +362,7 @@ def SH_E(view):
             if k1>=1 and k2<1: arm_reach(w,1,(hw[0]+.05,hw[1],hw[2]+.35)); w['head'].rotation_euler[1]=R(8*math.sin(t*12))
             elif k2>=1: arms(w,-40,0,8,-40,0,-8)
             face(w,mouth='grin' if k3>0 else 'O',eyes=1.15); look_at(w,hu,k3)
-            camset((LX+.9,-.6,1.6),(hw[0],hw[1],hw[2]-.3),30,3,focus=hw)
+            camset((LX+.55,-1.25,1.75),(hw[0],hw[1],hw[2]-.3),28,3,focus=hw)
             return
         ph.location=(WLP[0]+.05,WLP[1]+.45,.56); ph.rotation_euler=(R(-90),0,R(180)); arms(w,-40,0,8,-40,0,-8); look_at(w,hu)
         if view=='beta':
@@ -376,7 +376,7 @@ def SH_E(view):
             camset((LX+.6,.6,1.7),hu,30,3,focus=hu)
         elif view=='sus':
             look_at(am,hw); face(am,mouth='flat',brow=-.03,brow_r=-14,eyes=.55); am['head'].rotation_euler[1]=R(8)
-            camset((LX+.2,-.4,1.75),hm,34,3,focus=hm)
+            cam_close(am,1,2.0,30)
         else:
             look_at(am,hu); talk(am,t,248,258,KEY,rest='smirk'); face(am,brow=.03,brow_r=-12,eyes=.65); arms(am,-62,0,-58,-90,0,-30)
             look_at(un,hw); look_at(au,hw); face(un,mouth='O',eyes=1.2); face(au,mouth='o')
