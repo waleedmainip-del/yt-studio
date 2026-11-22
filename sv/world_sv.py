@@ -26,16 +26,53 @@ def surf_set():
         x=-56+k*7.3; h=r.uniform(8,26); B.box((x,-24,h/2),(3.2,3,h/2),M(r.choice(['#E8D8B0','#C9CED8','#D8C8A8','#F0E6CC','#A8B8C8']),.7,kind='wall'),0)
         for j in range(int(h/2.2)): B.box((x,-20.95,1.5+j*2.2),(2.6,.03,.35),M('#FFE8B0',.2,emit=r.choice([0,0,.9,1.4])),0)
     return sea,lamps
-def parked_cars(seed=4):
-    r=random.Random(seed); C=[]
-    for k in range(9):
-        x=-36+k*8+r.uniform(-1,1); C.append(car((x,-12.6,0),90 if k%2 else -90,r.choice(['#C8372D','#F4F1EA','#16171C','#2B5AA8','#9A9AA2','#D9B24A']),seed=k))
+CARS=1.7  # cars are scaled to the chunky characters (2.3 tall): 7.0 long, 2.9 wide, 2.5 tall
+def parked_cars(seed=4,hero=None):
+    r=random.Random(seed); C=[]; cols=['#C8372D','#16171C','#2B5AA8','#9A9AA2','#D9B24A','#2F6E4A','#7A1F2E']
+    for k in range(9):   # parked row along the kerb, parallel to the road
+        x=-36+k*9+r.uniform(-.5,.5); c=car((x,-11.45,0),180 if k%3 else 0,r.choice(cols),seed=k); c['root'].scale=(CARS,)*3; C.append(c)
+    for k in range(-4,5):  # the jam in the driving lane (hero car takes slot 0)
+        if hero is not None and k in (0,-1): continue
+        c=car((hero_x+k*8.6+r.uniform(-.3,.3),-15.7,0),180,r.choice(cols),seed=20+k); c['root'].scale=(CARS,)*3; C.append(c)
     return C
+hero_x=2.0
+def hero_car(loc=(hero_x,-15.7,0),rotz=180,col='#E8E4DA'):
+    """open-window car with a full interior. local +x = front. seats: driver (0,-.9), passenger (0,.9), rear bench x=-1.9"""
+    root=empty(loc,rot=(0,0,R(rotz))); bd=M(col,.3,metal=.3,spec=.6); dk=M('#1E2026',.7); st=M('#4A3A30',.85,kind='fabric'); ch=M('#C9CED8',.3,metal=.8); W=[]; HW=1.95
+    obox((.1,0,.45),(3.5,HW,.1),dk,.03,root)                                   # floor
+    for sy in (-1,1):
+        obox((-.5,sy*(HW-.06),1.02),(2.1,.06,.48),bd,.03,root)                 # doors
+        obox((-.2,sy*(HW+.01),1.25),(.14,.02,.03),ch,.01,root); obox((-1.9,sy*(HW+.01),1.25),(.14,.02,.03),ch,.01,root)
+        for px in (1.55,-.55,-2.6): obox((px,sy*(HW-.08),2.18),(.07,.07,.7),bd,.02,root)   # pillars
+        obox((1.75,sy*(HW+.16),1.62),(.07,.14,.1),bd,.03,root)                 # side mirrors
+        obox((3.6,sy*1.35,1.05),(.04,.34,.14),M('#FFF6D8',.2,emit=2.5),.03,root); obox((-3.45,sy*1.4,1.1),(.04,.3,.12),M('#E8301A',.3,emit=2.0),.03,root)
+    obox((2.6,0,1.02),(1.0,HW,.48),bd,.12,root)                                # hood
+    obox((1.38,0,1.0),(.22,HW-.1,.5),dk,.04,root)                              # dashboard
+    obox((1.3,.9,1.42),(.12,.4,.07),M('#2A2C34',.5),.02,root)                  # glovebox lip
+    obox((1.26,0,1.3),(.1,.3,.14),M('#101216',.4),.02,root); obox((1.2,0,1.32),(.02,.22,.09),M('#3FA7E8',.3,emit=1.2),.01,root)  # screen
+    obox((-2.95,0,1.02),(.5,HW,.48),bd,.12,root)                               # boot
+    obox((-.55,0,2.95),(2.12,HW,.08),bd,.06,root)                              # roof
+    obox((-2.62,0,2.18),(.03,HW-.15,.66),M('#1A2433',.06,spec=1.0),.01,root)   # rear glass
+    obox((3.62,0,.62),(.05,HW,.12),ch,.03,root); obox((-3.47,0,.62),(.05,HW,.12),ch,.03,root); obox((3.66,0,.95),(.02,.5,.14),M('#F4F1EA',.5),.01,root)
+    for sy in (-1,1):                                                          # front seats
+        obox((.1,sy*.9,.68),(.45,.48,.12),st,.05,root); obox((-.38,sy*.9,1.45),(.09,.48,.75),st,.06,root); obox((-.38,sy*.9,2.36),(.08,.26,.13),st,.05,root)
+    obox((.0,0,.72),(.4,.06,.14),dk,.03,root); obox((.45,0,.98),(.03,.03,.14),ch,.01,root); oico((.45,0,1.14),.06,dk,root,sub=1)   # console + gear stick
+    obox((-1.8,0,.8),(.5,1.75,.15),st,.06,root); obox((-2.32,0,1.6),(.1,1.75,.7),st,.06,root)   # rear bench
+    obox((1.0,-.9,1.36),(.26,.05,.05),dk,.02,root,rot=(0,R(-25),0))             # steering column
+    sw=empty((.78,-.9,1.47),root,rot=(0,R(65),0))
+    for k in range(24): a=k*pi/12; obox((math.cos(a)*.24,math.sin(a)*.24,0),(.036,.022,.022),dk,.012,sw,rot=(0,0,a+pi/2))
+    obox((0,0,0),(.03,.22,.02),dk,.01,sw); obox((0,0,0),(.07,.07,.03),dk,.02,sw)
+    for sx in (-2.3,2.3):
+        for sy in (-1,1): W.append(wheel((sx,sy*(HW-.05),.55),.55,.34,root))
+    return dict(root=root,wheels=W,r=.55,sw=sw)
+def cw(p,loc=(hero_x,-15.7,0),rotz=180):
+    a=R(rotz); return (loc[0]+p[0]*math.cos(a)-p[1]*math.sin(a),loc[1]+p[0]*math.sin(a)+p[1]*math.cos(a),loc[2]+(p[2] if len(p)>2 else 0))
 def stall(x,y,kind,col,label_):
     wd=M('#7A5236',.6,kind='wood'); B.box((x,y,.45),(.9,.5,.45),wd,.03); B.box((x,y,.92),(.95,.55,.03),M('#E8E4DA',.6),.01)
     for dx in (-.85,.85): B.cyl((x+dx,y-.45,1.4),.03,2.0,M('#8A8E96',.3,metal=.6),seg=6)
     B.box((x,y+.1,2.4),(1.1,.75,.05),M(col,.85,kind='fabric',h2='#F4F1EA',sc=4),.02,rot=(R(12),0,0))
-    B.box((x,y+.52,1.6),(.8,.03,.18),M('#16171C',.5),0); stext(label_,(x,y+.56,1.6),.16,'#FFF3B0',n=(0,1,0),e=1.2)
+    B.box((x,y+.62,2.86),(len(label_)*.2*.46+.14,.04,.2),M('#16171C',.5),.03); stext(label_,(x,y+.67,2.86),.2,'#FFF3B0',n=(0,1,0),e=1.6)
+    for dx in (-.9,.9): B.cyl((x+dx,y+.6,2.6),.025,.5,M('#8A8E96',.3,metal=.6),seg=6)
     if kind=='corn':
         B.box((x-.3,y,1.0),(.3,.25,.06),M('#2A2C34',.5),0);
         for k in range(5): B.cyl((x-.45+.08*k,y,1.08),.04,.3,M('#F2C14E',.6),rot=(0,R(90),0),seg=8)

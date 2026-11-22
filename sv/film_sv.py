@@ -25,6 +25,26 @@ if MODE=='probe':
     for nm in args[5:]:
         ob=bpy.data.objects.get(nm)
         if ob: print('POS',nm,tuple(round(x,2) for x in ob.matrix_world.translation),tuple(round(x,2) for x in world_to_camera_view(sc,cam,ob.matrix_world.translation)))
+elif MODE=='clip':
+    # physics check: no two characters may occupy the same space (2D oriented boxes of torso+arms)
+    def box(H):
+        m=H['root'].matrix_world; u=H['u']; c=m.translation; a=m.to_euler()[2]; return c,a,2.0*u*H['C'].get('wide',1.0),.52*u
+    def sep(A,B_):
+        (c1,a1,w1,d1),(c2,a2,w2,d2)=A,B_
+        if abs(c1.z-c2.z)>1.0: return True
+        dx=c2.x-c1.x; dy=c2.y-c1.y
+        for a in (a1,a1+pi/2,a2,a2+pi/2):
+            ax=(math.cos(a),math.sin(a)); pr=abs(dx*ax[0]+dy*ax[1]); r=0
+            for (aa,w,d) in ((a1,w1,d1),(a2,w2,d2)): r+=abs(w*(math.cos(aa)*ax[0]+math.sin(aa)*ax[1]))+abs(d*(-math.sin(aa)*ax[0]+math.cos(aa)*ax[1]))
+            if pr>r-.03: return True
+        return False
+    bad=set()
+    for f in range(6):
+        t=DUR*(f+.5)/6; upd_all(t); bpy.context.view_layer.update(); Bx=[('%s(%.1f,%.1f|w%.2f)'%(H['root'].name,H['root'].matrix_world.translation.x,H['root'].matrix_world.translation.y,2.0*H['u']*H['C'].get('wide',1.0)),box(H)) for H in ALLH]
+        for i in range(len(Bx)):
+            for j in range(i+1,len(Bx)):
+                if not sep(Bx[i][1],Bx[j][1]): bad.add((Bx[i][0],Bx[j][0]))
+    print('CLIP',SN,KEY,sorted(bad),flush=True)
 elif MODE=='still':
     os.makedirs(OUTR+'/stills',exist_ok=True)
     for t in [float(x) for x in args[4].split(',')]:

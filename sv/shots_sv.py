@@ -30,10 +30,24 @@ def hearts(src_fn,t0,t1,n=8,seed=1,size=1.0,rise=1.6):
             if q<=0 or q>=1: o.scale=(0,0,0); return
             p=Vector(src_fn(t)); o.location=(p.x+dx+.12*math.sin(q*6+ph),p.y,p.z+rise*q); k=min(1,q*5)*(1-q)**.5; o.scale=(k,k,k); face_cam(o)
         fx.add(h,fn)
+def fit_cam(o,w,h,k,ymin=-.12,ymax=.86,xm=.93):
+    # keep a camera-facing card fully inside the frame: shrink if too wide, then slide it in
+    if k<=0: return
+    c=Vector(CAM.location); f=(Vector(TGT.location)-c).normalized(); r=f.cross(Vector((0,0,1))).normalized(); u=r.cross(f)
+    th=10.125/CAM.data.lens; tv=18.0/CAM.data.lens
+    par=o.parent.matrix_world if o.parent else None
+    p=o.matrix_world.translation if par else Vector(o.location); v=p-c; z=v.dot(f)
+    if z<=.2: return
+    hw=w*k/(z*th); s=1.0
+    if hw>xm: s=xm/hw; hw=xm
+    hh=h*k*s/(z*tv); x=v.dot(r)/(z*th); y=v.dot(u)/(z*tv)
+    nx=max(-xm+hw,min(xm-hw,x)); ny=max(ymin+hh,min(ymax-hh,y))
+    o.scale=(k*s,k*s,k*s)
+    if par is None: o.location=Vector(o.location)+r*((nx-x)*z*th)+u*((ny-y)*z*tv)
 def bubble(body,loc,t0,size=.2,col='#16171C',bg='#FFFFFF',w=None,dur=99):
-    e=empty(loc); w=w or (len(body)*size*.34+.2); obox((0,.03,0),(w,.02,size*.9),M(bg,.5,emit=.5),size*.5,e); text(body,(0,0,0),(0,-1,0),size,M(col,.5,emit=.2),ex=.005,parent=e); e.scale=(0,0,0)
+    e=empty(loc); w=w or (len(body)*size*.34+min(.2,size*1.1)); obox((0,.03,0),(w,.02,size*.9),M(bg,.5,emit=.5),size*.5,e); text(body,(0,0,0),(0,-1,0),size,M(col,.5,emit=.2),ex=.005,parent=e); e.scale=(0,0,0)
     def fn(o,t):
-        k=pop(t-t0) if t0<=t<t0+dur else 0; o.scale=(k,k,k); face_cam(o)
+        k=pop(t-t0) if t0<=t<t0+dur else 0; o.scale=(k,k,k); o.location=loc; face_cam(o); fit_cam(o,w,size*.9,k)
     fx.add(e,fn); return e
 
 # ---------------------------------------------------------------- people
@@ -54,10 +68,17 @@ def person(seed,young=False):
         if r.random()<.35: c['jacket']=r.choice(MENC)
         if r.random()<.2: c['glasses']=True
     return c
+ALLH=[]; _abd0=avatar_bd
+def avatar_bd(*a,**k):
+    H=_abd0(*a,**k); ALLH.append(H); return H
 def walkers(n,seed,x0,x1,ys,z=0.0):
-    r=random.Random(seed); P=[]
-    for i in range(n):
-        y=r.choice(ys)+r.uniform(-.3,.3); d=r.choice([-1,1]); H=avatar_bd((0,y,z),90*d,person(seed*100+i),name='w%d_%d'%(seed,i)); P.append(dict(H=H,x0=r.uniform(x0,x1),y=y,d=d,v=r.uniform(.9,1.2),a=x0,b=x1))
+    # one direction and one speed per lane, evenly spaced: nobody walks through anybody
+    r=random.Random(seed); P=[]; per=max(1,-(-n//len(ys))); L_=x1-x0
+    for li,y in enumerate(ys):
+        d=1 if li%2==0 else -1
+        for i in range(per):
+            if len(P)>=n: break
+            H=avatar_bd((0,y,z),90*d,person(seed*100+li*20+i),name='w%d_%d_%d'%(seed,li,i)); P.append(dict(H=H,x0=x0+L_*(i+r.uniform(.15,.55))/per,y=y,d=d,v=1.0,a=x0,b=x1))
     return P
 def upd_walkers(P,tg):
     for p in P:
@@ -119,7 +140,7 @@ def clock_card(loc,t0,label,spin=1.0,col='#7A1F1F'):
 def title_card(body,t0,loc,size=.5):
     e=empty(loc); obox((0,.06,0),(len(body)*size*.32+.4,.03,size*.75),M('#1B1F33',.6),.1,e); text(body,(0,0,0),(0,-1,0),size,M('#FFF3B0',.4,emit=2),ex=.02,parent=e); e.scale=(0,0,0)
     def fn(o,t):
-        k=pop(t-t0) if t>=t0 else 0; o.scale=(k,k,k); face_cam(o)
+        k=pop(t-t0) if t>=t0 else 0; o.scale=(k,k,k); o.location=loc; face_cam(o); fit_cam(o,len(body)*size*.32+.4,size*.75,k)
     fx.add(e,fn); return e
 
 
@@ -129,19 +150,19 @@ def _st():
     st=[0]+[i+1 for i,w in enumerate(W_[:-1]) if w['w'][-1] in '.!?"…']; return st
 def sg(a,b=None):
     st=_st(); b=a if b is None else b; e=(st[b+1]-1) if b+1<len(st) else len(W_)-1; return (W_[st[a]]['s'],W_[e]['e'])
-FR0={'da':(-1.1,-5.3),'sh':(0,-5.0),'bi':(1.1,-5.3)}
-def beach(crowd=10,seed=3,extras=True):
-    sea,lamps=surf_set(); pc=parked_cars()
-    stall(-4,-6.8,'corn','#2B8A5A','BHUTTA'); stall(-1.2,-6.8,'chaat','#C8372D','CHANA CHAAT'); stall(1.8,-6.8,'chai','#7448C2','CHAI'); stall(4.8,-6.8,'ice','#2B5AA8','ICE CREAM')
+FR0={'da':(-1.1,-5.4),'sh':(0,-4.8),'bi':(1.1,-5.4)}
+def beach(crowd=10,seed=3,extras=True,hero=False,lanes=(-2.45,6.3)):
+    sea,lamps=surf_set(); hc=hero_car() if hero else None; pc=parked_cars(hero=hc)
+    stall(-4,-6.8,'corn','#2B8A5A','BHUTTA'); stall(-1.2,-6.8,'chaat','#C8372D','CHAAT'); stall(1.8,-6.8,'chai','#7448C2','CHAI'); stall(4.8,-6.8,'ice','#2B5AA8','ICE CREAM')
     for (x,y,c,rz) in ((-14,2,'#C8372D',10),(-18,4,'#2B8A5A',-15),(16,3,'#F2C14E',5)): mat((x,y,.01),c,rz)
     mat((10,1,.01),'#7448C2',0)
-    cm=camel((-7,5,0),-60); hs=horse((15,6.5,0),30); bl=balloons((-9.5,-1.5,0))
+    cm=camel((-7,3.4,0),-60); hs=horse((13.2,4.0,0),30); bl=balloons((-9.5,-.6,0))
     sun=empty((-8,90,9)); oico((0,0,0),5.5,M('#FFC870',.3,emit=7),sun,sub=2)
     B.done('beach'); setup_world('golden',shadow=50)
     P=dict(da=mk(DANI,*FR0['da'],180,'dani'),sh=mk(SHERRY,*FR0['sh'],180,'sherry'),bi=mk(BILAL,*FR0['bi'],180,'bilal'))
-    W=walkers(crowd,seed,-26,26,(-2.5,1.5,6.0)) if crowd else []
-    vend=mk(VENDOR,-9.5,-1.1,180,'vendor')
-    return dict(sea=sea,cm=cm,hs=hs,P=P,W=W,vend=vend)
+    W=walkers(crowd,seed,-26,26,lanes) if crowd else []
+    vend=mk(VENDOR,-9.5,-.2,180,'vendor')
+    return dict(sea=sea,cm=cm,hs=hs,P=P,W=W,vend=vend,hc=hc)
 def bidle(S,t,skip=()):
     for i,e in enumerate(S['sea']): e.location[1]=12+i*1.6-.9*math.sin(t*1.2+i*.9); e.scale[0]=1
     upd_walkers(S['W'],t+3); S['cm'].rotation_euler[2]=R(-60+3*math.sin(t*.7)); S['hs'].location[2]=.03*abs(math.sin(t*3))
@@ -164,26 +185,25 @@ def OPEN_():
     return dict(upd=upd)
 SHOTS['OPEN']=OPEN_
 def MISSION_():
-    S=beach(crowd=14); fpos(S); title_card('EVERYONE HAS A MISSION',.3,(0,2,3.4),.26)
-    for i,(txt,x,y) in enumerate((('ROMANCE',-12,8),('FAMILY',10,1.5),('BORED',-4,-8.6),('FOOD',1.8,-6.2))): label(txt,(x,y,2.6),.6+.35*i,size=.22)
-    a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.6,8,180); am=add(S,'am',AMMI,9.6,1.6,0); ab=add(S,'ab',ABBU,10.6,1.4,0); kd=add(S,'kd',KID,10.2,.4,0)
+    S=beach(crowd=28); fpos(S); title_card('EVERYONE HAS A MISSION',.3,(0,2,3.4),.26)
+    a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.15,8.5,180); am=add(S,'am',AMMI,9.3,1.6,0); ab=add(S,'ab',ABBU,11.3,1.4,0); kd=add(S,'kd',KID,10.3,.4,0)
     def upd(t):
         bidle(S,t); sit(ab,1,.05,legs=90); q=ease(t/DUR); camset(LV((0,-6,4.5),(0,-4,3.6),q),(0,4,1.2),20,22)
     return dict(upd=upd)
 SHOTS['MISSION']=MISSION_
 def ROMANCE_():
-    S=beach(crowd=4); fpos(S); a=add(S,'bf',BOYF,-12.35,8,180); b=add(S,'gf',GIRLF,-11.65,8,180); hearts(lambda t:(-12,8,2.6),.2,DUR,n=6)
+    S=beach(crowd=4); fpos(S); a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.15,8.5,180); hearts(lambda t:(-12,8,2.6),.2,DUR,n=6)
     def upd(t):
         bidle(S,t); arm_to(a,-1,hp(b,-.7),.8,base=(-30,0,0)); arm_to(b,1,hp(a,-.7),.8,base=(-30,0,0))
         q=ease(t/DUR); camset(LV((-14.5,4.2,1.4),(-13.8,4.6,1.5),q),(-12,8.5,1.5),26,8)
     return dict(upd=upd)
 SHOTS['ROMANCE']=ROMANCE_
 def FAMILYT_():
-    S=beach(crowd=4); fpos(S); am=add(S,'am',AMMI,9.6,1.6,0); ab=add(S,'ab',ABBU,10.6,1.4,0); kd=add(S,'kd',KID,10.2,.4,0)
-    for k in range(4): e=empty((9.6+.3*k,1.0,.02)); plate_food(e,1.3)
+    S=beach(crowd=4); fpos(S); am=add(S,'am',AMMI,9.3,1.6,0); ab=add(S,'ab',ABBU,11.3,1.4,0); kd=add(S,'kd',KID,10.3,.4,0)
+    for k in range(4): e=empty((9.98+.2*k,1.25,.02)); plate_food(e,1.3)
     def upd(t):
         bidle(S,t); sit(ab,1,.05,legs=90); sit(am,1,.05,legs=90); face(am,mouth='grin'); face(ab,mouth='smile'); kd['root'].location[2]=.1*abs(math.sin(t*5)); face(kd,mouth='grin')
-        q=ease(t/DUR); camset(LV((10.6,-2.6,1.6),(10.4,-2.2,1.6),q),(10.1,1.0,.7),26,8)
+        q=ease(t/DUR); camset(LV((10.5,-2.9,1.6),(10.3,-2.5,1.6),q),(10.3,1.0,.75),21,8)
     return dict(upd=upd)
 SHOTS['FAMILYT']=FAMILYT_
 def BORED_():
@@ -200,47 +220,58 @@ def SEAVIEW_():
     return dict(upd=upd)
 SHOTS['SEAVIEW']=SEAVIEW_
 # ================================================================ SCENE 1 — friends
+SEATS={'da':(0,-.9,.8),'sh':(0,.9,.8),'bi':(-1.9,0,.95)}
+def incar(S,t,lean=0.0):
+    """seat the three friends in the hero car: nothing clips - legs under the dash, arms beside the seats, driver's hands on the wheel"""
+    for k,(x,y,sh_) in SEATS.items():
+        H=S['P'][k]; px=x+(lean if k=='bi' else 0); w=cw((px,y,0)); H['root'].location=(w[0],w[1],0); facep(H,cw((px+30,y,0))); sit(H,1,sh_,legs=90); blink(H,t)
+        H['head'].rotation_euler=(0,0,0)
+        for q in (1,-1): H['arm'][q].rotation_euler=(R(-14),0,0)
+    D=S['P']['da']; b=.012*math.sin(t*1.7)
+    arm_to(D,1,cw((.66,-.7,1.6+b)),1); arm_to(D,-1,cw((.66,-1.1,1.6-b)),1)
+def cidle(S,t): bidle(S,t,skip=('da','sh','bi'))
 def MEET_():
-    S=beach(crowd=6); fpos(S)
-    for k,nm,c in (('da','DANI','#1F3A6A'),('sh','SHERRY','#7A1F1F'),('bi','BILAL','#1F4D3A')): x,y=FR0[k]; label(nm,(x,y,2.75),.3+.5*['da','sh','bi'].index(k),size=.18,col=c)
+    S=beach(crowd=6,hero=True)
+    for i,(k,nm,c,z) in enumerate((('da','DANI','#1F3A6A',3.4),('sh','SHERRY','#7A1F1F',3.4),('bi','BILAL','#1F4D3A',3.95))): x,y,_=SEATS[k]; label(nm,cw((x,y,z)),.3+.5*i,size=.24,col=c)
     def upd(t):
-        bidle(S,t); fpos(S); face(S['P']['da'],mouth='grin'); face(S['P']['sh'],mouth='flat',brow=-.03); face(S['P']['bi'],mouth='smile')
-        q=ease(t/DUR); camset(LV((0,-1.2,1.6),(0,-1.6,1.65),q),(0,-5.2,1.5),26,8)
+        cidle(S,t); incar(S,t); face(S['P']['da'],mouth='grin'); face(S['P']['sh'],mouth='flat',brow=-.03); face(S['P']['bi'],mouth='smile')
+        q=ease(t/DUR); camset(LV(cw((5.6,.3,2.55)),cw((4.7,.1,2.5)),q),cw((0,0,2.45)),24,8)
     return dict(upd=upd)
 SHOTS['MEET']=MEET_
-def ftalk(key,a,b,cam,lens=36,extra=None,face_to=None):
+def ctalk(key,a,b,cam,lens=36,extra=None,turn=None,lean=0.0,tz=-.05):
     def S_():
-        S=beach(crowd=4); fpos(S)
+        S=beach(crowd=4,hero=True)
         def upd(t):
-            bidle(S,t); fpos(S); H=S['P'][key]; facep(H,face_to or cam[:2],.7 if face_to else 1,cam=cam[:2]); talk(H,t,*sg(a,b)); face(H,brow=.05)
+            cidle(S,t); incar(S,t,lean); H=S['P'][key]; talk(H,t,*sg(a,b)); face(H,brow=.05)
             for k,o in S['P'].items():
-                if k!=key: look_at(o,hp(H),.6)
+                if k!=key: look_at(o,hp(H),.5,maxyaw=50)
+            if turn: look_at(H,hp(S['P'][turn]),.45,maxyaw=40)
             if extra: extra(S,t)
-            q=ease(t/DUR); camset(LV(cam,(cam[0]+(hp(H)[0]-cam[0])*.06,cam[1]+(hp(H)[1]-cam[1])*.06,cam[2]),q),hp(H,-.06),lens,2.8)
+            q=ease(t/DUR); c0=cw(cam); c1=(c0[0]+(hp(H)[0]-c0[0])*.06,c0[1]+(hp(H)[1]-c0[1])*.06,c0[2]); camset(LV(c0,c1,q),hp(H,tz),lens,2.8)
         return dict(upd=upd)
     return S_
 def _fin(S,t):
-    H=S['P']['da']; k=tl(t,.1,.5); H['arm'][1].rotation_euler=(R(-165*k),0,R(-15)); H['arm'][-1].rotation_euler=(R(-165*k),0,R(15)); H['head'].rotation_euler[0]=R(-12*k)
-def _peace(S,t): H=S['P']['sh']; gest(H,t,1,1.4,8,-80); face(H,brow=-.05,brow_r=-16)
-def _utr(S,t): H=S['P']['bi']; H['arm'][1].rotation_euler=(R(-40),0,R(-30)); H['arm'][-1].rotation_euler=(R(-40),0,R(30)); face(H,mouth='flat',brow=-.02,brow_r=-6)
-SHOTS['FINALLY']=ftalk('da',7,8,(-1.25,-2.6,1.95),extra=_fin)
-SHOTS['PEACE']=ftalk('sh',9,10,(.3,-3.0,1.85),extra=_peace,face_to=(-1.0,-5.0))
-SHOTS['UTRAY']=ftalk('bi',11,11,(1.5,-2.9,2.0),extra=_utr,face_to=(0,-5.4))
+    H=S['P']['da']; k=tl(t,.1,.5); g=math.sin(t*9)*6*k; H['arm'][1].rotation_euler=(R(-14-92*k+g),0,R(-8*k)); H['head'].rotation_euler[0]=R(-8*k); face(H,mouth='grin',brow=.06)
+def _peace(S,t): H=S['P']['sh']; gest(H,t,-1,1.2,8,-78); face(H,brow=-.05,brow_r=-16)
+def _utr(S,t): H=S['P']['bi']; face(H,mouth='flat',brow=-.02,brow_r=-6); H['head'].rotation_euler[0]=R(6)
+SHOTS['FINALLY']=ctalk('da',7,8,(3.0,-.45,2.1),extra=_fin)
+SHOTS['PEACE']=ctalk('sh',9,10,(3.0,.5,2.1),extra=_peace,turn='da')
+SHOTS['UTRAY']=ctalk('bi',11,11,(.4,0,2.4),lens=21,extra=_utr,lean=.45,tz=0)
 def CHAI_():
-    S=beach(crowd=4); fpos(S); cp=in_hand(S['P']['sh'],1,lambda e: tea_cup(e,1.8)); b=bubble('CHAI ONLY',(0,-5.4,2.6),.3,size=.16,col='#6A2A6A',bg='#F3E6FF')
+    S=beach(crowd=4,hero=True); b=bubble('CHAI ONLY',cw((.7,-.7,2.66)),.3,size=.12,col='#6A2A6A',bg='#F3E6FF')
     def upd(t):
-        bidle(S,t); fpos(S); H=S['P']['sh']; facep(H,(.3,-3.0)); talk(H,t,*sg(12)); face(H,brow=.02,eyes=.7); arm_to(H,1,hp(H,-.3),.7,base=(-30,0,0))
-        for k in ('da','bi'): look_at(S['P'][k],hp(H),.7); face(S['P'][k],mouth='flat',brow=-.04,brow_r=-14)
-        q=ease(t/DUR); camset(LV((.25,-2.4,1.85),(.22,-2.6,1.85),q),hp(H,-.1),32,4)
+        cidle(S,t); incar(S,t); H=S['P']['sh']; talk(H,t,*sg(12)); face(H,brow=.02,eyes=.7)
+        for k in ('da','bi'): look_at(S['P'][k],hp(H),.6,maxyaw=50); face(S['P'][k],mouth='flat',brow=-.04,brow_r=-14)
+        q=ease(t/DUR); camset(LV(cw((3.6,.25,2.15)),cw((3.4,.3,2.15)),q),cw((0,.45,2.1)),30,4)
     return dict(upd=upd)
 SHOTS['CHAI']=CHAI_
 # ================================================================ SCENE 2 — couple
 def cset():
-    S=beach(crowd=4); fpos(S); a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.6,8,180); return S,a,b
+    S=beach(crowd=4); fpos(S); a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.15,8.5,180); return S,a,b
 def COUPLE_():
     S,a,b=cset(); label('THE COUPLE',(-12,8,2.7),.3,size=.2,col='#7A1F4A',bg='#FFE0F0')
     def upd(t):
-        bidle(S,t); arm_to(a,-1,hp(b,-.7),.7,base=(-30,0,0)); face(a,mouth='smile'); face(b,mouth='smile')
+        bidle(S,t); arm_to(a,-1,(b['root'].location[0]-.5,b['root'].location[1]-.3,1.8),.8,base=(-30,0,0)); face(a,mouth='smile'); face(b,mouth='smile')
         q=ease(t/DUR); camset(LV((-12,2.4,1.5),(-12,3.6,1.5),q),(-12,8.5,1.6),24,8)
     return dict(upd=upd)
 SHOTS['COUPLE']=COUPLE_
@@ -263,14 +294,14 @@ SHOTS['PARKING']=ctalk('a',16,mood='O',extra=_pk)
 def INSULT_():
     S,a,b=cset(); 
     def upd(t):
-        bidle(S,t); facep(a,(-11.6,8)); facep(b,(-12.4,8),.5,cam=(-11.5,6.3)); talk(b,t,*sg(17)); face(b,brow=-.07,brow_r=-24); b['arm'][1].rotation_euler=(R(-30),0,R(-45)); b['arm'][-1].rotation_euler=(R(-30),0,R(45))
+        bidle(S,t); facep(a,(-11.6,8)); facep(b,(-12.4,8),.5,cam=(-10.9,5.8)); talk(b,t,*sg(17)); face(b,brow=-.07,brow_r=-24); b['arm'][1].rotation_euler=(R(-30),0,R(-45)); b['arm'][-1].rotation_euler=(R(-30),0,R(45))
         face(a,mouth='O',brow=.06); a['root'].rotation_euler[0]=R(6*tl(t,.4,.8))
-        q=ease(t/DUR); camset(LV((-12.0,5.7,1.8),(-12.0,5.95,1.8),q),(-12,8,1.6),30,5.6)
+        q=ease(t/DUR); camset(LV((-10.9,5.5,1.85),(-10.9,5.8,1.85),q),hp(b,-.1),32,5.6)
     return dict(upd=upd)
 SHOTS['INSULT']=INSULT_
 # ================================================================ SCENE 3 — family
 def famset():
-    S=beach(crowd=4); fpos(S); am=add(S,'am',AMMI,9.4,1.7,0); ab=add(S,'ab',ABBU,10.8,1.5,0); kd=add(S,'kd',KID,10.1,.2,0)
+    S=beach(crowd=4,lanes=(6.3,)); fpos(S); am=add(S,'am',AMMI,9.3,1.7,0); ab=add(S,'ab',ABBU,11.3,1.5,0); kd=add(S,'kd',KID,10.3,.2,0)
     pl=[]
     for k in range(5): e=empty((9.3+.35*k,1.0+.15*(k%2),.02)); plate_food(e,1.4); e.scale=(0,0,0); pl.append(e)
     return S,am,ab,kd,pl
@@ -279,15 +310,15 @@ def FAMILY_():
     label('SO MUCH FOOD',(10,0,2.6),2.0,size=.2,col='#7A3A10')
     def upd(t):
         bidle(S,t)
-        for H,p0,p1 in ((am,(9,-5),(9.4,1.7)),(ab,(10.4,-5.4),(10.8,1.5)),(kd,(9.8,-4.6),(10.1,.2))): walk_path(H,[p0,p1],t,0,DUR-.5,step=.5); blink(H,t); face(H,mouth='grin')
+        for H,p0,p1 in ((am,(8.9,-5),(9.3,1.7)),(ab,(10.9,-5.4),(11.3,1.5)),(kd,(9.9,-6.6),(10.3,.2))): walk_path(H,[p0,p1],t,0,DUR-.5,step=.5); blink(H,t); face(H,mouth='grin')
         for H in (am,ab):
             for s in (1,-1): H['arm'][s].rotation_euler=(R(-15),0,R(s*-12))
-        q=ease(t/DUR); camset(LV((13.5,-3.5,1.8),(13,-2.6,1.8),q),(10,-1,1.2),26,8)
+        q=ease(t/DUR); m_=((am['root'].location[0]+ab['root'].location[0])/2,(am['root'].location[1]+ab['root'].location[1])/2,1.25); camset(LV((14.8,-1.6,1.8),(14.4,-.6,1.8),q),m_,24,8)
     return dict(upd=upd)
 SHOTS['FAMILY']=FAMILY_
 def fidle(S,am,ab,kd,pl,t,plates=True):
-    bidle(S,t); am['root'].location=(9.4,1.7,0); ab['root'].location=(10.8,1.5,0); kd['root'].location=(10.1,.2,0)
-    facep(am,(10.1,.6)); facep(ab,(9.6,1.2)); facep(kd,(9.6,1.6))
+    bidle(S,t); am['root'].location=(9.3,1.7,0); ab['root'].location=(11.3,1.5,0); kd['root'].location=(10.3,.2,0)
+    facep(am,(10.1,.6)); facep(ab,(9.6,1.2)); facep(kd,(9.3,1.6))
     for e in pl: k=1 if plates else 0; e.scale=(k,k,k)
 def SAB_():
     S,am,ab,kd,pl=famset()
@@ -301,82 +332,82 @@ SHOTS['SAB']=SAB_
 def ITNA_():
     S,am,ab,kd,pl=famset()
     def upd(t):
-        fidle(S,am,ab,kd,pl,t); facep(ab,(9.4,1.7),.6,cam=(11.4,-.2)); talk(ab,t,*sg(21)); face(ab,brow=.06,brow_r=16); ab['arm'][1].rotation_euler=(R(-60),0,R(-60)); ab['arm'][-1].rotation_euler=(R(-60),0,R(60))
+        fidle(S,am,ab,kd,pl,t); facep(ab,(9.3,1.7),.6,cam=(11.4,-.2)); talk(ab,t,*sg(21)); face(ab,brow=.06,brow_r=16); ab['arm'][1].rotation_euler=(R(-60),0,R(-60)); ab['arm'][-1].rotation_euler=(R(-60),0,R(60))
         q=ease(t/DUR); camset(LV((11.4,-.3,1.95),(11.38,-.15,1.95),q),hp(ab,-.05),36,2.8)
     return dict(upd=upd)
 SHOTS['ITNA']=ITNA_
 def GHAR_():
     S,am,ab,kd,pl=famset()
     def upd(t):
-        fidle(S,am,ab,kd,pl,t); facep(am,(10.8,1.5),.6,cam=(8.6,-.1)); talk(am,t,*sg(22),rest='grin'); face(am,brow=.02); am['arm'][1].rotation_euler=(R(-40),0,R(-60))
+        fidle(S,am,ab,kd,pl,t); facep(am,(11.3,1.5),.6,cam=(8.6,-.1)); talk(am,t,*sg(22),rest='grin'); face(am,brow=.02); am['arm'][1].rotation_euler=(R(-40),0,R(-60))
         q=ease(t/DUR); camset(LV((8.6,-.2,1.9),(8.62,-.05,1.9),q),hp(am,-.05),36,2.8)
     return dict(upd=upd)
 SHOTS['GHAR']=GHAR_
 def SAMANDAR_():
     S,am,ab,kd,pl=famset()
     def upd(t):
-        fidle(S,am,ab,kd,pl,t); facep(kd,(9.4,1.7),.85,cam=(10.1,-1.8)); talk(kd,t,*sg(23)); face(kd,brow=.06,brow_r=14); arm_to(kd,1,(10.5,12,1.5),tl(t,.2,.5),base=(-30,0,0)); kd['root'].location[2]=.06*abs(math.sin(t*7))
+        fidle(S,am,ab,kd,pl,t); facep(kd,(9.3,1.7),.85,cam=(10.1,-1.8)); talk(kd,t,*sg(23)); face(kd,brow=.06,brow_r=14); arm_to(kd,1,(10.5,12,1.5),tl(t,.2,.5),base=(-30,0,0)); kd['root'].location[2]=.06*abs(math.sin(t*7))
         q=ease(t/DUR); camset(LV((10.1,-1.4,1.2),(10.1,-1.25,1.2),q),hp(kd,-.05),36,2.8)
     return dict(upd=upd)
 SHOTS['SAMANDAR']=SAMANDAR_
 def PLATE_():
     S,am,ab,kd,pl=famset()
     def upd(t):
-        fidle(S,am,ab,kd,pl,t); facep(am,(10.1,.2)); talk(am,t,*sg(24),shapes=('O','o','O','flat')); face(am,brow=-.06,brow_r=-22); arm_to(am,1,hp(kd,-.3),tl(t,.1,.35),base=(-30,0,0))
+        fidle(S,am,ab,kd,pl,t); facep(am,(10.3,.2)); talk(am,t,*sg(24),shapes=('O','o','O','flat')); face(am,brow=-.06,brow_r=-22); arm_to(am,1,hp(kd,-.3),tl(t,.1,.35),base=(-30,0,0))
         face(kd,mouth='frown',brow=.05); kd['head'].rotation_euler[0]=R(15)
         q=ease(t/DUR); camset(LV((8.0,-.8,1.6),(8.2,-.6,1.6),q),(9.8,.9,1.3),28,5.6)
     return dict(upd=upd)
 SHOTS['PLATE']=PLATE_
 # ================================================================ SCENE 4 — food
-SP={'da':(-.6,-5.2),'sh':(1.0,-5.9),'bi':(-1.7,-5.0)}
+SP={'da':(-.9,-5.2),'sh':(1.0,-5.9),'bi':(-2.6,-4.0)}
 def spos(S):
     for k,(x,y) in SP.items(): S['P'][k]['root'].location=(x,y,0)
-def stallset():
-    S=beach(crowd=6); spos(S); v=[mk(VENDOR,x,-7.3,180,'v%d'%i) for i,x in enumerate((-4,-1.2,1.8,4.8))]; return S,v
+def stallset(lanes=(6.3,)):
+    S=beach(crowd=6,lanes=lanes); spos(S); v=[mk(VENDOR,x,-7.3,180,'v%d'%i) for i,x in enumerate((-4,-1.2,1.8,4.8))]; return S,v
 def sidle(S,v,t):
     bidle(S,t)
     for H in v: stand(H,t); blink(H,t); H['root'].rotation_euler[2]=R(180)
 def HUNGER_():
-    S,v=stallset(); label('SHERRY: HUNGRY AGAIN',(1.0,-5.8,2.6),.4,size=.17,col='#7A1F1F')
+    S,v=stallset()
     def upd(t):
-        sidle(S,v,t); spos(S); sh=S['P']['sh']; walk_path(sh,[(0,-5.0),(1.0,-5.9)],t,0,1.2,step=.45); face(sh,mouth='grin',brow=.06,eyes=.6)
+        sidle(S,v,t); spos(S); sh=S['P']['sh']; walk_path(sh,[(1.0,-4.2),(1.0,-5.9)],t,0,1.2,step=.45); face(sh,mouth='grin',brow=.06,eyes=.6)
         if t>1.2: facep(sh,(1.8,-7.3))
-        q=ease(t/DUR); camset(LV((1.6,-2.6,1.6),(1.4,-3.2,1.6),q),(.8,-6.4,1.4),26,8)
+        q=ease(t/DUR); camset(LV((1.9,-1.6,1.5),(1.7,-2.2,1.5),q),(1.2,-6.4,1.85),26,8)
     return dict(upd=upd)
 SHOTS['HUNGER']=HUNGER_
 def ORDER_():
     S,v=stallset(); items=[]
-    for i,txt in enumerate(('CORN','FRIES','CHANA CHAAT','ICE CREAM')): items.append(label(txt,(1.0+(i%2)*.9-.45,-5.9,2.75-.3*(i//2)),.4+.65*i,size=.15,col='#7A3A10'))
+    for i,txt in enumerate(('CORN','FRIES','CHANA CHAAT','ICE CREAM')): items.append(label(txt,(.25,-5.9,2.3-.18*i),.4+.65*i,size=.05,col='#7A3A10'))
     def upd(t):
-        sidle(S,v,t); spos(S); sh=S['P']['sh']; sh['root'].location=(1.0,-5.9,0); facep(sh,(1.8,-7.3),.55,cam=(.3,-6.9)); talk(sh,t,*sg(26),rate=10); face(sh,brow=.05); gest(sh,t,1,1.4,9,-90)
-        q=ease(t/DUR); camset(LV((.3,-6.95,1.95),(.32,-6.9,1.95),q),hp(sh,-.08),30,4)
+        sidle(S,v,t); spos(S); sh=S['P']['sh']; sh['root'].location=(1.0,-5.9,0); facep(sh,(1.8,-7.3),.55,cam=(.3,-7.3)); talk(sh,t,*sg(26),rate=10); face(sh,brow=.05); gest(sh,t,1,1.4,9,-90)
+        q=ease(t/DUR); h_=hp(sh); camset(LV((.3,-7.3,1.95),(.32,-7.22,1.95),q),(h_[0]-.27,h_[1]+.135,h_[2]+.02),20,4)
     return dict(upd=upd)
 SHOTS['ORDER']=ORDER_
 def DINNER_():
     S,v=stallset()
     def upd(t):
-        sidle(S,v,t); spos(S); sh=S['P']['sh']; sh['root'].location=(1.0,-5.9,0); da=S['P']['da']; facep(da,(1.0,-5.9),.6,cam=(-.9,-3.0)); talk(da,t,*sg(27)); face(da,brow=.07,brow_r=18)
+        sidle(S,v,t); spos(S); sh=S['P']['sh']; sh['root'].location=(1.0,-5.9,0); da=S['P']['da']; facep(da,(1.0,-5.9),.6,cam=(-.3,-3.0)); talk(da,t,*sg(27)); face(da,brow=.07,brow_r=18)
         da['arm'][1].rotation_euler=(R(-70),0,R(-50)); da['arm'][-1].rotation_euler=(R(-70),0,R(50))
-        q=ease(t/DUR); camset(LV((-.9,-3.0,1.95),(-.88,-3.15,1.95),q),hp(da,-.05),34,2.8)
+        q=ease(t/DUR); camset(LV((-.3,-3.0,1.95),(-.3,-3.15,1.95),q),hp(da,.0),34,2.8)
     return dict(upd=upd)
 SHOTS['DINNER']=DINNER_
 def TOH_():
     S,v=stallset(); cn=in_hand(S['P']['sh'],1,lambda e: corn_cob(e,1.8))
     def upd(t):
-        sidle(S,v,t); spos(S); sh=S['P']['sh']; sh['root'].location=(1.0,-5.9,0); facep(sh,(-.6,-5.2),.6,cam=(1.5,-3.0)); talk(sh,t,*sg(28,29),rest='grin'); face(sh,brow=.02,eyes=.8)
+        sidle(S,v,t); spos(S); sh=S['P']['sh']; sh['root'].location=(1.0,-5.9,0); facep(sh,(-.9,-5.2),.6,cam=(1.5,-3.0)); talk(sh,t,*sg(28,29),rest='grin'); face(sh,brow=.02,eyes=.8)
         arm_to(sh,1,hp(sh,-.3),.5+.5*abs(math.sin(t*2)),base=(-30,0,0))
-        q=ease(t/DUR); camset(LV((1.5,-3.0,1.9),(1.48,-3.15,1.9),q),hp(sh,-.08),30,2.8)
+        q=ease(t/DUR); camset(LV((1.5,-2.5,1.9),(1.48,-2.7,1.9),q),hp(sh,.1),26,4)
     return dict(upd=upd)
 SHOTS['TOH']=TOH_
 # ================================================================ SCENE 5 — the lost boy
 def lset():
-    S,v=stallset(); lb=add(S,'lb',LOST,.3,-3.8,0); return S,v,lb
+    S,v=stallset(lanes=(6.3,)); lb=add(S,'lb',LOST,.3,-3.8,0); return S,v,lb
 def TABHI_():
     S,v,lb=lset(); lb['root'].location=(30,30,0)
     def upd(t):
         sidle(S,v,0); spos(S); S['P']['sh']['root'].location=(1.0,-5.9,0)
         for k in ('da','sh','bi'): face(S['P'][k],mouth='flat',brow=.03)
-        q=ease(t/DUR); camset(LV((0,-1.4,1.7),(0,-1.9,1.7),q),(0,-5.4,1.6),26,8)
+        q=ease(t/DUR); camset(LV((-1.6,1.2,1.8),(-1.6,.8,1.8),q),(-1.6,-5.2,1.8),18,8)
     return dict(upd=upd)
 SHOTS['TABHI']=TABHI_
 def BOYCOMES_():
@@ -404,7 +435,7 @@ def STOPJOKE_():
         sidle(S,v,t); spos(S); S['P']['sh']['root'].location=(1.0,-5.9,0); lb['root'].location=(.3,-3.8,0); facep(lb,(0,-5.2)); face(lb,mouth='frown',eyes=.6)
         for k in ('da','sh','bi'): H=S['P'][k]; facep(H,(.3,-3.8)); face(H,mouth='flat',brow=.04,brow_r=14)
         S['P']['bi']['root'].rotation_euler[0]=R(12*tl(t,.3,.9)); S['P']['da']['root'].rotation_euler[0]=R(10*tl(t,.3,.9))
-        q=ease(t/DUR); camset(LV((-.4,-1.6,1.9),(-.3,-1.9,1.85),q),(.1,-4.6,1.4),26,8)
+        q=ease(t/DUR); camset(LV((.0,-1.7,1.9),(.05,-2.0,1.85),q),(.15,-4.6,1.5),20,8)
     return dict(upd=upd)
 SHOTS['STOPJOKE']=STOPJOKE_
 def SHOULDERS_():
@@ -412,32 +443,32 @@ def SHOULDERS_():
     def upd(t):
         sidle(S,v,t); bi=S['P']['bi']; da=S['P']['da']; sh=S['P']['sh']
         k=tl(t,0,.8)
-        if t<.8: stand(bi,t); bi['root'].location=(-1.7,-5.0,0)
-        else: walk_path(bi,[(-1.7,-5.0),(1.5,-1.0)],t,.8,DUR,step=.5)
-        sit(lb,k,0,legs=80); bp=bi['root'].location; lb['root'].location=(bp[0],bp[1],L(0,4.3*bi['u'],k)); lb['root'].rotation_euler[2]=bi['root'].rotation_euler[2]
+        if t<.8: stand(bi,t); bi['root'].location=(-2.6,-4.0,0)
+        else: walk_path(bi,[(-2.6,-4.0),(-2.9,-.3)],t,.8,DUR,step=.5)
+        sit(lb,k,0,legs=80); bp=bi['root'].location; kz=min(1,k/.6); kx=max(0,(k-.6)/.4); lb['root'].location=(bp[0],L(-3.1,bp[1],kx),L(0,4.3*bi['u'],kz)); lb['root'].rotation_euler[2]=bi['root'].rotation_euler[2]
         face(lb,mouth='frown',eyes=.8); face(bi,mouth='flat',brow=.03)
         for H in (bi,): H['arm'][1].rotation_euler=(R(-160),0,R(-10)); H['arm'][-1].rotation_euler=(R(-160),0,R(10))
-        walk_path(da,[(-.6,-5.2),(-3.5,-1.5)],t,.4,DUR,step=.5); walk_path(sh,[(1.0,-5.9),(5.0,-2.0)],t,.6,DUR,step=.5)
+        walk_path(da,[(-.9,-5.2),(1.8,-2.2)],t,.4,DUR,step=.5); walk_path(sh,[(1.0,-5.9),(5.6,-3.6)],t,.6,DUR,step=.5)
         for H,o in ((da,0),(sh,1)): arm_to(H,1,hp(H,.05),1,base=(-30,0,0)) if int(t*1.5+o)%2==0 else None; mouth_talk(H,t,.6,DUR,rate=5,shapes=('O','O')); face(H,brow=.05)
         q=ease(t/DUR); camset(LV((-1.0,1.4,2.4),(.0,2.2,2.5),q),(hp(bi)[0],hp(bi)[1],2.2),26,8)
     return dict(upd=upd)
 SHOTS['SHOULDERS']=SHOULDERS_
 def mset():
-    S=beach(crowd=8); fpos(S); mo=add(S,'mo',MOTHER2,7.5,4.0,180); lb=add(S,'lb',LOST,6.2,3.2,0); return S,mo,lb
+    S=beach(crowd=8,lanes=(-2.45,)); fpos(S); mo=add(S,'mo',MOTHER2,7.5,4.0,180); lb=add(S,'lb',LOST,6.2,3.2,0); return S,mo,lb
 def mpos(S,mo,lb):
-    for k,(x,y) in (('da',(5.0,2.6)),('sh',(4.8,3.6)),('bi',(5.6,1.9))): S['P'][k]['root'].location=(x,y,0); facep(S['P'][k],(7.5,4.0))
+    for k,(x,y) in (('da',(5.0,2.6)),('sh',(4.1,4.16)),('bi',(6.08,.73))): S['P'][k]['root'].location=(x,y,0); facep(S['P'][k],(7.5,4.0))
 def MOTHER_():
-    S,mo,lb=mset(); label('AMMI!',(6.2,3.2,1.9),1.4,size=.2,col='#7A1F1F',bg='#FFE0E6')
+    S,mo,lb=mset(); label('AMMI!',(6.2,2.6,1.9),1.4,size=.2,col='#7A1F1F',bg='#FFE0E6')
     def upd(t):
         bidle(S,t); mpos(S,mo,lb); walk_path(mo,[(11,7),(7.0,3.8)],t,0,DUR-.8,step=.55,run_=True); blink(mo,t); face(mo,mouth='O',brow=.08,brow_r=24)
-        k=tl(t,1.4,DUR); lb['root'].location=(L(6.0,6.5,k),L(3.0,3.4,k),0); facep(lb,mo['root'].location[:2]); face(lb,mouth='grin' if k>.3 else 'O',brow=.06)
-        q=ease(t/DUR); camset(LV((3.0,-1.0,1.8),(3.4,-.6,1.8),q),(7.0,4.0,1.3),26,8)
+        k=tl(t,1.4,DUR); lb['root'].location=(L(6.1,6.3,k),L(2.2,2.9,k),0); facep(lb,mo['root'].location[:2]); face(lb,mouth='grin' if k>.3 else 'O',brow=.06)
+        q=ease(t/DUR); camset(LV((9.9,-.9,1.7),(9.5,-.5,1.7),q),(6.4,3.4,1.25),26,8)
     return dict(upd=upd)
 SHOTS['MOTHER']=MOTHER_
 def THANKS_():
     S,mo,lb=mset(); hearts(lambda t:(6.9,3.7,2.4),.2,DUR,n=5)
     def upd(t):
-        bidle(S,t); mpos(S,mo,lb); mo['root'].location=(7.0,3.8,0); lb['root'].location=(6.55,3.4,0); facep(mo,(5.0,2.6),.6,cam=(6.8,2.0)); talk(mo,t,*sg(36)); face(mo,brow=.06,brow_r=18,eyes=.8)
+        bidle(S,t); mpos(S,mo,lb); mo['root'].location=(7.0,3.8,0); lb['root'].location=(6.3,2.9,0); facep(mo,(5.0,2.6),.6,cam=(6.8,2.0)); talk(mo,t,*sg(36)); face(mo,brow=.06,brow_r=18,eyes=.8)
         arm_to(mo,-1,hp(lb,-.4),1,base=(-30,0,0)); arm_to(lb,1,hp(mo,-1.2),1,base=(-30,0,0)); face(lb,mouth='grin')
         q=ease(t/DUR); camset(LV((6.8,2.0,1.9),(6.82,2.15,1.9),q),hp(mo,-.15),30,4)
     return dict(upd=upd)
@@ -445,20 +476,20 @@ SHOTS['THANKS']=THANKS_
 def KOIBAAT_():
     S,mo,lb=mset()
     def upd(t):
-        bidle(S,t); mpos(S,mo,lb); mo['root'].location=(7.0,3.8,0); lb['root'].location=(6.55,3.4,0); facep(mo,(5.0,2.6)); da=S['P']['da']; facep(da,(7.0,3.8),.6,cam=(6.0,3.9)); talk(da,t,*sg(37,38),rest='smile'); face(da,brow=.02)
+        bidle(S,t); mpos(S,mo,lb); mo['root'].location=(7.0,3.8,0); lb['root'].location=(6.3,2.9,0); facep(mo,(5.0,2.6)); da=S['P']['da']; facep(da,(7.0,3.8),.6,cam=(6.0,3.9)); talk(da,t,*sg(37,38),rest='smile'); face(da,brow=.02)
         g=math.sin(t*3); da['arm'][1].rotation_euler=(R(-50-15*g),0,R(-20))
         q=ease(t/DUR); camset(LV((6.1,3.95,1.95),(6.05,3.9,1.95),q),hp(da,-.05),34,2.8)
     return dict(upd=upd)
 SHOTS['KOIBAAT']=KOIBAAT_
 # ================================================================ ENDING
 def eset():
-    S=beach(crowd=10); 
-    for k,(x,y) in (('da',(-20.9,-8.55)),('sh',(-19.9,-8.55)),('bi',(-18.9,-8.55))): S['P'][k]['root'].location=(x,y,0)
+    S=beach(crowd=10,lanes=(6.3,)); 
+    for k,(x,y) in (('da',(-21.75,-8.55)),('sh',(-19.95,-8.55)),('bi',(-17.7,-8.55))): S['P'][k]['root'].location=(x,y,0)
     return S
 def eidle(S,t,talker=None):
     bidle(S,t)
-    for k,(x,y) in (('da',(-20.9,-8.55)),('sh',(-19.9,-8.55)),('bi',(-18.9,-8.55))):
-        H=S['P'][k]; sit(H,1,1.2,legs=15); H['root'].location=(x,y-.5,0); H['root'].rotation_euler[2]=R(180); H['arm'][1].rotation_euler=(R(-8),0,R(8)); H['arm'][-1].rotation_euler=(R(-8),0,R(-8))
+    for k,(x,y) in (('da',(-21.75,-8.55)),('sh',(-19.95,-8.55)),('bi',(-17.7,-8.55))):
+        H=S['P'][k]; sit(H,1,1.2,legs=90); H['root'].location=(x,y-.62,H['root'].location[2]); H['root'].rotation_euler[2]=R(180); H['arm'][1].rotation_euler=(R(-6),0,R(4)); H['arm'][-1].rotation_euler=(R(-6),0,R(-4))
         if talker and k!=talker: look_at(H,hp(S['P'][talker]),.6)
 def etalk(key,a,b=None,cam=None,rest='smile',extra=None):
     def S_():
@@ -466,7 +497,7 @@ def etalk(key,a,b=None,cam=None,rest='smile',extra=None):
         def upd(t):
             eidle(S,t,key); H=S['P'][key]; c=cam or (H['root'].location[0]+.3,-6.6,1.9); talk(H,t,*sg(a,b),rest=rest); face(H,brow=.03)
             if extra: extra(S,t)
-            q=ease(t/DUR); camset(LV(c,(c[0],c[1]-.15,c[2]),q),hp(H,-.06),36,2.8)
+            q=ease(t/DUR); camset(LV(c,(c[0],c[1]-.15,c[2]),q),hp(H,.2),36,2.8)
         return dict(upd=upd)
     return S_
 SHOTS['REASONS']=etalk('bi',39)
@@ -474,35 +505,35 @@ SHOTS['STORYL']=etalk('da',40)
 def NARR_():
     S=eset()
     def upd(t):
-        eidle(S,t); q=ease(t/DUR); camset(LV((-19.9,-3.4,2.0),(-19.9,-4.4,2.0),q),(-19.9,-8.6,1.8),24,8)
+        eidle(S,t); q=ease(t/DUR); camset(LV((-19.6,-1.6,2.1),(-19.6,-2.4,2.1),q),(-19.6,-8.6,2.0),22,8)
     return dict(upd=upd)
 SHOTS['NARR']=NARR_
 def SHOR_():
-    S=beach(crowd=22,seed=9); fpos(S); a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.6,8,180); am=add(S,'am',AMMI,9.4,1.7,0); ab=add(S,'ab',ABBU,10.8,1.5,0); kd=add(S,'kd',KID,10.1,.2,0)
-    for k in ('da','sh','bi'): S['P'][k]['root'].location=(30,30,0)
-    title_card('THOUSANDS OF LITTLE STORIES',1.0,(0,2,4.2),.24)
+    S=beach(crowd=22,seed=9); fpos(S); a=add(S,'bf',BOYF,-12.4,8,180); b=add(S,'gf',GIRLF,-11.15,8.5,180); am=add(S,'am',AMMI,9.3,1.7,0); ab=add(S,'ab',ABBU,11.3,1.5,0); kd=add(S,'kd',KID,10.3,.2,0)
+    for i_,k in enumerate(('da','sh','bi')): S['P'][k]['root'].location=(40+6*i_,-40,0)
+    title_card('THOUSANDS OF LITTLE STORIES',1.0,(-2,4,5.2),.5)
     def upd(t):
-        bidle(S,t); sit(ab,1,.05,legs=90); kd['root'].location[2]=.08*abs(math.sin(t*5)); arm_to(a,-1,hp(b,-.7),.7,base=(-30,0,0))
+        bidle(S,t); sit(ab,1,.05,legs=90); kd['root'].location[2]=.08*abs(math.sin(t*5)); arm_to(a,-1,(b['root'].location[0]-.5,b['root'].location[1]-.3,1.8),.8,base=(-30,0,0))
         q=ease(t/DUR); camset(LV((-20,-7,6),(16,-7,6),q),LV((-12,6,1.2),(10,6,1.2),q),22,22)
     return dict(upd=upd)
 SHOTS['SHOR']=SHOR_
 def _stand_up(S,t):
     for k in ('da','sh','bi'): pass
 SHOTS['GHARQ']=etalk('sh',43,cam=(-19.6,-6.6,1.9))
-SHOTS['HAAN']=etalk('da',44,cam=(-20.6,-6.6,1.9),rest='grin')
+SHOTS['HAAN']=etalk('da',44,cam=(-21.4,-6.6,1.9),rest='grin')
 def PEHLE_():
     S=eset(); cp=in_hand(S['P']['sh'],1,lambda e: tea_cup(e,1.8))
     def upd(t):
         eidle(S,t,'sh'); H=S['P']['sh']; talk(H,t,*sg(45),rest='grin'); face(H,brow=-.02,brow_r=-10,eyes=.7); arm_to(H,1,hp(H,-.35),tl(t,.1,.5),base=(-30,0,0))
-        q=ease(t/DUR); camset(LV((-19.65,-6.6,1.9),(-19.67,-6.75,1.9),q),hp(H,-.1),34,2.8)
+        q=ease(t/DUR); camset(LV((-19.65,-6.6,1.9),(-19.67,-6.75,1.9),q),hp(H,.18),34,2.8)
     return dict(upd=upd)
 SHOTS['PEHLE']=PEHLE_
 def BRO_():
-    S=eset(); cp=in_hand(S['P']['sh'],1,lambda e: tea_cup(e,1.8)); title_card('BRO, TUMHARI CHAI KHATAM HI NAHI HOTI!',1.2,(-19.8,-8.5,2.9),.13)
+    S=eset(); cp=in_hand(S['P']['sh'],1,lambda e: tea_cup(e,1.8)); title_card('BRO, TUMHARI CHAI KHATAM HI NAHI HOTI!',1.2,(-18.5,-8.2,3.3),.13)
     def upd(t):
         eidle(S,t,'bi'); H=S['P']['bi']; talk(H,t,*sg(46),shapes=('O','O','o','O'),rest='O'); face(H,brow=.08,brow_r=24); k=tl(t,0,.3)
         H['arm'][1].rotation_euler=(R(-25),0,R(-25)); H['arm'][-1].rotation_euler=(R(-25-40*k),0,R(25+120*k)); sh=S['P']['sh']; arm_to(sh,1,hp(sh,-.35),1,base=(-30,0,0)); face(sh,mouth='grin',eyes=.6)
-        q=ease(t/DUR); camset(LV((-19.8,-5.6,1.9),(-19.8,-6.0,1.9),q),(-19.8,-8.9,1.65),26,8)
+        q=ease(t/DUR); camset(LV((-18.8,-3.9,2.0),(-18.8,-4.3,2.0),q),(-18.8,-8.9,2.15),20,8)
     return dict(upd=upd)
 SHOTS['BRO']=BRO_
 W_=json.load(open(LH+'/audio/words.json'))
