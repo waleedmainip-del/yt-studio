@@ -152,7 +152,7 @@ def SH_P(view):
             k=cl((t-1.0)/.35)-cl((t-1.55)/.35); W['leg'][1].rotation_euler=(R(-75*k),0,0); W['arm'][1].rotation_euler=(R(-120),0,R(-30)); W['arm'][-1].rotation_euler=(R(-100),0,R(40))
             W['root'].rotation_euler[1]=R(-6*k); face(W,mouth='O' if k>.5 else 'grin',brow=.1 if k>.5 else .05,eyes=1.2 if k>.5 else 1)
             hit=cl((t-1.3)/.15)*math.exp(-max(0,t-1.3)*4); chairs[1].rotation_euler=(R(10*hit*math.sin(t*30)),0,R(30)); face(BL,mouth='O'); face(SH,mouth='O')
-            camset((2.9,-2.3,1.5),(.6,-.1,.9),24,4.0)
+            camset((-.6,-2.7,1.6),(.6,-.1,.9),24,4.0)
         else: talk(BL,t,92,98,KEY,rest='grin',rate=7); face(BL,eyes=.8,brow=.05); BL['arm'][-1].rotation_euler=(R(-15),R(35),R(-70)); BL['arm'][1].rotation_euler=(R(-30),0,R(-60)); cf(BL,d=1.8,lat=.4,lens=30)
     return dict(upd=upd)
 for v in ('I_mistake','P_yaaro','P_bhai','P_bilkul','P_tut','P_haters','P_move','P_chair'): SHOTS[v]=(lambda v=v: SH_P(v))
@@ -295,7 +295,7 @@ def SH_N(view):
         if view=='N_ammi': hideH(DA); talk(AM,t,296,304,KEY,rest='grin',rate=6); face(AM,brow=.05); look_at(AM,headpos(W),.6); cf(AM,d=2.0,lat=-.4,lens=30)
         elif view=='N_tabiyat':
             hideH(DA); talk(W,t,305,309,KEY,rest='frown',shapes=('shout','O','frown')); face(W,brow=.1,brow_r=-15)
-            camset((.5,-1.5,1.5),(.9,.8,.75),30,3.0)
+            camset((1.0,-1.5,1.7),(1.1,.8,.85),30,3.0)
         elif view=='N_dadi':
             k=ease(cl(t/.5)); put_at(DA,t,.4,2.35,10,0)
             dance(DA,t,'dadi'); DA['root'].location[2]=L(-1.3,0,k)+.008+.02; talk(DA,t,310,319,KEY,rest='grin',rate=7,shapes=('shout','grin','O')); face(DA,brow=.08,eyes=.9)
