@@ -1,0 +1,60 @@
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing e.126
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1633
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1634
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1635
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1636
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1637
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing e.127
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1638
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1639
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1640
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1641
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1642
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1643
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1644
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1645
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1646
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.208
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.209
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1647
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1648
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.210
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.211
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1649
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1650
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1651
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1652
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1653
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1654
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1655
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1656
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1657
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1658
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1659
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1660
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1661
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1662
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1663
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1664
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1665
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1666
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1667
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.212
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.213
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1668
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1669
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1670
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1671
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing c.214
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1672
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1673
+Fra:2347 Mem:262.13M (Peak 304.06M) | Time:00:00.09 | Syncing p.1674
+Fra:2347 Mem:262.12M (Peak 304.06M) | Time:00:00.11 | Rendering 1 / 8 samples
+Fra:2347 Mem:262.12M (Peak 304.06M) | Time:00:07.82 | Rendering 8 / 8 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/mp/render/frames/S38/f02347.png'
+Time: 00:09.21 (Saving: 00:00.21)
+
+FRAME 1 293.7
+SHOT_DONE 38
+
+Blender quit
