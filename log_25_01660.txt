@@ -1,0 +1,60 @@
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2491
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2492
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2493
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2494
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2495
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2496
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2497
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.384
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.385
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2498
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2499
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.386
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.387
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2500
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2501
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2502
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2503
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2504
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2505
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2506
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2507
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2508
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2509
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2510
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2511
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2512
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2513
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2514
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2515
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2516
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2517
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2518
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2519
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.388
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.389
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2520
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2521
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2522
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2523
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.390
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2524
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2525
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2526
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2527
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.391
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2528
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2529
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing p.2530
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing c.392
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing i
+Fra:1715 Mem:394.05M (Peak 435.48M) | Time:00:00.11 | Syncing Point
+Fra:1715 Mem:394.04M (Peak 435.48M) | Time:00:00.14 | Rendering 1 / 4 samples
+Fra:1715 Mem:394.04M (Peak 435.48M) | Time:00:03.91 | Rendering 4 / 4 samples
+Saved: '/home/claude/wed/frames/S25/f01715.png'
+Time: 00:05.59 (Saving: 00:00.31)
+
+FRAME 1 309.9
+SHOT_DONE 25
+
+Blender quit
