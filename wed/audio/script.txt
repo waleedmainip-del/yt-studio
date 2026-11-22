@@ -1,0 +1,107 @@
+[excited] In this world... there was one event that could bring an entire family together.
+[playful] An event where people wore expensive clothes, spent ridiculous amounts of money, danced like celebrities... and judged everyone else's outfits.
+An event where the groom had no control over his own life...
+[dramatic] And where one missing plate of biryani could start a family dispute.
+[excited] Welcome to... A PAKISTANI WEDDING!
+
+[storytelling] Hamza sits in front of the mirror while Bilal fixes his hair.
+[nervous] "Bro, I can't believe I'm getting married."
+[cheerful] "Relax! It's your big day!"
+[nervous] "Yaar, mujhe sirf shaadi ka nahi, bill ka bhi darr lag raha hai."
+[storytelling] Abbu walks in, holding a notebook.
+[stern] "Hamza!"
+"Ji, Abbu?"
+[stern] "Photographer ko advance diya?"
+"Ji."
+[stern] "Hall ka remaining payment?"
+[frustrated] "Abbu, main groom hoon ya accountant?"
+[deadpan] "Aaj dono ho."
+
+[storytelling] The wedding hall is full. Relatives arrive, take pictures and greet everyone. Then... Rishtay Wali Aunty walks in.
+[sweet] "Assalamualaikum! Dulha kahan hai?"
+"Bas tayyar ho raha hai."
+[curious] "Achha! Aur dulhan ki height kitni hai?"
+[forced politeness] "Aunty, aap pehle khana kha lein."
+[insistent] "Khane ka toh baad mein. Mujhe poori details chahiye."
+[storytelling] She spots another relative.
+[sly] "Waise suna hai tumhari beti ka rishta bhi chal raha hai?"
+[pause] The relative freezes.
+[deadpan] "Aunty, aaj shaadi hai. Investigation kal kar lena."
+
+[storytelling] The photographer walks up to Hamza.
+[enthusiastic] "Sir, smile please!"
+Hamza smiles.
+"Sir, natural smile."
+Hamza smiles again.
+"Sir, thora emotional."
+[confused] Hamza looks confused. "Bhai, main shaadi kar raha hoon ya acting audition de raha hoon?"
+[enthusiastic] "Sir, ab candid!"
+Hamza turns away.
+[excited] "PERFECT! Sir, bas isi pose mein rahiye!"
+[storytelling] Bilal leans over.
+[amused] "Bro, abhi tak tumhari shaadi nahi hui, lekin tumhari 400 pictures ho chuki hain."
+
+[storytelling] The music starts. The groom's friends rush onto the dance floor. Bilal grabs Hamza.
+[shouting] "CHAL BHAI! DANCE!"
+[panicked] "Mujhe dance nahi aata!"
+[playful] "Shaadi mein dance nahi aata toh phir kya aata hai?"
+[storytelling] Bilal starts dancing wildly. Then a random uncle joins them... with completely unexpected moves.
+[surprised] "Uncle, aap dance karte hain?"
+[proud] "Beta, tum paida bhi nahi hue thay jab main dance karta tha!"
+[storytelling] The uncle pulls off another move. Bilal stops dancing... and just watches.
+[impressed] "Bro... yeh uncle toh professional niklay."
+
+[storytelling] Dinner is announced. Guests rush towards the buffet. Biryani Uncle reaches the counter first.
+"Bhai, biryani kidhar hai?"
+"Sir, yahan."
+[storytelling] He lifts the lid. The tray is almost empty.
+[shouting] "YEH KYA HAI?!"
+"Sir, biryani khatam ho gayi."
+[outraged] "SHAADI MEIN BIRYANI KHATAM?!"
+[storytelling] He looks around dramatically.
+[outraged] "MAIN IS FAMILY KO 20 SAAL SE JAANTA HOON. AISI BEIZZATI KABHI NAHI DEKHI!"
+[storytelling] Hamza hears the shouting.
+"Ab kya hua?"
+[serious] "Bro, tumhari shaadi ka sabse bara issue aa gaya."
+"Kya?"
+[dramatic] "Biryani."
+[storytelling] Biryani Uncle turns towards Hamza.
+[disappointed] "Beta, shaadi mubarak. Lekin biryani ka intezam bohat kharab tha."
+[storytelling] Hamza looks at the camera.
+[exasperated] "Main dulha hoon... caterer nahi!"
+
+[storytelling] Just as Hamza is about to sit on the stage, Bilal comes running.
+[panicked] "BHAI! PROBLEM!"
+[frustrated] "Ab kya?!"
+[panicked] "Abbu ka wallet nahi mil raha!"
+[storytelling] Hamza rushes to his father.
+"Abbu, wallet kahan hai?"
+[stern] "Main ne tumhein diya tha!"
+[shocked] "MUJHE?!"
+[stern] "Haan! Tumne kaha tha safe rakhunga!"
+[storytelling] Hamza checks his pockets. [pause] Nothing. Bilal checks his own pockets. Suddenly, the photographer appears.
+[enthusiastic] "Sir, one last picture!"
+[shouting] "BHAI! ABHI WALLET GUM HAI!"
+[calm] "Sir, tension mein candid bohat achi aati hai."
+
+[storytelling] The wedding is almost over. Hamza finally sits down. Bilal brings him a plate of biryani.
+[relieved] "Finally! Ab toh sukoon mila."
+[storytelling] He takes one bite. Suddenly, Ammi walks up.
+[sweet] "Hamza beta!"
+"Ji, Ammi?"
+"Kal reception ki shopping bhi karni hai."
+[pause] Hamza freezes.
+[shouting] "ABHI TOH SHAADI KHATAM HUI HAI!"
+[storytelling] Abbu appears behind her.
+[stern] "Aur photographer ki remaining payment bhi."
+[storytelling] Rishtay Wali Aunty joins them.
+[sly] "Waise beta, tumhare cousin ka rishta bhi dekhna hai."
+[storytelling] Hamza slowly puts his plate down.
+[calm] "Bilal... gaari nikaal."
+"Kahan?"
+[deadpan] "Dubai."
+
+[warm] In Pakistan, a wedding is never just a wedding.
+It's a family reunion, a fashion show, a dance competition, a food festival... and sometimes... a financial disaster.
+And the groom?
+[playful] He's just trying to survive.
