@@ -261,7 +261,7 @@ def SH_S(view):
                 crowd_upd(t,'wild'); dance(DA,t,'dadi'); face(DA,mouth='grin',eyes=.8,brow=.08); face(W,mouth='O',brow=.14,eyes=1.3)
                 [look_at(H,headpos(DA),.6) for H in (W,BL,SH,CH)]; q=ease(t/DUR); cf(DA,d=L(3.0,2.4,q),lat=.6,dz=.35,lens=30)
             elif view=='W_crowd':
-                crowd_upd(t,'wild'); dance(DA,t,'dadi'); dance(CH,t,'cheer'); face(W,mouth='flat',eyes=.8,brow=-.02); q=ease(t/DUR); camset((L(3,-3,q),.6,3.0),(0,-4.0,1.2),20,8.0)
+                crowd_upd(t,'wild'); dance(DA,t,'dadi'); dance(CH,t,'cheer'); face(W,mouth='flat',eyes=.8,brow=-.02); q=ease(t/DUR); camset((L(1.5,-1.5,q),.8,3.2),(L(5.5,-5.5,q),-5.0,1.3),22,8.0)
             elif view=='W_seven':
                 crowd_upd(t); dance(DA,t,'dadi'); W['root'].rotation_euler[2]=R(-25); talk(W,t,266,271,KEY,rest='frown',rate=5); face(W,brow=.06,brow_r=-18,eyes=.8); W['head'].rotation_euler[0]=R(14)
                 handsdown(W); cf(W,d=2.0,lat=.4,lens=30)
@@ -295,7 +295,7 @@ def SH_N(view):
         if view=='N_ammi': hideH(DA); talk(AM,t,296,304,KEY,rest='grin',rate=6); face(AM,brow=.05); look_at(AM,headpos(W),.6); cf(AM,d=2.0,lat=-.4,lens=30)
         elif view=='N_tabiyat':
             hideH(DA); talk(W,t,305,309,KEY,rest='frown',shapes=('shout','O','frown')); face(W,brow=.1,brow_r=-15)
-            camset((1.0,-1.5,1.7),(1.1,.8,.85),30,3.0)
+            camset((2.0,2.0,1.5),(1.0,.8,.85),30,3.0)
         elif view=='N_dadi':
             k=ease(cl(t/.5)); put_at(DA,t,.4,2.35,10,0)
             dance(DA,t,'dadi'); DA['root'].location[2]=L(-1.3,0,k)+.008+.02; talk(DA,t,310,319,KEY,rest='grin',rate=7,shapes=('shout','grin','O')); face(DA,brow=.08,eyes=.9)
