@@ -60,7 +60,7 @@ def dance(H,t,style,amp=1.0,ph=0.0):
         p=math.sin(s*1.5); H['arm'][1].rotation_euler=(R(-90 if p>0 else -40),0,R(-10)); H['arm'][-1].rotation_euler=(R(-40 if p>0 else -90),0,R(10))
         H['leg'][1].rotation_euler=(R(-25*amp*max(0,math.sin(s*.75))),0,0); H['root'].rotation_euler[1]=R(6*p); H['root'].location[2]=z0+.008+.03*b
     elif style=='dadi':
-        H['arm'][1].rotation_euler=(R(-120+20*math.sin(s)),0,R(-30+25*math.cos(s))); H['arm'][-1].rotation_euler=(R(-120-20*math.sin(s)),0,R(30-25*math.cos(s)))
+        H['arm'][1].rotation_euler=(R(-35+15*math.sin(s)),0,R(-115+20*math.cos(s))); H['arm'][-1].rotation_euler=(R(-35-15*math.sin(s)),0,R(115-20*math.cos(s)))
         H['root'].rotation_euler[1]=R(8*math.sin(s)); H['root'].location[2]=z0+.008+.03*b
     elif style=='clap':
         k=.5+.5*math.sin(s*2); H['arm'][1].rotation_euler=(R(-80),0,R(-10-25*k)); H['arm'][-1].rotation_euler=(R(-80),0,R(10+25*k))
@@ -258,7 +258,7 @@ def SH_S(view):
                 crowd_upd(t); [dance(H,t,'stiff') for H in (W,)]; talk(DJm,t,254,260,KEY,rest='grin',rate=6); DJm['arm'][-1].rotation_euler=(R(-30),0,R(100)); face(DJm,brow=.1)
                 cf(DJm,d=2.2,lat=-.6,dz=.15,lens=30)
             elif view=='W_dadi':
-                crowd_upd(t,'wild'); dance(DA,t,'dadi'); DA['arm'][1].rotation_euler=(R(-175),0,R(-10)); face(DA,mouth='grin',eyes=.8,brow=.08); face(W,mouth='O',brow=.14,eyes=1.3)
+                crowd_upd(t,'wild'); dance(DA,t,'dadi'); face(DA,mouth='grin',eyes=.8,brow=.08); face(W,mouth='O',brow=.14,eyes=1.3)
                 [look_at(H,headpos(DA),.6) for H in (W,BL,SH,CH)]; q=ease(t/DUR); cf(DA,d=L(3.0,2.4,q),lat=.6,dz=.35,lens=30)
             elif view=='W_crowd':
                 crowd_upd(t,'wild'); dance(DA,t,'dadi'); dance(CH,t,'cheer'); face(W,mouth='flat',eyes=.8,brow=-.02); q=ease(t/DUR); camset((L(3,-3,q),.6,3.0),(0,-4.0,1.2),20,8.0)
@@ -281,8 +281,8 @@ def SH_N(view):
     W=person((0,0,0),0,WAL,'flat',name='waleed'); AM=person((0,0,0),0,AMMI2,'grin',name='ammi'); DA=person((0,0,0),0,DADI,'grin',name='dadi')
     shawl=obox((0,0,0),(.75,.42,.08),M('#5A6B8A',.9,kind='fabric'),.05); cup=empty((0,0,0)); ocyl((0,0,0),.04,.08,M('#F4F1EA',.3),cup,rot=(0,0,0),seg=10)
     def lying(t,sit_up=0.0):
-        W['root'].location=(-.95,.8,.69); W['root'].rotation_euler=(R(-90),0,R(-90)); W['z0']=0; handsdown(W); flat_legs(W)
-        shawl.location=(-.2,.8,.98); W['root'].scale=(1,1,1+.01*math.sin(t*1.5))
+        W['root'].location=(-.95,.8,.80); W['root'].rotation_euler=(R(-90),0,R(-90)); W['z0']=0; handsdown(W); flat_legs(W)
+        shawl.scale=(0,0,0); W['root'].scale=(1,1,1+.01*math.sin(t*1.5))
     def upd(t):
         lying(t)
         if view=='N_morning':
