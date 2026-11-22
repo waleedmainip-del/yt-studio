@@ -345,7 +345,7 @@ def SH_V(view):
         talk(DC,t,a,b,KEY,rest='smile',rate=6); face(DC,brow=.03)
         if view=='V_yes': DC['arm'][1].rotation_euler=(R(-70+10*math.sin(t*3)),0,R(-30)); face(DC,brow=.06)
         if view=='V_same': DC['head'].rotation_euler[1]=R(8*math.sin(t*1.5))
-        hp=headpos(DC); camset((hp.x,hp.y-1.55,hp.z-.05),(hp.x,hp.y,hp.z-.25),26,4.0)
+        hp=headpos(DC); camset((hp.x,hp.y-2.1,hp.z-.1),(hp.x,hp.y,hp.z-.32),26,4.0)
     return dict(upd=upd)
 for v in ('V_salam','V_what','V_same','V_yes'): SHOTS[v]=(lambda v=v: SH_V(v))
 
