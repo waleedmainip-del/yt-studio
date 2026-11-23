@@ -241,7 +241,7 @@ def SH_VENUE(view):
         elif v=='V_explore':
             for k,nm in enumerate(('ILS','EMA','SAH','SHY')):
                 stroll(Hs[nm],t,66.0+1.3*k,30.0+.45*k,180,1.15); look_at(Hs[nm],(75,34+1.15*t+6,2.2),.9); face(Hs[nm],mouth='o' if nm=='SHY' else 'grin',brow=.05)
-            GEST(E_,-1,70,16); y=30+1.15*t; camset((64.4,y+6.6,1.7),(68.0,y+.6,1.55),22,7.0)
+            GEST(E_,-1,70,16); y=30+1.15*t; camset((64.4,y+6.6,1.7),(68.0,y+.6,1.3),32,7.0)
         elif v=='F_n1':
             onmat(g); camset((L(-30,-18,q),L(34,50,q),L(17,15,q)),(L(-4,6,q),L(70,84,q),0),20,8.0)
         elif v=='F_n1b':
