@@ -1,0 +1,60 @@
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.035
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.036
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.037
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.038
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.039
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.040
+Fra:1710 Mem:84.65M (Peak 134.90M) | Time:00:00.14 | Syncing room.041
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.042
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.043
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.044
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.045
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.046
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.047
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.048
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.049
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.050
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.051
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.052
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.053
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.054
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.055
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.056
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.057
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.058
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.059
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.060
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.061
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.062
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.063
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.064
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.065
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.066
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.067
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.068
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.069
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.070
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.071
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.072
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.073
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing room.074
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing Sun
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing Area.004
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing e.005
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing e.006
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing e.007
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing e.008
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing e.009
+Fra:1710 Mem:84.68M (Peak 134.90M) | Time:00:00.14 | Syncing e.010
+Fra:1710 Mem:84.69M (Peak 134.90M) | Time:00:00.14 | Syncing drape
+Fra:1710 Mem:92.00M (Peak 134.90M) | Time:00:00.15 | Syncing p.069
+Fra:1710 Mem:92.00M (Peak 134.90M) | Time:00:00.15 | Syncing ip.003
+Fra:1710 Mem:92.00M (Peak 134.90M) | Time:00:00.18 | Rendering 1 / 4 samples
+Fra:1710 Mem:92.00M (Peak 134.90M) | Time:00:04.09 | Rendering 4 / 4 samples
+Saved: '/home/claude/boy/frames/S25/f01710.png'
+Time: 00:05.48 (Saving: 00:00.24)
+
+FRAME 1 291.8
+SHOT_DONE 25
+
+Blender quit
