@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/claude/mehndij/film_mh.py", line 48, in <module>
+  File "/home/claude/mehndij/film_mh.py", line 7, in upd_all
+  File "<string>", line 232, in upd
+TypeError: 'list' object is not callable
