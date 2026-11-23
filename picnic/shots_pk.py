@@ -229,7 +229,7 @@ def SH_VENUE(view):
             for k,nm in enumerate(ORDER): stroll(Hs[nm],t,XS[k],13.0+YO[k],180,1.0)
             yy=L(15.5,31,q); camset((-4.9,yy,L(1.9,1.6,q)),(-12.5,yy+7.5,.75),24,5.6)
         elif v=='V_dj':
-            onmat(g); camset((L(2.9,2.3,q),SY-L(5.2,4.2,q),L(1.7,2.0,q)),(0,SY+.9,3.1),22,6.0)
+            onmat(g); camset((L(3.6,2.4,q),SY-L(13.5,11.5,q),L(3.2,3.6,q)),(0,SY+2.5,4.3),24,8.0)
         elif v=='P_nothing':
             onmat(g); say(I_,t,KEY,rest='grin',rate=8); side(I_,1,40); side(I_,-1,40); I_['root'].rotation_euler[0]=R(-8); mcf(I_,1)
         elif v=='P_qual':
@@ -245,7 +245,7 @@ def SH_VENUE(view):
         elif v=='F_n1':
             onmat(g); camset((L(-30,-18,q),L(34,50,q),L(17,15,q)),(L(-4,6,q),L(70,84,q),0),20,8.0)
         elif v=='F_n1b':
-            onmat(g); camset((L(-3.2,-2.4,q),SY-L(4.4,3.6,q),L(2.0,2.3,q)),(.2,SY+1.4,3.3),24,6.0)
+            onmat(g); camset((L(-4.2,-3.0,q),SY-L(11.5,10.0,q),L(3.4,3.8,q)),(.2,SY+2.2,4.0),28,8.0)
         elif v=='F_n1c':
             onmat(g); camset((64,L(34,44,q),3.4),(75,L(52,62,q),2.2),22,8.0)
         elif v=='V_sunset':
@@ -285,7 +285,7 @@ def SH_VENUE(view):
                 else: mcf(I_,1)
             else: mcf(H,1 if H is Y_ else -1)
         elif v=='F_vouch':
-            onmat(g,up=SKY); camset((0,L(8,11,q),L(3.0,4.5,q)),(0,L(60,70,q),L(22,30,q)),18,8.0)
+            onmat(g,up=SKY); camset((0,L(11.5,14.5,q),L(2.4,3.2,q)),(0,L(60,70,q),L(22,30,q)),18,8.0)
         else:  # F_last
             onmat(g,up=SKY); camset((hx-3.1,hy-L(8,6.5,q),L(2.7,2.1,q)),(hx-1,hy+L(14,30,q),L(10,44,q)),L(22,18,q),8.0)
     return dict(upd=upd)
