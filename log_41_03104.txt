@@ -1,0 +1,60 @@
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.030
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing e.010
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.031
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.032
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.033
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.034
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.035
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.036
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.037
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.038
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.039
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.040
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing c
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing c.001
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.041
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.042
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing c.002
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing c.003
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.043
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.044
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.045
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.046
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.047
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.11 | Syncing p.048
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.049
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.050
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.051
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.052
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.053
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.054
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.055
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.056
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.057
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.058
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.059
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.060
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.061
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing c.004
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing c.005
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.062
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.063
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.064
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.065
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing c.006
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.066
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.067
+Fra:3167 Mem:81.79M (Peak 131.96M) | Time:00:00.12 | Syncing p.068
+Fra:3167 Mem:81.80M (Peak 131.96M) | Time:00:00.12 | Syncing drape
+Fra:3167 Mem:89.10M (Peak 131.96M) | Time:00:00.13 | Syncing p.069
+Fra:3167 Mem:89.10M (Peak 131.96M) | Time:00:00.13 | Syncing p.070
+Fra:3167 Mem:89.10M (Peak 131.96M) | Time:00:00.13 | Syncing ip.003
+Fra:3167 Mem:89.10M (Peak 131.96M) | Time:00:00.15 | Rendering 1 / 4 samples
+Fra:3167 Mem:89.10M (Peak 131.96M) | Time:00:02.56 | Rendering 4 / 4 samples
+Saved: '/home/claude/boy/frames/S41/f03167.png'
+Time: 00:03.43 (Saving: 00:00.19)
+
+FRAME 1 223.2
+SHOT_DONE 41
+
+Blender quit
