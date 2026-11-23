@@ -1,0 +1,38 @@
+[
+{
+"t": 0.0,
+"a": "REF_EMA",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"studio"
+]
+},
+{
+"t": 1.0,
+"a": "REF_EMA",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"studio"
+]
+},
+{
+"t": 2.0,
+"a": "REF_EMA",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"studio"
+]
+},
+{
+"t": 3.0,
+"a": "REF_EMA",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"studio"
+]
+}
+]
