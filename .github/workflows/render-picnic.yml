@@ -1,0 +1,43 @@
+name: Render Picnic shots
+on:
+  workflow_dispatch:
+  push:
+    paths: ["picnic/jobs.json"]
+permissions:
+  contents: write
+concurrency:
+  group: picnic-render
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 18
+      matrix:
+        job: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender 4.0.2
+        run: |
+          for i in 1 2 3; do (sudo timeout 90 apt-get update -q; sudo timeout 600 apt-get install -y -q blender xvfb xauth ffmpeg libgl1-mesa-dri) && break; echo retry $i; sudo killall -q apt-get dpkg || true; sudo dpkg --configure -a || true; done
+          which blender
+          blender --version | head -1
+      - name: Link project path
+        run: |
+          sudo mkdir -p /home/claude
+          sudo ln -sfn "$GITHUB_WORKSPACE/picnic" /home/claude/picnic
+          mkdir -p picnic/frames picnic/stills
+      - name: Render pieces
+        run: python3 tools/gh_render_picnic.py ${{ matrix.job }}
+      - name: Push results branch
+        if: always()
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          B=render/picnic-${{ github.run_id }}-j${{ matrix.job }}
+          mkdir -p gh_out && cd gh_out
+          git init -q && git checkout -q -b $B && git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "mehndi render job ${{ matrix.job }}" --allow-empty
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B
