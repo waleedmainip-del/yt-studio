@@ -1,0 +1,2 @@
+STILL 10 D_shirt 0.5
+STILL 10 D_shirt 1.2
