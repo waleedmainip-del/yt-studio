@@ -1,0 +1,20 @@
+[
+{
+"t": 5.0,
+"a": "REF_ILS",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"studio"
+]
+},
+{
+"t": 6.0,
+"a": "REF_ILS",
+"b": "STATIC",
+"n": 96,
+"objs": [
+"studio"
+]
+}
+]
