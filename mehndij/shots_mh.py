@@ -47,27 +47,31 @@ _person0=person
 def person(loc,rz,C,mouth='smile',name=None):
     H=_person0(loc,rz,C,mouth,name); H['nm']=name or 'p%d'%len(PEOPLE); PEOPLE.append(H); return H
 
+# ---------------------------------------------------------------- arm poses (arm[1] is at +x; outward = -Y roll for arm[1], +Y for arm[-1])
+def V(H,a=150,sw=0.0): H['arm'][1].rotation_euler=(0,R(-a-sw),0); H['arm'][-1].rotation_euler=(0,R(a-sw),0)
+def G(H,s,up=50,out=15): H['arm'][s].rotation_euler=(R(-up),0,R(out*s))
+def side(H,s,a=85): H['arm'][s].rotation_euler=(0,R(-a*s),0)
 # ---------------------------------------------------------------- dance moves
 def dance(H,t,style,amp=1.0,ph=0.0):
     s=t*2*math.pi*(1.9 if style!='dadi' else 1.3)+ph; b=abs(math.sin(s))
     z0=H.get('z0',0.0)
     for q in (1,-1): H['leg'][q].rotation_euler=(0,0,0)
     if style=='bhangra':
-        H['arm'][1].rotation_euler=(R(-165+15*math.sin(s)),0,R(-20)); H['arm'][-1].rotation_euler=(R(-165-15*math.sin(s)),0,R(20))
+        H['arm'][1].rotation_euler=(0,R(-150-15*math.sin(s)),0); H['arm'][-1].rotation_euler=(0,R(150-15*math.sin(s)),0)
         k=1 if math.sin(s*.5)>0 else -1; H['leg'][k].rotation_euler=(R(-35*amp*b),0,0)
         H['root'].location[2]=z0+.008+.07*amp*b; H['root'].rotation_euler[1]=R(5*math.sin(s))
     elif style=='fight':
-        p=math.sin(s*1.5); H['arm'][1].rotation_euler=(R(-90 if p>0 else -40),0,R(-10)); H['arm'][-1].rotation_euler=(R(-40 if p>0 else -90),0,R(10))
+        p=math.sin(s*1.5); H['arm'][1].rotation_euler=(R(-90 if p>0 else -40),0,R(6)); H['arm'][-1].rotation_euler=(R(-40 if p>0 else -90),0,R(-6))
         H['leg'][1].rotation_euler=(R(-25*amp*max(0,math.sin(s*.75))),0,0); H['root'].rotation_euler[1]=R(6*p); H['root'].location[2]=z0+.008+.03*b
     elif style=='dadi':
-        H['arm'][1].rotation_euler=(R(-35+15*math.sin(s)),0,R(-115+20*math.cos(s))); H['arm'][-1].rotation_euler=(R(-35-15*math.sin(s)),0,R(115-20*math.cos(s)))
+        H['arm'][1].rotation_euler=(R(-12),R(-118+18*math.sin(s)),0); H['arm'][-1].rotation_euler=(R(-12),R(118+18*math.sin(s)),0)
         H['root'].rotation_euler[1]=R(8*math.sin(s)); H['root'].location[2]=z0+.008+.03*b
     elif style=='clap':
-        k=.5+.5*math.sin(s*2); H['arm'][1].rotation_euler=(R(-80),0,R(-10-25*k)); H['arm'][-1].rotation_euler=(R(-80),0,R(10+25*k))
+        k=.5+.5*math.sin(s*2); H['arm'][1].rotation_euler=(R(-80),0,R(-6-15*k)); H['arm'][-1].rotation_euler=(R(-80),0,R(6+15*k))
     elif style=='stiff':
-        j=1 if (t%1.3)<.12 else 0; H['arm'][1].rotation_euler=(R(-30-60*j),0,R(-10)); H['arm'][-1].rotation_euler=(R(-10),0,R(10))
+        j=1 if (t%1.3)<.12 else 0; H['arm'][1].rotation_euler=(R(-30-60*j),0,R(8)); H['arm'][-1].rotation_euler=(R(-10),0,R(-8))
     elif style=='cheer':
-        H['arm'][1].rotation_euler=(R(-170+10*math.sin(s)),0,R(-15)); H['arm'][-1].rotation_euler=(R(-170-10*math.sin(s)),0,R(15)); H['root'].location[2]=z0+.008+.08*b
+        V(H,152,10*math.sin(s)); H['root'].location[2]=z0+.008+.08*b
 def flat_legs(H):
     for q in (1,-1): H['leg'][q].rotation_euler=(0,0,0)
 
@@ -96,7 +100,7 @@ def venue_crowd(seed=900,n=26,stand=True):
             if '_seat' in H:
                 x,y=H['_seat']; seat(H,t,x,y,180,sh=.47)
                 if mode=='cheer' and k%2==0: dance(H,t,'clap',ph=k)
-                elif mode=='wild': H['arm'][1].rotation_euler=(R(-160+15*math.sin(t*9+k)),0,R(-15)); H['arm'][-1].rotation_euler=(R(-160),0,R(15))
+                elif mode=='wild': V(H,150,12*math.sin(t*9+k))
                 face(H,mouth='grin' if mode!='watch' else ('smile' if k%3 else 'o'))
             else:
                 x,y,rz=H['_stand']; put_at(H,t,x,y,rz)
@@ -120,11 +124,11 @@ def SH_I(view):
             crowd_upd(t,'cheer'); hideH(CH); q=ease(t/DUR)
             camset((0,L(-16,-11,q),L(9,4.2,q)),(0,L(2,3,q),L(0,1.4,q)),24,8.0)
         elif view=='I_aunty':
-            crowd_upd(t); hideH(CH); A1['arm'][1].rotation_euler=(R(-50),0,R(-20)); face(A1,mouth='flat',brow=-.04,brow_r=-16,eyes=.9); face(A2,mouth='smirk',brow=-.02,brow_r=14)
+            crowd_upd(t); hideH(CH); G(A1,1,50,15); face(A1,mouth='flat',brow=-.04,brow_r=-16,eyes=.9); face(A2,mouth='smirk',brow=-.02,brow_r=14)
             look_at(A1,(0,4,1.6),.4); look_at(A2,headpos(A1),.6); q=ease(t/DUR)
             camset((L(-2.2,-2.8,q),L(1.6,1.2,q),1.4),(-4.2,-.95,1.3),26,4.0)
         elif view=='I_uncle':
-            crowd_upd(t,'cheer'); put_at(CH,t,8.0,-1.2,150); dance(CH,t,'cheer'); CH['arm'][-1].rotation_euler=(R(-20),0,R(20)); face(CH,mouth='grin',brow=.06)
+            crowd_upd(t,'cheer'); put_at(CH,t,8.0,-1.2,150); dance(CH,t,'cheer'); CH['arm'][-1].rotation_euler=(0,R(12),0); face(CH,mouth='grin',brow=.06)
             CH['head'].rotation_euler[2]=R(15*math.sin(t*2)); cf(CH,d=2.2,lat=-.3,lens=28)
         elif view=='I_mehndi':
             crowd_upd(t,'cheer'); hideH(CH); q=ease(t/DUR); camset((L(-3,3,q),-1.9,2.6),(0,4,1.7),22,8.0)
@@ -137,23 +141,23 @@ def SH_P(view):
     point((0,0,2.6),90,(1,.88,.7),.5); point((-1,2.0,2.2),30,(.9,.95,1),.4); point((0,-2.4,2.2),160,(1,.9,.78),.6); point((-2.5,-1.5,2.0),70,(1,.9,.8),.5); point((2.5,-1.5,2.0),70,(1,.9,.8),.5); area((5,-1,2.2),300,(2,2),(1,.8,.5),rot=(0,R(-90),0),shadow=False)
     W=person((0,0,0),0,WAL,'grin',name='waleed'); BL=person((0,0,0),0,BIL2,'smirk',name='bilal'); SH=person((0,0,0),0,SHR,'smirk',name='sherry')
     def upd(t):
-        put_at(W,t,0,.45,0); put_at(BL,t,-2.0,-.7,-55); put_at(SH,t,2.0,-.9,55)
+        put_at(W,t,0,.45,0); put_at(BL,t,-2.0,-.7,40); put_at(SH,t,2.0,-.9,-40)
         look_at(BL,headpos(W),.7); look_at(SH,headpos(W),.7)
         if view=='I_mistake':
             hideH(BL); hideH(SH); put_at(W,t,-2.7,1.2,-20); look_at(W,(-3.0,2.3,1.6),.6); face(W,mouth='flat' if t<wl(50,KEY) else 'o',brow=.06,eyes=1.0 if t<wl(50,KEY) else 1.25)
-            W['arm'][1].rotation_euler=(R(-40),0,R(-10)); q=ease(t/DUR); camset((L(-1.2,-1.6,q),L(-.8,-.3,q),1.75),(-2.7,1.2,1.75),30,3.0)
+            G(W,1,40,10); q=ease(t/DUR); camset((L(-1.2,-1.6,q),L(-.8,-.3,q),1.75),(-2.7,1.2,1.75),30,3.0)
             return
-        if view=='P_yaaro': talk(W,t,57,70,KEY,rest='grin',rate=7); W['arm'][1].rotation_euler=(R(-20),0,R(-110)); W['arm'][-1].rotation_euler=(R(-20),0,R(70)); face(W,brow=.08); q=ease(t/DUR); camset((L(.4,.2,q),L(-2.6,-2.3,q),1.7),(0,-.2,1.4),22,5.0)
+        if view=='P_yaaro': talk(W,t,57,70,KEY,rest='grin',rate=7); side(W,1,78); side(W,-1,62); face(W,brow=.08); q=ease(t/DUR); camset((L(.4,.2,q),L(-2.6,-2.3,q),1.7),(0,-.2,1.4),22,5.0)
         elif view=='P_bhai': talk(BL,t,71,76,KEY,rest='smirk'); face(BL,brow=-.03,brow_r=14); BL['arm'][1].rotation_euler=(R(-15),R(-35),R(70)); cf(BL,d=1.6,lat=.35,lens=30)
         elif view=='P_bilkul': talk(W,t,77,83,KEY,rest='grin'); face(W,brow=.08,eyes=.9); W['arm'][1].rotation_euler=(R(-15),R(-35),R(70)); W['arm'][-1].rotation_euler=(R(-15),R(35),R(-70)); cf(W,d=1.8,lat=-.3,lens=30)
-        elif view=='P_tut': talk(SH,t,84,90,KEY,rest='smirk'); face(SH,brow=-.02,brow_r=-14); SH['arm'][1].rotation_euler=(R(-30),0,R(-50)); cf(SH,d=1.8,lat=-.35,lens=30)
-        elif view=='P_haters': talk(W,t,91,95,KEY,rest='smirk'); face(W,brow=-.03,brow_r=12); W['arm'][1].rotation_euler=(R(-30),0,R(-70)); cf(W,d=1.8,lat=.3,lens=30)
+        elif view=='P_tut': talk(SH,t,84,90,KEY,rest='smirk'); face(SH,brow=-.02,brow_r=-14); G(SH,1,48,20); cf(SH,d=1.8,lat=-.35,lens=30)
+        elif view=='P_haters': talk(W,t,91,95,KEY,rest='smirk'); face(W,brow=-.03,brow_r=12); G(W,1,52,25); cf(W,d=1.8,lat=.3,lens=30)
         elif view=='P_move':
-            k=cl((t-1.0)/.35)-cl((t-1.55)/.35); W['leg'][1].rotation_euler=(R(-75*k),0,0); W['arm'][1].rotation_euler=(R(-120),0,R(-30)); W['arm'][-1].rotation_euler=(R(-100),0,R(40))
+            k=cl((t-1.0)/.35)-cl((t-1.55)/.35); W['leg'][1].rotation_euler=(R(-75*k),0,0); W['arm'][1].rotation_euler=(R(-20),R(-100),0); W['arm'][-1].rotation_euler=(R(-20),R(82),0)
             W['root'].rotation_euler[1]=R(-6*k); face(W,mouth='O' if k>.5 else 'grin',brow=.1 if k>.5 else .05,eyes=1.2 if k>.5 else 1)
             hit=cl((t-1.3)/.15)*math.exp(-max(0,t-1.3)*4); chairs[1].rotation_euler=(R(10*hit*math.sin(t*30)),0,R(30)); face(BL,mouth='O'); face(SH,mouth='O')
             camset((-.6,-2.7,1.6),(.6,-.1,.9),24,4.0)
-        else: talk(BL,t,109,115,KEY,rest='grin',rate=7); face(BL,eyes=.8,brow=.05); BL['arm'][-1].rotation_euler=(R(-15),R(35),R(-70)); BL['arm'][1].rotation_euler=(R(-30),0,R(-60)); cf(BL,d=1.8,lat=.4,lens=30)
+        else: talk(BL,t,109,115,KEY,rest='grin',rate=7); face(BL,eyes=.8,brow=.05); BL['arm'][-1].rotation_euler=(R(-15),R(35),R(-70)); G(BL,1,52,20); cf(BL,d=1.8,lat=.4,lens=30)
     return dict(upd=upd)
 for v in ('I_mistake','P_yaaro','P_bhai','P_bilkul','P_tut','P_haters','P_move','P_chair'): SHOTS[v]=(lambda v=v: SH_P(v))
 
@@ -179,7 +183,7 @@ def SH_S(view):
             crowd_upd(t); dj(t,grab=(view=='S_ladies' or t>.5)); hideH(W); hideH(BL); hideH(SH); hideH(CH); hideH(DA)
             if view=='S_dj': face(DJm,mouth='grin',brow=.08); q=ease(t/DUR); camset((L(6.0,6.6,q),L(-.2,.4,q),2.0),(8.6,3.4,1.8),26,4.0)
             else:
-                talk(DJm,t,121,129,KEY,rest='grin',rate=7,shapes=('shout','O','grin')); face(DJm,brow=.1); DJm['arm'][-1].rotation_euler=(R(-30),0,R(120)) if t>wl(129,KEY) else DJm['arm'][-1].rotation_euler
+                talk(DJm,t,121,129,KEY,rest='grin',rate=7,shapes=('shout','O','grin')); face(DJm,brow=.1); (side(DJm,-1,95) if t>wl(129,KEY) else None)
                 cf(DJm,d=2.3,lat=.5,dz=.25,lens=30)
             return
         dj(t,grab=view in ('S_which','W_dj','W_dadi'))
@@ -188,27 +192,27 @@ def SH_S(view):
         hideH(DA) if g in 'SAU' else None
         if view=='S_walk':
             crowd_upd(t,'cheer'); hideH(BL); hideH(SH)
-            k=ease(cl(t/2.2)); x=L(6.0,0,k); W['root'].location=(x,3.4,STG+.008); W['z0']=STG; W['root'].rotation_euler[2]=R(90 if t<2.1 else L(90,0,ease(cl((t-2.1)/.35))))
-            walk(W,x,step=.55,arm=24) if k<.98 else stand(W,t); W['root'].location[2]=STG+.008; blink(W,t)
-            if k>=.98: W['arm'][1].rotation_euler=(R(-20),0,R(-120)); W['arm'][-1].rotation_euler=(R(-20),0,R(120))
-            face(W,mouth='grin',brow=.06); camset((L(2.6,.8,k),.3,1.9),(x,3.4,2.0),24,6.0)
+            k=cl(t/1.7); k=k*k*(3-2*k); x=L(4.6,0,k); W['root'].location=(x,3.4,STG+.008); W['z0']=STG; W['root'].rotation_euler[2]=R(-90 if t<1.7 else L(-90,0,ease(cl((t-1.7)/.3))))
+            walk(W,x,step=.5,arm=22) if k<.98 else stand(W,t); W['root'].location[2]=STG+.008; blink(W,t)
+            if k>=.98: V(W,150)
+            face(W,mouth='grin',brow=.06); camset((L(.6,-.4,k),-.2,1.9),(L(x,0,.35),3.4,1.9),22,6.0)
             return
         if view=='S_forget':
             crowd_upd(t); hideH(BL); hideH(SH); onstage(W,t,0); dance(W,t,'stiff'); face(W,mouth='flat',eyes=1.3,brow=.13); W['head'].rotation_euler[2]=R(8*math.sin(t*1.7))
             q=ease(t/DUR); cf(W,d=L(3.6,2.2,q),lat=0,dz=-.2,lens=30)
             return
         if view in ('S_change','S_save'):
-            crowd_upd(t); hideH(BL); hideH(SH); onstage(W,t,0,rz=-45); a,b=(129,131) if view=='S_change' else (134,139)
-            talk(W,t,a,b,KEY,rest='O',shapes=('shout','O')); face(W,brow=.14,eyes=1.3); W['arm'][1].rotation_euler=(R(-20),0,R(-110)); W['arm'][-1].rotation_euler=(R(-20),0,R(110 if view=='S_save' else 30))
+            crowd_upd(t); hideH(BL); hideH(SH); onstage(W,t,0,rz=45); a,b=(129,131) if view=='S_change' else (134,139)
+            talk(W,t,a,b,KEY,rest='O',shapes=('shout','O')); face(W,brow=.14,eyes=1.3); (V(W,142,6*math.sin(t*14)) if view=='S_save' else (G(W,1,75,30),G(W,-1,75,30)))
             cf(W,d=2.2,lat=.3,lens=30)
             return
         if view=='S_which':
-            crowd_upd(t); hideH(BL); hideH(SH); onstage(W,t,0,rz=-45); talk(DJm,t,149,150,KEY,rest='o'); face(DJm,brow=.1,brow_r=-12); look_at(DJm,headpos(W),.6); cf(DJm,d=2.3,lat=.5,dz=.25,lens=30)
+            crowd_upd(t); hideH(BL); hideH(SH); onstage(W,t,0,rz=45); talk(DJm,t,149,150,KEY,rest='o'); face(DJm,brow=.1,brow_r=-12); look_at(DJm,headpos(W),.6); cf(DJm,d=2.3,lat=.5,dz=.25,lens=30)
             return
         if view=='S_rush':
             crowd_upd(t); onstage(W,t,0,rz=0); face(W,mouth='O',brow=.12); k=ease(cl(t/1.6))
-            BL['root'].location=(L(-6.2,STAGE_X['bil'],k),3.5,STG+.008); BL['z0']=STG; BL['root'].rotation_euler[2]=R(-90 if k<.95 else 0); run(BL,BL['root'].location.x) if k<.95 else stand(BL,t); BL['root'].location[2]=STG+.008; blink(BL,t)
-            SH['root'].location=(L(6.2,STAGE_X['sher'],k),3.5,STG+.008); SH['z0']=STG; SH['root'].rotation_euler[2]=R(90 if k<.95 else 0); run(SH,SH['root'].location.x) if k<.95 else stand(SH,t); SH['root'].location[2]=STG+.008; blink(SH,t)
+            BL['root'].location=(L(-6.2,STAGE_X['bil'],k),3.5,STG+.008); BL['z0']=STG; BL['root'].rotation_euler[2]=R(90 if k<.95 else 0); run(BL,BL['root'].location.x) if k<.95 else stand(BL,t); BL['root'].location[2]=STG+.008; blink(BL,t)
+            SH['root'].location=(L(6.2,STAGE_X['sher'],k),3.5,STG+.008); SH['z0']=STG; SH['root'].rotation_euler[2]=R(-90 if k<.95 else 0); run(SH,SH['root'].location.x) if k<.95 else stand(SH,t); SH['root'].location[2]=STG+.008; blink(SH,t)
             camset((0,.2,2.2),(0,3.5,1.7),20,6.0)
             return
         # from here on Waleed, Bilal, Sherry on stage
@@ -218,27 +222,36 @@ def SH_S(view):
             q=ease(t/DUR); camset((L(-1.2,-1.8,q),.4,2.0),(-1.6,3.5,1.8),24,5.0)
         elif view=='S_street':
             crowd_upd(t); dance(BL,t,'fight'); look_at(SH,headpos(BL),.7); SH['root'].rotation_euler[2]=R(-30); talk(SH,t,178,185,KEY,rest='O',shapes=('shout','O')); face(SH,brow=-.05,brow_r=22)
-            SH['arm'][1].rotation_euler=(R(-20),0,R(-115)); SH['arm'][-1].rotation_euler=(R(-20),0,R(115)); cf(SH,d=2.3,lat=.3,lens=30)
+            side(SH,1,80); side(SH,-1,80); cf(SH,d=2.3,lat=.3,lens=30)
         elif g=='A':
             crowd_upd(t); dance(BL,t,'fight' if view!='A_kaisi' else 'clap'); dance(SH,t,'clap')
             if view=='A_watch':
                 look_at(A1,headpos(W),.4); look_at(A2,headpos(W),.4); face(A1,mouth='flat',brow=-.04,brow_r=-15,eyes=.9); face(A2,mouth='smirk'); dance(W,t,'stiff')
                 camset((-2.0,1.3,1.6),(-4.2,-.95,1.35),26,4.0)
-            elif view=='A_ye': dance(W,t,'stiff'); talk(A1,t,195,202,KEY,rest='flat'); look_at(A1,headpos(A2),.6); look_at(A2,headpos(A1),.6); A1['arm'][1].rotation_euler=(R(-40),0,R(-30)); face(A1,brow=-.03,brow_r=-15); cf(A1,d=1.9,lat=.4,lens=30)
-            elif view=='A_pata': dance(W,t,'stiff'); talk(A2,t,203,207,KEY,rest='grin'); look_at(A2,headpos(A1),.6); look_at(A1,headpos(A2),.5); A2['arm'][-1].rotation_euler=(R(-40),0,R(30)); face(A2,brow=.06); cf(A2,d=1.9,lat=-.4,lens=30)
+            elif view=='A_ye': dance(W,t,'stiff'); talk(A1,t,195,202,KEY,rest='flat'); look_at(A1,headpos(A2),.6); look_at(A2,headpos(A1),.6); G(A1,1,42,15); face(A1,brow=-.03,brow_r=-15); cf(A1,d=1.9,lat=.4,lens=30)
+            elif view=='A_pata': dance(W,t,'stiff'); talk(A2,t,203,207,KEY,rest='grin'); look_at(A2,headpos(A1),.6); look_at(A1,headpos(A2),.5); G(A2,-1,42,15); face(A2,brow=.06); cf(A2,d=1.9,lat=-.4,lens=30)
             elif view=='A_kaisi':
-                W['root'].rotation_euler[0]=R(12); W['root'].rotation_euler[2]=R(-25); talk(W,t,208,211,KEY,rest='grin'); face(W,brow=.08); W['arm'][1].rotation_euler=(R(-20),0,R(-60)); look_at(W,headpos(A1),.6)
+                W['root'].rotation_euler[0]=R(12); W['root'].rotation_euler[2]=R(-25); talk(W,t,208,211,KEY,rest='grin'); face(W,brow=.08); G(W,1,40,20); look_at(W,headpos(A1),.6)
                 cf(W,d=2.2,lat=.5,lens=30)
             else: talk(A1,t,212,218,KEY,rest='flat',rate=6); face(A1,brow=.02,eyes=.85); look_at(A1,headpos(W),.5); face(A2,mouth='grin'); cf(A1,d=1.9,lat=.4,lens=30)
         elif g=='U':
             crowd_upd(t,'cheer' if view in ('U_dance','U_who','U_knees') else 'watch')
             if view=='U_jump':
-                k=cl(t/1.1); x=L(-6.0,-.2,ease(k)); y=L(1.2,3.3,ease(k)); CH['root'].location=(x,y,STG*min(1,k*2.5)+.5*math.sin(math.pi*min(1,k*2.5))*(k<.4)+.008); CH['z0']=STG; CH['root'].rotation_euler[2]=R(-60 if k<1 else 0)
-                run(CH,x) if k<1 else stand(CH,t); CH['root'].location[2]=(STG*min(1,k*2.5)+.6*math.sin(math.pi*min(1,k*2.5)) if k<.4 else STG)+.008; blink(CH,t)
-                dance(CH,t,'cheer') if k>=1 else None; face(CH,mouth='grin',brow=.1); for_=[look_at(H,headpos(CH),.6) for H in (W,BL,SH)]; [face(H,mouth='O') for H in (W,BL,SH)]
-                camset((-.6,.0,2.0),(-2.4,3.0,1.6),22,6.0)
+                k=cl(t/1.3); P0=Vector((-2.4,-.1)); P1=Vector((-.2,3.3)); TK_=.62
+                if k<TK_: p=P0.lerp(Vector((-1.75,.9)),k/TK_); z=0.0
+                else:
+                    a_=(k-TK_)/(1-TK_); p=Vector((-1.75,.9)).lerp(P1,a_); z=STG*min(1,a_*1.6)+.55*math.sin(math.pi*a_)
+                hd=math.degrees(math.atan2(P1.x-P0.x,-(P1.y-P0.y)))
+                CH['root'].location=(p.x,p.y,z+.008); CH['z0']=z; CH['root'].rotation_euler=(0,0,R(hd if k<1 else L(hd,0,ease(cl((t-1.3)/.3))) if t<1.6 else 0))
+                if k<TK_: run(CH,k*6)
+                elif k<1: flat_legs(CH); CH['leg'][1].rotation_euler=(R(-55),0,0); CH['leg'][-1].rotation_euler=(R(25),0,0); V(CH,140)
+                else: stand(CH,t); dance(CH,t,'cheer')
+                CH['root'].location[0]=p.x; CH['root'].location[1]=p.y
+                if k<1: CH['root'].location[2]=z+.008
+                blink(CH,t); face(CH,mouth='grin',brow=.1); [look_at(H,headpos(CH),.6) for H in (W,BL,SH)]; [face(H,mouth='O') for H in (W,BL,SH)]
+                camset((-.3,-1.9,1.9),(-1.3,2.4,1.5),20,6.0)
             elif view=='U_side':
-                onstage(CH,t,-.2,3.3); talk(CH,t,227,233,KEY,rest='grin',shapes=('shout','O','grin')); CH['arm'][1].rotation_euler=(R(-20),0,R(-110)); CH['arm'][-1].rotation_euler=(R(-170),0,R(15)); face(CH,brow=.08); CH['_cflat']=-.6
+                onstage(CH,t,-.2,3.3); talk(CH,t,227,233,KEY,rest='grin',shapes=('shout','O','grin')); side(CH,1,85); side(CH,-1,160); face(CH,brow=.08); CH['_cflat']=-.6
                 k=ease(cl(t/.8)); [look_at(H,headpos(CH),.6) for H in (W,BL,SH)]; cf(CH,d=2.3,lat=-.6,lens=28)
             elif view=='U_dance':
                 onstage(CH,t,-.2,3.3); CH['z0']=STG; dance(CH,t,'bhangra',1.2); face(CH,mouth='grin',eyes=.8,brow=.06); [look_at(H,headpos(CH),.5) for H in (W,BL,SH)]; face(W,mouth='O'); face(BL,mouth='grin'); face(SH,mouth='grin')
@@ -252,10 +265,10 @@ def SH_S(view):
             onstage(CH,t,-.4,3.3); onstage(DA,t,1.8,3.4); CH['z0']=STG; DA['z0']=STG
             if view=='D_dadi':
                 crowd_upd(t,'wild'); k=ease(cl(t/1.0)); DA['root'].location=(L(6.2,1.8,k),3.4,STG+.008); walk(DA,DA['root'].location.x,step=.35,arm=8) if k<1 else dance(DA,t,'dadi')
-                DA['root'].rotation_euler[2]=R(90 if k<1 else 0); dance(CH,t,'bhangra',1.2); dance(BL,t,'fight',ph=1); dance(SH,t,'bhangra',.8,ph=2); dance(W,t,'stiff')
+                DA['root'].rotation_euler[2]=R(-90 if k<1 else 0); dance(CH,t,'bhangra',1.2); dance(BL,t,'fight',ph=1); dance(SH,t,'bhangra',.8,ph=2); dance(W,t,'stiff')
                 face(DA,mouth='grin',eyes=.85,brow=.06); face(W,mouth='O',brow=.12); q=ease(t/DUR); camset((L(-.5,.5,q),L(-.6,.2,q),L(2.8,2.4,q)),(-.4,3.4,1.6),18,7.0)
             elif view=='W_dj':
-                crowd_upd(t); [dance(H,t,'stiff') for H in (W,)]; talk(DJm,t,271,277,KEY,rest='grin',rate=6); DJm['arm'][-1].rotation_euler=(R(-30),0,R(100)); face(DJm,brow=.1)
+                crowd_upd(t); [dance(H,t,'stiff') for H in (W,)]; talk(DJm,t,271,277,KEY,rest='grin',rate=6); side(DJm,-1,95); face(DJm,brow=.1)
                 cf(DJm,d=2.2,lat=-.6,dz=.15,lens=30)
             elif view=='W_dadi':
                 crowd_upd(t,'wild'); dance(DA,t,'dadi'); face(DA,mouth='grin',eyes=.8,brow=.08); face(W,mouth='O',brow=.14,eyes=1.3)
@@ -263,10 +276,10 @@ def SH_S(view):
             elif view=='W_crowd':
                 crowd_upd(t,'wild'); dance(DA,t,'dadi'); dance(CH,t,'cheer'); face(W,mouth='flat',eyes=.8,brow=-.02); q=ease(t/DUR); camset((L(1.6,2.4,q),.6,2.6),(5.0,-4.4,1.3),26,8.0)
             elif view=='W_seven':
-                crowd_upd(t); dance(DA,t,'dadi'); W['root'].rotation_euler[2]=R(-25); talk(W,t,283,288,KEY,rest='frown',rate=5); face(W,brow=.06,brow_r=-18,eyes=.8); W['head'].rotation_euler[0]=R(14)
+                crowd_upd(t); dance(DA,t,'dadi'); W['root'].rotation_euler[2]=R(25); talk(W,t,283,288,KEY,rest='frown',rate=5); face(W,brow=.06,brow_r=-18,eyes=.8); W['head'].rotation_euler[0]=R(14)
                 handsdown(W); cf(W,d=2.0,lat=.4,lens=30)
             elif view=='W_seventy':
-                crowd_upd(t); dance(DA,t,'dadi'); SH['root'].rotation_euler[2]=R(30); talk(SH,t,289,296,KEY,rest='smirk',rate=6); face(SH,brow=-.02,brow_r=12); look_at(SH,headpos(W),.6); cf(SH,d=2.0,lat=-.4,lens=30)
+                crowd_upd(t); dance(DA,t,'dadi'); SH['root'].rotation_euler[2]=R(-30); talk(SH,t,289,296,KEY,rest='smirk',rate=6); face(SH,brow=-.02,brow_r=12); look_at(SH,headpos(W),.6); cf(SH,d=2.0,lat=-.4,lens=30)
             else:
                 crowd_upd(t,'cheer'); dance(DA,t,'dadi'); dance(CH,t,'bhangra'); dance(BL,t,'fight'); hideH(SH)
                 W['root'].rotation_euler[2]=R(20); face(W,mouth='frown',eyes=.75,brow=.05); W['head'].rotation_euler[0]=R(18); handsdown(W)
@@ -291,7 +304,7 @@ def SH_N(view):
             except TypeError: pass
             q=ease(t/DUR); camset((L(-3.5,-2.5,q),L(-3.6,-2.8,q),L(2.8,2.2,q)),(0,1.2,.9),24,5.0)
             return
-        put_at(AM,t,2.0,-.6,125); AM['arm'][1].rotation_euler=(R(-75),0,R(-15)); bpy.context.view_layer.update(); cup.location=hand_pos(AM,1)+Vector((0,-.03,.06))
+        put_at(AM,t,2.0,-.6,-130); AM['arm'][1].rotation_euler=(R(-75),0,R(-15)); bpy.context.view_layer.update(); cup.location=hand_pos(AM,1)+Vector((0,-.03,.06))
         if view=='N_ammi': hideH(DA); talk(AM,t,313,321,KEY,rest='grin',rate=6); face(AM,brow=.05); look_at(AM,headpos(W),.6); cf(AM,d=2.0,lat=-.4,lens=30)
         elif view=='N_tabiyat':
             hideH(DA); talk(W,t,322,326,KEY,rest='frown',shapes=('shout','O','frown')); face(W,brow=.1,brow_r=-15)
@@ -302,7 +315,7 @@ def SH_N(view):
             camset((-.5,-1.9,1.7),(.4,2.2,1.5),28,4.0); face(W,mouth='O',eyes=1.3,brow=.14)
         else:
             put_at(DA,t,.4,2.35,10); dance(DA,t,'dadi'); face(DA,mouth='grin')
-            talk(W,t,337,343,KEY,rest='O',shapes=('shout','O')); face(W,brow=.16,eyes=1.4); W['arm'][1].rotation_euler=(R(-90),0,R(-30)); W['arm'][-1].rotation_euler=(R(-90),0,R(30))
+            talk(W,t,337,343,KEY,rest='O',shapes=('shout','O')); face(W,brow=.16,eyes=1.4); W['arm'][1].rotation_euler=(R(-90),0,R(25)); W['arm'][-1].rotation_euler=(R(-90),0,R(-25))
             q=ease(t/DUR); camset((L(-1.4,-.9,q),L(-2.2,-1.6,q),L(2.0,1.7,q)),(.5,1.2,1.0),26,4.0)
     return dict(upd=upd)
 for v in ('N_morning','N_ammi','N_tabiyat','N_dadi','N_bahar'): SHOTS[v]=(lambda v=v: SH_N(v))
