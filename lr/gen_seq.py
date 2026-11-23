@@ -7,4 +7,4 @@ spec=[('OPEN',0.0),('WANT',s(9)-.15),('MEET',s(19)-.25),('W1',s(28)-.12),('B1',s
 seq=[(n,round(round(t*30)/30,3)) for n,t in spec]
 assert all(seq[i][1]<seq[i+1][1] for i in range(len(seq)-1))
 p='shots_lr.py'; t=open(p).read(); t=re.sub(r'^SEQ=\[.*\]$','SEQ='+repr(seq),t,flags=re.M); open(p,'w').write(t)
-for i,(n,x) in enumerate(seq): print(i+1,n,x,round((seq[i+1][1] if i+1<len(seq) else 89.2)-x,2))
+for i,(n,x) in enumerate(seq): print(i+1,n,x,round((seq[i+1][1] if i+1<len(seq) else 89.4333)-x,2))
