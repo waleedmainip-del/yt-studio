@@ -197,7 +197,7 @@ def SH(view):
         elif v=='X_1000':
             e1=w1(KEY,3)+.2; at(W,t,WT[0],WT[1],180); at(SON,t,SNT[0],SNT[1],180); sweat(t,True)
             if t<e1: say(W,t,KEY,rest='flat',rate=6.5); GEST(W,1,70,4); face(W,brow=-.01); cf(W,d=L(1.75,1.55,q),lat=.5,lens=32)
-            else: look_at(SON,headpos(W),1.0); pray(SON,4*math.sin(t*10)); face(SON,mouth='strain',brow=.06,brow_r=16,eyes=1.15); soncam(t,d=1.9,lens=30)
+            else: look_at(SON,headpos(W),1.0); face(SON,mouth='strain',brow=.06,brow_r=16,eyes=1.15); SON['head'].rotation_euler[1]=R(6*math.sin(t*9)); soncam(t,d=1.9,lens=30)
         elif v=='F_sky':
             t1_=w0(KEY,7); sweat(t,True)
             if t<t1_: look_at(SK,(SC[0],2.4,4.6),1.0); face(SK,mouth='frown',brow=.06,brow_r=16); k=cl(t/.5); side(SK,1,28*k); side(SK,-1,28*k)
@@ -230,7 +230,7 @@ def SH(view):
             else: at(SON,t,SNL[0],SNL[1],L(0,90,ease(cl((t-tw-.1)/.3))))
             k2=ease(cl((t-.9)/.6)); at(BL,t,BP2[0],BP2[1],L(180,270,k2)); say(BL,t,KEY,rest='o'); GEST(BL,-1,60,-8); GEST(BL,1,22+6*math.sin(t*5),14); face(BL,brow=.06,eyes=1.2); look_at(BL,headpos(W),.9)
             face(W,mouth='smirk',brow_r=8); look_at(W,headpos(BL),.8*cl((t-1.0)/.5)); SON['arm'][-1].rotation_euler=(0,0,0); held(bag,SON,-1,off=(0,0,-.02),rot=(0,0,SON['root'].rotation_euler[2])); shy(t,.5)
-            s1.scale=(0,0,0); face(SK,mouth='frown',eyes=.8); camset((.05,-5.3,3.0),(.05,-1.45,1.0),18,8.0)
+            s1.scale=(0,0,0); face(SK,mouth='frown',eyes=.8); camset((.1,-5.3,4.2),(.1,-1.45,.9),18,8.0)
         elif v=='B_exp':
             la=dict(a=True,b=False); at(W,t,WL[0],WL[1],90); at(SON,t,SNL[0],SNL[1],90); at(BL,t,BP2[0],BP2[1],270); GEST(BL,-1,22,-6); bag.scale=(1,1,1); held(bag,SON,-1,off=(0,0,-.02),rot=(0,0,R(90))); s1.scale=(0,0,0)
             say(W,t,KEY,rest='smirk',rate=6); face(W,brow=.02,brow_r=10,eyes=.85); W['head'].rotation_euler[1]=R(-5); cf(W,d=L(1.6,1.4,q),lat=-.38,lens=32,fs=2.8)
