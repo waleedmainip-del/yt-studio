@@ -7,13 +7,6 @@ _K=[('H_lane',0),('H_neg',10),('H_wal',16),('E_enter',23),('E_shirt',38),
     ('B_watch',145),('B_how',153),('B_exp',161),('B_ruined',162),('O_walk',168),('O_end',176),('O_shop',181)]
 SHOTS={}
 WJ=json.load(open('/home/claude/rich/audio/words.json')); WS=[w_['t0'] for w_ in WJ]; WE=[w_['t1'] for w_ in WJ]
-_K=[('I_venue',0),('I_aunty',18),('I_uncle',25),('I_mehndi',34),('I_mistake',39),
-    ('P_yaaro',57),('P_bhai',71),('P_bilkul',77),('P_tut',84),('P_haters',91),('P_move',96),('P_chair',109),
-    ('S_dj',116),('S_ladies',121),('S_walk',130),('S_forget',137),('S_change',146),('S_which',149),('S_save',151),('S_rush',157),('S_fight',166),('S_street',178),
-    ('A_watch',186),('A_ye',195),('A_pata',203),('A_kaisi',208),('A_beta',212),
-    ('U_jump',219),('U_side',227),('U_dance',234),('U_who',247),('U_knees',252),('D_dadi',260),
-    ('W_dj',271),('W_dadi',278),('W_crowd',279),('W_seven',283),('W_seventy',289),
-    ('N_narr',297),('N_morning',310),('N_ammi',313),('N_tabiyat',322),('N_dadi',327),('N_bahar',337)]
 SEQ=[(k,0.0 if i==0 else round(WS[i]-.12,3)) for k,i in _K]
 END=round(WE[-1]+1.2,3)
 def TK(key): return [t for k,t in SEQ if k==key][0]
