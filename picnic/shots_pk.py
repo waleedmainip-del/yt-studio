@@ -96,7 +96,7 @@ def SH_ROAD(view):
     seats=dict(SAH='fr',SHY='fl',EMA='br',ILS='bl')
     JXv=[0.0]
     def cam4(q=0.0): camset((JXv[0]+L(5.0,4.5,q),JY+.15,L(3.75,3.55,q)),(JXv[0]-.55,JY,2.15),26,6.0)
-    def jcf(H,sg=1,d=1.65,lens=27): cf(H,d=d,lat=.35*sg,dz=-.08,lens=lens,tgt_dz=.04)
+    def jcf(H,sg=1,d=1.65,lens=21): cf(H,d=d,lat=.35*sg,dz=-.08,lens=lens,tgt_dz=.10)
     def creep(g,li): c=(g+li*1.3)%5.0; return .7*(int((g+li*1.3)//5.0)+ease(cl((c-3.6)/1.2)))
     def upd(t):
         g=t+TK(KEY); q=ease(cl(t/DUR)); v=view; drive=(v=='V_drive'); gd=TK('V_drive') if drive else g
@@ -239,9 +239,9 @@ def SH_VENUE(view):
             for nm in ('ILS','SHY','SAH'): look_at(Hs[nm],headpos(E_),.8)
             mcf(E_,1)
         elif v=='V_explore':
-            for k,nm in enumerate(('EMA','ILS','SAH','SHY')):
-                stroll(Hs[nm],t,(70.4,68.65,66.9,65.15)[k],30.0+(0,.9,0,.9)[k],180,1.15); look_at(Hs[nm],(75,34+1.15*t+6,2.2),.7); face(Hs[nm],mouth='o' if nm=='SHY' else 'grin',brow=.05)
-            GEST(E_,-1,70,16); y=30+1.15*t; camset((64.4,y+8.8,1.9),(67.9,y+.4,1.55),22,8.0)
+            for k,nm in enumerate(('ILS','EMA','SAH','SHY')):
+                stroll(Hs[nm],t,66.0+1.3*k,30.0+.45*k,180,1.15); look_at(Hs[nm],(75,34+1.15*t+6,2.2),.9); face(Hs[nm],mouth='o' if nm=='SHY' else 'grin',brow=.05)
+            GEST(E_,-1,70,16); y=30+1.15*t; camset((64.4,y+6.6,1.7),(68.0,y+.6,1.55),22,7.0)
         elif v=='F_n1':
             onmat(g); camset((L(-30,-18,q),L(34,50,q),L(17,15,q)),(L(-4,6,q),L(70,84,q),0),20,8.0)
         elif v=='F_n1b':
