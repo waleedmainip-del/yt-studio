@@ -109,7 +109,7 @@ def SH_ROAD(view):
         for k,H in Hs.items():
             sx,sy=JEEP_SEATS[seats[k]]; carsit(H,g,jx+sx,JY+sy); face(H,mouth='smile',brow=0,brow_r=0,eyes=1.0)
         # idle driving poses
-        GEST(S_,1,58,-14); GEST(S_,-1,58,14); GEST(I_,1,62,-12); look_at(I_,tuple(hand_pos(I_,1)) if False else (jx-1.3,JY+.75,1.95),.9,maxpitch=40); bigph.scale=(0,0,0)
+        GEST(S_,1,58,-14); GEST(S_,-1,58,14); GEST(I_,1,62,-12); I_['head'].rotation_euler[0]=R(14) if v in ('N_world','C_horn','C_main','C_kaun','C_poora','C_holiday','C_real') else 0; bigph.scale=(0,0,0)
         shake=.02*math.sin(g*23)
         for H in Hs.values(): H['root'].location[2]+=.006*math.sin(g*17+H['seed'])
         if v=='N_world':
@@ -162,7 +162,7 @@ def SH_ROAD(view):
             else: cam4(1.0)
         else:  # V_drive
             for H in Hs.values(): face(H,mouth='grin',brow=.05)
-            ARMV(E_,120,8*math.sin(g*9)); camset((creep(gd,1)+L(-13,-10,q),JY-5.5,L(5.5,4.2,q)),(jx+2,JY,1.8),24,8.0)
+            ARMV(E_,120,8*math.sin(g*9)); camset((creep(gd,1)+L(-12,-9,q),-9.85,L(8.0,6.5,q)),(jx+2.5,JY+.5,1.6),24,8.0)
     return dict(upd=upd)
 for v in ('N_world','C_horn','C_main','C_kaun','C_poora','C_holiday','C_real','D_look','D_park','D_normal','D_food','D_exp','D_expb','D_lant','D_int','V_drive'): SHOTS[v]=(lambda v=v: SH_ROAD(v))
 
@@ -233,7 +233,7 @@ def SH_VENUE(view):
         elif v=='P_nothing':
             onmat(g); say(I_,t,KEY,rest='grin',rate=8); side(I_,1,40); side(I_,-1,40); I_['root'].rotation_euler[0]=R(-8); mcf(I_,1)
         elif v=='P_qual':
-            onmat(g); say(S_,t,KEY,rest='smirk',rate=8); S_['root'].rotation_euler[0]=R(-16); ARMV(S_,160); face(S_,brow=.03,brow_r=10,eyes=.8); mcf(S_,-1)
+            onmat(g); say(S_,t,KEY,rest='smirk',rate=8); S_['root'].rotation_euler[0]=R(-10); side(S_,1,22); side(S_,-1,22); face(S_,brow=.03,brow_r=10,eyes=.8); mcf(S_,-1)
         elif v=='P_things':
             onmat(g); say(E_,t,KEY,rest='grin',rate=8); GEST(E_,-1,96,26); face(E_,brow=.06,eyes=1.2)
             for nm in ('ILS','SHY','SAH'): look_at(Hs[nm],headpos(E_),.8)
@@ -261,7 +261,7 @@ def SH_VENUE(view):
         elif v in ('L_peace','L_yes','L_stay','L_needed'):
             onmat(g,up=SKY); H={'L_peace':Y_,'L_yes':I_,'L_stay':S_,'L_needed':E_}[v]; e1=lend(KEY)+.1
             say(H,t,KEY,rest='smile',shapes=('o','flat','O','smile','flat'),rate=7.5); face(H,brow=.05,eyes=1.12)
-            if v=='L_stay': S_['root'].rotation_euler[0]=R(-14); ARMV(S_,160)
+            if v=='L_stay': S_['root'].rotation_euler[0]=R(-10); side(S_,1,22); side(S_,-1,22)
             if v=='L_needed' and t>e1: kk=ease(cl((t-e1)/.8)); camset((0,hy-L(6,8.5,kk),L(1.6,1.3,kk)),(-3,hy+12,L(8,14,kk)),18,8.0)
             else: mcf(H,1 if v in ('L_peace','L_needed') else -1,d=L(2.2,1.9,q))
         elif v=='F_n1d':
@@ -278,7 +278,7 @@ def SH_VENUE(view):
             if v=='F_req': GEST(Y_,1,56,10)
             if v=='F_kal': face(Y_,mouth=None,brow=.05); side(Y_,1,40); side(Y_,-1,40)
             if v=='F_ghar':
-                ARMV(I_,118,8*math.sin(g*14)); face(I_,brow=.06,eyes=1.2)
+                GEST(I_,1,70+8*math.sin(g*14),20); GEST(I_,-1,70-8*math.sin(g*14),20); face(I_,brow=.06,eyes=1.2)
                 if t>e1:
                     for nm in ORDER: face(Hs[nm],mouth='grin',brow=.05); Hs[nm]['root'].location[2]+=.012*abs(math.sin(g*11+ORDER.index(nm)))
                     camset((-4.45,hy-2.2,2.0),(hx-.2,hy+.2,1.05),20,5.0)
