@@ -1,5 +1,5 @@
 WAL=dict(skin='#C89064',hair='#1A1512',hairstyle='quiff',brow_c='#1A1512',top='#F4F1EA',jacket='#1F2F4A',trim='#18263C',pants='#B8A27E',shoes='#F2F2EE',sole='#C9C9C2',accent='#F4F1EA',h=1.0,watch=True)
-SKP=dict(skin='#B07A52',hair='#2A2420',hairstyle='short',topi='#F4F1EA',mustache='#2A2420',brow_c='#2A2420',top='#9AA0A8',trim='#868C94',pants='#9AA0A8',kameez='#9AA0A8',waistcoat='#3A3E48',wc_trim='#C9A24A',shoes='#3A2A1E',h=.965)
+SKP=dict(skin='#B07A52',hair='#2A2420',hairstyle='short',mustache='#2A2420',brow_c='#2A2420',top='#9AA0A8',trim='#868C94',pants='#9AA0A8',kameez='#9AA0A8',waistcoat='#3A3E48',wc_trim='#C9A24A',shoes='#3A2A1E',h=.965)
 BLL=dict(skin='#9A6A48',hair='#14110F',hairstyle='curly',beard='#14110F',brow_c='#14110F',top='#8E2A3A',trim='#74202E',pants='#2F3440',shoes='#22242B',sole='#C9C9C2',accent='#F4F1EA',h=.985)
 BIL2=dict(skin='#A87450',hair='#14110F',hairstyle='short',beard='#14110F',brow_c='#14110F',top='#F2C14E',trim='#D9A82E',pants='#F4F1EA',kameez='#F2C14E',kameez_border='#C9452E',shoes='#3A2A1E',h=.983)
 SHR=dict(skin='#B9835C',hair='#2A1E16',hairstyle='curly',mustache='#2A1E16',brow_c='#2A1E16',top='#E8742A',trim='#C85E1E',pants='#F4F1EA',kameez='#E8742A',waistcoat='#3E2A5A',wc_trim='#E8C25A',shoes='#22242B',h=.966)
