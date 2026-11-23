@@ -1,0 +1,137 @@
+[
+{
+"t": 0.8,
+"a": "waleed",
+"b": "STATIC",
+"n": 8,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "shopkeeper",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar.106"
+]
+},
+{
+"t": 0.8,
+"a": "bilal",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la0",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la1",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la2",
+"b": "STATIC",
+"n": 20,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la3",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la4",
+"b": "STATIC",
+"n": 60,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la5",
+"b": "STATIC",
+"n": 62,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "la6",
+"b": "STATIC",
+"n": 60,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "st1",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "st2",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "st4",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "st5",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.8,
+"a": "vendor",
+"b": "STATIC",
+"n": 10,
+"objs": [
+"bazaar"
+]
+}
+]
