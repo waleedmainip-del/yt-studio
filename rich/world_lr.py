@@ -98,7 +98,7 @@ def bazaar(seed=21):
     wires(-34,34,-6.9,-.1,5.2,5,seed)
     for k in range(-30,31,6): B.cyl((k,-6.8,2.6),.06,5.2,M('#5A5F66',.5,metal=.4),seg=8); B.box((k,-6.5,5.0),(.08,.3,.05),M('#5A5F66',.5),0); B.box((k,-6.2,4.95),(.12,.1,.05),M('#FFF2D8',.3,emit=1.5),.02)
     # street life: carts, crates, parked bikes
-    for (cx,cy) in ((-9,-6.2),(8.5,-6.2),(-17,-1.0),(14,-1.0),(22,-6.2)):
+    for (cx,cy) in ((-26,-6.2),(27,-1.0),(-17,-1.0),(14,-1.0),(22,-6.2)):
         B.box((cx,cy,.55),(.8,.45,.05),M('#6B4A2A',.6,kind='wood'),.02)
         for sx in (-1,1): B.cyl((cx+sx*.6,cy,.3),.3,.06,M('#2B2C33',.6),rot=(R(90),0,0),seg=14)
         for k in range(10): B.ico((cx-.6+(k%5)*.3,cy-.2+(k//5)*.35,.7),.11,M(r.choice(('#E8742A','#F2C14E','#C9302C','#6FA84A')),.6),sub=1)
@@ -147,8 +147,8 @@ def bazaar(seed=21):
     # counter props: till, tape, FIXED PRICE sign
     B.box((1.7,2.65,1.2),(.2,.16,.09),M('#2B2C33',.4,metal=.3),.02); B.box((1.7,2.6,1.32),(.16,.06,.04),M('#9FD8FF',.3,emit=.6),.01)
     B.cyl((-1.75,2.65,1.14),.07,.04,M('#F2C14E',.5),seg=14)
-    sign('FIXED PRICE',(0,5.2,3.62),(0,-1,0),2.6,.36,fg='#C9302C',bg='#FFFFFF',border='#2B2C33')
-    sign('NO BARGAINING',(0,5.2,3.3),(0,-1,0),2.0,.22,fg='#2B2C33',bg='#FFFFFF')
+    sign('FIXED PRICE',(0,4.74,2.98),(0,-1,0),1.3,.3,fg='#C9302C',bg='#FFFFFF',border='#2B2C33')
+    sign('NO BARGAINING',(0,4.74,2.66),(0,-1,0),1.3,.2,fg='#2B2C33',bg='#FFFFFF')
     # ceiling tube lights
     for xx in (-1.5,1.5): B.box((xx,2.6,3.86),(.7,.04,.03),M('#F4F8FF',.2,emit=7.0),0)
     B.box((0,.9,3.86),(1.2,.04,.03),M('#F4F8FF',.2,emit=7.0),0)

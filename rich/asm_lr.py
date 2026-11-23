@@ -22,6 +22,17 @@ EL=json.load(open(R+'/audio/english_lines.json'))
 for k_,L_ in enumerate(EL):
     e_=min(L_['t1']+.25, EL[k_+1]['t0']-.06) if k_+1<len(EL) else L_['t1']+.6
     ass.append(f"Dialogue: 0,{ts(max(0,L_['t0']-.05))},{ts(e_)},E,,0,0,0,,{L_['en'].replace(chr(34),'')}")
+# ---- price scoreboard (top of frame)
+ass.insert(ass.index("[Events]")-1,"Style: P,Inter,50,&H00FFFFFF,&H00FFFFFF,&H00101010,&HB0000000,1,0,0,0,100,100,0,0,3,10,0,8,60,60,150,1")
+WSs=[w_['t0'] for w_ in W]
+PR=[(51,"4,000",None),(60,"4,000","800"),(81,"3,500","800"),(83,"3,500","900"),(85,"3,000","900"),(87,"3,000","950"),(103,"1,500","950"),(112,"1,500","1,000"),(126,"1,000","1,000")]
+PEND=WSs[134]-.1
+for k_,(wi,sp,wp_) in enumerate(PR):
+    a_=WSs[wi]+.05; b_=PR[k_+1][0] if k_+1<len(PR) else None; b_=(WSs[b_]+.05) if b_ is not None else PEND
+    txt="{\\c&H5A5AFF&}SHOP   Rs "+sp+"\\N{\\c&H7CF07C&}WALEED   Rs "+(wp_ or "?")
+    if k_==len(PR)-1: txt="{\\c&H00D7FF&}DEAL   Rs 1,000"
+    ass.append(f"Dialogue: 1,{ts(a_)},{ts(b_)},P,,0,0,0,,{txt}")
+ass.append(f"Dialogue: 1,{ts(WSs[139])},{ts(WSs[145]-.15)},P,,0,0,0,,{{\\c&H00D7FF&}}Rs 1,000  x 2")
 open(R+'/subs.ass','w').write('\n'.join(ass))
 sr,n=wavfile.read(R+'/audio/narr.wav'); n=n.astype(np.float32)/32768
 if n.ndim>1: n=n.mean(1)
@@ -36,7 +47,7 @@ wavfile.write(R+'/mix.wav',sr,(mix*32767).astype(np.int16))
 segs=[f'{R}/segs/seg_{k:02d}.mp4' for k in range(1,len(SEQ)+1)]; have=[p for p in segs if os.path.exists(p)]; print('segments',len(have),'/',len(segs))
 if len(have)==len(segs) and os.environ.get('ENCODE'):
     open(R+'/segs/list.txt','w').write(''.join(f"file '{p}'\n" for p in segs))
-    raw=R+'/raw.mkv'; out=os.environ.get('OUT',R+'/Lahore_Secretly_Rich_v1.mp4')
+    raw=R+'/raw.mkv'; out=os.environ.get('OUT',R+'/Karachi_Bargainer_v1.mp4')
     subprocess.run(['ffmpeg','-v','error','-y','-f','concat','-safe','0','-i',R+'/segs/list.txt','-i',R+'/mix.wav','-vf',f"fade=t=in:st=0:d=0.5,ass={R}/subs.ass:fontsdir=/usr/share/fonts/opentype/inter",'-r','30','-c:v','libx264','-crf','19','-preset','medium','-pix_fmt','yuv420p','-c:a','pcm_s16le','-shortest',raw],check=True)
     m=subprocess.run(['ffmpeg','-hide_banner','-i',raw,'-af','loudnorm=I=-15:TP=-1.5:LRA=11:print_format=json','-f','null','-'],capture_output=True,text=True).stderr
     j=json.loads(m[m.rindex('{'):m.rindex('}')+1])

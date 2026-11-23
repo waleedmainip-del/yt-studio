@@ -2,7 +2,7 @@
 import json, os, subprocess, sys
 J=int(sys.argv[1]); items=json.load(open('rich/stills.json'))['jobs'][J]
 RF='/home/claude/rich'; out=os.path.join(os.environ['GITHUB_WORKSPACE'],'gh_out'); os.makedirs(out,exist_ok=True); os.makedirs(RF+'/stills',exist_ok=True)
-pct=os.environ.get('QPCT','25')
+pct=os.environ.get('QPCT','34')
 for shot,ts in items:
     for mode in ('still','collide'):
         lp=out+'/log_%s_%s.txt'%(shot,mode)
