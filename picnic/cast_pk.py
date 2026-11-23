@@ -1,4 +1,4 @@
-SHY=dict(skin='#C08A62',hair='#15110E',hairstyle='quiff',beard='#15110E',brow_c='#15110E',top='#F6F5F1',trim='#E4E2DC',pants='#3A3E48',shoes='#6B4A2A',sole='#3A2A1E',accent='#F4F1EA',h=1.0,watch=True,shades_up=True)
+SHY=dict(skin='#C08A62',hair='#15110E',hairstyle='quiff',beard='#15110E',mustache='#15110E',brow_c='#15110E',top='#F6F5F1',trim='#E4E2DC',pants='#3A3E48',shoes='#6B4A2A',sole='#3A2A1E',accent='#F4F1EA',h=1.0,watch=True,shades_up=True)
 SAH=dict(skin='#C89468',hair='#17120F',hairstyle='fringe',mustache='#17120F',brow_c='#17120F',top='#B5A68C',trim='#A09178',pants='#1E1F24',shoes='#F2F2EE',sole='#C9C9C2',accent='#F4F1EA',h=.975,watch=True)
 EMA=dict(skin='#D9A47E',hair='#1E1612',hairstyle='ponytail',tie_c='#5A4034',brow_c='#1E1612',top='#7A5A48',trim='#674A3A',pants='#7A5A48',kameez='#7A5A48',kameez_border='#674A3A',shoes='#E8DCC8',h=.9)
 ILS=dict(skin='#E4B08A',hair='#14100E',hairstyle='long',brow_c='#14100E',top='#8FAE5A',trim='#7A9848',pants='#EFE6D0',kameez='#8FAE5A',kameez_border='#EFE6D0',scarf='#7FA04A',shoes='#C9A24A',glasses=True,h=.915)

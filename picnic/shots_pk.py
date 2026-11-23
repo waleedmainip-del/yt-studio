@@ -301,10 +301,10 @@ def SH_REF(view):
     def upd(t):
         i=int(t+.01); reset(H); put_at(H,0.3,0,0,(0,90,180,35,0,35,35,0)[min(i,7)]); blink(H,0,force=0); face(H,mouth='smile',brow=0,brow_r=0,eyes=1.0)
         hh=headpos(H).z
-        if i<=3: camset((0,-6.6,1.15),(0,0,1.05),40,8.0)
+        if i<=3: camset((0,-4.7,1.2),(0,0,1.02),40,8.0)
         elif i==4: face(H,mouth='grin'); camset((.25,-2.3,hh+.02),(0,0,hh-.02),40,8.0)
-        elif i==5: H['root'].rotation_euler[2]=R(35); walk(H,.42,step=.56,arm=24); camset((0,-6.6,1.15),(0,0,1.05),40,8.0)
-        elif i==6: gsit(H,0,0,0,35); face(H,mouth='O',brow=.06,eyes=1.25); ARMV(H,60); camset((0,-5.2,1.0),(0,-.2,.75),40,8.0)
+        elif i==5: H['root'].rotation_euler[2]=R(35); walk(H,.42,step=.56,arm=24); camset((0,-4.7,1.2),(0,0,1.02),40,8.0)
+        elif i==6: gsit(H,0,0,0,35); face(H,mouth='O',brow=.06,eyes=1.25); side(H,1,30); side(H,-1,30); face(H,mouth='grin'); camset((0,-4.4,1.3),(0,-.3,.75),40,8.0)
         else: face(H,mouth='shout',brow=.05,brow_r=14,eyes=1.2); GEST(H,1,70,10); camset((.25,-2.6,hh+.02),(0,0,hh-.1),40,8.0)
     return dict(upd=upd)
 if os.environ.get('REFS'):
