@@ -276,7 +276,7 @@ def NOTICE_():
         cidle(S,t); look_at(wa,(BX[0],BX[1],.9),.9,maxpitch=40); k=tl(t,ws(219),ws(219)+.5); face(wa,mouth='flat' if k<.6 else 'o',brow=.06*k,eyes=L(1,1.25,k))
         if t<ws(220)-.1: camset(LV((-.3,-.9,2.05),(-.3,-.75,1.95),ease(t/max(.1,ws(220)))),(BX[0],BX[1]+.1,.85),40,2.8)
         else:
-            q=tl(t,ws(220),DUR); h=hp(wa); camset(LV((h[0]+.1,h[1]-1.9,h[2]),(h[0]+.05,h[1]-1.3,h[2]),q),(h[0],h[1],h[2]-.32),36,2.8)
+            q=tl(t,ws(220),DUR); h=hp(wa); camset(LV((h[0]+.15,h[1]-3.2,h[2]+.05),(h[0]+.1,h[1]-2.4,h[2]+.02),q),(h[0],h[1],h[2]-.3),36,2.8)
     return dict(upd=upd)
 SHOTS['NOTICE']=NOTICE_
 def _noal(S): S['bx']['setk']('noaaloo')
