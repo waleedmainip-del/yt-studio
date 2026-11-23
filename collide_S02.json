@@ -1,0 +1,29 @@
+[
+{
+"t": 4.0,
+"a": "REF_SAH",
+"b": "STATIC",
+"n": 8,
+"objs": [
+"studio"
+]
+},
+{
+"t": 5.0,
+"a": "REF_SAH",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"studio"
+]
+},
+{
+"t": 7.0,
+"a": "REF_SAH",
+"b": "STATIC",
+"n": 8,
+"objs": [
+"studio"
+]
+}
+]
