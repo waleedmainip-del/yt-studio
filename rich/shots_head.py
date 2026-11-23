@@ -1,10 +1,10 @@
 # ================================================================ KARACHI BARGAINER — shot table
-_K=[('H_lane',0),('H_neg',10),('H_wal',16),('E_enter',23),('E_shirt',38),
-    ('D_how',45),('D_4000',51),('D_stare',54),('D_800',60),('D_shirt',62),('D_cust',66),
-    ('C_calc',74),('C_3500',79),('C_900',83),('C_3000',85),('C_950',87),('C_sweat',89),('C_please',94),
-    ('X_leave',96),('X_1500',102),('X_turn',105),('X_1000',112),
-    ('F_sky',116),('F_fine',126),('F_smile',132),('F_two',134),('F_TWO',139),('F_family',140),
-    ('B_watch',145),('B_how',153),('B_exp',161),('B_ruined',162),('O_walk',168),('O_end',176),('O_shop',181)]
+_K=[('H_lane', 0), ('H_neg', 10), ('H_wal', 16), ('E_enter', 26), ('E_shirt', 42), ('D_how', 48), ('D_4000', 54), ('D_stare', 57), ('D_800', 61), ('D_shirt', 63), ('D_cust', 67), ('C_calc', 75), ('C_3500', 81), ('C_900', 85), ('C_3000', 87), ('C_950', 89), ('C_sweat', 91), ('C_please', 96), ('X_leave', 98), ('X_1500', 105), ('X_turn', 108), ('X_1000', 114), ('F_sky', 118), ('F_fine', 128), ('F_smile', 134), ('F_two', 136), ('F_TWO', 141), ('F_family', 142), ('B_watch', 147), ('B_how', 155), ('B_exp', 163), ('B_ruined', 164), ('O_walk', 170), ('O_end', 176), ('O_shop', 182)]
+NW=186
+IX=dict(_K)
+_KS=[k for k,_ in _K]
+def NX(key): j=_KS.index(key); return _K[j+1][1] if j+1<len(_K) else NW
+def say(H,t,key,a=0,b=None,**kw): return talk(H,t,IX[key]+a,(NX(key)-1 if b is None else IX[key]+b),key,**kw)
 SHOTS={}
 WJ=json.load(open('/home/claude/rich/audio/words.json')); WS=[w_['t0'] for w_ in WJ]; WE=[w_['t1'] for w_ in WJ]
 SEQ=[(k,0.0 if i==0 else round(WS[i]-.12,3)) for k,i in _K]

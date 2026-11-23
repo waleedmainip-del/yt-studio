@@ -140,15 +140,15 @@ def bazaar(seed=21):
     for s in (-1,1):
         B.cyl((s*2.6,1.2,2.75),.02,1.9,M('#8A8F99',.3,metal=.8),rot=(R(90),0,0),seg=8)
         for k in range(6): shirt_hang(s*2.6,.45+k*.3,2.7,CLOTH[(k*2+(0 if s>0 else 3))%len(CLOTH)],(-s,0))
-    mannequin(-2.3,.55,.15,'#C9302C',10); mannequin(2.3,.55,.15,'#F2C14E',-10)
+    mannequin(2.3,.55,.15,'#F2C14E',-10)
     # counter (glass front) with displays
     B.box((0,2.6,.62),(2.1,.27,.47),WOOD,.02); B.box((0,2.32,.62),(2.0,.012,.38),M('#BFD8E8',.05,spec=1.0,alpha=.35),0); B.box((0,2.6,1.1),(2.15,.3,.02),M('#D8C8A8',.3,kind='wood'),.01)
     for k in range(7): cloth_stack(-1.75+k*.58,2.5,.22,3,r,w=.2,d=.13)
     # counter props: till, tape, FIXED PRICE sign
     B.box((1.7,2.65,1.2),(.2,.16,.09),M('#2B2C33',.4,metal=.3),.02); B.box((1.7,2.6,1.32),(.16,.06,.04),M('#9FD8FF',.3,emit=.6),.01)
     B.cyl((-1.75,2.65,1.14),.07,.04,M('#F2C14E',.5),seg=14)
-    sign('FIXED PRICE',(0,4.74,3.31),(0,-1,0),1.5,.3,fg='#C9302C',bg='#FFFFFF',border='#2B2C33')
-    sign('NO BARGAINING',(0,4.74,3.01),(0,-1,0),1.5,.2,fg='#2B2C33',bg='#FFFFFF')
+    sign('FIXED PRICE',(.55,4.74,3.31),(0,-1,0),1.5,.3,fg='#C9302C',bg='#FFFFFF',border='#2B2C33')
+    sign('NO BARGAINING',(.55,4.74,3.01),(0,-1,0),1.5,.2,fg='#2B2C33',bg='#FFFFFF')
     # ceiling tube lights
     for xx in (-1.5,1.5): B.box((xx,2.6,3.86),(.7,.04,.03),M('#F4F8FF',.2,emit=7.0),0)
     B.box((0,.9,3.86),(1.2,.04,.03),M('#F4F8FF',.2,emit=7.0),0)
