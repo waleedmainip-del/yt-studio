@@ -1,0 +1,2 @@
+STILL 42 N_tabiyat 0.53
+STILL 42 N_tabiyat 1.49
