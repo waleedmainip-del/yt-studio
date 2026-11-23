@@ -1,8 +1,8 @@
 # entry: blender -b -P film_lh.py -- <shot#> <pct> <samples> still|anim <t-list | f0 f1>
 import os
-LH=os.environ.get('LH','/home/claude/an')
+LH=os.environ.get('LH','/home/claude/lr')
 exec(open(LH+'/base_lh.py').read())
-for _f in ('chars_base','look_lh','anim_lh','fx_lh','chars_lh','chars_dk','chars_bd','cast_an','world_lh','world_an','gen_an','shots_an'): exec(open(LH+'/%s.py'%_f).read())
+for _f in ('chars_base','look_lh','anim_lh','fx_lh','chars_lh','chars_dk','chars_bd','cast_lr','world_lh','world_lr','gen_lr','shots_lr'): exec(open(LH+'/%s.py'%_f).read())
 FPS=30; MODE=args[3] if len(args)>3 else 'anim'
 SN=int(SHOT); KEY,T0=SEQ[SN-1]; T1=SEQ[SN][1] if SN<len(SEQ) else END; DUR=T1-T0; G0=int(round(T0*FPS)); G1=int(round(T1*FPS))
 make_cam(); spec=SHOTS[KEY](); sc=bpy.context.scene

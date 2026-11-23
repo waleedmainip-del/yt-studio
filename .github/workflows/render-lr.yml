@@ -1,12 +1,12 @@
-name: Render city announcement
+name: Render Lahore ep1
 on:
   push:
-    branches: [an-film]
-    paths: ["an/jobs.json"]
+    branches: [lr-film]
+    paths: ["lr/jobs.json"]
 permissions:
   contents: write
 concurrency:
-  group: an-render
+  group: lr-render
   cancel-in-progress: false
 jobs:
   render:
@@ -25,14 +25,14 @@ jobs:
           sudo apt-get install -y -q blender xvfb xauth ffmpeg libgl1-mesa-dri
           blender --version | head -1
       - name: Render pieces
-        run: python3 tools/gh_render_an.py ${{ matrix.job }}
+        run: python3 tools/gh_render_lr.py ${{ matrix.job }}
       - name: Push results branch
         if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          B=render/an-${{ github.run_id }}-j${{ matrix.job }}
+          B=render/lr-${{ github.run_id }}-j${{ matrix.job }}
           mkdir -p gh_out && cd gh_out
           git init -q && git checkout -q -b $B && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "an render job ${{ matrix.job }}" --allow-empty
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "lr render job ${{ matrix.job }}" --allow-empty
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B
