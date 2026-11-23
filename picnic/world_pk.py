@@ -227,7 +227,7 @@ def venue(night=False,seed=11,dusk=False):
         for b_ in range(3): B.box((s*9.0,SY-.6,2.0+b_*1.5),(1.0,.9,.72),DKm,.06); B.cyl((s*9.0,SY-1.52,2.0+b_*1.5),.5,.06,M('#3A3E48',.4),rot=(R(90),0,0),seg=18)
     B.box((0,SY-.5,9.2),(10.8,.2,.2),M('#8A8F99',.3,metal=.8),.02)
     for a in range(7): B.box((-7.5+a*2.5,SY-.5,8.85),(.3,.3,.3),DKm,.06); B.box((-7.5+a*2.5,SY-.72,8.7),(.2,.04,.2),M(FL[a%6],.3,emit=8 if lit else 2),.04)
-    img_plane(LOGO,(0,SY+7.2,6.6),6.6,3.58,(0,-1,0),emit=1.6 if lit else .6)
+    img_plane(LOGO,(0,SY+7.05,6.6),6.6,3.58,(0,-1,0),emit=1.6 if lit else .6)
     B.box((0,SY+.2,2.05),(2.6,.8,.65),DKm,.05); B.box((0,SY-.62,2.05),(2.5,.03,.5),M('#5B8DEF',.4,emit=2.2 if lit else .8),.02)
     for s in (-1,1): B.cyl((s*1.1,SY+.2,2.76),.42,.08,M('#111216',.4),seg=20); B.cyl((s*1.1,SY+.2,2.81),.14,.02,M('#C9302C',.4),seg=12)
     B.box((0,SY+.2,2.78),(.5,.4,.06),M('#3A3E48',.4),.02)
