@@ -95,7 +95,8 @@ def SH_ROAD(view):
     ph=phone(I_,1); scr=img_plane(LOGO,(0,-.02,0),.14,.076,(0,-1,0),emit=1.4,parent=ph); bigph=empty((0,0,0)); obox((0,0,0),(.42,.03,.8),M('#15161A',.3),.05,bigph); obox((0,-.032,0),(.385,.004,.74),M('#69C0E3',.4,emit=1.0),.01,bigph); img_plane(LOGO,(0,-.04,.06),.7,.38,(0,-1,0),emit=1.3,parent=bigph); bigph.scale=(0,0,0)
     seats=dict(SAH='fr',SHY='fl',EMA='br',ILS='bl')
     JXv=[0.0]
-    def cam4(q=0.0): camset((JXv[0]+L(7.0,6.2,q),JY,L(3.3,3.0,q)),(JXv[0],JY,2.3),22,6.0)
+    def cam4(q=0.0): camset((JXv[0]+L(5.0,4.5,q),JY+.15,L(3.75,3.55,q)),(JXv[0]-.55,JY,2.15),26,6.0)
+    def jcf(H,sg=1,d=1.65,lens=34): cf(H,d=d,lat=.35*sg,dz=.12,lens=lens)
     def creep(g,li): c=(g+li*1.3)%5.0; return .7*(int((g+li*1.3)//5.0)+ease(cl((c-3.6)/1.2)))
     def upd(t):
         g=t+TK(KEY); q=ease(cl(t/DUR)); v=view; drive=(v=='V_drive'); gd=TK('V_drive') if drive else g
@@ -118,46 +119,46 @@ def SH_ROAD(view):
             say(Y_,t,KEY,rest='frown',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-52); face(Y_,brow=.05,brow_r=-14,eyes=1.15); GEST(Y_,-1,60+8*math.sin(g*14),10); face(S_,mouth='strain',brow=.05,brow_r=14); face(E_,mouth='O'); side(E_,1,72); side(E_,-1,72)
             cam4(q)
         elif v=='C_main':
-            say(S_,t,KEY,rest='strain',shapes=SHOUT); ARMV(S_,118,8*math.sin(g*16)); S_['head'].rotation_euler[2]=R(42); face(S_,brow=.06,brow_r=14,eyes=1.2); cf(S_,d=2.2,lat=-.45,lens=30)
+            say(S_,t,KEY,rest='strain',shapes=SHOUT); ARMV(S_,118,8*math.sin(g*16)); S_['head'].rotation_euler[2]=R(42); face(S_,brow=.06,brow_r=14,eyes=1.2); jcf(S_,-1)
         elif v=='C_kaun':
-            say(Y_,t,KEY,rest='O',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-35+70*ease(cl(t/.9))); side(Y_,1,70); side(Y_,-1,70); face(Y_,brow=.06,brow_r=10); cf(Y_,d=2.1,lat=.4,lens=30)
+            say(Y_,t,KEY,rest='O',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-35+70*ease(cl(t/.9))); side(Y_,1,70); side(Y_,-1,70); face(Y_,brow=.06,brow_r=10); jcf(Y_,1)
         elif v=='C_poora':
             e1=lend(KEY)+.05; sp=say(E_,t,KEY,rest='grin',shapes=SHOUT); ARMV(E_,105,10*math.sin(g*13)); face(E_,brow=.06,eyes=1.2)
             for H in (S_,Y_): face(H,mouth='strain',brow=.05,brow_r=12)
-            if t<e1: cf(E_,d=2.0,lat=.3,lens=30)
+            if t<e1: jcf(E_,1)
             else: kk=ease(cl((t-e1)/.7)); camset((jx+L(5,7,kk),-11.4,L(8.5,10.5,kk)),(jx,JY+1,1.6),24,8.0)
         elif v=='C_holiday':
             say(Y_,t,KEY,rest='frown',shapes=('O','flat','o','frown','flat'),rate=8); Y_['head'].rotation_euler[0]=R(-16*ease(cl(t/.8))); side(Y_,1,36+8*math.sin(g*2.4)); side(Y_,-1,36-8*math.sin(g*2.4)); face(Y_,brow=.05,brow_r=16)
             k3=cl((t-lt(KEY,8))/.2)
             if t<lt(KEY,5)-.1: cam4(q)
-            else: cf(Y_,d=L(2.3,1.9,ease(cl((t-lt(KEY,5))/2.0))),lat=.42,lens=32)
+            else: jcf(Y_,1,d=L(1.9,1.55,ease(cl((t-lt(KEY,5))/2.0))))
         elif v=='C_real':
             e1=lend(KEY)+.1; say(S_,t,KEY,rest='flat',rate=7); face(S_,brow=-.02,brow_r=-8); S_['head'].rotation_euler[2]=R(38)
-            if t<e1: cf(S_,d=2.1,lat=-.42,lens=30)
-            else: kk=ease(cl((t-e1)/.4)); Y_['head'].rotation_euler[0]=R(24*kk); face(Y_,mouth='frown',brow=.05,brow_r=18); cf(Y_,d=2.1,lat=.4,lens=32)
+            if t<e1: jcf(S_,-1)
+            else: kk=ease(cl((t-e1)/.4)); Y_['head'].rotation_euler[0]=R(24*kk); face(Y_,mouth='frown',brow=.05,brow_r=18); jcf(Y_,1)
         elif v=='D_look':
             e1=lt(KEY,4)-.12; say(I_,t,KEY,rest='grin',rate=8); face(I_,brow=.06,eyes=1.2)
-            if t<e1: GEST(I_,1,62,-12); cf(I_,d=2.0,lat=-.35,lens=30)
+            if t<e1: GEST(I_,1,62,-12); jcf(I_,-1)
             else:
                 kk=ease(cl((t-e1)/.3)); GEST(I_,1,L(62,96,kk),-8); bpy.context.view_layer.update(); hp_=hand_pos(I_,1); bigph.scale=(1,1,1); bigph.location=(jx+.1,JY+.2,2.75); bigph.rotation_euler=(R(-6),0,R(90+8*math.sin(g*2)))
                 camset((jx+2.6,JY+.2,2.8),(jx+.1,JY+.2,2.75),34,5.0)
         elif v=='D_park':
-            say(Y_,t,KEY,rest='frown',rate=8); Y_['head'].rotation_euler[2]=R(48); face(Y_,brow=-.02,brow_r=-10); GEST(Y_,1,40,12); cf(Y_,d=2.1,lat=.42,lens=30)
+            say(Y_,t,KEY,rest='frown',rate=8); Y_['head'].rotation_euler[2]=R(48); face(Y_,brow=-.02,brow_r=-10); GEST(Y_,1,40,12); jcf(Y_,1)
         elif v=='D_normal':
-            say(I_,t,KEY,rest='smirk',rate=8); face(I_,brow=.03,brow_r=8); GEST(I_,-1,48+6*math.sin(g*5),12); cf(I_,d=2.0,lat=-.35,lens=30)
+            say(I_,t,KEY,rest='smirk',rate=8); face(I_,brow=.03,brow_r=8); GEST(I_,-1,48+6*math.sin(g*5),12); jcf(I_,-1)
         elif v=='D_food':
-            say(S_,t,KEY,rest='o',rate=8); S_['head'].rotation_euler[2]=R(55); face(S_,brow=.06,eyes=1.3); cf(S_,d=2.0,lat=-.42,lens=32)
+            say(S_,t,KEY,rest='o',rate=8); S_['head'].rotation_euler[2]=R(55); face(S_,brow=.06,eyes=1.3); jcf(S_,-1)
         elif v=='D_exp':
-            say(I_,t,KEY,rest='grin',rate=8); face(I_,brow=.05,eyes=1.15); GEST(I_,-1,55,14); cf(I_,d=2.1,lat=-.35,lens=30)
+            say(I_,t,KEY,rest='grin',rate=8); face(I_,brow=.05,eyes=1.15); GEST(I_,-1,55,14); jcf(I_,-1)
         elif v=='D_expb':
             say(I_,t,KEY,line='D_exp',rest='grin',rate=8); GEST(I_,-1,55+10*math.sin(g*4),14); face(I_,brow=.05)
             S_['head'].rotation_euler[2]=R(58); Y_['head'].rotation_euler[2]=R(-58); face(S_,mouth='o',brow=.05); face(Y_,mouth='flat',brow=.03); look_at(E_,headpos(I_),.9); face(E_,mouth='smile',brow=.04)
-            camset((jx+L(7.2,6.0,q),JY+.3,L(3.4,3.1,q)),(jx-.6,JY+.2,2.3),24,6.0)
+            cam4(q)
         elif v=='D_lant':
-            say(E_,t,KEY,rest='o',rate=8); look_at(E_,headpos(I_),.7); face(E_,brow=.06,eyes=1.3); side(E_,1,50); cf(E_,d=2.0,lat=.3,lens=30)
+            say(E_,t,KEY,rest='o',rate=8); look_at(E_,headpos(I_),.7); face(E_,brow=.06,eyes=1.3); side(E_,1,50); jcf(E_,1)
         elif v=='D_int':
             e1=lend(KEY)+.05; say(S_,t,KEY,rest='grin',rate=8); S_['head'].rotation_euler[2]=R(50*(1-ease(cl((t-e1)/.3)))); face(S_,brow=.04,brow_r=10)
-            if t<e1: cf(S_,d=2.0,lat=-.42,lens=30)
+            if t<e1: jcf(S_,-1)
             else: cam4(1.0)
         else:  # V_drive
             for H in Hs.values(): face(H,mouth='grin',brow=.05)
@@ -200,10 +201,11 @@ def SH_VENUE(view):
     def onmat(g,up=None):
         for nm,(dx,dy,rz) in MATPOS.items():
             H=Hs[nm]; gsit(H,g,hx+dx,hy+dy,rz); face(H,mouth='smile',brow=.02,brow_r=0,eyes=1.0)
-            if up is not None: look_at(H,up,1.0,maxpitch=42); face(H,brow=.05,eyes=1.12)
+            if up is not None: look_at(H,up,1.0,maxpitch=20); face(H,brow=.05,eyes=1.12)
     def abreast(g,y,v=1.2,face_=None):
         for k,nm in enumerate(ORDER): stroll(Hs[nm],g,XS[k],y+(0 if k in (1,2) else .45),180,v); face(Hs[nm],mouth='smile',brow=.02,brow_r=0,eyes=1.0)
     SKY=(hx+2,hy+38,44)
+    def mcf(H,sg=1,d=2.0,lens=32): cf(H,d=d,lat=1.05*sg,dz=.5,lens=lens,tgt_dz=-.12)
     def upd(t):
         g=t+TK(KEY); q=ease(cl(t/DUR)); v=view; mp(g,look=(0,80,42) if night else None); crowd(g)
         for H in Hs.values(): reset(H)
@@ -227,11 +229,11 @@ def SH_VENUE(view):
             for k,nm in enumerate(ORDER): stroll(Hs[nm],t,XS[k],13.0+(0 if k in (1,2) else .45),180,1.0)
             yy=L(15.5,31,q); camset((-4.9,yy,L(1.9,1.6,q)),(-12.5,yy+7.5,.75),24,5.6)
         elif v=='V_dj':
-            onmat(g); camset((L(4.2,3.2,q),SY-L(4.6,3.6,q),L(1.7,2.0,q)),(0,SY+.6,3.0),22,6.0)
+            onmat(g); camset((L(2.9,2.3,q),SY-L(5.2,4.2,q),L(1.7,2.0,q)),(0,SY+.9,3.1),22,6.0)
         elif v=='P_nothing':
-            onmat(g); say(I_,t,KEY,rest='grin',rate=8); side(I_,1,40); side(I_,-1,40); I_['root'].rotation_euler[0]=R(-8); cf(I_,d=2.3,lat=.35,dz=.15,lens=30)
+            onmat(g); say(I_,t,KEY,rest='grin',rate=8); side(I_,1,40); side(I_,-1,40); I_['root'].rotation_euler[0]=R(-8); mcf(I_,1)
         elif v=='P_qual':
-            onmat(g); say(S_,t,KEY,rest='smirk',rate=8); S_['root'].rotation_euler[0]=R(-16); ARMV(S_,160); face(S_,brow=.03,brow_r=10,eyes=.8); cf(S_,d=2.4,lat=-.35,dz=.2,lens=30)
+            onmat(g); say(S_,t,KEY,rest='smirk',rate=8); S_['root'].rotation_euler[0]=R(-16); ARMV(S_,160); face(S_,brow=.03,brow_r=10,eyes=.8); mcf(S_,-1)
         elif v=='P_things':
             onmat(g); x_,y_,rz_=MATPOS['EMA']; reset(E_); put_at(E_,g,hx+3.6,hy-.6,90); say(E_,t,KEY,rest='grin',rate=8); GEST(E_,1,82,18); face(E_,brow=.06,eyes=1.2)
             for nm in ('ILS','SHY','SAH'): look_at(Hs[nm],headpos(E_),.8)
@@ -254,18 +256,18 @@ def SH_VENUE(view):
             GEST(Y_,1,58,-18); GEST(I_,-1,58,18); camset((hx+L(4.2,3.6,q),hy-L(4.0,3.4,q),L(1.5,1.9,q)),(hx+.2,hy+.1,1.25),26,4.0)
         elif v=='V_lanterns':
             onmat(g,up=SKY)
-            for k,o in enumerate(hl): o.scale=(1,1,1); o.location=(hx+(.25,-6.5,5.8)[k],hy+(.05,5.0,-4.6)[k],1.4+1.5*t+.3*k)
+            for k,o in enumerate(hl): o.scale=(1,1,1); o.location=(hx+(2.6,-6.5,5.8)[k],hy+(3.2,5.0,-4.6)[k],1.4+1.5*t+.3*k)
             kk=ease(cl((t-.3)/3.2)); camset((hx+L(5.5,3.5,kk),hy-L(7.5,6.0,kk),L(1.5,1.2,kk)),(hx-1+0*kk,hy+L(3,34,kk),L(1.6,40,kk)),L(24,17,kk),8.0)
         elif v in ('L_peace','L_yes','L_stay','L_needed'):
             onmat(g,up=SKY); H={'L_peace':Y_,'L_yes':I_,'L_stay':S_,'L_needed':E_}[v]; e1=lend(KEY)+.1
             say(H,t,KEY,rest='smile',shapes=('o','flat','O','smile','flat'),rate=7.5); face(H,brow=.05,eyes=1.12)
             if v=='L_stay': S_['root'].rotation_euler[0]=R(-14); ARMV(S_,160)
             if v=='L_needed' and t>e1: kk=ease(cl((t-e1)/.8)); camset((hx+L(0,.4,kk),hy-L(6.5,8.5,kk),L(1.0,.9,kk)),(hx,hy+10,L(9,14,kk)),18,8.0)
-            else: cf(H,d=L(2.5,2.2,q),lat=.4 if v in ('L_peace','L_needed') else -.4,dz=-.25,lens=30)
+            else: mcf(H,1 if v in ('L_peace','L_needed') else -1,d=L(2.2,1.9,q))
         elif v=='F_n1d':
             onmat(g,up=SKY); camset((L(-3,0,q),L(12,16,q),2.2),(0,L(70,80,q),L(30,36,q)),18,8.0)
         elif v=='F_n2':
-            onmat(g,up=SKY); camset((hx+L(1.2,.6,q),hy-L(5.2,6.4,q),L(1.25,1.6,q)),(hx,hy+8,L(5,7.5,q)),20,8.0)
+            onmat(g,up=SKY); camset((hx+L(1.0,.5,q),hy-L(5.6,6.8,q),L(3.0,3.5,q)),(hx,hy+10,L(6,9,q)),20,8.0)
         elif v=='F_n2b':
             onmat(g,up=SKY); camset((hx+L(6,9,q),hy-L(7,12,q),L(4,10,q)),(hx-4,hy+30,L(6,12,q)),20,8.0)
         elif v in ('F_req','F_what','F_kal','F_ghar'):
@@ -280,12 +282,12 @@ def SH_VENUE(view):
                 if t>e1:
                     for nm in ORDER: face(Hs[nm],mouth='grin',brow=.05); Hs[nm]['root'].location[2]+=.012*abs(math.sin(g*11+ORDER.index(nm)))
                     camset((hx+4.6,hy-4.6,2.3),(hx,hy+.2,1.1),24,5.0); 
-                else: cf(I_,d=2.3,lat=.4,dz=-.1,lens=30)
-            else: cf(H,d=2.3,lat=.4 if H is Y_ else -.4,dz=-.1,lens=30)
+                else: mcf(I_,1)
+            else: mcf(H,1 if H is Y_ else -1)
         elif v=='F_vouch':
             onmat(g,up=SKY); camset((L(4,2,q),L(8,11,q),L(3.0,4.5,q)),(0,L(60,70,q),L(22,30,q)),18,8.0)
         else:  # F_last
-            onmat(g,up=SKY); camset((hx+L(3.5,2.0,q),hy-L(9,7,q),L(2.2,1.4,q)),(hx-2,hy+L(14,30,q),L(10,44,q)),L(22,18,q),8.0)
+            onmat(g,up=SKY); camset((hx-3.1,hy-L(8,6.5,q),L(2.7,2.1,q)),(hx-1,hy+L(14,30,q),L(10,44,q)),L(22,18,q),8.0)
     return dict(upd=upd)
 for v in ('V_gate','V_reveal','A_space','A_music','V_through','V_dj','P_nothing','P_qual','P_things','V_explore','F_n1','F_n1b','F_n1c','V_sunset','V_dusk')+NIGHT: SHOTS[v]=(lambda v=v: SH_VENUE(v))
 SHOTS['END']=lambda: SH_VENUE('F_last')

@@ -38,7 +38,7 @@ def jeep(x,y,rz=90,col='#5A6B3A'):
         obox((-2.95,s*1.95,1.9),(.07,.07,1.3),DK,.02,e)                        # roll bar posts
         ocyl((2.1,s*2.42,1.75),.04,.5,DK,e,rot=(R(90),0,0),seg=8); obox((2.1,s*2.68,1.95),(.03,.16,.2),DK,.02,e)   # mirrors
     obox((-3.0,0,1.1),(.14,2.1,.52),BD,.06,e); obox((-2.95,0,3.15),(.07,2.0,.07),DK,.02,e)   # tailgate + roll bar top
-    obox((2.0,0,3.07),(.06,2.05,.06),DK,.01,e); obox((2.0,0,1.68),(.06,2.05,.06),DK,.01,e); obox((2.0,0,2.38),(.015,1.95,.66),M('#BFD8E8',.05,spec=1.0,alpha=.22),0,e)
+    obox((2.0,0,3.07),(.06,2.05,.06),DK,.01,e); obox((2.0,0,1.68),(.06,2.05,.06),DK,.01,e)
     obox((1.75,0,1.45),(.3,2.0,.22),DK,.08,e)                                 # dashboard
     ocyl((1.42,-1.0,1.72),.34,.06,DK,e,rot=(0,R(72),0),seg=18)                # steering wheel (right-hand drive)
     for sx in (.75,-1.85):
@@ -191,11 +191,11 @@ def venue(night=False,seed=11,dusk=False):
         B.box((s*13.5,-3.4,1.5),(1.6,1.3,1.5),M('#F4F1EA',.8,kind='wall'),.06); B.box((s*13.5,-4.75,1.75),(1.2,.06,.55),M('#22303E',.08,spec=1.0),.02); B.box((s*13.5,-3.4,3.2),(1.9,1.6,.14),GP,.05)
     # bunting over aisle + festoon poles
     FL=['#E8556A','#F2C14E','#4FB3A5','#5B8DEF','#F28C4E','#B56AD8']; bulbs=[]
-    for k in range(27):
+    for k in range(22):
         yy=10+k*6.0
         for s in (-1,1):
             B.cyl((s*3.9,yy,2.4),.07,4.8,M('#6B4A2A',.6,kind='wood'),seg=8)
-            if k<26:
+            if k<21:
                 for q in range(6):
                     f=(q+.5)/6; zz=4.7-.55*4*f*(1-f); B.ico((s*3.9,yy+6.0*f,zz),.13,M('#FFE2A0',.3,emit=9.0 if lit else .8),sub=1)
                     seg((s*3.9,yy+6.0*q/6,4.7-.55*4*(q/6)*(1-q/6)),(s*3.9,yy+6.0*(q+1)/6,4.7-.55*4*((q+1)/6)*(1-(q+1)/6)),.012,M('#1A1A1E',.6),sides=4)
