@@ -1,0 +1,2 @@
+STILL 4 E_enter 0.6
+STILL 4 E_enter 3.913000000000001
