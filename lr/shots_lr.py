@@ -1,8 +1,8 @@
 # Shots for "Lahore - Everyone Is Secretly Rich". Cuts sit on narration words (audio/words.json); SEQ is written by gen_seq.py.
 SHOTS={}
-END=76.7333
-SEQ=[('OPEN', 0.0), ('WANT', 3.433), ('MEET', 6.267), ('W1', 9.567), ('B1', 12.667), ('S1', 15.3), ('BSTARE', 18.233), ('B2', 18.733), ('ARRIVE', 20.133), ('W2', 22.833), ('B3', 25.0), ('S2', 26.767), ('ORDER', 28.967), ('B4', 32.367), ('S3', 34.667), ('B5', 36.033), ('EAT', 37.833), ('BILL', 38.367), ('SILENT', 40.2), ('W3', 42.2), ('B6', 44.733), ('S4', 47.567), ('W4', 49.933), ('B7', 51.5), ('FREEZE', 53.367), ('APPS', 53.767), ('S5', 56.2), ('W5', 59.5), ('B8', 61.333), ('LOOKB', 62.733), ('WAITERIN', 63.067), ('WHO', 64.6), ('POINT', 65.933), ('MORAL', 68.567), ('DISHES', 71.367), ('WALK', 73.0)]
-W_=json.load(open(LH+'/audio/words.json'))
+END=89.2
+SEQ=[('OPEN', 0.0), ('WANT', 3.6), ('MEET', 6.6), ('W1', 10.233), ('B1', 13.233), ('S1', 16.433), ('B2', 20.333), ('ARRIVE', 22.033), ('W2', 24.9), ('B3', 27.7), ('S2', 29.933), ('ORDER', 31.9), ('B4', 35.333), ('S3', 38.267), ('B5', 39.7), ('EAT', 41.9), ('BILL', 43.0), ('SILENT', 44.8), ('W3', 47.267), ('B6', 50.3), ('S4', 54.667), ('W4', 57.267), ('B7', 59.433), ('FREEZE', 61.733), ('APPS', 62.6), ('S5', 65.233), ('W5', 68.967), ('B8', 71.033), ('LOOKB', 72.8), ('WAITERIN', 73.5), ('WHO', 75.233), ('POINT', 77.233), ('MORAL', 79.867), ('DISHES', 82.867), ('WALK', 84.8)]
+exec(open(LH+'/remap.py').read()); W_=remap_words(json.load(open(LH+'/audio/words.json')))
 def wt(a,b): return (W_[a]['s'],W_[b]['e'])
 def ws(i): return W_[i]['s']-T0
 def we(i): return W_[i]['e']-T0
