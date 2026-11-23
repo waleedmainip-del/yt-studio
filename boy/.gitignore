@@ -8,3 +8,7 @@ audio/words_full.json
 audio/words_raw.json
 _hdr.py
 _body.py
+audio_ur/raw.mp3
+audio_ur/narr.wav
+audio_ur/narr_nopause.wav
+audio_ur/words_raw.json
