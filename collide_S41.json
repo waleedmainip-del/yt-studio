@@ -1,0 +1,40 @@
+[
+{
+"t": 0.7,
+"a": "waleed",
+"b": "STATIC",
+"n": 164,
+"objs": [
+"yard.011",
+"yard.013"
+]
+},
+{
+"t": 0.7,
+"a": "ammi",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"yard"
+]
+},
+{
+"t": 2.0,
+"a": "waleed",
+"b": "STATIC",
+"n": 164,
+"objs": [
+"yard.011",
+"yard.013"
+]
+},
+{
+"t": 2.0,
+"a": "ammi",
+"b": "STATIC",
+"n": 8,
+"objs": [
+"yard"
+]
+}
+]
