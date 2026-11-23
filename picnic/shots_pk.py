@@ -291,3 +291,22 @@ def SH_VENUE(view):
     return dict(upd=upd)
 for v in ('V_gate','V_reveal','A_space','A_music','V_through','V_dj','P_nothing','P_qual','P_things','V_explore','F_n1','F_n1b','F_n1c','V_sunset','V_dusk')+NIGHT: SHOTS[v]=(lambda v=v: SH_VENUE(v))
 SHOTS['END']=lambda: SH_VENUE('F_last')
+
+# ---------------------------------------------------------------- character reference sheets (stills only, REFS=1)
+def SH_REF(view):
+    KEY=view; nm,C,cm=CAST[view[4:]]; studio(); setup_render('day',res=PCT,samples=SAMPLES,shadow_dist=30,mist=False); bpy.context.scene.view_settings.exposure=-.2
+    area((0,-6,5),700,(8,5),(1,1,1),rot=(R(55),0,0),shadow=False)
+    H=person((0,0,0),0,C,'smile',name=view)
+    B.box((1.75,.0,.5),(.02,.02,.5),M('#2B2C33',.5),0)
+    def upd(t):
+        i=int(t+.01); reset(H); put_at(H,0.3,0,0,(0,90,180,35,0,35,35,0)[min(i,7)]); blink(H,0,force=0); face(H,mouth='smile',brow=0,brow_r=0,eyes=1.0)
+        hh=headpos(H).z
+        if i<=3: camset((0,-6.6,1.15),(0,0,1.05),40,8.0)
+        elif i==4: face(H,mouth='grin'); camset((.25,-2.3,hh+.02),(0,0,hh-.02),40,8.0)
+        elif i==5: H['root'].rotation_euler[2]=R(35); walk(H,.42,step=.56,arm=24); camset((0,-6.6,1.15),(0,0,1.05),40,8.0)
+        elif i==6: gsit(H,0,0,0,35); face(H,mouth='O',brow=.06,eyes=1.25); ARMV(H,60); camset((0,-5.2,1.0),(0,-.2,.75),40,8.0)
+        else: face(H,mouth='shout',brow=.05,brow_r=14,eyes=1.2); GEST(H,1,70,10); camset((.25,-2.6,hh+.02),(0,0,hh-.1),40,8.0)
+    return dict(upd=upd)
+if os.environ.get('REFS'):
+    SEQ=[('REF_SHY',0.0),('REF_SAH',10.0),('REF_EMA',20.0),('REF_ILS',30.0)]; END=40.0
+    for v,_ in SEQ: SHOTS[v]=(lambda v=v: SH_REF(v))
