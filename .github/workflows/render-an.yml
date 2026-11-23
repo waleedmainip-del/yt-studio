@@ -1,12 +1,12 @@
-name: Render Sea View film
+name: Render city announcement
 on:
   push:
-    branches: [sv-film]
-    paths: ["sv/jobs.json"]
+    branches: [an-film]
+    paths: ["an/jobs.json"]
 permissions:
   contents: write
 concurrency:
-  group: sv-render
+  group: an-render
   cancel-in-progress: false
 jobs:
   render:
@@ -25,14 +25,14 @@ jobs:
           sudo apt-get install -y -q blender xvfb xauth ffmpeg libgl1-mesa-dri
           blender --version | head -1
       - name: Render pieces
-        run: python3 tools/gh_render_sv.py ${{ matrix.job }}
+        run: python3 tools/gh_render_an.py ${{ matrix.job }}
       - name: Push results branch
         if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          B=render/sv-${{ github.run_id }}-j${{ matrix.job }}
+          B=render/an-${{ github.run_id }}-j${{ matrix.job }}
           mkdir -p gh_out && cd gh_out
           git init -q && git checkout -q -b $B && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "sv render job ${{ matrix.job }}" --allow-empty
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "an render job ${{ matrix.job }}" --allow-empty
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B

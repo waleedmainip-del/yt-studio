@@ -1,12 +1,12 @@
-# GitHub runner: render this job's (shot, F0, F1) pieces of the Sea View film and encode each piece at 30 fps.
+# GitHub runner: render this job's (shot, F0, F1) pieces of the city announcement story and encode each piece at 30 fps.
 import json, os, subprocess, sys, time
-J = int(sys.argv[1]); pieces = json.load(open('sv/jobs.json'))['jobs'][J]
-LH = os.path.join(os.environ['GITHUB_WORKSPACE'], 'sv'); out = os.path.join(os.environ['GITHUB_WORKSPACE'], 'gh_out'); os.makedirs(out, exist_ok=True)
+J = int(sys.argv[1]); pieces = json.load(open('an/jobs.json'))['jobs'][J]
+LH = os.path.join(os.environ['GITHUB_WORKSPACE'], 'an'); out = os.path.join(os.environ['GITHUB_WORKSPACE'], 'gh_out'); os.makedirs(out, exist_ok=True)
 SAMPLES = os.environ.get('SAMPLES', '8'); status = []
 for shot, f0, f1 in pieces:
     nn = '%02d' % int(shot); t0 = time.time(); lp = out + '/log_%s_%05d.txt' % (nn, f0)
     with open(lp, 'w') as log:
-        r = subprocess.run(['xvfb-run', '-a', 'blender', '-b', '-P', LH + '/film_sv.py', '--', shot, '100', SAMPLES, 'anim', str(f0), str(f1)],
+        r = subprocess.run(['xvfb-run', '-a', 'blender', '-b', '-P', LH + '/film_an.py', '--', shot, '100', SAMPLES, 'anim', str(f0), str(f1)],
                            stdout=log, stderr=subprocess.STDOUT, env=dict(os.environ, LH=LH, OUTR=LH + '/render'))
     lines = open(lp, errors='ignore').read().splitlines(); open(lp, 'w').write('\n'.join(lines[-60:]) + '\n')
     fd = LH + '/render/frames/S' + nn
