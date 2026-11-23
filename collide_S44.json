@@ -1,0 +1,29 @@
+[
+{
+"t": 1.02,
+"a": "ammi",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"yard"
+]
+},
+{
+"t": 1.02,
+"a": "dadi",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"yard"
+]
+},
+{
+"t": 2.71,
+"a": "ammi",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"yard"
+]
+}
+]
