@@ -1,7 +1,7 @@
 # Shots for "Lahore - Everyone Is Secretly Rich". Cuts sit on narration words (audio/words.json); SEQ is written by gen_seq.py.
 SHOTS={}
-END=84.1
-SEQ=[('OPEN', 0.0), ('WANT', 3.433), ('MEET', 6.433), ('W1', 9.833), ('B1', 13.0), ('S1', 15.767), ('BSTARE', 18.667), ('B2', 19.5), ('ARRIVE', 21.2), ('W2', 24.1), ('B3', 26.333), ('S2', 28.2), ('ORDER', 30.567), ('B4', 34.067), ('S3', 36.467), ('B5', 37.933), ('EAT', 39.733), ('BILL', 40.967), ('SILENT', 43.033), ('W3', 45.633), ('B6', 48.267), ('S4', 51.267), ('W4', 53.767), ('B7', 55.467), ('FREEZE', 57.3), ('APPS', 58.067), ('S5', 60.667), ('W5', 64.167), ('B8', 66.167), ('LOOKB', 67.6), ('WAITERIN', 68.4), ('WHO', 70.167), ('POINT', 71.867), ('MORAL', 74.933), ('DISHES', 77.933), ('WALK', 80.033)]
+END=76.7333
+SEQ=[('OPEN', 0.0), ('WANT', 3.433), ('MEET', 6.267), ('W1', 9.567), ('B1', 12.667), ('S1', 15.3), ('BSTARE', 18.233), ('B2', 18.733), ('ARRIVE', 20.133), ('W2', 22.833), ('B3', 25.0), ('S2', 26.767), ('ORDER', 28.967), ('B4', 32.367), ('S3', 34.667), ('B5', 36.033), ('EAT', 37.833), ('BILL', 38.367), ('SILENT', 40.2), ('W3', 42.2), ('B6', 44.733), ('S4', 47.567), ('W4', 49.933), ('B7', 51.5), ('FREEZE', 53.367), ('APPS', 53.767), ('S5', 56.2), ('W5', 59.5), ('B8', 61.333), ('LOOKB', 62.733), ('WAITERIN', 63.067), ('WHO', 64.6), ('POINT', 65.933), ('MORAL', 68.567), ('DISHES', 71.367), ('WALK', 73.0)]
 W_=json.load(open(LH+'/audio/words.json'))
 def wt(a,b): return (W_[a]['s'],W_[b]['e'])
 def ws(i): return W_[i]['s']-T0
@@ -14,7 +14,7 @@ def menu_card(e,s=1.0):
     obox((0,-.1,.16*s),(.17*s,.012,.25*s),M('#7A1F2E',.5),.01,e); obox((0,-.114,.16*s),(.14*s,.004,.21*s),M('#D9B24A',.3,metal=.8),.004,e); obox((0,-.119,.16*s),(.125*s,.004,.195*s),M('#7A1F2E',.5),.004,e)
     text('MENU',(0,-.125,.16*s),(0,-1,0),.075*s,M('#FFE7A0',.4,emit=.8),ex=.004,parent=e)
 # ================================================================ CANAL (dusk): the plan
-CP={'wa':(0,2.3,0),'bi':(-1.85,2.1,14),'sh':(1.8,2.1,-14)}
+CP={'wa':(0,2.0,0),'bi':(-1.25,3.1,14),'sh':(1.25,3.1,-14)}
 def cset(night=False,fx_=0.0,place=True):
     S=canal(night,fx_); P={}
     for k,C in (('wa',WALEED),('bi',BILAL),('sh',SHERRY)):
@@ -54,7 +54,7 @@ def MEET_():
     def upd(t):
         cidle(S,t); shk(P['bi'],0); face(P['wa'],mouth='grin',brow=.04); face(P['bi'],mouth='smirk'); face(P['sh'],mouth='smile')
         gest(P['wa'],t,1,.5,5,-58); look_at(P['bi'],hp(P['wa']),.6); look_at(P['sh'],hp(P['wa']),.6)
-        q=ease(t/DUR); camset(LV((.5,-3.6,2.0),(.25,-3.0,2.05),q),(0,2.2,1.9),22,8)
+        q=ease(t/DUR); camset(LV((.4,-2.3,2.0),(.2,-1.9,2.05),q),(0,2.4,2.0),23,8)
     return dict(upd=upd)
 SHOTS['MEET']=MEET_
 def ctalk(key,a,b,cam,lens=36,extra=None,rest_='flat',tz=-.28,shades=0):
@@ -76,17 +76,17 @@ def _s1(S,t):
 def _b2(S,t):
     H=S['P']['bi']; shk(H,1); k=tl(t,0,.3); arm_to(H,1,H['root'].matrix_world@Vector((.25,-.5,1.75)),k); face(H,brow=.05); H['head'].rotation_euler[0]=R(-8)
 SHOTS['W1']=ctalk('wa',28,33,(.45,-1.2,2.0),extra=_w1,rest_='grin')
-SHOTS['B1']=ctalk('bi',34,40,(-1.2,-1.3,2.0),extra=_b1,rest_='smirk')
-SHOTS['S1']=ctalk('sh',41,48,(1.1,-1.3,2.0),extra=_s1)
+SHOTS['B1']=ctalk('bi',34,40,(-1.55,-.3,2.0),extra=_b1,rest_='smirk')
+SHOTS['S1']=ctalk('sh',41,48,(1.55,-.3,2.0),extra=_s1)
 def BSTARE_():
     S=cset(); P=S['P']; bubble('PETROL: EMPTY',(-4.3,1.4,2.75),.12,size=.17,col='#FFFFFF',bg='#D8301A')
     def upd(t):
-        cidle(S,t); shk(P['bi'],1); bi=P['bi']; face(bi,mouth='flat',brow=.06,eyes=1.15); look_at(bi,(-4.3,1.6,1.2),min(1,t/.3)*.9,maxyaw=70)
+        cidle(S,t); shk(P['bi'],1); bi=P['bi']; bi['root'].location[0]=-2.1; bi['root'].location[1]=2.0; face(bi,mouth='flat',brow=.06,eyes=1.15); look_at(bi,(-4.3,1.6,1.2),min(1,t/.3)*.9,maxyaw=70)
         for k in ('wa','sh'): look_at(P[k],hp(bi),.8,maxyaw=60); face(P[k],mouth='smirk')
-        q=ease(t/DUR); camset(LV((-3.75,-3.3,1.7),(-3.7,-3.0,1.7),q),(-3.45,1.8,1.55),24,8)
+        q=ease(t/DUR); camset(LV((-3.5,-2.3,1.7),(-3.45,-2.0,1.7),q),(-3.2,1.8,1.45),24,8)
     return dict(upd=upd)
 SHOTS['BSTARE']=BSTARE_
-SHOTS['B2']=ctalk('bi',49,52,(-1.3,-1.2,2.0),extra=_b2,rest_='smirk',shades=1)
+SHOTS['B2']=ctalk('bi',49,52,(-1.55,-.3,2.0),extra=_b2,rest_='smirk',shades=1)
 # ================================================================ ROOFTOP RESTAURANT
 DSEATS=[(-4.9,4.8,0),(-6.25,3.3,84),(4.7,5.1,0),(6.05,3.6,-84),(-5.6,-1.2,0),(-6.95,-2.7,84)]
 def tarms(H,dz=0.0):
@@ -146,7 +146,7 @@ def W2_():
         wa['arm'][1].rotation_euler=(R(-150*k+sn),R(-10),0); arm_to(wa,-1,root_mat(wa)@Vector((-.34,-.62,1.2)),1); look_at(wa,hp(S['wt']),.6)
         for k_ in ('bi','sh'): look_at(P[k_],hp(wa),.5); face(P[k_],mouth='smirk' if k_=='bi' else 'smile')
         w=S['wt']; w['root'].rotation_euler[0]=R(8*tl(t,ws(60),ws(60)+.4))
-        q=ease(t/DUR); camset(LV((.2,-5.1,2.15),(.15,-4.7,2.12),q),(0,.5,1.7),22,5.6)
+        q=ease(t/DUR); camset(LV((.2,-5.1,2.15),(.15,-4.7,2.12),q),(0,.5,1.55),26,5.6)
     return dict(upd=upd)
 SHOTS['W2']=W2_
 def _b3(S,t):
@@ -185,7 +185,7 @@ def EAT_():
         tidle(S,t)
         for i,(k,H) in enumerate(P.items()):
             c=math.sin(t*9+i*2); H['arm'][1].rotation_euler=(R(-118+8*c),R(-22),0); H['head'].rotation_euler[0]=R(6+5*c); face(H,mouth='o' if c>0 else 'flat',brow=.04)
-        q=ease(t/DUR); camset(LV((.3,-4.6,2.3),(.2,-4.2,2.25),q),(0,.5,1.6),22,5.6)
+        q=ease(t/DUR); camset(LV((.3,-4.6,2.3),(.2,-4.2,2.25),q),(0,.5,1.5),26,5.6)
     return dict(upd=upd)
 SHOTS['EAT']=EAT_
 def BILL_():
@@ -205,7 +205,7 @@ def SILENT_():
         tidle(S,t,look=(0,0,1.2) if t>1.4 else None)
         for k_,H in P.items(): look_at(H,(0,-.7,1.0),1,maxyaw=80,maxpitch=45); face(H,mouth='o',brow=.06,eyes=1.18); H['root'].rotation_euler[1]=0
         w=S['wt']; face(w,mouth='smile')
-        q=ease(t/DUR); camset(LV((0,-5.2,2.15),(0,-4.1,2.05),q),(0,.6,1.62),22,5.6)
+        q=ease(t/DUR); camset(LV((0,-4.8,2.15),(0,-4.0,2.05),q),(0,.6,1.5),25,5.6)
     return dict(upd=upd)
 SHOTS['SILENT']=SILENT_
 def _bi(S): bill_done()
@@ -235,7 +235,7 @@ def FREEZE_():
         tidle(S,t); k=tl(t,.15,.55)
         for k_,H in P.items(): H['root'].rotation_euler[0]=R(-9*k); face(H,mouth='flat',brow=-.02*k,eyes=1-.25*k); H['head'].rotation_euler[0]=R(14*k)
         
-        q=ease(t/DUR); camset(LV((0,-4.7,3.4),(0,-4.5,3.2),q),(0,.5,1.5),22,5.6)
+        q=ease(t/DUR); camset(LV((0,-4.7,3.4),(0,-4.5,3.2),q),(0,.5,1.4),26,5.6)
     return dict(upd=upd)
 SHOTS['FREEZE']=FREEZE_
 def phones_up(S,t,k):
@@ -247,7 +247,7 @@ def APPS_():
         for i,(k_,H) in enumerate(P.items()):
             k=tl(t,.25+i*.22,.6+i*.22); PH[k_].scale=(k,k,k); hold_phone(H,1,k); arm_to(H,-1,root_mat(H)@Vector((-.34,-.62,1.2)),1); hl=H['arm'][1].matrix_world@Vector(hand_loc(H,1))
             look_at(H,hl,.9*k,maxyaw=40,maxpitch=22); GL[k_].location=hl+Vector((0,0,.2)); GL[k_].data.energy=7*k; face(H,mouth='flat',brow=.03)
-        q=ease(t/DUR); camset(LV((0,-4.9,2.1),(0,-4.5,2.08),q),(0,.6,1.62),22,5.6)
+        q=ease(t/DUR); camset(LV((0,-4.9,2.1),(0,-4.5,2.08),q),(0,.6,1.5),26,5.6)
     return dict(upd=upd)
 SHOTS['APPS']=APPS_
 def bal(key,a,b,txt,bg,wi,bx,rest_='flat',fx_=None):
@@ -273,7 +273,7 @@ def LOOKB_():
         tidle(S,t,free=('wa','bi','sh')); phones_up(S,t,1); bi=P['bi']; k=tl(t,.1,.6)
         for k_ in ('wa','sh'): H=P[k_]; look_at(H,hp(bi),k,maxyaw=85); face(H,mouth='flat',brow=-.02,brow_r=-10,eyes=.8)
         bi['root'].rotation_euler[0]=R(12*k); bi['head'].rotation_euler[0]=R(22*k); face(bi,mouth='flat',brow=.06,brow_r=12)
-        q=ease(t/DUR); camset(LV((0,-4.6,2.1),(-.3,-3.9,2.05),q),LV((0,.6,1.62),(-.5,.5,1.62),q),24,5.6)
+        q=ease(t/DUR); camset(LV((0,-4.6,2.1),(-.3,-3.9,2.05),q),LV((0,.6,1.5),(-.5,.5,1.5),q),27,5.6)
     return dict(upd=upd)
 SHOTS['LOOKB']=LOOKB_
 WAP=(-.5,-2.5,180)
@@ -305,14 +305,14 @@ def POINT_():
     def upd(t):
         tidle(S,t,free=('wa','bi','sh'),look=(0,0,1.6) if t>.7 else None); k=ease_out(tl(t,.45,.62)); pointing(S,t,k); face(w,mouth='flat',brow=-.03)
         w['arm'][-1].rotation_euler=(R(-42),R(-20),0)
-        q=ease(t/DUR); camset(LV((2.0,-4.9,2.3),(1.9,-4.6,2.25),q),(0,.5,1.6),21,5.6)
+        q=ease(t/DUR); camset(LV((1.7,-4.2,2.3),(1.6,-3.9,2.25),q),(0,.5,1.5),23,5.6)
     return dict(upd=upd)
 SHOTS['POINT']=POINT_
 def MORAL_():
     S=tset('bill',WAP); bill_done(); w=S['wt']
     def upd(t):
         tidle(S,t,free=('wa','bi','sh'),look=(0,0,1.6)); pointing(S,t,1); face(w,mouth='flat',brow=-.03); w['arm'][-1].rotation_euler=(R(-42),R(-20),0); w['head'].rotation_euler[2]=R(14*math.sin(t*2.2))
-        q=ease(t/DUR); camset(LV((1.9,-4.6,2.25),(4.2,-9.4,6.2),q),LV((0,.5,1.6),(0,6,3.4),q),L(21,19,q),8)
+        q=ease(t/DUR); camset(LV((1.6,-3.9,2.25),(4.2,-9.4,6.2),q),LV((0,.5,1.5),(0,6,3.4),q),L(23,19,q),8)
     return dict(upd=upd)
 SHOTS['MORAL']=MORAL_
 # ================================================================ KITCHEN: until the bill arrives
@@ -331,7 +331,7 @@ def DISHES_():
         face(P['bi'],mouth='flat',brow=.05,brow_r=12); look_at(P['sh'],hp(P['wa']),tl(t,.6,1.0)*.9,maxyaw=80); face(P['sh'],mouth='flat',brow=-.03,brow_r=-12,eyes=.75)
         stand(w,t); blink(w,t); arm_to(w,1,root_mat(w)@Vector((-.3,-.45,1.45)),1); arm_to(w,-1,root_mat(w)@Vector((.3,-.45,1.38)),1); w['leg'][1].rotation_euler[0]=R(-9*max(0,math.sin(t*10))); face(w,mouth='flat',brow=-.03,brow_r=-8)
         look_at(w,hp(P['sh']),.8)
-        q=ease(t/DUR); camset(LV((-2.6,-5.0,2.3),(-2.4,-4.5,2.25),q),(-.3,1.4,2.0),22,8)
+        q=ease(t/DUR); camset(LV((-5.3,-1.9,2.15),(-5.0,-1.7,2.12),q),(-.6,1.25,1.8),27,8)
     return dict(upd=upd)
 SHOTS['DISHES']=DISHES_
 # ================================================================ CANAL (night): the walk home
