@@ -1,0 +1,237 @@
+[
+{
+"t": 0.6,
+"a": "shopkeeper",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar.106"
+]
+},
+{
+"t": 0.6,
+"a": "la0",
+"b": "STATIC",
+"n": 38,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "la1",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "la2",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "la3",
+"b": "STATIC",
+"n": 13,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "la4",
+"b": "STATIC",
+"n": 16,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "la5",
+"b": "STATIC",
+"n": 31,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "la6",
+"b": "STATIC",
+"n": 18,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "st0",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "st3",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "st5",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 0.6,
+"a": "vendor",
+"b": "STATIC",
+"n": 48,
+"objs": [
+"bazaar.092"
+]
+},
+{
+"t": 0.6,
+"a": "cust",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "shopkeeper",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"bazaar.106"
+]
+},
+{
+"t": 1.827,
+"a": "la0",
+"b": "STATIC",
+"n": 64,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "la1",
+"b": "STATIC",
+"n": 42,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "la2",
+"b": "STATIC",
+"n": 62,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "la3",
+"b": "STATIC",
+"n": 59,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "la4",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "la5",
+"b": "STATIC",
+"n": 38,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "la6",
+"b": "STATIC",
+"n": 36,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "st1",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "st3",
+"b": "STATIC",
+"n": 12,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "st4",
+"b": "STATIC",
+"n": 6,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "st5",
+"b": "STATIC",
+"n": 10,
+"objs": [
+"bazaar"
+]
+},
+{
+"t": 1.827,
+"a": "vendor",
+"b": "STATIC",
+"n": 20,
+"objs": [
+"bazaar",
+"bazaar.093"
+]
+}
+]
