@@ -1,0 +1,530 @@
+{
+"seq": [
+[
+"N_world",
+0.0
+],
+[
+"C_horn",
+4.176
+],
+[
+"C_main",
+6.124
+],
+[
+"C_kaun",
+7.387
+],
+[
+"C_poora",
+9.111
+],
+[
+"C_holiday",
+12.31
+],
+[
+"C_real",
+17.24
+],
+[
+"D_look",
+21.049
+],
+[
+"D_park",
+24.202
+],
+[
+"D_normal",
+27.191
+],
+[
+"D_food",
+29.681
+],
+[
+"D_exp",
+30.816
+],
+[
+"D_expb",
+32.62
+],
+[
+"D_lant",
+36.869
+],
+[
+"D_int",
+39.105
+],
+[
+"V_drive",
+41.262
+],
+[
+"V_gate",
+43.862
+],
+[
+"V_reveal",
+47.462
+],
+[
+"A_space",
+52.009
+],
+[
+"A_music",
+54.45
+],
+[
+"V_through",
+58.536
+],
+[
+"V_dj",
+62.936
+],
+[
+"P_nothing",
+66.683
+],
+[
+"P_qual",
+70.053
+],
+[
+"P_things",
+72.542
+],
+[
+"V_explore",
+75.659
+],
+[
+"V_sunset",
+79.459
+],
+[
+"V_dusk",
+82.659
+],
+[
+"V_lanterns",
+85.459
+],
+[
+"L_peace",
+91.005
+],
+[
+"L_yes",
+94.38
+],
+[
+"L_stay",
+96.219
+],
+[
+"L_needed",
+98.882
+],
+[
+"F_n1",
+102.415
+],
+[
+"F_n1b",
+104.289
+],
+[
+"F_n1c",
+106.039
+],
+[
+"F_n1d",
+107.146
+],
+[
+"F_n2",
+110.538
+],
+[
+"F_n2b",
+113.652
+],
+[
+"F_req",
+117.724
+],
+[
+"F_what",
+119.364
+],
+[
+"F_kal",
+119.987
+],
+[
+"F_ghar",
+121.404
+],
+[
+"F_vouch",
+124.094
+],
+[
+"F_last",
+128.976
+],
+[
+"END",
+133.573
+]
+],
+"end": 137.773,
+"lines": [
+{
+"key": "N_world",
+"sp": "NAR",
+"t0": 0.25,
+"t1": 3.98,
+"i0": 0,
+"i1": 9,
+"text": "In this world... living in Karachi is an extreme sport."
+},
+{
+"key": "C_horn",
+"sp": "SHY",
+"t0": 4.23,
+"t1": 6.057,
+"i0": 10,
+"i1": 13,
+"text": "SAHIL! HORN BAND KAR!"
+},
+{
+"key": "C_main",
+"sp": "SAH",
+"t0": 6.177,
+"t1": 7.34,
+"i0": 14,
+"i1": 17,
+"text": "MAIN NAHI BAJA RAHA!"
+},
+{
+"key": "C_kaun",
+"sp": "SHY",
+"t0": 7.44,
+"t1": 9.014,
+"i0": 18,
+"i1": 23,
+"text": "TOH PHIR KAUN BAJA RAHA HAI?!"
+},
+{
+"key": "C_poora",
+"sp": "EMA",
+"t0": 9.164,
+"t1": 11.663,
+"i0": 24,
+"i1": 29,
+"text": "BHAI, POORA KARACHI BAJA RAHA HAI!"
+},
+{
+"key": "C_holiday",
+"sp": "SHY",
+"t0": 12.363,
+"t1": 16.993,
+"i0": 30,
+"i1": 40,
+"text": "Guys, I need a holiday. I need peace. I need silence."
+},
+{
+"key": "C_real",
+"sp": "SAH",
+"t0": 17.293,
+"t1": 20.352,
+"i0": 41,
+"i1": 47,
+"text": "Bro, you're living in Karachi. Be realistic."
+},
+{
+"key": "D_look",
+"sp": "ILS",
+"t0": 21.102,
+"t1": 24.005,
+"i0": 48,
+"i1": 53,
+"text": "Wait! Look at this. Picnic Karachi."
+},
+{
+"key": "D_park",
+"sp": "SHY",
+"t0": 24.255,
+"t1": 26.994,
+"i0": 54,
+"i1": 62,
+"text": "Picnic? Bhai, hum park mein jaa ke kya karenge?"
+},
+{
+"key": "D_normal",
+"sp": "ILS",
+"t0": 27.244,
+"t1": 29.534,
+"i0": 63,
+"i1": 69,
+"text": "Bro, it's not just a normal picnic."
+},
+{
+"key": "D_food",
+"sp": "SAH",
+"t0": 29.734,
+"t1": 30.57,
+"i0": 70,
+"i1": 72,
+"text": "Is there food?"
+},
+{
+"key": "D_exp",
+"sp": "ILS",
+"t0": 30.87,
+"t1": 36.623,
+"i0": 73,
+"i1": 84,
+"text": "There's a whole experience. Picnic mats, music, activities... even lanterns at night."
+},
+{
+"key": "D_lant",
+"sp": "EMA",
+"t0": 36.923,
+"t1": 38.858,
+"i0": 85,
+"i1": 87,
+"text": "Lanterns? In Karachi?"
+},
+{
+"key": "D_int",
+"sp": "SAH",
+"t0": 39.158,
+"t1": 40.912,
+"i0": 88,
+"i1": 91,
+"text": "Okay, now I'm interested."
+},
+{
+"key": "V_drive",
+"sp": null,
+"t0": 41.262,
+"t1": 43.862
+},
+{
+"key": "V_gate",
+"sp": null,
+"t0": 43.862,
+"t1": 47.462
+},
+{
+"key": "V_reveal",
+"sp": null,
+"t0": 47.462,
+"t1": 52.062
+},
+{
+"key": "A_space",
+"sp": "SHY",
+"t0": 52.062,
+"t1": 54.153,
+"i0": 92,
+"i1": 95,
+"text": "WAIT... ITNA SARA SPACE?!"
+},
+{
+"key": "A_music",
+"sp": "SAH",
+"t0": 54.503,
+"t1": 58.236,
+"i0": 96,
+"i1": 108,
+"text": "Bro, finally koi jagah hai jahan horn ki jagah music sunai deta hai!"
+},
+{
+"key": "V_through",
+"sp": null,
+"t0": 58.536,
+"t1": 62.936
+},
+{
+"key": "V_dj",
+"sp": null,
+"t0": 62.936,
+"t1": 66.736
+},
+{
+"key": "P_nothing",
+"sp": "ILS",
+"t0": 66.736,
+"t1": 69.856,
+"i0": 109,
+"i1": 114,
+"text": "Guys, today we're doing absolutely nothing."
+},
+{
+"key": "P_qual",
+"sp": "SAH",
+"t0": 70.106,
+"t1": 72.196,
+"i0": 115,
+"i1": 120,
+"text": "Perfect. I'm professionally qualified for that."
+},
+{
+"key": "P_things",
+"sp": "EMA",
+"t0": 72.596,
+"t1": 75.359,
+"i0": 121,
+"i1": 128,
+"text": "Wait, there are so many things happening here!"
+},
+{
+"key": "V_explore",
+"sp": null,
+"t0": 75.659,
+"t1": 79.459
+},
+{
+"key": "V_sunset",
+"sp": null,
+"t0": 79.459,
+"t1": 82.659
+},
+{
+"key": "V_dusk",
+"sp": null,
+"t0": 82.659,
+"t1": 85.459
+},
+{
+"key": "V_lanterns",
+"sp": null,
+"t0": 85.459,
+"t1": 91.059
+},
+{
+"key": "L_peace",
+"sp": "SHY",
+"t0": 91.059,
+"t1": 94.083,
+"i0": 129,
+"i1": 137,
+"text": "Bro... Karachi mein itna peaceful scene bhi hota hai?"
+},
+{
+"key": "L_yes",
+"sp": "ILS",
+"t0": 94.433,
+"t1": 95.922,
+"i0": 138,
+"i1": 139,
+"text": "Apparently, yes."
+},
+{
+"key": "L_stay",
+"sp": "SAH",
+"t0": 96.272,
+"t1": 98.585,
+"i0": 140,
+"i1": 145,
+"text": "Guys, can we stay here permanently?"
+},
+{
+"key": "L_needed",
+"sp": "EMA",
+"t0": 98.935,
+"t1": 101.671,
+"i0": 146,
+"i1": 152,
+"text": "Honestly... this is exactly what Karachi needed."
+},
+{
+"key": "F_n1",
+"sp": "NAR",
+"t0": 102.471,
+"t1": 110.293,
+"i0": 153,
+"i1": 173,
+"text": "More than five hundred picnic mats, a daytime DJ session, ten activity vendors and one thousand lanterns lighting up the sky."
+},
+{
+"key": "F_n2",
+"sp": "NAR",
+"t0": 110.593,
+"t1": 117.327,
+"i0": 174,
+"i1": 192,
+"text": "A place to relax, enjoy activities, spend time with your favourite people and escape the usual chaos of Karachi."
+},
+{
+"key": "F_req",
+"sp": "SHY",
+"t0": 117.777,
+"t1": 119.217,
+"i0": 193,
+"i1": 195,
+"text": "Guys, one request."
+},
+{
+"key": "F_what",
+"sp": "SAH",
+"t0": 119.417,
+"t1": 119.841,
+"i0": 196,
+"i1": 196,
+"text": "What?"
+},
+{
+"key": "F_kal",
+"sp": "SHY",
+"t0": 120.041,
+"t1": 121.157,
+"i0": 197,
+"i1": 201,
+"text": "Kal bhi yahin aana hai."
+},
+{
+"key": "F_ghar",
+"sp": "ILS",
+"t0": 121.457,
+"t1": 123.45,
+"i0": 202,
+"i1": 206,
+"text": "BRO, PEHLE GHAR TOH CHAL!"
+},
+{
+"key": "F_vouch",
+"sp": "NAR",
+"t0": 124.15,
+"t1": 128.732,
+"i0": 207,
+"i1": 219,
+"text": "And there's more: Picnic Karachi is giving ten free vouchers to our audience."
+},
+{
+"key": "F_last",
+"sp": "NAR",
+"t0": 129.032,
+"t1": 133.073,
+"i0": 220,
+"i1": 229,
+"text": "This isn't another chaotic day in Karachi. It's Picnic Karachi."
+},
+{
+"key": "END",
+"sp": null,
+"t0": 133.573,
+"t1": 137.773
+}
+]
+}

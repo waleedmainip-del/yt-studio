@@ -183,9 +183,10 @@ def venue(night=False,seed=11,dusk=False):
     # gate
     GP=M('#2E5A8A',.5);
     for s in (-1,1): B.box((s*8.2,-.2,3.9),(1.0,.9,3.9),M('#F2EFE6',.8,kind='wall'),.08); B.box((s*8.2,-.2,7.95),(1.25,1.15,.18),GP,.04)
-    B.box((0,-.2,8.9),(9.4,.7,1.05),GP,.08); B.box((0,-.2,6.75),(7.2,.2,.55),M('#F7E3A1',.6),.05)
-    sign('KARACHI UNITED STADIUM',(0,-.95,8.9),(0,-1,0),17.0,1.5,fg='#FFFFFF',emit=.6 if lit else .2)
-    sign('PICNIC KARACHI',(0,-.42,6.75),(0,-1,0),12.0,.95,fg='#2B2C33')
+    B.box((0,-.2,8.9),(9.4,.7,1.05),GP,.08)
+    sign('KARACHI UNITED STADIUM',(0,-.95,8.9),(0,-1,0),13.6,1.3,fg='#FFFFFF',emit=.6 if lit else .2)
+    B.box((0,-.5,5.55),(3.3,.06,1.55),M('#69C0E3',.6,emit=.5 if lit else 0),.03); img_plane(LOGO,(0,-.58,5.55),6.4,2.87,(0,-1,0),emit=.9 if lit else .0)
+    for s in (-1,1): B.cyl((s*3.0,-.5,7.0),.03,1.0,M('#8A8F99',.4),seg=6)
     for s in (-1,1):
         B.box((s*13.5,-3.4,1.5),(1.6,1.3,1.5),M('#F4F1EA',.8,kind='wall'),.06); B.box((s*13.5,-4.75,1.75),(1.2,.06,.55),M('#22303E',.08,spec=1.0),.02); B.box((s*13.5,-3.4,3.2),(1.9,1.6,.14),GP,.05)
     # bunting over aisle + festoon poles
@@ -226,6 +227,7 @@ def venue(night=False,seed=11,dusk=False):
         for b_ in range(3): B.box((s*9.0,SY-.6,2.0+b_*1.5),(1.0,.9,.72),DKm,.06); B.cyl((s*9.0,SY-1.52,2.0+b_*1.5),.5,.06,M('#3A3E48',.4),rot=(R(90),0,0),seg=18)
     B.box((0,SY-.5,9.2),(10.8,.2,.2),M('#8A8F99',.3,metal=.8),.02)
     for a in range(7): B.box((-7.5+a*2.5,SY-.5,8.85),(.3,.3,.3),DKm,.06); B.box((-7.5+a*2.5,SY-.72,8.7),(.2,.04,.2),M(FL[a%6],.3,emit=8 if lit else 2),.04)
+    img_plane(LOGO,(0,SY+7.2,6.6),7.6,3.4,(0,-1,0),emit=1.6 if lit else .6)
     B.box((0,SY+.2,2.05),(2.6,.8,.65),DKm,.05); B.box((0,SY-.62,2.05),(2.5,.03,.5),M('#5B8DEF',.4,emit=2.2 if lit else .8),.02)
     for s in (-1,1): B.cyl((s*1.1,SY+.2,2.76),.42,.08,M('#111216',.4),seg=20); B.cyl((s*1.1,SY+.2,2.81),.14,.02,M('#C9302C',.4),seg=12)
     B.box((0,SY+.2,2.78),(.5,.4,.06),M('#3A3E48',.4),.02)
@@ -254,5 +256,21 @@ def lantern_groups(n=1000,seed=3,groups=25):
     return out
 def lantern_obj(s=1.0):
     e=empty((0,0,0)); obox((0,0,0),(.26*s,.26*s,.34*s),M('#FFC978',.5,emit=4.2),.02,e); obox((0,0,.345*s),(.2*s,.2*s,.02*s),M('#E8A04A',.5,emit=1.5),.01,e); obox((0,0,-.3*s),(.07*s,.07*s,.06*s),M('#FFF2C8',.3,emit=16),.02,e); return e
+LOGO='/home/claude/picnic/logo_crop.jpg'
+_IM={}
+def img_mat(path,emit=0.0):
+    k=(path,emit)
+    if k in _IM: return _IM[k]
+    m=bpy.data.materials.new('img'); m.use_nodes=True; nt=m.node_tree; b=nt.nodes['Principled BSDF']; t=nt.nodes.new('ShaderNodeTexImage'); t.image=bpy.data.images.load(path,check_existing=True)
+    nt.links.new(t.outputs['Color'],b.inputs['Base Color']); b.inputs['Roughness'].default_value=.6
+    if emit:
+        nt.links.new(t.outputs['Color'],b.inputs['Emission']); b.inputs['Emission Strength'].default_value=emit
+    _IM[k]=m; return m
+def img_plane(path,loc,w,h,n=(0,-1,0),emit=0.0,parent=None):
+    me=bpy.data.meshes.new('ip'); me.from_pydata([(-w/2,0,-h/2),(w/2,0,-h/2),(w/2,0,h/2),(-w/2,0,h/2)],[],[(0,1,2,3)]); uv=me.uv_layers.new(name='uv')
+    for i,c in enumerate(((0,0),(1,0),(1,1),(0,1))): uv.data[i].uv=c
+    o=bpy.data.objects.new('ip',me); o.location=loc; o.rotation_euler=(0,0,math.atan2(n[0],-n[1])); _col.objects.link(o); me.materials.append(img_mat(path,emit))
+    if parent: o.parent=parent
+    return o
 def studio():
     B.box((0,0,-.05),(30,30,.05),M('#E9E6DF',.9),0); B.box((0,6,6),(30,.2,6),M('#E9E6DF',.9),0); B.done('studio')
