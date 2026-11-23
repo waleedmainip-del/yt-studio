@@ -23,7 +23,7 @@ for k_,L_ in enumerate(EL):
     e_=min(L_['t1']+.25, EL[k_+1]['t0']-.06) if k_+1<len(EL) else L_['t1']+.6
     ass.append(f"Dialogue: 0,{ts(max(0,L_['t0']-.05))},{ts(e_)},E,,0,0,0,,{L_['en'].replace(chr(34),'')}")
 # ---- price scoreboard (top of frame)
-ass.insert(ass.index("[Events]")-1,"Style: P,Inter,50,&H00FFFFFF,&H00FFFFFF,&H00101010,&HB0000000,1,0,0,0,100,100,0,0,3,10,0,8,60,60,150,1")
+ass.insert(ass.index("[Events]")-1,"Style: P,Inter,50,&H00FFFFFF,&H00FFFFFF,&H00101010,&HB0000000,1,0,0,0,100,100,0,0,3,10,0,2,60,60,650,1")
 WSs=[w_['t0'] for w_ in W]
 PR=[(51,"4,000",None),(60,"4,000","800"),(81,"3,500","800"),(83,"3,500","900"),(85,"3,000","900"),(87,"3,000","950"),(103,"1,500","950"),(112,"1,500","1,000"),(126,"1,000","1,000")]
 PEND=WSs[134]-.1

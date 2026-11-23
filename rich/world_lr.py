@@ -147,8 +147,8 @@ def bazaar(seed=21):
     # counter props: till, tape, FIXED PRICE sign
     B.box((1.7,2.65,1.2),(.2,.16,.09),M('#2B2C33',.4,metal=.3),.02); B.box((1.7,2.6,1.32),(.16,.06,.04),M('#9FD8FF',.3,emit=.6),.01)
     B.cyl((-1.75,2.65,1.14),.07,.04,M('#F2C14E',.5),seg=14)
-    sign('FIXED PRICE',(0,4.74,2.98),(0,-1,0),1.3,.3,fg='#C9302C',bg='#FFFFFF',border='#2B2C33')
-    sign('NO BARGAINING',(0,4.74,2.66),(0,-1,0),1.3,.2,fg='#2B2C33',bg='#FFFFFF')
+    sign('FIXED PRICE',(0,4.74,3.16),(0,-1,0),1.5,.3,fg='#C9302C',bg='#FFFFFF',border='#2B2C33')
+    sign('NO BARGAINING',(0,4.74,2.86),(0,-1,0),1.5,.2,fg='#2B2C33',bg='#FFFFFF')
     # ceiling tube lights
     for xx in (-1.5,1.5): B.box((xx,2.6,3.86),(.7,.04,.03),M('#F4F8FF',.2,emit=7.0),0)
     B.box((0,.9,3.86),(1.2,.04,.03),M('#F4F8FF',.2,emit=7.0),0)
