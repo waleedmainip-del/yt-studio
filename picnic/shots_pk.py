@@ -214,10 +214,10 @@ def SH_VENUE(view):
         if v=='V_gate':
             abreast(t,-17.5,1.25); camset((L(5.5,4.5,q),L(-27.5,-25.5,q),L(1.5,1.8,q)),(0,-2,L(5.6,6.0,q)),20,8.0)
         elif v=='V_reveal':
-            abreast(t,-7.0,1.25); y=-7.0+1.25*t
+            abreast(t,8.0,1.2); y=8.0+1.2*t
             for k,nm in enumerate(ORDER):
                 kk=cl((t-2.4)/.6); face(Hs[nm],mouth='O' if k%2==0 else 'grin',brow=.06*kk,eyes=1+.2*kk)
-            qq=ease(cl((t-.5)/3.6)); camset((L(1.2,0,qq),L(y-6.5,y-2.5,qq),L(2.3,10.0,qq)),(0,L(y+1,66,qq),L(1.6,0,qq)),L(24,18,qq),8.0)
+            qq=ease(cl((t-.5)/3.6)); camset((L(1.2,0,qq),L(y-6.2,y-3.0,qq),L(2.3,10.5,qq)),(0,L(y+1,70,qq),L(1.6,0,qq)),L(24,18,qq),8.0)
         elif v=='A_space':
             abreast(0,6.0,0)
             for nm in ORDER: reset(Hs[nm]); put_at(Hs[nm],g,XS[ORDER.index(nm)],6.0+YO[ORDER.index(nm)],180); look_at(Hs[nm],(XS[ORDER.index(nm)]*4,60,2),.8); face(Hs[nm],mouth='grin',brow=.05,eyes=1.1)
@@ -241,11 +241,11 @@ def SH_VENUE(view):
         elif v=='V_explore':
             for k,nm in enumerate(('EMA','ILS')): stroll(Hs[nm],t,(69.0,67.1)[k],30.0+k*.3,180,1.15); look_at(Hs[nm],(75,34+1.15*t+6,2.2),.9); face(Hs[nm],mouth='grin',brow=.05)
             for k,nm in enumerate(('SAH','SHY')): stroll(Hs[nm],t,(69.2,67.3)[k],27.2+k*.3,180,1.15); look_at(Hs[nm],(75,31+1.15*t+6,2.2),.9); face(Hs[nm],mouth='o' if k else 'grin',brow=.05)
-            GEST(E_,-1,70,16); y=30+1.15*t; camset((65.8,y+7.2,1.9),(70.2,y-.5,1.75),24,6.0)
+            GEST(E_,-1,70,16); y=30+1.15*t; camset((65.6,y+5.2,1.65),(69.6,y-.4,1.8),26,6.0)
         elif v=='F_n1':
             onmat(g); camset((L(-30,-18,q),L(34,50,q),L(17,15,q)),(L(-4,6,q),L(70,84,q),0),20,8.0)
         elif v=='F_n1b':
-            onmat(g); camset((L(-5.5,-4.2,q),SY+1.2,3.2),(.4,SY+.6,2.9),26,6.0)
+            onmat(g); camset((L(-3.2,-2.4,q),SY-L(4.4,3.6,q),L(2.0,2.3,q)),(.2,SY+1.4,3.3),24,6.0)
         elif v=='F_n1c':
             onmat(g); camset((64,L(34,44,q),3.4),(75,L(52,62,q),2.2),22,8.0)
         elif v=='V_sunset':
@@ -276,7 +276,7 @@ def SH_VENUE(view):
                 if Hs[nm] is not H: look_at(Hs[nm],headpos(Y_ if v!='F_ghar' else I_),.85)
             say(H,t,KEY,rest='smile' if v!='F_ghar' else 'grin',shapes=SHOUT if v=='F_ghar' else ('O','flat','o','grin','flat'),rate=8)
             if v=='F_req': GEST(Y_,1,56,10)
-            if v=='F_kal': face(Y_,mouth=None,brow=.05); side(Y_,1,40); side(Y_,-1,40)
+            if v=='F_kal': face(Y_,mouth=None,brow=.05); GEST(Y_,1,44,8)
             if v=='F_ghar':
                 GEST(I_,1,70+8*math.sin(g*14),20); GEST(I_,-1,70-8*math.sin(g*14),20); face(I_,brow=.06,eyes=1.2)
                 if t>e1:
