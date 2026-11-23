@@ -249,7 +249,7 @@ def SH_S(view):
                 CH['root'].location[0]=p.x; CH['root'].location[1]=p.y
                 if k<1: CH['root'].location[2]=z+.008
                 blink(CH,t); face(CH,mouth='grin',brow=.1); [look_at(H,headpos(CH),.6) for H in (W,BL,SH)]; [face(H,mouth='O') for H in (W,BL,SH)]
-                camset((1.9,5.0,2.1),(-1.5,1.6,1.3),22,6.0)
+                camset((2.3,.3,1.8),(-1.1,2.3,1.4),22,6.0)
             elif view=='U_side':
                 onstage(CH,t,-.2,3.3); talk(CH,t,227,233,KEY,rest='grin',shapes=('shout','O','grin')); side(CH,1,85); side(CH,-1,160); face(CH,brow=.08); CH['_cflat']=-.6
                 k=ease(cl(t/.8)); [look_at(H,headpos(CH),.6) for H in (W,BL,SH)]; cf(CH,d=2.3,lat=-.6,lens=28)
@@ -306,17 +306,17 @@ def SH_N(view):
             q=ease(t/DUR); camset((L(-3.5,-2.5,q),L(-3.6,-2.8,q),L(2.8,2.2,q)),(0,1.2,.9),24,5.0)
             return
         sitting(t)
-        put_at(AM,t,2.1,-.9,-125); AM['arm'][1].rotation_euler=(R(-75),0,R(-10)); bpy.context.view_layer.update(); cup.location=hand_pos(AM,1)+Vector((0,-.03,.06))
+        put_at(AM,t,2.6,-1.6,-125); AM['arm'][1].rotation_euler=(R(-75),0,R(-10)); bpy.context.view_layer.update(); cup.location=hand_pos(AM,1)+Vector((0,-.03,.06))
         look_at(W,headpos(AM),.6)
-        if view=='N_ammi': hideH(DA); talk(AM,t,313,321,KEY,rest='grin',rate=6); face(AM,brow=.05); look_at(AM,headpos(W),.6); face(W,mouth='flat',eyes=.8); camset((.2,-2.6,1.6),(1.3,-.5,1.45),26,4.0)
+        if view=='N_ammi': hideH(DA); talk(AM,t,313,321,KEY,rest='grin',rate=6); face(AM,brow=.05); look_at(AM,headpos(W),.6); face(W,mouth='flat',eyes=.8); cf(AM,d=2.0,lat=.45,lens=30)
         elif view=='N_tabiyat':
-            hideH(DA); talk(W,t,322,326,KEY,rest='frown',shapes=('shout','O','frown')); face(W,brow=.1,brow_r=-15); GEST(W,1,95,10); W['arm'][1].rotation_euler=(R(-150),0,R(-20))
-            cf(W,d=1.8,lat=-.35,lens=30)
+            hideH(DA); talk(W,t,322,326,KEY,rest='frown',shapes=('shout','O','frown')); face(W,brow=.1,brow_r=-15); W['head'].rotation_euler[1]=R(8)
+            cf(W,d=2.3,lat=-.35,dz=.05,lens=30)
         elif view=='N_dadi':
             k=ease(cl(t/.5)); put_at(DA,t,1.3,2.2,10,0); dance(DA,t,'dadi'); DA['root'].location[2]=L(-1.4,0,k)+.008+.02
             talk(DA,t,327,336,KEY,rest='grin',rate=7,shapes=('shout','grin','O')); face(DA,brow=.08,eyes=.9)
             W['head'].rotation_euler[2]=R(-55*ease(cl((t-.5)/.3))); face(W,mouth='O',eyes=1.3,brow=.14)
-            camset((-1.0,-1.9,1.6),(.7,1.4,1.35),26,4.0)
+            camset((-1.9,-1.0,1.7),(.8,1.5,1.3),26,4.0)
         else:
             put_at(DA,t,1.3,2.2,10); dance(DA,t,'dadi'); face(DA,mouth='grin')
             W['head'].rotation_euler[2]=0; talk(W,t,337,343,KEY,rest='O',shapes=('shout','O')); face(W,brow=.16,eyes=1.4); ARMV(W,150,6*math.sin(t*14))
