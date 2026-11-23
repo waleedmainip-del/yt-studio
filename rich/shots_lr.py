@@ -95,7 +95,7 @@ def lane_people(KEY,seed=300):
 
 def w0(key,a=0): return wl(IX[key]+a,key)
 def w1(key,a=0): return we(IX[key]+a,key)
-WC=(.2,1.55); SNC=(-1.6,1.4); SC=(1.0,3.3); BP=(2.5,-1.45); BP2=(1.9,-1.45); WL=(-.2,-1.45); SNL=(-1.75,-1.45); WT=(.2,.5); SNT=(-1.6,.95); SX=.2
+WC=(.2,1.55); SNC=(-1.6,1.4); SC=(1.0,3.3); BP=(2.5,-1.45); BP2=(1.9,-1.45); WL=(-.2,-1.45); SNL=(-1.6,-1.45); WT=(.2,.5); SNT=(-1.6,.55); SX=.2
 def SH(view):
     KEY=view; P=bazaar(); setup_render('afternoon',res=PCT,samples=SAMPLES,shadow_dist=55)
     bpy.context.scene.view_settings.exposure=float(os.environ.get('EXPO','0.05'))
@@ -157,8 +157,8 @@ def SH(view):
             else:
                 k=cl((t-e1)/.25); look_at(SON,headpos(W),1.0); face(SON,mouth='O',brow=.06,eyes=1.0+.3*k); soncam(t,d=L(1.9,1.6,ease(k)))
         elif v=='D_shirt':
-            say(SK,t,KEY,rest='O',shapes=('shout','O','shout','grin','O')); face(SK,brow=.06,brow_r=10,eyes=1.25); kk=3*math.sin(t*16); SK['arm'][1].rotation_euler=(R(-86+kk),0,R(-20)); SK['arm'][-1].rotation_euler=(R(-86+kk),0,R(20))
-            bpy.context.view_layer.update(); pa=hand_pos(SK,1); pb=hand_pos(SK,-1); s1.location=((pa.x+pb.x)/2,(pa.y+pb.y)/2-.05,(pa.z+pb.z)/2+.12); s1.rotation_euler=(R(-90),0,R(180)); cf(SK,d=2.05,lat=.5,dz=.1,lens=28)
+            say(SK,t,KEY,rest='O',shapes=('shout','O','shout','grin','O')); face(SK,brow=.06,brow_r=10,eyes=1.25); kk=3*math.sin(t*16); SK['arm'][1].rotation_euler=(R(-66+kk),0,R(-20)); SK['arm'][-1].rotation_euler=(R(-66+kk),0,R(20))
+            bpy.context.view_layer.update(); pa=hand_pos(SK,1); pb=hand_pos(SK,-1); s1.location=((pa.x+pb.x)/2,(pa.y+pb.y)/2-.05,(pa.z+pb.z)/2-.02); s1.rotation_euler=(R(-90),0,R(180)); cf(SK,d=2.05,lat=.55,dz=.1,lens=28)
         elif v=='D_cust':
             say(W,t,KEY,rest='smile',rate=7); palms(W,36,4*math.sin(t*3)); W['arm'][-1].rotation_euler=(0,0,0); face(W,brow=.03); W['head'].rotation_euler[1]=R(4*math.sin(t*2)); cf(W,d=L(1.9,1.7,q),lat=.6,lens=30)
         elif v=='C_calc':
@@ -202,7 +202,7 @@ def SH(view):
             t1_=w0(KEY,7); sweat(t,True)
             if t<t1_: look_at(SK,(SC[0],2.4,4.6),1.0); face(SK,mouth='frown',brow=.06,brow_r=16); k=cl(t/.5); side(SK,1,28*k); side(SK,-1,28*k)
             else: k=ease(cl((t-t1_)/.5)); look_at(SK,(SC[0],2.6,.9),k); face(SK,mouth='frown',brow=-.01,brow_r=14,eyes=.75); lean(SK,5*k)
-            cf(SK,d=L(1.9,1.7,q),lat=.5,dz=-.28,lens=28)
+            cf(SK,d=L(1.95,1.75,q),lat=.58,dz=-.2,lens=28)
         elif v=='F_fine':
             say(SK,t,KEY,rest='frown',shapes=('O','flat','frown','o')); face(SK,brow=-.01,brow_r=14,eyes=.85); k=ease(cl((t-w0(KEY,1))/.5)); GEST(SK,-1,66*k,-12); lean(SK,4*k)
             s1.location=(SX,L(2.56,2.44,k),1.125); face(W,mouth='smile'); face(SON,mouth='smile',brow=.03); camset((L(2.3,2.2,q),.3,2.5),(-.1,2.6,1.45),18,6.0)
@@ -224,15 +224,16 @@ def SH(view):
             else: GEST(BL,-1,30,-6); camset((.2,-3.1,1.9),(-.2,2.4,1.45),28,5.0,focus=(0,2.5,1.6))
         elif v=='B_how':
             la=dict(a=False,b=False); bag.scale=(1,1,1); tw=1.7
-            if t<tw: wp(W,t,[WC,WL],-.6,tw,arm=14); wp(SON,t,[SNC,(SNC[0],-1.45),SNL],-.9,tw+.3,arm=14)
-            else: k=ease(cl((t-tw)/.4)); at(W,t,WL[0],WL[1],L(0,90,k)); wp(SON,t,[SNC,(SNC[0],-1.45),SNL],-.9,tw+.3,arm=14)
-            if t>=tw+.3: at(SON,t,SNL[0],SNL[1],90)
+            if t<tw: wp(W,t,[WC,WL],-.6,tw,arm=14)
+            else: k=ease(cl((t-tw)/.4)); at(W,t,WL[0],WL[1],L(0,90,k))
+            if t<tw+.1: wp(SON,t,[SNC,SNL],-.5,tw+.1,arm=14)
+            else: at(SON,t,SNL[0],SNL[1],L(0,90,ease(cl((t-tw-.1)/.3))))
             k2=ease(cl((t-.9)/.6)); at(BL,t,BP2[0],BP2[1],L(180,270,k2)); say(BL,t,KEY,rest='o'); GEST(BL,-1,60,-8); GEST(BL,1,22+6*math.sin(t*5),14); face(BL,brow=.06,eyes=1.2); look_at(BL,headpos(W),.9)
             face(W,mouth='smirk',brow_r=8); look_at(W,headpos(BL),.8*cl((t-1.0)/.5)); SON['arm'][-1].rotation_euler=(0,0,0); held(bag,SON,-1,off=(0,0,-.02),rot=(0,0,SON['root'].rotation_euler[2])); shy(t,.5)
             s1.scale=(0,0,0); face(SK,mouth='frown',eyes=.8); camset((.05,-5.3,3.0),(.05,-1.45,1.0),18,8.0)
         elif v=='B_exp':
-            la=dict(a=True,b=False); at(W,t,WL[0],WL[1],90); at(SON,t,SNL[0],SNL[1],90); at(BL,t,BP2[0],BP2[1],270); GEST(BL,-1,60,-8); bag.scale=(1,1,1); held(bag,SON,-1,off=(0,0,-.02),rot=(0,0,R(90))); s1.scale=(0,0,0)
-            say(W,t,KEY,rest='smirk',rate=6); face(W,brow=.02,brow_r=10,eyes=.85); W['head'].rotation_euler[1]=R(-5); cf(W,d=L(1.75,1.5,q),lat=.38,lens=32,fs=2.8)
+            la=dict(a=True,b=False); at(W,t,WL[0],WL[1],90); at(SON,t,SNL[0],SNL[1],90); at(BL,t,BP2[0],BP2[1],270); GEST(BL,-1,22,-6); bag.scale=(1,1,1); held(bag,SON,-1,off=(0,0,-.02),rot=(0,0,R(90))); s1.scale=(0,0,0)
+            say(W,t,KEY,rest='smirk',rate=6); face(W,brow=.02,brow_r=10,eyes=.85); W['head'].rotation_euler[1]=R(-5); cf(W,d=L(1.6,1.4,q),lat=-.38,lens=32,fs=2.8)
         elif v=='B_ruined':
             la=dict(a=True,b=False); hideH(W); hideH(SON); hideH(BL); s1.scale=(0,0,0); at(SK,t,0,.55,0); say(SK,t,KEY,rest='shout',shapes=('shout','O','shout','grin','shout')); face(SK,brow=.06,brow_r=14,eyes=1.3)
             ARMV(SK,128,10*math.sin(t*13)); SK['root'].location[2]+=.05*abs(math.sin(t*6.5)); sweat(t,True)
