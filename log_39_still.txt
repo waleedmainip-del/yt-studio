@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/claude/picnic/film_pk.py", line 5, in <module>
+  File "<string>", line 290, in <lambda>
+  File "<string>", line 173, in SH_VENUE
+  File "<string>", line 188, in venue
+  File "<string>", line 272, in img_plane
+  File "<string>", line 267, in img_mat
+KeyError: 'bpy_prop_collection[key]: key "Emission" not found'
