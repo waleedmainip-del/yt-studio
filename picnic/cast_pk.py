@@ -1,7 +1,7 @@
 SHY=dict(skin='#C08A62',hair='#15110E',hairstyle='quiff',beard='#15110E',mustache='#15110E',brow_c='#15110E',top='#F6F5F1',trim='#E4E2DC',pants='#3A3E48',shoes='#6B4A2A',sole='#3A2A1E',accent='#F4F1EA',h=1.0,watch=True,shades_up=True)
 SAH=dict(skin='#C89468',hair='#17120F',hairstyle='fringe',mustache='#17120F',brow_c='#17120F',top='#B5A68C',trim='#A09178',pants='#1E1F24',shoes='#F2F2EE',sole='#C9C9C2',accent='#F4F1EA',h=.975,watch=True)
 EMA=dict(skin='#D9A47E',hair='#1E1612',hairstyle='ponytail',tie_c='#C9A24A',strands=True,lashes=True,earrings='#C9A24A',bag='#5A3A2E',brow_c='#1E1612',top='#7A5A48',trim='#674A3A',pants='#7A5A48',kameez='#7A5A48',kameez_border='#674A3A',shoes='#E8DCC8',h=.9)
-ILS=dict(skin='#E4B08A',hair='#14100E',hairstyle='long',lashes=True,earrings='#C9A24A',brow_c='#14100E',top='#8FAE5A',trim='#7A9848',pants='#EFE6D0',kameez='#8FAE5A',kameez_border='#EFE6D0',scarf='#7FA04A',shoes='#C9A24A',glasses=True,h=.915)
+ILS=dict(skin='#E4B08A',hair='#14100E',hairstyle='long',lashes=True,earrings='#C9A24A',brow_c='#14100E',top='#8E5CC2',trim='#7648A8',pants='#EFE6D0',kameez='#8E5CC2',kameez_border='#EFE6D0',scarf='#B99AE0',shoes='#C9A24A',glasses=True,h=.915)
 DJP=dict(skin='#9A6A48',hair='#14110F',hairstyle='cap',cap='#22242B',brow_c='#14110F',top='#F4F1EA',trim='#E0DCD0',pants='#2B2C33',shoes='#F2F2EE',sole='#C9C9C2',phones='#E8556A',h=.99)
 WAL=dict(skin='#C89064',hair='#1A1512',hairstyle='quiff',brow_c='#1A1512',top='#F4F1EA',jacket='#1F2F4A',trim='#18263C',pants='#B8A27E',shoes='#F2F2EE',sole='#C9C9C2',accent='#F4F1EA',h=1.0,watch=True)
 SKP=dict(skin='#B07A52',hair='#2A2420',hairstyle='short',mustache='#2A2420',brow_c='#2A2420',top='#9AA0A8',trim='#868C94',pants='#9AA0A8',kameez='#9AA0A8',waistcoat='#3A3E48',wc_trim='#C9A24A',shoes='#3A2A1E',h=.965)
@@ -58,9 +58,6 @@ def extras(H):
         for s in (-1,1): obox((s*.39*u,fy-.004,.79*u),(.06*u,.004,.016*u),M('#15110E',.5),.002,Hd,rot=(0,R(-28*s),0))
     if C.get('earrings'):
         for s in (-1,1): obox((s*.64*u,-.05*u,.28*u),(.025,.035*u,.07*u),M(C['earrings'],.3,metal=.9),.008,Hd)
-    if C.get('bag'):
-        bg=M(C['bag'],.55); obox((-.72*u,fr-.1,2.05*u),(.3*u,.09,.26*u),bg,.03,root); obox((-.72*u,fr-.195,2.2*u),(.3*u,.006,.08*u),M(shade(C['bag'],.8),.5),.004,root); obox((-.72*u,fr-.2,2.12*u),(.04*u,.006,.035*u),M('#C9A24A',.3,metal=.8),.004,root)
-        obox((.08*u,fr-.03,3.1*u),(.035*u,.012,1.05*u),bg,.004,root,rot=(0,R(-40),0))
     if C.get('kameez'):
         km=M(C['kameez'],.8,kind='fabric',spec=.2); bd=M(C.get('kameez_border',shade(C['kameez'],.85)),.7)
         for yy,dy in ((fr-.012,.012),(.5*u+.012,.012)): obox((0,yy,1.42*u),(1.02*u,dy,.6*u),km,.01,root)

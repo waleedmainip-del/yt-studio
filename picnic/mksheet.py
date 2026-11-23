@@ -3,8 +3,8 @@ from PIL import Image, ImageDraw, ImageFont
 D=sys.argv[1]; F=lambda s,w='Bold': ImageFont.truetype('/usr/share/fonts/opentype/inter/Inter-%s.otf'%w,s)
 CH=[('S01','SHAHERIYAR','Boy · 178 cm · quiff, trimmed beard and moustache · white shirt, dark trousers, brown shoes, watch'),
     ('S02','SAHIL','Boy · 174 cm · wavy fringe, moustache · beige tee, black trousers, white sneakers, wrist band'),
-    ('S03','EMAN','Girl · 160 cm · hair tied back · brown shirt-dress, cream shoes'),
-    ('S04','ILSA','Girl · 163 cm · long open hair, glasses · green kurta, cream trousers, green scarf')]
+    ('S03','EMAN','Girl · 160 cm · hair tied back with loose strands, earrings · brown shirt-dress, brown crossbody bag, cream shoes'),
+    ('S04','ILSA','Girl · 163 cm · long open hair, glasses, earrings · green kurta, cream trousers, green scarf')]
 LAB=['FRONT','SIDE','BACK','3/4','FACE','WALKING','SITTING','EXPRESSION']; out=[]
 for sid,nm,desc in CH:
     ims=[]
