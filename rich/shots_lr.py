@@ -215,7 +215,7 @@ def SH(view):
             else: k=ease(cl((t-tw)/.4)); at(W,t,WL[0],WL[1],L(0,90,k))
             k2=ease(cl((t-.9)/.6)); at(BL,t,BP[0],BP[1],L(180,270,k2)); talk(BL,t,153,160,KEY,rest='o'); GEST(BL,-1,60,-8); GEST(BL,1,22+6*math.sin(t*5),14); face(BL,brow=.06,eyes=1.2); look_at(BL,headpos(W),.9)
             face(W,mouth='smirk',brow_r=8); look_at(W,headpos(BL),.8*cl((t-1.0)/.5)); W['arm'][-1].rotation_euler=(0,0,0); held(bag,W,-1,off=(0,0,-.02),rot=(0,0,W['root'].rotation_euler[2]))
-            s1.scale=(0,0,0); face(SK,mouth='frown',eyes=.8); camset((.6,-6.2,3.2),(.6,-1.45,1.0),22,8.0)
+            s1.scale=(0,0,0); face(SK,mouth='frown',eyes=.8); camset((.6,-5.3,3.0),(.6,-1.45,1.0),22,8.0)
         elif v=='B_exp':
             la=dict(a=True,b=False); at(W,t,WL[0],WL[1],90); at(BL,t,BP[0],BP[1],270); GEST(BL,-1,60,-8); bag.scale=(1,1,1); held(bag,W,-1,off=(0,0,-.02),rot=(0,0,R(90))); s1.scale=(0,0,0)
             talk(W,t,161,161,KEY,rest='smirk',rate=6); face(W,brow=.02,brow_r=10,eyes=.85); W['head'].rotation_euler[1]=R(-5); cf(W,d=L(1.8,1.55,q),lat=.38,lens=32,fs=2.8)
