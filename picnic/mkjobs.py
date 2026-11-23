@@ -3,8 +3,8 @@ exec(open('/home/claude/picnic/sfx/seq.py').read())
 FPS=30; only=[int(x) for x in sys.argv[2].split(',')] if len(sys.argv)>2 and sys.argv[2] else None
 P=[]
 for i,(k,t) in enumerate(SEQ):
-    if only and (i+1) not in only: continue
-    t1=SEQ[i+1][1] if i+1<len(SEQ) else END; g0=int(round(t*FPS)); g1=int(round(t1*FPS)); n=max(1,round((g1-g0)/36)); 
+    if k=='END' or (only and (i+1) not in only): continue
+    t1=SEQ[i+1][1] if i+1<len(SEQ) else END; g0=int(round(t*FPS)); g1=int(round(t1*FPS)); n=max(1,round((g1-g0)/45)); 
     for j in range(n): P.append([str(i+1),g0+(g1-g0)*j//n,g0+(g1-g0)*(j+1)//n])
 jobs=[[] for _ in range(18)]
 for i,p in enumerate(P): jobs[i%18].append(p)

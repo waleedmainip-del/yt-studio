@@ -40,15 +40,15 @@ def jeep(x,y,rz=90,col='#5A6B3A'):
     obox((-3.0,0,1.1),(.14,2.1,.52),BD,.06,e); obox((-2.95,0,3.15),(.07,2.0,.07),DK,.02,e)   # tailgate + roll bar top
     obox((2.0,0,3.07),(.06,2.05,.06),DK,.01,e); obox((2.0,0,1.68),(.06,2.05,.06),DK,.01,e)
     obox((1.75,0,1.45),(.3,2.0,.22),DK,.08,e)                                 # dashboard
-    ocyl((1.42,-1.0,1.72),.34,.06,DK,e,rot=(0,R(72),0),seg=18)                # steering wheel (right-hand drive)
+    ocyl((1.42,-1.08,1.72),.34,.06,DK,e,rot=(0,R(72),0),seg=18)                # steering wheel (right-hand drive)
     for sx in (.75,-1.85):
         for s in (-1,1):
-            obox((sx,s*1.0,1.02),(.5,.82,.23),ST,.08,e); obox((sx-.52,s*1.0,1.55),(.12,.8,.42),ST,.08,e)
+            obox((sx,s*1.08,1.02),(.5,.82,.23),ST,.08,e); obox((sx-.52,s*1.08,1.55),(.12,.8,.42),ST,.08,e)
     obox((-3.3,0,1.3),(.2,.75,.75),DK,.2,e)                                    # spare wheel
     for sx in (-2.3,2.75):
         for sy in (-1,1): ocyl((sx,sy*2.05,.78),.78,.5,M('#111216',.8),e,rot=(R(90),0,0),seg=18); ocyl((sx,sy*2.31,.78),.42,.04,CH,e,rot=(R(90),0,0),seg=14)
     return e
-JEEP_SEATS={'fr':(.75,-1.0),'fl':(.75,1.0),'br':(-1.85,-1.0),'bl':(-1.85,1.0)}   # jeep-local (x forward, y left); cushion top z=1.25
+JEEP_SEATS={'fr':(.75,-1.08),'fl':(.75,1.08),'br':(-1.85,-1.08),'bl':(-1.85,1.08)}   # jeep-local (x forward, y left); cushion top z=1.25
 
 def tower(x,y,w,d,h,r,col,glass='#5E7FA0'):
     WALLm=M(col,.85,kind='wall'); B.box((x,y,h/2),(w/2,d/2,h/2),WALLm,.02)
