@@ -92,7 +92,7 @@ JY=-2.5
 def SH_ROAD(view):
     KEY=view; V=road(); setup_render('hotday',res=PCT,samples=SAMPLES,shadow_dist=110,cascades=4); bpy.context.scene.view_settings.exposure=-.25
     JP=jeep(0,JY,90,'#C9A45A'); Hs=heroes(); S_,Y_,E_,I_=Hs['SAH'],Hs['SHY'],Hs['EMA'],Hs['ILS']
-    ph=phone(I_,1); scr=img_plane(LOGO,(0,-.02,0),.15,.067,(0,-1,0),emit=1.4,parent=ph); bigph=empty((0,0,0)); obox((0,0,0),(.42,.03,.8),M('#15161A',.3),.05,bigph); obox((0,-.032,0),(.385,.004,.74),M('#69C0E3',.4,emit=1.0),.01,bigph); img_plane(LOGO,(0,-.04,.08),.7,.314,(0,-1,0),emit=1.3,parent=bigph); bigph.scale=(0,0,0)
+    ph=phone(I_,1); scr=img_plane(LOGO,(0,-.02,0),.14,.076,(0,-1,0),emit=1.4,parent=ph); bigph=empty((0,0,0)); obox((0,0,0),(.42,.03,.8),M('#15161A',.3),.05,bigph); obox((0,-.032,0),(.385,.004,.74),M('#69C0E3',.4,emit=1.0),.01,bigph); img_plane(LOGO,(0,-.04,.06),.7,.38,(0,-1,0),emit=1.3,parent=bigph); bigph.scale=(0,0,0)
     seats=dict(SAH='fr',SHY='fl',EMA='br',ILS='bl')
     JXv=[0.0]
     def cam4(q=0.0): camset((JXv[0]+L(7.0,6.2,q),JY,L(3.3,3.0,q)),(JXv[0],JY,2.3),22,6.0)
