@@ -127,14 +127,18 @@ def room(night=False,clock=(11,47)):
     set_clock(D,*clock); return D
 def fan_spin(D,t): D['fan'].rotation_euler[2]=t*7.5
 def door_set(D,k): D['door'].rotation_euler[2]=R(92*ease(k))
-def ammi_walk_in(H,t,t0,t1,to=(2.0,-1.7)):
-    walk_path(H,[(2.0,-3.5),(2.0,-2.6),to],t,t0,t1,step=.46,arm=16,ease_in=.1,ease_out_=.2)
+def ammi_walk_in(H,t,t0,t1,to=(2.2,-1.15)):
+    walk_path(H,[(2.0,-3.5),(2.0,-2.6),(2.1,-1.8),to],t,t0,t1,step=.46,arm=16,ease_in=.1,ease_out_=.2)
 def hold_chappal(H,o,s=1): p=hand_w(H,s); o.location=(p.x,p.y,p.z+.02); o.rotation_euler=(R(80),0,H['root'].rotation_euler[2])
 def mumble(H,t,a,b,key): talk(H,t,a,b,key,rest='flat',rate=5,shapes=('o','flat','o'))
-def phone_in_hand(H,ph,s=1,up=1.0,face_dist=.5):
-    """hold the phone in front of the face, screen toward the eyes"""
-    body_vis(H,True); h=Vector(headpos(H)); f=root_mat(H).to_3x3()@Vector((0,-1,0)); p=h+f*face_dist+Vector((0,0,-.25*up))
-    arm_reach(H,s,(p.x,p.y,p.z-.06)); arm_reach(H,-s,(p.x,p.y,p.z-.08)); ph.location=(p.x,p.y,p.z); ph.rotation_euler=(R(-12),0,H['root'].rotation_euler[2]+R(180)); return p
+def phone_in_hand(H,ph,s=1,up=2.0,face_dist=.55):
+    """hold the phone low in front of the chest, one hand on each side of it, so the face stays visible"""
+    body_vis(H,True); h=Vector(headpos(H)); M3=root_mat(H).to_3x3(); f=M3@Vector((0,-1,0)); rt=M3@Vector((1,0,0)); p=h+f*face_dist+Vector((0,0,-.25*up))
+    bpy.context.view_layer.update()
+    for a in (1,-1):
+        sh=H['arm'][a].matrix_world.translation; side=1 if (sh-p).dot(rt)>0 else -1
+        arm_reach(H,a,tuple(p+rt*side*.075+Vector((0,0,-.05))))
+    ph.location=(p.x,p.y,p.z); ph.rotation_euler=(R(-28),0,H['root'].rotation_euler[2]+R(180)); return p
 def phone_lying(H,ph,t):
     """lying on the back holding the phone up over the face"""
     h=Vector(headpos(H)); p=h+Vector((.08,0,.42)); arm_reach(H,1,(p.x+.05,p.y-.05,p.z-.05)); arm_reach(H,-1,(p.x+.05,p.y+.05,p.z-.05)); ph.location=(p.x,p.y,p.z); ph.rotation_euler=(R(90),0,R(90)); return p
@@ -145,9 +149,9 @@ def body_vis(H,on):
     for o in H['_body']: o.hide_render=not on
 def insert_cam(ph,dist=.22,lens=26,side=0.08):
     """over-the-shoulder look at the phone screen"""
-    H=OWNER[0]; body_vis(H,False); bpy.context.view_layer.update(); m=ph.matrix_world; c=m@Vector((.0,-.18,.015)); tg=m@Vector((0,0,0)); _camset(tuple(c),tuple(tg),lens,1.4,focus=tuple(tg))
+    H=OWNER[0]; body_vis(H,False); bpy.context.view_layer.update(); m=ph.matrix_world; c=m@Vector((.0,-.18,.015)); tg=m@Vector((0,0,0)); _camset(tuple(c),tuple(tg),lens,22,focus=tuple(tg))
 def lie_insert(ph,hw):
-    p=Vector(ph.location); c=Vector(hw)+Vector((.42,-.22,.05)); _camset(tuple(c),tuple(p),26,1.4,focus=tuple(p))
+    p=Vector(ph.location); c=Vector(hw)+Vector((.42,-.22,.05)); _camset(tuple(c),tuple(p),26,22,focus=tuple(p))
 def cycle_screen(sc,names,t,fps=2.0): set_screen(sc,names[int(t*fps)%len(names)])
 def cam_close(H,side=1,dist=2.1,lens=28,ang=28,dz=.38,tz=-.25):
     """camera in front of the character (by body heading), slightly to one side; walls handled by safe camset"""
@@ -166,7 +170,7 @@ def SH_A(view):
         ammi_in=view in ('ammi','five','ramzan','pull')
         if ammi_in:
             if view=='ammi': ammi_walk_in(am,t,.05,1.0); door_set(D,(t)/.5)
-            else: standH(am,2.0,-1.7,180,t); door_set(D,1)
+            else: standH(am,2.2,-1.15,180,t); door_set(D,1)
             am['root'].rotation_euler[2]=R(heading_to(am,(HIP[0]-.9,HIP[1],0))) if view!='ammi' or t>1.0 else am['root'].rotation_euler[2]
             blink(am,t); look_at(am,headpos(w)); HIPS(am); hold_chappal(am,ch,1)
         else: am['root'].location=(9,-9,0); ch.location=(9,-9,0); door_set(D,0)
@@ -180,17 +184,17 @@ def SH_A(view):
             cam_lying(hw,L(1.1,.95,q))
         elif view=='clock':
             dr.update(edge); k=t*1.4; ph.location=(NIGHT_PH[0]+.004*math.sin(t*60),NIGHT_PH[1],NIGHT_PH[2]+.008)
-            c=Vector(ph.location)+Vector((.3,-.2,.28)); _camset(tuple(c),tuple(ph.location),30,1.5,focus=tuple(ph.location))
+            c=Vector(ph.location)+Vector((.3,-.2,.28)); _camset(tuple(c),tuple(ph.location),30,16,focus=tuple(ph.location))
         elif view=='ammi':
             dr.update(edge); talk(am,t,27,33,KEY,rest='shout',shapes=('shout','O','shout','O')); face(am,brow=-.06,brow_r=22,eyes=1.25)
-            _camset((L(-.3,-.1,q),L(.7,.5,q),2.05),(2.0,-1.9,1.6),22,4,focus=ha)
+            _camset((L(-.3,-.1,q),L(.7,.5,q),2.05),(2.2,-1.3,1.6),22,4,focus=ha)
         elif view=='five':
             dr.update(edge); mumble(w,t,34,37,KEY); face(w,eyes=.0,brow=.02); w['head'].rotation_euler[2]=R(-15)
             cam_lying(hw,1.0)
         elif view=='ramzan':
             dr.update(edge); talk(am,t,38,46,KEY,rest='frown',shapes=('shout','O','o','shout')); face(am,brow=-.05,brow_r=20,eyes=1.15)
-            p=hand_w(am,1); am['arm'][1].rotation_euler=(R(-110+25*math.sin(t*7)),0,R(-20)); hold_chappal(am,ch,1)
-            camset((L(.7,.8,q),L(-.4,-.6,q),1.75),(2.0,-1.75,1.8),26,3,focus=ha)
+            am['arm'][1].rotation_euler=(R(-25+15*math.sin(t*7)),0,R(-115)); hold_chappal(am,ch,1)
+            camset((L(.7,.8,q),L(-.4,-.6,q),1.75),(2.2,-1.2,1.8),26,3,focus=ha)
         else:   # pull the blanket over the head
             k=ease((t-.3)/1.0); e=L(-1.85,-2.95,k); hh=Vector(hw); pull=Vector((L(-1.7,-2.4,k),HIP[1],BED['top']+.32))
             arm_reach(w,1,(pull.x,pull.y-.18,pull.z)); arm_reach(w,-1,(pull.x,pull.y+.18,pull.z)); face(w,mouth='frown',eyes=0)
@@ -210,7 +214,7 @@ def SH_B(view):
         if view=='later': set_clock(D,11+((49+t*40)//60),(49+t*40)%60)
         ammi_on=view in ('kamre','imp','kya','research','cat')
         if ammi_on:
-            standH(am,2.0,-1.7,heading_to(am,(SITB[0],SITB[1],0)),t); door_set(D,1); blink(am,t); HIPS(am); hold_chappal(am,ch,1)
+            standH(am,2.2,-1.15,heading_to(am,(SITB[0],SITB[1],0)),t); door_set(D,1); blink(am,t); HIPS(am); hold_chappal(am,ch,1)
         else: am['root'].location=(9,-9,0); ch.location=(9,-9,0); door_set(D,0)
         hw=headpos(w); ha=headpos(am)
         if ammi_on: look_at(am,hw)
@@ -225,26 +229,26 @@ def SH_B(view):
             face(w,mouth='flat',eyes=L(.3,.9,ease(t/1.2)))
             camset((L(-.5,-.7,q),L(-1.6,-1.8,q),1.75),(hw[0],hw[1],hw[2]-.4),26,3.5,focus=hw)
         elif view=='insta':
-            phone_in_hand(w,ph); cycle_screen(scr,['scr_feed0','scr_feed1','scr_feed2','scr_feed3'],t,1.6); mumble(w,t,64,67,KEY); look_at(w,tuple(ph.location))
+            phone_in_hand(w,ph); cycle_screen(scr,['scr_feed0','scr_feed1','scr_feed2','scr_feed3'],t,1.6); mumble(w,t,64,67,KEY); look_at(w,tuple(ph.location),.45)
             if t<wl(65,KEY)+.2: cam_close(w,1,2.0,28)
             else: insert_cam(ph)
         elif view=='later':
-            phone_in_hand(w,ph); cycle_screen(scr,['scr_feed2','scr_feed0','scr_feed3','scr_feed1'],t,4); face(w,mouth='flat',eyes=.65); look_at(w,tuple(ph.location))
+            phone_in_hand(w,ph); cycle_screen(scr,['scr_feed2','scr_feed0','scr_feed3','scr_feed1'],t,4); face(w,mouth='flat',eyes=.65); look_at(w,tuple(ph.location),.45)
             _camset((L(1.6,1.2,q),L(-1.4,-1.0,q),2.6),(-.5,.8,1.5),22,6)
         elif view=='kamre':
-            phone_in_hand(w,ph); talk(am,t,71,76,KEY,rest='frown',shapes=('shout','O','shout')); face(am,brow=-.05,brow_r=20,eyes=1.2); am['arm'][1].rotation_euler=(R(-120+20*math.sin(t*7)),0,R(-20)); hold_chappal(am,ch,1)
-            camset((.4,.3,1.95),(2.0,-1.75,1.8),30,3,focus=ha)
+            phone_in_hand(w,ph); talk(am,t,71,76,KEY,rest='frown',shapes=('shout','O','shout')); face(am,brow=-.05,brow_r=20,eyes=1.2); am['arm'][1].rotation_euler=(R(-25+15*math.sin(t*7)),0,R(-115)); hold_chappal(am,ch,1)
+            camset((.2,.5,1.9),(2.2,-1.2,1.8),30,3,focus=ha)
         elif view=='imp':
-            phone_in_hand(w,ph,up=1.7); talk(w,t,77,81,KEY,rest='flat'); face(w,brow=-.02,eyes=.8); look_at(w,tuple(ph.location))
+            phone_in_hand(w,ph); talk(w,t,77,81,KEY,rest='flat'); face(w,brow=-.02,eyes=.8); look_at(w,tuple(ph.location),.45)
             cam_close(w,1,2.0,28)
         elif view=='kya':
             phone_in_hand(w,ph); talk(am,t,82,82,KEY,rest='frown',shapes=('shout','O')); face(am,brow=.02,brow_r=-14,eyes=.75)
-            camset((.4,.3,1.95),(2.0,-1.75,1.8),36,3,focus=ha)
+            camset((.2,.5,1.9),(2.2,-1.2,1.8),34,3,focus=ha)
         elif view=='research':
-            phone_in_hand(w,ph,up=1.7); talk(w,t,83,83,KEY,rest='smirk'); face(w,brow=.04,brow_r=-12,eyes=.85); look_at(w,ha,.6)
+            phone_in_hand(w,ph); talk(w,t,83,83,KEY,rest='smirk'); face(w,brow=.04,brow_r=-12,eyes=.85); look_at(w,ha,.6)
             cam_close(w,1,2.0,28)
         else:
-            phone_in_hand(w,ph); k=t/DUR; set_screen(scr,'scr_cat%d'%min(5,int(k*8))); look_at(w,tuple(ph.location))
+            phone_in_hand(w,ph); k=t/DUR; set_screen(scr,'scr_cat%d'%min(5,int(k*8))); look_at(w,tuple(ph.location),.45)
             if t<DUR*.55: insert_cam(ph)
             else: face(w,mouth='grin',eyes=.1,brow=.05); w['root'].rotation_euler[0]=R(6*math.sin(t*14)); cam_close(w,1,2.0,28)
     return dict(upd=upd)
@@ -261,7 +265,7 @@ def SH_C(view):
         seatH(w,SITB[0],SITB[1],0,sh=BED['top']); blink(w,t); breathe(w,t); phone_in_hand(w,ph) if view in ('enter','bottles','charger','godaam') else rest(w,t,-30);
         if view not in ('enter','bottles','charger','godaam'): ph.location=(SITB[0]+.35,SITB[1]+.3,BED['top']+.012); ph.rotation_euler=(R(-90),0,R(190))
         hw=headpos(w)
-        if view=='enter': walk_path(am,[(2.0,-2.0),(1.4,-1.1),AP],t,.2,DUR-.3,step=.46,arm=16); am['head'].rotation_euler[2]=R(35*math.sin(t*1.6))
+        if view=='enter': walk_path(am,[(2.2,-1.15),(1.5,-.6),AP],t,.2,DUR-.3,step=.46,arm=16); am['head'].rotation_euler[2]=R(35*math.sin(t*1.6))
         else: standH(am,AP[0],AP[1],heading_to(am,(SITB[0],SITB[1],0)) if view not in ('shirt','teen') else (90 if view=='shirt' else heading_to(am,(SITB[0],SITB[1],0))),t)
         blink(am,t); ha=headpos(am)
         held=view in ('shirt','teen','decor')
@@ -316,7 +320,7 @@ def SH_D(view):
     def upd(t):
         fan_spin(D,t); q=ease(t/DUR); dr.update(-1.55)
         seatH(w,PROP[0],PROP[1],90,sh=BED['top']); w['root'].rotation_euler[1]=0; w['root'].rotation_euler[0]=0; blink(w,t)
-        p=phone_in_hand(w,ph,up=1.7); hw=headpos(w); look_at(w,tuple(ph.location))
+        p=phone_in_hand(w,ph); hw=headpos(w); look_at(w,tuple(ph.location),.45)
         if view=='lie':
             cycle_screen(scr,['scr_car0','scr_car1','scr_car2','scr_car3'],t,2.5); face(w,mouth='smile',eyes=.9)
             if t<DUR*.45: _camset((L(.3,0,q),L(-.5,-.2,q),2.2),(-1.6,1.2,1.0),22,4)
@@ -344,7 +348,7 @@ def SH_E(view):
         # Waleed on the east single sofa (seat .54) facing -x
         seatH(w,WLP[0],WLP[1],-90,sh=.54); blink(w,t)
         if view=='arrive':
-            slouch=1.0; w['root'].rotation_euler[0]=R(-14); w['root'].location[2]-=.06; phone_in_hand(w,ph,face_dist=.38); look_at(w,tuple(ph.location)); face(w,mouth='flat',eyes=.7)
+            slouch=1.0; w['root'].rotation_euler[0]=R(-14); w['root'].location[2]-=.06; phone_in_hand(w,ph,face_dist=.38); look_at(w,tuple(ph.location),.45); face(w,mouth='flat',eyes=.7)
             for H,pts,t0 in ((un,[(LX-5,-1.8),(LX-3.0,-1.6),(LX-1.6,1.0),(UNP[0],1.9)],.2),(au,[(LX-5,-1.8),(LX-3.2,-1.7),(LX-.6,1.0),(AUP[0],1.9)],.9)): walk_path(H,pts,t,t0,t0+2.4,step=.46,arm=16)
             standH(am,AMP[0],AMP[1],heading_to(am,(LX-2,-1.8,0)),t); arms(am,-60,0,-20,-60,0,20)
             _camset((L(LX+3.2,LX+3.0,q),L(-2.8,-2.6,q),2.3),(LX-.8,.2,1.0),20,6)
@@ -406,8 +410,8 @@ def SH_F(view):
             w['root'].rotation_euler[2]=R(90-30*ease(t/.6))
             cam_close(w,-1,1.9,28)
         else:
-            arm_reach(w,1,(ph.location[0],ph.location[1],ph.location[2]+.03)); look_at(w,tuple(ph.location)); face(w,mouth='smile',eyes=.8)
-            _camset((ph.location[0]-.12,ph.location[1],ph.location[2]+.32),tuple(ph.location),34,1.5,focus=tuple(ph.location)) if t>.5 else _camset((hw[0]-1.0,hw[1]-1.1,hw[2]+.2),(kb[0],kb[1]-.4,DESK['top']+.2),30,3)
+            arm_reach(w,1,(ph.location[0],ph.location[1],ph.location[2]+.03)); look_at(w,tuple(ph.location),.45); face(w,mouth='smile',eyes=.8)
+            _camset((ph.location[0]-.12,ph.location[1],ph.location[2]+.32),tuple(ph.location),34,16,focus=tuple(ph.location)) if t>.5 else _camset((hw[0]-1.0,hw[1]-1.1,hw[2]+.2),(kb[0],kb[1]-.4,DESK['top']+.2),30,3)
     return dict(upd=upd)
 for v in ('night','promise','alarm'): SHOTS['F_'+v]=(lambda v=v: SH_F(v))
 # ============================================================ ENDING

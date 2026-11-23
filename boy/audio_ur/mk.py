@@ -1,5 +1,5 @@
 import json,subprocess,numpy as np,wave
-SR=48000; F=1.0; TEMPO=1.1; KEEP=0.26
+SR=48000; F=1.30; TEMPO=1.1; KEEP=0.26
 W=json.load(open("words_raw.json"))["words"]
 x=np.frombuffer(subprocess.run(['ffmpeg','-loglevel','error','-i','raw.mp3','-f','f32le','-ac','1','-ar',str(SR),'-'],capture_output=True).stdout,np.float32).copy()
 fr=480; n=len(x)//fr; e=np.sqrt((x[:n*fr].reshape(n,fr)**2).mean(1)); v=e>0.01
