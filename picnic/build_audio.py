@@ -27,13 +27,26 @@ def load(sp):
 SR=48000; PITCH=1.30; PACE=1.12
 def clip(sp,seg):
     """cut one line; narrator gets the channel pitch/pace, characters a mild speed-up. returns (samples, [(w,t0,t1)])"""
-    sr,x=wavfile.read(A+sp.lower()+'_n.wav'); a=max(0,seg[0]['start']-.05); b=min(len(x)/sr,seg[-1]['end']+.14); raw=x[int(a*sr):int(b*sr)]
+    sr,x=wavfile.read(seg[0].get('src',A+sp.lower()+'_n.wav')); a=max(0,seg[0]['start']-.05); b=min(len(x)/sr,seg[-1]['end']+.14); raw=x[int(a*sr):int(b*sr)]
     wavfile.write('/tmp/c.wav',sr,raw)
     if sp=='NAR': af="asetrate=48000*%.2f,aresample=48000,atempo=%.6f"%(PITCH,PACE/PITCH); k=PACE
     else: af="atempo=1.07"; k=1.07
     subprocess.run(['ffmpeg','-v','error','-y','-i','/tmp/c.wav','-af',af+',afade=t=in:d=0.02,areverse,afade=t=in:d=0.04,areverse','-ar','48000','/tmp/c2.wav'],check=True)
     sr2,y=wavfile.read('/tmp/c2.wav'); return y.astype(np.float32)/32768,[(w['text'],(w['start']-a)/k,(w['end']-a)/k) for w in seg]
-W={sp:load(sp) for sp in LINES}; t=0.25; bus=[]; words=[]; seq=[]; lines=[]; en=[]
+W={sp:load(sp) for sp in LINES}
+def _rms(x): x=x.astype(np.float32); return float(np.sqrt((x**2).mean()))
+def override(sp,idx,raw,words,text=None):
+    """replace one line with a separately recorded take, level-matched to the old one"""
+    old=W[sp][idx]; sr,x=wavfile.read(A+sp.lower()+'_n.wav'); o=x[int(old[0]['start']*sr):int(old[-1]['end']*sr)]
+    sr2,y=wavfile.read(A+raw); y=y.astype(np.float32); sp0=int(words[0][1]*sr2); y*=_rms(o)/max(1e-6,_rms(y[sp0:])); dst=A+raw.replace('.wav','_lv.wav')
+    wavfile.write(dst,sr2,np.clip(y,-32768,32767).astype(np.int16)); W[sp][idx]=[dict(text=w,start=a,end=b,src=dst) for (w,a,b) in words]
+    if text: LINES[sp][idx]=text
+_o=W['SHY'][0]; _d=wavfile.read(A+'horn_raw.wav'); _D=len(_d[1])/_d[0]; _a,_b=_o[0]['start'],_o[-1]['end']
+override('SHY',0,'horn_raw.wav',[(w['text'],(w['start']-_a)/(_b-_a)*_D,(w['end']-_a)/(_b-_a)*_D) for w in _o])
+override('ILS',5,'ils_new_raw.wav',[("Bro,",.96,1.44),("kal",1.68,1.92),("nahi",2.04,2.2),("aa",2.24,2.32),("sakte!",2.4,3.08),("Yeh",3.28,3.44),("event",3.52,3.84),("sirf",4.0,4.24),("ek",4.4,4.64),("din",4.72,4.88),("ka",4.96,5.04),("hai...",5.12,5.68),("Sunday,",5.92,6.32),("29",6.48,7.04),("November!",7.12,7.84)],
+         text="Bro, kal nahi aa sakte! Yeh event sirf ek din ka hai... Sunday, 29 November!")
+EN[('ILS',5)]="Bro, we can't come tomorrow! This event is only for one day... Sunday, 29 November!"
+t=0.25; bus=[]; words=[]; seq=[]; lines=[]; en=[]
 for key,sp,arg,gap in TL:
     if sp is None: seq.append((key,round(t,3))); lines.append(dict(key=key,sp=None,t0=round(t,3),t1=round(t+arg,3))); t+=arg; continue
     y,ww=clip(sp,W[sp][arg]); t0=t; bus.append((t0,y)); i0=len(words)
@@ -42,6 +55,7 @@ for key,sp,arg,gap in TL:
     t1=t0+len(y)/SR; lines.append(dict(key=key,sp=sp,t0=round(t0,3),t1=round(t1,3),i0=i0,i1=len(words)-1,text=LINES[sp][arg]))
     if (sp,arg) in EN: en.append(dict(t0=round(t0,3),t1=round(t1,3),en=EN[(sp,arg)]))
     t=t1+gap
+    if key=='C_horn': t=6.177  # keep the original cut point so later shots do not move
 END=round(t,3); seq[0]=(seq[0][0],0.0); out=np.zeros(int((END+.5)*SR),dtype=np.float32)
 for t0,y in bus: i=int(t0*SR); out[i:i+len(y)]+=y
 wavfile.write(A+'narr.wav',SR,(np.clip(out,-1,1)*32767).astype(np.int16))

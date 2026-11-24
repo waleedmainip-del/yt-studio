@@ -6,7 +6,7 @@
 ],
 [
 "C_horn",
-4.176
+4.13
 ],
 [
 "C_main",
@@ -126,7 +126,7 @@
 ],
 [
 "L_stay",
-96.219
+96.218
 ],
 [
 "L_needed",
@@ -162,7 +162,7 @@
 ],
 [
 "F_what",
-119.364
+119.363
 ],
 [
 "F_kal",
@@ -174,18 +174,18 @@
 ],
 [
 "F_vouch",
-124.094
+128.582
 ],
 [
 "F_last",
-128.976
+133.464
 ],
 [
 "END",
-133.573
+138.061
 ]
 ],
-"end": 137.773,
+"end": 142.261,
 "lines": [
 {
 "key": "N_world",
@@ -200,7 +200,7 @@
 "key": "C_horn",
 "sp": "SHY",
 "t0": 4.23,
-"t1": 6.057,
+"t1": 5.844,
 "i0": 10,
 "i1": 13,
 "text": "SAHIL! HORN BAND KAR!"
@@ -497,34 +497,34 @@
 "key": "F_ghar",
 "sp": "ILS",
 "t0": 121.457,
-"t1": 123.45,
+"t1": 127.938,
 "i0": 202,
-"i1": 206,
-"text": "BRO, PEHLE GHAR TOH CHAL!"
+"i1": 216,
+"text": "Bro, kal nahi aa sakte! Yeh event sirf ek din ka hai... Sunday, 29 November!"
 },
 {
 "key": "F_vouch",
 "sp": "NAR",
-"t0": 124.15,
-"t1": 128.732,
-"i0": 207,
-"i1": 219,
+"t0": 128.638,
+"t1": 133.219,
+"i0": 217,
+"i1": 229,
 "text": "And there's more: Picnic Karachi is giving ten free vouchers to our audience."
 },
 {
 "key": "F_last",
 "sp": "NAR",
-"t0": 129.032,
-"t1": 133.073,
-"i0": 220,
-"i1": 229,
+"t0": 133.519,
+"t1": 137.561,
+"i0": 230,
+"i1": 239,
 "text": "This isn't another chaotic day in Karachi. It's Picnic Karachi."
 },
 {
 "key": "END",
 "sp": null,
-"t0": 133.573,
-"t1": 137.773
+"t0": 138.061,
+"t1": 142.261
 }
 ]
 }

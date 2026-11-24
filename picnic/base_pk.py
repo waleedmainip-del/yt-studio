@@ -38,6 +38,9 @@ def M(h,rough=.6,metal=0,emit=0,kind=None,spec=.5,h2=None,sc=1.0,alpha=1.0):
             w=nt.nodes.new('ShaderNodeTexWave'); w.wave_type='BANDS'; w.bands_direction=direction; w.wave_profile=profile
             w.inputs['Scale'].default_value=scale; w.inputs['Distortion'].default_value=dist; w.inputs['Detail'].default_value=0
             nt.links.new(OB,w.inputs['Vector']); return w
+        if kind=='gingham':
+            ck=nt.nodes.new('ShaderNodeTexChecker'); ck.inputs['Scale'].default_value=2.6*sc; ck.inputs['Color1'].default_value=hexc(h); ck.inputs['Color2'].default_value=hexc(h2 or '#F6F2EA')
+            nt.links.new(OB,ck.inputs['Vector']); nt.links.new(ck.outputs['Color'],b.inputs['Base Color']); bump(noise(90,2).outputs['Fac'],.2,.01)
         if kind=='fabric': bump(noise(90*sc,2).outputs['Fac'],.25,.01); ramp(noise(2.5,2).outputs['Fac'],shade(h,.93),shade(h,1.05))
         if kind=='asphalt': ramp(noise(1.2,6).outputs['Fac'],shade(h,.88),shade(h,1.1)); bump(noise(60,3).outputs['Fac'],.35,.01)
         if kind=='wall': ramp(noise(.6,3).outputs['Fac'],shade(h,.93),shade(h,1.04)); bump(noise(30,2).outputs['Fac'],.08,.01)

@@ -133,8 +133,7 @@ MAT_W=2.3; MAT_D=1.75
 def mat_xy(i,j,side): return (side*(7.0+6.2*i), 14.0+5.3*j)
 def picnic_mat(x,y,r,rot=0.0,props=True):
     c=r.choice(PAST); c2=shade(c,.82)
-    B.box((x,y,.03),(MAT_W,MAT_D,.025),M(c,.9,kind='fabric'),.01,rot=(0,0,rot))
-    for k in (-1.5,-.5,.5,1.5): B.box((x+k*MAT_W/2*math.cos(rot),y+k*MAT_W/2*math.sin(rot),.058),(.07,MAT_D,.004),M(c2,.9,kind='fabric'),0,rot=(0,0,rot))
+    B.box((x,y,.03),(MAT_W,MAT_D,.025),M('#D2202A',.9,kind='gingham'),.01,rot=(0,0,rot))
     if props:
         ca,sa=math.cos(rot),math.sin(rot)
         def P(dx,dy): return (x+dx*ca-dy*sa,y+dx*sa+dy*ca)

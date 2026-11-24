@@ -95,6 +95,9 @@ def SH_ROAD(view):
     JP=jeep(0,JY,90,'#C9A45A'); Hs=heroes(); S_,Y_,E_,I_=Hs['SAH'],Hs['SHY'],Hs['EMA'],Hs['ILS']
     ph=phone(I_,1); scr=img_plane(LOGO,(0,-.02,0),.14,.076,(0,-1,0),emit=1.4,parent=ph); bigph=empty((0,0,0)); obox((0,0,0),(.42,.03,.8),M('#15161A',.3),.05,bigph); obox((0,-.032,0),(.385,.004,.74),M('#69C0E3',.4,emit=1.0),.01,bigph); img_plane(LOGO,(0,-.04,.06),.7,.38,(0,-1,0),emit=1.3,parent=bigph); bigph.scale=(0,0,0)
     seats=dict(SAH='fr',SHY='fl',EMA='br',ILS='bl')
+    NT={}
+    for nm,lab in (('SHY','SHAHERIYAR'),('SAH','SAHIL'),('EMA','EMAN'),('ILS','ILSA')):
+        e=empty((0,0,0)); w=.118*len(lab)+.16; obox((-.03,0,0),(.012,w/2,.125),M('#69C0E3',.5,emit=.9),.03,e); text(lab,(0,0,-.005),(1,0,0),.17,M('#FFFFFF',.4,emit=2.2),.008,e); e.scale=(0,0,0); NT[nm]=e
     JXv=[0.0]
     def cam4(q=0.0): camset((JXv[0]+L(5.0,4.5,q),JY+.15,L(3.75,3.55,q)),(JXv[0]-.55,JY,2.15),26,6.0)
     def jcf(H,sg=1,d=1.65,lens=21): cf(H,d=d,lat=.35*sg,dz=-.08,lens=lens,tgt_dz=.10)
@@ -113,6 +116,8 @@ def SH_ROAD(view):
         GEST(S_,1,58,-14); GEST(S_,-1,58,14); GEST(I_,1,62,-12); I_['head'].rotation_euler[0]=R(14) if v in ('N_world','C_horn','C_main','C_kaun','C_poora','C_holiday','C_real') else 0; bigph.scale=(0,0,0)
         shake=.02*math.sin(g*23)
         for H in Hs.values(): H['root'].location[2]+=.006*math.sin(g*17+H['seed'])
+        if v=='C_horn':
+            for nm,e in NT.items(): hp=headpos(Hs[nm]); kk=ease(cl((t-.15)/.25)); e.location=(hp.x,hp.y,hp.z+.86); e.scale=(kk,kk,kk)
         if v=='N_world':
             face(S_,mouth='strain',brow=.04,brow_r=12); face(Y_,mouth='frown',brow=.03,brow_r=-12); Y_['head'].rotation_euler[2]=R(20*math.sin(g*1.3)); face(E_,mouth='flat')
             qq=ease(cl(t/DUR)); camset((L(-44,-17,qq),L(-8.5,-9.2,qq),L(21,7.5,qq)),(L(6,1.5,qq)+jx,JY,L(1.5,2.2,qq)),L(22,26,qq),8.0)
@@ -281,7 +286,7 @@ def SH_VENUE(view):
             if v=='F_req': GEST(Y_,1,56,10)
             if v=='F_kal': face(Y_,mouth=None,brow=.05); GEST(Y_,1,44,8)
             if v=='F_ghar':
-                GEST(I_,1,70+8*math.sin(g*14),20); GEST(I_,-1,70-8*math.sin(g*14),20); face(I_,brow=.06,eyes=1.2)
+                GEST(I_,1,46+6*math.sin(g*9),20); GEST(I_,-1,46-6*math.sin(g*9),20); face(I_,brow=.06,eyes=1.2)
                 if t>e1:
                     for nm in ORDER: face(Hs[nm],mouth='grin',brow=.05); Hs[nm]['root'].location[2]+=.012*abs(math.sin(g*11+ORDER.index(nm)))
                     camset((-4.45,hy-2.2,2.0),(hx-.2,hy+.2,1.05),20,5.0)
