@@ -1,0 +1,52 @@
+name: Render Family Group
+on:
+  push:
+    branches: [fg-film]
+    paths: ["fg/jobs.json"]
+permissions:
+  contents: write
+concurrency:
+  group: fg-render-r1
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        job: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender 4.0.2
+        timeout-minutes: 15
+        run: |
+          for i in 1 2 3 4 5; do
+            for u in https://download.blender.org/release https://ftp.nluug.nl/pub/graphics/blender/release https://mirrors.ocf.berkeley.edu/blender/release https://mirror.clarkson.edu/blender/release; do
+              curl -sSL --retry 3 -o /tmp/b.tar.xz $u/Blender4.0/blender-4.0.2-linux-x64.tar.xz && tar -xf /tmp/b.tar.xz -C /opt && break 2
+              echo "mirror failed: $u"
+            done
+            echo "blender download retry $i"; sleep 10
+          done
+          sudo ln -sf /opt/blender-4.0.2-linux-x64/blender /usr/local/bin/blender
+          test -x /opt/blender-4.0.2-linux-x64/blender
+          sudo dpkg -i tools/debs/libegl1_*.deb || true
+          sudo dpkg -i tools/debs/libegl-mesa0_*.deb || true
+          if ! command -v ffmpeg; then curl -sSL --retry 4 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz && tar -xf /tmp/ff.tar.xz -C /opt && sudo ln -sf /opt/ffmpeg-master-latest-linux64-gpl/bin/ffmpeg /usr/local/bin/ffmpeg && sudo ln -sf /opt/ffmpeg-master-latest-linux64-gpl/bin/ffprobe /usr/local/bin/ffprobe; fi
+          command -v xvfb-run
+          blender -b --version | head -1; ffmpeg -version | head -1
+      - name: Render pieces
+        env:
+          SAMPLES: '32'
+        run: python3 tools/gh_render_fg.py ${{ matrix.job }}
+      - name: Push results branch
+        if: always()
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          B=render/fg-${{ github.run_id }}-j${{ matrix.job }}
+          mkdir -p gh_out && cd gh_out
+          git init -q && git checkout -q -b $B && git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "fg render job ${{ matrix.job }}" --allow-empty
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B
