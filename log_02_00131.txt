@@ -1,0 +1,60 @@
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1642
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1643
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1644
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1645
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1646
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1647
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1648
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing c.245
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing c.246
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing c.247
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1649
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1650
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1651
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1652
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing e.153
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1653
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.030
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.031
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.032
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.033
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.034
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.035
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.036
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.037
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.038
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.039
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.040
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing e.154
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.041
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.042
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.043
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.044
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.045
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.046
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.047
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.048
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.049
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.050
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.051
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.052
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.053
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing i.054
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing e.155
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1654
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing c.248
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1655
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing c.249
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing e.156
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing p.1656
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing ip.002
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.28 | Syncing Area.004
+Fra:185 Mem:266.82M (Peak 308.75M) | Time:00:00.30 | Rendering 1 / 4 samples
+Fra:185 Mem:266.81M (Peak 308.75M) | Time:00:03.52 | Rendering 4 / 4 samples
+Saved: '/home/claude/match/frames/S02/f00185.png'
+Time: 00:04.61 (Saving: 00:00.23)
+
+FRAME 1 255.0
+SHOT_DONE 2
+
+Blender quit
