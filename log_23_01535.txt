@@ -1,0 +1,60 @@
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.06 | Syncing p.123
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.06 | Syncing p.124
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.06 | Syncing p.125
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.06 | Syncing p.126
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.06 | Syncing p.127
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.06 | Syncing p.128
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.129
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.130
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.131
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.132
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.133
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing c.011
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing c.012
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.134
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.135
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.136
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.137
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing c.013
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.138
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.139
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.140
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.141
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.142
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.143
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.144
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.145
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.146
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing c.014
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing c.015
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing c.016
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.147
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.148
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.149
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.150
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.151
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.152
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.153
+Fra:1602 Mem:88.66M (Peak 131.56M) | Time:00:00.06 | Syncing p.154
+Fra:1602 Mem:88.65M (Peak 131.56M) | Time:00:00.09 | Rendering 1 / 4 samples
+Fra:1602 Mem:88.69M (Peak 131.56M) | Time:00:02.53 | Rendering 4 / 4 samples
+Saved: '/home/claude/demo/frames/S23/f01602.png'
+Time: 00:03.37 (Saving: 00:00.22)
+
+Error: Cannot read '/home/claude/demo/assets/lap_red-90.png': No such file or directory
+Traceback (most recent call last):
+  File "/home/claude/demo/film_by.py", line 18, in _h
+    upd_all(scene.frame_current/FPS-T0); print('FRAME',scene.frame_current,round(time.time()-t0w,1),flush=True)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/demo/film_by.py", line 10, in upd_all
+    TNOW[0]=t; spec['upd'](t); fx.upd(t)
+               ^^^^^^^^^^^^^^
+  File "<string>", line 352, in upd
+  File "<string>", line 133, in lapscr
+  File "<string>", line 20, in set_screen
+  File "<string>", line 9, in img_mat
+RuntimeError: Error: Cannot read '/home/claude/demo/assets/lap_red-90.png': No such file or directory
+
+SHOT_DONE 23
+
+Blender quit
