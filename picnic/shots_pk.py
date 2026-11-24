@@ -183,7 +183,7 @@ def SH_VENUE(view):
     else: set_day()
     jeep(-24,-9,180,'#C9A45A'); Hs=heroes(); S_,Y_,E_,I_=Hs['SAH'],Hs['SHY'],Hs['EMA'],Hs['ILS']; mp=mat_people(P['det'])
     DJ=person((0,SY+1.6,1.4),0,DJP,'grin',name='dj'); DN=[person((0,0,0),180,plocal(900+k*7),'grin',name='dn%d'%k) for k in range(9)]
-    WK=[person((0,0,0),0,plocal(700+k*5),'smile',name='wk%d'%k) for k in range(6)]; TN=[person((0,0,0),90,plocal(800+k*9),'smile',name='tn%d'%k) for k in range(6)]
+    WK=[person((0,0,0),0,plocal(700+k*5),'smile',name='wk%d'%k) for k in range(6)]; TN=[person((0,0,0),90,plocal(800+k*9),'smile',name='tn%d'%k) for k in range(20)]; VN=[person((0,0,0),-90,plocal(1300+k*11),'grin',name='vn%d'%k) for k in range(10)]
     hl=[lantern_obj(1.0) for _ in range(3)] if (night or dusk) else []
     def crowd(g):
         reset(DJ); put_at(DJ,g,0,SY+1.6,0,z=1.4); b=abs(math.sin(g*6.0)); DJ['root'].location[2]+=.05*b; GEST(DJ,1,48,-12); DJ['arm'][-1].rotation_euler=(0,R(150+10*math.sin(g*6)),0); face(DJ,mouth='grin')
@@ -196,8 +196,10 @@ def SH_VENUE(view):
             if k<3: stroll(H,(g+k*23)%68,(-2.3,2.4,.1)[k],148-(k*2),0,1.0)
             else: stroll(H,(g+k*23)%60,(64.2,65.4,63.2)[k-3],18+(k-3)*9,180,.9)
         for k,H in enumerate(TN):
-            reset(H); put_at(H,g,71.2,22+13.0*(k*2 if k<5 else 9)+(.9 if k%2 else -.9),90); gaze_idle(H,g)
+            reset(H); put_at(H,g,71.0+.25*(k%3),22+13.0*(k//2)+(1.1 if k%2 else -1.2),90); gaze_idle(H,g)
             if k%2==0: GEST(H,1,50+8*math.sin(g*3+k),10); face(H,mouth=('O','smile','o','grin')[int(g*5+k)%4])
+        for k,H in enumerate(VN):
+            reset(H); put_at(H,g,73.9,22+13.0*k+(.6 if k%2 else -.5),-90); gaze_idle(H,g); GEST(H,1,45+10*math.sin(g*2.5+k),10); face(H,mouth=('grin','smile','o')[int(g*3+k)%3])
     def onmat(g,up=None):
         for nm,(dx,dy,rz) in MATPOS.items():
             H=Hs[nm]; gsit(H,g,hx+dx,hy+dy,rz); face(H,mouth='smile',brow=.02,brow_r=0,eyes=1.0)

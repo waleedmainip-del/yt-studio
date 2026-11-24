@@ -1,3 +1,4 @@
+import random
 # ================================================================ PICNIC KARACHI — sets: jammed Karachi road, open jeep, Karachi United Stadium picnic (day/night), lanterns
 def sign(body,loc,n,w,h,fg='#FFFFFF',bg=None,emit=0.0,ex=.012,border=None):
     nv=Vector(n).normalized(); L_=Vector(loc); ya=abs(nv.y)>.5
@@ -241,6 +242,22 @@ def venue(night=False,seed=11,dusk=False):
         for q in range(8):
             f=(q+.5)/8; B.poly([(tx-3.42,ty-3.6+7.2*f-.3,3.35),(tx-3.42,ty-3.6+7.2*f+.3,3.35),(tx-3.42,ty-3.6+7.2*f,2.85)],M(FL[(q+k)%6],.8,kind='fabric'))
         if lit: B.ico((tx-1.5,ty,3.1),.2,M('#FFE2A0',.3,emit=9),sub=1)
+        rr=random.Random(77+k); GC=['#E8556A','#F2C14E','#4FB3A5','#5B8DEF','#F28C4E','#B56AD8','#7BC96F','#F4F1EA']
+        WD=M('#B8905A',.6,kind='wood')
+        for q in range(9):  # goods along the counter
+            gy=ty-2.6+q*.65; gx=tx-2.6+rr.uniform(-.2,.2); c2=M(rr.choice(GC),.55); kind=q%3
+            if kind==0: h=rr.uniform(.1,.2); B.box((gx,gy,1.05+h),(.2,.2,h),c2,.03); B.box((gx,gy+.1,1.05+2*h+.08),(.14,.14,.08),M(rr.choice(GC),.55),.02)
+            elif kind==1:
+                for jj in range(3): B.cyl((gx-.15+.15*jj,gy,1.2),.07,.3,c2,seg=10); B.cyl((gx-.15+.15*jj,gy,1.37),.06,.04,M('#F4F1EA',.4),seg=10)
+            else:
+                B.cyl((gx,gy,1.11),.25,.12,WD,seg=12)
+                for jj in range(5): B.ico((gx+rr.uniform(-.13,.13),gy+rr.uniform(-.13,.13),1.2+.04*(jj%2)),.08,M(rr.choice(GC),.5),sub=1)
+        B.box((tx+2.45,ty,.8),(.4,3.0,.8),WD,.03)  # back shelf, stocked
+        for lv in range(3):
+            for q in range(7): B.box((tx+2.05,ty-2.5+q*.83,.55+lv*.55),(.25,.3,.2),M(rr.choice(GC),.55),.02)
+        for sgn in (-1,1):  # balloon bunches at the front posts
+            for jj in range(3):
+                bc=(tx-3.4+.25*(jj-1),ty+sgn*3.6+.2*jj*sgn,3.0+.35*jj); B.ico(bc,.3,M(rr.choice(GC),.35),sub=2); B.cyl((tx-3.4,ty+sgn*3.6,(1.0+bc[2])/2),.01,bc[2]-1.0,M('#FFFFFF',.5),seg=4)
     B.box((0,88,-.3),(400,400,.1),M('#8A8274',.95),0)
     B.done('venue')
     return dict(det=det,hero=hero,SY=SY)
