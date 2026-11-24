@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: bg-render-r1
+  group: bg-render-r2
   cancel-in-progress: false
 jobs:
   render:
@@ -38,7 +38,7 @@ jobs:
           blender -b --version | head -1; ffmpeg -version | head -1
       - name: Render pieces
         env:
-          SAMPLES: '24'
+          SAMPLES: '32'
         run: python3 tools/gh_render_bg.py ${{ matrix.job }}
       - name: Push results branch
         if: always()

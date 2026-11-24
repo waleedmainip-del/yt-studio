@@ -188,11 +188,15 @@ def HOOK_SINK():
 SHOTS['HOOK_SINK']=HOOK_SINK
 def DINNER():
     kit_set(); z=mk(ZOYA_HOME,3.55,-.5,180,'zoya'); wa=mk(WALEED,4.85,-.5,180,'wa'); am=mk(AMMI,4.2,1.75,0,'am')
+    point((4.2,-1.4,2.6),160,(1,.93,.84),r=.9); point((4.6,2.0,2.9),70,(1,.9,.8),r=.6)
     def upd(t):
         for H in (z,wa,am): seat(H,t,.62)
-        face(wa,mouth='grin'); face(am,mouth='smile'); face(z,mouth='flat',brow=-.03)
-        camset((4.6,2.28,3.0),(4.2,-.4,1.3),22,4)
-        if not hasattr(DINNER,'L'): DINNER.L=point((5.8,1.7,2.8),300,(1,.92,.82),r=.8); point((5.0,-1.0,2.8),150,(1,.9,.78),r=.5) if t<0 else None
+        e1=math.sin(t*7.5); e2=math.sin(t*6+1.3)
+        arm_to(wa,1,Vector((4.75,.15+.08*e1,1.1+.28*max(0,e1))),1); arm_to(wa,-1,Vector((4.95,.1,1.05)),1)
+        face(wa,mouth='grin' if e1>0 else 'O',brow=.04); look_at(wa,(4.7,.2,1.0),.4)
+        arm_to(am,1,Vector((4.35,1.2+.05*e2,1.08+.15*max(0,e2))),1); face(am,mouth='smile',brow=.03); look_at(am,hp(wa),.6)
+        face(z,mouth='flat',brow=-.05,brow_r=-12); look_at(z,hp(wa),.7); arm_to(z,-1,Vector((3.65,.15,1.04)),1)
+        q=ease(t/DUR); camset(LV((4.4,2.26,3.0),(4.35,2.2,2.75),q),LV((4.2,-.45,1.35),(4.2,-.45,1.45),q),L(22,26,q),4)
     return dict(upd=upd)
 SHOTS['DINNER']=DINNER
 def SINK_BOTH():
@@ -289,26 +293,33 @@ def INVITE():
 SHOTS['INVITE']=INVITE
 def ORDER():
     kit_set(); z=mk(ZOYA_HOME,3.55,-.5,180,'zoya'); wa=mk(WALEED,4.85,-.5,180,'wa'); am=mk(AMMI,4.2,1.75,0,'am')
-    if not hasattr(ORDER,'L'): ORDER.L=point((5.6,1.6,2.8),110,(1,.92,.82),r=.8)
+    point((4.2,-.9,2.3),140,(1,.93,.84),r=.9)
     def upd(t):
         for H in (z,wa,am): seat(H,t,.62)
         talk(am,t,*wt(233,241),rest='flat'); face(am,brow=-.02)
-        k=tl(t,ws(235),ws(235)+.3); look_at(am,hp(z) if k<.5 else hp(wa),.8); am['arm'][1].rotation_euler=(R(-70),0,R(25 if k<.5 else -10))
-        face(z,mouth='flat',brow=-.04,brow_r=-10); face(wa,mouth='O' if k>.5 else 'smile',eyes=1+.2*k); look_at(z,hp(am),.6); look_at(wa,hp(am),.6)
-        camset((4.2,-2.6,2.7),(4.2,1.75,1.75),30,4)
+        k=tl(t,ws(235),ws(235)+.3); look_at(am,hp(z) if k<.5 else hp(wa),.85)
+        if k<.5: arm_to(am,1,Vector((3.7,.9,1.5)),ease(tl(t,ws(233)-.2,ws(233)+.2)))
+        else: arm_to(am,-1,Vector((4.75,.9,1.5)),k)
+        face(z,mouth='flat',brow=-.05,brow_r=-12,eyes=.9); face(wa,mouth='O' if k>.5 else 'smile',eyes=1+.25*k,brow=.05*k); look_at(z,hp(am),.6); look_at(wa,hp(am),.6)
+        q=ease(t/DUR); camset(LV((4.2,-2.7,3.05),(4.2,-2.3,2.95),q),(4.2,1.75,1.75),L(30,34,q),4)
     return dict(upd=upd)
 SHOTS['ORDER']=ORDER
 def SINK_TALK():
     kit_set(); z=mk(ZOYA_HOME,SINK[0]-.62,SINK[1],180,'zoya'); wa=mk(WALEED,SINK[0]+.62,SINK[1],180,'wa')
+    point((-1.0,-1.0,2.4),120,(1,.94,.86),r=.8)
     def upd(t):
-        for H,dx in ((z,-.62),(wa,.62)):
-            H['root'].location=(SINK[0]+dx,SINK[1],0); H['root'].rotation_euler=(0,0,R(180)); stand(H,t); blink(H,t)
-            k=math.sin(t*6+dx)
-            for s_ in (1,-1): arm_to(H,s_,Vector((SINK[0]+dx*.4+s_*.18,1.72,1.25+.03*k)),1)
-        kz=tl(t,ws(242)-.3,ws(242)); kw=tl(t,ws(246)-.3,ws(246))
-        look_at(z,hp(wa),.9*kz); look_at(wa,hp(z),.9*kw)
-        talk(z,t,*wt(242,245),rest='flat'); talk(wa,t,*wt(246,247),rest='flat'); face(z,brow=-.04,brow_r=-8); face(wa,brow=-.04,brow_r=-8)
-        camset((-3.3,-1.1,2.9),(-.8,1.4,1.65),24,2.8)
+        kz=ease(tl(t,ws(242)-.45,ws(242)-.05)); kw=ease(tl(t,ws(246)-.45,ws(246)-.05))
+        for H,dx,kk,tr in ((z,-.62,kz,40),(wa,.62,kw,-40)):
+            H['root'].location=(SINK[0]+dx,SINK[1]-.12*kk,0); H['root'].rotation_euler=(0,0,R(L(180,tr,kk))); stand(H,t); blink(H,t)
+            w_=math.sin(t*6+dx)
+            if kk<.6:
+                for s_ in (1,-1): arm_to(H,s_,Vector((SINK[0]+dx*.4+s_*.18,1.72,1.25+.03*w_)),1-kk/.6)
+            else:
+                for s_ in (1,-1): H['arm'][s_].rotation_euler=(R(-15),0,R(s_*6))
+        talk(z,t,*wt(242,245),rest='flat'); talk(wa,t,*wt(246,247),rest='flat')
+        face(z,brow=-.05,brow_r=-12); face(wa,brow=-.05,brow_r=-12,eyes=.95)
+        look_at(z,hp(wa),.8*kz); look_at(wa,hp(z),.8*kw)
+        q=ease(t/DUR); camset(LV((-1.0,-2.7,2.5),(-1.0,-2.3,2.4),q),(-1.0,1.0,1.75),26,2.8)
     return dict(upd=upd)
 SHOTS['SINK_TALK']=SINK_TALK
 def MORAL():
