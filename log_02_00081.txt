@@ -1,0 +1,60 @@
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing e.014
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.099
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.100
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.101
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.102
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.103
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing e.015
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.104
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.105
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.106
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.107
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.108
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.109
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing c.007
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing c.008
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.110
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.111
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing c.009
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing c.010
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.112
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.113
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.114
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.115
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.116
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.117
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.118
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.119
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.120
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.121
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.122
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.123
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.124
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.125
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.126
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.127
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.128
+Fra:111 Mem:78.22M (Peak 121.13M) | Time:00:00.08 | Syncing p.129
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.130
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.131
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing c.011
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing c.012
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.132
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.133
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.134
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.135
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing c.013
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.136
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.137
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.138
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing e.016
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.08 | Syncing p.139
+Fra:111 Mem:78.23M (Peak 121.13M) | Time:00:00.11 | Rendering 1 / 4 samples
+Fra:111 Mem:78.26M (Peak 121.13M) | Time:00:03.20 | Rendering 4 / 4 samples
+Saved: '/home/claude/demo/frames/S02/f00111.png'
+Time: 00:04.36 (Saving: 00:00.30)
+
+FRAME 1 136.6
+SHOT_DONE 2
+
+Blender quit
