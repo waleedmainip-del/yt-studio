@@ -84,8 +84,8 @@ def SH_M(view):
         elif view=='toll':    # high wide: the line never ends
             _camset((L(-6,-6.5,q),L(-34,-30,q),L(8,11,q)),(1.5,L(5,15,q),1.0),L(18,20,q),8,focus=(1.8,HERO_Y,1))
         elif view=='donkey':  # the donkey cart strolls past them in the empty lane
-            donkey_at(S,L(HERO_Y-9,HERO_Y+4,t/DUR),t); face(w,mouth='O',eyes=1.2); look_at(w,headpos(S['dm']),.8); look_at(sh,headpos(S['dm']),.8)
-            _camset((L(4.7,4.6,q),L(HERO_Y-7.5,HERO_Y-6.5,q),1.25),(L(3.6,4.0,q),HERO_Y+2,1.15),L(18,20,q),5,focus=headpos(S['dm']))
+            donkey_at(S,L(HERO_Y-4.5,HERO_Y+5,t/DUR),t); face(w,mouth='O',eyes=1.2); look_at(w,headpos(S['dm']),.8); look_at(sh,headpos(S['dm']),.8)
+            _camset((3.7,L(HERO_Y-7.5,HERO_Y-6.8,q),1.35),(L(4.6,5.0,q),HERO_Y+2,1.15),L(18,20,q),5,focus=headpos(S['dm']))
         elif view=='overtake':# Sherry in the back seat, pointing out of the window
             donkey_at(S,HERO_Y+5+t*.6,t); talk(sh,t,66,70,KEY,rest='O',shapes=('O','shout','O','grin')); face(sh,eyes=1.35,brow=.1)
             point_at(sh,1,cv(C,3.0,4,1.3)); look_at(sh,cv(C,3.0,4,1.3),.8); cam_in(C,-.1,.55,1.85,0,-1.55,1.62,18)
@@ -140,9 +140,9 @@ def SH_N(view):
                 else: face(w,mouth='grin',eyes=1.2)
                 _camset((L(MX+6.6,MX+6.2,q),L(CARY-2.8,CARY-2.4,q),1.25),(px,py,.9),L(20,24,q),4,focus=headpos(w))
             else:               # "Yeh to fridge wali barf hai!" — holds a snowball, disappointed
-                standH(w,px,py,-60,t); blink(w,t); talk(w,t,147,152,KEY,rest='frown',shapes=('O','frown','o','flat')); face(w,eyes=.95,brow=-.06)
-                hw=Vector(headpos(w)); p=hw+root_mat(w).to_3x3()@Vector((.16,-.42,-.32)); arm_reach(w,1,tuple(p)); snowball.location=tuple(p+Vector((0,0,.06)))
-                cam_close(w,-1,1.6,28,ang=22)
+                standH(w,px+.3,py,70,t); blink(w,t); talk(w,t,147,152,KEY,rest='frown',shapes=('O','frown','o','flat')); face(w,eyes=.95,brow=-.06)
+                hw=Vector(headpos(w)); p=hw+root_mat(w).to_3x3()@Vector((.3,-.42,-.62)); arm_reach(w,1,tuple(p)); snowball.location=tuple(p+Vector((0,0,.06)))
+                h=headpos(w); rz=w['root'].rotation_euler[2]+R(-22); _camset((h[0]+math.sin(rz)*1.9,h[1]-math.cos(rz)*1.9,h[2]+.25),(h[0],h[1],h[2]-.25),28,2.8,focus=h)
         elif view=='stuck':     # wheels spin, snow sprays; Bilal jumps out: "Dhakka lagao!"
             C['root'].location=(MX+2.2+.02*math.sin(t*40),CARY,0); wheels_spin(C,t,-30); sit_in(C,w,'drv',t); drive_hands(C,w,t); face(w,mouth='strain',eyes=1.2)
             sit_in(C,sh,'back',t); arms(sh,-50,0,-10,-50,0,10); face(sh,mouth='O')
@@ -268,6 +268,6 @@ def SH_Z(view):
         face(S['w'],mouth='flat',eyes=.6); face(S['bl'],mouth='frown',eyes=.5); face(S['sh'],mouth='frown',eyes=.5); S['sh']['head'].rotation_euler[1]=R(18)
         D=S['D']; D['root'].rotation_euler[2]=R(-90); D['root'].location=(LANES[3],L(HERO_Y+6,HERO_Y-6,t/DUR),0); donkey_walk(D,t); dm=S['dm']
         p=Vector(D['root'].location); seatH(dm,p.x,p.y+.2,90,sh=1.0); arms(dm,-60,0,-10,-60,0,10); face(dm,mouth='grin')
-        _camset((L(5.2,5.0,q),L(HERO_Y-9.5,HERO_Y-9.0,q),1.4),(L(3.4,2.8,q),HERO_Y+1,1.3),L(19,21,q),5,focus=cv(C,0,0,1.3))
+        _camset((L(3.75,3.6,q),L(HERO_Y-8.5,HERO_Y-8.0,q),1.4),(L(3.4,2.8,q),HERO_Y+1,1.3),L(19,21,q),5,focus=cv(C,0,0,1.3))
     return dict(upd=upd)
 SHOTS['Z_cta']=lambda: SH_Z('cta')
