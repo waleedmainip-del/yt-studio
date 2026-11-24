@@ -205,7 +205,7 @@ def SH_F(view):
         for k_,a in D['L'].items(): a.data.energy=a['e0'] if on else (a['e0']*(.35 if k_=='scr' else .04))
         for m_,e0 in ((D['panel'],.6),(D['strip'],5)):
             m=m_.data.materials[0]; m.node_tree.nodes['Principled BSDF'].inputs['Emission Strength'].default_value=e0 if on else 0
-        for l in D['leds']: l.data.materials[0].node_tree.nodes['Principled BSDF'].inputs['Emission Strength'].default_value=6 if on else 0
+        for l in D['leds']: l.scale=(1,1,1) if on else (0,0,0)
         set_screen(D['mon'],'lap_red2' if on else 'lap_noint',1.2 if on else 0.0)
     for a in D['L'].values(): a['e0']=a.data.energy
     def upd(t):
