@@ -7,8 +7,20 @@ FPS=30; MODE=args[3] if len(args)>3 else 'anim'
 SN=int(SHOT); KEY,T0=SEQ[SN-1]; T1=SEQ[SN][1] if SN<len(SEQ) else END; DUR=T1-T0; G0=int(round(T0*FPS)); G1=int(round(T1*FPS))
 make_cam(); spec=SHOTS[KEY](); sc=bpy.context.scene
 OUTR=os.environ.get('OUTR',LH+'/render')
+TRAIL=[]
+if BALLS:
+    for k in range(7): TRAIL.append(oico((0,0,-9),BALLS[0].children[0].dimensions.x/2*(1-.12*(k+1)) if BALLS[0].children else .09,M('#F6F9C0',.5,emit=2.2,alpha=.55-.06*k),None,sub=2))
 def upd_all(t):
-    TNOW[0]=t; spec['upd'](t); fx.upd(t); bpy.context.view_layer.update(); spec['upd'](t); fx.upd(t)
+    TNOW[0]=t; hist=[]
+    if TRAIL:
+        for k in range(len(TRAIL),0,-1): spec['upd'](t-k*.02); hist.append(BALLS[0].matrix_world.translation.copy() if BALLS[0].parent else BALLS[0].location.copy())
+    spec['upd'](t); fx.upd(t); bpy.context.view_layer.update(); spec['upd'](t); fx.upd(t)
+    if TRAIL:
+        bpy.context.view_layer.update(); cur=BALLS[0].matrix_world.translation.copy(); hist=hist[::-1]
+        sp=(cur-hist[0]).length/.02 if hist else 0
+        for k,o in enumerate(TRAIL):
+            ok=sp>4.0 and cur.z>-1 and hist[k].z>-1 and (hist[k]-cur).length<3.0
+            o.location=hist[k] if ok else (0,0,-9); o.scale=(1,1,1) if ok else (0,0,0)
 if MODE=='probe':
     from bpy_extras.object_utils import world_to_camera_view
     t=float(args[4]); upd_all(t); dg=bpy.context.evaluated_depsgraph_get(); cam=sc.camera; o=cam.matrix_world.translation

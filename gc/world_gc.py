@@ -48,6 +48,12 @@ def razia_house():
     B.box((RX,GY+5.97,1.3),(.6,.04,1.3),M('#5A3A22',.6,kind='wood'),.02)
     B.ico((RX+3.2,GY+3.5,.9),.9,M('#3F7A3A',.85,kind='leaves'),sub=1); B.cyl((RX+3.2,GY+3.5,.3),.35,.6,M('#B8562A',.7),seg=10)
     B.box((RX-3.0,GY+4.2,.55),(.6,.4,.55),M('#7A5A3A',.7,kind='wood'),.02)                          # charpai stand-in: old crate
+    r=random.Random(77); cols=['#D7E84A','#F2F2EE','#C8372D','#D7E84A','#E8A23A','#3A8FD8','#E4F25A']
+    for k in range(340):                                                                   # the pile: every ball that never came back
+        a=r.uniform(0,2*pi); rr=1.35*math.sqrt(r.uniform(0,1)); x=RX-2.0+math.cos(a)*rr*1.15; y=GY+4.5+math.sin(a)*rr*.8
+        z=.09+(1-rr/1.35)**1.3*1.15+r.uniform(-.04,.04)
+        oico((x,y,z),r.uniform(.085,.1),M(r.choice(cols),.65,kind='fabric'),None,sub=1)
+    for k in range(9): oico((RX+r.uniform(-3.4,3.4),GY+r.uniform(1.2,5.4),.09),.09,M(r.choice(cols),.65,kind='fabric'),None,sub=1)
     leaves=[]
     gm=M('#1E6A3A',.45,metal=.5)
     for s_ in (-1,1):
@@ -75,16 +81,22 @@ def bricks_fall(W,t,t_hit,power=1.0,seed=1):
         if dt>=T: z=half[2]; x=rl.x+vx*T+vx*.25*min(.4,dt-T)
         spin=min(dt,T)*r.uniform(6,11)
         o.location=(x,y,max(half[2] if dt>=T else 0,z)); o.rotation_euler=(spin if dt<T else round(spin/(pi/2))*(pi/2),r.uniform(-1,1)*spin*.3 if dt<T else 0,spin*.4)
-def ball_obj(r_=.065):
-    e=empty((0,0,0)); oico((0,0,0),r_,M('#D7E84A',.6,kind='fabric'),e,sub=2)
-    for k in range(3): ocyl((0,0,0),r_*1.02,.035,M('#C8372D',.5),e,rot=(R(60*k),0,0),seg=16)        # red tape bands
-    return e
+BALLS=[]
+def ball_obj(r_=.095):
+    e=empty((0,0,0)); oico((0,0,0),r_,M('#E4F25A',.55,emit=.35,kind='fabric'),e,sub=2)
+    for k in range(2): ocyl((0,0,0),r_*1.02,.045,M('#D6332A',.5,emit=.2),e,rot=(R(90*k),0,0),seg=16)        # red tape bands
+    BALLS.append(e); return e
 def bat_obj(parent=None):
     """tape-ball bat; local origin at the top of the handle, blade hanging along -z"""
-    e=empty((0,0,0),parent); wd=M('#D9B98A',.6,kind='wood',sc=.4)
-    ocyl((0,0,-.18),.035,.36,M('#16171C',.7),e,rot=(0,0,0),seg=8)
-    obox((0,0,-.85),(.05,.11,.5),wd,.02,e); obox((0,-.02,-.95),(.051,.09,.3),M('#E8D0A8',.6),0,e)
-    for k in range(3): obox((0,0,-.5-k*.25),(.052,.112,.02),M('#C8372D',.5),0,e)
+    e=empty((0,0,0),parent); wd=M('#C8955A',.55,kind='wood',sc=.35); face_=M('#D9AE74',.5,kind='wood',sc=.35); grip=M('#1C1D22',.8)
+    ocyl((0,0,-.19),.032,.38,grip,e,rot=(0,0,0),seg=10)                                   # rubber grip
+    for k in range(5): ocyl((0,0,-.04-k*.075),.036,.018,M('#C8372D' if k%2 else '#F2F2EE',.6),e,rot=(0,0,0),seg=10)   # grip tape rings
+    obox((0,0,-.42),(.028,.05,.06),wd,.01,e)                                              # splice
+    for s_ in (1,-1): obox((0,s_*.055,-.5),(.03,.04,.035),wd,.01,e,rot=(R(-s_*28),0,0))     # sloped shoulders
+    obox((0,0,-.92),(.024,.085,.44),face_,.012,e)                                          # flat face
+    obox((.03,0,-.95),(.022,.035,.4),wd,.015,e)                                            # back spine
+    obox((0,0,-1.37),(.024,.078,.02),wd,.015,e)                                            # toe
+    for k in range(2): obox((0,0,-.62-k*.42),(.027,.088,.022),M('#C8372D',.5),0,e)          # red tape bands
     return e
 def bucket_obj(parent=None):
     e=empty((0,0,0),parent); r=random.Random(40)
@@ -92,7 +104,7 @@ def bucket_obj(parent=None):
     obox((0,0,.62),(.3,.012,.012),M('#C9CED8',.3,metal=.8),0,e)
     for k in range(40):
         a=r.uniform(0,2*pi); rr=r.uniform(0,.22) if k<28 else r.uniform(0,.12); z=.36+(.1 if k>=28 else 0)+r.uniform(0,.08)
-        oico((math.cos(a)*rr,math.sin(a)*rr,z),.06,M(r.choice(['#D7E84A','#F2F2EE','#C8372D','#D7E84A','#E8A23A']),.6,kind='fabric'),e,sub=1)
+        oico((math.cos(a)*rr,math.sin(a)*rr,z),.065,M('#E4F25A',.6,kind='fabric'),e,sub=1); ocyl((math.cos(a)*rr,math.sin(a)*rr,z),.067,.03,M('#D6332A',.5),e,rot=(R(r.uniform(0,180)),R(r.uniform(0,180)),0),seg=12)
     return e
 def gali_k():
     r=random.Random(9)

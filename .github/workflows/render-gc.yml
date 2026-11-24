@@ -6,12 +6,12 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: gc-render-r6
+  group: gc-render-r7
   cancel-in-progress: false
 jobs:
   render:
     runs-on: ubuntu-24.04
-    timeout-minutes: 180
+    timeout-minutes: 300
     strategy:
       fail-fast: false
       max-parallel: 20
@@ -30,6 +30,8 @@ jobs:
           command -v xvfb-run
           blender -b --version | head -1; ffmpeg -version | head -1
       - name: Render pieces
+        env:
+          SAMPLES: '24'
         run: python3 tools/gh_render_gc.py ${{ matrix.job }}
       - name: Push results branch
         if: always()

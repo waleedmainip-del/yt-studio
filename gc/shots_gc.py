@@ -1,7 +1,7 @@
 # Shots for "Gali Cricket Ke Qanoon". Cuts sit on narration words (audio/words.json); SEQ is written by gen_seq.py.
 SHOTS={}
-END=61.4
-SEQ=[('OPEN', 0.0), ('MOIZ', 5.3), ('B1', 8.833), ('M1', 11.2), ('B2', 12.433), ('M2', 14.7), ('B3', 17.067), ('M3', 19.2), ('CH', 21.033), ('BOOM', 23.9), ('M4', 25.967), ('PLEAD', 29.467), ('SIX', 33.5), ('GATE', 38.433), ('M5', 43.067), ('KNOCK', 46.967), ('R1', 49.067), ('BAT', 50.133), ('ENDW', 53.967), ('CTA', 58.2)]
+END=73.4
+SEQ=[('OPEN', 0.0), ('MOIZ', 4.5), ('B1', 8.633), ('M1', 10.8), ('B2', 11.933), ('M2', 13.967), ('B3', 16.167), ('M3', 18.267), ('W1', 19.9), ('CH', 23.033), ('BOOM', 26.7), ('M4', 29.467), ('PLEAD', 32.733), ('SIX', 37.433), ('GATE', 43.567), ('M5', 47.533), ('KNOCK', 50.567), ('WA2', 52.967), ('R1', 57.767), ('WA3', 59.3), ('BAT', 61.767), ('ENDW', 65.8), ('CTA', 70.067)]
 W_=json.load(open(LH+'/audio/words.json'))
 def wt(a,b): return (W_[a]['s'],W_[b]['e'])
 def ws(i): return W_[i]['s']-T0
@@ -60,7 +60,7 @@ def bowl(S,t,t_rel,v=4.2,label=True):
     return None
 def ball_to_wicket(S,t,t_rel,dur=.55):
     """release -> bounce -> wicket; returns impact time"""
-    p0=Vector((REL_X-.25,LANE+.1,2.55)); pb=Vector((2.6,.15,.07)); pw=Vector((.02,0,.5))
+    p0=Vector((REL_X-.25,LANE+.1,2.55)); pb=Vector((2.6,.15,.095)); pw=Vector((.02,0,.5))
     d1=dur*.62; d2=dur*.38
     if t<t_rel+d1: f=(t-t_rel)/d1; p=p0.lerp(pb,f); p.z=L(p0.z,pb.z,f)+.4*f*(1-f)
     else: f=min(1,(t-t_rel-d1)/d2); p=arc(pb,pw,f,.28)
@@ -80,8 +80,8 @@ def OPEN_():
 SHOTS['OPEN']=OPEN_
 def MOIZ_():
     S=pset(); b=S['ball']; mo=S['mo']; T=dict(SEQ)['MOIZ']
-    bubble('MOIZ',(CREASE[0]+.25,CREASE[1]-.45,3.15),W_[16]['s']-T,size=.2,col='#FFFFFF',bg='#1E8A4A',dur=W_[21]['s']-W_[16]['s'])
-    bubble('QANOON: MOIZ KE',(CREASE[0]+.25,CREASE[1]-.45,3.15),W_[21]['s']-T,size=.13,col='#FFFFFF',bg='#C8372D')
+    bubble('MOIZ',(CREASE[0]+.25,CREASE[1]-.45,3.15),W_[17]['s']-T,size=.2,col='#FFFFFF',bg='#1E8A4A',dur=W_[20]['s']-W_[17]['s'])
+    bubble('QANOON: MOIZ KE',(CREASE[0]+.25,CREASE[1]-.45,3.15),W_[20]['s']-T,size=.13,col='#FFFFFF',bg='#C8372D')
     def upd(t):
         fidle(S,t,look=hp(mo)); mo['root'].location=(CREASE[0],CREASE[1],0); mo['root'].rotation_euler=(0,0,R(30)); stand(mo,t); blink(mo,t)
         face(mo,mouth='smirk',brow=.04)
@@ -102,7 +102,7 @@ def BALLW(power=1.0,cam='side',seed=1,slow=1.0,t_rel=None):
             else:
                 bp,t_hit=ball_to_wicket(S,tt,tr)
                 if tt<t_hit: b.location=bp
-                else: f=tt-t_hit; b.location=(-.4-1.5*f,.1,max(.07,.5+1.0*f-4.9*f*f))
+                else: f=tt-t_hit; b.location=(-.4-1.5*f,.1,max(.095,.5+1.0*f-4.9*f*f))
                 bricks_fall(S['wk'],tt,t_hit,power,seed)
                 mo=S['mo']
                 if tt>t_hit-.25: bat_angle(S,L(28,-40,tl(tt,t_hit-.25,t_hit))); bat_hands(S)
@@ -131,27 +131,27 @@ def mtalk(a,b_,extra=None,rest_='flat',fallen=None,cam=None,rz=60):
     return S_
 def _m1(S,t):
     mo=S['mo']; k=tl(t,0,.3)
-    for s in (1,-1): mo['arm'][s].rotation_euler=(R(-40*k),0,R(s*70*k))
+    for s in (1,-1): mo['arm'][s].rotation_euler=(R(-35*k),0,R(s*32*k))
     S['batp'].location=(.5,-.6,0.0); S['batp'].rotation_euler=(R(80),0,R(20))
 def _m2(S,t):
     mo=S['mo']; k=tl(t,0,.25); mo['arm'][-1].rotation_euler=(R(-170*k),0,R(-10)); look_at(mo,(WIRE_X,0,WIRE_Z),.5*k,maxpitch=40)
     face(mo,brow=.05)
 def _m3(S,t):
     mo=S['mo']; k=tl(t,0,.25)
-    for s in (1,-1): mo['arm'][s].rotation_euler=(R(-75*k),0,R(s*25*k))
+    for s in (1,-1): mo['arm'][s].rotation_euler=(R(-55*k),0,R(s*12*k))
     S['batp'].location=(.5,-.6,0.0); S['batp'].rotation_euler=(R(80),0,R(20)); face(mo,brow=.03,brow_r=10)
-SHOTS['M1']=mtalk(26,28,_m1,rest_='smirk',fallen=(1.0,1))
+SHOTS['M1']=mtalk(25,27,_m1,rest_='smirk',fallen=(1.0,1))
 def B2_():
-    S=pset(); b=S['ball']; tr=.95; b1=S['F']['b1']
+    S=pset(); b=S['ball']; tr=.55; b1=S['F']['b1']
     def upd(t):
         fidle(S,t); mstance(S,t); mo=S['mo']
         p=bowl(S,t,tr)
-        t_hit=tr+.5; catch=t_hit+1.15; hand=Vector(hp(b1))+Vector((0,0,.45))
+        t_hit=tr+.5; catch=t_hit+.85; hand=Vector(hp(b1))+Vector((0,0,.45))
         if p is not None: b.location=p
         elif t<t_hit:
-            f=(t-tr)/.5; p0=Vector((REL_X-.25,LANE+.1,2.55)); pb=Vector((3.0,.1,.07)); pc=Vector((1.25,-.3,.95))
+            f=(t-tr)/.5; p0=Vector((REL_X-.25,LANE+.1,2.55)); pb=Vector((3.0,.1,.095)); pc=Vector((1.25,-.3,.95))
             b.location=p0.lerp(pb,min(1,f/.65)) if f<.65 else arc(pb,pc,(f-.65)/.35,.2)
-        elif t<catch: b.location=arc(Vector((1.25,-.3,.95)),hand,(t-t_hit)/(catch-t_hit),4.6)
+        elif t<catch: b.location=arc(Vector((1.25,-.3,.95)),hand,(t-t_hit)/(catch-t_hit),3.6)
         else: b.location=hand
         if t>t_hit-.3: bat_angle(S,L(28,-115,ease_out(tl(t,t_hit-.3,t_hit+.15)))); bat_hands(S)
         if t>t_hit: look_at(mo,b.location,.8,maxpitch=60,maxyaw=100)
@@ -163,9 +163,9 @@ def B2_():
         q=ease(t/DUR); camset(LV((8.0,-1.8,1.6),(7.6,-1.7,1.8),q),LV((2.0,0,1.2),(3.8,1.4,2.2),q),18,5.6)
     return dict(upd=upd)
 SHOTS['B2']=B2_
-SHOTS['M2']=mtalk(29,35,_m2,rest_='smirk',cam=((1.8,-3.0,1.1),(.6,-.36,2.2),26))
+SHOTS['M2']=mtalk(28,34,_m2,rest_='smirk',cam=((1.8,-3.0,1.1),(.6,-.36,2.2),26))
 SHOTS['B3']=BALLW(1.1,'front',3)
-SHOTS['M3']=mtalk(36,39,_m3,fallen=(1.1,3))
+SHOTS['M3']=mtalk(35,38,_m3,fallen=(1.1,3))
 SHOTS['CH']=BALLW(0,'slowwa',5,slow=.42,t_rel=1.0)
 def BOOM_():
     S=pset(); b=S['ball']; mo=S['mo']; t_hit=.45
@@ -173,7 +173,7 @@ def BOOM_():
     def upd(t):
         fidle(S,t); mstance(S,t); tt=t_hit+(t-t_hit)*(.45 if t>t_hit else 1)
         if t<t_hit: b.location=arc(Vector((2.2,.12,.12)),Vector((.02,0,.5)),t/t_hit,.15)
-        else: f=tt-t_hit; b.location=(-.5-4*f,.2,max(.07,.6+2*f-4.9*f*f))
+        else: f=tt-t_hit; b.location=(-.5-4*f,.2,max(.095,.6+2*f-4.9*f*f))
         bricks_fall(S['wk'],tt,t_hit,2.4,7)
         if t>t_hit:
             face(mo,mouth='O',brow=.06,eyes=1.3); mo['root'].rotation_euler[0]=R(-10)
@@ -190,7 +190,7 @@ def M4_():
         mo['root'].rotation_euler=(0,0,R(lerp_angle(60,-120,tl(t,1.1,1.6))))
         if t>1.3: walk(mo,(t-1.3)*1.1+mo['seed'],step=.5,arm=10)
         else: stand(mo,t)
-        blink(mo,t); talk(mo,t,*wt(52,61),rest='flat'); face(mo,brow=-.03,brow_r=-10,eyes=.85)
+        blink(mo,t); talk(mo,t,*wt(62,71),rest='flat'); face(mo,brow=-.03,brow_r=-10,eyes=.85)
         hand=mo['arm'][1].matrix_world@Vector(hand_loc(mo,1)); mo['arm'][1].rotation_euler=(R(-70),0,R(10)); b.location=hand
         S['batp'].location=(-.3,.05,1.9); S['batp'].rotation_euler=(R(-60),R(10),R(90)); mo['arm'][-1].rotation_euler=(R(-150),0,R(-20))
         for H in S['F'].values(): face(H,mouth='o',brow=.05)
@@ -205,9 +205,9 @@ def PLEAD_():
     def upd(t):
         bricks_fall(bricks,10,0,2.4,7)
         mo['root'].location=(mx-1.6,my,0); mo['root'].rotation_euler=(0,0,R(90)); stand(mo,t); blink(mo,t)
-        nod=tl(t,ws(67),ws(67)+.4)
+        nod=tl(t,ws(78),ws(78)+.4)
         for s in (1,-1): arm_to(mo,s,root_mat(mo)@Vector((s*.05,-.42,1.5)),1-nod)
-        mo['head'].rotation_euler=(R(10*math.sin((t-ws(67))*9)*nod*(1-tl(t,ws(67)+.9,ws(67)+1.2))),R(-14*(1-nod)),0); face(mo,mouth='smirk' if nod>.5 else 'flat',brow=.04*nod)
+        mo['head'].rotation_euler=(R(10*math.sin((t-ws(78))*9)*nod*(1-tl(t,ws(78)+.9,ws(78)+1.2))),R(-14*(1-nod)),0); face(mo,mouth='smirk' if nod>.5 else 'flat',brow=.04*nod)
         hand=mo['arm'][1].matrix_world@Vector(hand_loc(mo,1)); b.location=hand
         S['batp'].location=(-.3,.05,1.9); S['batp'].rotation_euler=(R(-60),R(10),R(90))
         for i,(k,(x,y)) in enumerate(PLEAD_POS.items()):
@@ -222,14 +222,14 @@ def PLEAD_():
     return dict(upd=upd)
 SHOTS['PLEAD']=PLEAD_
 def SIX_():
-    S=pset(); b=S['ball']; tr=1.05; t_hit=tr+.5; land=we(85)-.15
+    S=pset(); b=S['ball']; tr=1.05; t_hit=tr+.5; land=DUR-.08
     def upd(t):
         fidle(S,t); mstance(S,t); mo=S['mo']
         p=bowl(S,t,tr)
-        pc=Vector((1.35,-.36,1.1)); pl=Vector((RX+.2,GY+2.2,.07))
+        pc=Vector((1.35,-.36,1.1)); pl=Vector((RX+.2,GY+2.2,.095))
         if p is not None: b.location=p
         elif t<t_hit:
-            f=(t-tr)/.5; p0=Vector((REL_X-.25,LANE+.1,2.55)); pb=Vector((3.0,.1,.07))
+            f=(t-tr)/.5; p0=Vector((REL_X-.25,LANE+.1,2.55)); pb=Vector((3.0,.1,.095))
             b.location=p0.lerp(pb,min(1,f/.65)) if f<.65 else arc(pb,pc,(f-.65)/.35,.2)
         elif t<land: b.location=arc(pc,pl,(t-t_hit)/(land-t_hit),7.0)
         else: b.location=pl
@@ -240,7 +240,7 @@ def SIX_():
             wa=S['wa']; look_at(wa,b.location,.8,maxpitch=70,maxyaw=120); face(wa,mouth='O',eyes=1.2)
         if t<t_hit+.25: camset((7.2,-1.6,2.1),(1.8,0,1.2),24,5.6)
         else:
-            bl=Vector(b.location); f=tl(t,t_hit+.25,land+.3); cpos=Vector((L(5.5,RX-4.5,ease(f)),L(-1.6,-1.2,f),L(2.0,2.6,math.sin(pi*f)*.6+f*.4)))
+            bl=Vector(b.location); f=tl(t,t_hit+.25,land+.3); cpos=Vector((L(5.5,RX-4.5,ease(f)),L(-2.6,-2.4,f),L(1.8,2.3,math.sin(pi*f)*.5+f*.5)))
             camset(tuple(cpos),tuple(bl.lerp(Vector((RX,GY,1.8)),.4+.6*tl(t,land-.4,land+.3))),22,8)
     return dict(upd=upd)
 SHOTS['SIX']=SIX_
@@ -249,11 +249,21 @@ def gset():
     return S
 def gate_open(S,k):
     for h in S['leaves']: s_=1 if h.location.x>RX else -1; h.rotation_euler[2]=R(-s_*95*k)
+PILE=(RX-2.0,GY+4.5)
 def GATE_():
-    S=gset(); b=S['ball']; b.location=(0,0,-5)
+    S=gset(); b=S['ball']
     for H in list(S['F'].values())+[S['mo'],S['wa']]: H['root'].location=(H['root'].location[0],-30,0)
+    p0=Vector((RX+.9,GY-.6,7.0)); p1=Vector((RX+.2,GY+2.2,.095)); p2=Vector((RX-.5,GY+2.9,.095)); p3=Vector((RX-.9,GY+3.4,.095)); p4=Vector((PILE[0]+1.05,PILE[1]-.2,.095))
     def upd(t):
-        q=ease(t/DUR); camset(LV((RX-.4,-2.6,1.2),(RX-.2,-.6,1.5),q),LV((RX,GY,2.4),(RX,GY,2.2),q),L(22,26,q),5.6)
+        if t<.55: f=t/.55; b.location=p0.lerp(p1,f); b.location.z=L(7.0,.095,f*f)
+        elif t<1.0: b.location=arc(p1,p2,(t-.55)/.45,.7)
+        elif t<1.3: b.location=arc(p2,p3,(t-1.0)/.3,.22)
+        else: f=ease_out(tl(t,1.3,2.4)); b.location=p3.lerp(p4,f)
+        b.rotation_euler=(t*9,t*4,0)
+        q=ease(tl(t,1.6,DUR)); c0=Vector((RX+1.6,GY+1.0,.45)); c1=Vector((RX+.4,GY+1.0,2.3))
+        tg=Vector(b.location).lerp(Vector((PILE[0]+.2,PILE[1],.55)),ease(tl(t,1.2,2.6)))
+        tg.z=max(tg.z,.4) if t>.55 else tg.z
+        camset(tuple(c0.lerp(c1,q)),tuple(tg),L(20,27,q),4)
     return dict(upd=upd)
 SHOTS['GATE']=GATE_
 GW=(RX+.95,GY-1.05)
@@ -263,10 +273,10 @@ def M5_():
     for i,(k,H) in enumerate(S['F'].items()): H['root'].location=[(RX-3.4,.9),(RX-4.7,.2),(RX-3.2,-.7),(RX-4.9,-1.4)][i]+(0,)
     def upd(t):
         mo['root'].location=(MP[0],MP[1],0); mo['root'].rotation_euler=(0,0,R(face_dir(WP[0]-MP[0],WP[1]-MP[1]))); stand(mo,t); blink(mo,t)
-        k=tl(t,ws(101)-.1,ws(101)+.2); arm_to(mo,1,Vector((WP[0],WP[1],1.6)),k) if k>0 else None; look_at(mo,(RX-.4,-1.6,1.9),.5*(1-k)); talk(mo,t,*wt(97,106),rest='smirk'); face(mo,brow=.04)
+        k=tl(t,ws(109)-.1,ws(109)+.2); arm_to(mo,1,Vector((WP[0],WP[1],1.6)),k) if k>0 else None; look_at(mo,(RX-.4,-1.6,1.9),.5*(1-k)); talk(mo,t,*wt(105,114),rest='smirk'); face(mo,brow=.04)
         S['batp'].location=(-.3,.05,1.9); S['batp'].rotation_euler=(R(-60),R(10),R(90)); mo['arm'][-1].rotation_euler=(R(-150),0,R(-20))
         wa['root'].location=(WP[0],WP[1],0); wa['root'].rotation_euler=(0,0,R(face_dir(MP[0]-WP[0],MP[1]-WP[1]))); stand(wa,t); blink(wa,t)
-        kk=tl(t,ws(102),ws(102)+.3); face(wa,mouth='O' if kk>.5 else 'flat',brow=.06*kk,eyes=1+.25*kk); wa['arm'][1].rotation_euler=(R(-60*kk),R(20*kk),R(30*kk))
+        kk=tl(t,ws(110),ws(110)+.3); face(wa,mouth='O' if kk>.5 else 'flat',brow=.06*kk,eyes=1+.25*kk); wa['arm'][1].rotation_euler=(R(-60*kk),R(20*kk),R(30*kk))
         for i,H in enumerate(S['F'].values()): stand(H,t+i); blink(H,t); H['root'].rotation_euler=(0,0,R(face_dir(MP[0]-H['root'].location[0],MP[1]-H['root'].location[1]))); look_at(H,hp(mo),.6); face(H,mouth='smile')
         c0=(RX-.4,-2.4,1.95); tg=(RX-.4,1.15,1.55); camset(drift(c0,tg,t),tg,20,2.8)
     return dict(upd=upd)
@@ -291,10 +301,11 @@ def R1_():
     S=gset(); wa=S['wa']; b=S['ball']; b.location=(0,0,-5); R_=razia_mk(S); bk=bucket_obj(R_['root']); bk.location=(0,-.62,.85); gate_open(S,1)
     for H in list(S['F'].values())+[S['mo']]: H['root'].location=(H['root'].location[0],-30,0)
     def upd(t):
+        lift=ease(tl(t,we(128)+.05,we(128)+.45)); bk.location=(0,L(-.62,-.8,lift),L(.85,1.02,lift))
         wa['root'].location=(GW[0]+1.1,GW[1]-.3,0); wa['root'].rotation_euler=(R(-5),0,R(200)); stand(wa,t); blink(wa,t); face(wa,mouth='O',eyes=1.2,brow=.06)
         stand(R_,t); blink(R_,t); m=root_mat(R_)
-        for s in (1,-1): arm_to(R_,s,m@Vector((s*.28,-.6,1.42)),1)
-        talk(R_,t,*wt(107,109),rest='flat'); face(R_,brow=-.02,brow_r=-8,eyes=.85); R_['head'].rotation_euler[1]=R(-8)
+        for s in (1,-1): arm_to(R_,s,m@Vector((s*.28,-.66-.18*lift,1.42+.17*lift)),1)
+        talk(R_,t,*wt(126,128),rest='flat'); face(R_,brow=-.02,brow_r=-8,eyes=.85); R_['head'].rotation_euler[1]=R(-8)
         c0,tg,ln=closecam(R_,0,-.5,3.0,lens=32,tz=-.45); camset(drift(c0,tg,t),tg,ln,2.8)
     return dict(upd=upd)
 SHOTS['R1']=R1_
@@ -308,7 +319,7 @@ def BAT_():
         if 0.1<t<1.1: walk(R_,k*1.4+R_['seed'],step=.4,arm=0)
         else: stand(R_,t)
         blink(R_,t); arm_to(R_,1,rb.matrix_world.translation,1); R_['arm'][-1].rotation_euler=(R(-30),0,R(-40))
-        talk(R_,t,*wt(110,116),rest='smirk'); face(R_,brow=-.03,brow_r=-6,eyes=.9)
+        talk(R_,t,*wt(135,143),rest='smirk'); face(R_,brow=-.03,brow_r=-6,eyes=.9)
         wy=L(GW[1],GW[1]-1.0,ease(tl(t,.2,1.1))); wa['root'].location=(GW[0]+1.4,wy,0); wa['root'].rotation_euler=(R(-6),0,R(160)); stand(wa,t); blink(wa,t); face(wa,mouth='O',eyes=1.2,brow=.06)
         q=ease(t/DUR); camset(LV((RX-.7,GY-4.6,1.6),(RX-.6,GY-4.2,1.7),q),(RX+.3,GY-.8,1.8),24,4)
     return dict(upd=upd)
@@ -334,7 +345,7 @@ def ENDW_():
         else:
             mo['root'].location=(REL_X-.6,LANE,0); stand(mo,t); mo['arm'][1].rotation_euler=(R(-20),0,R(4))
             pc=Vector((1.35,-.36,1.1)); pl=Vector((-14,1.2,9))
-            if t<t_hit: f=(t-tr)/.5; p0=Vector((REL_X-.25,LANE+.1,2.4)); pb=Vector((3.0,.1,.07)); b.location=p0.lerp(pb,min(1,f/.65)) if f<.65 else arc(pb,pc,(f-.65)/.35,.2)
+            if t<t_hit: f=(t-tr)/.5; p0=Vector((REL_X-.25,LANE+.1,2.4)); pb=Vector((3.0,.1,.095)); b.location=p0.lerp(pb,min(1,f/.65)) if f<.65 else arc(pb,pc,(f-.65)/.35,.2)
             else: b.location=arc(pc,Vector((14,1.0,.5)),min(1.2,(t-t_hit)/land),9)
         blink(mo,t); face(mo,mouth='flat',brow=-.04,brow_r=-12,eyes=.8); mo['head'].rotation_euler[0]=R(10)
         wa['root'].location=(3.6,2.1,0); wa['root'].rotation_euler=(0,0,R(face_dir(-3.0,-2.4))); stand(wa,t); blink(wa,t)
@@ -356,3 +367,48 @@ def CTA_():
         c0,tg,ln=closecam(mo,-60,.0,2.9,lens=32,bias=.6); camset(drift(c0,tg,t),tg,ln,2.8)
     return dict(upd=upd)
 SHOTS['CTA']=CTA_
+
+def W1_():
+    S=pset(); wa=S['wa']; b=S['ball']; b.location=(0,0,-5); WX=8.6
+    bricks_fall(S['wk'],10,0,1.1,3)
+    def upd(t):
+        fidle(S,t); mstance(S,t,a=15); face(S['mo'],mouth='smirk',brow=.03)
+        wa['root'].location=(WX,LANE,0); wa['root'].rotation_euler=(0,0,R(-90)); stand(wa,t); blink(wa,t)
+        k=tl(t,0,.3); m=root_mat(wa)
+        for s_ in (1,-1): wa['arm'][s_].rotation_euler=(R(-45*k),0,R(s_*22*k))
+        k3=tl(t,ws(41)-.1,ws(41)+.15)*(1-tl(t,ws(46),ws(46)+.3))
+        if k3>0: wa['arm'][1].rotation_euler=(R(-100*k3-45*(1-k3)),0,R(8))
+        talk(wa,t,*wt(39,46),rest='flat'); face(wa,brow=-.05,brow_r=-14,eyes=.95)
+        c0,tg,ln=closecam(wa,-90,.3,2.9,lens=32); camset(drift(c0,tg,t),tg,ln,2.8)
+    return dict(upd=upd)
+SHOTS['W1']=W1_
+def WA2_():
+    S=gset(); wa=S['wa']; b=S['ball']; b.location=(0,0,-5); R_=razia_mk(S); bk=bucket_obj(R_['root']); bk.location=(0,-.62,.85); gate_open(S,1)
+    for H in list(S['F'].values())+[S['mo']]: H['root'].location=(H['root'].location[0],-30,0)
+    def upd(t):
+        wa['root'].location=(RX+.45,GY-.95,0); wa['root'].rotation_euler=(0,0,R(175)); stand(wa,t); blink(wa,t)
+        k=tl(t,ws(117)-.2,ws(117)+.2)
+        arm_to(wa,1,root_mat(wa)@Vector((.3,.22,2.05)),.4+.6*k)                 # nervous hand to the back of the head
+        wa['arm'][-1].rotation_euler=(R(-15),0,R(-6))
+        talk(wa,t,*wt(115,125),rest='smile'); face(wa,brow=.05,brow_r=-10,eyes=1.05)
+        R_['root'].location=(RX,GY+.2,0); stand(R_,t); blink(R_,t); m=root_mat(R_)
+        for s_ in (1,-1): arm_to(R_,s_,m@Vector((s_*.28,-.6,1.42)),1)
+        face(R_,mouth='flat',brow=-.03,brow_r=-10,eyes=.82); look_at(R_,hp(wa),.6)
+        h=hp(wa); q=ease(t/DUR); camset(LV((RX+1.0,GY+1.7,2.05),(RX+.95,GY+1.5,2.0),q),(h[0],h[1],h[2]-.25),L(30,34,q),2.8)
+    return dict(upd=upd)
+SHOTS['WA2']=WA2_
+def WA3_():
+    S=gset(); wa=S['wa']; b=S['ball']; b.location=(0,0,-5); R_=razia_mk(S); bk=bucket_obj(R_['root']); bk.location=(0,-.8,1.02); gate_open(S,1)
+    for H in list(S['F'].values())+[S['mo']]: H['root'].location=(H['root'].location[0],-30,0)
+    def upd(t):
+        wa['root'].location=(RX+.2,GY-1.45,0); wa['root'].rotation_euler=(0,0,R(175)); stand(wa,t); blink(wa,t)
+        look_at(wa,bk.matrix_world.translation+Vector((0,0,.4)),.45,maxpitch=22)
+        k=tl(t,ws(130)-.15,ws(130)+.15)*(1-tl(t,we(134),we(134)+.3))
+        wa['arm'][1].rotation_euler=(R(-80*k),R(10*k),R(25*k)); wa['arm'][-1].rotation_euler=(R(-10),0,R(-6))
+        talk(wa,t,*wt(129,134),rest='flat'); face(wa,brow=.06,brow_r=-10,eyes=1.1)
+        R_['root'].location=(RX,GY+.2,0); stand(R_,t); blink(R_,t); m=root_mat(R_)
+        for s_ in (1,-1): arm_to(R_,s_,m@Vector((s_*.28,-.84,1.59)),1)
+        face(R_,mouth='smirk' if t>we(134) else 'flat',brow=-.03,brow_r=-10,eyes=.82); look_at(R_,hp(wa),.6)
+        q=ease(t/DUR); h=hp(wa); camset(LV((RX+.05,GY-.12,1.95),(RX+.07,GY-.2,1.95),q),(h[0],h[1],h[2]-.4),22,2.8)
+    return dict(upd=upd)
+SHOTS['WA3']=WA3_
