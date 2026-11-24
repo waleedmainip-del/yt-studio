@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: gc-render-r5
+  group: gc-render-r6
   cancel-in-progress: false
 jobs:
   render:
@@ -24,10 +24,10 @@ jobs:
         run: |
           curl -sSL --retry 4 -o /tmp/b.tar.xz https://download.blender.org/release/Blender4.0/blender-4.0.2-linux-x64.tar.xz
           tar -xf /tmp/b.tar.xz -C /opt && sudo ln -sf /opt/blender-4.0.2-linux-x64/blender /usr/local/bin/blender
-          ps aux | grep -i [a]pt | head -5 || true
-          need=""; command -v xvfb-run || need="$need xvfb xauth"; command -v ffmpeg || need="$need ffmpeg"
-          need="$need libegl1 libgl1 libglx-mesa0 libgl1-mesa-dri libxrender1 libxi6 libxkbcommon0 libsm6 libgl1 libegl1 libxxf86vm1 libxfixes3"
-          if [ -n "$need" ]; then sudo apt-get -o DPkg::Lock::Timeout=600 -o Acquire::Retries=3 update -q; sudo apt-get -o DPkg::Lock::Timeout=600 -o Acquire::Retries=3 install -y -q --no-install-recommends $need; fi
+          sudo dpkg -i tools/debs/libegl1_*.deb || true
+          sudo dpkg -i tools/debs/libegl-mesa0_*.deb || true
+          if ! command -v ffmpeg; then curl -sSL --retry 4 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz && tar -xf /tmp/ff.tar.xz -C /opt && sudo ln -sf /opt/ffmpeg-master-latest-linux64-gpl/bin/ffmpeg /usr/local/bin/ffmpeg && sudo ln -sf /opt/ffmpeg-master-latest-linux64-gpl/bin/ffprobe /usr/local/bin/ffprobe; fi
+          command -v xvfb-run
           blender -b --version | head -1; ffmpeg -version | head -1
       - name: Render pieces
         run: python3 tools/gh_render_gc.py ${{ matrix.job }}
