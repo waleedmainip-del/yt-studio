@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: gc-render-r4
+  group: gc-render-r5
   cancel-in-progress: false
 jobs:
   render:
@@ -26,7 +26,7 @@ jobs:
           tar -xf /tmp/b.tar.xz -C /opt && sudo ln -sf /opt/blender-4.0.2-linux-x64/blender /usr/local/bin/blender
           ps aux | grep -i [a]pt | head -5 || true
           need=""; command -v xvfb-run || need="$need xvfb xauth"; command -v ffmpeg || need="$need ffmpeg"
-          blender -b --version >/dev/null 2>&1 || need="$need libxrender1 libxi6 libxkbcommon0 libsm6 libgl1 libegl1 libxxf86vm1 libxfixes3"
+          need="$need libegl1 libgl1 libglx-mesa0 libgl1-mesa-dri libxrender1 libxi6 libxkbcommon0 libsm6 libgl1 libegl1 libxxf86vm1 libxfixes3"
           if [ -n "$need" ]; then sudo apt-get -o DPkg::Lock::Timeout=600 -o Acquire::Retries=3 update -q; sudo apt-get -o DPkg::Lock::Timeout=600 -o Acquire::Retries=3 install -y -q --no-install-recommends $need; fi
           blender -b --version | head -1; ffmpeg -version | head -1
       - name: Render pieces
