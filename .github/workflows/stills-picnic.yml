@@ -20,7 +20,8 @@ jobs:
       - name: Install Blender
         run: |
           sudo rm -f /var/lib/man-db/auto-update
-          for i in 1 2 3 4; do (sudo timeout 120 apt-get update -q; sudo timeout 420 apt-get install -y -q blender xvfb xauth ffmpeg libgl1-mesa-dri) && break; echo retry $i; sudo killall -q apt-get dpkg || true; sudo dpkg --configure -a || true; done
+          APT='-o Acquire::Retries=4 -o Acquire::http::Timeout=25 -o Acquire::ForceIPv4=true'
+          for i in 1 2 3 4; do (sudo timeout 120 apt-get $APT update -q; sudo timeout 420 apt-get $APT install -y -q blender xvfb xauth ffmpeg libgl1-mesa-dri) && break; echo retry $i; sudo killall -q apt-get dpkg || true; sudo dpkg --configure -a || true; sudo sed -i -E 's#https?://[a-z0-9.-]*(archive|security)\.ubuntu\.com#http://archive.ubuntu.com#g' /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list 2>/dev/null || true; done
           which blender
       - name: Link project path
         run: |
