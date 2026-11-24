@@ -1,0 +1,60 @@
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1642
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1643
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1644
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1645
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1646
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1647
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1648
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing c.245
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing c.246
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing c.247
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1649
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1650
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1651
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1652
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing e.153
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1653
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.030
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.031
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.032
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.033
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.034
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.035
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.036
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.037
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.038
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.039
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.040
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing e.154
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.041
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.042
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.043
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.044
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.045
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.046
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.047
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.048
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.049
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.050
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.051
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.052
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.053
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing i.054
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing e.155
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1654
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing c.248
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1655
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing c.249
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing e.156
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing p.1656
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing ip.002
+Fra:2745 Mem:268.96M (Peak 310.89M) | Time:00:00.37 | Syncing Area.004
+Fra:2745 Mem:268.95M (Peak 310.89M) | Time:00:00.39 | Rendering 1 / 4 samples
+Fra:2745 Mem:268.95M (Peak 310.89M) | Time:00:04.18 | Rendering 4 / 4 samples
+Saved: '/home/claude/match/frames/S22/f02745.png'
+Time: 00:05.47 (Saving: 00:00.26)
+
+FRAME 1 326.7
+SHOT_DONE 22
+
+Blender quit
