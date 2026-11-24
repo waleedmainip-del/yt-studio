@@ -97,7 +97,7 @@ def SH_ROAD(view):
     seats=dict(SAH='fr',SHY='fl',EMA='br',ILS='bl')
     NT={}
     for nm,lab in (('SHY','SHAHERIYAR'),('SAH','SAHIL'),('EMA','EMAN'),('ILS','ILSA')):
-        e=empty((0,0,0)); w=.078*len(lab)+.12; obox((-.03,0,0),(.012,w/2,.085),M('#3E9CC8',.5,emit=.9),.03,e); text(lab,(0,0,-.004),(1,0,0),.112,M('#FFFFFF',.4,emit=2.2),.008,e); e.scale=(0,0,0); NT[nm]=e
+        e=empty((0,0,0),rot=(0,R(-28),0)); w=.098*len(lab)+.14; obox((-.03,0,0),(.012,w/2,.105),M('#3E9CC8',.5,emit=.9),.03,e); text(lab,(0,0,-.004),(1,0,0),.14,M('#FFFFFF',.4,emit=2.2),.008,e); e.scale=(0,0,0); NT[nm]=e
     JXv=[0.0]
     def cam4(q=0.0): camset((JXv[0]+L(5.0,4.5,q),JY+.15,L(3.75,3.55,q)),(JXv[0]-.55,JY,2.15),26,6.0)
     def jcf(H,sg=1,d=1.65,lens=21): cf(H,d=d,lat=.35*sg,dz=-.08,lens=lens,tgt_dz=.10)
@@ -117,13 +117,13 @@ def SH_ROAD(view):
         shake=.02*math.sin(g*23)
         for H in Hs.values(): H['root'].location[2]+=.006*math.sin(g*17+H['seed'])
         if v=='C_horn':
-            for nm,e in NT.items(): hp=headpos(Hs[nm]); kk=ease(cl((t-.15)/.25)); e.location=(hp.x,hp.y,hp.z+(.66 if nm in ('SAH','SHY') else .98)); e.scale=(kk,kk,kk)
+            for nm,e in NT.items(): hp=headpos(Hs[nm]); kk=ease(cl((t-.15)/.25)); e.location=(hp.x,hp.y,hp.z+.7); e.scale=(kk,kk,kk)
         if v=='N_world':
             face(S_,mouth='strain',brow=.04,brow_r=12); face(Y_,mouth='frown',brow=.03,brow_r=-12); Y_['head'].rotation_euler[2]=R(20*math.sin(g*1.3)); face(E_,mouth='flat')
             qq=ease(cl(t/DUR)); camset((L(-44,-17,qq),L(-8.5,-9.2,qq),L(21,7.5,qq)),(L(6,1.5,qq)+jx,JY,L(1.5,2.2,qq)),L(22,26,qq),8.0)
         elif v=='C_horn':
             say(Y_,t,KEY,rest='frown',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-52); face(Y_,brow=.05,brow_r=-14,eyes=1.15); GEST(Y_,-1,60+8*math.sin(g*14),10); face(S_,mouth='strain',brow=.05,brow_r=14); face(E_,mouth='O'); HUP(E_,38)
-            cam4(q)
+            camset((JXv[0]+L(4.9,4.5,q),JY+.1,L(5.3,5.0,q)),(JXv[0]-.6,JY,2.1),24,6.0)
         elif v=='C_main':
             say(S_,t,KEY,rest='strain',shapes=SHOUT); HUP(S_,38,4*math.sin(g*16)); S_['head'].rotation_euler[2]=R(22); face(S_,brow=.06,brow_r=14,eyes=1.2); jcf(S_,-1)
         elif v=='C_kaun':
