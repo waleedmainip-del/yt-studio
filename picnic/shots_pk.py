@@ -55,6 +55,7 @@ def person(loc,rz,C,mouth='smile',name=None):
 def ARMV(H,a=150,sw=0.0): H['arm'][1].rotation_euler=(0,R(-a-sw),0); H['arm'][-1].rotation_euler=(0,R(a-sw),0)
 def GEST(H,s,up=50,out=15): H['arm'][s].rotation_euler=(R(-up),0,R(out*s))
 def side(H,s,a=85): H['arm'][s].rotation_euler=(0,R(-a*s),0)
+def HUP(H,a=38,sw=0.0): GEST(H,1,a+sw,20); GEST(H,-1,a-sw,20)
 
 def reset(H):
     H['arm'][1].rotation_euler=(0,0,0); H['arm'][-1].rotation_euler=(0,0,0); H['head'].rotation_euler=(0,0,0); H['root'].rotation_euler[0]=0; H['root'].rotation_euler[1]=0; H['root'].scale=(1,1,1)
@@ -116,14 +117,14 @@ def SH_ROAD(view):
             face(S_,mouth='strain',brow=.04,brow_r=12); face(Y_,mouth='frown',brow=.03,brow_r=-12); Y_['head'].rotation_euler[2]=R(20*math.sin(g*1.3)); face(E_,mouth='flat')
             qq=ease(cl(t/DUR)); camset((L(-44,-17,qq),L(-8.5,-9.2,qq),L(21,7.5,qq)),(L(6,1.5,qq)+jx,JY,L(1.5,2.2,qq)),L(22,26,qq),8.0)
         elif v=='C_horn':
-            say(Y_,t,KEY,rest='frown',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-52); face(Y_,brow=.05,brow_r=-14,eyes=1.15); GEST(Y_,-1,60+8*math.sin(g*14),10); face(S_,mouth='strain',brow=.05,brow_r=14); face(E_,mouth='O'); ARMV(E_,150)
+            say(Y_,t,KEY,rest='frown',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-52); face(Y_,brow=.05,brow_r=-14,eyes=1.15); GEST(Y_,-1,60+8*math.sin(g*14),10); face(S_,mouth='strain',brow=.05,brow_r=14); face(E_,mouth='O'); HUP(E_,38)
             cam4(q)
         elif v=='C_main':
-            say(S_,t,KEY,rest='strain',shapes=SHOUT); ARMV(S_,150,6*math.sin(g*16)); S_['head'].rotation_euler[2]=R(22); face(S_,brow=.06,brow_r=14,eyes=1.2); jcf(S_,-1)
+            say(S_,t,KEY,rest='strain',shapes=SHOUT); HUP(S_,38,4*math.sin(g*16)); S_['head'].rotation_euler[2]=R(22); face(S_,brow=.06,brow_r=14,eyes=1.2); jcf(S_,-1)
         elif v=='C_kaun':
-            say(Y_,t,KEY,rest='O',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-30+55*ease(cl(t/.9))); ARMV(Y_,150,6*math.sin(g*15)); face(Y_,brow=.06,brow_r=10); jcf(Y_,1)
+            say(Y_,t,KEY,rest='O',shapes=SHOUT); Y_['head'].rotation_euler[2]=R(-30+55*ease(cl(t/.9))); HUP(Y_,38,4*math.sin(g*15)); face(Y_,brow=.06,brow_r=10); jcf(Y_,1)
         elif v=='C_poora':
-            e1=lend(KEY)+.05; sp=say(E_,t,KEY,rest='grin',shapes=SHOUT); ARMV(E_,150,6*math.sin(g*13)); face(E_,brow=.06,eyes=1.2)
+            e1=lend(KEY)+.05; sp=say(E_,t,KEY,rest='grin',shapes=SHOUT); HUP(E_,38,4*math.sin(g*13)); face(E_,brow=.06,eyes=1.2)
             for H in (S_,Y_): face(H,mouth='strain',brow=.05,brow_r=12)
             if t<e1: jcf(E_,1)
             else: kk=ease(cl((t-e1)/.7)); camset((jx+L(5,7,kk),-11.4,L(8.5,10.5,kk)),(jx,JY+1,1.6),24,8.0)
@@ -162,7 +163,7 @@ def SH_ROAD(view):
             else: cam4(1.0)
         else:  # V_drive
             for H in Hs.values(): face(H,mouth='grin',brow=.05)
-            ARMV(E_,120,8*math.sin(g*9)); camset((creep(gd,1)+L(-12,-9,q),-9.85,L(8.0,6.5,q)),(jx+2.5,JY+.5,1.6),24,8.0)
+            HUP(E_,38,4*math.sin(g*9)); camset((creep(gd,1)+L(-12,-9,q),-9.85,L(8.0,6.5,q)),(jx+2.5,JY+.5,1.6),24,8.0)
     return dict(upd=upd)
 for v in ('N_world','C_horn','C_main','C_kaun','C_poora','C_holiday','C_real','D_look','D_park','D_normal','D_food','D_exp','D_expb','D_lant','D_int','V_drive'): SHOTS[v]=(lambda v=v: SH_ROAD(v))
 
@@ -223,7 +224,7 @@ def SH_VENUE(view):
         elif v=='A_space':
             abreast(0,6.0,0)
             for nm in ORDER: reset(Hs[nm]); put_at(Hs[nm],g,XS[ORDER.index(nm)],6.0+YO[ORDER.index(nm)],180); look_at(Hs[nm],(XS[ORDER.index(nm)]*4,60,2),.8); face(Hs[nm],mouth='grin',brow=.05,eyes=1.1)
-            say(Y_,t,KEY,rest='O',shapes=SHOUT); ARMV(Y_,128,5*math.sin(g*12)); face(Y_,brow=.06); cf(Y_,d=L(3.0,2.5,q),lat=.3,dz=-.35,lens=28)
+            say(Y_,t,KEY,rest='O',shapes=SHOUT); HUP(Y_,38,4*math.sin(g*12)); face(Y_,brow=.06); cf(Y_,d=L(3.0,2.5,q),lat=.3,dz=-.35,lens=28)
         elif v=='A_music':
             abreast(t,7.0,1.1); say(S_,t,KEY,rest='grin',rate=8); GEST(S_,1,62+8*math.sin(g*5),16); face(S_,brow=.05); look_at(Y_,headpos(S_),.6); y=7.0+1.1*t
             camset((3.1,y+6.2,1.85),(.3,y+.6,1.72),24,6.0)
