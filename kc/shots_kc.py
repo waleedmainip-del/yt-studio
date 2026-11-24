@@ -272,7 +272,7 @@ def FINAL_():
     bag=in_hand(wa,1,lambda e: (obox((0,-.06,-.05),(.11,.08,.13),M('#F4F1EA',.7),.02,e),stext('AL-NOOR',(0,-.145,-.02),.045,'#C8372D',parent=e)))
     sparkles((-1.2,4.0,2.6),1.2,ws(296),ws(296)+2.5,n=30,size=.04,seed=31,rise=.6,mat=M('#F2C45A',.4,emit=1.5))
     def upd(t):
-        tidle(S,t,free=('wa',)); talk(wa,t,*wt(290,298),rest='grin'); wa['arm'][1].rotation_euler=(R(-55),R(-10),R(25)); wa['arm'][-1].rotation_euler=(R(-140*tl(t,ws(296),ws(296)+.3)),0,R(-10)); face(wa,brow=.05)
+        tidle(S,t,free=('wa',)); talk(wa,t,*wt(290,298),rest='grin'); wa['arm'][1].rotation_euler=(R(-55),R(-10),R(25)); k_=tl(t,ws(296),ws(296)+.3); wa['arm'][-1].rotation_euler=(R(-15*k_),0,R(-10-140*k_)); face(wa,brow=.05)
         for k_ in ('al','zo','ay'): look_at(P[k_],hp(wa),.6); face(P[k_],mouth='grin')
         c0,tg,ln=closecam(wa,tseat_rz('wa'),.3,2.6,lens=34); camset(drift(c0,tg,t,.1),tg,ln,2.8)
     return dict(upd=upd)
