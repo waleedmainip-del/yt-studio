@@ -5,7 +5,7 @@ NAME=args[0]; MODE=args[3] if len(args)>3 else 'char'
 OUT='/home/claude/demo/sheets'; os.makedirs(OUT,exist_ok=True)
 sc=bpy.context.scene; make_cam()
 def headpos(H): u=H['u']; return tuple(root_mat(H)@Vector((0,0,4.75*u)))
-CH={'waleed':WALEED,'ammi':AMMI,'bilal':BILAL,'uncle':UNCLE,'aunty':AUNTY2}
+CH={'waleed':WALEED,'bilal':BILAL,'ammi':AMMI,'zain_rider':ZAIN_RIDER,'zain_guru':ZAIN_GURU,'shopkeeper':SHOPK}
 def studio():
     B.box((0,0,-.05),(20,20,.05),M('#D9D3C7',.8),0); B.box((0,6,4),(20,.1,4),M('#EEEAE2',.85),0)
     for k in range(0,9): B.box((-8+2*k,5.85,.012),(.006,.006,.012),M('#888888',.5),0)
@@ -13,9 +13,9 @@ def studio():
 def snap(fn):
     sc.render.filepath=OUT+'/'+fn; bpy.ops.render.render(write_still=True); print('SNAP',fn,flush=True)
 if MODE=='lineup':
-    studio(); keys=['waleed','bilal','uncle','aunty','ammi']; HS=[]
+    studio(); keys=['waleed','bilal','zain_guru','zain_rider','shopkeeper','ammi']; HS=[]
     for i,k in enumerate(keys):
-        H=person((-4.5+i*1.5,0,0),0,CH[k],'smile',name=k); stand(H,0); arms(H,-10,0,5,-10,0,-5); HS.append(H)
+        H=person((-4.6+i*1.6,0,0),0,CH[k],'smile',name=k); stand(H,0); arms(H,-10,0,5,-10,0,-5); HS.append(H)
     # height ruler
     for z in range(0,25):
         B.box((-6.2,0,z*.1),(.08 if z%5 else .16,.01,.004),M('#22242B',.4),0)
@@ -51,11 +51,8 @@ elif MODE=='char':
         h=headpos(H)
         camset((h[0]+.35,h[1]-2.1,h[2]-.05),(h[0],h[1],h[2]-.12),62,22); snap('%s_x_%s.png'%(NAME,nm))
 elif MODE=='env':
-    D=bedroom(night=(NAME=='night')); gaming_chair(CHAIR[0],CHAIR[1],0); drawing_room(); street_corner(); B.done('env'); setup_interior('night' if NAME=='night' else 'day',(0,0,3.4),res=PCT,samples=SAMPLES,shadow_dist=12); bpy.context.scene.view_settings.exposure=(-.2 if NAME=='night' else -.7)
-    set_clock(D,11,47)
-    w=person((0,0,0),0,WALEED,'smile',name='waleed'); lie(w,-1.35,1.25,BED['top']); dr=Drape(-2.9,-.1,.15,2.65,bed=BED); dr.update(-1.9); 
-    ph,scr=phone_obj('scr_cat2'); ph.location=(-.9,-.2,1.2)
-    V=[('bed',(1.2,-1.6,2.0),(-1.6,1.2,.8),20),('lie',(-.4,-.6,1.9),(-1.6,1.4,.9),26),('desk',(-.6,-1.2,1.7),(2.4,.3,1.0),20),('door',(-1.2,1.6,1.9),(1.6,-2.0,1.2),20),('wall',(.5,-.5,1.6),(-1.7,2.5,1.9),24),('clock',(.8,.1,2.4),(3.0,.1,2.5),30),
-       ('lr',(LX-3.4,-2.8,2.2),(LX+.5,1.5,.8),20),('lr2',(LX+2.8,-2.6,2.0),(LX-1,1.8,.8),20),('street',(SX+1.2,-3.5,1.8),(SX,2.5,1.6),22)]
+    D=trading_room('day' if NAME!='night' else 'night'); gaming_chair(CHAIR[0],CHAIR[1],0); gate_street(); rooftop(); shop_street(); main_road(); B.done('env')
+    setup_render('afternoon',res=PCT,samples=SAMPLES,shadow_dist=40); bpy.context.scene.view_settings.exposure=-.3
+    V=[('room',(-2.3,-2.0,2.3),(1.8,.8,.9),17),('desk',(.6,-1.2,1.6),(2.6,.3,1.0),20),('gate',(GX,-9,2.2),(GX,0,1.8),22),('roof',(RX,RY-6,1.8),(RX,RY+2,1.6),20),('shop',(SX,-5,1.8),(SX,1.5,1.6),22),('road',(PX+4,-11,2.2),(PX+4,1,2.0),18)]
     for nm,loc,tg,lens in V:
-        camset(loc,tg,lens,22); snap('env_%s_%s.png'%(NAME,nm))
+        camset(loc,tg,lens,22); snap('env_%s.png'%nm)

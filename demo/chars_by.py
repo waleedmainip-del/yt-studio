@@ -150,6 +150,9 @@ def avatar(loc,rotz,C,pose=None,u=.42):
             for dx,dz in [(.3,.48),(.38,.52),(.46,.47)]: ocyl((s*dx*u,fy-.001,dz*u),.013*u,.004,M(shade(C['skin'],.75),.7),Hd)
     if C.get('glasses'): obox((0,fy-.012,.68*u),(.08*u,.006,.018*u),M('#22242B',.4),.002,Hd)
     if C.get('beard'): obox((0,fy+.004,.2*u),(.5*u,.02,.2*u),M(C['beard'],.7),.01,Hd)
+    if C.get('goatee'):
+        gm=M(C['goatee'],.7); obox((0,fy+.004,.07*u),(.17*u,.02,.07*u),gm,.008,Hd)
+        for s_ in (-1,1): obox((s_*.55*u,fy+.004,.22*u),(.09*u,.02,.2*u),gm,.008,Hd); obox((s_*.4*u,fy+.004,.05*u),(.16*u,.02,.05*u),gm,.006,Hd)
     if C.get('mustache'): obox((0,fy-.006,.47*u),(.2*u,.012,.042*u),M(C['mustache'],.7),.008,Hd)
     mo=pose.get('mouth','smile'); mm=M('#7A2A20',.5); MO={}
     zm=.38 if C.get('mustache') else .42

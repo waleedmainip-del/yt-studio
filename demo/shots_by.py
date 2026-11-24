@@ -404,7 +404,7 @@ for v in ('run','up','nosig','nodata'): SHOTS['G_'+v]=(lambda v=v: SH_G(v))
 WS_=(SX+.15,SHOP['y']-1.62); KS_=(SX-.1,SHOP['y']-.3)
 def SH_H(view):
     KEY='H_'+view; S=shop_street(); B.done('shop'); setup_interior('night',(SX,0,6),res=PCT,samples=SAMPLES,shadow_dist=20); bpy.context.scene.view_settings.exposure=.05
-    w=person((WS_[0],WS_[1],0),180,WALEED,'frown',name='waleed'); OWNER[0]=w; point((SX-3.4,-.6,2.4),60 if view in ('ask','reply') else 0,(.75,.8,1.0),.4,shadow=False); sk=person((KS_[0],KS_[1],0),0,SHOPK,'flat',name='shopk')
+    w=person((WS_[0],WS_[1],0),180,WALEED,'frown',name='waleed'); OWNER[0]=w; point((SX-3.4,-.6,2.4),60 if view in ('ask','reply') else 0,(.75,.8,1.0),.4,shadow=False); point((SX+.3,-.9,1.7),45 if view in ('app','zero') else 0,(.8,.88,1.0),.3,shadow=False); sk=person((KS_[0],KS_[1],0),0,SHOPK,'flat',name='shopk')
     nt=note_obj('note100'); ph,scr=phone_obj('ph_pkg'); kph,_=phone_obj('ph_pkg')
     def upd(t):
         q=ease(t/DUR); hw=headpos(w); hs=headpos(sk); body_vis(w,True)
@@ -421,7 +421,7 @@ def SH_H(view):
         elif view=='app':    # steps back from the counter, opens the app, hopeful
             phone_in_hand(w,ph,up=1.6); set_screen(scr,'ph_pkg',1.3); face(w,mouth='smile',eyes=1.2,brow=.06); look_at(sk,hw,.6); arms(sk,-35,0,-10,-35,0,10)
             w['root'].rotation_euler[2]=R(L(180,10,ease(t/.6)))
-            camset((L(SX+.1,SX+.15,q),L(SHOP['y']-3.4,SHOP['y']-3.1,q),L(1.5,1.45,q)),(hw[0],hw[1],hw[2]-.25),L(26,32,q),2.8,focus=hw)
+            _camset((L(SX+.35,SX+.3,q),L(SHOP['y']-4.0,SHOP['y']-3.7,q),L(1.55,1.5,q)),(hw[0],hw[1],hw[2]-.3),L(24,28,q),2.8,focus=hw)
         elif view=='zero':   # insert: balance Rs 0
             phone_in_hand(w,ph,up=1.6); set_screen(scr,'ph_zero',1.4); insert_cam(ph,L(22,30,q),.2)
         elif view=='ask':    # sits on the shop step, types to Sir Zain
@@ -443,7 +443,7 @@ def SH_I(view):
     hm=helmet_obj(); bk=bike(BKP[0],BKP[1],0,'#C8102E'); ph,scr=phone_obj('ph_map')
     def upd(t):
         q=ease(t/DUR); hw=headpos(w); hz=headpos(zr); body_vis(w,True)
-        standH(zr,RDR[0],RDR[1],100,t); blink(zr,t); helmet_on(hm,zr); arms(zr,-20,0,-10,-20,0,10); face(zr,mouth='flat')
+        standH(zr,RDR[0],RDR[1],heading_to(zr,hw),t); blink(zr,t); helmet_on(hm,zr); arms(zr,-20,0,-10,-20,0,10); face(zr,mouth='flat')
         if view=='walk':     # storms along the footpath, phone with the map
             stomp(w,WLK[:3],t,0,DUR+1.2); blink(w,t); phone_one(w,ph,1,dz=.05); face(w,mouth='frown',brow=-.07,eyes=1.0)
             camset((hw[0]+L(2.6,2.2,q),hw[1]-2.4,1.55),(hw[0],hw[1],hw[2]-.3),L(22,24,q),3.5,focus=hw)
@@ -455,7 +455,7 @@ def SH_I(view):
             camset((L(PX-2.8,PX-2.4,q),L(-4.6,-4.2,q),L(1.2,1.35,q)),(PX+.6,.4,L(1.6,2.4,q)),L(17,19,q),5,focus=hw)
         elif view=='helmet': # rider takes off the helmet: it's Sir Zain. "Aap? Aur Lamborghini?"
             standH(w,WLK[3][0],WLK[3][1],-75,t); blink(w,t); look_at(w,hz,.9); ph.location=(9,9,-9); rest(w,t,-12)
-            standH(zr,RDR[0],RDR[1],100,t); k=ease((t-.15)/.8); u=zr['u']
+            standH(zr,RDR[0],RDR[1],heading_to(zr,hw),t); k=ease((t-.15)/.8); u=zr['u']
             if k<=0: helmet_on(hm,zr)
             else:
                 bpy.context.view_layer.update(); top=Matrix(zr['head'].matrix_world)@Vector((0,.02*u,.95*u)); hand=Vector(hand_w(zr,1))
@@ -467,12 +467,12 @@ def SH_I(view):
         elif view=='show':   # Sir Zain points at the car showroom next door: the Lamborghini is behind the glass
             standH(w,WLK[3][0],WLK[3][1],-60,t); look_at(w,(SHW['x'],2.0,1.0),.8*ease((t-.6)/.5)); blink(w,t); ph.location=(9,9,-9)
             hm.location=(BKP[0]-.55,BKP[1],1.38); hm.rotation_euler=(0,0,R(30))
-            standH(zr,RDR[0],RDR[1],L(100,60,ease(t/.5)),t); talk(zr,t,219,223,KEY,rest='smile',shapes=('o','flat','O','smile')); face(zr,brow=.05,eyes=.9)
+            standH(zr,RDR[0],RDR[1],L(heading_to(zr,hw),heading_to(zr,hw)+40,ease(t/.5)),t); talk(zr,t,219,223,KEY,rest='smile',shapes=('o','flat','O','smile')); face(zr,brow=.05,eyes=.9)
             k=ease(t/.5); arm_reach(zr,1,tuple(Vector(hz)+Vector((.55*k,.15,-.25)))); arms(zr,-15,0,-10,-15,0,10) if False else None
-            c=(L(PX+3.0,PX+5.2,q),L(-3.6,-4.4,q),1.5); camset(c,(L(PX+2.4,SHW['x'],q),L(-1.0,2.2,q),L(1.5,1.2,q)),L(22,18,q),5,focus=(L(PX+2.4,SHW['x'],q),L(-1,2.5,q),1.3))
+            c=(L(PX+3.0,PX+5.6,q),L(-3.6,-4.6,q),1.5); _camset(c,(L(PX+2.4,SHW['x'],q),L(-1.0,2.2,q),L(1.5,1.2,q)),L(22,18,q),5,focus=(L(PX+2.4,SHW['x'],q),L(-1,2.5,q),1.3))
         else:                # 'loss': "Bhai, main bhi loss mein hoon" — sheepish; Waleed deadpan
             standH(w,WLK[3][0],WLK[3][1],-75,t); look_at(w,hz,.9); face(w,mouth='flat',eyes=.75,brow=-.04); ph.location=(9,9,-9); rest(w,t,-12)
-            hm.location=(BKP[0]-.55,BKP[1],1.38); hm.rotation_euler=(0,0,R(30)); standH(zr,RDR[0],RDR[1],100,t); look_at(zr,hw,.6)
+            hm.location=(BKP[0]-.55,BKP[1],1.38); hm.rotation_euler=(0,0,R(30)); standH(zr,RDR[0],RDR[1],heading_to(zr,hw),t); look_at(zr,hw,.6)
             talk(zr,t,224,229,KEY,rest='frown',shapes=('o','frown','o','flat')); face(zr,eyes=.9,brow=.1); arms(zr,-25,0,-50,-25,0,50); zr['head'].rotation_euler[1]=R(-6)
             cam_close(zr,1,1.9,28,ang=24)
     return dict(upd=upd)
