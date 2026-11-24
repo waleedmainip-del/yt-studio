@@ -1,7 +1,7 @@
 # Shots for "Gali Cricket Ke Qanoon". Cuts sit on narration words (audio/words.json); SEQ is written by gen_seq.py.
 SHOTS={}
-END=73.4
-SEQ=[('OPEN', 0.0), ('MOIZ', 4.5), ('B1', 8.633), ('M1', 10.8), ('B2', 11.933), ('M2', 13.967), ('B3', 16.167), ('M3', 18.267), ('W1', 19.9), ('CH', 23.033), ('BOOM', 26.7), ('M4', 29.467), ('PLEAD', 32.733), ('SIX', 37.433), ('GATE', 43.567), ('M5', 47.533), ('KNOCK', 50.567), ('WA2', 52.967), ('R1', 57.767), ('WA3', 59.3), ('BAT', 61.767), ('ENDW', 65.8), ('CTA', 70.067)]
+END=75.8
+SEQ=[('OPEN', 0.0), ('MOIZ', 6.9), ('B1', 11.033), ('M1', 13.2), ('B2', 14.333), ('M2', 16.367), ('B3', 18.567), ('M3', 20.667), ('W1', 22.3), ('CH', 25.433), ('BOOM', 29.1), ('M4', 31.867), ('PLEAD', 35.133), ('SIX', 39.833), ('GATE', 45.967), ('M5', 49.933), ('KNOCK', 52.967), ('WA2', 55.367), ('R1', 60.167), ('WA3', 61.7), ('BAT', 64.167), ('ENDW', 68.2), ('CTA', 72.467)]
 W_=json.load(open(LH+'/audio/words.json'))
 def wt(a,b): return (W_[a]['s'],W_[b]['e'])
 def ws(i): return W_[i]['s']-T0
