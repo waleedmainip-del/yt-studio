@@ -1,0 +1,60 @@
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.151
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.152
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.153
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.154
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.155
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.156
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.157
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.158
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.159
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.160
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.161
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.162
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.163
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.164
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.165
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.166
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.167
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.168
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.169
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing c.016
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing c.017
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.170
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.171
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.172
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.173
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing c.018
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.174
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.175
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.176
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.177
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.178
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.179
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.180
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.181
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.182
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.183
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.184
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.185
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.186
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.187
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.188
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.189
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.190
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.191
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.192
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.193
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.194
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.195
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing p.196
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.06 | Syncing Point.004
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:00.08 | Rendering 1 / 32 samples
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:18.10 | Rendering 26 / 32 samples
+Fra:2320 Mem:80.34M (Peak 123.17M) | Time:00:22.43 | Rendering 32 / 32 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/fg/render/frames/S19/f02320.png'
+Time: 00:23.42 (Saving: 00:00.20)
+
+FRAME 1 1150.0
+SHOT_DONE 19
+
+Blender quit
