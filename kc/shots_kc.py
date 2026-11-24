@@ -194,7 +194,7 @@ def BITE_():
         tidle(S,t,free=('wa','zo','al'))
         for i,k in enumerate(('wa','zo','al')): eat(P[k],t,i*1.4); face(P[k],mouth='o' if math.sin(t*5.5+i*1.4)>.4 else 'flat',brow=.04); arm_to(P[k],-1,root_mat(P[k])@Vector((-.32,-.6,1.2)),1)
         ay=P['ay']; talk(ay,t,*wt(134,135),rest='smile'); look_at(ay,hp(P['wa']),.7,maxyaw=80)
-        q=ease(t/DUR); camset(LV(TW[0],(0,-.1,2.5),q),TW[1],TW[2],4)
+        q=ease(t/DUR); camset(LV(TW[0],(0,2.35,2.6),q),TW[1],TW[2],4)
     return dict(upd=upd)
 SHOTS['BITE']=BITE_
 def _chew(S,t,k='wa'): H=S['P'][k]; H['head'].rotation_euler[0]+=R(2*math.sin(t*12))
@@ -264,15 +264,15 @@ def MORAL_():
     def upd(t):
         tidle(S,t)
         for k,H in P.items(): face(H,mouth='smile'); look_at(H,(0,4.9,1.8),.3)
-        q=ease(t/DUR); camset(LV((0,1.6,2.6),(0,-9.5,4.2),q),LV((0,4.9,1.5),(0,2.5,3.4),q),L(24,20,q),8)
+        q=ease(t/DUR); camset(LV((0,2.2,2.7),(.6,1.75,4.0),q),LV((0,4.9,1.5),(0,5.6,1.2),q),L(24,19,q),8)
     return dict(upd=upd)
 SHOTS['MORAL']=MORAL_
 def FINAL_():
     S=tset('empty'); P=S['P']; wa=P['wa']
-    bag=in_hand(wa,1,lambda e: (obox((0,-.1,-.05),(.2,.14,.22),M('#F4F1EA',.7),.03,e),stext('AL-NOOR',(0,-.25,-.02),.07,'#C8372D',parent=e)))
+    bag=in_hand(wa,1,lambda e: (obox((0,-.06,-.05),(.11,.08,.13),M('#F4F1EA',.7),.02,e),stext('AL-NOOR',(0,-.145,-.02),.045,'#C8372D',parent=e)))
     sparkles((-1.2,4.0,2.6),1.2,ws(296),ws(296)+2.5,n=30,size=.04,seed=31,rise=.6,mat=M('#F2C45A',.4,emit=1.5))
     def upd(t):
-        tidle(S,t,free=('wa',)); talk(wa,t,*wt(290,298),rest='grin'); wa['arm'][1].rotation_euler=(R(-95),R(-10),R(-10)); wa['arm'][-1].rotation_euler=(R(-140*tl(t,ws(296),ws(296)+.3)),0,R(-10)); face(wa,brow=.05)
+        tidle(S,t,free=('wa',)); talk(wa,t,*wt(290,298),rest='grin'); wa['arm'][1].rotation_euler=(R(-55),R(-10),R(25)); wa['arm'][-1].rotation_euler=(R(-140*tl(t,ws(296),ws(296)+.3)),0,R(-10)); face(wa,brow=.05)
         for k_ in ('al','zo','ay'): look_at(P[k_],hp(wa),.6); face(P[k_],mouth='grin')
         c0,tg,ln=closecam(wa,tseat_rz('wa'),.3,2.6,lens=34); camset(drift(c0,tg,t,.1),tg,ln,2.8)
     return dict(upd=upd)
