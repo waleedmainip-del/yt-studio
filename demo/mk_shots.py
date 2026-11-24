@@ -1,0 +1,12 @@
+K=[('A_hook',0),('A_demo',9),('A_ten',11),('A_born',23),('A_bilal',35),('A_skill',41),
+('B_scroll',47),('B_prof',51),('B_fees',60),('B_eidi',62),('B_kul',70),
+('C_first',76),('C_green',78),('C_jump',80),('C_call',83),
+('D_give',91),('D_lid',95),('E_party',99),
+('F_night',104),('F_sig',111),('F_allin',120),('F_nosl',125),('F_red',132),('F_beg',139),('F_ammi',148),('F_sale',153),('F_cut',158),('F_wifi',163),('F_open',165),
+('G_run',168),('G_up',172),('G_nodata',174),
+('H_pay',177),('H_app',185),('H_zero',187),('H_ask',189),('H_reply',193),
+('I_walk',201),('I_map',206),('I_reveal',210),('I_helmet',215),('I_show',219),('I_loss',224),
+('J_home',230),('J_happy',241),('J_milk',247),('J_cta',256)]
+h=open('_hdr.py').read().replace('KEYS_PLACEHOLDER',repr(K))
+open('shots_by.py','w').write(h+'\n'+open('_body.py').read())
+print(len(K))
