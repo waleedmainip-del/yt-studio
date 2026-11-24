@@ -22,8 +22,12 @@ jobs:
       - name: Install Blender 4.0.2
         timeout-minutes: 15
         run: |
-          curl -sSL --retry 4 -o /tmp/b.tar.xz https://download.blender.org/release/Blender4.0/blender-4.0.2-linux-x64.tar.xz
-          tar -xf /tmp/b.tar.xz -C /opt && sudo ln -sf /opt/blender-4.0.2-linux-x64/blender /usr/local/bin/blender
+          for i in 1 2 3 4 5; do
+            curl -sSL --retry 4 -o /tmp/b.tar.xz https://download.blender.org/release/Blender4.0/blender-4.0.2-linux-x64.tar.xz && tar -xf /tmp/b.tar.xz -C /opt && break
+            echo "blender download retry $i"; sleep 10
+          done
+          sudo ln -sf /opt/blender-4.0.2-linux-x64/blender /usr/local/bin/blender
+          test -x /opt/blender-4.0.2-linux-x64/blender
           sudo dpkg -i tools/debs/libegl1_*.deb || true
           sudo dpkg -i tools/debs/libegl-mesa0_*.deb || true
           if ! command -v ffmpeg; then curl -sSL --retry 4 -o /tmp/ff.tar.xz https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz && tar -xf /tmp/ff.tar.xz -C /opt && sudo ln -sf /opt/ffmpeg-master-latest-linux64-gpl/bin/ffmpeg /usr/local/bin/ffmpeg && sudo ln -sf /opt/ffmpeg-master-latest-linux64-gpl/bin/ffprobe /usr/local/bin/ffprobe; fi
