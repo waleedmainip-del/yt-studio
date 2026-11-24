@@ -1,0 +1,60 @@
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing p.007
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing i.004
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing i.005
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing p.008
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing i.006
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing i.007
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing p.009
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing c.001
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing e.003
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing p.010
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing p.011
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing p.012
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing i.008
+Fra:2607 Mem:66.44M (Peak 109.42M) | Time:00:00.08 | Syncing i.009
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing p.013
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing i.010
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing i.011
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing p.014
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing c.002
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing Area
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing Area.001
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.001
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.002
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.003
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.004
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.005
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.006
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.007
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.008
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.009
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.010
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.011
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.012
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.013
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.014
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.015
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.016
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.017
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing mall.018
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing Sun
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing Area.002
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.004
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.005
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.006
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.007
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.008
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.009
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing e.010
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing p.076
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.08 | Syncing ip.008
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:00.11 | Rendering 1 / 4 samples
+Fra:2607 Mem:66.45M (Peak 109.42M) | Time:00:03.24 | Rendering 4 / 4 samples
+Saved: '/home/claude/murree/frames/S27/f02607.png'
+Time: 00:04.29 (Saving: 00:00.27)
+
+FRAME 1 200.5
+SHOT_DONE 27
+
+Blender quit
