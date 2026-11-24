@@ -1,0 +1,60 @@
+Fra:1995 Mem:90.28M (Peak 133.07M) | Time:00:00.08 | Syncing roof.161
+Fra:1995 Mem:90.28M (Peak 133.07M) | Time:00:00.08 | Syncing roof.162
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.163
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.164
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.165
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.166
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.167
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.168
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.169
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.170
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.171
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.172
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.173
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.174
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.175
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.176
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.177
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.178
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.179
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.180
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.181
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.182
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.183
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.184
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.185
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.186
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.187
+Fra:1995 Mem:90.31M (Peak 133.07M) | Time:00:00.08 | Syncing roof.188
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.189
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.190
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.191
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.192
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.193
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.194
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.195
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.196
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.197
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.198
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing roof.199
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing Sun
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing Area.003
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.001
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.002
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.003
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.004
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.005
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.006
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing e.007
+Fra:1995 Mem:90.34M (Peak 133.07M) | Time:00:00.08 | Syncing p.061
+Fra:1995 Mem:90.35M (Peak 133.07M) | Time:00:00.08 | Syncing ip
+Fra:1995 Mem:90.35M (Peak 133.07M) | Time:00:00.08 | Syncing Point
+Fra:1995 Mem:90.35M (Peak 133.07M) | Time:00:00.11 | Rendering 1 / 4 samples
+Fra:1995 Mem:90.35M (Peak 133.07M) | Time:00:02.21 | Rendering 4 / 4 samples
+Saved: '/home/claude/demo/frames/S32/f01995.png'
+Time: 00:02.93 (Saving: 00:00.22)
+
+FRAME 1 90.7
+SHOT_DONE 32
+
+Blender quit
