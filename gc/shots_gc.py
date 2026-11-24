@@ -133,7 +133,6 @@ def _m1(S,t):
     mo=S['mo']; k=tl(t,0,.3)
     for s in (1,-1): mo['arm'][s].rotation_euler=(R(-40*k),0,R(s*70*k))
     S['batp'].location=(.5,-.6,0.0); S['batp'].rotation_euler=(R(80),0,R(20))
-    mo['head'].rotation_euler[1]+=R(8*k)
 def _m2(S,t):
     mo=S['mo']; k=tl(t,0,.25); mo['arm'][-1].rotation_euler=(R(-170*k),0,R(-10)); look_at(mo,(WIRE_X,0,WIRE_Z),.5*k,maxpitch=40)
     face(mo,brow=.05)
