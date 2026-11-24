@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: gc-render-r7
+  group: gc-render-r8
   cancel-in-progress: false
 jobs:
   render:
