@@ -55,7 +55,7 @@ def person(loc,rz,C,mouth='smile',name=None):
 def ARMV(H,a=150,sw=0.0): H['arm'][1].rotation_euler=(0,R(-a-sw),0); H['arm'][-1].rotation_euler=(0,R(a-sw),0)
 def GEST(H,s,up=50,out=15): H['arm'][s].rotation_euler=(R(-up),0,R(out*s))
 def side(H,s,a=85): H['arm'][s].rotation_euler=(0,R(-a*s),0)
-def HUP(H,a=38,sw=0.0): GEST(H,1,a+sw,20); GEST(H,-1,a-sw,20)
+def HUP(H,a=38,sw=0.0): GEST(H,1,a+40+sw,30); GEST(H,-1,a+40-sw,30)
 
 def reset(H):
     H['arm'][1].rotation_euler=(0,0,0); H['arm'][-1].rotation_euler=(0,0,0); H['head'].rotation_euler=(0,0,0); H['root'].rotation_euler[0]=0; H['root'].rotation_euler[1]=0; H['root'].scale=(1,1,1)
