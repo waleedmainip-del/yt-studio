@@ -1,12 +1,12 @@
-name: Render Karachi biryani
+name: Render Karachi ep2
 on:
   push:
-    branches: [kb-film]
-    paths: ["kb/jobs.json"]
+    branches: [kc-film]
+    paths: ["kc/jobs.json"]
 permissions:
   contents: write
 concurrency:
-  group: kb-render
+  group: kc-render
   cancel-in-progress: false
 jobs:
   render:
@@ -25,14 +25,14 @@ jobs:
           sudo apt-get install -y -q blender xvfb xauth ffmpeg libgl1-mesa-dri
           blender --version | head -1
       - name: Render pieces
-        run: python3 tools/gh_render_kb.py ${{ matrix.job }}
+        run: python3 tools/gh_render_kc.py ${{ matrix.job }}
       - name: Push results branch
         if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          B=render/kb-${{ github.run_id }}-j${{ matrix.job }}
+          B=render/kc-${{ github.run_id }}-j${{ matrix.job }}
           mkdir -p gh_out && cd gh_out
           git init -q && git checkout -q -b $B && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "kb render job ${{ matrix.job }}" --allow-empty
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "kc render job ${{ matrix.job }}" --allow-empty
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B
