@@ -257,20 +257,20 @@ def SIXPM():
 SHOTS['SIXPM']=SIXPM
 def FOURFEET():
     J=jam_scene('khi_night',1.0,'9:00 PM'); kg=J['kg']; Z=J['Z']; FILLE[0]=170; X0=J['X0']
-    yl=M('#F2C14E',.5); wh=M('#F4F1EA',.6); SP=(X0+.05,2.55,.8)
+    yl=M('#F2C14E',.5); wh=M('#F4F1EA',.6); SP=(X0+.05,2.55,1.25)
     B.box((X0-.55,3.6,.006),(.06,1.9,.006),wh,0); B.box((X0+.28,2.2,.03),(.61,.035,.03),yl,.005); B.box((X0-.4,2.2,.09),(.12,.1,.09),yl,.03)
     for k in range(5): B.box((X0-.2+k*.24,2.2,.062),(.006,.035,.004),M('#16171C',.5),0)
     B.done('tape'); sign('4 FT',SP,.40,'#16171C','#F2C14E',n=(-.7,-.7,0),e=1.2,pad=.18,th=.06,parent=empty((0,0,0)),always=True)
-    obox((SP[0],SP[1],.22),(.04,.04,.22),M('#5A5E66',.5),0)
+    obox((SP[0],SP[1],.44),(.04,.04,.44),M('#5A5E66',.5),0)
     def upd(t):
         J['place'](t,slump=1.0)
         Z[0]['root'].location[0]=X0+.2; Z[0]['root'].location[1]=7.0; Z[5]['root'].location[0]=X0+2.3; Z[5]['root'].location[1]=2.5
         q=ease(t/DUR); c=LV((X0-3.7,.65,2.5),(X0-3.3,.95,2.35),q); a=tl(t,1.0,1.4)
         kg['root'].location[1]=KY-2.6; kg['root'].rotation_euler[2]=R(-70); kg['arm'][-1].rotation_euler=(R(-12),0,0)
-        look_at(kg,LV((SP[0],SP[1],1.5),(c[0],c[1],c[2]+.2),a),1.0,maxpitch=20)
+        look_at(kg,LV((SP[0],SP[1],1.6),(c[0],c[1],c[2]+.2),a),1.0,maxpitch=20)
         if t>1.5: kg['head'].rotation_euler[2]+=R(9*math.sin((t-1.5)*6.5))
         face(kg,mouth='frown' if a<.5 else 'flat',brow=-.03,brow_r=-8 if a<.5 else 5); zeyes(kg,.8)
-        camset(c,LV((X0+2.4,5.4,1.25),(X0+2.6,5.3,1.2),q),L(21,23,q),8)
+        camset(c,LV((X0+2.4,5.4,.95),(X0+2.6,5.3,.9),q),L(21,23,q),8)
     return dict(upd=upd)
 SHOTS['FOURFEET']=FOURFEET
 # ---------------------------------------------------------------- the W-11

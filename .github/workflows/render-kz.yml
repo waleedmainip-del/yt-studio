@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: kz-render-r7
+  group: kz-render-r8
   cancel-in-progress: false
 jobs:
   render:
