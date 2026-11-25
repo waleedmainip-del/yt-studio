@@ -1,0 +1,60 @@
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing c.443
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing p.1174
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing e.128
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing c.444
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing c.445
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing p.1175
+Fra:3120 Mem:417.19M (Peak 490.00M) | Time:00:00.12 | Syncing Point
+Fra:3120 Mem:417.15M (Peak 490.00M) | Time:00:00.16 | Rendering 1 / 24 samples
+Fra:3120 Mem:417.15M (Peak 490.00M) | Time:00:23.59 | Rendering 24 / 24 samples
+Fra:3120 Mem:414.58M (Peak 490.00M) | Time:00:24.70 | Compositing
+Fra:3120 Mem:414.58M (Peak 490.00M) | Time:00:24.70 | Compositing | Determining resolution
+Fra:3120 Mem:414.58M (Peak 490.00M) | Time:00:24.70 | Compositing | Initializing execution
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.70 | Compositing | Tile 1-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.70 | Compositing | Tile 2-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.70 | Compositing | Tile 3-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.70 | Compositing | Tile 4-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 5-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 6-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 7-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 8-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 9-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 10-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 11-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 12-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 13-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 14-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 15-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 16-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 17-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 18-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 19-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 20-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 21-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.71 | Compositing | Tile 22-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 23-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 24-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 25-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 26-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 27-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 28-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 29-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 30-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 31-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 32-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 33-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 34-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 35-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 36-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 37-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 38-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 39-40
+Fra:3120 Mem:446.29M (Peak 490.00M) | Time:00:24.72 | Compositing | Tile 40-40
+Fra:3120 Mem:446.22M (Peak 490.00M) | Time:00:24.72 | Compositing | De-initializing execution
+Saved: '/home/runner/work/yt-studio/yt-studio/kz/render/frames/S47/f03120.png'
+Time: 00:24.95 (Saving: 00:00.23)
+
+FRAME 1 889.2
+SHOT_DONE 47
+
+Blender quit
