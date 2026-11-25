@@ -34,7 +34,7 @@ def PLAN():
         k=tl(t,ws(203)-.1,ws(203)+.2); kg['arm'][-1].rotation_euler=(R(-78*k),R(18*k),0); kg['head'].rotation_euler=(R(12),0,R(20*math.sin(t*2.6)*k)); face(kg,mouth='smirk' if k>.5 else 'flat',brow=-.03,brow_r=-12)
         for i in (1,2,3):
             look_at(Z[i],hp(kg),.7*k,maxyaw=70); Z[i]['head'].rotation_euler[0]=R(8+8*math.sin(t*7+i)*tl(t,ws(206),ws(206)+.2))
-        q=ease(t/DUR); camset(LV((-.6,RZY+10.5,ROOF_Z+1.2),(-.2,RZY+8.6,ROOF_Z+1.6),q),(.2,RZY,ROOF_Z+2.0),L(21,23,q),8)
+        q=ease(t/DUR); camset(LV((-.6,RZY+10.5,ROOF_Z+1.2),(-.2,RZY+8.6,ROOF_Z+1.6),q),(.2,RZY,ROOF_Z+2.0),L(25,28,q),8)
     return dict(upd=upd)
 SHOTS['PLAN']=PLAN
 # ---------------------------------------------------------------- 1 AM / 2 AM / 3 AM vignettes (seen from the street, zombies peeking from the roof)
@@ -47,7 +47,7 @@ def kettle(H,s=1):
     return in_hand(H,s,b)
 def ONEAM():
     Q=night_street((1,0),seed=3,skip=(0,1),walk=False); Z=roof_z(); FILLE[0]=30
-    stall_chai(0,1.7); B.done('st')
+    chai_counter(0,1.7,180)
     cw=mk(CHAIWALA,0,.8,180,'chaiwala'); kt=kettle(cw,1); cu=[mk(CROWD[4],-2.7,1.5,128,'c1'),mk(CROWD[15],2.7,1.5,-128,'c2'),mk(CROWD[10],-4.6,.2,140,'c3')]; cups=[chai(cu[0],-1),chai(cu[1],1),chai(cu[2],1)]
     st=ocyl((0,0,0),.012,1.0,M('#B5713A',.4,emit=.3),rot=(0,0,0),seg=6); cc=chai(cw,-1)
     def upd(t):
@@ -237,14 +237,14 @@ def RICK():
 SHOTS['RICK']=RICK
 def CHAIZ():
     Q=day_street(walk=False,skip=(0,1)); FILLE[0]=25
-    stall_chai(0,-1.9); B.done('st')
-    cw=mk(ZCHAI,0,-2.75,180,'zchai'); kt=kettle(cw,1); cu=[mk(CROWD[1],-2.5,-.5,112,'c1'),mk(CROWD[18],2.5,-.5,-112,'c2')]; cups=[chai(cu[0],-1),chai(cu[1],1)]
-    st=ocyl((0,0,0),.012,1.0,M('#B5713A',.4,emit=.3),rot=(0,0,0),seg=6); cc=chai(cw,-1); steam((0,-1.9,1.5),0,9,n=8,seed=2,size=.07)
+    chai_counter(0,-1.75,180)
+    cw=mk(ZCHAI,0,-2.65,180,'zchai'); kt=kettle(cw,1); cu=[mk(CROWD[1],-2.6,-1.6,128,'c1'),mk(CROWD[18],2.6,-1.6,-128,'c2')]; cups=[chai(cu[0],-1),chai(cu[1],1)]
+    st=ocyl((0,0,0),.012,1.0,M('#B5713A',.4,emit=.3),rot=(0,0,0),seg=6); cc=chai(cw,-1); steam((.6,-1.75,1.6),0,9,n=8,seed=2,size=.07)
     def upd(t):
         Q['bg'](t); hstand(cw,t); k=.5+.5*math.sin(t*4.0); cw['arm'][1].rotation_euler=(R(-150-12*k),0,R(10)); upright(kt,cw,1,tilt=-55); hold_chai(cw,cc,-1,a=-58); face(cw,mouth='grin',brow=.05); zeyes(cw,1.1)
         for i,H in enumerate(cu): hstand(H,t); hold_chai(H,cups[i],(-1,1)[i],a=-70); face(H,mouth='grin'); look_at(H,hp(cw),.6)
         kp=kt.matrix_world@Vector((0,-.42,.2)); cp=cc.matrix_world@Vector((0,-.07,.2)); stream(kp,cp,st)
-        q=ease(t/DUR); camset(LV((.9,2.6,1.9),(.7,2.2,1.95),q),(0,-2.6,2.0),L(30,32,q),5.6)
+        q=ease(t/DUR); camset(LV((.8,2.3,1.9),(.6,1.9,1.95),q),(0,-2.5,1.95),L(25,27,q),5.6)
     return dict(upd=upd)
 SHOTS['CHAIZ']=CHAIZ
 def CRICZ():
@@ -282,7 +282,7 @@ def BOSS():
         Q['bg'](t); stand(kg,t); kpose(kg,1); kg['root'].location[0]=3.6; kg['root'].rotation_euler[2]=R(90); blink(kg,t); face(kg,mouth='frown',brow=-.02,brow_r=-6); look_at(kg,hp(zd),.6,maxpitch=25)
         stand(zd,t); blink(zd,t); zd['root'].rotation_euler[2]=R(-90); k=tl(t,ws(262),ws(262)+.3); hold_chai(zd,c1,1,a=-64,sip=.0); hold_chai(zd,c2,-1,a=L(-60,-92,k),out=6); zd['head'].rotation_euler[1]=0
         talk(zd,t,*wt(261,266),rate=7.5,rest='grin'); face(zd,brow=.05); look_at(zd,hp(kg),.8,maxpitch=30); zeyes(zd,1.1)
-        q=ease(t/DUR); camset(LV((4.5,-.7,1.95),(4.7,-.9,1.95),q),(6.55,-WLANE+.3,1.9),L(34,37,q),4.0)
+        q=ease(t/DUR); camset(LV((4.5,-.7,2.05),(4.7,-.9,2.05),q),(6.55,-WLANE+.3,1.86),L(40,42,q),4.0)
     return dict(upd=upd)
 SHOTS['BOSS']=BOSS
 # ---------------------------------------------------------------- one month later / Monday morning

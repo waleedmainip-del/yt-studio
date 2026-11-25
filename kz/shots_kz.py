@@ -333,7 +333,7 @@ def flood_set():
     wd=mk(CROWD[9],0,WLANE+.1,90,'wader'); pot=empty((0,0,0)); ocyl((0,0,.24),.36,.46,M('#7A3E1A',.3,metal=.85),pot,rot=(0,0,0),seg=18,r2=.46); ocyl((0,0,.5),.4,.05,M('#8E5A2A',.4,metal=.6),pot,rot=(0,0,0),seg=18)
     rn=rain(170,(0,0),size=(22,13))
     for p_ in S['lights']: pass
-    pl_=point((0,0,7),2500,(.85,.9,1.0),r=3,shadow=False); pl_.data.specular_factor=0
+    pl_=point((0,0,7),2500,(.85,.9,1.0),r=3,shadow=False); pl_.data.specular_factor=0; S['sun'].data.specular_factor=.12
     def pose(t,ux):
         ch.location=(ux,1.4,.36+.03*math.sin(t*2.2)); ch.rotation_euler=(R(1.5*math.sin(t*1.7)),0,0)
         sit(un,1,.985+.03*math.sin(t*2.2),legs=90); un['root'].location[0]=ux-.75; un['root'].location[1]=1.4; un['root'].rotation_euler=(0,0,R(90)); blink(un,t)

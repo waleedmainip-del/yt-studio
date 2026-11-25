@@ -10,7 +10,7 @@ def staff(H,s=1,h=3.5):
 def kpose(H,s=1): H['arm'][s].rotation_euler=(R(-55),0,0)
 # ---------------------------------------------------------------- APOC: they come out of the sea
 def APOC():
-    BE=beach('night',sign_at=(60,-9),ssize=.36); FILLE[0]=90
+    BE=beach('night',sign_at=(60,-9),ssize=.36); FILLE[0]=28
     cs=(ZKING,ZED,ZVAR[8],ZVAR[2],ZVAR[0],ZVAR[7],ZVAR[1],ZVAR[4]); pos=[(0,8.2),(-2.9,10.4),(3.0,10.8),(-5.6,12.6),(5.9,13.2),(-1.2,13.9),(2.2,16.0),(-8.4,15.4)]
     Z=[mk(C,0,0,0,'z%d'%i) for i,C in enumerate(cs)]; st=staff(Z[0],1)
     r=random.Random(5)
@@ -18,7 +18,7 @@ def APOC():
         for iy in range(7):
             y=20.5+iy*5.8+r.uniform(-1.5,1.5); x=-26+ix*5.7+r.uniform(-1.5,1.5); tok_z(r,x,y,r.uniform(-8,8),z=-min(1.75,(y-5)*.2))
     B.done('seaz')
-    point((0,16,5),1600,(.5,1.0,.65),r=3,shadow=False); point((0,2,6),2600,(.7,.82,1.0),r=3,shadow=False)
+    point((0,16,5),1600,(.5,1.0,.65),r=3,shadow=False); point((0,3,6),1100,(.6,.75,1.0),r=3,shadow=False); point((0,9,4),900,(.75,.85,1.0),r=2,shadow=False)
     def upd(t):
         for i,H in enumerate(Z):
             x,y0=pos[i]; d=.95*t+ .0; y=y0-d; z=-min(1.75,max(0,(y-4.6))*.2); H['z0']=z
@@ -27,7 +27,7 @@ def APOC():
             if i: zpose(H,t); H['root'].rotation_euler[1]+=R(3.5)*math.sin(t*3.1+H['seed'])
             else: zpose(H,t,base=-70); kpose(H,1)
             blink(H,t); face(H,mouth='flat' if i else 'frown',brow=-.03,brow_r=-12)
-        q=ease(t/DUR); camset(LV((1.2,.4,.95),(1.5,-1.6,1.1),q),LV((0,7.4,2.15),(0,5.6,2.1),q),L(24,26,q),8)
+        q=ease(t/DUR); camset(LV((1.2,.6,.8),(1.5,-1.2,.9),q),LV((0,7.4,3.0),(0,5.6,2.8),q),L(24,26,q),8)
     return dict(upd=upd)
 SHOTS['APOC']=APOC
 # ---------------------------------------------------------------- MOVIES: in the movies everyone screams and runs
@@ -185,7 +185,7 @@ def MAGHAZ():
         if not fast:
             look_at(zed,hp(wa),.5,maxyaw=70,maxpitch=20); q=ease(t/TC); camset(LV((4.5,ZTAB[1]-1.2,1.4),(4.6,ZTAB[1]-1.05,1.42),q),(wx,wy,2.02),L(29,31,q),4.0)
         else:
-            q=ease((t-TC)/(DUR-TC)); camset(LV((7.0,ZTAB[1]-1.7,1.95),(6.8,ZTAB[1]-1.5,1.95),q),(ZTAB[0]-.2,ZTAB[1]+.35,1.75),L(22,24,q),4.0)
+            q=ease((t-TC)/(DUR-TC)); camset(LV((7.1,ZTAB[1]-1.9,1.95),(6.9,ZTAB[1]-1.7,1.95),q),(ZSEAT[0]+.75,ZTAB[1]+.2,1.75),L(22,24,q),4.0)
     return dict(upd=upd)
 SHOTS['MAGHAZ']=MAGHAZ
 # ---------------------------------------------------------------- zombie army vs Shahrah-e-Faisal
@@ -254,12 +254,12 @@ def SIXPM():
     return dict(upd=upd)
 SHOTS['SIXPM']=SIXPM
 def FOURFEET():
-    J=jam_scene('khi_night',1.0,'9:00 PM'); kg=J['kg']; FILLE[0]=110; X0=J['X0']
+    J=jam_scene('khi_night',1.0,'9:00 PM'); kg=J['kg']; FILLE[0]=170; X0=J['X0']
     yl=M('#F2C14E',.5); wh=M('#F4F1EA',.6)
     B.box((X0-.55,3.6,.006),(.06,1.9,.006),wh,0); B.box((X0+.28,2.2,.03),(.61,.035,.03),yl,.005); B.box((X0-.4,2.2,.09),(.12,.1,.09),yl,.03)
     for k in range(5): B.box((X0-.2+k*.24,2.2,.062),(.006,.035,.004),M('#16171C',.5),0)
-    B.done('tape'); sign('4 FT',(X0+.3,1.75,.72),.38,'#16171C','#F2C14E',n=(-.7,-.7,0),pad=.15,th=.06,parent=empty((0,0,0)),always=True)
-    obox((X0+.3,1.75,.2),(.04,.04,.2),M('#5A5E66',.5),0)
+    B.done('tape'); sign('4 FT',(X0-.6,2.0,.85),.52,'#16171C','#F2C14E',n=(-.7,-.7,0),e=1.2,pad=.18,th=.06,parent=empty((0,0,0)),always=True)
+    obox((X0-.6,2.0,.22),(.04,.04,.22),M('#5A5E66',.5),0)
     def upd(t):
         J['place'](t,slump=1.0)
         kg['root'].location[1]=KY-2.6; kg['arm'][-1].rotation_euler=(R(-20),0,0); kg['head'].rotation_euler=(R(18),0,R(-10)); face(kg,mouth='frown',brow=-.03,brow_r=-6); zeyes(kg,.8)
@@ -291,12 +291,12 @@ def cond_door(co,t,Bs,wave=0.0,lean=0.0):
     arm_to(co,-1,(DOORX-.58,BY+1.77,2.6),1); co['arm'][1].rotation_euler=(R(-95-40*wave*(.5+.5*math.sin(t*10))),R(-18),0)
 def CONDUCTORS():
     Q=bus_scene(); co=Q['co']; Bs=Q['bus']
-    Z=[mk(ZVAR[8],DOORX-2.2,BY+3.5,0,'w0'),mk(ZVAR[0],DOORX-.2,BY+4.5,0,'w1'),mk(ZVAR[12],DOORX+1.6,BY+5.3,0,'w2')]
+    Z=[mk(ZVAR[0],DOORX-2.0,BY+3.7,0,'w0'),mk(ZVAR[12],DOORX+2.3,BY+3.9,0,'w1'),mk(ZVAR[8],DOORX-3.9,BY+5.4,0,'w2')]
     def upd(t):
         Q['base'](t); cond_door(co,t,Bs,wave=tl(t,ws(172)-.2,ws(172)+.1),lean=1); talk(co,t,*wt(169,175),rate=8,rest='grin'); face(co,brow=.05)
         for i,H in enumerate(Z):
             stand(H,t); zpose(H,t,.5,base=-70); blink(H,t); look_at(H,hp(co),.8,maxpitch=30); face(H,mouth='O' if i==0 else 'flat',brow=.05,brow_r=8); H['head'].rotation_euler[1]=R(8 if i%2 else -8)
-        q=ease(t/DUR); camset(LV((DOORX+3.6,BY+3.9,2.55),(DOORX+3.2,BY+3.6,2.6),q),(DOORX-.25,BY+1.4,2.75),L(27,29,q),5.6)
+        q=ease(t/DUR); camset(LV((DOORX+.7,BY+6.6,1.85),(DOORX+.55,BY+6.0,1.9),q),(DOORX-.1,BY+1.4,2.6),L(29,31,q),5.6)
     return dict(upd=upd)
 SHOTS['CONDUCTOR']=CONDUCTORS
 def PACK():

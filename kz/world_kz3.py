@@ -170,3 +170,13 @@ def bed_shop(x,y):
     sign('90% OFF',(x,y+1.1,1.9),.34,'#16171C','#F2C14E',n=(0,-1,0),e=1.4,pad=.18,th=.08,always=True)
     sign('NEVER USED',(x,y+1.1,1.27),.26,'#FFFFFF','#C8372D',n=(0,-1,0),e=1.4,pad=.13,th=.08,always=True)
     for sx in (-1.5,1.5): B.cyl((x+sx,y+1.16,1.6),.05,3.2,M('#5A5E66',.5),seg=6)
+def chai_counter(x,y,rz=0,label='CHAI  20'):
+    """open chai counter (no awning): faces rz, seller stands behind"""
+    e=empty((x,y,0),rot=(0,0,R(rz))); wd=M('#8A5A36',.6,kind='wood',sc=.6); st=M('#C9CED8',.25,metal=.9)
+    obox((0,0,.5),(.95,.36,.5),wd,.03,e); obox((0,0,1.02),(1.0,.4,.025),M('#F2EEE6',.4,kind='tile',sc=6,h2='#C8372D'),.01,e)
+    obox((-.6,0,1.1),(.2,.2,.06),M('#2A2C34',.5),.02,e); ocyl((-.6,0,1.17),.13,.03,lit('#FF7A1A',6,always=True),e,rot=(0,0,0),seg=12)
+    ocyl((-.6,0,1.32),.17,.26,st,e,rot=(0,0,0),seg=16,r2=.12); ocyl((-.6,0,1.47),.08,.05,M('#2A2C34',.4),e,rot=(0,0,0),seg=10)
+    for i in range(6): ocyl((-.05+(i%3)*.2,-.12+(i//3)*.2,1.1),.055,.11,M('#F6F4EE',.4),e,rot=(0,0,0),seg=10,r2=.07)
+    ocyl((.72,.05,1.2),.12,.3,M('#BFE6F2',.1,spec=1,alpha=.45),e,rot=(0,0,0),seg=12); ocyl((.72,.05,1.13),.1,.14,M('#C9A45A',.6),e,rot=(0,0,0),seg=10)
+    sign(label,(0,-.38,.55),.24,'#FFF6D8','#7A1F2E',n=(0,-1,0),e=1.5,pad=.12,th=.03,parent=e,always=True)
+    return e
