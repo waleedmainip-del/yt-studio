@@ -1,7 +1,7 @@
 # Shots for "Darzi Ka Kal". SEQ/END are filled by gen_seq.py.
 SHOTS={}
-END=83.7333
-SEQ=[('HOOK', 0.0), ('KAL0', 2.833), ('GIVE', 4.0), ('M1', 9.9), ('KAL2', 11.733), ('KAL3', 15.567), ('WAQFA', 19.6), ('CURTAIN', 23.767), ('JOOTE', 30.867), ('BEHIND', 33.833), ('CHAAND', 36.3), ('CROWD', 42.367), ('SEW', 45.433), ('DARK', 49.1), ('TORCH', 51.333), ('PACKET', 55.1), ('OPEN', 59.333), ('EID', 62.733), ('REVEAL', 69.633), ('MR1', 72.033), ('MR2', 75.7), ('CTA', 79.633)]
+END=79.4
+SEQ=[('HOOK', 0.0), ('KAL0', 2.6), ('GIVE', 3.867), ('M1', 9.567), ('KAL2', 11.567), ('KAL3', 15.2), ('WAQFA', 19.033), ('CURTAIN', 23.133), ('JOOTE', 29.933), ('BEHIND', 32.6), ('CHAAND', 35.233), ('CROWD', 41.067), ('SEW', 43.567), ('DARK', 47.167), ('TORCH', 49.433), ('PACKET', 52.933), ('OPEN', 56.8), ('EID', 60.233), ('REVEAL', 66.667), ('MR1', 69.133), ('MR2', 72.433), ('CTA', 75.767)]
 import os as _os
 FILLE=[40.0]; _FL=[]
 _camset0=camset
@@ -157,7 +157,7 @@ def CURTAIN():
         if q>=1: stand(wa,t); wa['root'].rotation_euler[2]=R(face_dir(CURT[0]-2.12,CURT[1]-3.55))
         look_at(wa,(CURT[0],CURT[1],.3),.7*tl(t,ws(73)-.2,ws(73)+.3),maxpitch=40); face(wa,mouth='flat',brow=-.04,eyes=1.05)
         if t<ws(66)-.4: camset((-2.4,-4.0,1.8),(.0,2.6,1.4),24,4)
-        elif t<ws(73)-.1: camset((2.45,2.2,1.9),(1.4,5.0,1.2),24,4)
+        elif t<ws(73)-.1: camset((-.4,2.5,1.85),(1.75,5.0,1.1),24,4)
         else: q2=tl(t,ws(73)-.1,DUR); camset(LV((1.5,3.4,.48),(1.5,3.5,.42),q2),(CURT[0],CURT[1]+.3,.22),30,2.8)
     return dict(upd=upd)
 SHOTS['CURTAIN']=CURTAIN
@@ -317,5 +317,5 @@ def CTA():
         c0,tg,ln=closecam(wa,face_dir(-1.3,2.5),.0,2.0,lens=26,tz=-.4); camset(drift(c0,tg,t,.18),tg,ln,2.8)
     return dict(upd=upd)
 SHOTS['CTA']=CTA
-SEQ=[('HOOK', 0.0), ('KAL0', 2.833), ('GIVE', 4.0), ('M1', 9.9), ('KAL2', 11.733), ('KAL3', 15.567), ('WAQFA', 19.6), ('CURTAIN', 23.767), ('JOOTE', 30.867), ('BEHIND', 33.833), ('CHAAND', 36.3), ('CROWD', 42.367), ('SEW', 45.433), ('DARK', 49.1), ('TORCH', 51.333), ('PACKET', 55.1), ('OPEN', 59.333), ('EID', 62.733), ('REVEAL', 69.633), ('MR1', 72.033), ('MR2', 75.7), ('CTA', 79.633)]
-END=83.7333
+SEQ=[('HOOK', 0.0), ('KAL0', 2.6), ('GIVE', 3.867), ('M1', 9.567), ('KAL2', 11.567), ('KAL3', 15.2), ('WAQFA', 19.033), ('CURTAIN', 23.133), ('JOOTE', 29.933), ('BEHIND', 32.6), ('CHAAND', 35.233), ('CROWD', 41.067), ('SEW', 43.567), ('DARK', 47.167), ('TORCH', 49.433), ('PACKET', 52.933), ('OPEN', 56.8), ('EID', 60.233), ('REVEAL', 66.667), ('MR1', 69.133), ('MR2', 72.433), ('CTA', 75.767)]
+END=79.4
