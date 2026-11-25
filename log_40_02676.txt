@@ -1,0 +1,60 @@
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing t.102
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing t.103
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing t.104
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing t.105
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing t.106
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing i.327
+Fra:2728 Mem:649.29M (Peak 720.50M) | Time:00:00.18 | Syncing Point.014
+Fra:2728 Mem:649.23M (Peak 720.50M) | Time:00:00.22 | Rendering 1 / 24 samples
+Fra:2728 Mem:649.23M (Peak 720.50M) | Time:00:34.44 | Rendering 24 / 24 samples
+Fra:2728 Mem:645.08M (Peak 720.50M) | Time:00:36.03 | Compositing
+Fra:2728 Mem:645.08M (Peak 720.50M) | Time:00:36.03 | Compositing | Determining resolution
+Fra:2728 Mem:645.08M (Peak 720.50M) | Time:00:36.03 | Compositing | Initializing execution
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 1-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 2-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 3-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 4-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 5-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 6-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 7-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 8-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.04 | Compositing | Tile 9-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 10-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 11-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 12-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 13-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 14-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 15-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 16-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 17-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 18-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 19-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 20-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 21-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.05 | Compositing | Tile 22-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 23-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 24-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 25-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 26-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 27-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 28-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 29-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 30-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 31-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 32-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 33-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 34-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 35-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 36-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 38-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.06 | Compositing | Tile 37-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.07 | Compositing | Tile 39-40
+Fra:2728 Mem:676.79M (Peak 720.50M) | Time:00:36.07 | Compositing | Tile 40-40
+Fra:2728 Mem:676.72M (Peak 720.50M) | Time:00:36.07 | Compositing | De-initializing execution
+Saved: '/home/runner/work/yt-studio/yt-studio/kz/render/frames/S40/f02728.png'
+Time: 00:36.35 (Saving: 00:00.28)
+
+FRAME 1 1939.5
+SHOT_DONE 40
+
+Blender quit
