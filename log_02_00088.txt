@@ -1,0 +1,60 @@
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1363
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1364
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1365
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1366
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1367
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1368
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1369
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1370
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1371
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1372
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1373
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1374
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1375
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1376
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1377
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1378
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1379
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1380
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1381
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1382
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1383
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1384
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1385
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1386
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.231
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.232
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1387
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1388
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1389
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1390
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.233
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1391
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1392
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1393
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1394
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing e.121
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1395
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1396
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1397
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1398
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing ip.025
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing e.122
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1399
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.234
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.235
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.236
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.237
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing c.238
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing e.123
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing p.1400
+Fra:162 Mem:250.85M (Peak 292.81M) | Time:00:00.45 | Syncing ip.026
+Fra:162 Mem:250.84M (Peak 292.81M) | Time:00:00.48 | Rendering 1 / 4 samples
+Fra:162 Mem:250.83M (Peak 292.81M) | Time:00:04.17 | Rendering 4 / 4 samples
+Saved: '/home/claude/abbu/frames/S02/f00162.png'
+Time: 00:05.52 (Saving: 00:00.30)
+
+FRAME 1 438.8
+SHOT_DONE 2
+
+Blender quit
