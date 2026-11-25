@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: kk-render-r2
+  group: kk-render-r3
   cancel-in-progress: false
 jobs:
   render:
