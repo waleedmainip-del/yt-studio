@@ -214,7 +214,7 @@ def street_tables(n=10,dress=None,skip=()):
         for (sx,sy,rz) in (s1,s2): kchair(sx,sy,rz,['#2B58C9','#C8372D','#1E6A3A','#F4F1EA'][i%4])
         out.append(((x,y),[s1,s2]))
     return out
-def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,lights=True,roof=False,shadow=45,nost=(),rest_sign='CHACHA MAGHAZ HOUSE',night=None,cooks=True,far=.7):
+def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,lights=True,roof=False,shadow=45,nost=(),rest_sign='CHACHA MAGHAZ HOUSE',night=None,cooks=True,far=.7,gap=None):
     NIGHT[0]=(1.0 if mood in ('night','dusk') else 0.0) if night is None else night; r=random.Random(seed); FANS.clear()
     night=NIGHT[0]>0
     B.box((0,0,-.3),(260,260,.2),M('#55524C',.9,kind='concrete',sc=.4),0)
@@ -264,6 +264,7 @@ def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,ligh
         for i,x in enumerate(range(BX0+6,BX1-2,3)):
             if x-1.0<ax<x+4.0: continue
             sg_=1 if i%2==0 else -1
+            if gap and gap[0]<=x<gap[1]: continue
             p0=(x,sg_*(BW-.62),6.8); p1=(x+3,-sg_*(BW-.62),6.8); n_=14
             for k in range(n_+1):
                 f=k/n_; q=(L(p0[0],p1[0],f),L(p0[1],p1[1],f),p0[2]-.9*math.sin(pi*f)); B.ico(q,.075,lit(cols[(k+i)%len(cols)],5.5 if night else 1.0,always=True),sub=1)
@@ -271,7 +272,7 @@ def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,ligh
                     f2=(k+1)/n_; q2=(L(p0[0],p1[0],f2),L(p0[1],p1[1],f2),p0[2]-.9*math.sin(pi*f2)); d=Vector(q2)-Vector(q)
                     B.cyl(tuple((Vector(q)+Vector(q2))/2+Vector((0,0,.05))),.008,d.length,M('#16171C',.5),rot=d.to_track_quat('Z','Y').to_euler(),seg=4)
         for i,x in enumerate(range(BX0+9,BX1-4,9)):          # bunting
-            if abs(x-ax)<2.5: continue
+            if abs(x-ax)<2.5 or (gap and gap[0]<=x<gap[1]): continue
             n_=17
             for k in range(n_):
                 f=(k+.5)/n_; y=L(BW-.7,-(BW-.7),f); z=8.6-.7*math.sin(pi*f); B.box((x,y,z-.16),(.012,.15,.15),M(bc[(k+i)%len(bc)],.8,kind='fabric'),0,rot=(R(45),0,0))

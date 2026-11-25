@@ -165,7 +165,7 @@ def flash_light(loc,times,e=9000):
     return upd
 # ---------------------------------------------------------------- EVERY: Waleed "and I mean EVERYONE"
 def EVERY():
-    faisal('khi',0.0,gantry_text='WELCOME TO KARACHI',stop_x=44)
+    faisal('khi',0.0,gantry_text='WELCOME TO KARACHI',stop_x=44,gantry_x=-44)
     wa=mk(WALEED,-9.5,13.7,-90,'wa'); G=[]
     spots=[(-7.2,15.7,3),(-6.9,12.95,8),(-4.6,14.5,14),(-4.2,16.4,6),(-2.2,13.2,11),(-1.6,15.4,17),(.4,16.6,21),(.9,14.2,0),(4.3,13.0,9),(4.2,15.5,12),(6.6,14.3,15),(7.0,16.4,23)]
     for i,(x,y,c) in enumerate(spots): G.append(mk(CROWD[c],x,y,-90,'g%d'%i))
@@ -279,7 +279,7 @@ SHOTS['RUMOUR']=RUMOUR
 def cook_anim(H,t,ph=0.0):
     hstand(H,t); c=math.sin(t*6+ph); H['arm'][1].rotation_euler=(R(-62-14*c),0,R(6)); H['arm'][-1].rotation_euler=(R(-58+12*c),0,R(-6)); H['head'].rotation_euler[0]=R(12)
 def THREEAM():
-    S=burns('night',clock=(3,0)); TB=street_tables(8); B.done('x')
+    S=burns('night',clock=(3,0),gap=(-24,-16)); TB=street_tables(8); B.done('x')
     D=diners(1,TB); Wk=kwalkers(2,((WLANE,1),(-WLANE,-1)),5,-34,30); ck=mk(COOK,-4.6,BW+2.0,0,'cook')
     def upd(t):
         upd_diners(D,t); upd_kwalkers(Wk,t); cook_anim(ck,t); spin_fans(t)
