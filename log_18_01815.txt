@@ -1,0 +1,60 @@
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing c.005
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.054
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.055
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.056
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.057
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing c.006
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.058
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.059
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing p.060
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing mo
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing mo.001
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing mo.002
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing mo.003
+Fra:1882 Mem:67.78M (Peak 110.74M) | Time:00:00.09 | Syncing mo.004
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.005
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.006
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.007
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.008
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.009
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.010
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.011
+Fra:1882 Mem:67.79M (Peak 110.74M) | Time:00:00.09 | Syncing mo.012
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.013
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.014
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.015
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.016
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.017
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.018
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.019
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.020
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.021
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.022
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.023
+Fra:1882 Mem:67.82M (Peak 110.74M) | Time:00:00.09 | Syncing mo.024
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing mo.025
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing mo.026
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing Sun
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing Area
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.007
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.008
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.009
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.010
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.011
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.012
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.013
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing ip
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing e.014
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing c.017
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing c.018
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing c.019
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.09 | Syncing c.020
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:00.12 | Rendering 1 / 4 samples
+Fra:1882 Mem:67.85M (Peak 110.74M) | Time:00:02.90 | Rendering 4 / 4 samples
+Saved: '/home/claude/aunty/frames/S18/f01882.png'
+Time: 00:03.91 (Saving: 00:00.24)
+
+FRAME 1 277.8
+SHOT_DONE 18
+
+Blender quit
