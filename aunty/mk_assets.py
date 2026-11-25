@@ -36,12 +36,12 @@ def gps2(im,d,W,H):
     d.text((W/2,700),'Aur beta...',font=f(46),fill='#E8589A',anchor='mm'); d.text((W/2,790),'baal kab',font=f(58),fill='#13203A',anchor='mm'); d.text((W/2,870),'katwao ge?',font=f(58),fill='#13203A',anchor='mm')
 phone('gps1',gps1); phone('gps2',gps2)
 def fam(im,d,W,H):
-    d.rectangle((0,60,W,170),fill='#075E54'); d.text((40,115),'Khandaan',font=f(40),fill='white',anchor='lm'); d.text((W-30,115),'412',font=f(34),fill='#7CFFB2',anchor='rm')
-    msgs=[('Shabnam Phuppo','Mubarak ho beta!!'),('Rubina Khala','Mithai kab??'),('Nasreen Chachi','Salary kitni hai?'),('Tayi Ammi','Ab rishta pakka karo'),('Saima Aunty','Larki main dhoondti hoon'),('Phuppo 2','Mubarak!!!')]
-    y=200
-    for n,m in msgs:
-        d.rounded_rectangle((30,y,W-60,y+120),22,fill='#FFFFFF'); d.text((54,y+30),n,font=f(28),fill='#E8589A',anchor='lm'); d.text((54,y+80),m,font=fm(32),fill='#13203A',anchor='lm'); y+=138
-    d.rectangle((0,H-80,W,H),fill='#1F2C34'); d.text((W/2,H-40),'+406 more messages',font=fm(30),fill='#C9D6D2',anchor='mm')
+    d.rectangle((0,60,W,H),fill='#0B141A'); d.rectangle((0,60,W,180),fill='#075E54'); d.text((30,120),'Khandaan',font=f(46),fill='white',anchor='lm'); d.text((W-30,120),'412',font=f(40),fill='#7CFFB2',anchor='rm')
+    msgs=[('Shabnam Phuppo','Mubarak ho beta!!'),('Rubina Khala','Mithai kab??'),('Nasreen Chachi','Salary kitni hai?'),('Tayi Ammi','Ab rishta pakka karo'),('Saima Aunty','Larki main dhoondti hoon')]
+    y=205
+    for n,m_ in msgs:
+        d.rounded_rectangle((24,y,W-50,y+146),24,fill='#1F2C34'); d.text((46,y+40),n,font=f(32),fill='#FF8AC0',anchor='lm'); d.text((46,y+100),m_,font=f(38),fill='#FFFFFF',anchor='lm'); y+=162
+    d.text((W/2,H-45),'+407 more messages',font=f(32),fill='#9FB3BD',anchor='mm')
 phone('fam',fam)
 def pm(im,d,W,H):
     d.rectangle((0,0,W,H),fill='#0B3D24'); d.text((W/2,230),'Incoming call',font=fm(36),fill='#BFE8D0',anchor='mm')

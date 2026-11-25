@@ -26,7 +26,13 @@ def nod(H,t,amp=5,rate=5): H['head'].rotation_euler[0]=R(amp)*math.sin(t*rate)
 def headpos(H): u=H['u']; return tuple(root_mat(H)@Vector((0,0,4.75*u)))
 PEOPLE=[]; _pers=person
 def person(*a,**k):
-    H=_pers(*a,**k); PEOPLE.append(H); return H
+    H=_pers(*a,**k); PEOPLE.append(H); C=H.get('C') or (a[2] if len(a)>2 else {})
+    sl=C.get('slim') if isinstance(C,dict) else None
+    if sl:
+        for o in H['root'].children:
+            if o is H['head']: continue
+            o.location.x*=sl[0]; o.location.y*=sl[1]; o.scale.x*=sl[0]; o.scale.y*=sl[1]
+    return H
 CAMLOCK={}; PROBE=[False]
 def _root_of(o):
     while o.parent is not None: o=o.parent
@@ -177,22 +183,32 @@ def drive_rk(K,H,t):
     arm_reach(H,1,tuple(m@Vector((.34,0,.0+.01*math.sin(t*3))))); arm_reach(H,-1,tuple(m@Vector((-.34,0,0))))
 def cam_rk(K,lx,ly,lz,tx,ty,tz,lens=20,fs=3.5): _camset(tuple(rk_world(K,lx,ly,lz)),tuple(rk_world(K,tx,ty,tz)),lens,fs,focus=tuple(rk_world(K,tx,ty,tz)))
 RKX=-2.0
-def road_crowd(seed=0,n=14,y0=-6,y1=30):
-    rnd=random.Random(seed); G=[]
-    for i in range(n):
-        s=-1 if i%3 else 1; x=s*rnd.uniform(4.6,5.8); y=rnd.uniform(y0,y1)
-        if abs(x+5.3)<.9 and abs(y-22)<1.6: y+=3.0
-        H=person((x,y,0),0,aunty(300+seed*31+i*7),'smile',name='rc%d'%i); H['xy']=(x,y,rnd.uniform(0,360)); H['ph']=rnd.uniform(0,6); G.append(H)
-    # pair them up: each faces the nearest neighbour
-    for H in G:
-        best=min((o for o in G if o is not H),key=lambda o:(Vector(o['xy'][:2])-Vector(H['xy'][:2])).length)
-        if (Vector(best['xy'][:2])-Vector(H['xy'][:2])).length<2.2: H['xy']=(H['xy'][0],H['xy'][1],face_dir(best['xy'][0]-H['xy'][0],best['xy'][1]-H['xy'][1]))
+def road_crowd(seed=0,avoid=()):
+    """background aunties: chatting pairs and singles, every body at least 1.4 m from the next"""
+    rnd=random.Random(seed); G=[]; i=0
+    for s,ys in ((-1,range(-9,36,5)),(1,range(-7,36,6))):
+        for y0 in ys:
+            y=y0+rnd.uniform(-.6,.6); x=s*rnd.uniform(5.0,5.5)
+            if any(sg==s and a0-2.2<y<a1+2.2 for sg,a0,a1 in avoid): continue
+            if s<0 and 19.5<y<25.5: continue                      # lassi stall + traffic post
+            if rnd.random()<.55:
+                A=person((x,y-.75,0),180,aunty(300+seed*31+i*7),'smile',name='rc%d'%i); A['xy']=(x,y-.75,180); i+=1
+                Bp=person((x,y+.75,0),0,aunty(300+seed*31+i*7),'smile',name='rc%d'%i); Bp['xy']=(x,y+.75,0); i+=1
+                A['act']='pairA'; Bp['act']='pairB'; A['ph']=Bp['ph']=rnd.uniform(0,6); G+=[A,Bp]
+            else:
+                H=person((x,y,0),0,aunty(300+seed*31+i*7),'smile',name='rc%d'%i); H['xy']=(x,y,90 if s<0 else 270); H['act']=rnd.choice(['hips','cross','rest']); H['ph']=rnd.uniform(0,6); G.append(H); i+=1
     reg(*G); return G
 def road_crowd_upd(G,t,stare=None):
     for i,H in enumerate(G):
-        x,y,rz=H['xy']; standH(H,x,y,rz,t); blink(H,t+i)
-        if stare is not None: look_at(H,stare,.8); gossip(H,t,H['ph'],talking=(i%2==0))
-        else: gossip(H,t,H['ph'],talking=(int(t*.6+i)%2==0))
+        x,y,rz=H['xy']; standH(H,x,y,rz,t); blink(H,t+i); a=H['act']
+        if a in ('pairA','pairB'):
+            mine=(int((t+H['ph'])/2.4)%2==0)==(a=='pairA')
+            if mine: face(H,mouth=('o','smile','O','flat')[int(t*6+H['ph'])%4]); arms(H,-32-10*math.sin(t*3+H['ph']),0,10,-14,0,-6)
+            else: face(H,mouth='smile'); arms(H,-14,0,6,-14,0,-6); H['head'].rotation_euler[0]=R(4)*math.sin(t*4+H['ph'])
+        elif a=='hips': arms(H,-8,0,-38,-8,0,38); face(H,mouth='flat'); H['head'].rotation_euler[2]=R(25)*math.sin(t*.6+H['ph'])
+        elif a=='cross': arms(H,-62,0,-58,-62,0,58); face(H,mouth='smile'); H['head'].rotation_euler[2]=R(20)*math.sin(t*.5+H['ph'])
+        else: arms(H,-12,0,6,-12,0,-6); face(H,mouth='smile'); H['head'].rotation_euler[2]=R(22)*math.sin(t*.7+H['ph'])
+        if stare is not None and (Vector((x,y,0))-Vector((stare[0],stare[1],0))).length<9: look_at(H,stare,.8); face(H,mouth='flat',eyes=1.1)
 def traffic_cars(seed=0):
     out=[]
     for i,(x,col,sp,y0) in enumerate(((2.0,'#F4F5FA',-7,60),(2.0,'#C8102E',-6,30),(2.0,'#2B2C33',-6,95),(2.0,'#2F6FE0',-8,5))):
@@ -204,45 +220,51 @@ def traffic_upd(V,t):
 def SH_A(view):
     KEY='A_'+view; road(); B.done('road'); setup_render('morning_s',res=PCT,samples=SAMPLES,shadow_dist=40)
     w=WAL(); dr=person((0,0,0),0,RICK,'smile',name='rick'); reg(w,dr); K=rickshaw(RKX,0,0)
-    G=road_crowd(1 if view in ('hook','job') else 2)
+    START=view in ('hook','job','stop')
+    G=road_crowd(1,avoid=((-1,.5,9.5),(1,3.0,7.5))) if START else road_crowd(2)
     HK=[]
-    if view in ('hook','job'):
-        rnd=random.Random(9)
-        for i in range(11):
-            a=-1.35+i*.27; rr=rnd.uniform(1.3,1.9); x=-4.75-abs(math.cos(a))*rr*.6; y=8.0+math.sin(a)*rr*1.4
-            H=person((x,y,0),0,aunty(1300+i*11),'smile',name='hk%d'%i); H['xy']=(x,y,0); H['ph']=rnd.uniform(0,6); HK.append(H)
+    if START:
+        # five aunties lined along the shop fronts + two across the road: silent, heads following him
+        for i,(x,y,rz,pose) in enumerate(((-5.95,1.6,90,'hips'),(-5.95,3.3,90,'cross'),(-5.95,5.0,90,'cheek'),(-5.95,6.7,90,'hips'),(-5.95,8.6,90,'cross'),(5.0,4.4,180,'rest'),(5.0,5.9,0,'cheek'))):
+            H=person((x,y,0),rz,aunty(1300+i*11),'smile',name='hk%d'%i); H['xy']=(x,y,rz); H['pose']=pose; HK.append(H)
         reg(*HK)
     of=person((0,0,0),0,OFFICER,'flat',name='officer'); reg(of); V=traffic_cars()
     ph,scr=phone_obj('gps1'); tk=paper_obj('ticket',.14,.2); gl=glass_obj(); wh=whistle_obj()
     def upd(t):
         q=ease(t/DUR); traffic_upd(V,t)
         for o in (ph,tk,gl,wh): o.location=(0,0,-9)
-        of['root'].location=(0,0,-9); KEEP[0]=None; NEAR[0]=1.5; OWNER[0]=None
+        of['root'].location=(0,0,-9); KEEP[0]=None; NEAR[0]=1.5; OWNER[0]=None; body_vis(of,True)
+        def hk_upd(tgt):
+            for i,H in enumerate(HK):
+                x,y,rz=H['xy']; standH(H,x,y,rz,t); blink(H,t+i*1.7); look_at(H,tgt,.9,maxyaw=75); p_=H['pose']
+                if p_=='hips': arms(H,-8,0,-38,-8,0,38); face(H,mouth='flat',eyes=1.1,brow=-.04)
+                elif p_=='cross': arms(H,-62,0,-58,-62,0,58); face(H,mouth='smirk',eyes=1.0)
+                elif p_=='cheek': arms(H,-14,0,6,-14,0,-6); arm_reach(H,1,tuple(Vector(headpos(H))+root_mat(H).to_3x3()@Vector((.3,-.12,-.12)))); face(H,mouth='O',eyes=1.2,brow=.08)
+                else: arms(H,-12,0,6,-12,0,-6); face(H,mouth='smile',eyes=1.1)
         if view in ('hook','job'):
             K['root'].location=(RKX,-30,0); dr['root'].location=(0,0,-9)
-            road_crowd_upd(G,t,stare=headpos(w) if view=='hook' else None)
-            for i,H in enumerate(HK):
-                x,y,_=H['xy']; standH(H,x,y,heading_to(H,headpos(w)),t); blink(H,t+i); gossip(H,t,H['ph'],talking=(i%3!=0)); look_at(H,headpos(w),.8)
-            if view=='hook':      # every adult on this road is an aunty — and they are all looking at Waleed
-                standH(w,-4.5,8.0,90,t); blink(w,t); face(w,mouth='flat',eyes=1.1); arms(w,-12,0,6,-12,0,-6)
-                for i,H in enumerate(G): look_at(H,headpos(w),.8)
-                _camset((L(-.9,-1.4,q),L(8.4,8.1,q),L(1.9,2.2,q)),(-4.9,8.0,1.3),L(19,17,q),6,focus=headpos(w))
+            road_crowd_upd(G,t,stare=headpos(w))
+            if view=='hook':      # he walks up the pavement; every aunty's head turns with him
+                walk_path(w,[(-4.4,2.0),(-4.4,7.6)],t,0,DUR,step=.56,arm=22); blink(w,t); face(w,mouth='smile' if t<DUR*.55 else 'flat',eyes=1.0 if t<DUR*.55 else 1.2)
+                if t>DUR*.55: w['head'].rotation_euler[2]=R(-35)*math.sin(min(1,(t-DUR*.55)/.5)*pi/2)
+                hk_upd(headpos(w))
+                _camset((L(-3.0,-3.2,q),L(10.6,10.9,q),L(1.75,1.85,q)),(-5.0,L(4.4,5.9,q),1.3),L(20,21,q),6,focus=headpos(w))
             else:                  # one job: reach the interview by ten — checks the watch, then waves for a rickshaw
-                standH(w,-4.6,8.0,L(200,90,ease((t-wl(18,KEY))/.6)),t); blink(w,t)
-                if t<wl(18,KEY): arm_reach(w,-1,hand_front(w,-1,.35,-.45,.05)); arm_reach(w,1,hand_front(w,-1,.3,-.42,.02)); w['head'].rotation_euler=(R(25),0,0); face(w,mouth='O' if t>wl(13,KEY) else 'flat',eyes=1.2)
-                else: arms(w,-30,0,8,-165+15*math.sin(t*10),0,-10); face(w,mouth='O',eyes=1.25,brow=.06)
-                _camset((-2.5,L(9.6,10.2,q),1.7),(-4.5,8.0,1.45),L(26,22,q),4,focus=headpos(w))
+                standH(w,-4.4,7.6,L(180,90,ease((t-wl(18,KEY))/.6)),t); blink(w,t); hk_upd(headpos(w))
+                if t<wl(18,KEY): arm_reach(w,-1,hand_front(w,-1,.35,-.45,.05)); w['head'].rotation_euler=(R(25),0,0); face(w,mouth='O' if t>wl(13,KEY) else 'flat',eyes=1.2); arms(w,-12,0,6,None,0,0) if False else None
+                else: arms(w,-14,0,6,-165+12*math.sin(t*9),0,-10); face(w,mouth='O',eyes=1.25,brow=.06); look_at(w,(-2,0,1.5),.7)
+                _camset((L(-1.7,-1.5,q),L(10.0,10.3,q),1.7),(-4.6,7.4,1.4),L(22,21,q),5,focus=headpos(w))
         else:
             # rickshaw position for each view (moving at ~4 m/s where it drives)
-            pos={'stop':(L(-16,1.5,ease_out(min(1,t/1.6))),0),'mirror':(4+3.5*t,0),'drv1':(16+3.5*t,0),'wal':(30+3.5*t,0),'drv2':(-12+3.5*t,0),'gps':(-28+3.5*t,0),
+            pos={'stop':(L(-9.6,8.1,ease_out(min(1,t/1.6))),0),'mirror':(4+3.5*t,0),'drv1':(16+3.5*t,0),'wal':(30+3.5*t,0),'drv2':(-12+3.5*t,0),'gps':(-28+3.5*t,0),
                  'cop':(L(10,22.6,ease_out(min(1,t/(wl(75,KEY)+.4)))),0),'scold':(22.6,0),'ticket':(22.6,0),'lassi':(22.6,0)}[view]
             y=pos[0]; K['root'].location=(RKX,y,0); K['root'].rotation_euler=(0,0,0)
             road_crowd_upd(G,t)
             sit_rk(K,dr,'drv',t); drive_rk(K,dr,t)
             if view=='stop':
-                standH(w,-4.6,1.0,L(90,120,q),t); blink(w,t); arms(w,-30,0,8,-150+20*math.sin(t*8),0,-10) if t<1.4 else arms(w,-20,0,8,-20,0,-8); face(w,mouth='grin' if t>1.4 else 'O')
+                standH(w,-4.4,7.6,90,t); blink(w,t); arms(w,-14,0,6,-150+14*math.sin(t*8),0,-10) if t<1.4 else arms(w,-14,0,6,-14,0,-6); face(w,mouth='grin' if t>1.4 else 'O'); hk_upd(headpos(w))
                 look_at(dr,headpos(w),.7*ease((t-1.2)/.5)); face(dr,mouth='smile')
-                _camset((L(.35,.3,q),L(-2.4,-2.0,q),1.65),(-4.3,1.0,1.25),L(20,22,q),5,focus=headpos(w))
+                _camset((L(.6,.5,q),L(4.0,4.4,q),1.7),(-4.0,7.7,1.25),L(20,22,q),5,focus=headpos(w))
             else:
                 sit_rk(K,w,'back',t); arms(w,-55,0,-8,-55,0,8)
             if view=='mirror':    # the driver adjusts the mirror... to look at Waleed, not the road
@@ -265,27 +287,27 @@ def SH_A(view):
                 OWNER[0]=None; bpy.context.view_layer.update(); m=ph.matrix_world; c=m@Vector((.0,-.26,.02)); tg=m@Vector((0,0,0)); _camset(tuple(c),tuple(tg),L(26,30,q),16,focus=tuple(tg))
                 face(dr,mouth='smile')
             elif view=='cop':      # traffic police aunty steps out, whistle — stops them. Not for the licence.
-                k=ease((t-.2)/1.2); standH(of,L(-3.2,-3.0,k),L(25.2,24.2,k),L(200,180,k),t); blink(of,t)
+                k=ease((t-.2)/1.6); standH(of,L(-3.7,-3.45,k),L(24.4,22.0,k),L(0,60,k),t); blink(of,t)
                 p=hand_front(of,1,.18,-.18,.0); wh.location=p; arm_reach(of,1,p) if t<wl(75,KEY) else arms(of,-30,0,8,-100,0,20)
                 face(of,mouth='O' if t<wl(75,KEY) else 'flat',eyes=1.15,brow=-.07); look_at(of,headpos(w),.7); look_at(w,headpos(of),.6*k); face(w,mouth='O')
-                _camset((L(-.2,-.4,q),L(30.5,30.0,q),L(1.7,1.6,q)),(L(-2.4,-2.6,q),23.2,1.3),L(22,26,q),5,focus=headpos(of))
+                _camset((L(-.2,-.4,q),L(28.5,28.0,q),L(1.8,1.7,q)),(L(-2.6,-2.8,q),22.4,1.3),L(22,25,q),5,focus=headpos(of))
             elif view in ('scold','ticket'):
-                standH(of,-3.1,23.0,heading_to(of,headpos(w)),t); blink(of,t)
+                standH(of,-3.45,22.0,heading_to(of,headpos(w)),t); blink(of,t)
                 if view=='scold':  # "Inni dhup vich bina topi de? Ammi nu pata ae?"
                     talk(of,t,81,90,KEY,rest='frown',shapes=('o','frown','O','frown')); face(of,eyes=1.05,brow=-.09); arms(of,-8,0,-38,-120+30*math.sin(t*6),0,10)
                     look_at(w,headpos(of),.7); face(w,mouth='flat',eyes=.9,brow=.05)
-                    KEEP[0]=[of]; front_cam(of,1.9,L(24,26,q),ang=-35,dz=.15)
+                    KEEP[0]=[of]; _camset((L(-2.55,-2.65,q),L(24.5,24.3,q),1.95),(-3.45,22.0,1.7),L(26,28,q),4,focus=headpos(of))
                 else:              # she writes the ticket: one glass of lassi
-                    p=hand_front(of,-1,.36,-.45,-.05); tk.location=p; tk.rotation_euler=(R(-60),0,of['root'].rotation_euler[2]); arm_reach(of,-1,p); arm_reach(of,1,tuple(Vector(p)+Vector((.06,0,.04+.02*math.sin(t*14)))))
+                    p=hand_front(of,-1,.36,-.45,-.05); tk.location=p; tk.rotation_euler=(R(-60),0,of['root'].rotation_euler[2]); M3_=root_mat(of).to_3x3(); arm_reach(of,-1,tuple(Vector(p)+M3_@Vector((-.09,0,-.02)))); arm_reach(of,1,tuple(Vector(p)+M3_@Vector((.09,0,.0+.012*math.sin(t*14)))))
                     of['head'].rotation_euler=(R(25),0,0); face(of,mouth='flat',eyes=.8,brow=-.05); look_at(w,p,.7); face(w,mouth='O')
-                    KEEP[0]=[of,w]; two_cam(of,w,side=-1,dist=2.4,lens=L(22,25,q),dz=.2)
+                    tk.rotation_euler=(R(-38),0,of['root'].rotation_euler[2]+R(180)); OWNER[0]=of; insert_cam(tk,L(26,30,q),.36)
             elif view=='lassi':    # Waleed at the stall, gulping a whole glass while she watches
-                w['root'].location=(9,9,-9); standH(w,-4.1,19.7,heading_to(w,(-3.0,21.0,1.5)),t); blink(w,t)
-                p=Vector(headpos(w))+root_mat(w).to_3x3()@Vector((0,-.2,-.12)); gl.location=tuple(p); gl.rotation_euler=(R(-40-20*q),0,w['root'].rotation_euler[2]); arm_reach(w,1,tuple(p+Vector((0,0,-.05))))
-                w['head'].rotation_euler=(R(-20),0,0); face(w,mouth='O',eyes=.6)
-                standH(of,-3.0,21.0,heading_to(of,headpos(w)),t); blink(of,t); arms(of,-62,0,-58,-62,0,58); face(of,mouth='smirk',eyes=1.0,brow=-.04)
-                look_at(dr,headpos(w),.6); face(dr,mouth='grin')
-                KEEP[0]=[w,of]; _camset((L(-.2,-.5,q),L(19.6,19.9,q),1.6),(-3.6,20.4,1.35),L(22,24,q),4,focus=headpos(w))
+                w['root'].location=(9,9,-9); standH(w,-4.5,19.0,90,t); blink(w,t)
+                p=Vector(headpos(w))+root_mat(w).to_3x3()@Vector((.22,-.4,-.42)); gl.location=tuple(p); gl.rotation_euler=(R(-40-20*q),0,w['root'].rotation_euler[2]); arm_reach(w,1,tuple(p+Vector((0,0,-.05))))
+                w['head'].rotation_euler=(R(-10),0,0); face(w,mouth='O',eyes=.6)
+                standH(of,-4.5,20.7,0,t); blink(of,t); arms(of,-62,0,-58,-62,0,58); face(of,mouth='smirk',eyes=1.0,brow=-.04)
+                face(dr,mouth='grin')
+                KEEP[0]=[w,of]; _camset((L(-.9,-1.1,q),L(19.5,19.7,q),1.6),(-4.5,19.85,1.35),L(21,22,q),4,focus=headpos(w))
         if view not in ('gps',): hide_block()
     return dict(upd=upd)
 for v in ('hook','job','stop','mirror','drv1','wal','drv2','gps','cop','scold','ticket','lassi'): SHOTS['A_'+v]=(lambda v=v: SH_A(v))
@@ -321,23 +343,24 @@ def SH_B(view):
         tf=tiffin_obj(); lid=empty((0,0,0)); ocyl((0,0,0),.092,.02,M('#C9CDD6',.25,metal=.85),lid,rot=(0,0,0),seg=16); eg=egg_obj(); pl=plate_obj()
         def upd(t):
             q=ease(t/DUR); S=D['seats']
-            for i,H in enumerate(C): seatH(H,S[i][0],S[i][1],S[i][2],sh=S[i][3]); blink(H,t+i)
-            seatH(w,S[3][0],S[3][1],S[3][2],sh=S[3][3]); blink(w,t)
+            for i,H in enumerate(C): j=(0,1,3)[i]; seatH(H,S[j][0],S[j][1],S[j][2],sh=S[j][3]); blink(H,t+i)
+            seatH(w,S[2][0],S[2][1],S[2][2],sh=S[2][3]); blink(w,t)
             standH(rc,OX+2.6,WY-1.55,180,t); blink(rc,t); look_at(rc,headpos(w),.5); face(rc,mouth='smile')
             lap=Vector(headpos(w))+root_mat(w).to_3x3()@Vector((0,-.42,-.95)); a,b_,c_=C
-            if view=='wait':      # they open his bag... and check his lunch
-                k=ease((t-wl(137,KEY))/.8); tf.location=tuple(lap); lid.location=tuple(Vector(lap)+Vector((0,0,.22+.0*k))+Vector((-.25*k,0,.25*k)))
-                arm_reach(w,1,tuple(lap+Vector((.1,0,.05)))); arm_reach(w,-1,tuple(lap+Vector((-.1,0,.05)))); face(w,mouth='O' if k>.2 else 'flat',eyes=1.2)
-                for i,H in enumerate((a,b_,c_)): H['root'].rotation_euler[2]+=R(-45 if i<2 else -30); look_at(H,tuple(lap),.9); face(H,mouth='O' if k>.4 else 'smile',eyes=1.2)
-                arm_reach(c_,1,tuple(Vector(lid.location)+Vector((.05,0,.02)))) if k>0 else None
-                _camset((L(OX-.4,OX-.2,q),L(WY-.9,WY-.6,q),1.45),(OX-.9,WY+1.9,.9),L(20,24,q),4,focus=tuple(lap))
-            else:                 # "Sirf ek anda? Beta, interview vaaste taaqat chahidi ae!" — and a paratha appears
+            for H in (a,b_,c_): arms(H,-35,0,-6,-35,0,6)
+            if view=='wait':      # they open his bag... and check his lunch (only heads lean in; the neighbour lifts the lid)
+                k=ease((t-wl(137,KEY))/.8); tf.location=tuple(lap); lp_=Vector(lap)+Vector((0,0,.22)); lid.location=tuple(lp_+Vector((-.34*k,0,.2*k)))
+                arm_reach(w,1,tuple(lap+Vector((.14,0,.06)))); arm_reach(w,-1,tuple(lap+Vector((-.14,0,.06)))); face(w,mouth='O' if k>.2 else 'flat',eyes=1.2)
+                for i,H in enumerate((a,b_,c_)): look_at(H,tuple(lap),.9,maxyaw=70); H['root'].rotation_euler[0]=R(-8*ease((t-wl(134,KEY))/.6)); face(H,mouth='O' if k>.4 else 'smile',eyes=1.2)
+                if k>0: arm_reach(c_,-1,tuple(Vector(lid.location)+Vector((.02,0,.03))))
+                _camset((L(OX-.1,OX,q),L(WY-2.0,WY-1.8,q),1.6),(OX,WY+1.9,.95),L(17,18,q),5,focus=tuple(lap))
+            else:                 # "Sirf ek anda? Beta, interview vaaste taaqat chahidi ae!" — she holds up the single egg, then lands a paratha plate on his tiffin
                 tf.location=tuple(lap); lid.location=(0,0,-9)
-                p=Vector(headpos(c_))+root_mat(c_).to_3x3()@Vector((-.25,-.35,.05)); eg.location=tuple(p); arm_reach(c_,1,tuple(p+Vector((0,0,-.04))))
-                talk(c_,t,144,152,KEY,rest='O',shapes=('O','o','frown','O')); face(c_,eyes=1.35,brow=.12)
-                k=ease((t-wl(147,KEY))/.6); pp=Vector(headpos(b_))+root_mat(b_).to_3x3()@Vector((-.2,-.5,-.35)); pl.location=tuple(pp.lerp(lap+Vector((0,0,.25)),k)); arm_reach(b_,1,tuple(Vector(pl.location)+Vector((0,0,-.02))))
-                face(b_,mouth='grin',eyes=1.1); face(a,mouth='O',eyes=1.3); look_at(a,tuple(p),.8); look_at(w,tuple(p),.6); face(w,mouth='flat',eyes=.9,brow=.06)
-                _camset((OX-.9,WY-.5,1.75),(OX-.6,WY+1.9,1.05),L(22,24,q),4,focus=headpos(c_))
+                p=Vector(headpos(c_))+root_mat(c_).to_3x3()@Vector((.3,-.42,-.05)); eg.location=tuple(p); arm_reach(c_,1,tuple(p+Vector((0,0,-.05))))
+                talk(c_,t,144,152,KEY,rest='O',shapes=('O','o','frown','O')); face(c_,eyes=1.3,brow=.12); look_at(c_,headpos(w),.7)
+                face(b_,mouth='grin',eyes=1.1); face(a,mouth='O',eyes=1.3); look_at(a,tuple(p),.8,maxyaw=70); look_at(b_,tuple(p),.8,maxyaw=70); look_at(w,tuple(p),.6); face(w,mouth='flat',eyes=.9,brow=.06)
+                arm_reach(w,1,tuple(lap+Vector((.14,0,.06)))); arm_reach(w,-1,tuple(lap+Vector((-.14,0,.06))))
+                _camset((L(OX+.8,OX+.7,q),L(WY-1.0,WY-.8,q),1.6),(OX+.75,WY+1.9,1.1),L(20,22,q),4,focus=headpos(c_))
             hide_block()
         return dict(upd=upd)
     # manager's office
@@ -347,18 +370,18 @@ def SH_B(view):
     def upd(t):
         q=ease(t/DUR); bx,by,brz,bsh=D['boss']; gx,gy,grz,gsh=D['guest']
         seatH(mg,bx,by,brz,sh=bsh); blink(mg,t); seatH(w,gx,gy,grz,sh=gsh); blink(w,t)
-        look_at(w,headpos(mg),.6); look_at(mg,headpos(w),.6); cv.rotation_euler=(R(90),0,0); pl.location=(0,0,-9)
+        look_at(w,headpos(mg),.6); look_at(mg,headpos(w),.6); cv.rotation_euler=(R(90),0,0); pl.location=(0,0,-9); OWNER[0]=None; body_vis(mg,True)
         cvp=(MX+.1,WY+.7,D['desk_z']+.005)
         if view=='cv':        # the manager pushes his CV aside: "CV chhoro. Kis de puttar ho?"
             k=ease((t-.3)/.7); cv.location=(cvp[0]-1.0*k,cvp[1]+.1*k,cvp[2]); cv.rotation_euler=(R(90),0,R(40*k))
             if t<1.1: arm_reach(mg,1,(cv.location[0]+.1,cv.location[1]+.1,cv.location[2]+.06))
-            talk(mg,t,162,167,KEY,rest='flat',shapes=('o','flat','O','smirk')); face(mg,eyes=.95,brow=-.04); arms(w,-55,0,-8,-55,0,8)
+            talk(mg,t,162,167,KEY,rest='flat',shapes=('o','flat','O','smirk')); face(mg,eyes=.95,brow=-.04); arms(w,-35,0,-6,-35,0,6)
             if t>1.2: arms(mg,-60,0,-20,-60,0,20)
-            _camset((L(MX-1.6,MX-1.3,q),L(WY-1.4,WY-1.1,q),1.55),(MX-.1,WY+1.1,1.0),L(20,22,q),4,focus=headpos(mg))
+            _camset((L(MX-2.75,MX-2.65,q),L(WY+.5,WY+.6,q),1.6),(MX+.35,WY+.75,1.1),L(17,18,q),5,focus=headpos(mg))
         elif view=='shazia':  # "Sir... Shazia ka beta hoon."
             cv.location=(cvp[0]-1.0,cvp[1]+.1,cvp[2]); cv.rotation_euler=(R(90),0,R(40))
-            talk(w,t,168,172,KEY,rest='flat',shapes=('o','flat','o','flat')); face(w,eyes=.95,brow=.08); arms(w,-55,0,-8,-70,0,25)
-            KEEP[0]=[w]; front_cam(w,1.5,L(26,30,q),ang=25,dz=.2)
+            talk(w,t,168,172,KEY,rest='flat',shapes=('o','flat','o','flat')); face(w,eyes=.95,brow=.08); arms(w,-35,0,-6,-35,0,6)
+            body_vis(mg,False); OWNER[0]=mg; hw_=headpos(w); _camset((MX+.15,WY+1.25,1.55),(hw_[0],hw_[1],hw_[2]-.2),L(24,27,q),3,focus=hw_)
         elif view=='pakki':   # "Shazia? Oh te meri cousin di nand ae! Naukri pakki."
             cv.location=(cvp[0]-1.0,cvp[1]+.1,cvp[2]); cv.rotation_euler=(R(90),0,R(40))
             k=ease((t-wl(174,KEY))/.5); mg['root'].location[2]+=.0;
@@ -372,7 +395,7 @@ def SH_B(view):
             else:
                 talk(mg,t,186,191,KEY,rest='smile',shapes=('o','smile','O','smile')); face(mg,eyes=1.0,brow=.04); face(w,mouth='flat',eyes=.85)
                 k=ease((t-wl(188,KEY))/.8); pl.location=(MX+L(.0,.45,k),WY+L(1.1,.35,k),D['desk_z']+.02); arm_reach(mg,1,(pl.location[0],pl.location[1]+.08,pl.location[2]+.05)) if k<1 else None
-            two_cam(w,mg,side=1,dist=2.4,lens=L(20,22,q),dz=.35)
+            _camset((L(MX+2.75,MX+2.65,q),L(WY+.5,WY+.6,q),1.6),(MX+.3,WY+.75,1.1),L(17,18,q),5,focus=headpos(mg))
         hide_block()
     return dict(upd=upd)
 for v in ('gate','guard','wait','anda','cv','shazia','pakki','roti'): SHOTS['B_'+v]=(lambda v=v: SH_B(v))
@@ -420,20 +443,19 @@ def SH_D(view):
     def upd(t):
         q=ease(t/DUR); D['fan'].rotation_euler[2]=t*6; set_screen(D['tv'],'tv_off',.2); rm.location=(LX-1.05,-.15,.37); ph.location=(0,0,-9); OWNER[0]=None
         sx,sy,srz,ssh=D['sofa'][1]
-        if view=='tv': sx,sy,srz,ssh=D['sofa'][0]
         if view=='phone':     # four hundred messages in the family group
-            set_screen(scr,'fam',1.3); standH(w,LX-.2,-.9,60,t); blink(w,t)
+            set_screen(scr,'fam',1.0); standH(w,LX-.2,-.9,60,t); blink(w,t)
             phone_in_hand(w,ph,up=1.6,face_dist=.5,raise_=.02*math.sin(t*40) if t<.8 else 0); face(w,mouth='O',eyes=1.3)
             if t<1.3: front_cam(w,1.6,24,ang=-25,dz=.1)
-            else: OWNER[0]=w; insert_cam(ph,L(24,28,q),.24)
+            else: OWNER[0]=w; insert_cam(ph,L(34,38,q),.22)
         elif view=='tv':      # he turns on the TV
-            seatH(w,sx,sy,srz,sh=ssh); blink(w,t); on=t>wl(231,KEY)
+            standH(w,LX-.2,1.2,90,t); blink(w,t); on=t>wl(231,KEY)
             p=hand_front(w,1,.45,-.35,.1); rm.location=p; rm.rotation_euler=(0,0,w['root'].rotation_euler[2]); arm_reach(w,1,p); set_screen(D['tv'],'tv_news' if on else 'tv_off',1.1 if on else .2)
             face(w,mouth='flat' if not on else 'O',eyes=1.0 if not on else 1.3); look_at(w,(LX+2.8,.1,1.45),.6)
-            _camset((L(LX-2.7,LX-2.6,q),L(.3,.2,q),1.92),(LX+2.8,-.1,1.15),L(17,19,q),5,focus=(LX+2.8,.1,1.4))
+            _camset((L(LX-1.2,LX-1.1,q),L(-2.3,-2.2,q),1.65),(LX+1.3,.5,1.35),L(16,17,q),5,focus=headpos(w))
         elif view=='sit':     # Waleed sits down. His phone rings.
             set_screen(D['tv'],'tv_news',1.0); k=ease(t/.9)
-            if t<.9: standH(w,L(LX-1.6,sx+.3,k),sy,270,t); w['root'].location[2]-=0
+            if t<.9: standH(w,sx+.5,sy,90,t)
             else: seatH(w,sx,sy,srz,sh=ssh)
             blink(w,t); rg=t>wl(253,KEY)
             set_screen(scr,'pm',1.2); ph.location=(LX-.85+(.004*math.sin(t*90) if rg else 0),.35,.35); ph.rotation_euler=(R(90),0,R(90))

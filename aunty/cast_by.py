@@ -122,19 +122,21 @@ def walker(H,start,hdg,speed,t,t0=0.0,arm=24):
     d=max(0,(t-t0))*speed; h=R(hdg); p=Vector(start)+Vector((math.sin(h),-math.cos(h),0))*d
     H['root'].location[0]=p.x; H['root'].location[1]=p.y; H['root'].rotation_euler[2]=h; walk(H,d+H['seed'],step=.55,arm=arm)
 # ---------------- cast for "Everyone Is a Desi Aunty" (every adult is an aunty; Waleed keeps his fixed look)
-RICK=dict(skin='#B98057',hair='#2A1E18',hairstyle='dupatta',dupatta='#E8A33A',brow_c='#2A1E18',glasses=True,top='#2E6B4A',trim='#1E4B34',kameez='#2E6B4A',kameez_border='#E8A33A',pants='#F4EBDD',shoes='#5A3A22',sole='#3A2418',accent='#E8A33A',bangles='#C9A24A',belly=True,h=162/175)
-OFFICER=dict(skin='#C49066',hair='#1E1612',hairstyle='dupatta',dupatta='#8A7A5A',brow_c='#1E1612',top='#C9B48A',trim='#8A7A5A',kameez='#C9B48A',kameez_border='#5A4A30',pants='#5A4A30',vest='#D8E83A',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',belt='#3A2A1E',h=164/175)
-GUARDA=dict(skin='#A87650',hair='#1A1410',hairstyle='dupatta',dupatta='#1F2A44',brow_c='#1A1410',top='#5E6A76',trim='#3E4A56',kameez='#5E6A76',kameez_border='#1F2A44',pants='#1F2A44',waistcoat='#1F2A44',wc_trim='#C9A24A',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',belly=True,h=163/175)
-CAND1=dict(skin='#D0A07A',hair='#2A1E18',hairstyle='dupatta',dupatta='#E8589A',brow_c='#2A1E18',top='#F4F5FA',trim='#E8589A',kameez='#F4F5FA',kameez_border='#E8589A',pants='#E8589A',shoes='#C9A24A',sole='#8A6A2A',accent='#E8589A',purse='#E8589A',bangles='#E8C25A',h=158/175)
-CAND2=dict(skin='#B07A52',hair='#3A2A1E',hairstyle='dupatta',dupatta='#2F6FE0',brow_c='#3A2A1E',glasses=True,top='#F2C12E',trim='#B8922E',kameez='#F2C12E',kameez_border='#2F6FE0',pants='#2F6FE0',shoes='#5A3A22',sole='#3A2418',accent='#2F6FE0',purse='#5A3A22',belly=True,h=160/175)
-CAND3=dict(skin='#C99468',hair='#1E1612',hairstyle='dupatta',dupatta='#7FA05A',brow_c='#1E1612',top='#6C3FA0',trim='#4C2A78',kameez='#6C3FA0',kameez_border='#7FA05A',pants='#F4EBDD',shoes='#8A5A3A',sole='#5A3A22',accent='#7FA05A',bangles='#C9A24A',h=155/175)
-MANAGER=dict(skin='#C49066',hair='#14100C',hairstyle='dupatta',dupatta='#7A1E2E',brow_c='#14100C',glasses=True,top='#F4EBDD',trim='#7A1E2E',jacket='#2B2F3A',sleeve='#2B2F3A',kameez='#F4EBDD',kameez_border='#7A1E2E',pants='#2B2F3A',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',watch=True,bangles='#C9A24A',h=163/175)
-ANCHOR=dict(skin='#D0A07A',hair='#14100C',hairstyle='dupatta',dupatta='#6C3FA0',brow_c='#14100C',top='#F4F5FA',trim='#1F2A44',jacket='#1F2A44',sleeve='#1F2A44',kameez='#F4F5FA',kameez_border='#6C3FA0',pants='#1F2A44',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',h=162/175)
-PMA=dict(skin='#C49A78',hair='#C9C6C0',hairstyle='dupatta',dupatta='#F4F5FA',brow_c='#8A8580',glasses=True,top='#0B5A2E',trim='#F4F5FA',kameez='#0B5A2E',kameez_border='#F4F5FA',pants='#F4F5FA',waistcoat='#F4F5FA',wc_trim='#C9A24A',shoes='#5A3A22',sole='#3A2418',accent='#C9A24A',bangles='#C9A24A',belly=True,h=160/175)
+RICK=dict(slim=(.8,.86),skin='#B98057',hair='#2A1E18',hairstyle='dupatta',dupatta='#E8A33A',brow_c='#2A1E18',glasses=True,top='#2E6B4A',trim='#1E4B34',kameez='#2E6B4A',kameez_border='#E8A33A',pants='#F4EBDD',shoes='#5A3A22',sole='#3A2418',accent='#E8A33A',bangles='#C9A24A',belly=True,h=162/175)
+OFFICER=dict(slim=(.8,.86),skin='#C49066',hair='#1E1612',hairstyle='dupatta',dupatta='#8A7A5A',brow_c='#1E1612',top='#C9B48A',trim='#8A7A5A',kameez='#C9B48A',kameez_border='#5A4A30',pants='#5A4A30',vest='#D8E83A',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',belt='#3A2A1E',h=164/175)
+GUARDA=dict(slim=(.8,.86),skin='#A87650',hair='#1A1410',hairstyle='dupatta',dupatta='#1F2A44',brow_c='#1A1410',top='#5E6A76',trim='#3E4A56',kameez='#5E6A76',kameez_border='#1F2A44',pants='#1F2A44',waistcoat='#1F2A44',wc_trim='#C9A24A',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',h=166/175)
+CAND1=dict(slim=(.8,.86),skin='#D0A07A',hair='#2A1E18',hairstyle='dupatta',dupatta='#E8589A',brow_c='#2A1E18',top='#F4F5FA',trim='#E8589A',kameez='#F4F5FA',kameez_border='#E8589A',pants='#E8589A',shoes='#C9A24A',sole='#8A6A2A',accent='#E8589A',purse='#E8589A',bangles='#E8C25A',h=158/175)
+CAND2=dict(slim=(.8,.86),skin='#B07A52',hair='#3A2A1E',hairstyle='dupatta',dupatta='#2F6FE0',brow_c='#3A2A1E',glasses=True,top='#F2C12E',trim='#B8922E',kameez='#F2C12E',kameez_border='#2F6FE0',pants='#2F6FE0',shoes='#5A3A22',sole='#3A2418',accent='#2F6FE0',purse='#5A3A22',h=152/175)
+CAND3=dict(slim=(.8,.86),skin='#C99468',hair='#1E1612',hairstyle='dupatta',dupatta='#7FA05A',brow_c='#1E1612',top='#6C3FA0',trim='#4C2A78',kameez='#6C3FA0',kameez_border='#7FA05A',pants='#F4EBDD',shoes='#8A5A3A',sole='#5A3A22',accent='#7FA05A',bangles='#C9A24A',h=155/175)
+MANAGER=dict(slim=(.8,.86),skin='#C49066',hair='#14100C',hairstyle='dupatta',dupatta='#7A1E2E',brow_c='#14100C',glasses=True,top='#F4EBDD',trim='#7A1E2E',jacket='#2B2F3A',sleeve='#2B2F3A',kameez='#F4EBDD',kameez_border='#7A1E2E',pants='#2B2F3A',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',watch=True,bangles='#C9A24A',h=163/175)
+ANCHOR=dict(slim=(.8,.86),skin='#D0A07A',hair='#14100C',hairstyle='dupatta',dupatta='#6C3FA0',brow_c='#14100C',top='#F4F5FA',trim='#1F2A44',jacket='#1F2A44',sleeve='#1F2A44',kameez='#F4F5FA',kameez_border='#6C3FA0',pants='#1F2A44',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',h=162/175)
+PMA=dict(slim=(.8,.86),skin='#C49A78',hair='#C9C6C0',hairstyle='dupatta',dupatta='#F4F5FA',brow_c='#8A8580',glasses=True,top='#0B5A2E',trim='#F4F5FA',kameez='#0B5A2E',kameez_border='#F4F5FA',pants='#F4F5FA',waistcoat='#F4F5FA',wc_trim='#C9A24A',shoes='#5A3A22',sole='#3A2418',accent='#C9A24A',bangles='#C9A24A',belly=True,h=160/175)
 def aunty(seed):
     c=local(seed,female=True); r=random.Random(seed)
     if r.random()<.4: c['glasses']=True
     if r.random()<.5: c['bangles']='#C9A24A'
-    if r.random()<.35: c['belly']=True
+    c['slim']=(r.choice([.78,.8,.83,.86]),.86); c['h']=r.choice([.86,.88,.9,.92,.94])
     if r.random()<.3: c['purse']=r.choice(['#7E1A2C','#5A3A22','#E8589A'])
     return c
+
+WALEED=dict(WALEED,slim=(.9,.94))

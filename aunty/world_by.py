@@ -146,14 +146,14 @@ def waiting_room():
     B.box((x-2.2,y-hy,h/2),(1.3,.08,h/2),W_,0); B.box((x+2.2,y-hy,h/2),(1.3,.08,h/2),W_,0); B.box((x,y-hy,2.85),(.9,.08,.35),W_,0)
     B.box((x,y+hy-.05,.5),(hx,.03,.5),M('#5E8C9A',.6,kind='wall'),0)
     for k in range(5):                                                                              # chairs against the back wall
-        cx=x-2.6+k*1.1; B.box((cx,y+hy-.55,.46),(.27,.25,.04),M('#2F6FA8',.5),.02); B.box((cx,y+hy-.3,.82),(.27,.04,.32),M('#2F6FA8',.5),.02)
+        cx=x-2.8+k*1.4; B.box((cx,y+hy-.55,.46),(.27,.25,.04),M('#2F6FA8',.5),.02); B.box((cx,y+hy-.3,.82),(.27,.04,.32),M('#2F6FA8',.5),.02)
         for s in (-1,1): B.box((cx+s*.22,y+hy-.55,.22),(.02,.2,.22),M('#5A5E66',.4,metal=.6),0)
     B.box((x+2.6,y-.6,.55),(.4,1.2,.55),M('#7A5236',.5),.02); B.box((x+2.6,y-.6,1.12),(.45,1.25,.03),M('#E8E2D6',.4),.01)        # reception desk
     B.box((x-3.2,y-1.6,.6),(.18,.18,.6),M('#F4F5FA',.4),.02); B.cyl((x-3.2,y-1.6,1.45),.17,.45,M('#8FC8F0',.1,alpha=.6),rot=(0,0,0),seg=14)
     plant(x-3.0,y+1.9,1.0); B.box((x,y+hy-.1,2.1),(.9,.02,.55),M('#13203A',.5),.01); B.box((x,y+hy-.12,2.1),(.82,.01,.47),M('#F2C12E',.6),0)
     B.box((x+2.0,y+hy-.1,2.2),(.3,.02,.3),M('#F4F5FA',.4),.01); B.box((x+2.0,y+hy-.12,2.2),(.24,.01,.24),M('#13203A',.4),0)
     B.box((x,y,h-.03),(.6,.25,.02),M('#F4FAFF',.2,emit=6),.01)
-    return dict(seats=[(x-2.6+k*1.1,y+hy-.55,0,.5) for k in range(5)])
+    return dict(seats=[(x-2.8+k*1.4,y+hy-.55,0,.5) for k in range(5)])
 def manager_office():
     x,y=MX,WY; hx,hy,h=3.2,2.6,3.2; W_=M('#E8DCC4',.85,kind='wall')
     B.box((x,y,-.05),(hx,hy,.05),M('#8A6A4A',.4,kind='wood',spec=.5),0); B.box((x,y,h+.05),(hx,hy,.05),M('#F4F5FA',.8),0)

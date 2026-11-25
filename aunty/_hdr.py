@@ -26,7 +26,13 @@ def nod(H,t,amp=5,rate=5): H['head'].rotation_euler[0]=R(amp)*math.sin(t*rate)
 def headpos(H): u=H['u']; return tuple(root_mat(H)@Vector((0,0,4.75*u)))
 PEOPLE=[]; _pers=person
 def person(*a,**k):
-    H=_pers(*a,**k); PEOPLE.append(H); return H
+    H=_pers(*a,**k); PEOPLE.append(H); C=H.get('C') or (a[2] if len(a)>2 else {})
+    sl=C.get('slim') if isinstance(C,dict) else None
+    if sl:
+        for o in H['root'].children:
+            if o is H['head']: continue
+            o.location.x*=sl[0]; o.location.y*=sl[1]; o.scale.x*=sl[0]; o.scale.y*=sl[1]
+    return H
 CAMLOCK={}; PROBE=[False]
 def _root_of(o):
     while o.parent is not None: o=o.parent
