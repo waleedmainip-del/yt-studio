@@ -122,14 +122,14 @@ def walker(H,start,hdg,speed,t,t0=0.0,arm=24):
     d=max(0,(t-t0))*speed; h=R(hdg); p=Vector(start)+Vector((math.sin(h),-math.cos(h),0))*d
     H['root'].location[0]=p.x; H['root'].location[1]=p.y; H['root'].rotation_euler[2]=h; walk(H,d+H['seed'],step=.55,arm=arm)
 # ---------------- cast for "Everyone Is Abbu" (every adult man is someone's Abbu; Waleed keeps his fixed look)
-GUARDB=dict(skin='#A87650',hair='#3A3530',hairstyle='cap',cap='#1F2A44',capstar=True,brow_c='#3A3530',mustache='#3A3530',glasses=True,top='#3B4F78',trim='#1F2A44',sleeve='#3B4F78',pants='#1F2A44',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',belt='#16171C',belly=True,h=172/175)
-CASHIER=dict(skin='#B98057',hair='#8A8580',hairstyle='old',brow_c='#5A5550',mustache='#5A5550',glasses=True,top='#F4F5FA',trim='#C9CDD6',sleeve='#F4F5FA',waistcoat='#7A5236',wc_trim='#5A3A22',pants='#5A5E66',shoes='#3A2A1E',sole='#1A140E',accent='#C9A24A',watch=True,belly=True,h=170/175)
-WAITER=dict(skin='#9C6A44',hair='#1A1612',hairstyle='short',brow_c='#1A1612',mustache='#1A1612',top='#F4F5FA',trim='#C8102E',kameez='#F4F5FA',kameez_border='#C8102E',pants='#F4F5FA',waistcoat='#C8102E',wc_trim='#F2C12E',shoes='#16171C',sole='#0E0F12',accent='#F2C12E',h=171/175)
-STRANGER=dict(skin='#C49A78',hair='#C9C6C0',hairstyle='old',brow_c='#A8A39C',mustache='#A8A39C',glasses=True,top='#E8DCC4',trim='#B8A88A',jacket='#B8A88A',sleeve='#B8A88A',pants='#B8A88A',shoes='#5A3A22',sole='#3A2418',accent='#C9A24A',watch=True,belly=True,h=169/175)
-BARBER=dict(skin='#B07A52',hair='#2A2420',hairstyle='quiff',brow_c='#2A2420',mustache='#2A2420',top='#F4F5FA',trim='#C9CDD6',sleeve='#F4F5FA',apron='#13203A',pants='#2B2C33',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',h=173/175)
-USHER=dict(skin='#A87650',hair='#5A5550',hairstyle='old',brow_c='#3A3530',mustache='#3A3530',glasses=True,top='#F4F5FA',trim='#7A1E2E',jacket='#7A1E2E',sleeve='#7A1E2E',tie='#F2C12E',tie_c='#F2C12E',pants='#16171C',shoes='#16171C',sole='#0E0F12',accent='#F2C12E',belly=True,h=170/175)
-DRIVER=dict(skin='#94643E',hair='#2A2420',hairstyle='old',brow_c='#2A2420',mustache='#2A2420',top='#8E9AA6',trim='#5E6A76',kameez='#8E9AA6',kameez_border='#5E6A76',pants='#8E9AA6',waistcoat='#2B2C33',wc_trim='#5A5550',shoes='#3A2A1E',sole='#1A140E',accent='#C9A24A',belly=True,h=171/175)
-ABBUR=dict(skin='#B98A62',hair='#4A4540',hairstyle='old',brow_c='#2A2520',mustache='#2A2520',glasses=True,top='#F4EBDD',trim='#C9B79C',kameez='#F4EBDD',kameez_border='#C9B79C',pants='#F4EBDD',shoes='#5A3A22',sole='#3A2418',accent='#C9A24A',watch=True,belly=True,h=173/175)
+GUARDB=dict(slim=(.88,.92),skin='#A87650',hair='#3A3530',hairstyle='cap',cap='#1F2A44',capstar=True,brow_c='#3A3530',mustache='#3A3530',glasses=True,top='#3B4F78',trim='#1F2A44',sleeve='#3B4F78',pants='#1F2A44',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',belt='#16171C',belly=True,h=172/175)
+CASHIER=dict(slim=(.84,.9),skin='#B98057',hair='#8A8580',hairstyle='old',brow_c='#5A5550',mustache='#5A5550',glasses=True,top='#F4F5FA',trim='#C9CDD6',sleeve='#F4F5FA',waistcoat='#7A5236',wc_trim='#5A3A22',pants='#5A5E66',shoes='#3A2A1E',sole='#1A140E',accent='#C9A24A',watch=True,belly=True,h=170/175)
+WAITER=dict(slim=(.8,.88),skin='#9C6A44',hair='#1A1612',hairstyle='short',brow_c='#1A1612',mustache='#1A1612',top='#F4F5FA',trim='#C8102E',kameez='#F4F5FA',kameez_border='#C8102E',pants='#F4F5FA',waistcoat='#C8102E',wc_trim='#F2C12E',shoes='#16171C',sole='#0E0F12',accent='#F2C12E',h=171/175)
+STRANGER=dict(slim=(.86,.92),skin='#C49A78',hair='#C9C6C0',hairstyle='old',brow_c='#A8A39C',mustache='#A8A39C',glasses=True,top='#E8DCC4',trim='#B8A88A',jacket='#B8A88A',sleeve='#B8A88A',pants='#B8A88A',shoes='#5A3A22',sole='#3A2418',accent='#C9A24A',watch=True,belly=True,h=169/175)
+BARBER=dict(slim=(.8,.88),skin='#B07A52',hair='#2A2420',hairstyle='quiff',brow_c='#2A2420',mustache='#2A2420',top='#F4F5FA',trim='#C9CDD6',sleeve='#F4F5FA',apron='#13203A',pants='#2B2C33',shoes='#16171C',sole='#0E0F12',accent='#C9A24A',h=173/175)
+USHER=dict(slim=(.85,.9),skin='#A87650',hair='#5A5550',hairstyle='old',brow_c='#3A3530',mustache='#3A3530',glasses=True,top='#F4F5FA',trim='#7A1E2E',jacket='#7A1E2E',sleeve='#7A1E2E',tie='#F2C12E',tie_c='#F2C12E',pants='#16171C',shoes='#16171C',sole='#0E0F12',accent='#F2C12E',belly=True,h=170/175)
+DRIVER=dict(slim=(.86,.92),skin='#94643E',hair='#2A2420',hairstyle='old',brow_c='#2A2420',mustache='#2A2420',top='#8E9AA6',trim='#5E6A76',kameez='#8E9AA6',kameez_border='#5E6A76',pants='#8E9AA6',waistcoat='#2B2C33',wc_trim='#5A5550',shoes='#3A2A1E',sole='#1A140E',accent='#C9A24A',belly=True,h=171/175)
+ABBUR=dict(slim=(.86,.92),skin='#B98A62',hair='#4A4540',hairstyle='old',brow_c='#2A2520',mustache='#2A2520',glasses=True,top='#F4EBDD',trim='#C9B79C',kameez='#F4EBDD',kameez_border='#C9B79C',pants='#F4EBDD',shoes='#5A3A22',sole='#3A2418',accent='#C9A24A',watch=True,belly=True,h=173/175)
 def dad(seed):
     c=local(seed,female=False); r=random.Random(seed*7+3)
     c['hairstyle']=r.choice(['old','old','short','quiff','cap']); c['mustache']=r.choice(['#2A2420','#5A5550','#8A8580']); c['brow_c']=c['mustache']
@@ -137,4 +137,6 @@ def dad(seed):
     if r.random()<.5: c['hair']=r.choice(['#8A8580','#C9C6C0','#4A4540'])
     c['glasses']=r.random()<.55; c['belly']=r.random()<.6; c.pop('beard',None)
     if r.random()<.45: c['waistcoat']=r.choice(['#2B2C33','#5A3A22','#1F3A5A','#4A5536']); c['wc_trim']=shade(c['waistcoat'],.7)
-    c['h']=r.choice([.95,.97,1.0]); return c
+    c['h']=r.choice([.92,.95,.97,1.0]); c['slim']=(r.choice([.8,.83,.86,.9]),.9); c['belly']=r.random()<.3; return c
+WALEED=dict(WALEED,slim=(.9,.94))
+WALEED_CUT=dict(WALEED,hairstyle='short')

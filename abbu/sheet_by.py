@@ -1,11 +1,12 @@
 exec(open('/home/claude/abbu/base_by.py').read())
+WALEED_CUT=None
 for _f in ('chars_by','cast_by','look_by','anim_by','fx_by','world_by'): exec(open('/home/claude/abbu/%s.py'%_f).read())
 # usage: blender -b -P sheet_by.py -- NAME PCT SAMPLES mode   (mode: char | lineup | env)
 NAME=args[0]; MODE=args[3] if len(args)>3 else 'char'
 OUT='/home/claude/abbu/sheets'; os.makedirs(OUT,exist_ok=True)
 sc=bpy.context.scene; make_cam()
 def headpos(H): u=H['u']; return tuple(root_mat(H)@Vector((0,0,4.75*u)))
-CH={'waleed':WALEED,'bilal':BILAL,'ammi':AMMI,'zain_rider':ZAIN_RIDER,'zain_guru':ZAIN_GURU,'shopkeeper':SHOPK}
+CH=dict(waleed=WALEED,rickshaw=RICK,officer=OFFICER,guard=GUARDA,cand1=CAND1,cand2=CAND2,cand3=CAND3,manager=MANAGER,anchor=ANCHOR,pm=PMA) if 'abbu'=='aunty' else dict(waleed=WALEED,waleed_cut=WALEED_CUT,guard=GUARDB,cashier=CASHIER,waiter=WAITER,stranger=STRANGER,barber=BARBER,usher=USHER,driver=DRIVER,abbu=ABBUR)
 def studio():
     B.box((0,0,-.05),(20,20,.05),M('#D9D3C7',.8),0); B.box((0,6,4),(20,.1,4),M('#EEEAE2',.85),0)
     for k in range(0,9): B.box((-8+2*k,5.85,.012),(.006,.006,.012),M('#888888',.5),0)
@@ -13,15 +14,15 @@ def studio():
 def snap(fn):
     sc.render.filepath=OUT+'/'+fn; bpy.ops.render.render(write_still=True); print('SNAP',fn,flush=True)
 if MODE=='lineup':
-    studio(); keys=['waleed','bilal','zain_guru','zain_rider','shopkeeper','ammi']; HS=[]
+    studio(); keys=list(CH.keys()); HS=[]
     for i,k in enumerate(keys):
-        H=person((-4.6+i*1.6,0,0),0,CH[k],'smile',name=k); stand(H,0); arms(H,-10,0,5,-10,0,-5); HS.append(H)
+        H=person((-6.5+i*1.45,0,0),0,CH[k],'smile',name=k); stand(H,0); arms(H,-10,0,5,-10,0,-5); HS.append(H)
     # height ruler
     for z in range(0,25):
-        B.box((-6.2,0,z*.1),(.08 if z%5 else .16,.01,.004),M('#22242B',.4),0)
-    B.box((-6.2,0,1.25),(.01,.01,1.25),M('#22242B',.4),0); B.done('ruler')
+        B.box((-7.5,0,z*.1),(.08 if z%5 else .16,.01,.004),M('#22242B',.4),0)
+    B.box((-7.5,0,1.25),(.01,.01,1.25),M('#22242B',.4),0); B.done('ruler')
     sc.render.resolution_x=1920; sc.render.resolution_y=1080
-    camset((0,-12.5,1.4),(0,0,1.2),40,22)
+    camset((0,-17.5,1.3),(0,0,1.1),35,22)
     snap('lineup.png')
     for i,k in enumerate(keys):
         H=HS[i]; bpy.context.view_layer.update(); top=max((o.matrix_world@Vector(c)).z for o in [H['root']]+list(H['root'].children_recursive) if o.type=='MESH' for c in o.bound_box)

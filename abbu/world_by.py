@@ -104,7 +104,7 @@ def barber():
 def cinema():
     x=CX; B.box((x,0,-.05),(7,8,.05),M('#2A1A1E',.8,kind='fabric'),0); B.box((x,0,6.05),(7,8,.05),M('#16171C',.8),0)
     for s in (-1,1): B.box((x+s*7,0,3),(.1,8,3),M('#3A1E24',.8,kind='fabric'),0)
-    B.box((x,8,3),(7,.1,3),M('#16171C',.8),0); SCR=img_plane(9.0,3.94,img_mat('screen',1.3),(x,7.85,3.2),(0,0,0))
+    B.box((x,8,3),(7,.1,3),M('#16171C',.8),0); SCR=img_plane(9.0,3.94,img_mat('screen',.5),(x,7.85,3.2),(0,0,0))
     for r_ in range(7):
         yy=3.0-r_*1.1; zz=r_*.22
         B.box((x,yy-.3,zz/2),(6.5,.55,zz/2+.001),M('#2A1A1E',.8),0) if r_ else None
