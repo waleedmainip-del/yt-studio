@@ -1,0 +1,60 @@
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1110
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1111
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.174
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.175
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1112
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1113
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1114
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1115
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1116
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1117
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1118
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1119
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1120
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1121
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1122
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1123
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1124
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1125
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1126
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1127
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1128
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1129
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1130
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1131
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1132
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1133
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1134
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1135
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1136
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.176
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.177
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1137
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1138
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1139
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1140
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.178
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1141
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1142
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1143
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1144
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1145
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1146
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1147
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1148
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1149
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.179
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.180
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.181
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing p.1150
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing e.097
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.20 | Syncing c.182
+Fra:1610 Mem:190.91M (Peak 233.19M) | Time:00:00.22 | Rendering 1 / 4 samples
+Fra:1610 Mem:190.89M (Peak 233.19M) | Time:00:04.20 | Rendering 4 / 4 samples
+Saved: '/home/claude/abbu/frames/S16/f01610.png'
+Time: 00:05.56 (Saving: 00:00.23)
+
+FRAME 1 304.3
+SHOT_DONE 16
+
+Blender quit
