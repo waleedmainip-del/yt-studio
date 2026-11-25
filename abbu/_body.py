@@ -198,6 +198,7 @@ def SH_C(view):
         for i,H in enumerate(aud):
             ax,ay,_,ash=D['seat'](*H['rc']); seatH(H,ax,ay,180,sh=ash); blink(H,t+i); arms(H,-50,0,-8,-50,0,8)
             look_at(H,headpos(us),.5); face(H,mouth=('flat','smirk','flat')[i%3])
+        bpy.context.scene.view_settings.exposure=.45 if view=='cinema' else 1.5
         if view=='cinema':   # the hero freezes mid-punch: NASEEHAT BREAK. An usher steps in front of the screen.
             tg=DUR*.6; walk_path(us,[(CX+4.5,6.6),(CX+1.2,6.0)],t,.2,tg,step=.5,arm=12) if t<tg else standH(us,CX+1.2,6.0,heading_to(us,headpos(w)),t); blink(us,t)
             p=hand_front(us,1,.4,-.35,.15); torch.location=p; arm_reach(us,1,p); stern(us,t); face(w,mouth='O',eyes=1.3)
@@ -250,7 +251,7 @@ def SH_N(view):
                 lit_set(ee,not off)
                 for sh_ in LIT:
                     if 'win' in sh_ and sh_['s']<0 and abs(sh_['y']-ee['y'])<3.0: lit_set(sh_,not off)
-            _camset((RX+1.4,L(26.0,27.0,q),2.3),(RX-3.4,L(36,40,q),1.6),L(17,18,q),5,focus=headpos(dr))
+            hd_=headpos(dr); _camset((RX-1.9,hd_[1]-4.6,1.9),(RX-3.5,hd_[1]+1.5,1.5),L(19,20,q),5,focus=hd_)
         hide_block()
     return dict(upd=upd)
 for v in ('cab','tez','switch'): SHOTS['N_'+v]=(lambda v=v: SH_N(v))
