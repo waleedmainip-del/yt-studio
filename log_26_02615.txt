@@ -1,0 +1,60 @@
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.034
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.035
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.036
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing c
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing c.001
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.037
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.038
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing c.002
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing c.003
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.039
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.040
+Fra:2666 Mem:61.30M (Peak 104.26M) | Time:00:00.05 | Syncing p.041
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.042
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.043
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.044
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.045
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.046
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.047
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.048
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.049
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.050
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.051
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.052
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.053
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.054
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.055
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.056
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.057
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing c.004
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing c.005
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.058
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.059
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.060
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.061
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing c.006
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.062
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.063
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.064
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.065
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.066
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.067
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.068
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.069
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.070
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing c.007
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing c.008
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing c.009
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.071
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.072
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.073
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.05 | Syncing p.074
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:00.07 | Rendering 1 / 4 samples
+Fra:2666 Mem:61.33M (Peak 104.26M) | Time:00:01.54 | Rendering 4 / 4 samples
+Saved: '/home/claude/aunty/frames/S26/f02666.png'
+Time: 00:02.32 (Saving: 00:00.21)
+
+FRAME 1 123.0
+SHOT_DONE 26
+
+Blender quit
