@@ -1,0 +1,60 @@
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing p.1087
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing c.415
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing p.1088
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing p.1089
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing p.1090
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing c.416
+Fra:1322 Mem:507.89M (Peak 579.76M) | Time:00:00.12 | Syncing Point.014
+Fra:1322 Mem:507.83M (Peak 579.76M) | Time:00:00.16 | Rendering 1 / 24 samples
+Fra:1322 Mem:507.83M (Peak 579.76M) | Time:00:34.52 | Rendering 24 / 24 samples
+Fra:1322 Mem:504.34M (Peak 579.76M) | Time:00:36.12 | Compositing
+Fra:1322 Mem:504.34M (Peak 579.76M) | Time:00:36.12 | Compositing | Determining resolution
+Fra:1322 Mem:504.34M (Peak 579.76M) | Time:00:36.12 | Compositing | Initializing execution
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 1-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 2-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 3-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 4-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 5-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 6-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 7-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.12 | Compositing | Tile 8-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 9-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 10-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 11-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 12-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 13-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 14-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 15-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 16-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 17-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 18-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 19-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 20-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 21-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 22-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 23-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.13 | Compositing | Tile 24-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 25-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 26-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 27-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 28-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 29-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 30-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 31-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 32-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 33-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 34-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 35-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 36-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 37-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 38-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 39-40
+Fra:1322 Mem:536.04M (Peak 579.76M) | Time:00:36.14 | Compositing | Tile 40-40
+Fra:1322 Mem:535.98M (Peak 579.76M) | Time:00:36.14 | Compositing | De-initializing execution
+Saved: '/home/runner/work/yt-studio/yt-studio/kz/render/frames/S22/f01322.png'
+Time: 00:36.42 (Saving: 00:00.27)
+
+FRAME 1 1260.4
+SHOT_DONE 22
+
+Blender quit
