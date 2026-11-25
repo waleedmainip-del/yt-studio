@@ -198,7 +198,7 @@ def LEAVING():
     Q=roof_morning(clock=(5,53)); kg=Q['kg']; FILLE[0]=60
     def upd(t):
         Q['bg'](t); Q['ksleep'](t,0.0); blink(kg,t); zeyes(kg,1.15); talk(kg,t,*wt(237,241),rate=8,rest='frown'); face(kg,brow=-.05,brow_r=-18)
-        k=tl(t,ws(239)-.1,ws(239)+.12); kg['arm'][1].rotation_euler=(R(-25-70*k),R(-20-55*k),0); kg['arm'][-1].rotation_euler=(R(-25),R(20),0); kg['head'].rotation_euler=(R(-4),0,R(-12*k))
+        k=tl(t,ws(239)-.1,ws(239)+.12); kg['arm'][-1].rotation_euler=(R(-25-70*k),R(20+55*k),0); kg['arm'][1].rotation_euler=(R(-25),R(-20),0); kg['head'].rotation_euler=(R(-4),0,R(12*k))
         SL=Q['SL']; e=tl(t,ws(240),ws(240)+.15)*(1-tl(t,ws(241)+.2,ws(241)+.4)); blink(SL[1],t,force=1-e); zeyes(SL[1],.8*e)
         h=kg['head'].matrix_world.translation; q=ease(t/DUR); camset(LV((2.9,KSIT[1]-4.4,ROOF_Z+1.25),(2.7,KSIT[1]-4.0,ROOF_Z+1.3),q),(h.x-.2,h.y,h.z+.1),L(26,28,q),4.0)
     return dict(upd=upd)
@@ -362,11 +362,16 @@ def KINGQ():
 SHOTS['KINGQ']=KINGQ
 def RESTO():
     Q=finale_set(walk=False); kg=Q['kg']; FILLE[0]=30
-    qu=[mk(C,x,BW-.9,0 if i%2 else 180,'qu%d'%i) for i,(C,x) in enumerate(((CROWD[6],-6.9),(dict(ZVAR[4]),-3.0),(CROWD[19],-1.1),(dict(ZVAR[1],chefhat=None),.9)))]
+    qu=[mk(C,x,BW-.9,180,'qu%d'%i) for i,(C,x) in enumerate(((dict(ZVAR[4]),-1.7),(CROWD[19],0.0),(dict(ZVAR[1],chefhat=None),1.7),(CROWD[6],3.4)))]
+    wa=mk(WALEED,1.35,-.2,180,'wa'); zd=mk(ZED,3.0,-.2,180,'zed'); SGN=(0.0,BW-.5,5.7)
     def upd(t):
         Q['bg'](t); Q['kcook'](t)
-        for i,H in enumerate(qu): hstand(H,t); H['root'].rotation_euler[2]=R(180); look_at(H,hp(kg),.7); face(H,mouth='grin');
-        q=ease(t/DUR); camset(LV((3.4,-3.8,1.5),(2.8,-3.2,1.6),q),LV((-1.4,BW,3.5),(-1.9,BW,3.4),q),L(18,19,q),8)
+        for i,H in enumerate(qu): hstand(H,t); H['root'].rotation_euler[2]=R(180); look_at(H,hp(kg),.7); face(H,mouth='grin')
+        s=.7*t; k=tl(t,.35,.8)
+        wa['root'].location[0]=1.35; wa['root'].location[1]=-.2+s; wa['root'].rotation_euler[2]=R(180); walk(wa,s,step=.42,arm=14); blink(wa,t); look_at(wa,SGN,k,maxpitch=30); face(wa,mouth='grin')
+        zd['root'].location[0]=3.0; zd['root'].location[1]=-.2+s; zd['root'].rotation_euler[2]=R(180); walk(zd,s+.3,step=.36,arm=0); zpose(zd,t,.55); blink(zd,t); zeyes(zd,1.1)
+        arm_to(zd,-1,SGN,k,base=tuple(zd['arm'][-1].rotation_euler)); look_at(zd,SGN,k,maxpitch=30); face(zd,mouth='grin')
+        q=ease(t/DUR); camset(LV((1.6,-5.25,2.1),(1.6,-5.0,2.15),q),LV((.3,BW,4.3),(.3,BW,4.2),q),17,8)
     return dict(upd=upd)
 SHOTS['RESTO']=RESTO
 WSEAT=(ZTAB[0]+1.28,ZTAB[1],-90)

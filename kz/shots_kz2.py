@@ -53,8 +53,8 @@ def MOVIES():
 SHOTS['MOVIES']=MOVIES
 # ---------------------------------------------------------------- the restaurant
 ZTAB=RTAB[0]; ZSEAT=(ZTAB[0]-1.28,ZTAB[1],90); ZENT=(0.0,BW+.9)
-def rest_set(clock=(0,12),street=True,rdin=True,zed_cfg=ZED,dress=(2,1,2,1,2),rsign='CHACHA MAGHAZ HOUSE',mood='night',skip=(0,1)):
-    S=burns(mood,clock=clock,rest_sign=rsign); RT=rest_tables(dress=dress); TB=street_tables(8,skip=skip) if street else []; B.done('x')
+def rest_set(clock=(0,12),street=True,rdin=True,zed_cfg=ZED,dress=(2,1,2,1,2),rsign='CHACHA MAGHAZ HOUSE',mood='night',skip=(0,1),roof_sx=0.0):
+    S=burns(mood,clock=clock,rest_sign=rsign,roof_sx=roof_sx); RT=rest_tables(dress=dress); TB=street_tables(8,skip=skip) if street else []; B.done('x')
     zed=mk(zed_cfg,ZENT[0],ZENT[1],180,'zed'); wa=mk(WAITER,1.3,BW+2.0,0,'waiter'); ck=mk(COOK,-4.9,BW+2.05,0,'cook')
     RD=diners(7,RT,skip=(0,)) if rdin else []; SD=diners(8,TB) if street else []
     def bg(t):
@@ -67,7 +67,7 @@ def waiter_write(H,t,k=1.0):
     pd=H['kz']['pad'].matrix_world.translation; arm_to(H,1,(pd.x,pd.y,pd.z+.12+.02*math.sin(t*26)),k,base=(R(-18),0,0)); H['head'].rotation_euler[0]=R(16*k)
 def BURNS():
     Q=rest_set(clock=(0,10),skip=(0,1,5)); zed=Q['zed']; wa=Q['waiter']; TC=ws(95)-.08; FILLE[0]=45
-    Wk=kwalkers(9,((-WLANE,-1),),4,-30,8)
+    Wk=kwalkers(9,((-WLANE,-1),),4,-30,-5)
     def upd(t):
         Q['bg'](t); upd_kwalkers(Wk,t); waiter_idle(wa,t,3.4,BW+4.2,-60)
         if t<TC:
@@ -115,13 +115,13 @@ def WAITERS():
     obox((-.25,-.2,-.035),(.075,.1,.05),sk,.02,e); obox((-.33,-.33,-.05),(.09,.12,.07),M('#F4F1EA',.8,kind='fabric'),.02,e)
     hd=empty((0,0,0),e); obox((.05,-.07,.05),(.06,.07,.045),sk,.02,hd); obox((.14,-.2,.045),(.085,.11,.065),M('#F4F1EA',.8,kind='fabric'),.02,hd)
     ocyl((-.005,.015,.07),.011,.2,M('#F2C14E',.5),hd,rot=(R(-38),R(-20),0),seg=6)
-    T3=(.22,.5,.82); X3=((-.16,.105),(-.02,.105),(-.1,.035),(.08,.035))
+    T3=(.2,.47,.75); X3=((-.16,.105),(-.02,.105),(-.1,.035),(.08,.035))
     def upd(t):
         Q['bg'](t); stand(zed,t); zed['root'].location[0]=ZENT[0]; zed['root'].location[1]=ZENT[1]; hstand(wa,t)
         for i,o in enumerate(W3):
             k=min(1,max(0,(t-T3[i])/.2)); o.scale=(k,1,1) if k>0 else (0,0,0)
-        q=min(1,max(0,(t-.15)/1.0)); i=min(2,int(q*3)); f=q*3-i; a=Vector((X3[i][0],X3[i][1],0)); b_=Vector((X3[i][0]+.16,X3[i][1],0)) if i<2 else Vector((X3[3][0],X3[3][1],0))
-        p=a.lerp(b_,f); hd.location=(p.x,p.y+.01*math.sin(t*40),.0)
+        q=min(1,max(0,(t-.15)/.85)); i=min(2,int(q*3)); f=q*3-i; a=Vector((X3[i][0],X3[i][1],0)); b_=Vector((X3[i][0]+.16,X3[i][1],0)) if i<2 else Vector((X3[3][0],X3[3][1],0))
+        p=a.lerp(b_,f); r_=tl(t,1.0,1.18); hd.location=(p.x+.17*r_,p.y-.14*r_+.01*math.sin(t*40)*(1-r_),.03*r_)
         n=Vector((0,-math.sin(R(52)),math.cos(R(52)))); c=P+n*.82+Vector((.1,0,.05)); camset(tuple(c),tuple(P+Vector((0,0,.02))),50,2.8)
     return dict(upd=upd)
 SHOTS['WAITER']=WAITERS
@@ -165,7 +165,7 @@ def EYES():
     return dict(upd=upd)
 SHOTS['EYES']=EYES
 def KYA():
-    Q=rest_set(clock=(0,15),street=True); zed=Q['zed']; wa=Q['waiter']; sp=spoon(zed,1); FILLE[0]=30
+    Q=rest_set(clock=(0,15),street=True,roof_sx=1.75); zed=Q['zed']; wa=Q['waiter']; sp=spoon(zed,1); FILLE[0]=30
     def upd(t):
         Q['bg'](t); zed_sit(zed,t); waiter_idle(wa,t,ZTAB[0]+.9,ZTAB[1]+1.75,0); wa['kz']['pad'].scale=(0,0,0); wa['arm'][-1].rotation_euler=(R(-10),0,0)
         zed_eat(zed,sp,t,.12); zglow(zed,.5); zeyes(zed,1.2); talk(zed,t,*wt(127,130),rest='grin'); face(zed,brow=.06)
