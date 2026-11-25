@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: fg-render-r1
+  group: fg-render-r2
   cancel-in-progress: false
 jobs:
   render:

@@ -1,7 +1,7 @@
 # Shots for "Family Group". SEQ/END are filled by gen_seq.py.
 SHOTS={}
-END=99.5333
-SEQ=[('HOOK', 0.0), ('MEME', 5.667), ('UI_MEME', 9.5), ('SEND', 13.567), ('UI_GROUP', 15.033), ('PANIC', 19.5), ('UI_DELETE', 20.633), ('UI_SEEN0', 24.1), ('ABBU', 30.0), ('STEAL', 34.567), ('CHACHA', 37.067), ('MIT1', 43.133), ('RIDE', 48.1), ('PH_DOOR', 52.7), ('GRAB', 58.067), ('CHAI', 63.5), ('RELIEF', 66.433), ('UI_SEEN1', 69.8), ('DADI', 74.067), ('DADI1', 77.367), ('WQ', 81.533), ('DADI2', 83.233), ('UI_CALL', 88.0), ('UI_LEFT', 89.533), ('CTA', 95.433)]
+END=94.6667
+SEQ=[('HOOK', 0.0), ('MEME', 5.633), ('UI_MEME', 9.433), ('SEND', 13.433), ('UI_GROUP', 14.8), ('PANIC', 18.6), ('UI_DELETE', 20.033), ('UI_SEEN0', 23.6), ('ABBU', 29.2), ('STEAL', 33.5), ('CHACHA', 36.1), ('MIT1', 41.733), ('RIDE', 46.367), ('PH_DOOR', 50.667), ('GRAB', 55.8), ('CHAI', 61.067), ('RELIEF', 63.733), ('UI_SEEN1', 67.233), ('DADI', 71.2), ('DADI1', 74.5), ('WQ', 78.2), ('DADI2', 79.933), ('UI_CALL', 84.2), ('UI_LEFT', 85.7), ('CTA', 91.033)]
 import os as _os
 FILLE=[45.0]; _FL=[]
 _camset0=camset
@@ -126,11 +126,11 @@ def RIDE():
     lane_set(); mb=motorbike((0,0,0),180,'#2A2C34'); mb['root'].scale=(1.4,)*3
     rid=mk(WALEED,0,0,0,'rider'); rid['root'].parent=mb['root']; rid['root'].location=(-.05,0,.35); rid['root'].rotation_euler=(0,0,R(90)); rid['root'].scale=(1/1.4,)*3
     def upd(t):
-        k=tl(t,0,ws(130)); x=L(4,PHUPPO_GATE[0]-1.8,ease_out(k)); mb['root'].location=(x,PHUPPO_GATE[1]-2.7,0); mb['root'].rotation_euler=(0,0,R(180))
-        for w_ in mb['wheels']: w_.rotation_euler[1]=-x*2.2
+        k=tl(t,0,ws(130)); x=L(4,PHUPPO_GATE[0]-1.8,ease_out(k)); mb['root'].location=(x,PHUPPO_GATE[1]-2.7,0); mb['root'].rotation_euler=(0,0,0)
+        for w_ in mb['wheels']: w_.rotation_euler[1]=x/.45
         sit(rid,1,.85,legs=80); blink(rid,t); face(rid,mouth='flat',brow=-.05,brow_r=-10)
         for s in (1,-1): rid['arm'][s].rotation_euler=(R(-75),0,R(s*8))
-        if t<ws(128)-.3: camset((x-4.0,PHUPPO_GATE[1]-6.0,1.8),(x+.8,PHUPPO_GATE[1]-2.4,1.3),26,4)
+        if t<ws(128)-.3: camset((x+3.6,PHUPPO_GATE[1]-6.2,1.7),(x-.2,PHUPPO_GATE[1]-2.5,1.3),26,4)
         else: camset((PHUPPO_GATE[0]-5.2,PHUPPO_GATE[1]-6.2,1.7),(PHUPPO_GATE[0]-.6,PHUPPO_GATE[1]-1.2,1.5),22,4)
     return dict(upd=upd)
 SHOTS['RIDE']=RIDE
@@ -228,5 +228,5 @@ def CTA():
     return dict(upd=upd)
 SHOTS['CTA']=CTA
 for _k in ('UI_MEME','UI_GROUP','UI_DELETE','UI_SEEN0','UI_SEEN1','UI_CALL','UI_LEFT'): SHOTS[_k]=None
-SEQ=[('HOOK', 0.0), ('MEME', 5.667), ('UI_MEME', 9.5), ('SEND', 13.567), ('UI_GROUP', 15.033), ('PANIC', 19.5), ('UI_DELETE', 20.633), ('UI_SEEN0', 24.1), ('ABBU', 30.0), ('STEAL', 34.567), ('CHACHA', 37.067), ('MIT1', 43.133), ('RIDE', 48.1), ('PH_DOOR', 52.7), ('GRAB', 58.067), ('CHAI', 63.5), ('RELIEF', 66.433), ('UI_SEEN1', 69.8), ('DADI', 74.067), ('DADI1', 77.367), ('WQ', 81.533), ('DADI2', 83.233), ('UI_CALL', 88.0), ('UI_LEFT', 89.533), ('CTA', 95.433)]
-END=99.5333
+SEQ=[('HOOK', 0.0), ('MEME', 5.633), ('UI_MEME', 9.433), ('SEND', 13.433), ('UI_GROUP', 14.8), ('PANIC', 18.6), ('UI_DELETE', 20.033), ('UI_SEEN0', 23.6), ('ABBU', 29.2), ('STEAL', 33.5), ('CHACHA', 36.1), ('MIT1', 41.733), ('RIDE', 46.367), ('PH_DOOR', 50.667), ('GRAB', 55.8), ('CHAI', 61.067), ('RELIEF', 63.733), ('UI_SEEN1', 67.233), ('DADI', 71.2), ('DADI1', 74.5), ('WQ', 78.2), ('DADI2', 79.933), ('UI_CALL', 84.2), ('UI_LEFT', 85.7), ('CTA', 91.033)]
+END=94.6667
