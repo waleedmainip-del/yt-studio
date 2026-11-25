@@ -1,0 +1,60 @@
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1288
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1289
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1290
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1291
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1292
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1293
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1294
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1295
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1296
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1297
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1298
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1299
+Fra:940 Mem:242.18M (Peak 284.20M) | Time:00:00.28 | Syncing p.1300
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.28 | Syncing p.1301
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.28 | Syncing p.1302
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.28 | Syncing p.1303
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.28 | Syncing p.1304
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.28 | Syncing p.1305
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.28 | Syncing p.1306
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1307
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1308
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1309
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1310
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1311
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.217
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.218
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1312
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1313
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1314
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1315
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.219
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1316
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1317
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1318
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1319
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing e.114
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1320
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1321
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1322
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1323
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing ip.025
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing e.115
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1324
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.220
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.221
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.222
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.223
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing c.224
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing e.116
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing p.1325
+Fra:940 Mem:242.21M (Peak 284.20M) | Time:00:00.29 | Syncing ip.026
+Fra:940 Mem:242.20M (Peak 284.20M) | Time:00:00.31 | Rendering 1 / 4 samples
+Fra:940 Mem:242.19M (Peak 284.20M) | Time:00:03.58 | Rendering 4 / 4 samples
+Saved: '/home/claude/abbu/frames/S09/f00940.png'
+Time: 00:04.72 (Saving: 00:00.24)
+
+FRAME 1 403.0
+SHOT_DONE 9
+
+Blender quit
