@@ -1,0 +1,60 @@
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1956
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1957
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1958
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1959
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1960
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1961
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1962
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1963
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1964
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1965
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1966
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1967
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1968
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1969
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1970
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1971
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1972
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1973
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1974
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1975
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1976
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1977
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1978
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1979
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.331
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.332
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1980
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1981
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1982
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1983
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.333
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1984
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1985
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1986
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1987
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing e.171
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1988
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1989
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1990
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1991
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing ip.025
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing e.172
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1992
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.334
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.335
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.336
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.337
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing c.338
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing e.173
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing p.1993
+Fra:87 Mem:316.96M (Peak 358.62M) | Time:00:00.39 | Syncing ip.026
+Fra:87 Mem:316.95M (Peak 358.62M) | Time:00:00.41 | Rendering 1 / 4 samples
+Fra:87 Mem:316.92M (Peak 358.62M) | Time:00:03.62 | Rendering 4 / 4 samples
+Saved: '/home/claude/abbu/frames/S01/f00087.png'
+Time: 00:04.73 (Saving: 00:00.23)
+
+FRAME 1 424.8
+SHOT_DONE 1
+
+Blender quit
