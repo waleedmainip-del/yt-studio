@@ -38,7 +38,9 @@ def PLAN():
     return dict(upd=upd)
 SHOTS['PLAN']=PLAN
 # ---------------------------------------------------------------- 1 AM / 2 AM / 3 AM vignettes (seen from the street, zombies peeking from the roof)
-def vcam(t,x=0.0,lens=20,tz=3.05,y=5.25,z=1.5):
+VL=[]
+def vcam(t,x=0.0,lens=20,tz=3.05,y=5.6,z=1.5):
+    if not VL: VL.append(point((x-1.5,4.6,3.4),1700,(1,.86,.66),r=1.5,shadow=False)); VL.append(point((x+2.5,3.8,2.2),700,(1,.9,.75),r=1.5,shadow=False))
     q=ease(t/DUR); camset((x+.25*q,y,z),(x,1.2,tz+.1*q),lens,8)
 def stream(p0,p1,o):
     d=Vector(p1)-Vector(p0); o.location=tuple((Vector(p0)+Vector(p1))/2); o.rotation_euler=d.to_track_quat('Z','Y').to_euler(); o.scale=(1,1,d.length)
@@ -48,7 +50,7 @@ def kettle(H,s=1):
 def ONEAM():
     Q=night_street((1,0),seed=3,skip=(0,1),walk=False); Z=roof_z(); FILLE[0]=30
     chai_counter(0,1.7,180)
-    cw=mk(CHAIWALA,0,.8,180,'chaiwala'); kt=kettle(cw,1); cu=[mk(CROWD[4],-2.7,1.5,128,'c1'),mk(CROWD[15],2.7,1.5,-128,'c2'),mk(CROWD[10],-4.6,.2,140,'c3')]; cups=[chai(cu[0],-1),chai(cu[1],1),chai(cu[2],1)]
+    cw=mk(CHAIWALA,0,.8,180,'chaiwala'); kt=kettle(cw,1); cu=[mk(CROWD[4],-2.0,2.0,128,'c1'),mk(CROWD[15],2.0,2.0,-128,'c2'),mk(CROWD[10],-4.2,.4,140,'c3')]; cups=[chai(cu[0],-1),chai(cu[1],1),chai(cu[2],1)]
     st=ocyl((0,0,0),.012,1.0,M('#B5713A',.4,emit=.3),rot=(0,0,0),seg=6); cc=chai(cw,-1)
     def upd(t):
         Q['bg'](t); roof_watch(Z,t,.0)
@@ -60,21 +62,21 @@ def ONEAM():
     return dict(upd=upd)
 SHOTS['ONEAM']=ONEAM
 def bat(H,s=1):
-    def b(e): obox((0,-.05,.5),(.085,.03,.42),M('#D9B982',.6,kind='wood',sc=.5),.02,e); ocyl((0,-.05,.0),.035,.26,M('#2A2C34',.5),e,rot=(0,0,0),seg=8)
+    def b(e): obox((0,-.05,-.74),(.085,.03,.42),M('#D9B982',.6,kind='wood',sc=.5),.02,e); ocyl((0,-.05,-.17),.035,.32,M('#2A2C34',.5),e,rot=(0,0,0),seg=8)
     return in_hand(H,s,b)
 def stumps(x,y,rz=0):
     e=empty((x,y,0),rot=(0,0,R(rz))); S_=[ocyl((0,(k-1)*.16,.6),.03,1.2,M('#F2E2B0',.6),e,rot=(0,0,0),seg=8) for k in range(3)]; S_+=[obox((0,dy,1.22),(.02,.075,.02),M('#F2E2B0',.6),.005,e) for dy in (-.08,.08)]; return e,S_
 def TWOAM():
     Q=night_street((2,0),seed=4,skip=(0,1),walk=False); Z=roof_z(); FILLE[0]=30
-    bt=mk(FRIENDS[2],0,1.3,180,'batsman'); b_=bat(bt,1); stumps(0,.1,90)
-    kids=[mk(CROWD[5],-2.9,2.0,150,'k1'),mk(CROWD[13],3.0,1.7,-150,'k2'),mk(FRIENDS[0],-4.6,-.2,130,'k3')]
+    bt=mk(FRIENDS[2],-.5,1.4,150,'batsman'); b_=bat(bt,1); stumps(1.15,.7,60)
+    kids=[mk(CROWD[5],-2.6,2.3,150,'k1'),mk(CROWD[13],2.9,2.2,-150,'k2'),mk(FRIENDS[0],-4.4,.2,130,'k3')]
     ball=oico((0,0,-9),.11,M('#E8F23A',.4,emit=1.5),sub=2); TH=.72
     def upd(t):
         Q['bg'](t); roof_watch(Z,t,.3)
-        hstand(bt,t); k=tl(t,TH-.18,TH+.06); bt['arm'][1].rotation_euler=(R(L(-35,-150,k)),R(L(-30,25,k)),0); bt['arm'][-1].rotation_euler=(R(L(-30,-120,k)),R(L(20,-20,k)),0); bt['root'].rotation_euler[2]=R(180+L(-25,30,k)); face(bt,mouth='strain' if k<1 else 'grin')
-        if t<TH: ball.location=(L(-1.9,-.3,t/TH),L(7.5,1.9,t/TH),L(1.9,1.35,t/TH))
+        hstand(bt,t); k=tl(t,TH-.18,TH+.06); bt['arm'][1].rotation_euler=(R(L(-35,-150,k)),R(L(-30,25,k)),0); bt['arm'][-1].rotation_euler=(R(L(-30,-120,k)),R(L(20,-20,k)),0); bt['root'].rotation_euler[2]=R(150+L(-20,30,k)); face(bt,mouth='strain' if k<1 else 'grin')
+        if t<TH: ball.location=(L(-2.6,-.9,t/TH),L(7.5,2.0,t/TH),L(1.9,1.35,t/TH))
         else:
-            d=t-TH; ball.location=(-.3-2.4*d*3.2,1.9-.6*d*3.2,1.35+12*d-4.9*d*d)
+            d=t-TH; ball.location=(-.9-2.6*d*3.2,2.0-.4*d*3.2,1.35+12*d-4.9*d*d)
         for i,H in enumerate(kids):
             hstand(H,t); j=tl(t,TH+.05,TH+.3); look_at(H,ball.location,.8,maxpitch=50)
             if j>0: H['root'].location[2]=H['z0']+.008+.3*abs(math.sin((t-TH)*8))*(1 if i!=2 else .5); shock(H,j)
@@ -86,7 +88,7 @@ def THREEAM2():
     Q=night_street((3,0),seed=5,skip=(0,1),walk=False); Z=roof_z(); FILLE[0]=30
     deg(-.9,1.6,1.0,lid=False); deg(1.1,1.55,1.0,lid=True); B.done('dg')
     ck=mk(dict(COOK,ladle=True),0.1,.35,180,'cook2'); steam((-.9,1.6,1.5),0,9,n=10,seed=4,size=.09)
-    cu=[mk(CROWD[7],-2.9,1.7,128,'n1'),mk(CROWD[12],3.0,1.7,-128,'n2'),mk(CROWD[2],-4.7,.3,140,'n3')]
+    cu=[mk(CROWD[7],-2.2,2.3,128,'n1'),mk(CROWD[12],2.3,2.3,-128,'n2'),mk(CROWD[2],-4.4,.4,140,'n3')]
     P=[]
     for i,H in enumerate(cu):
         e=in_hand(H,1,lambda e_: (ocyl((0,-.2,.05),.2,.03,M('#F6F4EE',.4),e_,rot=(0,0,0),seg=16),ocyl((0,-.2,.07),.15,.02,M('#8A3A1A',.5),e_,rot=(0,0,0),seg=14))); P.append(e)

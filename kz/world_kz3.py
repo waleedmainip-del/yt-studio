@@ -60,7 +60,7 @@ def moon():
 def beach(mood='night',seed=4,sign_at=(14,-5.2),ssize=.52):
     """Sea View beach. land y<0, shoreline ~y=3, sea beyond. skyline along +x."""
     night=mood=='night'; NIGHT[0]=1.0 if night else 0.0; r=random.Random(seed)
-    sand=M('#D9C39A' if not night else '#A89878',.95,kind='wall'); wet=M('#B8A27C' if not night else '#8A7A60',.6)
+    sand=M('#D9C39A' if not night else '#857B66',.95,kind='wall'); wet=M('#B8A27C' if not night else '#6A5E4A',.5)
     B.box((0,-40,-.1),(160,46,.1),sand,0); B.box((0,4,-.14),(160,3,.1),wet,0,rot=(R(-1.5),0,0))
     for i in range(60): B.ico((r.uniform(-60,60),r.uniform(-30,2),-.02),r.uniform(.5,1.6),sand,sc=(1,1,.12),sub=1)
     sea=M('#1E4E7A' if not night else '#0E2440',.08,spec=1.0); B.box((0,130,-.32),(400,126,.1),sea,0)
