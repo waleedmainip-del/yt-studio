@@ -152,7 +152,7 @@ def SH_A(view):
                 if view=='scold':  # "Inni dhup vich bina topi de? Ammi nu pata ae?"
                     talk(of,t,81,90,KEY,rest='frown',shapes=('o','frown','O','frown')); face(of,eyes=1.05,brow=-.09); arms(of,-8,0,-38,-120+30*math.sin(t*6),0,10)
                     look_at(w,headpos(of),.7); face(w,mouth='flat',eyes=.9,brow=.05)
-                    KEEP[0]=[]; front_cam(of,1.9,L(24,26,q),ang=-35,dz=.15)
+                    KEEP[0]=[of]; front_cam(of,1.9,L(24,26,q),ang=-35,dz=.15)
                 else:              # she writes the ticket: one glass of lassi
                     p=hand_front(of,-1,.36,-.45,-.05); tk.location=p; tk.rotation_euler=(R(-60),0,of['root'].rotation_euler[2]); arm_reach(of,-1,p); arm_reach(of,1,tuple(Vector(p)+Vector((.06,0,.04+.02*math.sin(t*14)))))
                     of['head'].rotation_euler=(R(25),0,0); face(of,mouth='flat',eyes=.8,brow=-.05); look_at(w,p,.7); face(w,mouth='O')
@@ -163,7 +163,7 @@ def SH_A(view):
                 w['head'].rotation_euler=(R(-20),0,0); face(w,mouth='O',eyes=.6)
                 standH(of,-3.0,21.0,heading_to(of,headpos(w)),t); blink(of,t); arms(of,-62,0,-58,-62,0,58); face(of,mouth='smirk',eyes=1.0,brow=-.04)
                 look_at(dr,headpos(w),.6); face(dr,mouth='grin')
-                KEEP[0]=[w,of]; two_cam(w,of,side=-1,dist=3.0,lens=L(21,23,q),dz=.2)
+                KEEP[0]=[w,of]; _camset((L(-.2,-.5,q),L(19.6,19.9,q),1.6),(-3.6,20.4,1.35),L(22,24,q),4,focus=headpos(w))
         if view not in ('gps',): hide_block()
     return dict(upd=upd)
 for v in ('hook','job','stop','mirror','drv1','wal','drv2','gps','cop','scold','ticket','lassi'): SHOTS['A_'+v]=(lambda v=v: SH_A(v))
@@ -189,7 +189,7 @@ def SH_B(view):
                 standH(w,OX-.1,.6,heading_to(w,headpos(gd)),t); blink(w,t); face(w,mouth='flat',eyes=.95); arms(w,-20,0,-8,-20,0,8)
                 talk(gd,t,122,129,KEY,rest='frown',shapes=('o','frown','O','frown')); face(gd,eyes=1.1,brow=.08)
                 hp=Vector(headpos(w)); arm_reach(gd,1,tuple(hp+Vector((0,0,-.55))+(Vector(headpos(gd))-hp).normalized()*.3)) if t>.8 else arms(gd,-8,0,-38,-8,0,38)
-                KEEP[0]=[]; front_cam(gd,1.9,L(24,26,q),ang=-30,dz=.15)
+                KEEP[0]=[gd]; front_cam(gd,1.9,L(24,26,q),ang=-30,dz=.15)
             hide_block()
         return dict(upd=upd)
     if view in ('wait','anda'):
@@ -236,7 +236,7 @@ def SH_B(view):
         elif view=='shazia':  # "Sir... Shazia ka beta hoon."
             cv.location=(cvp[0]-1.0,cvp[1]+.1,cvp[2]); cv.rotation_euler=(R(90),0,R(40))
             talk(w,t,168,172,KEY,rest='flat',shapes=('o','flat','o','flat')); face(w,eyes=.95,brow=.08); arms(w,-55,0,-8,-70,0,25)
-            KEEP[0]=[]; front_cam(w,1.5,L(26,30,q),ang=25,dz=.2)
+            KEEP[0]=[w]; front_cam(w,1.5,L(26,30,q),ang=25,dz=.2)
         elif view=='pakki':   # "Shazia? Oh te meri cousin di nand ae! Naukri pakki."
             cv.location=(cvp[0]-1.0,cvp[1]+.1,cvp[2]); cv.rotation_euler=(R(90),0,R(40))
             k=ease((t-wl(174,KEY))/.5); mg['root'].location[2]+=.0;
