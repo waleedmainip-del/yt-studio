@@ -165,7 +165,7 @@ def flash_light(loc,times,e=9000):
     return upd
 # ---------------------------------------------------------------- EVERY: Waleed "and I mean EVERYONE"
 def EVERY():
-    faisal('khi',0.0,gantry_text='WELCOME TO KARACHI',stop_x=44,gantry_x=-44)
+    faisal('khi',0.0,gantry_text='WELCOME TO KARACHI',stop_x=44,gantry_x=-44,nosign=(1,-26,1))
     wa=mk(WALEED,-9.5,13.7,-90,'wa'); G=[]
     spots=[(-7.2,15.7,3),(-6.9,12.95,8),(-4.6,14.5,14),(-4.2,16.4,6),(-2.2,13.2,11),(-1.6,15.4,17),(.4,16.6,21),(.9,14.2,0),(4.3,13.0,9),(4.2,15.5,12),(6.6,14.3,15),(7.0,16.4,23)]
     for i,(x,y,c) in enumerate(spots): G.append(mk(CROWD[c],x,y,-90,'g%d'%i))
@@ -190,7 +190,7 @@ def PMS():
         hstand(pm,t); talk(pm,t,*wt(11,16)); k=tl(t,ws(14)-.1,ws(14)+.25)
         hold_chai(pm,cup,-1,a=L(-70,-100,k)); pm['arm'][1].rotation_euler=(R(-66-6*math.sin(t*8)),R(-16),0)
         face(pm,brow=.04); look_at(pm,CAM.location,.5,maxpitch=12); fl(t)
-        q=ease(t/DUR); camset(LV((.75,-3.9,2.45),(.55,-3.5,2.42),q),(0,1.2,2.2),36,5.6)
+        q=ease(t/DUR); camset(LV((.75,-3.9,2.45),(.55,-3.5,2.42),q),(0,1.2,1.93),36,5.6)
     return dict(upd=upd)
 SHOTS['PM']=PMS
 # ---------------------------------------------------------------- ASTRO
@@ -272,7 +272,7 @@ def RUMOUR():
         headtouch(bm,1,1,dx=.45,dy=-.62,dz=.2); bm['arm'][-1].rotation_euler=(R(-28),0,0); bm['head'].rotation_euler=(R(10),R(-9),R(-6)); face(bm,mouth='frown',brow=-.02,brow_r=-8)
         h=Vector(hp(bm)); fly.location=(h.x+.55*math.cos(t*7),h.y+.45*math.sin(t*9),h.z+.5+.15*math.sin(t*13))
         upd_diners(D,t); upd_kwalkers(Wk,t)
-        q=ease(t/DUR); camset(LV((-15.6,-1.6,2.1),(-16.2,-.6,2.0),q),LV((-17.9,BW-1.3,1.9),(-17.7,BW-1.3,1.85),q),L(22,25,q),5.6)
+        q=ease(t/DUR); camset(LV((-15.6,-1.6,2.1),(-15.7,-1.45,2.08),q),(-17.9,BW-1.3,1.9),21,5.6)
     return dict(upd=upd)
 SHOTS['RUMOUR']=RUMOUR
 # ---------------------------------------------------------------- THREEAM: the whole planet is awake
@@ -307,7 +307,7 @@ def CHAIAUR():
 SHOTS['CHAIAUR']=CHAIAUR
 # ---------------------------------------------------------------- SHOCKS: a meteor lands. nobody looks
 def SHOCKS():
-    S=burns('night',clock=(3,2)); TB=street_tables(8); B.done('x')
+    S=burns('night',clock=(3,2),nosigns=('FRY FISH',)); TB=street_tables(8); B.done('x')
     D=diners(2,TB); wa=mk(WALEED,0,-WLANE,90,'wa'); cup=chai(wa,1)
     mt=oico((0,0,-50),.9,M('#FFB23A',.3,emit=14),sub=2); tail=[oico((0,0,-50),.7-.08*k,M('#FF6A1A',.3,emit=8,alpha=.7-.08*k),sub=1) for k in range(6)]
     fl=point((-26,0,3),0,(1,.7,.4),r=2,shadow=False); TI=ws(57)+.25; IMP=Vector((-27,0,.6)); P0=Vector((-52,4,34))
@@ -325,8 +325,8 @@ def SHOCKS():
     return dict(upd=upd)
 SHOTS['SHOCKS']=SHOCKS
 # ---------------------------------------------------------------- the flooded street
-def flood_set():
-    S=burns('khi_rain',clock=(4,20),flood=True,cooks=False,far=0,canopy=True,night=.35); B.done('x')
+def flood_set(nosigns=(),rest_sign='CHACHA MAGHAZ HOUSE'):
+    S=burns('khi_rain',clock=(4,20),flood=True,cooks=False,far=0,canopy=True,night=.35,nosigns=nosigns,rest_sign=rest_sign); B.done('x')
     FP=flood_props(); ch=charpai(0,0,0); ch.location=(-4,1.4,.36)
     un=mk(UNCLE,0,0,90,'uncle'); cup=chai(un,-1)
     car_=kcar((6.8,-2.4,-.28),18,'#C9CED8',seed=3); wa=mk(WALEED,0,0,0,'wa'); wcup=chai(wa,-1)
@@ -361,7 +361,7 @@ def ANSWER():
     return dict(upd=upd)
 SHOTS['ANSWER']=ANSWER
 def HALKA1():
-    F=flood_set(); un=F['un']
+    F=flood_set(nosigns=('FRY FISH',),rest_sign=None); un=F['un']
     def upd(t):
         ux=-1.0+.5*t; F['pose'](t,ux); k=tl(t,ws(71),ws(71)+.3)
         hold_chai(un,F['cup'],-1,a=L(-62,-76,k),out=24*k); un['arm'][1].rotation_euler=(R(-34),0,0)
@@ -386,7 +386,7 @@ def BLACKOUT():
     return dict(upd=upd)
 SHOTS['BLACKOUT']=BLACKOUT
 def QUAKE():
-    S=burns('night',clock=(3,6)); TB=street_tables(8); B.done('x')
+    S=burns('night',clock=(3,6),nosigns=('SEEKH KABAB','FRY FISH')); TB=street_tables(8); B.done('x')
     D=diners(6,TB,skip=(1,)); a=mk(CROWD[1],0,0,0,'qa'); b=mk(CROWD[6],0,0,0,'qb'); cup=chai(a,1); st=TB[1][1]
     def upd(t):
         upd_diners(D,t); SHAKE[0]=.085

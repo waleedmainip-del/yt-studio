@@ -252,7 +252,7 @@ FA_SIGNS=['KARACHI BROAST','BUN KABAB KING','MOBILE MALL','CHAI SHAI','SAMOSA PO
 FA_ROOF=[('CHAI 24/7','#FFE14A','#7A1F2E',1.5),('NO SLEEP SINCE 1947','#FFFFFF','#16213A',1.0),('BIRYANI > EVERYTHING','#FFFFFF','#C8372D',1.0),('HALKA LE BHAI','#16171C','#F2C14E',1.3),('SEA VIEW  >>','#FFFFFF','#1E6A8A',1.3)]
 RW=12.4; MEDW=1.4; SWK=4.6; BLN=RW+SWK   # road half width, median half width, sidewalk width, building line
 LANES=(3.3,6.9,10.5)
-def faisal(mood='golden',night=0.0,seed=5,x0=-100,x1=180,gantry_x=34,bridge_x=86,stop_x=0,shadow=90,gantry_text='SHAHRAH-E-FAISAL',bridge_text='CITY OF LIGHTS',clear=7.0):
+def faisal(mood='golden',night=0.0,seed=5,x0=-100,x1=180,gantry_x=34,bridge_x=86,stop_x=0,shadow=90,gantry_text='SHAHRAH-E-FAISAL',bridge_text='CITY OF LIGHTS',clear=7.0,nosign=None):
     NIGHT[0]=night; r=random.Random(seed); mid=(x0+x1)/2; hl=(x1-x0)/2
     B.box((mid+60,0,-.3),(hl+160,260,.2),M('#8E8A80',.9,kind='concrete',sc=.4),0)
     B.box((mid+60,0,-.05),(hl+160,RW,.05),M('#3C3E44',.8,kind='asphalt'),0)
@@ -282,7 +282,7 @@ def faisal(mood='golden',night=0.0,seed=5,x0=-100,x1=180,gantry_x=34,bridge_x=86
             w=r.uniform(11,18); low=r.random()<.38; fl=r.randint(2,4) if low else r.randint(7,19); sb=r.uniform(0,2.0)
             rs=None
             if low and ri<40 and r.random()<.75: rs=FA_ROOF[ri%len(FA_ROOF)]; ri+=1
-            tower(x+w/2,s*(BLN+sb),w,r.uniform(12,18),fl,r.choice(acc) if (low and r.random()<.5) else r.choice(cols),s,seed*100+si,sign_=FA_SIGNS[si%len(FA_SIGNS)],scol=r.choice(['#C8372D','#1E6A3A','#2B58C9','#7A1F2E','#16171C','#D9811A']),
+            tower(x+w/2,s*(BLN+sb),w,r.uniform(12,18),fl,r.choice(acc) if (low and r.random()<.5) else r.choice(cols),s,seed*100+si,sign_=None if (nosign and s==nosign[0] and nosign[1]<=x+w/2<=nosign[2]) else FA_SIGNS[si%len(FA_SIGNS)],scol=r.choice(['#C8372D','#1E6A3A','#2B58C9','#7A1F2E','#16171C','#D9811A']),
                   style=0 if low else r.randint(0,2),roofsign=rs)
             x+=w+r.uniform(.4,1.4); i+=1; si+=1
         # far row: simple tall silhouettes

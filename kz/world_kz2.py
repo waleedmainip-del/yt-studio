@@ -19,7 +19,7 @@ def blade(x,y,z,word,bg,col='#FFF6D8',side=1,size=.5):
     for n in ((-1,0,0),(1,0,0)): vtext(word,(x+n[0]*.105,y-s*.75,z),size,col,n,e=3.2)
     for k in range(int(hh*2/.4)+1):
         for dy in (-.5,.5): B.ico((x,y-s*.75+dy,z-hh+k*.4),.045,lit('#FFE08A',6,always=True),sub=1)
-def oldb(cx,w,fl,col,side,seed,sign_=None,scol='#C8372D',depth=11.0,open_front=False,fh=3.5,blade_=None,Y=None,plain_roof=False,sx=0.0):
+def oldb(cx,w,fl,col,side,seed,sign_=None,scol='#C8372D',depth=11.0,open_front=False,fh=3.5,blade_=None,Y=None,plain_roof=False,sx=0.0,noac0=False):
     """colonial-era stone building. front at Y (default BW), body extends away from the street. returns roof height"""
     r=random.Random(seed); s=side; y0=s*(BW if Y is None else Y); yc=y0+s*depth/2; G=4.9; H=G+fl*fh
     wall=M(col,.85,kind='wall'); tr=M('#F2EBDA',.8); dk=M('#17140F',.8); iron=M('#22242B',.4,metal=.6)
@@ -77,7 +77,7 @@ def oldb(cx,w,fl,col,side,seed,sign_=None,scol='#C8372D',depth=11.0,open_front=F
                 if r.random()<.55: B.cyl((wx+.55,y0-s*.7,zb+.92),.13,.26,M('#B5542E',.7),seg=10); B.ico((wx+.55,y0-s*.7,zb+1.2),.2,M('#3F8A3A',.8),sub=1)
                 if r.random()<.4:
                     for j in range(4): B.box((wx-.55+j*.36,y0-s*.99,zb+.72),(.13,.012,.26),M(r.choice(['#E8554D','#F2C14E','#4D8FE8','#F4F1DE','#9B6FD0','#6FC38A']),.9),0)
-            elif r.random()<.25 and (f>0 or not sign_): B.box((wx+.45,y0-s*.28,wz-1.25),(.4,.24,.24),M('#D8DCE2',.5),.03); B.cyl((wx+.45,y0-s*.53,wz-1.25),.16,.02,M('#5A5E66',.5),rot=(R(90),0,0),seg=12)
+            elif r.random()<.25 and (f>0 or not (sign_ or noac0)): B.box((wx+.45,y0-s*.28,wz-1.25),(.4,.24,.24),M('#D8DCE2',.5),.03); B.cyl((wx+.45,y0-s*.53,wz-1.25),.16,.02,M('#5A5E66',.5),rot=(R(90),0,0),seg=12)
     # top: cornice, balustrade, pediment
     B.box((cx,y0-s*.15,H+.12),(w/2+.2,.5,.16),tr,.03)
     for k in range(int(w/.5)): B.cyl((cx-w/2+.25+k*.5,y0+s*.1,H+.62),.08,.7,tr,seg=6)
@@ -214,7 +214,7 @@ def street_tables(n=10,dress=None,skip=()):
         for (sx,sy,rz) in (s1,s2): kchair(sx,sy,rz,['#2B58C9','#C8372D','#1E6A3A','#F4F1EA'][i%4])
         out.append(((x,y),[s1,s2]))
     return out
-def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,lights=True,roof=False,shadow=45,nost=(),rest_sign='CHACHA MAGHAZ HOUSE',night=None,cooks=True,far=.7,gap=None,roof_sx=0.0):
+def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,lights=True,roof=False,shadow=45,nost=(),rest_sign='CHACHA MAGHAZ HOUSE',night=None,cooks=True,far=.7,gap=None,roof_sx=0.0,nosigns=()):
     NIGHT[0]=(1.0 if mood in ('night','dusk') else 0.0) if night is None else night; r=random.Random(seed); FANS.clear()
     night=NIGHT[0]>0
     B.box((0,0,-.3),(260,260,.2),M('#55524C',.9,kind='concrete',sc=.4),0)
@@ -233,10 +233,11 @@ def burns(mood='night',seed=8,clock=(3,0),flood=False,rest=True,canopy=True,ligh
     for s,segs in ((1,segN),(-1,segS)):
         for sg_ in segs:
             sg=B_SIGNS[si%len(B_SIGNS)]
-            if sg_[0]=='REST': oldb(0,2*RX,3,'#E8D2A0',1,seed*100+si,sign_=rest_sign,scol='#1E6A3A',depth=RDEP+1.5,open_front=True)
-            elif sg_[0]=='ROOF': oldb((ROOF_X[0]+ROOF_X[1])/2,ROOF_X[1]-ROOF_X[0],3,'#D99A8A',-1,seed*100+si,sign_=sg[0],scol=sg[1],depth=12.0,plain_roof=True,sx=roof_sx)
+            ns_=sg[0] in nosigns
+            if sg_[0]=='REST': oldb(0,2*RX,3,'#E8D2A0',1,seed*100+si,sign_=rest_sign,scol='#1E6A3A',depth=RDEP+1.5,open_front=True,noac0=True)
+            elif sg_[0]=='ROOF': oldb((ROOF_X[0]+ROOF_X[1])/2,ROOF_X[1]-ROOF_X[0],3,'#D99A8A',-1,seed*100+si,sign_=None if ns_ else sg[0],scol=sg[1],depth=12.0,plain_roof=True,sx=roof_sx,noac0=True)
             else:
-                xa,xb=sg_; oldb((xa+xb)/2,xb-xa,r.randint(2,4),r.choice(OLDC),s,seed*100+si,sign_=sg[0],scol=sg[1],depth=r.uniform(10,13),
+                xa,xb=sg_; oldb((xa+xb)/2,xb-xa,r.randint(2,4),r.choice(OLDC),s,seed*100+si,sign_=None if ns_ else sg[0],scol=sg[1],noac0=True,depth=r.uniform(10,13),
                                blade_=(BLADES[si%len(BLADES)],r.choice(['#7A1F2E','#1E4A7A','#1E6A3A','#5A2A7A','#8A4A1E'])) if si%2==0 else None)
             si+=1
     if rest: restaurant()
