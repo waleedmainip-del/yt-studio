@@ -174,7 +174,7 @@ def KYA():
     return dict(upd=upd)
 SHOTS['KYA']=KYA
 def MAGHAZ():
-    Q=rest_set(clock=(0,15),street=False); zed=Q['zed']; wa=Q['waiter']; sp=spoon(zed,1); FILLE[0]=30; TC=ws(136)-.1
+    REST_NOSIGN.add('FAMILY HALL UPSTAIRS'); Q=rest_set(clock=(0,15),street=False); zed=Q['zed']; wa=Q['waiter']; sp=spoon(zed,1); FILLE[0]=30; TC=ws(136)-.1
     u=zed['u']; bl=[ocyl((s*.43*u,-.62*u-.006,.36*u),.12*u,.006,M('#F08A8A',.7),zed['head']) for s in (-1,1)]
     hearts(lambda t: hp(zed,.35),TC+.2,TC+1.6,n=7,seed=2,size=.9)
     def upd(t):

@@ -157,6 +157,7 @@ def fan(x,y,z):
     b=empty((0,0,-.03),e)
     for k in range(3): a=k*2*pi/3; obox((math.cos(a)*.55,math.sin(a)*.55,0),(.45,.09,.012),M('#E8E2D0',.5),.005,b,rot=(R(8),0,a))
     FANS.append(b); return b
+REST_NOSIGN=set()
 def restaurant():
     """CHACHA MAGHAZ HOUSE: open-front dining hall on the north side, x -RX..RX, y BW..BW+RDEP"""
     y0=BW; y1=BW+RDEP; tl_=M('#F4F1EA',.4,kind='tile',sc=3.2,h2='#DCE8E4'); gr=M('#2E8A7A',.4,kind='tile',sc=3.2,h2='#27786A'); fl=M('#D8D2C4',.5,kind='tile',sc=1.1,h2='#8A3A2A')
@@ -174,8 +175,8 @@ def restaurant():
     for i,(yy,c1,c2) in enumerate(((y0+3.0,'#F2C14E','#C8372D'),(y0+5.6,'#6FC38A','#F4F1EA'),(y0+8.0,'#E28A3A','#7A1F2E'))):
         B.box((RX-.15,yy,2.9),(.03,.62,.48),fr,.01); B.box((RX-.18,yy,2.9),(.01,.54,.4),M(c1,.6),0); B.cyl((RX-.2,yy,2.86),.24,.02,M(c2,.5),rot=(0,R(90),0),seg=16)
         B.box((-RX+.15,yy,2.9),(.03,.62,.48),fr,.01); B.box((-RX+.18,yy,2.9),(.01,.54,.4),M(c2,.6),0); B.cyl((-RX+.2,yy,2.86),.24,.02,M(c1,.5),rot=(0,R(90),0),seg=16)
-    sign('CASH ONLY',(-4.6,y1-.17,3.7),.3,'#16171C','#F2C14E',n=(0,-1,0),pad=.16,th=.04)
-    sign('FAMILY HALL UPSTAIRS',(4.6,y1-.17,2.35),.2,'#FFFFFF','#7A1F2E',n=(0,-1,0),pad=.12,th=.04)
+    if 'CASH ONLY' not in REST_NOSIGN: sign('CASH ONLY',(-4.6,y1-.17,3.7),.3,'#16171C','#F2C14E',n=(0,-1,0),pad=.16,th=.04)
+    if 'FAMILY HALL UPSTAIRS' not in REST_NOSIGN: sign('FAMILY HALL UPSTAIRS',(4.6,y1-.17,2.35),.2,'#FFFFFF','#7A1F2E',n=(0,-1,0),pad=.12,th=.04)
     # menu board + clock + shelf with jars on the back wall
     B.box((0,y1-.16,3.05),(2.5,.04,1.05),M('#1E4A36',.6),0); B.box((0,y1-.15,3.05),(2.6,.03,1.15),M('#D9B24A',.4,metal=.5),0)
     for i,(a,b) in enumerate((('MAGHAZ MASALA','350'),('NIHARI','400'),('KATAKAT','380'),('CHAI','50'))):

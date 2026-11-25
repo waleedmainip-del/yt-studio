@@ -224,7 +224,7 @@ def NOBODY2():
     return dict(upd=upd)
 SHOTS['NOBODY2']=NOBODY2
 def RICK():
-    faisal('khi_am',0.0,stop_x=70); FILLE[0]=25
+    faisal('khi_am',0.0,stop_x=70,nosign=(1,-45,25)); FILLE[0]=25
     V=krick((0,LANES[1],0),0,'#2E8A3A',seed=7,slogan='ZOMBIE TAXI')
     dr=mk(ZRICK,0,0,90,'zrick'); dr['root'].parent=V['root']; pa=mk(AUNTY_R,0,0,90,'aunty'); pa['root'].parent=V['root']
     T=traffic(41,-60,90,[FLANES[2]]+FLANES[3:],gap=(5,12)); sidewalk_tokens(8,-40,90,60); B.done('ppl')
@@ -348,7 +348,7 @@ def finale_set(clock=(9,30),street=True,walk=True,skip=(0,1),dskip=()):
         cook_anim(kg,t); kg['root'].location[0]=-4.9; kg['root'].location[1]=BW+2.05; kg['root'].rotation_euler[2]=0; blink(kg,t); zeyes(kg,1.1); face(kg,mouth='grin',brow=.03)
     return dict(S=S,RT=RT,TB=TB,kg=kg,bg=bg,kcook=kcook)
 def KINGQ():
-    Q=finale_set(street=False,walk=False); kg=Q['kg']; FILLE[0]=25
+    REST_NOSIGN.add('CASH ONLY'); Q=finale_set(street=False,walk=False); kg=Q['kg']; FILLE[0]=25
     sh=empty((0,BW-.05,4.62)); obox((0,0,-2.3),(2.3,.05,2.3),M('#8A8E96',.5,metal=.5),.0,sh)
     for j in range(13): obox((0,-.06,-4.4+j*.36),(2.3,.02,.03),M('#5A5E66',.5),0,sh)
     sign('NOW OPEN',(3.4,BW-1.2,1.5),.34,'#FFFFFF','#C8372D',n=(0,-1,0),e=2.5,pad=.2,th=.06,parent=empty((0,0,0)),always=True)
@@ -402,6 +402,6 @@ def CTA():
         hold_chai(wa,c1,1,a=L(-70,-104,k)); wa['arm'][-1].rotation_euler=(R(-46),0,0); hold_chai(zd,c2,-1,a=L(-70,-104,k)); zd['arm'][1].rotation_euler=(R(-46),0,0)
         look_at(wa,CAM.location,.9,maxyaw=85,maxpitch=40); look_at(zd,CAM.location,.9,maxyaw=85,maxpitch=40); face(wa,mouth='grin',brow=.05); face(zd,mouth='grin',brow=.05); zeyes(zd,1.15)
         for f in FW: f(t)
-        q=ease(max(0,(t-.55)/(DUR-.55))); camset(LV((9.0,-4.5,2.25),(-9.5,-.2,4.9),q),LV((9.0,.8,1.7),(30,0,7.6),q),L(24,22,q),8)
+        q=ease(max(0,(t-.55)/(DUR-.55))); camset(LV((8.84,-4.5,2.25),(-6.5,-.2,4.9),q),LV((9.45,.8,2.0),(30,0,7.6),q),22,8)
     return dict(upd=upd)
 SHOTS['CTA']=CTA
