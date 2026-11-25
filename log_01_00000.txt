@@ -1,0 +1,60 @@
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1806
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1807
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1808
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1809
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1810
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1811
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1812
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1813
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1814
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1815
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1816
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1817
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1818
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1819
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1820
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1821
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1822
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1823
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1824
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1825
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1826
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1827
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1828
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1829
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.307
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.308
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1830
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1831
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1832
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1833
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.309
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1834
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1835
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1836
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1837
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing e.158
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1838
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1839
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1840
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1841
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing ip.025
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing e.159
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1842
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.310
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.311
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.312
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.313
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing c.314
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing e.160
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing p.1843
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.35 | Syncing ip.026
+Fra:87 Mem:301.28M (Peak 342.97M) | Time:00:00.38 | Rendering 1 / 4 samples
+Fra:87 Mem:301.23M (Peak 342.97M) | Time:00:03.47 | Rendering 4 / 4 samples
+Saved: '/home/claude/abbu/frames/S01/f00087.png'
+Time: 00:04.53 (Saving: 00:00.23)
+
+FRAME 1 416.3
+SHOT_DONE 1
+
+Blender quit
