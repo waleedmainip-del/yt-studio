@@ -1,0 +1,60 @@
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing e.186
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing ip.040
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing e.187
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing c.338
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing c.339
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing e.188
+Fra:47 Mem:352.13M (Peak 425.27M) | Time:00:00.67 | Syncing p.2209
+Fra:47 Mem:352.12M (Peak 425.27M) | Time:00:00.71 | Rendering 1 / 4 samples
+Fra:47 Mem:352.09M (Peak 425.27M) | Time:00:04.68 | Rendering 4 / 4 samples
+Fra:47 Mem:349.85M (Peak 425.27M) | Time:00:05.81 | Compositing
+Fra:47 Mem:349.85M (Peak 425.27M) | Time:00:05.81 | Compositing | Determining resolution
+Fra:47 Mem:349.85M (Peak 425.27M) | Time:00:05.81 | Compositing | Initializing execution
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 1-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 2-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 3-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 4-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 5-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 6-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 7-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 8-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 9-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 10-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 11-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 12-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 13-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.82 | Compositing | Tile 14-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 15-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 16-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 17-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 18-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 19-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 20-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 21-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 22-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 23-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 24-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 25-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 26-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 27-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 28-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 29-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.83 | Compositing | Tile 30-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 31-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 32-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 33-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 34-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 35-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 36-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 37-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 38-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 39-40
+Fra:47 Mem:381.55M (Peak 425.27M) | Time:00:05.84 | Compositing | Tile 40-40
+Fra:47 Mem:381.49M (Peak 425.27M) | Time:00:05.84 | Compositing | De-initializing execution
+Saved: '/home/claude/aunty/frames/S01/f00047.png'
+Time: 00:06.17 (Saving: 00:00.32)
+
+FRAME 1 296.2
+SHOT_DONE 1
+
+Blender quit
