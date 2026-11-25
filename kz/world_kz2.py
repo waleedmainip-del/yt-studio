@@ -77,7 +77,7 @@ def oldb(cx,w,fl,col,side,seed,sign_=None,scol='#C8372D',depth=11.0,open_front=F
                 if r.random()<.55: B.cyl((wx+.55,y0-s*.7,zb+.92),.13,.26,M('#B5542E',.7),seg=10); B.ico((wx+.55,y0-s*.7,zb+1.2),.2,M('#3F8A3A',.8),sub=1)
                 if r.random()<.4:
                     for j in range(4): B.box((wx-.55+j*.36,y0-s*.99,zb+.72),(.13,.012,.26),M(r.choice(['#E8554D','#F2C14E','#4D8FE8','#F4F1DE','#9B6FD0','#6FC38A']),.9),0)
-            elif r.random()<.25: B.box((wx+.45,y0-s*.28,wz-1.25),(.4,.24,.24),M('#D8DCE2',.5),.03); B.cyl((wx+.45,y0-s*.53,wz-1.25),.16,.02,M('#5A5E66',.5),rot=(R(90),0,0),seg=12)
+            elif r.random()<.25 and (f>0 or not sign_): B.box((wx+.45,y0-s*.28,wz-1.25),(.4,.24,.24),M('#D8DCE2',.5),.03); B.cyl((wx+.45,y0-s*.53,wz-1.25),.16,.02,M('#5A5E66',.5),rot=(R(90),0,0),seg=12)
     # top: cornice, balustrade, pediment
     B.box((cx,y0-s*.15,H+.12),(w/2+.2,.5,.16),tr,.03)
     for k in range(int(w/.5)): B.cyl((cx-w/2+.25+k*.5,y0+s*.1,H+.62),.08,.7,tr,seg=6)

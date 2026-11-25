@@ -49,7 +49,7 @@ def kettle(H,s=1):
     return in_hand(H,s,b)
 def ONEAM():
     Q=night_street((1,0),seed=3,skip=(0,1),walk=False); Z=roof_z(); FILLE[0]=30
-    chai_counter(0,1.7,180)
+    ce=chai_counter(0,1.7,180)
     cw=mk(CHAIWALA,0,.8,180,'chaiwala'); kt=kettle(cw,1); cu=[mk(CROWD[4],-2.0,2.0,128,'c1'),mk(CROWD[15],2.0,2.0,-128,'c2'),mk(CROWD[10],-4.2,.4,140,'c3')]; cups=[chai(cu[0],-1),chai(cu[1],1),chai(cu[2],1)]
     st=ocyl((0,0,0),.012,1.0,M('#B5713A',.4,emit=.3),rot=(0,0,0),seg=6); cc=chai(cw,-1)
     def upd(t):
@@ -57,7 +57,7 @@ def ONEAM():
         hstand(cw,t); k=.5+.5*math.sin(t*3.2); cw['arm'][1].rotation_euler=(R(-150-12*k),0,R(10)); upright(kt,cw,1,tilt=-55); hold_chai(cw,cc,-1,a=-58); face(cw,mouth='grin')
         for i,H in enumerate(cu):
             hstand(H,t); hold_chai(H,cups[i],(-1,1,1)[i],a=-70,sip=(.5+.5*math.sin(t*3+i*2)) if i==2 else 0); face(H,mouth='grin' if i!=1 else 'smile')
-        kp=kt.matrix_world@Vector((0,-.42,.2)); cp=cc.matrix_world@Vector((0,-.07,.2)); stream(kp,cp,st)
+        kp=kt.matrix_world@Vector((0,-.42,.2)); cp=ce.matrix_world@Vector((.35,.08,1.16)); stream(kp,cp,st)
         vcam(t)
     return dict(upd=upd)
 SHOTS['ONEAM']=ONEAM
@@ -239,13 +239,13 @@ def RICK():
 SHOTS['RICK']=RICK
 def CHAIZ():
     Q=day_street(walk=False,skip=(0,1)); FILLE[0]=25
-    chai_counter(0,-1.75,180)
+    ce=chai_counter(0,-1.75,180)
     cw=mk(ZCHAI,0,-2.65,180,'zchai'); kt=kettle(cw,1); cu=[mk(CROWD[1],-2.6,-1.6,128,'c1'),mk(CROWD[18],2.6,-1.6,-128,'c2')]; cups=[chai(cu[0],-1),chai(cu[1],1)]
     st=ocyl((0,0,0),.012,1.0,M('#B5713A',.4,emit=.3),rot=(0,0,0),seg=6); cc=chai(cw,-1); steam((.6,-1.75,1.6),0,9,n=8,seed=2,size=.07)
     def upd(t):
         Q['bg'](t); hstand(cw,t); k=.5+.5*math.sin(t*4.0); cw['arm'][1].rotation_euler=(R(-150-12*k),0,R(10)); upright(kt,cw,1,tilt=-55); hold_chai(cw,cc,-1,a=-58); face(cw,mouth='grin',brow=.05); zeyes(cw,1.1)
         for i,H in enumerate(cu): hstand(H,t); hold_chai(H,cups[i],(-1,1)[i],a=-70); face(H,mouth='grin'); look_at(H,hp(cw),.6)
-        kp=kt.matrix_world@Vector((0,-.42,.2)); cp=cc.matrix_world@Vector((0,-.07,.2)); stream(kp,cp,st)
+        kp=kt.matrix_world@Vector((0,-.42,.2)); cp=ce.matrix_world@Vector((.35,.08,1.16)); stream(kp,cp,st)
         q=ease(t/DUR); camset(LV((.8,2.3,1.9),(.6,1.9,1.95),q),(0,-2.5,1.95),L(25,27,q),5.6)
     return dict(upd=upd)
 SHOTS['CHAIZ']=CHAIZ

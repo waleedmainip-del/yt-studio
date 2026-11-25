@@ -36,6 +36,11 @@ if MODE=='probe':
             while rt is not None and rt.parent is not None: rt=rt.parent
             row.append('%s%s@%.1f'%(ob.name[:9] if ob else '-',tuple(round(x,1) for x in rt.matrix_world.translation) if rt else '',(loc-o).length if hit else 0))
         print('PROBE',' | '.join(row),flush=True)
+    import os as _os
+    for uv in [x for x in _os.environ.get('PUV','').split(';') if x]:
+        u,v=[float(x) for x in uv.split(',')]; top=fr[3].lerp(fr[0],u); bot=fr[2].lerp(fr[1],u); p_=top.lerp(bot,v)
+        hit,loc,n,idx,ob,m=sc.ray_cast(dg,o,(p_-o).normalized())
+        print('PUV',uv,ob.name if ob else None,tuple(round(x,2) for x in loc) if hit else None,tuple(round(x,2) for x in ob.dimensions) if ob else None,flush=True)
     for nm in args[5:]:
         ob=bpy.data.objects.get(nm)
         if ob: print('POS',nm,tuple(round(x,2) for x in ob.matrix_world.translation),tuple(round(x,2) for x in world_to_camera_view(sc,cam,ob.matrix_world.translation)))

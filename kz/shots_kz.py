@@ -332,7 +332,8 @@ def flood_set():
     car_=kcar((6.8,-2.4,-.28),18,'#C9CED8',seed=3); wa=mk(WALEED,0,0,0,'wa'); wcup=chai(wa,-1)
     wd=mk(CROWD[9],0,WLANE+.1,90,'wader'); pot=empty((0,0,0)); ocyl((0,0,.24),.36,.46,M('#7A3E1A',.3,metal=.85),pot,rot=(0,0,0),seg=18,r2=.46); ocyl((0,0,.5),.4,.05,M('#8E5A2A',.4,metal=.6),pot,rot=(0,0,0),seg=18)
     rn=rain(170,(0,0),size=(22,13))
-    for p_ in S['lights']: pass
+    for o_ in bpy.data.objects:
+        if o_.type=='LIGHT' and o_.data.type!='SUN': o_.data.specular_factor=0
     pl_=point((0,0,7),2500,(.85,.9,1.0),r=3,shadow=False); pl_.data.specular_factor=0; S['sun'].data.specular_factor=.12
     def pose(t,ux):
         ch.location=(ux,1.4,.36+.03*math.sin(t*2.2)); ch.rotation_euler=(R(1.5*math.sin(t*1.7)),0,0)

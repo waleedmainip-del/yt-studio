@@ -129,9 +129,11 @@ def ORDER():
     Q=rest_set(clock=(0,12),street=False); zed=Q['zed']; wa=Q['waiter']; FILLE[0]=30
     def upd(t):
         Q['bg'](t); zw_pose(Q,t); k=1-tl(t,ws(113)-.15,ws(113)+.1); waiter_write(wa,t,k); wa['head'].rotation_euler[0]=R(16*k)
+        for s_ in (1,-1): zed['arm'][s_].rotation_euler=(R(-14+3*math.sin(t*1.7+s_)),0,0)
+        zed['head'].rotation_euler[1]=R(7*math.sin(t*1.3))
         talk(wa,t,*wt(110,115),rest='smile'); face(wa,brow=.05*(1-k)); look_at(wa,hp(zed),1-k,maxpitch=20)
-        if k<.5: wa['arm'][1].rotation_euler=(R(-62-6*math.sin(t*9)),0,R(10))
-        c,tg,ln=ots2(wa,zed,back=1.55,side=-1.1,dz=.38,tz=-.32,lens=40); q=ease(t/DUR); camset(c,tg,ln+2*q,4.0)
+        if k<.5: wa['arm'][1].rotation_euler=(R(-44-6*math.sin(t*9)),R(-14),R(10))
+        c,tg,ln=ots2(wa,zed,back=.12,side=-1.0,dz=.1,tz=-.4,lens=37); q=ease(t/DUR); camset(c,tg,ln+2.0*q,5.6)
     return dict(upd=upd)
 SHOTS['ORDER']=ORDER
 def spoon(H,s=1):
