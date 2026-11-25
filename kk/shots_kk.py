@@ -1,7 +1,7 @@
 # Shots for "Khana Khul Gaya". SEQ/END are filled by gen_seq.py.
 SHOTS={}
-END=87.4
-SEQ=[('HOOK', 0.0), ('KHANA0', 4.0), ('HALL', 5.567), ('AMMI', 13.033), ('MISSION', 17.0), ('WHISPER', 19.5), ('CHAOS', 20.8), ('PLATES', 25.367), ('ASK', 31.067), ('UNBORN', 32.567), ('BILAL', 36.0), ('DAIG', 40.7), ('QORMA', 47.8), ('UNCLE', 56.733), ('WTRICK', 59.067), ('RUNOFF', 61.867), ('WIN', 66.133), ('WALKBACK', 67.733), ('VIP', 74.633), ('WREPLY', 78.0), ('AMMI2', 80.567), ('CTA', 83.867)]
+END=83.3
+SEQ=[('HOOK', 0.0), ('KHANA0', 4.067), ('HALL', 5.733), ('AMMI', 12.567), ('MISSION', 16.567), ('WHISPER', 18.833), ('CHAOS', 20.233), ('PLATES', 24.733), ('ASK', 29.967), ('UNBORN', 31.433), ('BILAL', 34.733), ('DAIG', 39.267), ('QORMA', 46.1), ('UNCLE', 54.4), ('WTRICK', 56.533), ('RUNOFF', 59.1), ('WIN', 63.1), ('WALKBACK', 64.733), ('VIP', 71.233), ('WREPLY', 74.4), ('AMMI2', 76.9), ('CTA', 80.0)]
 import os as _os
 FILLE=[30.0]; _FL=[]
 _camset0=camset
@@ -340,5 +340,5 @@ def CTA():
         q=ease(t/DUR); camset(LV((-8.4,-9.3,1.95),(-8.0,-8.9,1.95),q),(4,4.5,1.2),L(20,24,q),6)
     return dict(upd=upd)
 SHOTS['CTA']=CTA
-SEQ=[('HOOK', 0.0), ('KHANA0', 4.0), ('HALL', 5.567), ('AMMI', 13.033), ('MISSION', 17.0), ('WHISPER', 19.5), ('CHAOS', 20.8), ('PLATES', 25.367), ('ASK', 31.067), ('UNBORN', 32.567), ('BILAL', 36.0), ('DAIG', 40.7), ('QORMA', 47.8), ('UNCLE', 56.733), ('WTRICK', 59.067), ('RUNOFF', 61.867), ('WIN', 66.133), ('WALKBACK', 67.733), ('VIP', 74.633), ('WREPLY', 78.0), ('AMMI2', 80.567), ('CTA', 83.867)]
-END=87.4
+SEQ=[('HOOK', 0.0), ('KHANA0', 4.067), ('HALL', 5.733), ('AMMI', 12.567), ('MISSION', 16.567), ('WHISPER', 18.833), ('CHAOS', 20.233), ('PLATES', 24.733), ('ASK', 29.967), ('UNBORN', 31.433), ('BILAL', 34.733), ('DAIG', 39.267), ('QORMA', 46.1), ('UNCLE', 54.4), ('WTRICK', 56.533), ('RUNOFF', 59.1), ('WIN', 63.1), ('WALKBACK', 64.733), ('VIP', 71.233), ('WREPLY', 74.4), ('AMMI2', 76.9), ('CTA', 80.0)]
+END=83.3
