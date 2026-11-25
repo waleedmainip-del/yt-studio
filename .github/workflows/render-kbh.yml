@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: kbh-render-r1
+  group: kbh-render-r2
   cancel-in-progress: false
 jobs:
   render:

@@ -100,9 +100,10 @@ def stall():
 STALL_TABLES=[(STALL_X-2.6,NS-4.0),(STALL_X+.2,NS-4.3),(STALL_X+2.9,NS-4.0)]
 def stall_tables():
     for i,(x,y) in enumerate(STALL_TABLES):
-        B.box((x,y,.7),(.6,.45,.03),M(['#E8E2D0','#2E8A6A','#E8C547'][i],.4),.02)
+        B.box((x,y,1.02),(.6,.45,.03),M('#6E4A2E',.9,kind='wood'),.02)
         for sx in (-1,1):
-            for sy in (-1,1): B.cyl((x+sx*.52,y+sy*.38,.35),.02,.7,M(['#E8E2D0','#2E8A6A','#E8C547'][i],.4),seg=6)
+            for sy in (-1,1): B.cyl((x+sx*.52,y+sy*.38,.5),.025,1.0,M('#3A3A42',.5,metal=.5),seg=6)
+    B.done('stall')
 def pchair_k(x,y,rz,col='#C8372D'):
     e=empty((x,y,0),rot=(0,0,R(rz))); m=M(col,.35)
     obox((0,0,.44),(.23,.23,.03),m,.03,e); obox((0,.21,.75),(.23,.03,.3),m,.03,e)

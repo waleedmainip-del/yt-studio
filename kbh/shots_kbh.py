@@ -115,12 +115,12 @@ def stall_set(mood='golden',n_eaters=4):
     city(STALL_X-30,STALL_X+30); stall(); stall_tables(); setup_world(mood,shadow=40)
     bw=mk(BIRYANI,SX+.2,SY+1.1,0,'biryani')
     E=[]
-    seats=[(STALL_TABLES[0][0]-.9,STALL_TABLES[0][1],90,0),(STALL_TABLES[0][0]+.9,STALL_TABLES[0][1],-90,5),(STALL_TABLES[2][0]-.9,STALL_TABLES[2][1],90,8),(STALL_TABLES[2][0]+.9,STALL_TABLES[2][1],-90,11)]
+    seats=[(STALL_TABLES[0][0]-1.55,STALL_TABLES[0][1],90,0),(STALL_TABLES[0][0],STALL_TABLES[0][1]-1.45,180,5),(STALL_TABLES[2][0],STALL_TABLES[2][1]-1.45,180,8),(STALL_TABLES[2][0]+1.55,STALL_TABLES[2][1],-90,11)]
     for i,(x,y,rz,c) in enumerate(seats[:n_eaters]):
         pchair_k(x,y,rz); H=mk(CROWD[c],x,y,rz,'e%d'%i); H['seat']=(x,y,rz); E.append(H)
     return bw,E
 def eat(H,t,freeze=False):
-    seat(H,t,.48); x,y,rz=H['seat']; H['root'].location=(x,y,0); H['root'].rotation_euler=(0,0,R(rz))
+    seat(H,t,.44); x,y,rz=H['seat']; H['root'].location=(x,y,0); H['root'].rotation_euler=(0,0,R(rz))
     if not freeze: blink(H,t); k=(math.sin(t*3.2+x)*.5+.5); H['arm'][1].rotation_euler=(R(-60-40*k),0,R(10)); face(H,mouth='O' if k>.7 else 'smile')
 def STALL():
     bw,E=stall_set(); wa=mk(WALEED,SX-6,WY,90,'wa')
@@ -150,7 +150,7 @@ def ALOO():
             k=tl(t,we(95)+.15,we(95)+.55); p0=Vector(hand); sp.location=p0.lerp(Vector((p0.x,p0.y-.2,.13)),k*k); sp.rotation_euler=(R(70+60*k),0,R(30*k))
             for H in E: face(H,mouth='O',eyes=1.3); look_at(H,hp(wa),.8)
         cr.rotation_euler[2]=R(-90+ (0 if fr else 25*math.sin(t*6))); cr.children[1].rotation_euler[1]=0 if fr else R(15*math.sin(t*14))
-        if t<we(95)+.1: c0,tg,ln=ots(wa,bw,2.2,28); camset(c0,tg,ln,2.8)
+        if t<we(95)+.1: camset((SX+1.1,SY-3.4,1.9),(SX-.35,SY+.2,1.45),26,4)
         else: q=tl(t,we(95)+.1,DUR); camset(LV((SX+1.8,SY-5.6,2.4),(SX+1.6,SY-5.2,2.3),q),(SX-.4,SY-.8,1.3),20,5)
     return dict(upd=upd)
 SHOTS['ALOO']=ALOO
@@ -161,10 +161,10 @@ def ABAY():
         stand(wa,t); blink(wa,t); facing(wa,(SX,SY+1.1)); look_at(wa,hp(bw),.7); face(wa,mouth='O',eyes=1.25,brow=.06)
         stand(bw,t); blink(bw,t); facing(bw,wa['root'].location); look_at(bw,hp(wa),.8); talk(bw,t,*wt(96,99),rest='flat'); face(bw,brow=-.08,brow_r=-16)
         bw['root'].rotation_euler[0]=R(-8*tl(t,.0,.6))
-        c0,tg,ln=closecam(bw,face_dir(wa['root'].location.x-bw['root'].location.x,wa['root'].location.y-bw['root'].location.y),.2,L(2.4,1.7,ease(t/DUR)),lens=30,tz=-.35); camset(c0,tg,ln,2.8)
+        c0,tg,ln=closecam(bw,face_dir(wa['root'].location.x-bw['root'].location.x,wa['root'].location.y-bw['root'].location.y),.2,L(1.75,1.35,ease(t/DUR)),dz=.35,lens=24,tz=-.2); camset(c0,tg,ln,2.8)
     return dict(upd=upd)
 SHOTS['ABAY']=ABAY
-TSEAT=(STALL_TABLES[1][0],STALL_TABLES[1][1]-.85)
+TSEAT=(STALL_TABLES[1][0],STALL_TABLES[1][1]-1.45)
 def SIT():
     bw,E=stall_set(); E[1]['root'].location=(0,0,-60); E.pop(1); wa=mk(WALEED,WP[0],WP[1],0,'wa'); un=mk(UNCLE,STALL_TABLES[1][0]+.8,STALL_TABLES[1][1]+1.3,180,'uncle')
     pchair_k(TSEAT[0],TSEAT[1],180); h1=mk(CROWD[5],0,0,0,'h1'); h2=mk(CROWD[8],0,0,0,'h2')
@@ -173,7 +173,7 @@ def SIT():
         stand(bw,t); blink(bw,t); facing(bw,wa['root'].location); face(bw,mouth='smile',eyes=.7)
         t0w,t1w=ws(104)-.3,ws(108)
         if t<t1w: walk_to(wa,[WP,(WP[0]-.3,.7),(WP[0]+.1,-.4),TSEAT],t,t0w,t1w,step=.32) if t>t0w else (stand(wa,t),setattr(wa['root'],'location',(WP[0],WP[1],0)))
-        else: seat(wa,t,.48); wa['root'].location=(TSEAT[0],TSEAT[1],0); wa['root'].rotation_euler[2]=R(180)
+        else: seat(wa,t,.44); wa['root'].location=(TSEAT[0],TSEAT[1],0); wa['root'].rotation_euler[2]=R(180)
         blink(wa,t); face(wa,mouth='O',eyes=1.15,brow=.05)
         for H,dx in ((h1,-1.0),(h2,1.0)):
             stand(H,t); H['root'].location=(TSEAT[0]+dx,TSEAT[1]-.45,0) if t>t1w-.4 else (0,0,-60); facing(H,(TSEAT[0],TSEAT[1])); blink(H,t); face(H,mouth='smile',brow=.03)
@@ -184,15 +184,15 @@ def SIT():
 SHOTS['SIT']=SIT
 def table_set(plates=1):
     bw,E=stall_set(n_eaters=2); pchair_k(TSEAT[0],TSEAT[1],180); wa=mk(WALEED,TSEAT[0],TSEAT[1],180,'wa')
-    un=mk(UNCLE,STALL_TABLES[1][0]+1.1,STALL_TABLES[1][1]+.1,-90,'uncle'); pchair_k(STALL_TABLES[1][0]+1.1,STALL_TABLES[1][1]+.1,-90)
+    un=mk(UNCLE,STALL_TABLES[1][0]+1.55,STALL_TABLES[1][1]+.05,-90,'uncle'); pchair_k(STALL_TABLES[1][0]+1.55,STALL_TABLES[1][1]+.05,-90)
     P=[]
     for k in range(3):
-        e=empty((TSEAT[0]-.05+(k-1)*.0,TSEAT[1]+.6,.74+k*.03)); ocyl((0,0,0),.17,.015,M('#F7F5EF',.2),e,rot=(0,0,0))
+        e=empty((TSEAT[0]-.05+(k-1)*.0,TSEAT[1]+1.2,1.06+k*.03)); ocyl((0,0,0),.17,.015,M('#F7F5EF',.2),e,rot=(0,0,0))
         food=empty((0,0,.015),e); ocyl((0,0,0),.13,.04,M('#E8A040',.75),food,rot=(0,0,0)); obox((.05,.03,.04),(.045,.035,.03),M('#E8D8A0',.6),.02,food)
         P.append((e,food))
     return bw,E,wa,un,P
-def seated_w(wa,t): seat(wa,t,.48); wa['root'].location=(TSEAT[0],TSEAT[1],0); wa['root'].rotation_euler=(0,0,R(180)); blink(wa,t)
-def seated_u(un,t): seat(un,t,.48); un['root'].location=(STALL_TABLES[1][0]+1.1,STALL_TABLES[1][1]+.1,0); un['root'].rotation_euler=(0,0,R(-90)); blink(un,t)
+def seated_w(wa,t): seat(wa,t,.44); wa['root'].location=(TSEAT[0],TSEAT[1],0); wa['root'].rotation_euler=(0,0,R(180)); blink(wa,t)
+def seated_u(un,t): seat(un,t,.44); un['root'].location=(STALL_TABLES[1][0]+1.55,STALL_TABLES[1][1]+.05,0); un['root'].rotation_euler=(0,0,R(-90)); blink(un,t)
 def TALEEM():
     bw,E,wa,un,P=table_set()
     def upd(t):
@@ -201,7 +201,7 @@ def TALEEM():
         seated_w(wa,t); seated_u(un,t); facing(un,wa['root'].location); look_at(un,hp(wa),.7); look_at(wa,hp(un),.7)
         talk(un,t,*wt(109,115),rest='smile'); face(un,brow=.05); face(wa,mouth='O',eyes=1.1,brow=.04)
         u=un['u']; arm_to(un,1,root_mat(un)@Vector((.4*u,-1.6*u,4.0*u)),tl(t,ws(112),ws(113)))
-        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+.6,.74+i*.03) if i==0 else (0,0,-30)
+        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+1.2,1.06+i*.03) if i==0 else (0,0,-30)
         c0,tg,ln=ots(un,wa,2.3,26,side=-1); camset(drift(c0,tg,t),tg,ln,2.8)
     return dict(upd=upd)
 SHOTS['TALEEM']=TALEEM
@@ -212,11 +212,11 @@ def PLATES():
         stand(bw,t); blink(bw,t); facing(bw,wa['root'].location); seated_w(wa,t); seated_u(un,t); facing(un,wa['root'].location); face(un,mouth='smile'); look_at(un,hp(wa),.6)
         n=1+int(min(2,t/(DUR*.3)))
         for i,(e,f) in enumerate(P):
-            e.location=(TSEAT[0]-.05,TSEAT[1]+.6,.74+i*.03) if i<n else (0,0,-30)
+            e.location=(TSEAT[0]-.05,TSEAT[1]+1.2,1.06+i*.03) if i<n else (0,0,-30)
             f.scale=(1,1,1) if i==n-1 and t<DUR*.85 else (0,0,0)
         sp=(math.sin(t*7)*.5+.5); wa['arm'][1].rotation_euler=(R(-70-35*sp),0,R(8)); face(wa,mouth='O' if sp>.6 else 'flat',eyes=.8-.2*tl(t,DUR*.5,DUR),brow=-.03)
         wa['root'].rotation_euler[0]=R(-6*tl(t,DUR*.6,DUR))
-        q=ease(t/DUR); camset(LV((TSEAT[0]-.2,TSEAT[1]+2.6,1.8),(TSEAT[0]-.2,TSEAT[1]+2.2,1.7),q),(TSEAT[0],TSEAT[1]+.4,1.05),26,2.8)
+        q=ease(t/DUR); camset(LV((TSEAT[0]-1.3,TSEAT[1]+3.2,2.4),(TSEAT[0]-1.1,TSEAT[1]+2.9,2.3),q),(TSEAT[0],TSEAT[1]+.6,1.05),28,2.8)
     return dict(upd=upd)
 SHOTS['PLATES']=PLATES
 def GIVEUP():
@@ -224,7 +224,7 @@ def GIVEUP():
     def upd(t):
         for H in E: eat(H,t,freeze=t>ws(130)-.1);
         stand(bw,t); blink(bw,t); facing(bw,wa['root'].location); seated_w(wa,t); seated_u(un,t); facing(un,wa['root'].location); look_at(un,hp(wa),.6)
-        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+.6,.74+i*.03); f.scale=(0,0,0)
+        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+1.2,1.06+i*.03); f.scale=(0,0,0)
         talk(wa,t,*wt(122,129),rest='smile'); face(wa,brow=-.03,eyes=.85); wa['root'].rotation_euler[0]=R(-5)
         face(un,mouth='grin' if t>we(129) else 'smile',brow=.04)
         c0,tg,ln=closecam(wa,180,.3,2.3,lens=30,tz=-.35); camset(drift(c0,tg,t),tg,ln,2.8)
@@ -238,8 +238,8 @@ def SHABASH():
         stand(bw,t); blink(bw,t); facing(bw,wa['root'].location); bw['arm'][1].rotation_euler=(R(-165),0,R(20)); bw['arm'][-1].rotation_euler=(R(-165),0,R(-20)); talk(bw,t,*wt(130,131),rest='grin')
         seated_w(wa,t); seated_u(un,t); facing(un,wa['root'].location); un['arm'][1].rotation_euler=(R(-60),0,R(-40)); face(un,mouth='grin',brow=.05)
         face(wa,mouth='smile',eyes=.8)
-        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+.6,.74+i*.03); f.scale=(0,0,0)
-        q=ease(t/DUR); camset(LV((SX-1.0,SY-6.6,2.6),(SX-.8,SY-6.0,2.5),q),(SX-.4,SY-2.0,1.3),22,5)
+        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+1.2,1.06+i*.03); f.scale=(0,0,0)
+        q=ease(t/DUR); camset(LV((SX-3.7,SY-2.0,2.5),(SX-3.4,SY-2.1,2.4),q),(SX+.6,TSEAT[1]+.6,1.2),20,5)
     return dict(upd=upd)
 SHOTS['SHABASH']=SHABASH
 # ---------------------------------------------------------------- rain
@@ -249,7 +249,7 @@ def DROP():
     def upd(t):
         for H in E: eat(H,t)
         stand(bw,t); blink(bw,t); facing(bw,wa['root'].location); seated_w(wa,t); seated_u(un,t); facing(un,wa['root'].location)
-        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+.6,.74+i*.03); f.scale=(0,0,0)
+        for i,(e,f) in enumerate(P): e.location=(TSEAT[0]-.05,TSEAT[1]+1.2,1.06+i*.03); f.scale=(0,0,0)
         nose=Vector(hp(wa))+Vector((0,.33*wa['u']*2,-.2))
         k=tl(t,.15,ws(137)); drop.location=nose+Vector((0,0,3.2*(1-k))) if t<ws(137)+.05 else (0,0,-40)
         face(wa,mouth='O' if t>ws(137) else 'flat',eyes=1.0+.35*tl(t,ws(137),ws(137)+.2),brow=.06*tl(t,ws(137),ws(137)+.2)); look_at(wa,(TSEAT[0],TSEAT[1]+.4,4),.7*tl(t,ws(137),ws(138)),maxpitch=45)
@@ -273,7 +273,7 @@ def BAND():
     return dict(upd=upd)
 SHOTS['BAND']=BAND
 def RIVER():
-    city(STALL_X-30,STALL_X+30,rain=True); setup_world('storm',shadow=40); rn=rain_drops(300,(STALL_X,0),size=(20,14))
+    city(STALL_X-30,STALL_X+30,rain=True); setup_world('storm',shadow=40); rn=rain_drops(300,(STALL_X+2,1.5),size=(14,10))
     wl=flood_plane(STALL_X-40,STALL_X+40,SS,NS)
     rk=rickshaw((STALL_X+6,-2.5,0),180,'#2E8A3A',seed=3); P=[]
     for i,(c,x,y,z) in enumerate(((3,STALL_X-3.0,4.0,.0),(10,STALL_X-1.2,4.4,0),(13,STALL_X+1.0,4.1,0))):
@@ -290,17 +290,18 @@ def RIVER():
     return dict(upd=upd)
 SHOTS['RIVER']=RIVER
 def CHILL():
-    city(STALL_X-30,STALL_X+30,rain=True); setup_world('storm',shadow=40); rn=rain_drops(220,(STALL_X+2,-1),size=(12,10))
-    wl=flood_plane(STALL_X-40,STALL_X+40,SS,NS); wl.location.z=.55
-    rk=rickshaw((STALL_X+2,-1.0,0),90,'#2E8A3A',seed=3); rw=mk(RICKSHAW,0,0,0,'rw'); rw['root'].parent=rk['root']; rw['root'].location=(.2,0,.55); rw['root'].rotation_euler=(0,0,R(90))
-    wa=mk(WALEED,STALL_X-.2,.6,0,'wa')
+    city(STALL_X-30,STALL_X+30,rain=True); setup_world('storm',shadow=40); rn=rain_drops(220,(STALL_X+2,1),size=(10,8))
+    wl=flood_plane(STALL_X-40,STALL_X+40,SS,NS); wl.location.z=.45
+    rk=rickshaw((STALL_X+1.2,-.2,0),180,'#2E8A3A',seed=3); rk['root'].scale=(1.5,)*3
+    rw=mk(RICKSHAW,0,0,0,'rw'); rw['root'].parent=rk['root']; rw['root'].location=(.3,0,.5); rw['root'].rotation_euler=(0,0,R(90)); rw['root'].scale=(1/1.5,)*3
+    wa=mk(WALEED,STALL_X+.9,-2.7,180,'wa')
     def upd(t):
         rn(t,1.0); sit(rw,1,.85,legs=80); blink(rw,t); talk(rw,t,*wt(153,160),rest='smile'); face(rw,brow=.03,eyes=.75)
-        rw['arm'][-1].rotation_euler=(R(-75),0,R(-8)); rw['arm'][1].rotation_euler=(R(-110+20*math.sin(t*3)),0,R(30))
-        rw['head'].rotation_euler[2]=R(-50)
-        stand(wa,t); blink(wa,t); facing(wa,(STALL_X+2,-1.0)); wa['root'].location.z=0; face(wa,mouth='O',eyes=1.2,brow=.05)
+        rw['arm'][-1].rotation_euler=(R(-75),0,R(-8)); rw['arm'][1].rotation_euler=(R(-100+18*math.sin(t*3)),0,R(40))
+        look_at(rw,hp(wa),.8)
+        stand(wa,t); blink(wa,t); wa['root'].rotation_euler[2]=R(180); face(wa,mouth='O',eyes=1.2,brow=.05); look_at(wa,(STALL_X+.8,-.2,1.6),.7)
         for s in (1,-1): wa['arm'][s].rotation_euler=(R(-40),0,R(s*30))
-        camset((STALL_X+4.4,-3.4,1.9),(STALL_X+2.2,-1.0,1.6),26,2.8)
+        q=ease(t/DUR); camset(LV((STALL_X-1.3,-5.2,1.9),(STALL_X-1.0,-4.9,1.85),q),(STALL_X+.8,-.6,1.5),28,4)
     return dict(upd=upd)
 SHOTS['CHILL']=CHILL
 # ---------------------------------------------------------------- blackout + torches
@@ -329,8 +330,8 @@ def TORCH():
             stand(H,t); blink(H,t); H['root'].location.z=0; k=tl(t,ws(174)-.05,ws(174)+.15); u=H['u']
             arm_to(H,1,root_mat(H)@Vector((.35*u,-1.7*u,(3.2+1.0*k)*u)),k); l.location=ph.matrix_world.translation+Vector((0,-.2,0)); l.data.energy=30*k
             face(H,mouth='smile',eyes=.8)
-        stand(wa,t); blink(wa,t); face(wa,mouth='O',eyes=1.2,brow=.06); wa['root'].rotation_euler[2]=R(L(0,180,tl(t,ws(174)+.2,ws(176))))
-        FILLE[0]=6
+        stand(wa,t); blink(wa,t); face(wa,mouth='O',eyes=1.2,brow=.06); wa['root'].rotation_euler[2]=0; wa['head'].rotation_euler[2]=R(45*math.sin((t-ws(174))*2.2)*tl(t,ws(174),ws(174)+.4))
+        FILLE[0]=160
         q=ease(t/DUR); camset(LV((STALL_X+.2,-3.6,1.9),(STALL_X+.2,-2.6,1.85),q),(STALL_X+.2,3.6,1.6),22,4)
     return dict(upd=upd)
 SHOTS['TORCH']=TORCH
