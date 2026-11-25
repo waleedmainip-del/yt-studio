@@ -208,7 +208,7 @@ def jam(seed=31,x1=JX+125,night=False,bus=True,south=True):
     if bus: Bs=w11((BUSX,LANES[2],0),0,seed=9,col='#2B58C9',accent='#F2C14E')
     return T,TS,Bs
 def ARMY():
-    faisal('khi_dusk',.55,stop_x=JX-6); FILLE[0]=90; kg,Z=army()
+    faisal('khi_dusk',.55,stop_x=JX-6,nosign=(1,-30,8)); FILLE[0]=90; kg,Z=army()
     G=horde(6,-10.5,18,2.5,5,dy=2.1); night_lights((-20,0,20),y=6,e=1800)
     def upd(t):
         s=1.0*t; army_walk(kg,Z,t,s); upd_horde(G,t,v=1.0)
@@ -275,8 +275,8 @@ def FOURFEET():
 SHOTS['FOURFEET']=FOURFEET
 # ---------------------------------------------------------------- the W-11
 DOORX=BUSX-3.1; BY=LANES[2]
-def bus_scene(packed=False,stop_wal=False):
-    faisal('khi_night',1.0,stop_x=DOORX-9.5,clear=20.0,gantry_x=8); T,TS,Bs=jam(); FILLE[0]=70
+def bus_scene(packed=False,stop_wal=False,nosign=None):
+    faisal('khi_night',1.0,stop_x=DOORX-9.5,clear=20.0,gantry_x=8,nosign=nosign); T,TS,Bs=jam(); FILLE[0]=70
     night_lights((JX-10,JX+10,JX+30),y=8,e=2600); point((BUSX-1,BY,3.0),420,(1,.9,.7),r=.8,shadow=False); point((DOORX+.5,BY+3.6,3.4),900,(1,.9,.75),r=1.2,shadow=False)
     co=mk(CONDUCTOR,DOORX,BY+1.2,180,'conductor',z=Bs['z0'])
     IN=[]; RF=[]
@@ -319,8 +319,8 @@ def PACK():
     return dict(upd=upd)
 SHOTS['PACK']=PACK
 WALP=(DOORX+3.4,BY+4.3); ZLAND=(DOORX+1.9,BY+3.15)
-def scare_set():
-    Q=bus_scene(packed=True); co=Q['co']; Bs=Q['bus']; z=mk(ZVAR[5],0,0,0,'fan'); wa=mk(WALEED,WALP[0],WALP[1],0,'wa'); ph=phone_in_hand(wa,1,'#BFE0FF',em=2.5)
+def scare_set(nosign=None):
+    Q=bus_scene(packed=True,nosign=nosign); co=Q['co']; Bs=Q['bus']; z=mk(ZVAR[5],0,0,0,'fan'); wa=mk(WALEED,WALP[0],WALP[1],0,'wa'); ph=phone_in_hand(wa,1,'#BFE0FF',em=2.5)
     def wal(t,look=0.0):
         hstand(wa,t); wa['root'].location[0]=WALP[0]; wa['root'].location[1]=WALP[1]; wa['root'].rotation_euler[2]=R(35); hold_phone(wa,1,1.0); wa['arm'][-1].rotation_euler=(R(-6),0,0)
         wa['head'].rotation_euler=(R(L(22,2,look)),0,0)
@@ -346,7 +346,7 @@ def SCARE():
     return dict(upd=upd)
 SHOTS['SCARE']=SCARE
 def HALKA2():
-    S_=scare_set(); Q=S_['Q']; z=S_['z']; wa=S_['wa']; Bs=S_['bus']; co=S_['co']
+    S_=scare_set(nosign=(1,30,70)); Q=S_['Q']; z=S_['z']; wa=S_['wa']; Bs=S_['bus']; co=S_['co']
     def upd(t):
         Q['base'](t); cond_ground(co,t,hp(wa))
         lk=tl(t,ws(195)-.15,ws(195)+.1)*(1-tl(t,ws(200)+.25,ws(200)+.5)); S_['wal'](t,lk); talk(wa,t,*wt(195,200),rest='flat'); face(wa,brow=-.01,brow_r=3)
