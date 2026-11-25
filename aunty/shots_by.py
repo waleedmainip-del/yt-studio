@@ -195,7 +195,7 @@ def road_crowd_upd(G,t,stare=None):
         else: gossip(H,t,H['ph'],talking=(int(t*.6+i)%2==0))
 def traffic_cars(seed=0):
     out=[]
-    for i,(x,col,sp,y0) in enumerate(((2.0,'#F4F5FA',-7,60),(2.0,'#C8102E',-6,30),(-2.0,'#2B2C33',6,-30),(2.0,'#2F6FE0',-8,5))):
+    for i,(x,col,sp,y0) in enumerate(((2.0,'#F4F5FA',-7,60),(2.0,'#C8102E',-6,30),(2.0,'#2B2C33',-6,95),(2.0,'#2F6FE0',-8,5))):
         out.append((car(x,y0,col,rz=90 if sp>0 else -90),x,sp,y0))
     return out
 def traffic_upd(V,t):
@@ -365,7 +365,7 @@ def SH_B(view):
             if k>0: standH(mg,bx,by-.35,brz,t); blink(mg,t); celebrate(mg,t,.6*k)
             talk(mg,t,173,182,KEY,rest='grin',shapes=('O','grin','o','grin')); face(mg,eyes=1.3,brow=.12)
             face(w,mouth='O' if t<wl(181,KEY) else 'grin',eyes=1.2)
-            _camset((L(MX+1.7,MX+1.5,q),L(WY-1.3,WY-1.0,q),1.6),(MX,WY+.9,1.2),L(19,21,q),4,focus=headpos(mg))
+            _camset((L(MX-1.7,MX-1.5,q),L(WY-1.0,WY-.8,q),1.65),(MX,WY+1.0,1.2),L(19,21,q),4,focus=headpos(mg))
         else:                 # "Aur salary, sir?" — "Salary baad vich. Pehlan roti kha." (pushes a plate of roti over)
             cv.location=(cvp[0]-1.0,cvp[1]+.1,cvp[2]); cv.rotation_euler=(R(90),0,R(40))
             if t<wl(186,KEY): talk(w,t,183,185,KEY,rest='flat',shapes=('o','flat','O','flat')); face(w,eyes=1.0,brow=.06); face(mg,mouth='smile')
