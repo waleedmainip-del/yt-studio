@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: ipk-render-r4
+  group: ipk-render-r5
   cancel-in-progress: false
 jobs:
   render:

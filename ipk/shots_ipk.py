@@ -95,30 +95,32 @@ def TABLE(side,tx):
 SHOTS['SAMECHAI']=TABLE('P',-.42); SHOTS['SAMOSA']=TABLE('I',.4)
 # ---------------------------------------------------------------- the neighbour
 def NEIGHBOR():
-    Hm,F=room_set('P'); e=empty((3.05,BACK-.5,2.95)); sign('YESSS!',(0,0,0),.3,'#C8372D','#FFF6D8',n=(0,-1,0),pad=.1,th=.03,parent=e,frame='#C8372D'); e.rotation_euler=(0,R(-8),0)
-    t1=ws(79)-.1; t2=ws(82)
+    Hm,F=room_set('P','dbm'); t1=ws(79)-.1; t2=ws(82); V=int(os.environ.get('IPKV','0'))
     def upd(t):
         home_lights(Hm,t); fam_idle(F,t,'tense'); k=ease(tl(t,t1,t1+.15)); b=ease(tl(t,t2,t2+.25))
-        pp=min(1,max(0,(t-t1)/.14)); e.scale=tuple(3*[(pp*(1.2-.2*pp))*(1-b)])
-        for q in 'dbmg':
+        for q in 'dbm':
             H=F[q]
-            if k>0 and b<1: look_at(H,(6.0,1.0,H['z0']+2.2),k*(1-b),maxyaw=85); mood(H,'shock')
+            if k>0 and b<1: look_at(H,(5.5,-.2,H['z0']+2.3),k*(1-b),maxyaw=66); mood(H,'shock')
             if b>=1: mood(H,'sad')
-        cam_wide(ease(t/DUR))
+        q=ease(t/DUR)
+        if V==0: camset(LV((3.3,-1.7,2.25),(3.15,-1.5,2.22),q),(-.1,1.4,1.95),28,8)
+        else: camset(LV((3.9,-2.6,2.3),(3.7,-2.35,2.25),q),(0,1.4,1.9),30,8)
     return dict(upd=upd)
 SHOTS['NEIGHBOR']=NEIGHBOR
 def HATES():
     Hm,F=room_set('P','dbm'); dad=F['d']; ch=empty((0,0,-5)); obox((0,0,0),(.13,.3,.03),M('#5A3A22',.6),.02,ch); obox((0,-.1,.05),(.12,.03,.05),M('#3A2A1E',.6),.02,ch)
-    t0=.5
+    t0=.5; V=int(os.environ.get('IPKV','0'))
     def upd(t):
         home_lights(Hm,t); fam_idle(F,t,'glare')
-        for q in 'dbm': look_at(F[q],(6.0,1.0,2.2),1.0,maxyaw=85)
+        for q in 'dbm': look_at(F[q],(5.5,-.2,2.3),1.0,maxyaw=66)
         w=tl(t,.12,t0); th=tl(t,t0,t0+.14)
         dad['arm'][1].rotation_euler=(R(L(-40,-150,w)+95*th),R(20*w),0); bpy.context.view_layer.update()
         if t<t0: ch.location=handw(dad,1); ch.rotation_euler=(0,0,R(90))
         else:
             q=t-t0; p0=Vector((DADP[0]+.9,1.3,2.75)); ch.location=(p0.x+7.5*q,p0.y+.4*q,p0.z+1.2*q-4.9*q*q); ch.rotation_euler=(q*14,q*6,R(90))
-        cam_two(ease(t/DUR),dx=-.3,tx=.15)
+        q=ease(t/DUR)
+        if V==0: camset(LV((3.5,-2.9,2.3),(3.35,-2.65,2.27),q),(-.35,1.4,2.0),30,8)
+        else: camset(LV((2.6,-3.4,2.25),(2.5,-3.1,2.22),q),(-.2,1.4,2.0),30,8)
     return dict(upd=upd)
 SHOTS['HATES']=HATES
 # ---------------------------------------------------------------- Waleed has not moved for four hours
@@ -153,7 +155,7 @@ def WASHROOM():
     Hm,F=wash_set(); wa,dad=F['b'],F['d']
     def upd(t):
         home_lights(Hm,t); fam_idle(F,t,'watch'); k=ease(tl(t,ws(99)-.2,ws(99)+.2))
-        sitp(wa,t,up=.3*k,lean=0); squeeze(wa,t,1-k*.5); wa['arm'][-1].rotation_euler=(R(-120*k-40*(1-k)),R(6*k),0); look_at(wa,hp(dad),k,maxyaw=70)
+        sitp(wa,t,up=.3*k,lean=0); squeeze(wa,t,1-k*.5); wa['arm'][-1].rotation_euler=(R(-120*k-40*(1-k)),R(6*k),0); look_at(wa,hp(dad),k,maxyaw=42)
         face(wa,mouth='flat',brow=.05,brow_r=12,eyes=1.1); speak(wa,t,99,100,gesture=False)
         cam_two(ease(t/DUR))
     return dict(upd=upd)
@@ -162,11 +164,11 @@ def BAITHO():
     Hm,F=wash_set(); wa,dad=F['b'],F['d']; t1=ws(108)-.08
     def upd(t):
         home_lights(Hm,t); fam_idle(F,t,'watch'); k=1-ease(tl(t,t1,t1+.16))
-        sitp(wa,t,up=.3*k,lean=0); squeeze(wa,t,.6); wa['arm'][-1].rotation_euler=(R(-120*k-40*(1-k)),R(6*k),0); look_at(wa,hp(dad),1.0,maxyaw=70)
+        sitp(wa,t,up=.3*k,lean=0); squeeze(wa,t,.6); wa['arm'][-1].rotation_euler=(R(-120*k-40*(1-k)),R(6*k),0); look_at(wa,hp(dad),1.0,maxyaw=42)
         face(wa,mouth='o' if k>.5 else 'flat',brow=.06,brow_r=12,eyes=1.15 if k>.5 else 1.25)
-        a=ease(tl(t,0,.22)); look_at(dad,hp(wa),a,maxyaw=75); mood(dad,'glare'); speak(dad,t,101,108,gesture=False)
+        a=ease(tl(t,0,.22)); look_at(dad,hp(wa),a,maxyaw=54); mood(dad,'glare'); speak(dad,t,101,108,gesture=False)
         bpy.context.view_layer.update(); arm_to(dad,1,(BOYP[0]-.25,BOYP[1]-.35,.75+.12*math.sin(t*12)*(t>t1-.5)),a,base=(R(-40),R(-4),0))
-        q=ease(t/DUR); camset(LV((1.5,-3.3,2.15),(1.35,-3.0,2.1),q),(-.25,1.5,1.8),29,8)
+        q=ease(t/DUR); camset(LV((-.4,-3.85,2.2),(-.33,-3.55,2.15),q),(.05,1.45,1.86),26,8)
     return dict(upd=upd)
 SHOTS['BAITHO']=BAITHO
 # ---------------------------------------------------------------- Rohan and the cup
