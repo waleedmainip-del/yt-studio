@@ -1,0 +1,60 @@
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.124
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.125
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing e.014
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.126
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.127
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.128
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.129
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.130
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.131
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.132
+Fra:141 Mem:79.12M (Peak 121.99M) | Time:00:00.05 | Syncing p.133
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.134
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.135
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.014
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.015
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.136
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.137
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.016
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.017
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.138
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.139
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.140
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.141
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.142
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.143
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.144
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.145
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.146
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.147
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.148
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.149
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.150
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.151
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.152
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.153
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.154
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.155
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.156
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.018
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.019
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.157
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.158
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.159
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.160
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing c.020
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.161
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.162
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.163
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.164
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing p.165
+Fra:141 Mem:79.15M (Peak 121.99M) | Time:00:00.05 | Syncing Point.002
+Fra:141 Mem:79.14M (Peak 121.99M) | Time:00:00.07 | Rendering 1 / 24 samples
+Fra:141 Mem:79.14M (Peak 121.99M) | Time:00:15.03 | Rendering 24 / 24 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ipk/render/frames/S02/f00141.png'
+Time: 00:15.97 (Saving: 00:00.21)
+
+FRAME 1 330.4
+SHOT_DONE 2
+
+Blender quit
