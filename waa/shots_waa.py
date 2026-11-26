@@ -117,13 +117,13 @@ def WASH():
     return dict(upd=upd)
 SHOTS['WASH']=WASH
 def GAVEL():
-    A=arena_set(4); au=A['au']; gv=A['gv']; t1=ws(31)-.02; t2=ws(34)-.1
+    A=arena_set(4); au=A['au']; gv=A['gv']; t1=ws(31)-.02; t2=t1+.38
     def upd(t):
         turn(A,t); aud_idle(A,t,'watch'); wal_sit(A,t,1.0,1.0); standp(au,t,PX,PY+1.0,0); mood(au,'shout'); speak(au,t,31,36,gesture=False)
         up=ease(tl(t,t1-.3,t1-.08)); dn=tl(t,t1-.06,t1+.03); scr_show(A['ar'],'sold' if dn>=1 else 'three')
         a=L(-62,-150,up)*(1-dn)+(-64)*dn; au['arm'][1].rotation_euler=(R(a),R(6),0); gv.location=handw(au,1); gv.rotation_euler=(R(L(40*(1-up),90,dn)),0,0)
         p=ease(tl(t,t2,t2+.2)); look_at(au,(2.2,-1.0,2.6),1.0,maxyaw=60)
-        if p>0: pointw(au,-1,(2.2,-1.0,2.9),p)
+        if p>0: pointw(au,-1,(2.2,-1.0,2.9),p); au['root'].location[2]+=.05*abs(math.sin((t-t2)*10))*max(0,1-(t-t2)/.6)
         SHAKE[0]=.035*max(0,1-abs(t-t1-.05)/.12)
         q=ease(t/DUR); camset(LV((-4.2,2.2,2.9),(-4.35,2.6,2.9),q),(PX+.12,PY+.8,STG+1.75),34,8)
     return dict(upd=upd)

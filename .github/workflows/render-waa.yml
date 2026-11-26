@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: waa-render-r1
+  group: waa-render-r2
   cancel-in-progress: false
 jobs:
   render:
