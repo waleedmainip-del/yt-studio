@@ -1,0 +1,60 @@
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.217
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.218
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing c.027
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.219
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.220
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.221
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.222
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.223
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.224
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.225
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.226
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.227
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.228
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.229
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.230
+Fra:2597 Mem:91.19M (Peak 134.00M) | Time:00:00.07 | Syncing p.231
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing c.028
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing c.029
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing c.030
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.232
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.233
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.234
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.235
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.236
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.237
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing c.031
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.238
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.239
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.240
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.241
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.242
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.243
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.244
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.245
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.246
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.247
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.248
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.249
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.250
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.251
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.252
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing e.021
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing e.022
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.253
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.254
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing e.023
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing c.032
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing c.033
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing p.255
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing Point.002
+Fra:2597 Mem:91.22M (Peak 134.00M) | Time:00:00.07 | Syncing Point.003
+Fra:2597 Mem:91.21M (Peak 134.00M) | Time:00:00.09 | Rendering 1 / 24 samples
+Fra:2597 Mem:91.21M (Peak 134.00M) | Time:00:15.96 | Rendering 24 / 24 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ipk/render/frames/S44/f02597.png'
+Time: 00:16.96 (Saving: 00:00.23)
+
+FRAME 1 727.1
+SHOT_DONE 44
+
+Blender quit
