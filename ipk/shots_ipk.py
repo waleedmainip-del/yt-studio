@@ -60,7 +60,7 @@ def RULE(side,a,b):
             sitp(dad,t,up=1.0,rz=-28+10*sw); mood(dad,'glare'); finger(dad,t,-1,1.0); dad['arm'][1].rotation_euler=(R(-8),0,0)
             look_at(dad,hp(F['b']) if sw<.3 else hp(F['m']),1.0); speak(dad,t,a,b,gesture=False)
             for q in 'bm': look_at(F[q],hp(dad),1.0,maxyaw=80); F[q]['root'].rotation_euler[0]=R(-5)
-            h=hp(dad); q=ease(t/DUR); camset(LV((h[0]+1.5,h[1]-4.3,2.25),(h[0]+1.4,h[1]-4.0,2.22),q),(h[0]+.75,h[1],2.0),30,8)
+            h=hp(dad); q=ease(t/DUR); camset(LV((h[0]+.22,h[1]-4.4,2.2),(h[0]+.2,h[1]-4.1,2.18),q),(h[0]-.3,h[1],1.72),32,8)
         return dict(upd=upd)
     return f
 SHOTS['RULEP']=RULE('P',45,50); SHOTS['RULEI']=RULE('I',59,64)

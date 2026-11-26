@@ -63,7 +63,7 @@ def LASTOVER():
         for H in (y1,y2,bh): look_at(H,pw,1.0,maxyaw=70,maxpitch=30); face(H,mouth='o',brow=.06,eyes=1.2); H['root'].rotation_euler[0]=R(9)
         for s in (1,-1): y1['arm'][s].rotation_euler=(R(-58),R(s*10),0)
         crossed(y2); bh['arm'][1].rotation_euler=(R(-64),0,0)
-        q=ease(t/DUR); camset(LV((.5,13.0,2.1),(.4,12.6,2.08),q),(.35,8.3,1.95),19,8)
+        q=ease(t/DUR); camset(LV((.05,13.05,2.1),(0,12.75,2.08),q),(0,8.3,1.95),19,8)
     return dict(upd=upd)
 SHOTS['LASTOVER']=LASTOVER
 # ---------------------------------------------------------------- the cricket (what the TV shows)
