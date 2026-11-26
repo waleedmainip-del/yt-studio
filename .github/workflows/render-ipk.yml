@@ -1,12 +1,12 @@
-name: Render Karachi vs Lahore
+name: Render India vs Pakistan
 on:
   push:
-    branches: [kvl-film]
-    paths: ["kvl/jobs.json"]
+    branches: [ipk-film]
+    paths: ["ipk/jobs.json"]
 permissions:
   contents: write
 concurrency:
-  group: kvl-render-r4
+  group: ipk-render-r1
   cancel-in-progress: false
 jobs:
   render:
@@ -39,14 +39,14 @@ jobs:
       - name: Render pieces
         env:
           SAMPLES: '24'
-        run: python3 tools/gh_render_kvl.py ${{ matrix.job }}
+        run: python3 tools/gh_render_ipk.py ${{ matrix.job }}
       - name: Push results branch
         if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          B=render/kvl-${{ github.run_id }}-j${{ matrix.job }}
+          B=render/ipk-${{ github.run_id }}-j${{ matrix.job }}
           mkdir -p gh_out && cd gh_out
           git init -q && git checkout -q -b $B && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "kvl render job ${{ matrix.job }}" --allow-empty
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "ipk render job ${{ matrix.job }}" --allow-empty
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B
