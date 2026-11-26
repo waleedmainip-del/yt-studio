@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: kvl-render-r3
+  group: kvl-render-r4
   cancel-in-progress: false
 jobs:
   render:
