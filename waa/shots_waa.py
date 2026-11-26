@@ -174,6 +174,6 @@ def CAREFUL():
         for s in (1,-1): wa['arm'][s].rotation_euler=(R(14),R(-s*7),0)                         # sitting on his own hands
         A['pad'][0].location=(0,0,-5); look_at(wa,(2.2+9*math.sin(t*3.6),6,2.2),1.0,maxyaw=45); face(wa,mouth='strain',brow=.06,brow_r=-12,eyes=1.2)
         wa['root'].location[2]+=.01*math.sin(t*18)
-        q=ease(t/DUR); camset(LV((1.75,3.0,2.05),(1.75,2.6,2.0),q),(1.95,-1.0,1.78),36,8)
+        q=ease(t/DUR); camset(LV((1.1,3.0,2.05),(1.1,2.6,2.0),q),(1.9,-1.0,1.78),36,8)
     return dict(upd=upd)
 SHOTS['CAREFUL']=CAREFUL
