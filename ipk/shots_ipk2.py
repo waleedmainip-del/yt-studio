@@ -49,9 +49,9 @@ SHOTS['PHIRSE']=CALL('P',270,272,'frown'); SHOTS['PHIRSE2']=CALL('I',273,274,'fl
 def KISSE():
     Hm,F,wa,ph,cp=ph_set('P'); dad=F['d']
     def upd(t):
-        home_lights(Hm,t); fam_idle(F,t,'tense'); boy_call(F,wa,cp,t); face(wa,mouth='o',brow=.06,eyes=1.25); look_at(wa,hp(dad),tl(t,.25,.45),maxyaw=70)
-        a=ease(tl(t,0,.2)); look_at(dad,hp(wa),a,maxyaw=80); mood(dad,'glare'); dad['root'].rotation_euler[1]=R(-7*a); speak(dad,t,163,168,gesture=False)
-        q=ease(t/DUR); camset(LV((1.5,-3.3,2.15),(1.35,-3.0,2.1),q),(-.25,1.42,1.8),29,8)
+        home_lights(Hm,t); fam_idle(F,t,'tense'); boy_call(F,wa,cp,t); face(wa,mouth='o',brow=.06,eyes=1.25); look_at(wa,hp(dad),tl(t,.25,.45),maxyaw=38)
+        a=ease(tl(t,0,.2)); look_at(dad,hp(wa),a,maxyaw=52); mood(dad,'glare'); dad['root'].rotation_euler[1]=R(-7*a); speak(dad,t,163,168,gesture=False)
+        q=ease(t/DUR); camset(LV((.4,-3.75,2.1),(.34,-3.45,2.06),q),(0,1.42,1.72),26,8)
     return dict(upd=upd)
 SHOTS['KISSE']=KISSE
 def KOINAHI():
