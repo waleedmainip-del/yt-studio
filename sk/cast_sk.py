@@ -1,0 +1,29 @@
+# Cast for "Sialkot - Everyone Is an Exporter". Waleed keeps his fixed look (WALEED, cast_kz). Abbu is the same Abbu as in India vs Pakistan (ABBU, cast_ipk).
+# Everyone else is new for this film.
+SKG='#0B6B3C'
+ZAIN=dict(skin='#C9925F',hair='#1E1A18',hairstyle='curly',top='#D9A521',trim='#8A5A22',pants='#2A3550',shoes='#F4F5FA',sole='#E8E9EE',accent='#8A5A22',watch=True,
+        eye='#2A1A12',brow_t=1.2,h=1.02,wide=.98,belt='#3A2A1E')
+RAFIQ=dict(skin='#B98A62',hair='#D8D8DC',hairstyle='short',receding=True,beard='#D8D8DC',topi='#F4F1EA',top='#EFE7D2',trim='#C9B88E',kurta=True,shalwar=True,pants='#EFE7D2',
+        sandals='#5A3A22',eye='#2A1A12',brow_t=1.4,brow_c='#B8B8BC',h=1.0,wide=1.08)
+CHAIW=dict(skin='#B07A50',hair='#15110E',hairstyle='short',mustache='#15110E',top='#6A8FB8',trim='#4A6A90',kurta=True,shalwar=True,pants='#6A8FB8',apron='#F2E9D0',
+        sandals='#3A2A1E',eye='#2A1A12',brow_t=1.3,h=1.0,wide=1.04,towel='#C8372D')
+STITCH=dict(skin='#A9744C',hair='#E8E8EC',hairstyle='old',beard='#E8E8EC',glasses=True,top='#7A8A6A',trim='#5A6A4A',kurta=True,shalwar=True,pants='#7A8A6A',
+        waistcoat='#4A3A2A',sandals='#3A2A1E',eye='#2A1A12',brow_t=1.2,brow_c='#D8D8DC',h=.97,wide=1.02)
+PIPEM=dict(skin='#C58C5E',hair='#2A1E16',hairstyle='cap',cap='#3A5A8A',stache='#2A1E16',top='#8A4A3A',trim='#5A2A1E',pants='#3A3A44',apron='#3A2A1E',shoes='#2A2C34',
+        sole='#16171C',accent='#3A5A8A',eye='#2A1A12',brow_t=1.2,h=1.01,wide=1.0)
+SHOPK=dict(skin='#C9925F',hair='#15110E',hairstyle='neat',neat=True,beard='#15110E',top='#F4F1EA',trim='#DAD6CC',kurta=True,shalwar=True,pants='#F4F1EA',waistcoat='#6B1F2E',
+        sandals='#3A2A1E',eye='#2A1A12',brow_t=1.3,h=1.03,wide=1.08)
+SCOT=dict(skin='#F0C8A8',hair='#C8662C',hairstyle='short',beard='#C8662C',jacket='#1C2230',top='#F4F1EA',trim='#DAD6CC',pants='#F4F1EA',shoes='#16171C',sole='#2A2C34',
+        accent='#B8232E',eye='#3A6A9A',brow_t=1.3,brow_c='#A8501E',h=1.08,wide=1.1)
+PLAY=[dict(skin='#C58C5E',hair='#15110E',hairstyle='short',top='#7448C2',trim='#F4F1EA',pants='#F4F1EA',shoes='#16171C',sole='#F0F1F5',accent='#F4F1EA',eye='#2A1A12',brow_t=1.2,h=1.03,wide=1.0,short=True),
+      dict(skin='#8A5A3A',hair='#15110E',hairstyle='curly',top='#FF8A1E',trim='#16171C',pants='#16171C',shoes='#F4F5FA',sole='#F0F1F5',accent='#16171C',eye='#2A1A12',brow_t=1.2,h=1.05,wide=1.0,short=True),
+      dict(skin='#F0C8A8',hair='#D9A521',hairstyle='fringe',top='#32C8A0',trim='#16171C',pants='#16171C',gloves='#F2C14E',shoes='#16171C',sole='#F0F1F5',accent='#16171C',eye='#3A6A9A',brow_t=1.2,h=1.08,wide=1.04,short=True)]
+WORK=[dict(skin='#B07A50',hair='#15110E',hairstyle='short',top='#3A6A5A',trim='#2A4A3A',pants='#3A3A44',apron='#C9B88E',shoes='#2A2C34',sole='#16171C',accent='#3A6A5A',eye='#2A1A12',brow_t=1.2,h=1.0,wide=1.0),
+      dict(skin='#C9925F',hair='#2A1E16',hairstyle='cap',cap='#B8232E',top='#C9B88E',trim='#8A7A5A',pants='#2A3550',shoes='#2A2C34',sole='#16171C',accent='#B8232E',eye='#2A1A12',brow_t=1.2,h=1.03,wide=1.02),
+      dict(skin='#D9A273',hair='#15110E',hairstyle='bun',top='#B85A8A',trim='#E6B53A',kurta=True,pants='#F4E9C8',dupatta='#F2C0D0',dupatta_trim='#B85A8A',lashes=True,shoes='#C9A27A',sole='#3A2A1E',
+           accent='#E6B53A',eye='#2A1A12',brow_t=1.0,h=.94,wide=.97),
+      dict(skin='#A9744C',hair='#5A5A62',hairstyle='short',mustache='#5A5A62',top='#5A7FB0',trim='#3A5A8A',kurta=True,shalwar=True,pants='#5A7FB0',sandals='#3A2A1E',eye='#2A1A12',brow_t=1.3,h=1.0,wide=1.06)]
+BIZM=[dict(skin='#C58C5E',hair='#2A2A30',hairstyle='neat',neat=True,mustache='#2A2A30',glasses=True,jacket='#3A4A6A',top='#F4F1EA',trim='#DAD6CC',tie='#B8232E',pants='#2A3550',shoes='#16171C',
+           sole='#2A2C34',accent='#3A4A6A',watch=True,eye='#2A1A12',brow_t=1.4,h=1.05,wide=1.12),
+      dict(skin='#A9744C',hair='#15110E',hairstyle='short',beard='#15110E',top='#D8C4A0',trim='#B8A070',kurta=True,shalwar=True,pants='#D8C4A0',waistcoat='#2A3A2A',sandals='#3A2A1E',watch=True,
+           eye='#2A1A12',brow_t=1.3,h=1.02,wide=1.1)]

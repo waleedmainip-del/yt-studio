@@ -1,12 +1,12 @@
-name: Render WAA demo
+name: Render Sialkot
 on:
   push:
-    branches: [waa-film]
-    paths: ["waa/jobs.json"]
+    branches: [sk-film]
+    paths: ["sk/jobs.json"]
 permissions:
   contents: write
 concurrency:
-  group: waa-render-r3
+  group: sk-render-r1
   cancel-in-progress: false
 jobs:
   render:
@@ -39,14 +39,14 @@ jobs:
       - name: Render pieces
         env:
           SAMPLES: '24'
-        run: python3 tools/gh_render_waa.py ${{ matrix.job }}
+        run: python3 tools/gh_render_sk.py ${{ matrix.job }}
       - name: Push results branch
         if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          B=render/waa-${{ github.run_id }}-j${{ matrix.job }}
+          B=render/sk-${{ github.run_id }}-j${{ matrix.job }}
           mkdir -p gh_out && cd gh_out
           git init -q && git checkout -q -b $B && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "waa render job ${{ matrix.job }}" --allow-empty
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "sk render job ${{ matrix.job }}" --allow-empty
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B

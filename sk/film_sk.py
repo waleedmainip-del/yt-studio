@@ -1,8 +1,8 @@
 # entry: blender -b -P film_lh.py -- <shot#> <pct> <samples> still|anim <t-list | f0 f1>
 import os
-LH=os.environ.get('LH','/home/claude/waa')
+LH=os.environ.get('LH','/home/claude/sk')
 exec(open(LH+'/base_lh.py').read())
-for _f in ('chars_base','look_lh','anim_lh','fx_lh','chars_lh','chars_dk','chars_bd','chars_bg','cast_kz','cast_kvl','cast_ipk','world_lh','world_kb','world_kz','world_kz2','world_kz3','gen_kb','world_kvl','kit_kvl','world_ipk','world_ipk2','kit_ipk','cast_waa','world_waa','shots_waa'): exec(open(LH+'/%s.py'%_f).read())
+for _f in ('chars_base','look_lh','anim_lh','fx_lh','chars_lh','chars_dk','chars_bd','chars_bg','cast_kz','cast_kvl','cast_ipk','world_lh','world_kb','world_kz','world_kz2','world_kz3','gen_kb','world_kvl','kit_kvl','world_ipk','world_ipk2','kit_ipk','cast_sk','world_sk','world_sk2','shots_sk'): exec(open(LH+'/%s.py'%_f).read())
 FPS=30; MODE=args[3] if len(args)>3 else 'anim'
 if SHOT=='T': SN=99; KEY='THUMB'; T0=0.0; T1=2.0; DUR=2.0; G0=0; G1=60
 else: SN=int(SHOT); KEY,T0=SEQ[SN-1]; T1=SEQ[SN][1] if SN<len(SEQ) else END; DUR=T1-T0; G0=int(round(T0*FPS)); G1=int(round(T1*FPS))
