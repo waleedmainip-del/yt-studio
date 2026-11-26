@@ -189,11 +189,11 @@ def FAINT(side):
     def f():
         Hm,F=room_set(side); dad=F['d']; t0=.22
         def upd(t):
-            home_lights(Hm,t,flick=.4); fam_idle(F,t,'shock')
+            home_lights(Hm,t,tv=.38,flick=.4); fam_idle(F,t,'shock')
             if t<t0: standp(dad,t,FNT[0],FNT[1],90); look_at(dad,TVP(),1.0,maxyaw=70); what_pose(dad,1,t,amp=.3); face(dad,mouth='O',brow=.06,eyes=1.3)
             else: faintp(dad,t,t0,FNT[0],FNT[1],90)
             for q in 'bmg': look_at(F[q],hp(dad),1.0 if t>t0+.2 else .4,maxyaw=85,maxpitch=40)
-            q=ease(t/DUR); camset(LV((.2,-6.9,2.7),(.25,-6.6,2.6),q),(.55,-1.2,1.05),23,8)
+            q=ease(t/DUR); camset(LV((.2,-6.5,3.2),(.25,-6.2,3.15),q),(.6,-.9,.75),22,8)
         return dict(upd=upd)
     return f
 SHOTS['FAINTP']=FAINT('P'); SHOTS['FAINTI']=FAINT('I')
@@ -201,7 +201,7 @@ def SAMETIME():
     P,I,FP,FI=dh_set()
     def upd(t):
         for Hm,F in ((P,FP),(I,FI)):
-            home_lights(Hm,t,tv=.5,flick=.4); fam_idle(F,t,'shock'); dad,b=F['d'],F['b']; faintp(dad,t,-2.0,FNT[0],FNT[1],90)
+            home_lights(Hm,t,tv=.35,flick=.4); fam_idle(F,t,'shock'); dad,b=F['d'],F['b']; faintp(dad,t,-2.0,FNT[0],FNT[1],90)
             sitp(b,t,lean=14,up=.15); look_at(b,(.8,FNT[1],F['z0']+.3),1.0,maxyaw=80,maxpitch=40); face(b,mouth='o',brow=.06,eyes=1.2)
             for s in (1,-1): b['arm'][s].rotation_euler=(R(-62),R(s*8),0)
         k=ease(t/DUR); camset((0,-16+1.0*k,3.2),(0,1.55,3.2),72,8)
