@@ -250,7 +250,7 @@ def office():
     for a in range(5): obox((.26*math.cos(a*1.257),.26*math.sin(a*1.257),.04),(.14,.025,.025),M('#9AA0AA',.3,metal=.8),.01,e,rot=(0,0,a*1.257))
     for s in (-1,1): obox((s*.46,.05,.5),(.04,.3,.03),bk,.02,e)
     paper=empty((-.55,1.15,.885)); obox((0,0,0),(.21,.29,.003),M('#F8F8F4',.7),0,paper); text('CV',(0,-.05,.004),(0,0,1),.12,M('#16171C',.5),ex=.001,parent=paper).rotation_euler=(0,0,0)
-    S,A,w_,bg_=setup_interior('day',room=(0,-.5,3.3),res=PCT,samples=SAMPLES,shadow_dist=18); A.data.energy=240; A.data.size=10; point((0,-3.6,2.6),800,(1,.97,.94),r=2.0,shadow=False)
+    S,A,w_,bg_=setup_interior('day',room=(0,-.5,3.3),res=PCT,samples=SAMPLES,shadow_dist=18); A.data.energy=185; A.data.size=10; point((0,-3.6,2.6),620,(1,.97,.94),r=2.0,shadow=False)
     return dict(paper=paper,door=((y0+y1)/2,w))
 def roll_chair(x,y,rz,col='#3A4A6A'):
     """office chair on wheels, seat top .58, back toward local +y. returns empty"""

@@ -164,7 +164,7 @@ def INTERVIEW():
     def upd(t):
         boss_sit(bs,t); look_at(bs,hp(cd),1.0); face(bs,mouth='flat',brow=-.02,brow_r=-6)
         cand_sit(cd,t); look_at(cd,hp(bs),1.0); face(cd,mouth='smile')
-        q=ease(t/DUR); camset(LV((2.45,-3.5,1.95),(2.2,-3.1,1.9),q),(-.1,2.3,1.45),30,8)
+        q=ease(t/DUR); camset(LV((3.05,-3.25,1.95),(2.8,-2.9,1.9),q),(.05,2.3,1.5),30,8)
     return dict(upd=upd)
 SHOTS['INTERVIEW']=INTERVIEW
 def ALOO():

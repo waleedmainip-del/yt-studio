@@ -66,11 +66,11 @@ def DONO():
     l2=in_hand(wa,1,lassi_big); b2=in_hand(wa,-1,bun_kabab); mu=stache(wa)
     def upd(t):
         wal_idle(wa,t); up=tl(t,ws(222)-.2,ws(222)+.15)
-        for s,e in ((1,l2),(-1,b2)): wa['arm'][s].rotation_euler=(R(-50-50*up),R(-s*6*(1-up)),R(s*(8+4*up))); upright(e,wa,s)
+        for s,e in ((1,l2),(-1,b2)): wa['arm'][s].rotation_euler=(R(-50-45*up),R(-s*6*(1-up)),R(s*(8+4*up))); upright(e,wa,s)
         look_at(wa,(.3,-4,2.4),1.0); face(wa,mouth='grin' if t>ws(222) else 'smile',brow=.04); speak(wa,t,221,223,gesture=False)
         for H,x in ((sh,SDP[0]),(gu,GDP[0])): cap_idle(H,t,x,SDP[1],90 if x<0 else -90,hp(wa)); H['root'].rotation_euler[0]=R(10); face(H,mouth='flat',brow=.05,eyes=1.15)
         fans(LF,t,'freeze',look=hp(wa)); fans(KF,t,'freeze',look=hp(wa))
-        q=ease(t/DUR); camset(LV((.3,-2.85,2.25),(.25,-2.55,2.25),q),(0,WP[1],2.05),27,8)
+        q=ease(t/DUR); camset(LV((.25,-3.35,2.05),(.2,-3.05,2.02),q),(0,WP[1],1.92),22,8)
     return dict(upd=upd)
 SHOTS['DONO']=DONO
 def DONO2():
@@ -93,15 +93,14 @@ def TURNED():
         wal_idle(wa,t); wal_hold(wa,l2,b2); k=tl(t,.05,.5)
         wa['root'].location[2]=wa['z0']+.008-.05*k; face(wa,mouth='o',brow=.06,eyes=1.15); look_at(wa,LV((0,-4,2.3),hp(sh),tl(t,.6,.9)*(1-tl(t,1.0,1.3)))if t<1.0 else hp(gu),1.0)
         for H,x in ((sh,SDP[0]),(gu,GDP[0])):
-            cap_idle(H,t,x,SDP[1],L(90 if x<0 else -90,55 if x<0 else -55,k),hp(wa)); H['root'].rotation_euler[0]=R(8*k)
-            so=-1 if x<0 else 1; arms_up(H,k,t,spread=14,jig=10,only=so); bpy.context.view_layer.update(); arm_to(H,-so,hp(wa),k,base=(0,0,0))
+            cap_idle(H,t,x,SDP[1],L(90 if x<0 else -90,70 if x<0 else -70,k),hp(wa)); H['root'].rotation_euler[0]=R(10*k); crossed(H,k)
             face(H,mouth='shout' if k>.5 else 'frown',brow=-.04,brow_r=-16*k)
         fans(LF,t,'fist',look=hp(wa),k=k); fans(KF,t,'fist',look=hp(wa),k=k)
         q=ease(t/DUR); camset(LV((0,-3.9,1.2),(0,-3.6,1.15),q),(0,.0,2.25),21,8)
     return dict(upd=upd)
 SHOTS['TURNED']=TURNED
 # ---------------------------------------------------------------- Islamabad
-ISBP=(0.0,-5.3)
+ISBP=(0.0,-5.3); ISX=2.0
 def isb_set(skipL=(),skipK=()):
     LF,KF,sh,gu,wa=decide_set(skipL=skipL,skipK=skipK); l2=in_hand(wa,1,lassi_big); b2=in_hand(wa,-1,bun_kabab); mu=stache(wa)
     ib=mk(ISB,ISBP[0],ISBP[1],180,'isb'); cf=in_hand(ib,1,lambda e: big_cup(e,1.5)); return LF,KF,sh,gu,wa,l2,b2,ib,cf
@@ -114,7 +113,7 @@ def VOICE():
         d=min(1,t/(DUR*.95)); y=L(-10.8,ISBP[1],ease_out(d)); isb_pose(ib,cf,t,x=0,y=y); walk(ib,(y+10.8),step=.42,arm=0); hold_chai(ib,cf,s=1,a=-48)
         ib['arm'][-1].rotation_euler=(R(10*math.sin(t*3)),R(6),0)
         for H in (sh,gu,wa):
-            if H is not wa: cap_idle(H,t,H['root'].location[0],SDP[1],90 if H is sh else -90)
+            if H is not wa: cap_idle(H,t,-ISX if H is sh else ISX,SDP[1],90 if H is sh else -90)
             look_at(H,LV(hp(wa) if H is not wa else (0,-5,2.3),hp(ib),k),1.0,maxyaw=95); face(H,mouth='o' if k>.5 else 'shout',brow=.04)
         fans(LF,t,'freeze',look=hp(ib),k=k); fans(KF,t,'freeze',look=hp(ib),k=k)
         q=ease(t/DUR); camset(LV((.95,4.6,2.9),(.9,4.0,2.8),q),(-.15,-6.0,1.75),26,8)
@@ -124,7 +123,7 @@ def ISBS():
     LF,KF,sh,gu,wa,l2,b2,ib,cf=isb_set(); FILLE[0]=55
     def upd(t):
         wal_idle(wa,t); wal_hold(wa,l2,b2); look_at(wa,hp(ib),1.0)
-        for H in (sh,gu): cap_idle(H,t,H['root'].location[0],SDP[1],90 if H is sh else -90,hp(ib)); face(H,mouth='o',brow=.04)
+        for H in (sh,gu): cap_idle(H,t,-ISX if H is sh else ISX,SDP[1],90 if H is sh else -90,hp(ib)); face(H,mouth='o',brow=.04)
         sp=math.sin(pi*min(1,max(0,(t-ws(240)+.2)/.9))) if t>ws(240)-.2 else 0
         isb_pose(ib,cf,t,sip=sp*.9); g=tl(t,ws(236)-.1,ws(237))*(1-tl(t,ws(238),ws(238)+.3))
         ib['arm'][-1].rotation_euler=(R(-58*g),R(14*g),R(-10*g*math.sin(t*5))) if g>0 else (R(-8),R(6),0)
@@ -139,7 +138,7 @@ def SILENCE():
     def upd(t):
         wal_idle(wa,t); wal_hold(wa,l2,b2); look_at(wa,hp(ib),1.0); face(wa,mouth='flat')
         isb_pose(ib,cf,t,sip=0); k=ease(min(1,max(0,(t-ws(246)+.1)/2.0)))
-        for H,x in ((sh,SDP[0]),(gu,GDP[0])):
+        for H,x in ((sh,-ISX),(gu,ISX)):
             rz=L(90 if x<0 else -90,face_dir(ISBP[0]-x,ISBP[1]-SDP[1]),k); cap_idle(H,t,x,SDP[1],rz,hp(ib)); face(H,mouth='frown',brow=-.03*k,brow_r=-15*k)
         for H in LF+KF:
             fan(H,t,'glare',look=hp(ib),k=k); H['root'].rotation_euler[2]=R(L(H['rz0'],H['rz1'],k)); look_at(H,hp(ib),1.0)
@@ -154,7 +153,7 @@ def roast_isb(who,a,b,cam_yaw):
             wal_idle(wa,t); wal_hold(wa,l2,b2); look_at(wa,hp(me),1.0); face(wa,mouth='smile')
             isb_pose(ib,cf,t); look_at(ib,hp(me),1.0); face(ib,mouth='o' if t>ws(b)-.3 else 'smile',brow=.04)
             for H in (sh,gu):
-                x=H['root'].location[0]; cap_idle(H,t,x,SDP[1],face_dir(ISBP[0]-x,ISBP[1]-SDP[1]),hp(ib)); face(H,mouth='smirk',brow=-.01)
+                x=-ISX if H is sh else ISX; cap_idle(H,t,x,SDP[1],face_dir(ISBP[0]-x,ISBP[1]-SDP[1]),hp(ib)); face(H,mouth='smirk',brow=-.01)
             pa=-1 if who=='K' else 1; p=tl(t,ws(a)-.15,ws(a)+.15); arm_to(me,pa,hp(ib),p,base=(0,0,0)); speak(me,t,a,b,gesture=False); face(me,mouth='smirk',brow=.03,brow_r=6) if not (ws(a)<=t<we(b)) else None
             lg=t>ws(b)-.25
             fans(LF,t,'laugh' if lg else 'glare',look=hp(ib)); fans(KF,t,'laugh' if lg else 'glare',look=hp(ib))
@@ -174,23 +173,23 @@ def confetti(center,t0,n=110,seed=4,area=(4.5,3.2),top=6.5):
             q=d-dt; z=max(.03,top+z0-q*v*1.7)
             o.location=(center[0]+x+.25*math.sin(q*2.3+ph),center[1]+y,z); o.rotation_euler=(q*5+ph,q*3.6,ph)
     return upd
-HFP=(-.72,.72,-.55); WBK=(0,1.45)
+HFP=(-1.06,1.06,-.55); WBK=(0,1.45)
 def HIGHFIVE():
     LF,KF,sh,gu,wa,l2,b2,ib,cf=isb_set(); FILLE[0]=40; th=ws(277)-.05; cu=confetti((0,1.0),th)
     def upd(t):
         k=ease(min(1,max(0,t/.9)))
         place(wa,0,L(WP[1],WBK[1],k),0); walk(wa,k*1.65,step=.36,arm=0) if 0<k<1 else hstand(wa,t); blink(wa,t); wal_hold(wa,l2,b2); face(wa,mouth='grin' if t>th else 'o',brow=.04)
         look_at(wa,(0,HFP[2],2.6),1.0)
-        isb_pose(ib,cf,t); face(ib,mouth='frown' if t>th else 'o',brow=.03); look_at(ib,(0,HFP[2],2.6),1.0)
+        isb_pose(ib,cf,t,x=-1.3,y=-5.7); face(ib,mouth='frown' if t>th else 'o',brow=.03); look_at(ib,(0,HFP[2],2.6),1.0)
         m=tl(t,.35,1.3)
-        for H,x0,x1,r1,s_ in ((sh,SDP[0],HFP[0],55,-1),(gu,GDP[0],HFP[1],-55,1)):
+        for H,x0,x1,r1,s_ in ((sh,-ISX,HFP[0],18,1),(gu,ISX,HFP[1],-18,-1)):
             x=L(x0,x1,m); y=L(SDP[1],HFP[2],m); cap_idle(H,t,x,y,L(face_dir(ISBP[0]-x0,ISBP[1]-SDP[1]),r1,tl(t,.2,1.0))); walk(H,abs(x-x0)+abs(y-SDP[1]),step=.4,arm=10) if 0<m<1 else None
-            up=tl(t,th-.55,th-.05)
-            arm_to(H,1 if H is gu else -1,(0,HFP[2]-.02,2.62+(.04 if t>th else 0)),up,base=(0,0,0))
-            face(H,mouth='grin',brow=.04); look_at(H,(0,HFP[2],2.6),1.0)
+            up=tl(t,th-.55,th-.05); bpy.context.view_layer.update()
+            bz=.06*math.sin(min(1,max(0,(t-th)/.3))*pi); H['arm'][s_].rotation_euler=(R(-174*up+4*bz),R(-s_*4*up),0); H['arm'][-s_].rotation_euler=(R(-10),R(s_*6),0)
+            face(H,mouth='grin',brow=.04); look_at(H,(0,-3.2,2.3),1.0)
         cu(t)
         fans(LF,t,'cheer' if t>th else 'smile',look=(0,HFP[2],2.6)); fans(KF,t,'cheer' if t>th else 'smile',look=(0,HFP[2],2.6))
-        q=ease(t/DUR); camset(LV((.85,-4.6,1.75),(.75,-4.3,1.78),q),(0,HFP[2]+.1,1.95),27,8)
+        q=ease(t/DUR); camset(LV((0,-4.75,1.85),(0,-4.45,1.85),q),(0,-.4,2.1),25,8)
     return dict(upd=upd)
 SHOTS['HIGHFIVE']=HIGHFIVE
 def OVER():
