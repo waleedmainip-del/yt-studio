@@ -1,0 +1,60 @@
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.001
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.002
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.003
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.004
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.005
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.006
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.007
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.008
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.009
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.010
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing tvwallP.011
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing e.003
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.005
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.006
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.007
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.008
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.009
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.010
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.011
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.012
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.013
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.014
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.015
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.016
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.017
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing p.018
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t.001
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t.002
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t.003
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t.004
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t.005
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing t.006
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.001
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.002
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.003
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.004
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.005
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.006
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing i.007
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing Sun
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing Area.002
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.04 | Syncing Point.002
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:00.06 | Rendering 1 / 24 samples
+Fra:3048 Mem:65.26M (Peak 108.17M) | Time:00:14.29 | Rendering 24 / 24 samples
+Saved: '/home/runner/work/yt-studio/yt-studio/ipk/render/frames/S55/f03048.png'
+Time: 00:15.18 (Saving: 00:00.20)
+
+Traceback (most recent call last):
+  File "/home/runner/work/yt-studio/yt-studio/ipk/film_ipk.py", line 118, in _h
+    upd_all(scene.frame_current/FPS-T0); print('FRAME',scene.frame_current,round(time.time()-t0w,1),flush=True)
+  File "/home/runner/work/yt-studio/yt-studio/ipk/film_ipk.py", line 20, in upd_all
+    spec['upd'](t); fx.upd(t); bpy.context.view_layer.update(); spec['upd'](t); fx.upd(t)
+  File "<string>", line 79, in upd
+IndexError: list index out of range
+SHOT_DONE 55
+
+Blender quit
