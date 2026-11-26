@@ -26,12 +26,18 @@ def sign(body,loc,size,col='#FFFFFF',bg='#1E6A3A',n=(0,-1,0),e=0.0,pad=.28,th=.1
         B.box(loc,(hw,th/2,hh),bm,0,rot=(0,0,a))
         if frame: B.box(tuple(Vector(loc)-nv*.01),(hw+.09,th/2,hh+.09),M(frame,.4,metal=.4),0,rot=(0,0,a))
     else:
-        obox(loc,(hw,th/2,hh),bm,.0,parent,rot=(0,0,a))
-        if frame: obox(tuple(Vector(loc)-nv*.01),(hw+.09,th/2,hh+.09),M(frame,.4,metal=.4),0,parent,rot=(0,0,a))
+        _bo=obox(loc,(hw,th/2,hh),bm,.0,parent,rot=(0,0,a)); _fo=None
+        if frame: _fo=obox(tuple(Vector(loc)-nv*.01),(hw+.09,th/2,hh+.09),M(frame,.4,metal=.4),0,parent,rot=(0,0,a))
     p=Vector(loc)+nv*(th/2+.014)
     ev=e*(1.0 if always else NIGHT[0]); tm=M(col,.4,emit=round(ev,3)) if ev>0 else M(col,.5)
     if ev>0 and (tm,round(ev,3)) not in LITM: LITM.append((tm,round(ev,3)))
-    text(body,tuple(p),n,size,tm,ex=.012,parent=parent); return hw,hh
+    _to=text(body,tuple(p),n,size,tm,ex=.012,parent=parent)
+    if parent is not None:
+        try:
+            _to['board']=_bo.name
+            if _fo is not None: _to['frame']=_fo.name
+        except Exception: pass
+    return hw,hh
 def bseg(p,q,rad,mat,seg=5):
     d=Vector(q)-Vector(p); B.cyl(tuple((Vector(p)+Vector(q))/2),rad,d.length,mat,rot=d.to_track_quat('Z','Y').to_euler(),seg=seg)
 # ---------------------------------------------------------------- token people (static, batched): crowds far from camera

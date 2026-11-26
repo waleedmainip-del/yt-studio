@@ -215,6 +215,22 @@ def firework(c,t0,col,n=26,seed=1,rad=4.5):
             if d<0 or d>1.3: o.location=(0,0,-90); continue
             q=1-math.exp(-d*3.2); o.location=(c[0]+v.x*rad*q,c[1]+v.y*rad*q,c[2]+v.z*rad*q-1.2*d*d); k=max(0,1-d/1.3); o.scale=(k,k,k)
     return upd
+def firework2(c,t0,col,n=64,seed=1,rad=5.0,size=.15,flash=2600):
+    r=random.Random(seed); m=M(col,.3,emit=18); P=[]
+    for i in range(n):
+        v=Vector((r.gauss(0,1),r.gauss(0,.45),r.gauss(0,1))).normalized()*r.uniform(.72,1.0)
+        o=oico((0,0,-90),size,m,sub=1); o.rotation_euler=v.to_track_quat('Z','Y').to_euler(); P.append((o,v))
+    rk=oico((0,0,-90),.1,M('#FFF2C0',.3,emit=14),sub=1); L_=point((c[0],c[1],c[2]),0,hexc(col)[:3],r=1.5,shadow=False)
+    def upd(t):
+        d=t-t0
+        if -.45<=d<0: k=1+d/.45; rk.location=(c[0]+.3*(1-k),c[1],c[2]-5.5*(1-k)); rk.scale=(1,1,3)
+        else: rk.location=(0,0,-90)
+        L_.data.energy=flash*math.exp(-max(0,d)*4.0) if 0<=d<1.6 else 0
+        for o,v in P:
+            if d<0 or d>1.7: o.location=(0,0,-90); continue
+            q=1-math.exp(-d*3.0); o.location=(c[0]+v.x*rad*q,c[1]+v.y*rad*q,c[2]+v.z*rad*q-1.0*d*d)
+            k=max(0,1-d/1.7); st=1+3.0*math.exp(-d*3.5); o.scale=(k,k,k*st)
+    return upd
 def lie(H,x,y,rz,t,ph=0.0):
     C=H['C']; d=.21*C.get('h',1.0)*(1+(C.get('wide',1.0)-1)*.45)
     for q in (1,-1): H['leg'][q].rotation_euler=(R(-4*q),0,0); H['leg'][q].location[2]=2.0*H['u']

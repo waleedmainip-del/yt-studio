@@ -46,7 +46,7 @@ def fan(H,t,mode='idle',look=None,k=1.0,talky=False):
         for s in (1,-1): H['arm'][s].rotation_euler=(R(-6),R(-s*8),0)
     elif mode=='dance':
         b=math.sin(t*7+ph); r.location[2]=H['z0']+.008+.1*abs(b)
-        for s in (1,-1): H['arm'][s].rotation_euler=(R(-140+20*b*s),R(-s*30),0)
+        for s in (1,-1): H['arm'][s].rotation_euler=(R(-140+20*b*s),R(s*20),0)
         H['leg'][1].rotation_euler[0]=R(-28*max(0,b)); H['leg'][-1].rotation_euler[0]=R(-28*max(0,-b)); face(H,mouth='grin',brow=.04)
     elif mode=='smile': face(H,mouth='smile')
     else: face(H,mouth='flat')
@@ -73,6 +73,13 @@ def single(H,yaw=30,dist=3.0,dz=.12,tz=-.2,lens=32):
 def hands_head(H,k=1.0,dx=.95,dz=5.55,dy=-.05,only=None):
     m=root_mat(H); u=H['u']
     for s in ((1,-1) if only is None else (only,)): arm_to(H,s,m@Vector((s*dx*u,dy*u,dz*u)),k,base=(0,0,0))
+def what_pose(H,k=1.0,t=0.0,amp=1.0):
+    """palms-up 'WHAT?!': both arms out wide & low (rigid arms never come near the face)"""
+    b=math.sin(t*9)*amp
+    for s in (1,-1): H['arm'][s].rotation_euler=(R((-30+4*b)*k),R(-s*(60+5*b)*k),0)
+def arms_up(H,k=1.0,t=0.0,spread=18,jig=0.0,only=None):
+    """arms raised in a V (outward tilt keeps them clear of the head)"""
+    for s in ((1,-1) if only is None else (only,)): H['arm'][s].rotation_euler=(R((-165+jig*math.sin(t*12+s))*k),R(s*spread*k),0)
 def pointw(H,s,p,k=1.0): arm_to(H,s,p,k,base=tuple(H['arm'][s].rotation_euler))
 REFP=(0.0,-.7)
 def ref_mk(x=REFP[0],y=REFP[1],rz=0): return mk(REF,x,y,rz,'ref')
@@ -82,9 +89,10 @@ def placard(H,l1,l2,col='#C8372D'):
     text(l1,(0,-.04,.17),(0,-1,0),.34,M('#16171C',.5),ex=.01,parent=e); text(l2,(0,-.04,-.21),(0,-1,0),.3,M(col,.5),ex=.01,parent=e); return e
 def hold_board(H,e,k=1.0):
     m=e.matrix_world
-    for s in (1,-1): arm_to(H,s,m@Vector((-s*.78,-.05,-.42)),k,base=(0,0,0))
+    for s in (1,-1): arm_to(H,s,m@Vector((s*.8,-.05,-.42)),k,base=(0,0,0))
 def whistle(H):
-    u=H['u']; ocyl((0,-.66*u,4.42*u),.045,.12,M('#C9CED8',.25,metal=.9),H['head'],rot=(R(90),0,0),seg=10); obox((0,-.62*u,4.0*u),(.01,.01,.35*u),M('#C8372D',.6),0,H['head'])
+    u=H['u']; ocyl((0,-.6*u,3.32*u),.04,.11,M('#C9CED8',.25,metal=.9),H['root'],rot=(R(90),0,0),seg=10)
+    for s in (1,-1): obox((s*.13*u,-.545*u,3.72*u),(.012,.008,.36*u),M('#C8372D',.6),0,H['root'],rot=(0,R(s*14),0))
 # ---------------------------------------------------------------- 1-4 hook
 def HOOK():
     arena('kv_day'); LF=mkfans('L'); KF=mkfans('K'); sh,gu=captains(); FILLE[0]=0
@@ -121,17 +129,16 @@ def SIDE():
 SHOTS['SIDE']=SIDE
 # ---------------------------------------------------------------- 5 babies
 def BABYS():
-    P=nursery(); bb=mk(BABY,0,.25,0,'baby'); dad=mk(DAD,-1.4,2.3,face_dir(1.4,-2.05),'dad'); mom=mk(MOM,1.4,2.3,face_dir(-1.4,-2.05),'mom'); FILLE[0]=30
-    LF=(-.95,.25,.6); KFp=(.95,.25,.6)
+    P=nursery(); bb=mk(BABY,0,.25,0,'baby'); dad=mk(DAD,-1.85,2.3,face_dir(1.85,-2.05),'dad'); mom=mk(MOM,1.85,2.3,face_dir(-1.85,-2.05),'mom'); FILLE[0]=30
+    LF=(-.7,.22,1.2); KFp=(.7,.22,1.2); kp=P['KARACHI']
     def upd(t):
         place(bb,0,.25,0); sit(bb,1,0.0,legs=90); blink(bb,t); bb['root'].rotation_euler[0]=0
-        a=tl(t,.15,.4)*(1-tl(t,.7,.95)); b=tl(t,.8,1.05); pk=tl(t,1.05,1.3)
-        look_at(bb,LV(LV((0,-3,1),LF,a),KFp,b),1.0,maxyaw=75)
+        a=tl(t,.15,.4)*(1-tl(t,.7,.95)); b=tl(t,.8,1.05); pk=tl(t,1.05,1.35)
+        look_at(bb,LV(LV((0,-3,1),LF,a),KFp,b) if pk<.5 else LV(KFp,(0,-3,1.0),tl(t,1.45,1.7)),1.0,maxyaw=75,maxpitch=40)
         for s in (1,-1): bb['arm'][s].rotation_euler=(R(-20),0,0)
+        bb['root'].rotation_euler[1]=R(14*pk); kp.rotation_euler[1]=R(-7*pk)
         if pk>0:
-            jig=math.sin(t*18)*.5+.5
-            for s in (1,-1): bb['arm'][s].rotation_euler=(R(-150*pk-10*jig),R(-s*(20+15*jig)*pk),0)
-            bb['root'].location[2]+= .03*jig*pk
+            bpy.context.view_layer.update(); arm_to(bb,1,(.7,.22,.42),pk,base=(R(-20),0,0)); arms_up(bb,pk,t,spread=22,jig=10,only=-1)
         face(bb,mouth='grin' if pk>.3 else ('o' if b>.5 else 'smile'),brow=.03)
         for H,me in ((dad,'L'),(mom,'K')):
             stand(H,t); blink(H,t); place(H,H['root'].location[0],H['root'].location[1],face_dir(-H['root'].location[0],.25-H['root'].location[1])); look_at(H,hp(bb),1.0,maxpitch=40)
@@ -139,10 +146,9 @@ def BABYS():
             for s in (1,-1): H['arm'][s].rotation_euler=(R(-35*(1-pk)),0,0)
         face(dad,mouth='smile' if pk<.3 else 'O',brow=.05 if pk>.3 else .02,eyes=1.15 if pk>.3 else 1); face(mom,mouth='grin' if pk>.3 else 'smile',brow=.04)
         if pk>0:
-            hands_head(dad,pk,only=1)
-            for s in (1,-1): mom['arm'][s].rotation_euler=(R(-160*pk+8*math.sin(t*14)),R(-s*14*pk),0)
-            mom['root'].location[2]=mom['z0']+.008+.1*abs(math.sin(t*9))*pk
-        q=ease(t/DUR); camset(LV((0,-2.75,1.5),(0,-2.45,1.42),q),(0,1.0,1.05),21,8)
+            what_pose(dad,pk,t,amp=.6); dad['head'].rotation_euler[0]+=R(-6*pk)
+            arms_up(mom,pk,t,spread=16,jig=8); mom['root'].location[2]=mom['z0']+.008+.1*abs(math.sin(t*9))*pk
+        q=ease(t/DUR); camset(LV((0,-2.75,1.14),(0,-2.5,1.1),q),(0,1.0,1.02),21,8)
     return dict(upd=upd)
 SHOTS['BABY']=BABYS
 # ---------------------------------------------------------------- 6-8 interview
@@ -170,7 +176,7 @@ def ALOO():
         bs['arm'][-1].rotation_euler=(R(-60+40*a*(1-fl)),R(30*a*(1-fl)),R(0)) if a<1 or fl<1 else (R(-50),0,0)
         pp.location=p0+Vector((-1.6*fl,-.3*fl,.6*math.sin(pi*fl))); pp.rotation_euler=(R(40*fl),0,R(220*fl))
         up=tl(t,ws(32)-.2,ws(32)+.25); lean=tl(t,ws(36)-.1,ws(37))
-        bs['arm'][1].rotation_euler=(R(-25),0,0); arm_to(bs,1,(-.5,1.95,1.95),up,base=(R(-25),0,0)); upright(pl,bs,1,tilt=-62*up)
+        bs['arm'][1].rotation_euler=(R(-25),0,0); arm_to(bs,1,(.16,1.6,1.46),up,base=(R(-25),0,0)); upright(pl,bs,1,tilt=-34*up)
         bs['root'].rotation_euler[0]=R(9*lean); look_at(bs,(.5,-.3,1.62),1.0)
         face(bs,mouth='flat',brow=-.03*lean,brow_r=-12*lean); speak(bs,t,30,38,s=-1,gesture=False)
         q=ease(t/DUR); camset(LV((.5,-.25,1.62),(.42,.05,1.6),q),(0,2.32,1.42),33,8)
@@ -251,8 +257,12 @@ def NASHTA():
         food_idle(sh,gu,t); crossed(gu)
         times=[ws(74),ws(75),ws(76),ws(77)]
         ix=max([i for i,x in enumerate(times) if t>=x-.1] or [0]); swp=tl(t,ws(78)-.1,ws(80))
-        tgt=Vector(items[ix]); look_at(sh,tgt if (swp<.5 and t>times[0]-.1) else (-1.5,-5,2.3),1.0,maxpitch=40)
-        arm_to(sh,1,LV(tgt,(-1.4,-1.4,3.0),swp),tl(t,times[0]-.3,times[0]),base=(0,0,0)); sh['arm'][-1].rotation_euler=(R(-30*swp),R(20*swp),0)
+        tgt=Vector(items[ix]); look_at(sh,tgt if (swp<.5 and t>times[0]-.1) else (-1.5,-5,2.3),1.0,maxpitch=14)
+        kk=tl(t,times[0]-.3,times[0]); sd=1 if tgt.x>sh['root'].location[0] else -1
+        for s in (1,-1): sh['arm'][s].rotation_euler=(R(-8),R(-s*6),0)
+        if swp<.5: arm_to(sh,sd,tgt,kk*(1-2*swp),base=(R(-8),R(-sd*6),0))
+        if swp>0:
+            for s in (1,-1): arm_to(sh,s,root_mat(sh)@Vector((s*4.2*sh['u'],-1.9*sh['u'],2.6*sh['u'])),ease(min(1,swp*1.6)),base=tuple(sh['arm'][s].rotation_euler))
         face(sh,mouth='smile',brow=.02); speak(sh,t,74,82,gesture=False)
         fans(LF,t,'cheer' if t>ws(80) else 'smile',look=hp(sh)); fans(KF,t,'glare',look=hp(sh))
         q=ease(t/DUR); camset(LV((-1.45,-4.6,2.5),(-1.6,-4.0,2.45),q),LV((-2.5,.25,1.6),(-2.5,.3,1.7),q),26,8)
@@ -263,12 +273,12 @@ def BIRYANI():
     al=in_hand(gu,1,lambda e: oico((0,-.1,.12),.14,M('#E0B45A',.6),e,sc=(1.2,1,.85),sub=2)); al.scale=(0,0,0)
     def upd(t):
         food_idle(sh,gu,t); crossed(sh)
-        up=tl(t,ws(84)-.15,ws(86)); lid.location=(-.62*up,.95*up,1.42+.62*up); lid.rotation_euler=(R(-25*up),R(-62*up),0)
+        up=tl(t,ws(84)-.15,ws(86)); lid.location=(-1.25*up,1.74*up,1.42+1.0*up); lid.rotation_euler=(R(-18*up),R(-72*up),0)
         bpy.context.view_layer.update(); lp=lid.matrix_world@Vector((-.55,0,.12))
         arm_to(gu,-1,lp,tl(t,ws(84)-.35,ws(84)),base=(0,0,0))
         sh_=tl(t,ws(87)-.25,ws(87)+.1); al.scale=(sh_,sh_,sh_)
-        gu['arm'][1].rotation_euler=(R(-105*sh_),R(-14*sh_),0); upright(al,gu,1) if sh_>0 else None
-        look_at(gu,(1.5,-5,2.3) if sh_<.5 else handw(gu,1),1.0,maxpitch=40); face(gu,mouth='smirk',brow=.02); speak(gu,t,83,89,gesture=False)
+        gu['arm'][1].rotation_euler=(R(-82*sh_),0,R(42*sh_)); upright(al,gu,1) if sh_>0 else None
+        look_at(gu,(1.5,-5,2.3),1.0,maxpitch=20); face(gu,mouth='smirk',brow=.02); speak(gu,t,83,89,gesture=False)
         fans(KF,t,'cheer' if t>ws(87) else 'smile',look=hp(gu)); fans(LF,t,'glare',look=hp(gu))
         q=ease(t/DUR); camset(LV((1.45,-4.6,2.5),(1.6,-4.0,2.45),q),LV((2.5,.25,1.55),(2.5,.3,1.7),q),26,8)
     return dict(upd=upd)
@@ -278,7 +288,7 @@ def ALOO2():
     LF,KF,sh,gu,nt,dg=food_set(); FILLE[0]=50
     def upd(t):
         food_idle(sh,gu,t); crossed(gu)
-        k=tl(t,0,.22); sh['root'].rotation_euler[0]=R(-5*k); hands_head(sh,k)
+        k=tl(t,0,.22); sh['root'].rotation_euler[0]=R(-5*k); what_pose(sh,k,t)
         look_at(sh,(-2.0,-3,2.6),1.0); face(sh,mouth='O',brow=.06,eyes=1.18); speak(sh,t,90,92,gesture=False)
         fans(LF,t,'gasp',look=(KT[0],KT[1],1.2)); fans(KF,t,'smile',look=hp(sh))
         q=ease(t/DUR); camset(LV((-2.05,-2.2,2.62),(-2.15,-1.9,2.6),q),(-2.5,.9,2.33),30,8)
@@ -288,7 +298,7 @@ def PULAO():
     BOARD[0]=False
     LF,KF,sh,gu,nt,dg=food_set(); FILLE[0]=50
     def upd(t):
-        food_idle(sh,gu,t); hands_head(sh,1); face(sh,mouth='O',brow=.06,eyes=1.15)
+        food_idle(sh,gu,t); what_pose(sh,1,t,amp=.5); face(sh,mouth='O',brow=.06,eyes=1.15)
         p=tl(t,ws(95)-.2,ws(95)+.1); arm_to(gu,-1,hp(sh),p,base=(0,0,0)); gu['arm'][1].rotation_euler=(R(-10),R(-8),0)
         look_at(gu,(2.0,-3,2.5),1.0); face(gu,mouth='smirk',brow=.03,brow_r=6); speak(gu,t,93,98,gesture=False)
         fans(KF,t,'laugh' if t>ws(96) else 'smile',look=hp(sh)); fans(LF,t,'gasp',look=hp(gu))

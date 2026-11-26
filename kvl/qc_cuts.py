@@ -2,7 +2,7 @@
 import sys, os, glob, subprocess, re
 from PIL import Image, ImageDraw
 G, outp, W = sys.argv[1], sys.argv[2], int(sys.argv[3]); only = [int(x) for x in sys.argv[4:]]
-src = open('/home/claude/kz/shots_kz.py').read(); SEQ = eval(re.search(r'^SEQ=(.*)$', src, re.M).group(1))
+src = open('/home/claude/kvl/shots_kvl.py').read(); SEQ = eval(re.search(r'^SEQ=(.*)$', src, re.M).group(1))
 tmp = '/tmp/qcc_%d' % os.getpid(); os.makedirs(tmp, exist_ok=True); ims = []
 for s in range(1, len(SEQ) + 1):
     if only and s not in only: continue

@@ -14,7 +14,7 @@ def BUN():
     LF,KF,sh,gu,wa=decide_set(); FILLE[0]=45
     l2=in_hand(wa,1,lassi_big); b1=in_hand(gu,-1,bun_kabab); b2=in_hand(wa,-1,bun_kabab); b2.scale=(0,0,0); ch=chai(gu,1)
     def upd(t):
-        wal_idle(wa,t); cap_idle(sh,t,SDP[0],SDP[1],90,hp(wa)); cap_idle(gu,t,GDP[0],GDP[1],-90,hp(wa)); crossed(sh); face(sh,mouth='frown',brow=-.02)
+        wal_idle(wa,t,rz=22); cap_idle(sh,t,SDP[0],SDP[1],48,hp(wa)); cap_idle(gu,t,GDP[0],GDP[1],-48,hp(wa)); crossed(sh); face(sh,mouth='frown',brow=-.02)
         wal_hold(wa,l2,None)
         tg=ws(211)+.15; a=tl(t,.15,.7); b=tl(t,tg-.25,tg); c=tl(t,tg,tg+.45); up=tl(t,ws(212)-.2,ws(213))
         hold_chai(gu,ch,s=1,a=-60-70*up,out=10)
@@ -27,7 +27,7 @@ def BUN():
             face(wa,mouth='grin',brow=.04)
         face(gu,mouth='grin',brow=.03)
         fans(KF,t,'cheer' if t>tg else 'idle',look=hp(wa)); fans(LF,t,'glare',look=hp(gu))
-        q=ease(t/DUR); camset(LV((1.6,-4.6,2.0),(1.25,-4.2,2.0),q),(.7,-.2,1.6),27,8)
+        q=ease(t/DUR); camset(LV((.45,-4.55,2.1),(.5,-4.15,2.05),q),(.45,-.2,1.7),25,8)
     return dict(upd=upd)
 SHOTS['BUN']=BUN
 def TASTE():
@@ -66,11 +66,11 @@ def DONO():
     l2=in_hand(wa,1,lassi_big); b2=in_hand(wa,-1,bun_kabab); mu=stache(wa)
     def upd(t):
         wal_idle(wa,t); up=tl(t,ws(222)-.2,ws(222)+.15)
-        for s,e in ((1,l2),(-1,b2)): wa['arm'][s].rotation_euler=(R(-50-60*up),R(-s*(6+22*up)),R(s*8)); upright(e,wa,s)
+        for s,e in ((1,l2),(-1,b2)): wa['arm'][s].rotation_euler=(R(-50-50*up),R(-s*6*(1-up)),R(s*(8+4*up))); upright(e,wa,s)
         look_at(wa,(.3,-4,2.4),1.0); face(wa,mouth='grin' if t>ws(222) else 'smile',brow=.04); speak(wa,t,221,223,gesture=False)
         for H,x in ((sh,SDP[0]),(gu,GDP[0])): cap_idle(H,t,x,SDP[1],90 if x<0 else -90,hp(wa)); H['root'].rotation_euler[0]=R(10); face(H,mouth='flat',brow=.05,eyes=1.15)
         fans(LF,t,'freeze',look=hp(wa)); fans(KF,t,'freeze',look=hp(wa))
-        q=ease(t/DUR); camset(LV((.3,-2.75,2.25),(.25,-2.45,2.25),q),(0,WP[1],2.05),33,8)
+        q=ease(t/DUR); camset(LV((.3,-2.85,2.25),(.25,-2.55,2.25),q),(0,WP[1],2.05),27,8)
     return dict(upd=upd)
 SHOTS['DONO']=DONO
 def DONO2():
@@ -93,8 +93,8 @@ def TURNED():
         wal_idle(wa,t); wal_hold(wa,l2,b2); k=tl(t,.05,.5)
         wa['root'].location[2]=wa['z0']+.008-.05*k; face(wa,mouth='o',brow=.06,eyes=1.15); look_at(wa,LV((0,-4,2.3),hp(sh),tl(t,.6,.9)*(1-tl(t,1.0,1.3)))if t<1.0 else hp(gu),1.0)
         for H,x in ((sh,SDP[0]),(gu,GDP[0])):
-            cap_idle(H,t,x,SDP[1],90 if x<0 else -90,hp(wa)); H['root'].rotation_euler[0]=R(10*k)
-            H['arm'][1].rotation_euler=(R(-150*k+10*math.sin(t*9+H['seed'])),R(-10*k),0); H['arm'][-1].rotation_euler=(R(-70*k),R(12*k),0)
+            cap_idle(H,t,x,SDP[1],L(90 if x<0 else -90,55 if x<0 else -55,k),hp(wa)); H['root'].rotation_euler[0]=R(8*k)
+            so=-1 if x<0 else 1; arms_up(H,k,t,spread=14,jig=10,only=so); bpy.context.view_layer.update(); arm_to(H,-so,hp(wa),k,base=(0,0,0))
             face(H,mouth='shout' if k>.5 else 'frown',brow=-.04,brow_r=-16*k)
         fans(LF,t,'fist',look=hp(wa),k=k); fans(KF,t,'fist',look=hp(wa),k=k)
         q=ease(t/DUR); camset(LV((0,-3.9,1.2),(0,-3.6,1.15),q),(0,.0,2.25),21,8)
@@ -117,7 +117,7 @@ def VOICE():
             if H is not wa: cap_idle(H,t,H['root'].location[0],SDP[1],90 if H is sh else -90)
             look_at(H,LV(hp(wa) if H is not wa else (0,-5,2.3),hp(ib),k),1.0,maxyaw=95); face(H,mouth='o' if k>.5 else 'shout',brow=.04)
         fans(LF,t,'freeze',look=hp(ib),k=k); fans(KF,t,'freeze',look=hp(ib),k=k)
-        q=ease(t/DUR); camset(LV((0,4.6,3.1),(0,4.0,3.0),q),(0,-6.0,1.7),26,8)
+        q=ease(t/DUR); camset(LV((.95,4.6,2.9),(.9,4.0,2.8),q),(-.15,-6.0,1.75),26,8)
     return dict(upd=upd)
 SHOTS['VOICE']=VOICE
 def ISBS():
@@ -155,7 +155,7 @@ def roast_isb(who,a,b,cam_yaw):
             isb_pose(ib,cf,t); look_at(ib,hp(me),1.0); face(ib,mouth='o' if t>ws(b)-.3 else 'smile',brow=.04)
             for H in (sh,gu):
                 x=H['root'].location[0]; cap_idle(H,t,x,SDP[1],face_dir(ISBP[0]-x,ISBP[1]-SDP[1]),hp(ib)); face(H,mouth='smirk',brow=-.01)
-            p=tl(t,ws(a)-.15,ws(a)+.15); arm_to(me,1,hp(ib),p,base=(0,0,0)); speak(me,t,a,b,gesture=False); face(me,mouth='smirk',brow=.03,brow_r=6) if not (ws(a)<=t<we(b)) else None
+            pa=-1 if who=='K' else 1; p=tl(t,ws(a)-.15,ws(a)+.15); arm_to(me,pa,hp(ib),p,base=(0,0,0)); speak(me,t,a,b,gesture=False); face(me,mouth='smirk',brow=.03,brow_r=6) if not (ws(a)<=t<we(b)) else None
             lg=t>ws(b)-.25
             fans(LF,t,'laugh' if lg else 'glare',look=hp(ib)); fans(KF,t,'laugh' if lg else 'glare',look=hp(ib))
             if lg: laugh(ot,t)
@@ -183,24 +183,24 @@ def HIGHFIVE():
         look_at(wa,(0,HFP[2],2.6),1.0)
         isb_pose(ib,cf,t); face(ib,mouth='frown' if t>th else 'o',brow=.03); look_at(ib,(0,HFP[2],2.6),1.0)
         m=tl(t,.35,1.3)
-        for H,x0,x1,r1,s_ in ((sh,SDP[0],HFP[0],70,-1),(gu,GDP[0],HFP[1],-70,1)):
+        for H,x0,x1,r1,s_ in ((sh,SDP[0],HFP[0],55,-1),(gu,GDP[0],HFP[1],-55,1)):
             x=L(x0,x1,m); y=L(SDP[1],HFP[2],m); cap_idle(H,t,x,y,L(face_dir(ISBP[0]-x0,ISBP[1]-SDP[1]),r1,tl(t,.2,1.0))); walk(H,abs(x-x0)+abs(y-SDP[1]),step=.4,arm=10) if 0<m<1 else None
             up=tl(t,th-.55,th-.05)
             arm_to(H,1 if H is gu else -1,(0,HFP[2]-.02,2.62+(.04 if t>th else 0)),up,base=(0,0,0))
             face(H,mouth='grin',brow=.04); look_at(H,(0,HFP[2],2.6),1.0)
         cu(t)
         fans(LF,t,'cheer' if t>th else 'smile',look=(0,HFP[2],2.6)); fans(KF,t,'cheer' if t>th else 'smile',look=(0,HFP[2],2.6))
-        q=ease(t/DUR); camset(LV((-.9,-4.4,1.55),(-.7,-3.9,1.6),q),(0,HFP[2]+.3,2.4),23,8)
+        q=ease(t/DUR); camset(LV((.85,-4.6,1.75),(.75,-4.3,1.78),q),(0,HFP[2]+.1,1.95),27,8)
     return dict(upd=upd)
 SHOTS['HIGHFIVE']=HIGHFIVE
 def OVER():
     arena('kv_night',night=1.0); LF=mkfans('L'); KF=mkfans('K'); sh,gu=captains(); wa=mk(WALEED,0,1.2,0,'wa'); l2=in_hand(wa,1,lassi_big); FILLE[0]=60
-    FW=[firework((-6,4,15),.1,'#3FC77A',seed=1),firework((5,6,16.5),.55,'#6FC3EA',seed=2),firework((0,9,18),1.1,'#FFE08A',seed=3),firework((-3,12,15.5),1.6,'#F4F6FA',seed=4),firework((7,10,15),2.05,'#3FC77A',seed=5)]
+    FW=[firework2((-5.5,6,10.0),.1,'#3FC77A',seed=1),firework2((5,7,11.0),.55,'#6FC3EA',seed=2),firework2((0,9,12.0),1.1,'#FFE08A',seed=3),firework2((-3,11,10.5),1.6,'#F4F6FA',seed=4),firework2((6.5,10,10.0),2.05,'#3FC77A',seed=5)]
     def upd(t):
         fans(LF,t,'dance'); fans(KF,t,'dance')
         for H,x,r in ((sh,-1.4,70),(gu,1.4,-70)):
             place(H,x,-.4,r); b=math.sin(t*7+H['seed']); H['root'].location[2]=H['z0']+.008+.1*abs(b); blink(H,t)
-            for s in (1,-1): H['arm'][s].rotation_euler=(R(-150+22*b*s),R(-s*32),0)
+            for s in (1,-1): H['arm'][s].rotation_euler=(R(-150+22*b*s),R(s*22),0)
             H['leg'][1].rotation_euler[0]=R(-26*max(0,b)); H['leg'][-1].rotation_euler[0]=R(-26*max(0,-b)); face(H,mouth='grin',brow=.05)
         place(wa,0,1.2,0); hstand(wa,t); hold_chai(wa,l2,s=1,a=-55,sip=.5+.5*math.sin(t*2)); face(wa,mouth='smile')
         for f in FW: f(t)
@@ -271,7 +271,7 @@ def CTA():
     def upd(t):
         wal_idle(wa,t,0,-1.6,0); look_at(wa,(0,-8,2.3),1.0); face(wa,mouth='grin',brow=.03)
         a=tl(t,ws(304)-.15,ws(304)+.1)*(1-tl(t,ws(305),ws(305)+.2)); b=tl(t,ws(306)-.15,ws(306)+.1)*(1-tl(t,ws(307),ws(307)+.2)); c=tl(t,ws(307)-.1,ws(307)+.2)
-        arm_to(wa,-1,(5,-1.6,2.3),a,base=(0,0,0)) if a>0 else None; arm_to(wa,1,(-5,-1.6,2.3),b,base=(0,0,0)) if b>0 else None
+        arm_to(wa,1,(5,-1.6,2.3),a,base=(0,0,0)) if a>0 else None; arm_to(wa,-1,(-5,-1.6,2.3),b,base=(0,0,0)) if b>0 else None
         if c>0: arm_to(wa,1,(0,-9,2.3),c,base=(0,0,0))
         look_at(wa,(5,-3,2.3) if a>.5 else ((-5,-3,2.3) if b>.5 else (0,-8,2.3)),1.0)
         fans(LF,t,'cheer' if b>.3 or c>0 else 'smile',look=hp(wa)); fans(KF,t,'cheer' if a>.3 or c>0 else 'smile',look=hp(wa))

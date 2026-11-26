@@ -140,7 +140,7 @@ def CELEB():
     def upd(t):
         roast_idle(sh,gu,wa,cp,t,sh); crossed(gu); face(gu,mouth='flat',brow=-.03,brow_r=-8)
         b=math.sin(t*7.5); place(sh,-SX,CY,SRZ+20*math.sin(t*3.7)); sh['root'].location[2]=sh['z0']+.008+.12*abs(b)
-        for s in (1,-1): sh['arm'][s].rotation_euler=(R(-150+25*b*s),R(-s*35),0)
+        for s in (1,-1): sh['arm'][s].rotation_euler=(R(-150+25*b*s),R(s*24),0)
         sh['leg'][1].rotation_euler[0]=R(-30*max(0,b)); sh['leg'][-1].rotation_euler[0]=R(-30*max(0,-b)); face(sh,mouth='grin',brow=.05); sh['head'].rotation_euler[1]=R(8*b)
         fans(LF,t,'dance'); fans(KF,t,'glare',look=hp(sh))
         if t>ws(162): look_at(wa,hp(gu),1.0)
@@ -152,11 +152,12 @@ def SMOG1():
     LF,KF,sh,gu,wa,cp,co=roast_set(); FILLE[0]=55
     def upd(t):
         roast_idle(sh,gu,wa,cp,t,gu); crossed(sh); face(sh,mouth='flat',brow=.02)
-        k=tl(t,0,.3); m=root_mat(gu); arm_to(gu,-1,m@Vector((.22,-.5,3.15*gu['u'])),k,base=(0,0,0)); gu['arm'][1].rotation_euler=(R(-150*k+10*math.sin(t*4)),R(-30*k),0)
-        gu['head'].rotation_euler=(R(-14*k),0,0); look_at(gu,(1.5,-6,4.5),.7); blink(gu,t,force=1 if .2<t<ws(172)+.2-0 else None)
+        k=tl(t,0,.35); place(gu,SX,CY,L(-SRZ,-14,k)); bpy.context.view_layer.update()
+        m=root_mat(gu); arm_to(gu,-1,m@Vector((.22,-.5,3.15*gu['u'])),k,base=(0,0,0)); gu['arm'][1].rotation_euler=(R((-150+8*math.sin(t*4))*k),R(26*k),0)
+        gu['head'].rotation_euler=(R(-8*k),0,0); blink(gu,t,force=1 if .3<t<ws(171)-.05 else None)
         face(gu,mouth='smile',brow=.06); speak(gu,t,165,172,gesture=False)
         fans(KF,t,'laugh',look=hp(gu)); fans(LF,t,'glare',look=hp(gu))
-        c,tg,ln=single(gu,yaw=36,dist=3.2,lens=31); q=ease(t/DUR); camset(LV(c,(c[0]-.1,c[1]+.25,c[2]),q),tg,ln,8)
+        camset(LV((SX+.35,CY-3.35,2.28),(SX+.3,CY-3.05,2.26),ease(t/DUR)),(SX,CY,hp(gu)[2]-.22),32,8)
     return dict(upd=upd)
 SHOTS['SMOG1']=SMOG1
 def SMOG2():
@@ -175,7 +176,7 @@ def FAINT():
     arena('kv_dusk',gtext=False); LF=mkfans('L',skip=(1,4,6,7)); sh,gu=captains(); FILLE[0]=35
     T3=[.15,.4,.62]
     def upd(t):
-        cap_idle(sh,t,-SX,CY,SRZ,(-4.5,3.8,1.0)); face(sh,mouth='O',brow=.06); shock(sh,tl(t,.1,.4))
+        cap_idle(sh,t,-SX,CY,SRZ,(-4.5,3.8,1.0)); face(sh,mouth='O',brow=.06); what_pose(sh,tl(t,.1,.4),t,amp=.5)
         for H in LF:
             if H['i'] in FALLERS:
                 x,y,_=H['home']; stand(H,t); faint(H,t,T3[FALLERS.index(H['i'])],x,y)
@@ -217,7 +218,7 @@ def LASSI():
     LF,KF,sh,gu,wa=decide_set(); FILLE[0]=45
     l1=in_hand(sh,1,lassi_big); l2=in_hand(wa,1,lassi_big); l2.scale=(0,0,0)
     def upd(t):
-        wal_idle(wa,t); cap_idle(sh,t,SDP[0],SDP[1],90,hp(wa)); cap_idle(gu,t,GDP[0],GDP[1],-90,hp(wa)); crossed(gu); face(gu,mouth='frown',brow=-.02)
+        wal_idle(wa,t,rz=-22); cap_idle(sh,t,SDP[0],SDP[1],48,hp(wa)); cap_idle(gu,t,GDP[0],GDP[1],-48,hp(wa)); crossed(gu); face(gu,mouth='frown',brow=-.02)
         tg=ws(199)+.1; a=tl(t,.15,.7); b=tl(t,tg-.25,tg); c=tl(t,tg,tg+.45)
         if t<tg:
             arm_to(sh,1,LASP,a,base=(R(-20),0,0)); upright(l1,sh,1); l1.scale=(1,1,1); l2.scale=(0,0,0)
@@ -227,6 +228,6 @@ def LASSI():
             arm_to(wa,1,LV((LASP[0]+.22,LASP[1],LASP[2]-.05),(-.2,-.75,1.25),c),1.0,base=(0,0,0)); upright(l2,wa,1)
             look_at(wa,LASP,1-c); face(wa,mouth='O' if c<.6 else 'grin',brow=.05,eyes=1.12); face(sh,mouth='grin',brow=.03)
         fans(LF,t,'cheer' if t>tg else 'idle',look=hp(wa)); fans(KF,t,'glare',look=hp(sh))
-        q=ease(t/DUR); camset(LV((-1.6,-4.6,2.0),(-1.25,-4.2,2.0),q),(-.7,-.2,1.6),27,8)
+        q=ease(t/DUR); camset(LV((-.45,-4.55,2.1),(-.5,-4.15,2.05),q),(-.45,-.2,1.7),25,8)
     return dict(upd=upd)
 SHOTS['LASSI']=LASSI

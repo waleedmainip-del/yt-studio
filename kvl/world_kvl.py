@@ -88,6 +88,8 @@ def cutout(x,y,kind,rz=0):
         sign('SEA VIEW',(0,-.04,2.3),.24,'#FFFFFF','#2466C9',n=(0,-1,0),pad=.1,th=.03,parent=e)
     return e
 SCORE={}
+BOARDOBJ=[]
+BOARDKEEP=set()
 def scoreboard(draws=74,year=75):
     y=BACKY-.4; dk=M('#16181E',.5); fr=M('#3A3D44',.5,metal=.4)
     for sx in (-2.6,2.6): B.box((sx,y+.3,2.0),(.18,.18,2.0),fr,.02)
@@ -138,7 +140,8 @@ def arena(mood='kv_day',night=0.0,seed=3,shadow=80,tokens=True,draws=74,vehicles
             else: flat_mazar(ic,0,7.2,2.0,'#F6F8FC')
             for dx in (-6.0,6.0):
                 for k_ in range(2): obox((dx,-.03,7.0),(.32,.02,.32),M(col,.5),0,ic,rot=(0,R(45*k_),0))
-        if BOARD[0]: scoreboard(draws)
+        if BOARD[0]:
+            B.done('wall'); _b0={o.name for o in bpy.data.objects}; scoreboard(draws); B.done('board'); BOARDOBJ[:]=[o for o in bpy.data.objects if o.name not in _b0]
     B.done('wall')
     # crowd tokens: bleachers + road blocks behind the real fans
     if tokens:
@@ -202,7 +205,7 @@ def frame(x,y,z,w,h,col,pic,n=(0,-1,0)):
     B.box((x,y,z),(w+.05,.03,h+.05),M(col,.5),.01); B.box((x,y-.02,z),(w,.02,h),M(pic,.6),0)
 def nursery():
     room(wall='#FCE8C8',floor='#C9A27A',kind='tile'); B.done('room')
-    B.cyl((0,.2,.012),1.75,.024,M('#8FD0C0',.85,kind='fabric'),seg=28); B.cyl((0,.2,.016),1.3,.026,M('#FFF2C4',.85,kind='fabric'),seg=24)
+    B.cyl((0,.2,.012),1.75,.024,M('#B9A6E0',.85,kind='fabric'),seg=28); B.cyl((0,.2,.016),1.3,.026,M('#F4C9D2',.85,kind='fabric'),seg=24)
     frame(-2.9,4.28,2.25,.5,.38,'#F4F1EA','#8FD0F0'); frame(2.9,4.28,2.25,.5,.38,'#F4F1EA','#F2B8C8')
     B.box((0,4.25,2.3),(1.0,.05,.75),M('#BFE6FF',.2,emit=1.2),.0); B.box((0,4.22,2.3),(1.08,.03,.04),M('#F4F1EA',.5),0); B.box((0,4.22,2.3),(.04,.03,.78),M('#F4F1EA',.5),0)
     for s in (-1,1): B.box((s*1.2,4.2,2.3),(.22,.04,.85),M('#F2C14E',.8,kind='fabric'),.02)
@@ -212,9 +215,9 @@ def nursery():
     B.done('nursery')
     P={}
     for s,nm,bg,col in ((-1,'LAHORE','#1F7A44','#F2D36A'),(1,'KARACHI','#2466C9','#FFFFFF')):
-        e=empty((s*.95,.25,0)); obox((0,0,.03),(.13,.13,.03),M('#C9A27A',.6),.01,e); ocyl((0,0,.48),.022,.9,M('#D9B24A',.3,metal=.9),e,rot=(0,0,0),seg=8)
-        sign(nm,(-s*.42,0,.74),.13,col,bg,n=(0,-1,0),pad=.06,th=.016,parent=e); P[nm]=e
-    S,A,w_,bg_=setup_interior('day',room=(0,-.5,3.3),res=PCT,samples=SAMPLES,shadow_dist=18); A.data.energy=170; A.data.size=10; point((0,-4.5,2.6),550,(1,.96,.9),r=2.0,shadow=False)
+        e=empty((s*.7,.25,0)); obox((0,0,.03),(.13,.13,.03),M('#C9A27A',.6),.01,e); ocyl((0,0,.65),.022,1.25,M('#D9B24A',.3,metal=.9),e,rot=(0,0,0),seg=8)
+        sign(nm,(0,-.03,1.2),.13,col,bg,n=(0,-1,0),pad=.06,th=.016,parent=e); P[nm]=e
+    S,A,w_,bg_=setup_interior('day',room=(0,-.5,3.3),res=PCT,samples=SAMPLES,shadow_dist=18); A.data.energy=125; A.data.size=10; point((0,-4.5,2.6),420,(1,.96,.9),r=2.0,shadow=False)
     return P
 def office():
     w=5.4; d=4.2; h=3.4; wall='#C9D3DE'

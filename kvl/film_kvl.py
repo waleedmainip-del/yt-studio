@@ -2,9 +2,10 @@
 import os
 LH=os.environ.get('LH','/home/claude/kvl')
 exec(open(LH+'/base_lh.py').read())
-for _f in ('chars_base','look_lh','anim_lh','fx_lh','chars_lh','chars_dk','chars_bd','chars_bg','cast_kz','cast_kvl','world_lh','world_kb','world_kz','world_kz2','world_kz3','gen_kb','world_kvl','kit_kvl','shots_kvl','shots_kvl2','shots_kvl3'): exec(open(LH+'/%s.py'%_f).read())
+for _f in ('chars_base','look_lh','anim_lh','fx_lh','chars_lh','chars_dk','chars_bd','chars_bg','cast_kz','cast_kvl','world_lh','world_kb','world_kz','world_kz2','world_kz3','gen_kb','world_kvl','kit_kvl','shots_kvl','shots_kvl2','shots_kvl3','thumb_kvl'): exec(open(LH+'/%s.py'%_f).read())
 FPS=30; MODE=args[3] if len(args)>3 else 'anim'
-SN=int(SHOT); KEY,T0=SEQ[SN-1]; T1=SEQ[SN][1] if SN<len(SEQ) else END; DUR=T1-T0; G0=int(round(T0*FPS)); G1=int(round(T1*FPS))
+if SHOT=='T': SN=99; KEY='THUMB'; T0=0.0; T1=2.0; DUR=2.0; G0=0; G1=60
+else: SN=int(SHOT); KEY,T0=SEQ[SN-1]; T1=SEQ[SN][1] if SN<len(SEQ) else END; DUR=T1-T0; G0=int(round(T0*FPS)); G1=int(round(T1*FPS))
 make_cam(); sc=bpy.context.scene
 if SHOTS[KEY] is None: print('UI SHOT',KEY); sys.exit(0)
 spec=SHOTS[KEY]()
@@ -23,7 +24,49 @@ def upd_all(t):
         for k,o in enumerate(TRAIL):
             ok=sp>4.0 and cur.z>-1 and hist[k].z>-1 and (hist[k]-cur).length<3.0
             o.location=hist[k] if ok else (0,0,-9); o.scale=(1,1,1) if ok else (0,0,0)
-if MODE=='probe':
+def _vis_corners(cs):
+    from bpy_extras.object_utils import world_to_camera_view
+    pv=[world_to_camera_view(sc,sc.camera,c) for c in cs]
+    ins=[(-.002<=q.x<=1.002 and -.002<=q.y<=1.002 and q.z>0) for q in pv]
+    return any(ins),all(ins)
+def _board_auto():
+    if not BOARDOBJ or KEY in BOARDKEEP: return
+    cs=[Vector((x,BACKY-.2,z)) for x in (-3.45,3.45) for z in (3.72,9.05)]
+    for k in range(17):
+        upd_all(min(DUR*k/16,DUR-1e-3)); bpy.context.view_layer.update(); a_,l_=_vis_corners(cs)
+        if a_ and not l_:
+            for o in BOARDOBJ: o.hide_render=True; o.hide_viewport=True
+            print('BOARDAUTO',KEY,'hide',round(DUR*k/16,2),flush=True); return
+    print('BOARDAUTO',KEY,'show',flush=True)
+_board_auto()
+def _txt_scan():
+    bad={}
+    for k in range(17):
+        t=min(DUR*k/16,DUR-1e-3); upd_all(t); bpy.context.view_layer.update()
+        for o in bpy.data.objects:
+            if o.type!='FONT' or o.hide_render or o in BOARDOBJ: continue
+            mw=o.matrix_world
+            if abs(mw.to_3x3().determinant())<1e-9: continue
+            p_=o; hid=False
+            while p_ is not None:
+                if p_.hide_render: hid=True
+                p_=p_.parent
+            if hid: continue
+            cs=[mw@Vector(c) for c in o.bound_box]; a_,l_=_vis_corners(cs)
+            if a_ and not l_: bad.setdefault(o.name,[]).append(round(t,2))
+    return bad
+def _txt_auto():
+    for nm,ts in _txt_scan().items():
+        if len(ts)<2: continue
+        o=bpy.data.objects[nm]; o.hide_render=True; o.hide_viewport=True
+        for kk in ('board','frame'):
+            if kk in o.keys() and o[kk] in bpy.data.objects: bpy.data.objects[o[kk]].hide_render=True; bpy.data.objects[o[kk]].hide_viewport=True
+        print('TXTHIDE',KEY,repr(o.data.body),ts[0],ts[-1],len(ts),flush=True)
+_txt_auto()
+if MODE=='txt':
+    bad=_txt_scan()
+    print('TXTCUT',SN,KEY,{bpy.data.objects[k].data.body:(v[0],v[-1],len(v)) for k,v in bad.items()},flush=True)
+elif MODE=='probe':
     from bpy_extras.object_utils import world_to_camera_view
     t=float(args[4]); upd_all(t); dg=bpy.context.evaluated_depsgraph_get(); cam=sc.camera; o=cam.matrix_world.translation
     fr=[cam.matrix_world@v for v in cam.data.view_frame(scene=sc)]
@@ -66,7 +109,7 @@ elif MODE=='clip':
     print('CLIP',SN,KEY,sorted(bad),flush=True)
 elif MODE=='still':
     os.makedirs(OUTR+'/stills',exist_ok=True)
-    for t in [float(x) for x in args[4].split(',')]:
+    for t in [(DUR*float(x[1:]) if x.startswith('f') else float(x)) for x in args[4].split(',')]:
         if t<0: t=DUR+t
         upd_all(t); sc.render.filepath=OUTR+'/stills/S%02d_%s_%05.2f.png'%(SN,KEY,t); bpy.ops.render.render(write_still=True); print('STILL',SN,KEY,t,flush=True)
 else:

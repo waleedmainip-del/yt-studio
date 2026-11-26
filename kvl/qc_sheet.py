@@ -3,7 +3,7 @@
 import sys, os, glob, subprocess, re
 from PIL import Image, ImageDraw
 G, out, step, cols, W = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]); shots = [int(x) for x in sys.argv[6:]]
-src = open('/home/claude/kz/shots_kz.py').read(); SEQ = eval(re.search(r'^SEQ=(.*)$', src, re.M).group(1))
+src = open('/home/claude/kvl/shots_kvl.py').read(); SEQ = eval(re.search(r'^SEQ=(.*)$', src, re.M).group(1))
 tmp = '/tmp/qc_%d' % os.getpid(); os.makedirs(tmp, exist_ok=True); ims = []
 for s in shots:
     for f in sorted(glob.glob(G + '/piece_%02d_*.mp4' % s)):
