@@ -34,7 +34,8 @@ def VS(side):
         Hm,F=room_set(side,'db'); dad,boy=F['d'],F['b']; x=DADP[0]
         def upd(t):
             home_lights(Hm,t); fam_idle(F,t,'happy'); cheer(dad,t,-1.0); cheer(boy,t,-1.0,ph=1.6)
-            q=ease(t/DUR); camset(LV((x-1.9,-2.3,1.4),(x-1.75,-2.05,1.45),q),(x+.7,1.2,2.25),26,8)
+            for s in (1,-1): dad['arm'][s].rotation_euler=(R(-38+16*math.sin(t*14+s)),R(-s*52),0)
+            q=ease(t/DUR); camset(LV((x-.1,-2.75,2.2),(x,-2.45,2.2),q),(x+.45,1.5,1.72),30,8)
         return dict(upd=upd)
     return f
 SHOTS['VSI']=VS('I'); SHOTS['VSP']=VS('P')
