@@ -69,7 +69,7 @@ def baz_idle(A,t):
         H=p['H']; H['root'].location[0]=p['x0']+p['d']*1.25*t; H['root'].location[1]=p['y']; H['root'].rotation_euler[2]=R(90*p['d']); walk(H,1.25*(t+3),step=.5); carry_pose(H); blink(H,t); fc(H,'calm')
 def boys(A): A['wa']=mk(WALEED,0,0,0,'waleed'); A['za']=mk(ZAIN,0,0,0,'zain'); return A['wa'],A['za']
 def HOOK():
-    A=baz('c',[(0,.3,-1,-12.6,'EXPORT'),(2,-1.6,-1,-8.0,'EXPORT'),(-1,2.0,-1,-5.5,'EXPORT'),(-2,-.5,-1,-1.5,'EXPORT'),(-3,1.3,-1,3.5,'EXPORT'),(-4,-2.6,1,6.0,None),(-5,2.9,1,-2.0,None)])
+    A=baz('c',[(4,.3,-1,-12.6,'EXPORT'),(2,-1.6,-1,-8.0,'EXPORT'),(-1,2.0,-1,-5.5,'EXPORT'),(-2,-.5,-1,-1.5,'EXPORT'),(-3,1.3,-1,3.5,'EXPORT'),(-4,-2.6,1,6.0,None),(-5,2.9,1,-2.0,None)])
     def upd(t): baz_idle(A,t); cam2(t,(-20.6,.15,1.3),(-20.0,.15,1.35),(0,.15,1.7),24)
     return dict(upd=upd)
 SHOTS['HOOK']=HOOK
@@ -99,7 +99,7 @@ def MOQ():
     return dict(upd=upd)
 SHOTS['MOQ']=MOQ
 def THISIS():
-    A=baz('',[(0,-1.2,1,33.0,'EXPORT'),(-1,1.4,-1,37.0,None)])
+    A=baz('',[(4,-1.2,1,33.0,'EXPORT'),(-1,1.4,-1,37.0,None)])
     def upd(t): baz_idle(A,t); cam2(t,(24.8,-2.8,1.7),(25.8,-2.4,2.2),(40,0,9.4),20,(40,0,10.4))
     return dict(upd=upd)
 SHOTS['THISIS']=THISIS
@@ -579,7 +579,7 @@ SHOTS['DOLLAR']=DOLLAR
 def CTA():
     A=gate(); bi=bill_o(); A['fb']=ball_o(r=.26); A['bt']=bat_o()
     def upd(t):
-        gate_idle(A,t); wa,ab=A['wa'],A['ab']; k=tl(t,.0,.45); standp(wa,t,WG[0],WG[1],L(139,6,k)); fc(wa,'calm'); A['fb'].location=(-1.75,1.75,.26); A['bt'].location=(0,0,-5); speak(wa,t,290,296,gesture=False)
+        gate_idle(A,t); wa,ab=A['wa'],A['ab']; k=tl(t,.0,.45); standp(wa,t,WG[0],WG[1],L(139,6,k)); fc(wa,'calm'); A['fb'].location=(-.25,.45,.26); A['bt'].location=(0,0,-5); speak(wa,t,290,296,gesture=False)
         what_pose(wa,tl(t,ws(294)-.1,ws(294)+.2),t,.6); fc(ab,'shock'); ab['arm'][-1].rotation_euler=(R(-10),0,0); ab['arm'][1].rotation_euler=(R(-104),R(-14),0); bill_upd(bi,ab,1,1.0,rz=139)
         look_at(ab,Vector(handw(ab,1))+Vector((0,-.2,-.5)),1.0,maxpitch=35)
         cam2(t,(-.25,-3.0,2.0),(-.15,-2.4,1.95),(0,2.4,1.6),28)

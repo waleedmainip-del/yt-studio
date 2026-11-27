@@ -27,3 +27,4 @@ BIZM=[dict(skin='#C58C5E',hair='#2A2A30',hairstyle='neat',neat=True,mustache='#2
            sole='#2A2C34',accent='#3A4A6A',watch=True,eye='#2A1A12',brow_t=1.4,h=1.05,wide=1.12),
       dict(skin='#A9744C',hair='#15110E',hairstyle='short',beard='#15110E',top='#D8C4A0',trim='#B8A070',kurta=True,shalwar=True,pants='#D8C4A0',waistcoat='#2A3A2A',sandals='#3A2A1E',watch=True,
            eye='#2A1A12',brow_t=1.3,h=1.02,wide=1.1)]
+WORK.append(dict(skin='#B07A4E',hair='#1A1512',hairstyle='short',mustache='#1A1512',top='#C96A2B',trim='#A8521E',kurta=True,shalwar=True,pants='#E8DFC8',sandals='#3A2A1E',accent='#C96A2B',eye='#2A1A12',brow_t=1.3,h=1.0,wide=1.04))
