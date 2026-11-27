@@ -306,7 +306,7 @@ def KYABAJ():
     A=baz('p',[(2,-1.5,-1,16.5,'EXPORT'),(0,1.2,1,9.0,None)]); wa,za=boys(A)
     def upd(t):
         baz_idle(A,t); b3(A,t); fc(wa,'worry'); fc(za,'calm'); look_at(wa,hp(za),tl(t,.2,.5),maxyaw=38); look_at(za,hp(wa),1.0,maxyaw=38); speak(wa,t,125,129,gesture=False)
-        wa['arm'][1].rotation_euler=(R(-50),R(-34),0); c1(t,wa,yaw=16,dist=2.8)
+        c1(t,wa,yaw=16,dist=2.8)
     return dict(upd=upd)
 SHOTS['KYABAJ']=KYABAJ
 def BAAJA():
@@ -316,7 +316,7 @@ def BAAJA():
     return dict(upd=upd)
 SHOTS['BAAJA']=BAAJA
 def MEIN():
-    A=baz('p',[(0,1.2,1,13.0,None)]); wa,za=boys(A)
+    A=baz('p'); wa,za=boys(A)
     def upd(t):
         baz_idle(A,t); b3(A,t); fc(wa,'shock'); fc(za,'smug'); speak(wa,t,133,137,gesture=False)
         hands_head(wa,tl(t,ws(136),ws(136)+.2)); look_at(wa,hp(za),1.0-tl(t,ws(135)-.2,ws(135)),maxyaw=40); c1(t,wa,yaw=16,dist=2.8,lens=36)
@@ -325,7 +325,7 @@ SHOTS['MEIN']=MEIN
 def YES():
     A=baz('p'); wa,za=boys(A); N=notes(5)
     def upd(t):
-        baz_idle(A,t); b3(A,t); notes_upd(N,t,(15.3,7.0,2.9),d=(-.4,-.6,0),reach=2.2); c1(t,A['pipe'],yaw=12,dist=4.2,lens=32,push=.2,tz=-.35)
+        baz_idle(A,t); b3(A,t); notes_upd(N,t,(15.3,7.0,2.9),d=(-.4,-.6,0),reach=2.2); c1(t,A['pipe'],yaw=4,dist=2.9,lens=36,push=.2,tz=-.3)
     return dict(upd=upd)
 SHOTS['YES']=YES
 def SHIPPED():
@@ -465,7 +465,7 @@ def NEEDED():
             standp(H,t,P[i][0],P[i][1],-20); fc(H,'sad'); look_at(H,(-14+5*t,-16,13),1.0,maxyaw=50,maxpitch=30)
             if i==2: H['arm'][1].rotation_euler=(R(-150*tl(t,.3,.7)),R(-12),0)
             else: crossed(H,1.0)
-        cam2(t,(-3.8,-3.2,1.45),(-3.6,-3.0,1.5),(-.3,.45,1.9),26)
+        cam2(t,(-4.15,-3.55,1.45),(-3.95,-3.35,1.5),(-.6,.4,1.9),26)
     return dict(upd=upd)
 SHOTS['NEEDED']=NEEDED
 def NOBUILT():
