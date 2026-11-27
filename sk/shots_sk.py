@@ -150,7 +150,7 @@ def fbw(boys_=True):
 def stitch(A,t,work=1.0,up=0.0,look=None):
     """the old stitcher on his stool. work = needle hand moving, up = lifts the ball in his right hand, look = world point to look at (else he watches the ball)"""
     un=A['un']; sitp(un,t,seat=.61,lean=8*(1-up)*(0 if look else 1)); w=work*(1-up)
-    un['arm'][-1].rotation_euler=(R(-50),R(12),0); un['arm'][1].rotation_euler=(R(-50+12*w*math.sin(t*5.5)-88*up),R(-12+7*w*math.sin(t*5.5)-30*up),0)
+    un['arm'][-1].rotation_euler=(R(-50),R(12),0); un['arm'][1].rotation_euler=(R(-50+12*w*math.sin(t*5.5)-88*up),R(-12+7*w*math.sin(t*5.5)+24*up),0)
     hl=Vector(handw(un,-1)); hr=Vector(handw(un,1)); lapp=(hl+hr)/2+Vector((0,-.1,.06)); A['ball'].location=lapp.lerp(hr+Vector((0,0,.3)),up); A['ball'].rotation_euler=(t*.4*(1-up),0,t*.3*(1-up))
     if look: look_at(un,look,1.0,maxyaw=55,maxpitch=25)
     else: look_at(un,tuple(A['ball'].location),1.0,maxpitch=20+25*up)
@@ -201,7 +201,7 @@ SHOTS['TRUE']=TRUE_
 def NEVER():
     A=fbw()
     def upd(t):
-        k=tl(t,.1,.7); stitch(A,t,1-k,k); fb_boys(A,t,'shock'); un=A['un']; face(un,mouth='smile',brow=.03,brow_r=-6,eyes=1.0); c1(t,un,yaw=-12,dist=3.4,lens=34,dz=-.55,tz=.3)
+        k=tl(t,.1,.7); stitch(A,t,1-k,k); fb_boys(A,t,'shock'); un=A['un']; un['head'].rotation_euler=(0,0,0); look_at(un,tuple(A['ball'].location),.35+.65*(1-k),maxyaw=30,maxpitch=14); face(un,mouth='smile',brow=.03,brow_r=-6,eyes=1.0); c1(t,un,yaw=-12,dist=3.4,lens=34,dz=-.55,tz=.3,sx=.28)
     return dict(upd=upd)
 SHOTS['NEVER']=NEVER
 def WHOLE():
