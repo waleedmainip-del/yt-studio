@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: sk-render-r9
+  group: sk-render-r10
   cancel-in-progress: false
 jobs:
   render:

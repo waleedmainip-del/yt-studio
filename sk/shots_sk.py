@@ -398,7 +398,7 @@ def FORTY():
     def upd(t):
         fac_idle(A,t); wa,za,ch=A['wa'],A['za'],A['ch']; k=tl(t,.15,.7); standp(wa,t,WP2[0],WP2[1],L(18,165,k)); standp(za,t,ZP2[0],ZP2[1],L(22,175,tl(t,.3,.9))); fc(wa,'wow'); fc(za,'smug')
         look_at(wa,(-9.9,6.8,5.5),1.0,maxyaw=40,maxpitch=40); look_at(ch,(-8.5,-6,2.4),1.0); fc(ch,'smug')
-        cam2(t,(-9.9,-2.2,2.5),(-9.9,-1.5,2.7),(-9.9,6.2,3.7),24)
+        cam2(t,(-9.9,-2.2,2.3),(-9.9,-1.5,2.4),(-9.9,6.2,2.55),24)
     return dict(upd=upd)
 SHOTS['FORTY']=FORTY
 def EKFB():
