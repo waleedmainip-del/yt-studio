@@ -70,7 +70,7 @@ def baz_idle(A,t):
 def boys(A): A['wa']=mk(WALEED,0,0,0,'waleed'); A['za']=mk(ZAIN,0,0,0,'zain'); return A['wa'],A['za']
 def HOOK():
     A=baz('c',[(0,.3,-1,-12.6,'EXPORT'),(2,-1.6,-1,-8.0,'EXPORT'),(-1,2.0,-1,-5.5,'EXPORT'),(-2,-.5,-1,-1.5,'EXPORT'),(-3,1.3,-1,3.5,'EXPORT'),(-4,-2.6,1,6.0,None),(-5,2.9,1,-2.0,None)])
-    def upd(t): baz_idle(A,t); cam2(t,(-20.6,.15,1.9),(-20.0,.15,2.0),(0,.15,3.3),24)
+    def upd(t): baz_idle(A,t); cam2(t,(-20.6,.15,1.3),(-20.0,.15,1.35),(0,.15,1.7),24)
     return dict(upd=upd)
 SHOTS['HOOK']=HOOK
 def CHAIW_():
@@ -352,7 +352,7 @@ def NOIDEA():
     A=scot()
     def upd(t):
         scot_idle(A,t); H=A['sc']; H['root'].rotation_euler[1]=0; g=A['bp'].matrix_world.translation; h=headw(H); q=ease(t/DUR)
-        camset(tuple(LV((.45,-2.3,2.75),(.42,-1.45,2.45),q)),tuple(LV(((g.x+h.x)/2,-.2,(g.z+h.z)/2+.05),(g.x-.02,g.y-.2,g.z+.1),q)),36,8)
+        camset(tuple(LV((.45,-2.3,2.7),(.42,-1.45,2.35),q)),tuple(LV(((g.x+h.x)/2,-.2,g.z+.14),(g.x-.02,g.y-.2,g.z-.12),q)),36,8)
     return dict(upd=upd)
 SHOTS['NOIDEA']=NOIDEA
 # ================================================================ set E: the factory yard
@@ -558,7 +558,7 @@ def rest(A):
 def ONEBILL():
     A=gate(False); bi=bill_o(); A['fb']=ball_o(r=.26); A['bt']=bat_o()
     def upd(t):
-        gate_idle(A,t); wa=A['wa']; face(wa,mouth='grin',brow=.05,brow_r=-10,eyes=1.1); rest(A); wa['arm'][1].rotation_euler=(R(-88),R(14),0); bill_upd(bi,wa,1,ease_out(tl(t,.1,.7)),rz=-41)
+        gate_idle(A,t); wa=A['wa']; face(wa,mouth='grin',brow=.05,brow_r=-10,eyes=1.1); rest(A); wa['arm'][1].rotation_euler=(R(-80),R(14),0); bill_upd(bi,wa,1,ease_out(tl(t,.1,.7)),rz=-41)
         c1(t,wa,yaw=4,dist=3.4,lens=34,tz=-.6,sx=.3,push=.04)
     return dict(upd=upd)
 SHOTS['ONEBILL']=ONEBILL
@@ -572,8 +572,8 @@ SHOTS['BILLBHI']=BILLBHI
 def DOLLAR():
     A=gate(False); bi=bill_o(); A['fb']=ball_o(r=.26); A['bt']=bat_o()
     def upd(t):
-        gate_idle(A,t); wa=A['wa']; face(wa,mouth='grin',brow=.05,brow_r=-12,eyes=1.0); speak(wa,t,270,272,gesture=False); rest(A); wa['arm'][1].rotation_euler=(R(-88),R(14),0); bill_upd(bi,wa,1,1.0,rz=-41)
-        c1(t,wa,yaw=5,dist=3.2,lens=34,tz=-.55,sx=.32,push=0)
+        gate_idle(A,t); wa=A['wa']; face(wa,mouth='grin',brow=.05,brow_r=-12,eyes=1.0); speak(wa,t,270,272,gesture=False); rest(A); wa['arm'][1].rotation_euler=(R(-165),R(8),0); bill_upd(bi,wa,1,1.0,rz=-41)
+        c1(t,wa,yaw=5,dist=3.2,lens=34,tz=-.55,sx=.3,push=0)
     return dict(upd=upd)
 SHOTS['DOLLAR']=DOLLAR
 def CTA():
