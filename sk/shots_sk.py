@@ -11,9 +11,9 @@ def c1(t,H,yaw=12,dist=2.8,lens=36,dz=0.0,tz=-.22,push=.08,ref=None,q=None,sx=0.
     """single: camera in front of H (yaw degrees round from its facing), slow push-in"""
     h=headw(H); a=(H['root'].rotation_euler[2] if ref is None else R(ref))+R(yaw); f=Vector((math.sin(a),-math.cos(a),0)); d=dist*(1-push*(ease(t/DUR) if q is None else q)); h=h+Vector((-f.y,f.x,0))*sx
     camset(tuple(h+f*d+Vector((0,0,dz))),(h.x,h.y,h.z+tz),lens,8)
-def c2(t,Ha,Hb,frm=(0,-1),lens=30,fit=1.0,dz=.1,tz=-.6,push=.07,sh=0.0,pad=1.5):
+def c2(t,Ha,Hb,frm=(0,-1),lens=30,fit=1.0,dz=.1,tz=-.6,push=.07,sh=0.0,pad=1.5,cx=0.0):
     """two-shot square on to the pair, from the side that frm points to; distance set so both fit"""
-    a=headw(Ha); b=headw(Hb); m=(a+b)/2; d=b-a; d.z=0; n=Vector((-d.y,d.x,0)).normalized()
+    a=headw(Ha); b=headw(Hb); m=(a+b)/2; d=b-a; d.z=0; n=Vector((-d.y,d.x,0)).normalized(); m=m+d.normalized()*cx
     if n.x*frm[0]+n.y*frm[1]<0: n=-n
     dist=(d.length+pad)/(2*10.125/lens)*fit*(1-push*ease(t/DUR))
     camset(tuple(m+n*dist+d.normalized()*sh+Vector((0,0,dz))),(m.x,m.y,m.z+tz),lens,8)
@@ -175,7 +175,7 @@ def KAHAN():
     A=fbw()
     def upd(t):
         stitch(A,t); fb_boys(A,t,'calm',at=tuple(A['ball'].location)); fc(A['un'],'flat'); wa=A['wa']; speak(wa,t,54,58,gesture=False); pointw(wa,-1,tuple(A['ball'].location),tl(t,.05,.35))
-        c2(t,wa,A['za'],frm=(.4,.9),lens=30,fit=.95)
+        c2(t,wa,A['za'],frm=(.4,.9),lens=26,fit=1.0,cx=-.3)
     return dict(upd=upd)
 SHOTS['KAHAN']=KAHAN
 def WORLDCUP():
@@ -189,7 +189,7 @@ def HAANHAAN():
     def upd(t):
         stitch(A,t,work=.2,look=hp(A['wa'])); fb_boys(A,t,'calm','dead'); wa,za=A['wa'],A['za']; fc(wa,'laugh'); speak(wa,t,61,66,gesture=False); wa['root'].rotation_euler[0]=R(-6+4*math.sin(t*11)); wa['head'].rotation_euler[0]=R(-8+5*math.sin(t*11))
         wa['arm'][-1].rotation_euler=(R(-70+12*math.sin(t*10)),R(20),0); k=tl(t,ws(63),ws(63)+.25); wa['arm'][1].rotation_euler=(R(-46*k),R(30*k),0); look_at(za,hp(wa),1.0,maxyaw=45)
-        c2(t,wa,za,frm=(.4,.9),lens=32,fit=.92,sh=.1)
+        c2(t,wa,za,frm=(.4,.9),lens=26,fit=.97,cx=-.3)
     return dict(upd=upd)
 SHOTS['HAANHAAN']=HAANHAAN
 def TRUE_():
@@ -257,8 +257,8 @@ def CRICKET():
     A=baz('b',[(2,4.7,-1,5.0,None)]); wa,za=boys(A)
     def upd(t):
         baz_idle(A,t); b2(A,t); fc(wa,'smug'); fc(za,'calm'); look_at(wa,hp(za),.5,maxyaw=30); look_at(za,hp(wa),1.0,maxyaw=38); speak(wa,t,103,107,gesture=False)
-        k=tl(t,.05,.3); wa['arm'][-1].rotation_euler=(R(-146*k),R(8*k),0); wa['arm'][1].rotation_euler=(R(-18*k),R(-40*k),0)
-        c1(t,wa,yaw=-12,dist=2.9)
+        k=tl(t,.05,.3); wa['arm'][1].rotation_euler=(R(-112*k),R(-6*k),0); wa['arm'][-1].rotation_euler=(R(-18*k),R(40*k),0)
+        c1(t,wa,yaw=-12,dist=2.9,tz=-.12)
     return dict(upd=upd)
 SHOTS['CRICKET']=CRICKET
 def BAT():
@@ -417,7 +417,7 @@ SHOTS['MOQ2']=MOQ2
 def SIRF():
     A=fac()
     def upd(t):
-        fac_idle(A,t,'worry'); wa=A['wa']; speak(wa,t,193,196,gesture=False); k=tl(t,ws(195)-.2,ws(195)+.05); wa['arm'][-1].rotation_euler=(R(-140*k),R(8*k),0); wa['root'].rotation_euler[0]=R(4*k)
+        fac_idle(A,t,'worry'); wa=A['wa']; speak(wa,t,193,196,gesture=False); k=tl(t,ws(195)-.2,ws(195)+.05); wa['arm'][1].rotation_euler=(R(-116*k),R(12*k),0); wa['root'].rotation_euler[0]=R(4*k)
         c1(t,wa,yaw=-16,dist=2.7,lens=38)
     return dict(upd=upd)
 SHOTS['SIRF']=SIRF
@@ -439,8 +439,8 @@ def THEEK():
     A=fac()
     def upd(t):
         fac_idle(A,t,'firm'); wa,za=A['wa'],A['za']; speak(wa,t,208,213,gesture=False); k=tl(t,ws(210)-.2,ws(210)+.15)
-        for s in (1,-1): wa['arm'][s].rotation_euler=(R(-28*k),R(-s*(66+6*math.sin(t*9))*k),0)
-        look_at(za,hp(wa),1.0,maxyaw=50); c2(t,za,wa,frm=(0,-1),lens=30,pad=2.4)
+        for s in (1,-1): wa['arm'][s].rotation_euler=(R(-46*k),R(-s*(28+4*math.sin(t*9))*k),0)
+        look_at(za,hp(wa),1.0,maxyaw=50); c1(t,wa,yaw=-18,dist=3.3,lens=34,tz=-.35,sx=-.05)
     return dict(upd=upd)
 SHOTS['THEEK']=THEEK
 def AIRPORT():
