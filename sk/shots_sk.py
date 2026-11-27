@@ -7,9 +7,9 @@ SHOTS={}
 def cam2(t,p0,p1,tg,lens,tg1=None):
     q=ease(t/DUR); camset(LV(p0,p1,q),tg if tg1 is None else LV(tg,tg1,q),lens,8)
 def headw(H): return H['root'].matrix_world@Vector((0,0,4.75*H['u']))
-def c1(t,H,yaw=12,dist=2.8,lens=36,dz=0.0,tz=-.22,push=.08,ref=None,q=None):
+def c1(t,H,yaw=12,dist=2.8,lens=36,dz=0.0,tz=-.22,push=.08,ref=None,q=None,sx=0.0):
     """single: camera in front of H (yaw degrees round from its facing), slow push-in"""
-    h=headw(H); a=(H['root'].rotation_euler[2] if ref is None else R(ref))+R(yaw); f=Vector((math.sin(a),-math.cos(a),0)); d=dist*(1-push*(ease(t/DUR) if q is None else q))
+    h=headw(H); a=(H['root'].rotation_euler[2] if ref is None else R(ref))+R(yaw); f=Vector((math.sin(a),-math.cos(a),0)); d=dist*(1-push*(ease(t/DUR) if q is None else q)); h=h+Vector((-f.y,f.x,0))*sx
     camset(tuple(h+f*d+Vector((0,0,dz))),(h.x,h.y,h.z+tz),lens,8)
 def c2(t,Ha,Hb,frm=(0,-1),lens=30,fit=1.0,dz=.1,tz=-.6,push=.07,sh=0.0,pad=1.5):
     """two-shot square on to the pair, from the side that frm points to; distance set so both fit"""
@@ -69,8 +69,8 @@ def baz_idle(A,t):
         H=p['H']; H['root'].location[0]=p['x0']+p['d']*1.25*t; H['root'].location[1]=p['y']; H['root'].rotation_euler[2]=R(90*p['d']); walk(H,1.25*(t+3),step=.5); carry_pose(H); blink(H,t); fc(H,'calm')
 def boys(A): A['wa']=mk(WALEED,0,0,0,'waleed'); A['za']=mk(ZAIN,0,0,0,'zain'); return A['wa'],A['za']
 def HOOK():
-    A=baz('c',[(0,.3,-1,-10.5,'EXPORT'),(2,-1.7,-1,-7.0,'EXPORT'),(-1,2.0,-1,-4.5,'EXPORT'),(-2,-.5,-1,-.5,'EXPORT'),(-3,1.3,-1,4.0,None),(-4,-2.6,1,-7.5,None),(-5,2.9,1,-3.0,None)])
-    def upd(t): baz_idle(A,t); cam2(t,(-20.6,.15,1.9),(-19.4,.15,2.05),(0,.15,3.3),24)
+    A=baz('c',[(0,.3,-1,-12.6,'EXPORT'),(2,-1.6,-1,-8.0,'EXPORT'),(-1,2.0,-1,-5.5,'EXPORT'),(-2,-.5,-1,-1.5,'EXPORT'),(-3,1.3,-1,3.5,'EXPORT'),(-4,-2.6,1,6.0,None),(-5,2.9,1,-2.0,None)])
+    def upd(t): baz_idle(A,t); cam2(t,(-20.6,.15,1.9),(-20.0,.15,2.0),(0,.15,3.3),24)
     return dict(upd=upd)
 SHOTS['HOOK']=HOOK
 def CHAIW_():
@@ -104,14 +104,14 @@ def THISIS():
     return dict(upd=upd)
 SHOTS['THISIS']=THISIS
 def CAME():
-    A=baz('f',[(0,-4.5,-1,1.0,'EXPORT'),(-1,4.7,-1,5.0,None)]); wa,za=boys(A)
+    A=baz('f',[(0,-4.5,-1,1.0,None),(-1,4.8,-1,5.0,None)]); wa,za=boys(A)
     def upd(t):
-        baz_idle(A,t); walk_path(wa,[(-10.6,1.5),(-5.0,1.5)],t,-.5,DUR+.6,step=.5,arm=22); walk_path(za,[(-10.4,3.0),(-4.8,3.0)],t,-.5,DUR+.6,step=.5,arm=22)
-        fc(wa,'bored'); fc(za,'calm'); x=wa['root'].location[0]; look_at(wa,(x+4,1.5-5*math.sin(t*2.0),2.7),.8,maxyaw=45)
-        camset((x+5.6,2.25,1.9),(x,2.25,1.5),28,8)
+        baz_idle(A,t); walk_path(wa,[(-10.6,1.05),(-5.0,1.05)],t,-.5,DUR+.6,step=.5,arm=22); walk_path(za,[(-10.4,2.8),(-4.8,2.8)],t,-.5,DUR+.6,step=.5,arm=22)
+        fc(wa,'bored'); fc(za,'calm'); x=wa['root'].location[0]; look_at(wa,(x+4,1.05-5*math.sin(t*2.0),2.7),.8,maxyaw=45)
+        camset((x+5.8,1.9,1.9),(x,1.92,1.5),28,8)
     return dict(upd=upd)
 SHOTS['CAME']=CAME
-def b1(A,t): standp(A['wa'],t,-6.0,2.0,14); standp(A['za'],t,-4.4,2.2,-14)
+def b1(A,t): standp(A['wa'],t,-6.1,2.0,14); standp(A['za'],t,-4.3,2.2,-14)
 def SMALL():
     A=baz('f',[(2,4.7,1,-11.0,None)]); wa,za=boys(A)
     def upd(t):
@@ -232,7 +232,7 @@ def KICK():
         kk=tl(t,tk-.1,tk+.08)*(1-tl(t,tk+.12,tk+.55)); st['leg'][1].rotation_euler[0]=R(-75*kk); st['root'].rotation_euler[0]=R(-8*kk); fc(st,'firm')
         q=max(0,min(1,(t-tk)/.5)); A['ball'].location=(L(0,3.05,q),L(19.5,27.3,q),.24+2.25*q+2.2*q*(1-q)); A['ball'].rotation_euler=(t*18,0,t*7)
         d=tl(t,tk+.05,tk+.42); standp(gk,t,-2.9*d,25.7,0); gk['root'].rotation_euler[1]=R(74*d); gk['root'].location[2]=.75*math.sin(pi*d)*(1 if d<1 else 0)+.32*d; arms_up(gk,.5+.5*d,t,30); fc(gk,'shock' if d>.3 else 'firm')
-        cam2(t,(-.6,12.2,2.7),(-.4,13.4,2.5),(.3,22.5,1.5),28,(.8,23.5,1.7))
+        cam2(t,(.3,11.6,4.9),(.4,12.6,4.7),(.3,22.5,1.3),30,(.8,23.5,1.5))
     return dict(upd=upd)
 SHOTS['KICK']=KICK
 def EVERY():
@@ -245,7 +245,7 @@ def EVERY():
     return dict(upd=upd)
 SHOTS['EVERY']=EVERY
 # ================================================================ bazaar again: bats, hockey, gloves
-def b2(A,t): standp(A['wa'],t,.2,2.3,14); standp(A['za'],t,1.8,2.45,-14)
+def b2(A,t): standp(A['wa'],t,.1,2.3,14); standp(A['za'],t,1.9,2.45,-14)
 def TRIED():
     A=baz('b',[(2,-4.5,-1,5.0,None)]); wa,za=boys(A)
     def upd(t):
@@ -356,7 +356,7 @@ def NOIDEA():
     return dict(upd=upd)
 SHOTS['NOIDEA']=NOIDEA
 # ================================================================ set E: the factory yard
-CP=(-8.6,3.4); WP2=(-11.0,2.9); ZP2=(-12.5,3.3); BKP=(-5.9,3.0)
+CP=(-8.15,5.0); WP2=(-10.0,4.9); ZP2=(-11.75,5.1); BKP=(-5.2,3.0)
 def fac(rider=False):
     factory(); FILLE[0]=0; A={}; A['wa']=mk(WALEED,WP2[0],WP2[1],18,'waleed'); A['za']=mk(ZAIN,ZP2[0],ZP2[1],22,'zain')
     if rider: A['bk']=kbike((0,0,0),180,'#8A3A2A',rider=RAFIQ,name='rafiq')
@@ -384,21 +384,21 @@ SHOTS['OLDBIKE']=OLDBIKE
 def SIMPLE():
     A=fac()
     def upd(t):
-        fac_idle(A,t); ch=A['ch']; ch['arm'][-1].rotation_euler=(R(-58+14*math.sin(t*11)),R(-26),0); look_at(ch,(-8.6,2.4,1.3),.6,maxpitch=25); c1(t,ch,yaw=8,dist=3.6,lens=34,tz=-.8)
+        fac_idle(A,t); ch=A['ch']; ch['arm'][-1].rotation_euler=(R(-58+14*math.sin(t*11)),R(-26),0); look_at(ch,(CP[0],2.4,1.3),.6,maxpitch=25); c1(t,ch,yaw=8,dist=3.6,lens=34,tz=-.8,sx=.28)
     return dict(upd=upd)
 SHOTS['SIMPLE']=SIMPLE
 def NORMAL():
     A=fac()
     def upd(t):
-        fac_idle(A,t,sip=.7*tl(t,.5,.95)*(1-tl(t,1.3,1.65))); ch=A['ch']; look_at(ch,(-8.4,-4,2.1),1.0); c1(t,ch,yaw=-8,dist=2.7,lens=38)
+        fac_idle(A,t,sip=.7*tl(t,.5,.95)*(1-tl(t,1.3,1.65))); ch=A['ch']; look_at(ch,(CP[0]+.2,-4,2.1),1.0); c1(t,ch,yaw=-8,dist=2.7,lens=38)
     return dict(upd=upd)
 SHOTS['NORMAL']=NORMAL
 def FORTY():
     A=fac()
     def upd(t):
-        fac_idle(A,t); wa,za,ch=A['wa'],A['za'],A['ch']; k=tl(t,.15,.7); standp(wa,t,WP2[0],WP2[1],L(18,150,k)); standp(za,t,ZP2[0],ZP2[1],L(22,168,tl(t,.3,.9))); fc(wa,'wow'); fc(za,'smug')
-        look_at(wa,(-9.9,6.8,3.6),1.0,maxyaw=40); look_at(ch,(-9,-6,2.2),1.0); fc(ch,'smug')
-        cam2(t,(-8.3,.6,1.9),(-9.6,-3.6,3.4),(-8.7,3.6,1.9),26,(-9.8,6.2,2.5))
+        fac_idle(A,t); wa,za,ch=A['wa'],A['za'],A['ch']; k=tl(t,.15,.7); standp(wa,t,WP2[0],WP2[1],L(18,165,k)); standp(za,t,ZP2[0],ZP2[1],L(22,175,tl(t,.3,.9))); fc(wa,'wow'); fc(za,'smug')
+        look_at(wa,(-9.9,6.8,5.5),1.0,maxyaw=40,maxpitch=40); look_at(ch,(-8.5,-6,2.4),1.0); fc(ch,'smug')
+        cam2(t,(-9.9,-2.2,2.5),(-9.9,-1.5,2.7),(-9.9,6.2,3.7),24)
     return dict(upd=upd)
 SHOTS['FORTY']=FORTY
 def EKFB():
@@ -431,7 +431,7 @@ SHOTS['SAMPLE']=SAMPLE
 def HOPE():
     A=fac()
     def upd(t):
-        k=tl(t,1.0,1.4); fac_idle(A,t,'smug' if k>.5 else 'firm'); wa=A['wa']; look_at(wa,(-11.0+3*math.sin(t*2.2),-6,3.6),1-k,maxyaw=50)
+        k=tl(t,1.0,1.4); fac_idle(A,t,'smug' if k>.5 else 'firm'); wa=A['wa']; look_at(wa,(WP2[0]+3*math.sin(t*2.2),-6,3.6),1-k,maxyaw=50)
         c1(t,wa,yaw=-28,dist=2.6,lens=38)
     return dict(upd=upd)
 SHOTS['HOPE']=HOPE
@@ -453,11 +453,11 @@ SHOTS['AIRPORT']=AIRPORT
 def NOBODY():
     A=fac()
     def upd(t):
-        fac_idle(A,t,'smug'); ch=A['ch']; fc(ch,'dead'); blink(ch,t,force=1 if (.3<t<.45 or .95<t<1.1) else 0); look_at(ch,(-8.9,-4,2.1),1.0); c1(t,ch,yaw=-6,dist=2.5,lens=40,push=.04)
+        fac_idle(A,t,'smug'); ch=A['ch']; fc(ch,'dead'); blink(ch,t,force=1 if (.3<t<.45 or .95<t<1.1) else 0); look_at(ch,(CP[0]-.3,-4,2.1),1.0); c1(t,ch,yaw=-6,dist=2.5,lens=40,push=.04)
     return dict(upd=upd)
 SHOTS['NOBODY']=NOBODY
 # ================================================================ set F: the field and the airport
-MEN=[RAFIQ,SHOPK,BIZM[0],BIZM[1]]; MX=(-2.7,-.9,.9,2.7)
+MEN=[RAFIQ,SHOPK,BIZM[0],BIZM[1]]; MX=(-3.0,-1.0,1.0,3.0)
 def NEEDED():
     airfield(False); FILLE[0]=0; P=[(-1.9+1.27*i,.35*i) for i in range(4)]; Hs=[mk(c,P[i][0],P[i][1],-20,'m%d'%i) for i,c in enumerate(MEN)]
     def upd(t):
@@ -559,7 +559,7 @@ def ONEBILL():
     A=gate(False); bi=bill_o(); A['fb']=ball_o(r=.26); A['bt']=bat_o()
     def upd(t):
         gate_idle(A,t); wa=A['wa']; face(wa,mouth='grin',brow=.05,brow_r=-10,eyes=1.1); rest(A); wa['arm'][1].rotation_euler=(R(-88),R(14),0); bill_upd(bi,wa,1,ease_out(tl(t,.1,.7)),rz=-41)
-        c1(t,wa,yaw=4,dist=3.4,lens=34,tz=-.6)
+        c1(t,wa,yaw=4,dist=3.4,lens=34,tz=-.6,sx=.3,push=.04)
     return dict(upd=upd)
 SHOTS['ONEBILL']=ONEBILL
 def BILLBHI():
@@ -573,7 +573,7 @@ def DOLLAR():
     A=gate(False); bi=bill_o(); A['fb']=ball_o(r=.26); A['bt']=bat_o()
     def upd(t):
         gate_idle(A,t); wa=A['wa']; face(wa,mouth='grin',brow=.05,brow_r=-12,eyes=1.0); speak(wa,t,270,272,gesture=False); rest(A); wa['arm'][1].rotation_euler=(R(-88),R(14),0); bill_upd(bi,wa,1,1.0,rz=-41)
-        c1(t,wa,yaw=5,dist=3.15,lens=34,tz=-.55)
+        c1(t,wa,yaw=5,dist=3.2,lens=34,tz=-.55,sx=.32,push=0)
     return dict(upd=upd)
 SHOTS['DOLLAR']=DOLLAR
 def CTA():

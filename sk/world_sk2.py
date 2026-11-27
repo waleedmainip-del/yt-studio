@@ -35,11 +35,11 @@ def factory():
     for q in (-11,-7,7,11):
         B.box((q,8.97,5.2),(1.0,.05,.9),M('#27344A',.3,spec=.8),0); B.box((q,8.94,4.25),(1.15,.09,.06),tr,0)
         for qq in (-.5,0,.5): B.box((q+qq,8.95,5.2),(.03,.04,.9),tr,0)
-    LAB=['GERMANY','BRAZIL','JAPAN','ENGLAND','U.S.A.','SPAIN','QATAR','FRANCE','ITALY','TURKEY','CANADA','MEXICO']; k=0
-    for row in range(4):                                                            # the wall of cartons, each going to a different country
+    LAB=['GERMANY','BRAZIL','JAPAN','ENGLAND','U.S.A.','SPAIN','QATAR','FRANCE','ITALY','TURKEY','CANADA','MEXICO','CHINA','AUSTRALIA','U.A.E.','KOREA','EGYPT','KENYA','SWEDEN','POLAND','MALAYSIA']; k=0
+    for row in range(7):                                                            # the tower of cartons, each going to a different country
         for col in range(3):
-            if row==3 and col==2: continue
-            carton_b(-11.6+col*1.72,6.8,.14+row*1.02,.84,.6,.5,LAB[k%12],n=(0,-1,0),size=.2); k+=1
+            if row==6 and col==2: continue
+            carton_b(-11.6+col*1.72,6.8,.14+row*1.02,.84,.6,.5,LAB[k%21],n=(0,-1,0),size=.2 if len(LAB[k%21])<8 else .16); k+=1
     for q in (-11.6,-9.88,-8.16): B.box((q,6.8,.07),(.84,.62,.07),M('#8A6A46',.8,kind='wood'),0)
     e=empty((11.0,5.4,0)); cb=M('#2B58C9',.5,metal=.3); obox((.6,0,2.6),(3.6,1.25,1.3),cb,.03,e)             # container truck, side on
     for q in range(12): obox((-2.7+q*.6,-1.26,2.6),(.05,.02,1.25),M(shade('#2B58C9',.8),.5),0,e)
