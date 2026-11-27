@@ -152,6 +152,14 @@ def bazaar(mood='sk_day',lights=True):
         B.box((x,y,h/2),(w,d,h/2),M(c,.9,kind='wall'),0); B.box((x,y,h+.1),(w+.1,d+.1,.1),M('#F2EBDA',.8),0)
         if k%3==0: B.cyl((x+w*.4,y,h+.8),.5,1.0,M(r.choice(['#16171C','#2B58C9','#F4F1EA']),.5),seg=10)
         if k%7==0: B.cyl((x,y,h+2.6),.5,5.0,M('#F2E9D0',.7),seg=8); B.ico((x,y,h+5.4),.7,M('#2E6A5A',.5),sc=(1,1,1.2),sub=2)
+    r2_=random.Random(77)                                                           # more low-rise city beyond the clock tower (own RNG so the street itself stays identical)
+    for k in range(80):
+        x=r2_.uniform(48,100); y=r2_.uniform(-50,50); w=r2_.uniform(2.5,5.5); d=r2_.uniform(2.5,5.5); h=r2_.uniform(4,10); c=r2_.choice(WALLC)
+        B.box((x,y,h/2),(w,d,h/2),M(c,.9,kind='wall'),0); B.box((x,y,h+.1),(w+.1,d+.1,.1),M('#F2EBDA',.8),0)
+        if k%3==0: B.cyl((x+w*.4,y,h+.8),.5,1.0,M(r2_.choice(['#16171C','#2B58C9','#F4F1EA']),.5),seg=10)
+        if k%9==0: B.cyl((x,y,h+2.6),.5,5.0,M('#F2E9D0',.7),seg=8); B.ico((x,y,h+5.4),.7,M('#2E6A5A',.5),sc=(1,1,1.2),sub=2)
+    for k in range(14): tree(r2_.uniform(46,90),r2_.uniform(-40,40),r2_.uniform(1.3,2.0))
+    B.box((95,0,-.12),(60,90,.1),M('#5A5650',.9,kind='concrete',sc=1.6),0)
     for k,x in enumerate((-15,-6,3,12)):                                          # cloth shades strung high across the lane
         c=['#E8554D','#F2C14E','#2E8AD8','#6FC38A'][k]
         B.box((x,0,8.9-.25*(k%2)),(1.25,5.3,.02),M(c,.85,kind='fabric'),0,rot=(0,R(5 if k%2 else -5),0))

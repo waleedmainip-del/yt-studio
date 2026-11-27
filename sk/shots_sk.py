@@ -594,6 +594,6 @@ def SMALLCITY():
 SHOTS['SMALLCITY']=SMALLCITY
 def NOSEA():
     A=baz('',GW,mood='sk_gold')
-    def upd(t): baz_idle(A,t); cam2(t,(0,0,11.5),(7,0,15.5),(40,0,10.5),24,(40,0,9.0))
+    def upd(t): baz_idle(A,t); cam2(t,(14.5,0,10.5),(19.5,0,14.5),(40,0,10.8),24,(40,0,9.6))
     return dict(upd=upd)
 SHOTS['NOSEA']=NOSEA
