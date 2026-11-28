@@ -173,9 +173,12 @@ def bike_roll(V,x,y,rz,dist,wheelie=0.0,z=0.0,bank=0.0):
 def bike_idle(V,t,k=1.0):
     """engine shake while standing"""
     V['P'].location=(.64+.004*k*math.sin(t*61),.003*k*math.sin(t*47),-.33+.006*k*math.sin(t*53))
-def bike_smoke(V,t0,n=6,every=.22,seed=1):
-    """exhaust puffs from the open pipe"""
-    for k in range(n): puff((-.84,-.14,.39),t0+k*every,size=.07,n=3,col=M('#C8CAD0',.9,alpha=.7),rise=.3,life=.6,drift=(-.7,0,0),seed=seed+k,parent=V['P'])
+def bike_smoke(V,t0,n=6,every=.22,seed=1,fire=True):
+    """exhaust puffs (and little backfire flashes) from the open pipe"""
+    sm=M('#E6E8EC',.9,emit=.25,alpha=.75); fm=M('#FFB040',.3,emit=9.0)
+    for k in range(n):
+        puff((-.86,-.14,.39),t0+k*every,size=.17,n=4,col=sm,rise=.32,life=.75,drift=(-.9,0,0),seed=seed+k,parent=V['P'])
+        if fire and k%2==0: puff((-.84,-.14,.39),t0+k*every,size=.1,n=2,col=fm,rise=.02,life=.13,drift=(-.35,0,0),seed=seed+50+k,parent=V['P'])
 def dino_steps(v,d0,T,S=4.2,duty=.62):
     """times (and which foot) at which a foot lands, for a straight walk dist=d0+v*t"""
     cyc=S/duty; out=[]; k=int(d0/cyc)-1

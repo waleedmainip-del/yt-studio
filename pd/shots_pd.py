@@ -332,9 +332,9 @@ def SILENCER():
     V,FB=swarm(9,0,far=40)
     for k in (2,5,1): bike_smoke(V[k],.05+.05*k,n=11,every=.15,seed=k)
     def upd(t):
-        swarm_upd(V,FB,t,0,wh=lambda k,t: (26*abs(math.sin(t*3.2)) if k==0 else 0)); y=-5.5+9*t
+        swarm_upd(V,FB,t,0,wh=lambda k,t: (26*abs(math.sin(t*3.2)) if k==0 else (20*ease((t-.45)/.3)*(1-ease((t-1.15)/.35)) if k==2 else 0))); y=-5.5+9*t
         for k in (2,5,1): bike_idle(V[k],t,2.0)
-        cam2(t,(8.3,y+3.6,1.0),(8.2,y+2.9,1.05),(3.0,y-.7,1.55),28)
+        cam2(t,(7.6,y+3.2,.55),(7.5,y+2.6,.6),(3.0,y-.6,1.75),28)
     return dict(upd=upd)
 SHOTS['SILENCER']=SILENCER
 # ================================================================ Islamabad night: Pindi boys vs the dinosaur
