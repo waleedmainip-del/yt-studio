@@ -1,0 +1,22 @@
+name: upload-youtube
+on:
+  workflow_dispatch:
+  push:
+    paths: ["upload/job.json"]
+permissions:
+  contents: read
+concurrency:
+  group: yt-upload
+  cancel-in-progress: false
+jobs:
+  upload:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: upload
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python3 tools/yt_upload.py upload/job.json
