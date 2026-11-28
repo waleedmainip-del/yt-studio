@@ -81,7 +81,7 @@ def VISIT():
     wa,ra=cafe2(); FILLE[0]=60; cu=cup(ra,1); cw=cup_of(wa,-1)
     def upd(t):
         standp(wa,t,*WP); standp(ra,t,*RP); hold_chai(wa,cw,-1); hold(ra,1,-64); fc(wa,'calm'); fc(ra,'smug'); look_at(wa,headw(ra),.7); look_at(ra,headw(wa),.6)
-        c2(t,wa,ra,frm=(1,0),lens=30,pad=1.9,tz=-.75)
+        cam2(t,(-5.0,-2.6,1.0),(-5.5,-2.6,1.05),(-11.6,-2.6,2.65),26)
     return dict(upd=upd)
 SHOTS['VISIT']=VISIT
 def BRO():
@@ -243,7 +243,7 @@ def PLANB():
     def upd(t):
         standp(wa,t,W2[0],W2[1],50); standp(ra,t,R2[0],R2[1],140); fc(wa,'worry'); speak(wa,t,106,109,gesture=False); what_pose(wa,1,t,.6); look_at(wa,headw(ra),.6); look_at(ra,headw(wa),.6); fc(ra,'worry')
         k=ease((t-.2)/.4); ear(ra,1,1-k); 
-        c2(t,wa,ra,frm=(1,0),lens=32,pad=1.7,sh=.5)
+        cam2(t,(-4.7,-3.0,1.0),(-5.2,-3.0,1.05),(-10.9,-3.0,2.6),25)
     return dict(upd=upd)
 SHOTS['PLANB']=PLANB
 def HAI():
