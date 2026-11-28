@@ -55,7 +55,7 @@ def EXCEPT():
         S=V[0]['rider']; hold_chai(S,cu,1,sip=ease((t-.8)/.45)*(1-ease((t-1.8)/.4))); fc(S,'bored'); S['arm'][-1].rotation_euler=(R(-20),0,0)
         Bi=V[1]['rider']; phone_up(Bi,1,h=3.3); Bi['head'].rotation_euler[0]=R(14); fc(Bi,'flat'); Bi['arm'][-1].rotation_euler=(R(-20),0,0)
         G=V[2]['rider']; crossed(G); face(G,mouth='O' if .9<t<1.9 else 'flat',brow=.03,brow_r=-4,eyes=.5 if .9<t<1.9 else .8)
-        cam2(t,(5.75,-5.8,1.9),(5.75,-5.0,1.95),(5.75,3.5,4.3),24)
+        cam2(t,(5.75,-3.7,1.5),(5.75,-3.1,1.55),(5.75,3.5,3.4),26)
     return dict(upd=upd)
 SHOTS['EXCEPT']=EXCEPT
 def ISB():
@@ -129,7 +129,7 @@ def DOES():
     def upd(t):
         for i,H in enumerate(G):
             standp(H,t,-10.6,(10.8,12.75,8.85)[i],90); look_at(H,dn,.9,maxyaw=70); fc(H,'flat'); k=ease((t-.75)/.4); phone_up(H,1,k,h=4.3,fw=1.2,sx=.45)
-        cam2(t,(-2.6,11.4,2.0),(-3.4,11.2,2.05),(-10.6,10.8,2.2),28)
+        cam2(t,(-3.5,10.8,1.0),(-4.1,10.8,1.05),(-10.6,10.8,2.55),26)
     return dict(upd=upd)
 SHOTS['DOES']=DOES
 def CHILL():
@@ -358,7 +358,7 @@ def LOOKED():
         conf_idle(V,t); a=ease((t-.35)/.3); b=ease((t-1.05)/.3)
         S['head'].rotation_euler=(R(-12*(1-a)),0,R(-38*a+76*b)); fc(S,'flat' if b<.9 else 'smug')
         for H in (Bi,G): look_at(H,LV((5.75,16,7),tuple(headw(S)),a),1.0,maxyaw=70); fc(H,'flat')
-        cam2(t,(5.75,13.4,1.75),(5.75,12.8,1.8),(5.75,5.8,2.05),24)
+        cam2(t,(5.75,11.5,1.0),(5.75,11.0,1.05),(5.75,5.8,2.25),22)
     return dict(upd=upd)
 SHOTS['LOOKED']=LOOKED
 def ROARBACK():

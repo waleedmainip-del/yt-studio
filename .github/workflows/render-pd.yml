@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: pd-render-r9
+  group: pd-render-r10
   cancel-in-progress: false
 jobs:
   render:
