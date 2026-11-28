@@ -11,6 +11,16 @@ try:
         refresh_token=os.environ['YT_REFRESH_TOKEN'], grant_type='refresh_token')).encode()))['access_token']
 except urllib.error.HTTPError as e:
     print('TOKEN ERROR', e.code, e.read().decode()[:400]); sys.exit(2)
+if job.get('update_id'):  # change the privacy / schedule of a video that is already uploaded (no file needed)
+    st = dict(privacyStatus=job.get('privacy', 'private'), selfDeclaredMadeForKids=False)
+    if job.get('publish_at'): st['publishAt'] = job['publish_at']
+    req = urllib.request.Request('https://www.googleapis.com/youtube/v3/videos?part=status', data=json.dumps(dict(id=job['update_id'], status=st)).encode(),
+                                 headers={'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json'}, method='PUT')
+    try:
+        out = json.load(urllib.request.urlopen(req, timeout=120))
+    except urllib.error.HTTPError as e:
+        print('UPDATE ERROR', e.code, e.read().decode()[:600]); sys.exit(4)
+    print('UPDATED id=%s privacy=%s publishAt=%s' % (out['id'], out['status']['privacyStatus'], out['status'].get('publishAt'))); sys.exit(0)
 path = job.get('video_path')
 if job.get('video_url'):
     path = '/tmp/video.mp4'; urllib.request.urlretrieve(job['video_url'], path)
