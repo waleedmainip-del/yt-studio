@@ -3,7 +3,7 @@
 #   viewpt()  Margalla view point at night: terrace, railing, city lights far below      track()  sunrise walking track in a park + office door
 #   daftar()  the government office (towers of files)                                   deck()   pirate ship deck (one hook shot)
 MOODS['ib_night']=dict(sun=(52,-40),e=.95,col=(.62,.72,1.0),top='#060A24',bot='#27336E',sky=.95,mist='#18214A',cloud='#2A3466',cov=.3,cstr=.55)
-MOODS['ib_day']=dict(sun=(52,-38),e=2.5,col=(1,.95,.85),top='#2F86E0',bot='#CFE8FF',sky=.95,mist='#DCE8F2',cloud='#FFFFFF',cov=.3,cstr=.9)
+MOODS['ib_day']=dict(sun=(52,-38),e=2.5,col=(1,.95,.85),top='#2F86E0',bot='#CFE8FF',sky=.95,mist='#DCE8F2',cloud='#FFFFFF',cov=.6,cstr=.9)
 MOODS['ib_noon']=dict(MOODS['ib_day'],sun=(50,-62),e=2.3)
 MOODS['ib_gold']=dict(sun=(70,-56),e=2.6,col=(1,.82,.58),top='#5B86CC',bot='#FFD0A0',sky=.92,mist='#F0CDA8',cloud='#FFE0C0',cov=.4,cstr=.85)
 MOODS['ib_dawn']=dict(sun=(80,84),e=2.4,col=(1,.72,.46),top='#6A7FD0',bot='#FFC08A',sky=.95,mist='#F2C8A8',cloud='#FFD0B0',cov=.4,cstr=.85)

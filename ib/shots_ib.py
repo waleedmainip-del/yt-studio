@@ -571,7 +571,7 @@ def NAU2():
     def upd(t):
         standp(d,t,5.6,-.9,-30); fc(d,'bored'); speak(d,t,303,309,gesture=False); k=ease((t-.05)/.3)*(1-ease((t-we(306)-.15)/.3)); phone_up(d,1,k,h=3.5,fw=1.3,sx=.5); d['head'].rotation_euler[2]=R(-40*(1-k)); d['arm'][-1].rotation_euler=(0,0,0)
         standp(w,t,WF[0],WF[1],0); fc(w,'sad')
-        c1(t,d,yaw=22,dist=3.0,lens=40,ref=-30)
+        c1(t,d,yaw=-35,dist=3.0,lens=40,ref=-30)
     return dict(upd=upd)
 SHOTS['NAU2']=NAU2
 def SURVIVE():
