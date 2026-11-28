@@ -95,7 +95,7 @@ def sboard(body,loc,n=(0,-1,0),size=.34,pole_h=None,bg='#1E6A3A'):
     if pole_h: B.cyl((x-n[0]*.08,y-n[1]*.08,pole_h/2),.06,pole_h,M('#C9CED8',.4,metal=.5),seg=8)
     sign(body,(x,y,z),size,'#FFFFFF',bg,n=n,e=1.6,pad=.2,th=.06,frame='#F6F4EE')
 # ================================================================ Margalla view point
-def viewpt(mood='ib_pre'):
+def viewpt(mood='ib_pre',board=True):
     """terrace x -9..9, y -2..9. railing on the south edge (y=-2): the city lies far below to the south. bench at (-1.5,1.6) facing south. pines + hill rise to the north"""
     NIGHT[0]=1.0; S=setup_world(mood,shadow=60); r=random.Random(31)
     st=M('#8E8778',.9,kind='tile',sc=.9); B.box((0,3.5,-.15),(9.5,5.6,.15),st,0); B.box((0,-2.15,.25),(9.6,.25,.4),M('#7A7468',.9,kind='concrete',sc=.6),.04)
@@ -128,8 +128,9 @@ def viewpt(mood='ib_pre'):
     B.cyl((4.6,3.2,2.2),.09,4.4,dk,seg=8); B.ico((4.6,3.2,4.55),.3,lit('#FFD9A0',8.0,always=True),sub=2); B.box((4.6,3.2,4.9),(.36,.36,.05),dk,.02); point((4.6,3.0,4.2),480,(1,.82,.56),r=.4,shadow=False)
     B.cyl((-5.2,-1.2,.7),.06,1.4,dk,seg=8); B.cyl((-5.2,-1.35,1.5),.13,.6,M('#C9CED8',.3,metal=.8),rot=(R(78),0,0),seg=12)
     dustbin(6.6,-.8)
-    for k in (-1,1): B.cyl((3.2+k*1.9,8.4,1.3),.08,2.6,wd,seg=6)
-    sign('MARGALLA VIEW POINT',(3.2,8.3,2.3),.3,'#FFFFFF','#2F5D50',n=(0,-1,0),e=1.5,pad=.2,th=.06,frame='#E6B93A')
+    if board:
+        for k in (-1,1): B.cyl((3.2+k*1.9,8.4,1.3),.08,2.6,wd,seg=6)
+        sign('MARGALLA VIEW POINT',(3.2,8.3,2.3),.3,'#FFFFFF','#2F5D50',n=(0,-1,0),e=1.5,pad=.2,th=.06,frame='#E6B93A')
     for k in range(190): a=r.uniform(0,6.283); el=r.uniform(.08,1.25); d=520; B.ico((d*math.cos(a)*math.cos(el),d*math.sin(a)*math.cos(el),d*math.sin(el)),r.uniform(.6,1.4),M('#FFFFFF',.3,emit=6.0),sub=1)
     B.ico((60,-470,150),24,M('#FFF6D8',.3,emit=3.2),sub=3)
     B.done('viewpt'); return S

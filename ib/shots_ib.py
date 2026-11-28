@@ -53,7 +53,7 @@ AB=(8.2,7.75,3.55)     # aunty's spot on the balcony
 QX=[0.0,1.9,3.8,5.7,7.6,9.5]; QP=[QX[4],QX[2],QX[3],QX[0],QX[1],QX[5]]; QC=(-4.2,2.2,1.9)
 def queue(mood='ib_day'):
     sector(mood,0.0,stars=False,signal='green'); FILLE[0]=40
-    B.cyl((-1.7,5.7,1.6),.06,3.2,M('#C9CED8',.4,metal=.5),seg=8); sign('BUS STOP  G-10',(-1.7,5.62,3.0),.26,'#FFFFFF','#1E6A3A',n=(0,-1,0),pad=.18,th=.06,frame='#F6F4EE'); B.done('stop')
+    B.cyl((3.6,5.95,2.5),.06,5.0,M('#C9CED8',.4,metal=.5),seg=8); sign('BUS STOP  G-10',(3.52,5.91,4.5),.26,'#FFFFFF','#1E6A3A',n=(-.92,-.39,0),pad=.18,th=.06,frame='#F6F4EE'); B.done('stop')
     G=[mk(UNCLEQ,QP[0],5.0,-90,'q0'),mk(SUPER,QP[1],5.0,-90,'q1'),mk(PIRATE,QP[2],5.0,-90,'q2'),mk(WALEED,QP[3],5.0,-90,'waleed'),vamp(QP[4],5.0,-90,'drac'),mk(AUNTY,QP[5],5.0,-90,'q5')]
     mask(G[1]); cape(G[1],'#16909E','#F2C14E',collar=False); pirate_hat(G[2]); um=umbrella(); return G,um
 def queue_idle(G,um,t):
@@ -203,11 +203,11 @@ def SAVER():
 SHOTS['SAVER']=SAVER
 def naan(H): return in_hand(H,-1,lambda e:(obox((0,0,-.3),(.2,.08,.24),M('#F4F1EA',.8,kind='fabric'),.04,e),obox((0,0,-.05),(.16,.03,.05),M('#F4F1EA',.8),.02,e),obox((0,0,-.2),(.14,.085,.07),M('#D9A45A',.8),.02,e)))
 def FINDS():
-    sector('ib_night',1.0); FILLE[0]=70; w=mk(WALEED,24.5,5.0,-90,'waleed'); naan(w); d=vamp(16.2,1.6,155,'drac')
+    sector('ib_night',1.0); FILLE[0]=110; w=mk(WALEED,24.5,5.0,-90,'waleed'); naan(w); d=vamp(16.6,2.4,-45,'drac'); lamp((14.6,1.0,2.6),150,(.6,.7,1.0))
     def upd(t):
-        walk_path(w,[(24.5,5.0),(21,5.0)],t,-.5,DUR+.6,step=.55,arm=20); blink(w,t); fc(w,'calm'); w['arm'][-1].rotation_euler=(0,0,0)
-        vstand(d,t,16.2,1.6,155,flap=.5); look_at(d,headw(w),1.0,maxyaw=80)
-        cam2(t,(12.6,-2.6,2.1),(13.0,-2.1,2.15),(22.5,5.0,2.2),30)
+        walk_path(w,[(24.5,5.0),(22,5.0)],t,-.5,DUR+.6,step=.55,arm=20); blink(w,t); fc(w,'calm'); w['arm'][-1].rotation_euler=(0,0,0)
+        q=ease((t-.55)/.5); vstand(d,t,16.6,2.4,-45+85*q,flap=.5); look_at(d,headw(w),ease((t-.45)/.4),maxyaw=80); fc(d,'bored' if t<.5 else 'smug')
+        cam2(t,(13.6,-.6,1.8),(13.9,-.4,1.85),(18.5,2.6,2.0),30)
     return dict(upd=upd)
 SHOTS['FINDS']=FINDS
 def WALEED_():
@@ -239,7 +239,7 @@ def NEWPLAN():
         q=ease((t-.15)/.45); vstand(d,t,DK[0],DK[1],90-80*q,flap=.6); k=1-ease(t/.35); claws(d,t,k); i=ease((t-ws(134)+.15)/.25)
         fc(d,'worry' if t<.5 else ('wow' if i>.5 else 'flat'))
         if i>0: d['arm'][1].rotation_euler=(R(-150*i),0,R(8)); d['head'].rotation_euler[2]=R(-38*i)
-        cam2(t,(17.9,1.3,1.9),(17.7,1.6,1.9),(DK[0],DK[1],2.0),34)
+        cam2(t,(18.2,1.3,1.9),(18.0,1.6,1.9),(DK[0]+.3,DK[1],2.0),34)
     return dict(upd=upd)
 SHOTS['NEWPLAN']=NEWPLAN
 # ================================================================ the house
@@ -252,7 +252,7 @@ def INVITED():
         standp(d,t,HG[0],y,180); walk(d,2.1*a,step=.5,arm=18) if a<1 else None; cape_flap(d,t,amp=5+10*b*(1-c)); d['root'].rotation_euler[0]=R(-13*b*(1-c)); fc(d,'shock' if b>.3 else 'smug')
         if b>.2: hands_head(d,(1-c)*.0); d['arm'][1].rotation_euler=(R(-95*(1-c)),0,R(20)); d['arm'][-1].rotation_euler=(R(-95*(1-c)),0,R(-20))
         sh.scale=(1,1,1) if 1.12<t<1.5 and int(t*30)%2==0 else (0,0,0); fl.data.energy=900 if 1.12<t<1.5 else 0; z_=(1+.5*math.sin(t*60)) if 1.12<t<1.42 else 0; sk.scale=(z_,z_,z_); sk.rotation_euler=(t*9,t*7,t*5)
-        cam2(t,(15.6,3.1,1.8),(15.0,3.3,1.8),(HG[0],4.4,1.9),30)
+        cam2(t,(15.6,3.1,1.8),(15.0,3.3,1.8),(HG[0],y+.3,1.95),40)
     return dict(upd=upd)
 SHOTS['INVITED']=INVITED
 def BELL():
@@ -347,12 +347,12 @@ def G104():
     return dict(upd=upd)
 SHOTS['G104']=G104
 def HUNTING():
-    sector('ib_night',1.0); FILLE[0]=90; X0,Y0=30.0,0.0; d=vamp(X0,Y0,0,'drac'); BT=bats(6); lamp((X0+1.6,Y0-2.6,1.2),170,(.6,.7,1.0)); lamp((X0-1.8,Y0+1.6,3.8),220,(1,.3,.3))
+    sector('ib_night',1.0); FILLE[0]=90; X0,Y0=35.0,0.0; d=vamp(X0,Y0,0,'drac'); BT=bats(6); lamp((X0+1.6,Y0-2.6,1.2),170,(.6,.7,1.0)); lamp((X0-1.8,Y0+1.6,3.8),220,(1,.3,.3))
     def upd(t):
         k=ease(t/.35); vstand(d,t,X0,Y0,0,flap=2.2); fc(d,'smug'); d['head'].rotation_euler[0]=R(-10*k)
         for s_ in (1,-1): d['arm'][s_].rotation_euler=(R(-100*k+3*math.sin(t*5+s_)),0,R(s_*66*k))
         for j,b in enumerate(BT): a=t*2.6+j*1.05; bat_fly(b,t,(X0+2.7*math.cos(a),Y0+.6+1.2*math.sin(a),3.9+.4*math.sin(t*3+j)),rz=math.degrees(a)+180,ph=j)
-        cam2(t,(X0+1.2,Y0-4.3,.55),(X0+1.05,Y0-4.0,.6),(X0,Y0,2.3),26)
+        cam2(t,(X0+.45,Y0-4.5,.55),(X0+.4,Y0-4.15,.6),(X0,Y0,2.3),26)
     return dict(upd=upd)
 SHOTS['HUNTING']=HUNTING
 def DEFEATED():
@@ -368,10 +368,11 @@ SHOTS['DEFEATED']=DEFEATED
 # ================================================================ Margalla
 BN=(-1.5,1.75,0)
 def RESTS():
-    viewpt(); FILLE[0]=30; d=vamp(*BN,'drac'); d['home']=BN; m=monkey((2.3,-2.15,1.6),200,1.5); lamp((-1.5,4.5,3.4),120,(.6,.7,1.0))
+    viewpt(board=False); FILLE[0]=110; d=vamp(*BN,'drac'); d['home']=BN; m=monkey((3.4,.1,0),-110,1.5); lamp((-1.5,4.5,3.4),120,(.6,.7,1.0))
     def upd(t):
-        sitp(d,t,seat=.66); cape_flap(d,t,a=2,amp=2); d['head'].rotation_euler[0]=R(14); monkey_pose(m,t,'sit',look=(-20,0))
-        cam2(t,(.4,8.7,3.7),(.4,8.2,3.6),(.3,-2.15,1.35),31)
+        sitp(d,t,seat=.66); cape_flap(d,t,a=2,amp=2); k=ease(t/.8); d['head'].rotation_euler[0]=R(4+14*k); fc(d,'sad'); blink(d,t)
+        g=ease(t/1.3); m['root'].location=LV((3.4,.1,0),(.9,.9,0),g); m['root'].rotation_euler[2]=R(-110); monkey_pose(m,t,'run' if g<.97 else 'stand',look=(0,0))
+        cam2(t,(-4.9,-1.7,1.6),(-4.6,-1.5,1.65),(-.85,1.6,1.7),28)
     return dict(upd=upd)
 SHOTS['RESTS']=RESTS
 def MONKEY_():
