@@ -122,10 +122,12 @@ def s_PICKED():
     return dict(upd=upd)
 SHOTS['PICKED']=s_PICKED
 def s_RULE():
-    G=gali(); FILLE[0]=14; d=prince(0,-1.6,180)
+    G=gali(); FILLE[0]=13; d=prince(0,-1.6,180); lamp((.4,-1.3,3.0),170,(.66,.76,1.0))
+    for o_ in bpy.data.objects:
+        if o_.type=='LIGHT' and abs(o_.location.x)<.1 and abs(o_.location.y-1.6)<.1 and abs(o_.location.z-2.9)<.1: o_.data.energy=22
     def upd(t):
         walk_path(d,[(0,-2.2),(0,.8)],t,-.1,we(45)+.1,step=.6,arm=22); cape_flap(d,t,k=1.2); k=ease((t-we(46))/.3); fc(d,'smug'); blink(d,t)
-        if k>0: arm_to(d,1,(-.55,2.9,2.05+.05*math.sin(t*3)),k,base=(0,0,0))
+        if k>0: arm_to(d,1,(-1.0,2.6,1.6+.05*math.sin(t*3)),k,base=(0,0,0))
         h=headw(d); camset((.08,3.05,1.9),(h.x*.5,h.y,h.z-.12),28,8)
     return dict(upd=upd)
 SHOTS['RULE']=s_RULE
