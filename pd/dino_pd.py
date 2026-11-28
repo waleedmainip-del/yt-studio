@@ -176,3 +176,21 @@ def bike_idle(V,t,k=1.0):
 def bike_smoke(V,t0,n=6,every=.22,seed=1):
     """exhaust puffs from the open pipe"""
     for k in range(n): puff((-.84,-.14,.39),t0+k*every,size=.07,n=3,col=M('#C8CAD0',.9,alpha=.7),rise=.3,life=.6,drift=(-.7,0,0),seed=seed+k,parent=V['P'])
+def dino_steps(v,d0,T,S=4.2,duty=.62):
+    """times (and which foot) at which a foot lands, for a straight walk dist=d0+v*t"""
+    cyc=S/duty; out=[]; k=int(d0/cyc)-1
+    while (k*cyc-d0)/v<=T:
+        for s,off in ((1,0.0),(-1,.5)):
+            t=((k+off)*cyc-d0)/v
+            if -.05<=t<=T: out.append((t,s))
+        k+=1
+    return sorted(out)
+def dino_dust(x0,y0,rz,v,d0,T,S=4.2,size=.75,t1=None):
+    """dust puffs where the feet land. returns the landing times (for the camera thump)"""
+    f=(math.sin(R(rz)),-math.cos(R(rz))); rt=(math.cos(R(rz)),math.sin(R(rz))); dm=M('#B9B2A4',.95,alpha=.5); ST=[q for q in dino_steps(v,d0,T,S) if t1 is None or q[0]<t1]
+    for i,(t,s) in enumerate(ST):
+        d=v*t; px=x0+f[0]*(d+S/2+.9)+rt[0]*s*1.3; py=y0+f[1]*(d+S/2+.9)+rt[1]*s*1.3
+        puff((px,py,.25),max(0,t),size=size,n=8,col=dm,rise=.45,life=.9,seed=40+i)
+    return [t for t,_ in ST]
+def thump(t,times,amp=.028):
+    return sum(amp*math.exp(-(t-ti)*8)*math.sin((t-ti)*36) for ti in times if t>=ti)

@@ -35,14 +35,14 @@ def ebox(parts,loc=(0,0,0),parent=None):
 def HOOK():
     isb('pd_dusk',.4,post=False); D=dino((5.75,24,0),0); FILLE[0]=70
     X=[(3.2,13.0,5),(8.2,15.5,-5),(5.6,18.5,2),(-4.2,14.0,-7),(-7.2,17.0,8),(1.0,20.0,3)]
-    P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=kcar((-5.75,34,0),-90,'#C9CED8',3)
+    P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=kcar((-5.75,34,0),-90,'#C9CED8',3); TS=dino_dust(5.75,24.5,0,1.7,0,DUR)
     def upd(t):
         d=1.7*t; D['root'].location[1]=24.5-d; rr=dino_roar(t,.35,2.5); dino_pose(D,t,dist=d,pitch=12+6*rr,neck=30,head=4+12*rr,jaw=rr); dino_face(D,'angry')
         for k,H in enumerate(P):
             x,y,rz=X[k]; runp(H,t,x,y,rz,v=3.2,ph=k*.37); fc(H,'scream')
             if k%2==0: arms_up(H,1,t,spread=22,jig=14)
         roll(C,-5.75,34-8*t,-90,8*t)
-        cam2(t,(4.4,-1.2,1.2),(4.7,-.4,1.25),(5.6,12,5.4),24,(5.6,12,6.0))
+        cam2(t,(4.4,-1.2,1.2),(4.7,-.4,1.25),(5.6,12,5.4),24,(5.6,12,6.0)); CAM.location.z+=thump(t,TS,.02)
     return dict(upd=upd)
 SHOTS['HOOK']=HOOK
 def EXCEPT():
@@ -106,15 +106,15 @@ def WOKE():
     return dict(upd=upd)
 SHOTS['WOKE']=WOKE
 def FORTY():
-    isb('pd_dusk',.4); D=dino((5.75,62,0),0); FILLE[0]=40; C=kcar((8.6,49,0),90,'#F4F1EA',5)
+    isb('pd_dusk',.4); D=dino((5.75,62,0),0); FILLE[0]=40; C=kcar((8.6,49,0),90,'#F4F1EA',5); TS=dino_dust(5.75,62,0,2.2,1.0,DUR)
     def upd(t):
         d=2.2*t; D['root'].location[1]=62-d; dino_pose(D,t,dist=d+1.0,pitch=8,neck=26,head=-8,jaw=.4+.12*math.sin(t*4)); dino_face(D,'angry'); roll(C,8.6,49,90,0)
-        q=ease(t/DUR); camset((3.3,43.6,.9+.5*q),(5.6,51.5-1.2*q,2.2+5.2*q),20,8)
+        q=ease(t/DUR); camset((3.3,43.6,.9+.5*q+thump(t,TS,.035)),(5.6,51.5-1.2*q,2.2+5.2*q),20,8)
     return dict(upd=upd)
 SHOTS['FORTY']=FORTY
 def WALKING():
     isb('pd_dusk',.4); D=dino((5.75,60,0),0); FILLE[0]=0; X=[(3.2,24.5,4),(6.6,28,-3),(8.7,31,2),(-4.2,26.5,-5),(-7.0,30,6),(4.9,33.5,1)]
-    P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=[kcar((-5.75,30,0),-90,'#C8372D',7),kcar((-5.75,14,0),-90,'#F4F1EA',8)]
+    P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=[kcar((-5.75,30,0),-90,'#C8372D',7),kcar((-5.75,14,0),-90,'#F4F1EA',8)]; TS=dino_dust(5.75,54,0,1.9,2.0,DUR)
     def upd(t):
         d=1.9*t; y=54-d; D['root'].location[1]=y; dino_pose(D,t,dist=d+2.0,pitch=9,neck=28,head=-6,jaw=.3); dino_face(D,'angry')
         for k,H in enumerate(P):
@@ -176,7 +176,7 @@ def COMMITTEE():
     def upd(t):
         for k,H in enumerate(G): standp(H,t,-7.75+2*k,9.1,0); fc(H,'firm' if k!=1 else 'calm')
         hold_chai(G[1],CU[0],1,sip=ease((t-.3)/.4)); crossed(G[0]); G[2]['arm'][1].rotation_euler=(R(-95+8*math.sin(t*9)),0,R(10)); look_at(G[0],headw(G[1]),.5); look_at(G[2],headw(G[1]),.5)
-        runp(Rn[0],t,-9.0,17,-4,v=4.2); runp(Rn[1],t,-2.4,21,5,v=4.2,ph=.5); fc(Rn[0],'scream'); fc(Rn[1],'scream'); arms_up(Rn[1],1,t,spread=22,jig=14)
+        runp(Rn[0],t,-9.0,17,-4,v=4.2); runp(Rn[1],t,-2.7,21,2,v=4.2,ph=.5); fc(Rn[0],'scream'); fc(Rn[1],'scream'); arms_up(Rn[1],1,t,spread=22,jig=14)
         cam2(t,(-5.75,.2,2.5),(-5.75,.9,2.5),(-5.75,8,2.45),30)
     return dict(upd=upd)
 SHOTS['COMMITTEE']=COMMITTEE
@@ -184,11 +184,11 @@ GP=(5.75,13.2,180)
 def gstage(dy=28.0,arm=True):
     isb('pd_dusk',.45,arm=arm); D=dino((5.75,dy,0),0); g=mk(GUARD,*GP,'guard'); FILLE[0]=90; return D,g
 def GUARD_():
-    D,g=gstage()
+    D,g=gstage(); TS=dino_dust(5.75,30,0,1.6,0,DUR,t1=1.2)
     def upd(t):
         d=min(2.0,1.6*t); k=ease(t/1.2); D['root'].location[1]=30-d; dino_pose(D,t,dist=d if t<1.25 else None,pitch=8-10*k,neck=24-16*k,head=-6-22*k,jaw=.25); dino_face(D,'angry',mix=('curious',k))
         standp(g,t,*GP); fc(g,'firm'); g['arm'][1].rotation_euler=(R(-150*ease(t/.35)),R(26*ease(t/.35)),0); look_at(g,dino_headw(D),.9,maxpitch=40)
-        cam2(t,(4.2,7.6,1.2),(4.3,8.2,1.25),(5.75,20,5.0),24)
+        cam2(t,(4.2,7.6,1.2),(4.3,8.2,1.25),(5.75,20,5.0),24); CAM.location.z+=thump(t,TS,.02)
     return dict(upd=upd)
 SHOTS['GUARD']=GUARD_
 def ENTRY():
@@ -289,11 +289,11 @@ def nite(dy,**kw):
     isb('pd_night',1.0,arm=False,stars=True,**kw); D=dino((5.75,dy,0),0); FILLE[0]=120; lamp((5.75,dy-11,6.5),2200,(1,.84,.62)); lamp((1.0,dy-2,9),1400,(.55,.68,1.0)); return D
 RN=(-11.0,-4.6,-100)
 def DINOAA():
-    D=nite(14); ra=mk(RAYYAN,*RN,'rayyan'); ph=phone_of(ra,1)
+    D=nite(14); ra=mk(RAYYAN,*RN,'rayyan'); ph=phone_of(ra,1); TS=dino_dust(5.75,3.5,0,1.5,0,DUR)
     def upd(t):
         d=1.5*t; D['root'].location[1]=3.5-d; dino_pose(D,t,dist=d,pitch=9,neck=28,head=-4,jaw=.3); dino_face(D,'angry')
         standp(ra,t,*RN); ear(ra,1,1); fc(ra,'worry'); speak(ra,t,126,131,gesture=False); ra['root'].location[2]=.012*math.sin(t*31)
-        c1(t,ra,yaw=6,dist=3.1,lens=32,tz=-.1,sx=-.45)
+        c1(t,ra,yaw=6,dist=3.1,lens=32,tz=-.1,sx=-.45); CAM.location.z+=thump(t,TS,.018)
     return dict(upd=upd)
 SHOTS['DINOAA']=DINOAA
 def CHAALIS():
@@ -517,13 +517,13 @@ def ppose(D,t,pitch=8,neck=28,**kw):
     if 'plate' in D: D['plate'].rotation_euler[0]=R(pitch)
 def NEVER():
     D=pdino(9,plate=False); V=[pbike((0,0,0),180,BKC[0],rider=SHANI,name='shani'),pbike((0,0,0),180,BKC[1],rider=BILLA,name='billa')]; shk(V[0]['rider'],1)
-    G=[mk(ISBP[3],-6.4,10.3,60,'g0'),mk(DHABA,1.6,10.4,90,'chacha'),mk(KAKA,-9.6,10.2,70,'kaka')]
+    G=[mk(ISBP[3],-6.4,10.3,60,'g0'),mk(DHABA,1.6,10.4,90,'chacha'),mk(KAKA,-9.6,10.2,70,'kaka')]; TS=dino_dust(9.5,5.8,-90,2.4,0,DUR)
     def upd(t):
         d=2.4*t; x=9.5-d; D['root'].location[0]=x; ppose(D,t,dist=d,pitch=9,neck=28,head=-4,jaw=.25,tail=.6); dino_face(D,'happy')
         bike_roll(V[0],x-10.0,5.4,180,d); bike_roll(V[1],x-7.4,7.6,180,d)
         for v in V: bike_sit(v,t); fc(v['rider'],'smug')
         for k,H in enumerate(G): standp(H,t,(-6.4,1.6,-9.6)[k],(10.3,10.4,10.2)[k],(60,90,70)[k]); look_at(H,dino_headw(D),1.0,maxpitch=40,maxyaw=80); fc(H,'wow')
-        cam2(t,(-13.2,8.3,1.5),(-12.4,8.2,1.6),(0,5.8,5.6),28)
+        cam2(t,(-13.2,8.3,1.5),(-12.4,8.2,1.6),(0,5.8,5.6),28); CAM.location.z+=thump(t,TS,.02)
     return dict(upd=upd)
 SHOTS['NEVER']=NEVER
 def fprint(x,y,rz=0):
@@ -584,11 +584,11 @@ def MAMU_():
     return dict(upd=upd)
 SHOTS['MAMU']=MAMU_
 def MONSTER():
-    isb('pd_dusk',.45,arm=False); D=dino((4.8,22,0),-18); FILLE[0]=60; P=[mk(RAYYAN,8.2,11.2,160,'rayyan'),mk(ISBP[0],6.2,9.4,170,'ia')]
+    isb('pd_dusk',.45,arm=False); D=dino((4.8,24.6,0),-18); FILLE[0]=60; P=[mk(RAYYAN,8.2,11.2,160,'rayyan'),mk(ISBP[0],6.2,9.4,170,'ia')]
     def upd(t):
         rr=dino_roar(t,.15,1.8); dino_pose(D,t,pitch=14+7*rr,neck=30,head=4+10*rr,jaw=max(.25,rr)); dino_face(D,'angry')
         for k,H in enumerate(P): standp(H,t,(8.2,6.2)[k],(11.2,9.4)[k],(160,170)[k]); hands_head(H,1); H['root'].location[2]=.015*math.sin(t*30+k); fc(H,'scream')
-        cam2(t,(10.4,4.6,1.0),(10.1,5.2,1.05),(5.6,15.5,5.6),22)
+        cam2(t,(10.4,4.6,1.0),(10.1,5.2,1.05),(5.6,17.5,5.6),24)
     return dict(upd=upd)
 SHOTS['MONSTER']=MONSTER
 def RIDE():
@@ -603,7 +603,7 @@ SHOTS['RIDE']=RIDE
 def CTA():
     D=pdino(11.5); wa=mk(WALEED,-.6,5.8,-90,'waleed'); ra=mk(RAY2,.9,7.3,-90,'rayyan'); cu=cup(ra,1); V=pbike((1.2,4.2,0),180,BKC[0],rider=SHANI,name='shani'); shk(V['rider'],1)
     def upd(t):
-        ppose(D,t,pitch=-2,neck=6,head=-16,jaw=.14,tail=.8,hz=-.9); dino_face(D,'happy'); dino_eyes(D,dz=-.4)
+        ppose(D,t,pitch=-2,neck=6,head=-16+1.5*math.sin(t*1.4),hroll=2.5*math.sin(t*1.1),jaw=.14+.05*math.sin(t*2.2),tail=.8,hz=-.9); dino_face(D,'happy'); dino_eyes(D,dz=-.4)
         standp(wa,t,-.6,5.8,-90); fc(wa,'happy'); speak(wa,t,287,293,gesture=False); k=ease((t-ws(291))/.3); wa['arm'][1].rotation_euler=(R(-88*k),R(-6*k),0)
         a=ease((t-ws(288))/.25)*(1-ease((t-ws(289)-.1)/.25)); b=ease((t-ws(290))/.25)*(1-ease((t-we(290)-.25)/.25)); wa['arm'][-1].rotation_euler=(R(-40*a),R(50*a),0) if a>0 else (0,0,0)
         if b>0 and k<=0: wa['arm'][1].rotation_euler=(R(-30*b),R(-42*b),0)
