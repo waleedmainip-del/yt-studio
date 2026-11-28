@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: ib-render-r6
+  group: ib-render-r7
   cancel-in-progress: false
 jobs:
   render:

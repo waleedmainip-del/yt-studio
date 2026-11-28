@@ -53,7 +53,7 @@ AB=(8.2,7.75,3.55)     # aunty's spot on the balcony
 QX=[0.0,1.9,3.8,5.7,7.6,9.5]; QP=[QX[4],QX[2],QX[3],QX[0],QX[1],QX[5]]; QC=(-4.2,2.2,1.9)
 def queue(mood='ib_day'):
     sector(mood,0.0,stars=False,signal='green'); FILLE[0]=40
-    B.cyl((3.6,5.95,2.5),.06,5.0,M('#C9CED8',.4,metal=.5),seg=8); sign('BUS STOP  G-10',(3.52,5.91,4.5),.26,'#FFFFFF','#1E6A3A',n=(-.92,-.39,0),pad=.18,th=.06,frame='#F6F4EE'); B.done('stop')
+    B.cyl((3.6,5.95,3.0),.06,6.0,M('#C9CED8',.4,metal=.5),seg=8); sign('BUS STOP  G-10',(3.52,5.91,5.5),.26,'#FFFFFF','#1E6A3A',n=(-.92,-.39,0),pad=.18,th=.06,frame='#F6F4EE'); B.done('stop')
     G=[mk(UNCLEQ,QP[0],5.0,-90,'q0'),mk(SUPER,QP[1],5.0,-90,'q1'),mk(PIRATE,QP[2],5.0,-90,'q2'),mk(WALEED,QP[3],5.0,-90,'waleed'),vamp(QP[4],5.0,-90,'drac'),mk(AUNTY,QP[5],5.0,-90,'q5')]
     mask(G[1]); cape(G[1],'#16909E','#F2C14E',collar=False); pirate_hat(G[2]); um=umbrella(); return G,um
 def queue_idle(G,um,t):
@@ -452,7 +452,7 @@ def NAHI():
         standp(d,t,DV[0],3.1,0); d['root'].rotation_euler[0]=R(-11); d['root'].location[0]=DV[0]+.03*math.sin(t*38); fc(d,'scream'); speak(d,t,236,238,gesture=False); face(d,brow_r=-12,eyes=1.3)
         for s in (1,-1): d['arm'][s].rotation_euler=(R(-78),0,R(s*10))
         standp(u,t,1.25,1.05,180); standp(u2,t,-1.85,1.05,180); arm_to(u,1,tuple(handw(d,-1)),1,base=(0,0,0)); arm_to(u2,-1,tuple(handw(d,1)),1,base=(0,0,0)); u3['root'].location=(0,0,-40)
-        cam2(t,(-.1,-1.3,2.5),(-.15,-.9,2.5),(DV[0],3.1,2.72),50)
+        cam2(t,(-.1,-1.3,2.5),(-.15,-.9,2.5),(DV[0],3.1,1.95),50)
     return dict(upd=upd)
 SHOTS['NAHI']=NAHI
 def RUNS():
