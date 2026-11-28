@@ -33,13 +33,13 @@ def ebox(parts,loc=(0,0,0),parent=None):
     for (c,s_,m,bv) in parts: obox(c,s_,m,bv,e)
     return e
 def HOOK():
-    isb('pd_dusk',.4); D=dino((5.75,24,0),0); FILLE[0]=70
+    isb('pd_dusk',.4,post=False); D=dino((5.75,24,0),0); FILLE[0]=70
     X=[(3.2,13.0,5),(8.2,15.5,-5),(5.6,18.5,2),(-4.2,14.0,-7),(-7.2,17.0,8),(1.0,20.0,3)]
     P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=kcar((-5.75,34,0),-90,'#C9CED8',3)
     def upd(t):
-        d=1.7*t; D['root'].location[1]=27-d; rr=dino_roar(t,.35,2.5); dino_pose(D,t,dist=d,pitch=12+6*rr,neck=30,head=4+12*rr,jaw=rr); dino_face(D,'angry')
+        d=1.7*t; D['root'].location[1]=24.5-d; rr=dino_roar(t,.35,2.5); dino_pose(D,t,dist=d,pitch=12+6*rr,neck=30,head=4+12*rr,jaw=rr); dino_face(D,'angry')
         for k,H in enumerate(P):
-            x,y,rz=X[k]; runp(H,t,x,y,rz,v=3.7,ph=k*.37); fc(H,'scream')
+            x,y,rz=X[k]; runp(H,t,x,y,rz,v=3.2,ph=k*.37); fc(H,'scream')
             if k%2==0: arms_up(H,1,t,spread=22,jig=14)
         roll(C,-5.75,34-8*t,-90,8*t)
         cam2(t,(4.4,-1.2,1.2),(4.7,-.4,1.25),(5.6,12,5.4),24,(5.6,12,6.0))
@@ -278,7 +278,7 @@ def shani_call(a,b,yaw=-24,dist=3.0,lens=38,sip=None,shades=None,dz=0.0):
     def upd(t):
         gang_idle(A,t); hold_chai(sh,A['cu'],1,sip=(0 if sip is None else ease((t-we(b)-sip)/.3))); ear(sh,-1,1); fc(sh,'bored'); speak(sh,t,a,b,gesture=False)
         if shades is not None:
-            k=ease((t-we(b)-shades)/.22); shk(sh,k); fc(sh,'smug') if k>.5 else None
+            k=ease((t-we(a)-shades)/.22); shk(sh,k); fc(sh,'smug') if k>.5 else None
             if k>0: A['cu'].scale=(1-k,)*3; sh['arm'][1].rotation_euler=(R(-72),0,R(7)); bike_idle(A['sv'],t,k)
         c1(t,sh,yaw=yaw,dist=dist,lens=lens,ref=90,dz=dz)
     return dict(upd=upd)
@@ -404,13 +404,13 @@ def frozen(D,t,pitch=10,neck=30,head=-8,**kw):
 def INSPECT():
     A=insp(); D=A['D']; sh,bi,go,mi=A['sh'],A['bi'],A['go'],A['mi']
     def upd(t):
-        park(A); frozen(D,t); walk_path(sh,[(2.3,17.0),(2.3,22.2)],t,-.4,DUR+.6,step=.5,arm=0); blink(sh,t); fc(sh,'smug')
+        park(A); frozen(D,t); walk_path(sh,[(3.3,13.6),(3.3,18.3)],t,-.4,DUR+.6,step=.5,arm=0); blink(sh,t); fc(sh,'smug')
         for s in (1,-1): sh['arm'][s].rotation_euler=(R(30),R(s*16),0)
         sh['head'].rotation_euler[2]=R(-35); sh['head'].rotation_euler[0]=R(-18)
         standp(bi,t,2.6,25.9,90); bi['head'].rotation_euler[0]=R(22); headtouch(bi,1,1,dx=.3,dy=-.75,dz=-.35); fc(bi,'flat')
         standp(go,t,9.2,21.4,-90); look_at(go,(5.75,23,4.2),1.0,maxpitch=40); crossed(go); fc(go,'wow')
         standp(mi,t,5.75,15.2,180); look_at(mi,dino_headw(D),1.0,maxpitch=45); fc(mi,'wow'); mi['arm'][1].rotation_euler=(R(-130),R(14),0)
-        cam2(t,(-2.8,9.8,2.0),(-1.4,8.6,2.3),(5.0,20,4.0),22)
+        cam2(t,(2.5,7.6,1.7),(3.2,8.6,2.0),(5.3,20,4.2),22)
     return dict(upd=upd)
 SHOTS['INSPECT']=INSPECT
 def SILNAHI():
@@ -453,7 +453,7 @@ def NOBODY():
         standp(sh,t,3.5,17.2,150); standp(bi,t,8.1,16.6,-160); standp(go,t,1.5,20.4,110); standp(mi,t,6.3,14.4,180)
         for H in (sh,bi,go,mi): look_at(H,dino_headw(D),.9,maxpitch=40); fc(H,'happy')
         sh['arm'][1].rotation_euler=(R(-150*ease((t-1.3)/.3)),R(14),0); arms_up(bi,ease((t-1.5)/.3),t,spread=18,jig=8)
-        cam2(t,(-2.6,11,2.0),(-1.7,11.5,2.1),(5.0,19,3.3),24)
+        cam2(t,(2.5,9.0,1.7),(3.0,9.8,1.85),(5.5,19,3.4),24)
     return dict(upd=upd)
 SHOTS['NOBODY']=NOBODY
 def SELFIE():
@@ -537,7 +537,7 @@ def NEXTFRI():
     B.done('fp'); FILLE[0]=60; ra=mk(RAYYAN,RP[0],RP[1],70,'rayyan'); cu=cup(ra,1)
     def upd(t):
         standp(ra,t,RP[0],RP[1],70); fc(ra,'bored'); k=ease((t-.5)/.5)*(1-ease((t-1.7)/.5)); hold_chai(ra,cu,1,a=-64,sip=.9*k); ra['head'].rotation_euler[2]=R(-30*ease((t-2.0)/.5))
-        cam2(t,(-3.4,-7.6,1.55),(-4.8,-6.6,1.65),(-11.2,-1.5,2.2),40)
+        cam2(t,(-5.6,-6.4,1.6),(-6.6,-5.6,1.7),(-11.3,-1.5,2.2),36)
     return dict(upd=upd)
 SHOTS['NEXTFRI']=NEXTFRI
 PW=[(-3.0,7.6,200),(1.0,4.4,170),(-6.5,4.6,150)]
@@ -568,11 +568,11 @@ def SHERU():
 SHOTS['SHERU']=SHERU
 RAY2=dict(RAYYAN,shades='up',shade_c='#0E0F14',scarf='#C8372D')
 def MAMUQ():
-    pindi(); FILLE[0]=110; ra=mk(RAY2,1.2,10.2,-25,'rayyan'); cu=cup_of(ra,1); ph=phone_of(ra,-1); mi=mk(MITHU,4.9,12.6,-60,'mithu'); ka=mk(KAKA,-2.4,12.3,40,'kaka')
+    pindi(); FILLE[0]=55; ra=mk(RAY2,-3.0,9.9,20,'rayyan'); cu=cup_of(ra,1); ph=phone_of(ra,-1); mi=mk(MITHU,4.9,12.6,-60,'mithu'); ka=mk(KAKA,-1.2,12.4,40,'kaka')
     def upd(t):
-        standp(ra,t,1.2,10.2,-25); k=ease((t-1.25)/.4); hold_chai(ra,cu,1,sip=.9*(1-ease((t-.9)/.35))); phone_up(ra,-1,k,h=3.7,fw=1.2,sx=.4); ra['head'].rotation_euler[0]=R(16*k); fc(ra,'happy' if k<.5 else 'wow')
+        standp(ra,t,-3.0,9.9,20); k=ease((t-1.25)/.4); hold_chai(ra,cu,1,sip=.9*(1-ease((t-.9)/.35))); phone_up(ra,-1,k,h=3.7,fw=1.2,sx=.4); ra['head'].rotation_euler[0]=R(16*k); fc(ra,'happy' if k<.5 else 'wow')
         ph.scale=(1,1,1) if (t<1.2 or int(t*14)%2==0) else (1.12,1.12,1.12)
-        standp(mi,t,4.9,12.6,-60); standp(ka,t,-2.4,12.3,40); fc(mi,'laugh'); fc(ka,'happy'); look_at(mi,headw(ka),.6); look_at(ka,headw(mi),.6)
+        standp(mi,t,4.9,12.6,-60); standp(ka,t,-1.2,12.4,40); fc(mi,'laugh'); fc(ka,'happy'); look_at(mi,headw(ka),.6); look_at(ka,headw(mi),.6)
         c1(t,ra,yaw=8,dist=3.4,lens=36,tz=-.35)
     return dict(upd=upd)
 SHOTS['MAMUQ']=MAMUQ
