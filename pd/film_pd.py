@@ -57,7 +57,7 @@ def _txt_scan():
     return bad
 def _txt_auto():
     for nm,ts in _txt_scan().items():
-        if len(ts)<2: continue
+        if len(ts)<1: continue
         o=bpy.data.objects[nm]; o.hide_render=True; o.hide_viewport=True
         for kk in ('board','frame'):
             if kk in o.keys() and o[kk] in bpy.data.objects: bpy.data.objects[o[kk]].hide_render=True; bpy.data.objects[o[kk]].hide_viewport=True

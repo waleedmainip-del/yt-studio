@@ -249,9 +249,9 @@ SHOTS['PLANB']=PLANB
 def HAI():
     wa,ra=hide2(); ph=phone_of(ra,1)
     def upd(t):
-        standp(wa,t,W2[0],W2[1],50); standp(ra,t,R2[0],R2[1],140); fc(ra,'worry'); speak(ra,t,110,116,gesture=False); k=ease((t-we(110)-.1)/.4); ra['head'].rotation_euler[2]=R(22*k); ra['head'].rotation_euler[0]=R(8*k)
+        standp(wa,t,W2[0],W2[1],50); standp(ra,t,R2[0],R2[1],140); fc(ra,'worry'); speak(ra,t,110,116,gesture=False); k=ease((t-we(110)-.1)/.4); ra['head'].rotation_euler[2]=R(14*k); ra['head'].rotation_euler[0]=R(8*k)
         ra['arm'][1].rotation_euler=(R(-30),0,R(6)); face(ra,brow_r=-12)
-        c1(t,ra,yaw=-30,dist=3.0,lens=40)
+        c1(t,ra,yaw=-12,dist=3.5,lens=40)
     return dict(upd=upd)
 SHOTS['HAI']=HAI
 # ================================================================ Rawalpindi: the dhaba
@@ -270,7 +270,7 @@ def TWELVE():
     def upd(t):
         gang_idle(A,t); k=ease((t-1.25)/.4); hold_chai(sh,A['cu'],1,sip=.9*(1-ease((t-.9)/.4))); phone_up(sh,-1,k,h=3.5,fw=1.2,sx=.4); sh['head'].rotation_euler[0]=R(14*k); fc(sh,'bored')
         ph.scale=(1,1,1) if (t<1.2 or int(t*14)%2==0) else (1.12,1.12,1.12)
-        cam2(t,(-11.5,4.6,5.2),(-6.2,5.4,2.4),(.4,8.2,2.6),26,(.4,7.6,2.3))
+        cam2(t,(12.8,4.6,5.0),(7.6,5.5,2.3),(.4,8.0,2.5),26,(.4,7.5,2.2))
     return dict(upd=upd)
 SHOTS['TWELVE']=TWELVE
 def shani_call(a,b,yaw=-24,dist=3.0,lens=38,sip=None,shades=None,dz=0.0):
@@ -301,7 +301,7 @@ def CHAALIS():
     def upd(t):
         dino_pose(D,t,pitch=12,neck=32,head=-24,jaw=.3); dino_face(D,'curious'); dino_eyes(D,dz=-.6); standp(ra,t,*RN); ear(ra,1,1); fc(ra,'shock'); speak(ra,t,135,136,gesture=False)
         k=ease(t/.25)*(1-ease((t-.55)/.3)); ra['head'].rotation_euler[2]=R(-70*k)
-        c1(t,ra,yaw=-10,dist=3.0,lens=26,dz=-.9,tz=.75,sx=.55)
+        c1(t,ra,yaw=-10,dist=3.0,lens=26,dz=-.9,tz=.75,sx=-.45)
     return dict(upd=upd)
 SHOTS['CHAALIS']=CHAALIS
 # ================================================================ the road: two hundred bikes
@@ -334,7 +334,7 @@ def SILENCER():
     def upd(t):
         swarm_upd(V,FB,t,0,wh=lambda k,t: (26*abs(math.sin(t*3.2)) if k==0 else 0)); y=-5.5+9*t
         for k in (2,5,1): bike_idle(V[k],t,2.0)
-        cam2(t,(7.9,y+2.4,.75),(7.7,y+1.6,.8),(3.0,y-.9,.8),30)
+        cam2(t,(8.3,y+3.6,1.0),(8.2,y+2.9,1.05),(3.0,y-.7,1.55),28)
     return dict(upd=upd)
 SHOTS['SILENCER']=SILENCER
 # ================================================================ Islamabad night: Pindi boys vs the dinosaur
@@ -435,7 +435,7 @@ def AVERAGE():
     def upd(t):
         park(A); k=ease(t/.45); dino_pose(D,t,pitch=-2,neck=6,head=-34,hroll=12*k,jaw=.1,tail=.25,hz=-.8); dino_face(D,'curious'); dino_eyes(D,dz=-.6)
         standp(mi,t,5.75,15.2,180); look_at(mi,dino_headw(D),1.0,maxpitch=45); fc(mi,'calm'); speak(mi,t,199,202,gesture=False); mi['arm'][1].rotation_euler=(R(-95+8*math.sin(t*9)),R(12),0)
-        cam2(t,(8.4,19.6,6.0),(8.2,19.3,5.9),(5.75,15.4,2.2),30)
+        cam2(t,(8.4,19.6,6.0),(8.2,19.3,5.9),(5.75,15.4,2.2),42)
     return dict(upd=upd)
 SHOTS['AVERAGE']=AVERAGE
 def CHAKKAR():
@@ -485,7 +485,7 @@ def mounted(D,H,t):
 def convoy(rz,moon=True):
     hiway(moon=moon); FILLE[0]=60; D=dino((0,0,0),rz); dino_shades(D,1); sh=mk(SHANI,0,0,0,'shani'); bi=mk(BILLA,0,0,0,'billa'); mount(D,sh,-2.3); mount(D,bi,-.2); shk(sh,1)
     V=[pbike((0,0,0),90,BKC[k+2],rider=c,name='e%d'%k) for k,c in enumerate((GOGA,MITHU,KAKA,NOMI))]; return D,sh,bi,V
-EO=[(-4.4,10.5),(5.4,5.0),(-5.0,-5.5),(6.2,-6.0)]
+EO=[(4.6,9.0),(5.8,1.5),(-5.2,-7.5),(5.8,-9.0)]
 def convoy_upd(D,sh,bi,V,t,y,d,sgn=1):
     D['root'].location=(0,y,0); dino_pose(D,t,dist=d,S=5.4,pitch=13,neck=26,head=2,jaw=.55,tail=.7); dino_face(D,'happy'); mounted(D,sh,t); mounted(D,bi,t); arms_up(sh,1,t,spread=22,jig=8); arms_up(bi,1,t,spread=20,jig=10,only=1); bi['arm'][-1].rotation_euler=(R(-60),0,0)
     fc(sh,'laugh'); fc(bi,'shout')
@@ -509,7 +509,7 @@ def nameplate(D):
     for s in (-1,1): obox((s*1.0,.1,.9),(.03,.03,.5),M('#C9CED8',.3,metal=.8),0,e)
     D['plate']=e; return e
 def pdino(x=9.0,plate=True,**kw):
-    pindi(**kw); FILLE[0]=90; D=dino((x,5.8,0),-90); dino_shades(D,1); lamp((x-7,8.6,8.5),2600,(1,.84,.62)); lamp((x-3,3.6,9.5),1200,(.55,.68,1.0))
+    pindi(**kw); FILLE[0]=90; D=dino((x,5.8,0),-90); dino_shades(D,1); lamp((x-9,8.6,8.5),1000,(1,.84,.62)); lamp((x-3,3.6,9.5),600,(.55,.68,1.0))
     if plate: nameplate(D)
     return D
 def ppose(D,t,pitch=8,neck=28,**kw):
@@ -520,7 +520,7 @@ def NEVER():
     G=[mk(ISBP[3],-6.4,10.3,60,'g0'),mk(DHABA,1.6,10.4,90,'chacha'),mk(KAKA,-9.6,10.2,70,'kaka')]
     def upd(t):
         d=2.4*t; x=9.5-d; D['root'].location[0]=x; ppose(D,t,dist=d,pitch=9,neck=28,head=-4,jaw=.25,tail=.6); dino_face(D,'happy')
-        bike_roll(V[0],x-12.5,4.7,180,d); bike_roll(V[1],x-9.8,7.6,180,d)
+        bike_roll(V[0],x-10.0,5.4,180,d); bike_roll(V[1],x-7.4,7.6,180,d)
         for v in V: bike_sit(v,t); fc(v['rider'],'smug')
         for k,H in enumerate(G): standp(H,t,(-6.4,1.6,-9.6)[k],(10.3,10.4,10.2)[k],(60,90,70)[k]); look_at(H,dino_headw(D),1.0,maxpitch=40,maxyaw=80); fc(H,'wow')
         cam2(t,(-13.2,8.3,1.5),(-12.4,8.2,1.6),(0,5.8,5.6),28)
