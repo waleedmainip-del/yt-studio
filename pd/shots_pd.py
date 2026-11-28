@@ -502,7 +502,7 @@ SHOTS['ROUND']=ROUND
 def THREEH():
     D,sh,bi,V=convoy(0,moon=False); mo=oico((0,420,150),10,M('#FFF6D8',.3,emit=3.5),None,sub=3)
     def upd(t):
-        d=8.5*t; y=98-d; convoy_upd(D,sh,bi,V,t,y,d,sgn=-1); q=t/DUR; mo.location=(-95+190*q,420,180+3*math.sin(pi*q))
+        d=8.5*t; y=98-d; convoy_upd(D,sh,bi,V,t,y,d,sgn=-1); q=t/DUR; mo.location=(-95+190*q,420,167+1.5*math.sin(pi*q))
         cam2(t,(.4,32.5,1.4),(.4,33.4,1.45),(0,70,5.1),50)
     return dict(upd=upd)
 SHOTS['THREEH']=THREEH
