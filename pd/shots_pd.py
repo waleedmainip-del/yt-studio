@@ -509,7 +509,7 @@ def nameplate(D):
     for s in (-1,1): obox((s*1.0,.1,.9),(.03,.03,.5),M('#C9CED8',.3,metal=.8),0,e)
     D['plate']=e; return e
 def pdino(x=9.0,plate=True,**kw):
-    pindi(**kw); FILLE[0]=90; D=dino((x,5.8,0),-90); dino_shades(D,1); lamp((x-9,8.6,8.5),1000,(1,.84,.62)); lamp((x-3,3.6,9.5),600,(.55,.68,1.0))
+    pindi(**kw); FILLE[0]=90; D=dino((x,5.8,0),-90); dino_shades(D,1); lamp((x-13,9.0,6.5),900,(1,.84,.62)); lamp((x-3,3.4,10.5),500,(.55,.68,1.0))
     if plate: nameplate(D)
     return D
 def ppose(D,t,pitch=8,neck=28,**kw):
