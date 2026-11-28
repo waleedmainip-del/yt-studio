@@ -370,7 +370,7 @@ def ROARBACK():
             if k in (1,2,5): bike_roll(v,BM[k][0],BM[k][1],90,0,wheelie=24*abs(math.sin(t*5.5+k)))
             H=v['rider']; fc(H,'shout'); H['head'].rotation_euler[0]=R(-16)
             if k%2==1: arms_up(H,1,t,spread=16,jig=12,only=1)
-        cam2(t,(3.3,14.2,.9),(3.5,13.6,.95),(5.75,5.2,2.2),22)
+        cam2(t,(4.9,12.3,.7),(5.0,11.8,.75),(5.75,5.0,2.3),22)
     return dict(upd=upd)
 SHOTS['ROARBACK']=ROARBACK
 def FIRST():
