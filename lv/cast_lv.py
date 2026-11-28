@@ -1,0 +1,29 @@
+# Cast for the Lahore vampire-prince film ("vampires are scared of Lahori aunties"). Waleed keeps his fixed look (WALEED from cast_kz). Everyone else is new.
+# The vampires are midnight blue / silver / gold or plum, pale skin. The Lahoris are saturated: emerald, magenta, orange, yellow.
+PRINCE=dict(skin='#AEB8DA',hair='#7F88A4',hairstyle='quiff',textured=True,highlights='#B8BED0',jacket='#1E2A66',top='#D6D6E4',trim='#C9A24A',scarf='#8A1C2A',emblem='#C9A24A',pants='#141A3A',
+        boots='#0F1226',gloves='#CDD0DE',accent='#C9A24A',eye='#D8202A',brow_t=1.5,brow_c='#2A2E40',h=1.1,wide=.96)
+QUEEN=dict(skin='#CFD5E8',hair='#0D0D14',hairstyle='bun',top='#3D1050',trim='#C9A24A',kurta=True,pants='#3D1050',lashes=True,earrings=True,chain='#C9A24A',
+        shoes='#0D0D14',sole='#1A1A22',accent='#C9A24A',eye='#D8202A',brow_t=1.9,brow_c='#0D0D14',h=1.2,wide=1.0)
+VAMPA=dict(skin='#CCD3E6',hair='#3A1A1A',hairstyle='long',beard='#3A1A1A',jacket='#4A1420',top='#E8E2D0',trim='#C9A24A',pants='#1A1A22',boots='#0F0F16',eye='#D8202A',brow_t=1.6,h=1.12,wide=1.08)
+VAMPB=dict(skin='#D2D8EA',hair='#C9CED8',hairstyle='old',mustache='#C9CED8',jacket='#2A3A2E',top='#E8E2D0',trim='#8A8F9A',tie='#5A1F6A',pants='#1A1A22',shoes='#0F0F16',glasses=True,eye='#D8202A',brow_t=1.4,brow_c='#B0B4BE',h=1.0,wide=1.0)
+VAMPC=dict(skin='#C8D0E4',hair='#101018',hairstyle='fringe',top='#5A1F6A',trim='#C9CED8',waistcoat='#16171C',pants='#16171C',boots='#0F0F16',eye='#D8202A',brow_t=1.3,h=.98,wide=.95)
+KHALA=dict(skin='#D8A277',hair='#2A1B14',hairstyle='ponytail',top='#0F8A64',trim='#F2C14E',kurta=True,pants='#F6F0DC',dupatta='#D83A8A',dupatta_trim='#F2C14E',lashes=True,earrings=True,
+        handbag='#B8232E',shoes='#E6B93A',sole='#3A2A1E',accent='#F2C14E',eye='#2A1A12',brow_t=1.4,h=.94,wide=1.12)
+AUN2=dict(skin='#C98F62',hair='#E0E0E4',hairstyle='old',top='#E8742A',trim='#7A2A1A',kurta=True,pants='#F4F1EA',dupatta='#F4F1EA',dupatta_trim='#E8742A',glasses=True,lashes=True,
+        handbag='#3A2A1E',shoes='#3A2A1E',sole='#2A1A12',accent='#7A2A1A',eye='#2A1A12',brow_t=1.3,brow_c='#C8C8CC',h=.9,wide=1.16)
+AUN3=dict(skin='#E0AE84',hair='#15110E',hairstyle='bun',top='#2B58C9',trim='#F2C14E',kurta=True,pants='#F2C14E',dupatta='#F2C14E',dupatta_trim='#2B58C9',lashes=True,earrings=True,
+        handbag='#F4F1EA',shoes='#F4F1EA',sole='#3A2A1E',accent='#F2C14E',eye='#2A1A12',brow_t=1.2,h=.97,wide=1.02)
+AUN4=dict(skin='#B98056',hair='#3A2418',hairstyle='long',top='#8A1F3A',trim='#E6B93A',kurta=True,pants='#8A1F3A',dupatta='#2E8A4A',dupatta_trim='#E6B93A',lashes=True,earrings=True,
+        handbag='#E6B93A',shoes='#16171C',sole='#2A1A12',accent='#E6B93A',eye='#2A1A12',brow_t=1.5,h=.99,wide=1.08)
+AUN5=dict(skin='#D29A6C',hair='#6A6A72',hairstyle='curly',top='#B89AE0',trim='#6A4C93',kurta=True,pants='#F4F1EA',dupatta='#6A4C93',dupatta_trim='#F4F1EA',glasses=True,lashes=True,
+        handbag='#6A4C93',shoes='#C9A27A',sole='#3A2A1E',accent='#6A4C93',eye='#2A1A12',brow_t=1.2,brow_c='#5A5A62',h=.91,wide=1.1)
+AUN6=dict(skin='#CFA07A',hair='#2A1B14',hairstyle='bun',top='#E6B93A',trim='#C8372D',kurta=True,pants='#C8372D',dupatta='#C8372D',dupatta_trim='#E6B93A',lashes=True,earrings=True,
+        handbag='#16171C',shoes='#C8372D',sole='#3A2A1E',accent='#C8372D',eye='#2A1A12',brow_t=1.3,h=.95,wide=1.14)
+AUN7=dict(skin='#C58C5E',hair='#4A3220',hairstyle='ponytail',top='#16909E',trim='#F4F1EA',kurta=True,pants='#F4F1EA',dupatta='#F28AA0',dupatta_trim='#16909E',lashes=True,
+        handbag='#F28AA0',shoes='#F4F1EA',sole='#3A2A1E',accent='#F28AA0',eye='#2A1A12',brow_t=1.2,h=.93,wide=1.06)
+BOYA=dict(skin='#C98F62',hair='#15110E',hairstyle='curly',top='#C8372D',trim='#F4F1EA',hoodie=True,strings='#F4F1EA',pants='#22283A',shoes='#F4F5FA',sole='#F0F1F5',eye='#2A1A12',brow_t=1.2,h=1.02,wide=1.0)
+BOYB=dict(skin='#B07A50',hair='#15110E',hairstyle='fringe',top='#F2C14E',trim='#16171C',kurta=True,shalwar=True,pants='#F2C14E',sandals='#3A2A1E',mustache='#15110E',eye='#2A1A12',brow_t=1.4,h=1.06,wide=1.08)
+BOYC=dict(skin='#D9A273',hair='#3B2314',hairstyle='cap',cap='#2E8A4A',top='#F4F1EA',trim='#2E8A4A',stripe='#2E8A4A',pants='#3A3D47',short=True,shoes='#2E8A4A',sole='#F0F1F5',eye='#2A1A12',brow_t=1.1,h=.96,wide=.98)
+TOWN1=dict(skin='#E6C2A6',hair='#8A5A2A',hairstyle='fringe',top='#F4F1EA',trim='#27365A',stripe='#27365A',scarf='#C8372D',pants='#27365A',shoes='#16171C',sole='#2A2C34',eye='#3A5A8A',brow_t=1.1,h=1.0,wide=.98)
+TOWN2=dict(skin='#E0B090',hair='#D8B45A',hairstyle='long',top='#8FB8D8',trim='#F4F1EA',kurta=True,pants='#3A3D47',lashes=True,shoes='#5A3A22',sole='#2A1A12',eye='#3A7A5A',brow_t=1.0,h=.95,wide=.96)
+TOWN3=dict(skin='#D8A888',hair='#5A5A62',hairstyle='old',beard='#8A8A92',top='#6B5A3A',trim='#4A3D2A',waistcoat='#3A2A1E',pants='#2A2C34',shoes='#2A1A12',sole='#16171C',eye='#2A1A12',brow_t=1.5,h=1.03,wide=1.14)
