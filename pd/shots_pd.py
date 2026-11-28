@@ -36,16 +36,16 @@ def ebox(parts,loc=(0,0,0),parent=None):
     for (c,s_,m,bv) in parts: obox(c,s_,m,bv,e)
     return e
 def HOOK():
-    isb('pd_dusk',.4,post=False); D=dino((5.75,24,0),0); FILLE[0]=70
-    X=[(3.2,13.0,5),(8.2,15.5,-5),(5.6,18.5,2),(-4.2,14.0,-7),(-7.2,17.0,8),(1.0,20.0,3)]
-    P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=kcar((-5.75,34,0),-90,'#C9CED8',3); TS=dino_dust(5.75,24.5,0,1.7,0,DUR)
+    isb('pd_dusk',.4,post=False); D=dino((5.75,20,0),0); FILLE[0]=70
+    X=[(2.5,6.8,0),(7.4,7.8,-4),(5.4,9.6,1),(1.2,9.6,2),(8.9,10.4,-6),(4.2,12.5,2)]
+    P=[mk(ISBP[k] if k<5 else COMM[2],x,y,rz,'p%d'%k) for k,(x,y,rz) in enumerate(X)]; C=kcar((-5.75,34,0),-90,'#C9CED8',3); TS=dino_dust(5.75,20.5,0,1.7,0,DUR)
     def upd(t):
-        d=1.7*t; D['root'].location[1]=24.5-d; rr=dino_roar(t,.35,2.5); dino_pose(D,t,dist=d,pitch=12+6*rr,neck=30,head=4+12*rr,jaw=rr); dino_face(D,'angry')
+        d=1.7*t; D['root'].location[1]=20.5-d; rr=dino_roar(t,.3,2.5); dino_pose(D,t,dist=d,pitch=12+6*rr,neck=30,head=4+12*rr,jaw=rr); dino_face(D,'angry')
         for k,H in enumerate(P):
-            x,y,rz=X[k]; runp(H,t,x,y,rz,v=3.2,ph=k*.37); fc(H,'scream')
-            if k%2==0: arms_up(H,1,t,spread=22,jig=14)
+            x,y,rz=X[k]; runp(H,t,x,y,rz,v=2.3,ph=k*.37); fc(H,'scream')
+            if k in (2,4): arms_up(H,1,t,spread=22,jig=14)
         roll(C,-5.75,34-8*t,-90,8*t)
-        cam2(t,(4.4,-1.2,1.2),(4.7,-.4,1.25),(5.6,12,5.4),24,(5.6,12,6.0)); CAM.location.z+=thump(t,TS,.02)
+        cam2(t,(4.4,-1.2,1.2),(4.7,-.4,1.25),(5.6,12,5.0),24,(5.6,12,5.1)); CAM.location.z+=thump(t,TS,.02)
     return dict(upd=upd)
 SHOTS['HOOK']=HOOK
 def EXCEPT():
