@@ -23,6 +23,9 @@ def fc(H,m):
            smug=dict(mouth='smile',brow=.03,brow_r=6,eyes=.82),dead=dict(mouth='flat',brow=.01,brow_r=0,eyes=.8),wow=dict(mouth='o',brow=.06,brow_r=0,eyes=1.25),laugh=dict(mouth='grin',brow=.05,brow_r=-4,eyes=.6),
            shout=dict(mouth='shout',brow=.05,brow_r=6,eyes=1.15),scream=dict(mouth='shout',brow=.07,brow_r=-10,eyes=1.3))
     face(H,**F[m])
+def call(H,s=1,k=1.0,dz=-.5):
+    """phone to the cheek with a rigid arm (it has to cross the chest); dz lowers the hand so the mouth stays visible"""
+    u=H['u']; arm_to(H,s,H['head'].matrix_world@Vector((s*.85*u,-.25*u,dz*u)),k,base=(0,0,0))
 def runp(H,t,x0,y0,rz,v=6.0,ph=0.0):
     """run in a straight line from (x0,y0) heading rz"""
     f=fwd(rz); d=v*t; H['root'].location[0]=x0+f[0]*d; H['root'].location[1]=y0+f[1]*d; H['root'].rotation_euler[2]=R(rz); run(H,d+ph,arm=50); blink(H,t)
@@ -158,7 +161,7 @@ def SAHAB():
     office(True); FILLE[0]=30; pa=mk(PA,2.0,2.6,0,'pa'); ph=phone_of(pa,1)
     def upd(t):
         standp(pa,t,2.0,2.6,0); fc(pa,'bored'); ear(pa,1,1); speak(pa,t,74,77,gesture=False); pa['arm'][-1].rotation_euler=(R(-6),0,0)
-        cam2(t,(2.5,-2.6,2.3),(2.4,-2.0,2.3),(2.0,2.6,2.55),34)
+        cam2(t,(2.35,-.9,2.2),(2.3,-.5,2.2),(2.0,2.6,2.78),28)
     return dict(upd=upd)
 SHOTS['SAHAB']=SAHAB
 def ctable(x=-5.75,y=8.0,banner=True):
@@ -233,7 +236,7 @@ def hide2(mood='pd_dusk',night=.45):
 def QUESTION():
     wa,ra=hide2(); ph=phone_of(ra,1)
     def upd(t):
-        standp(wa,t,*W2); standp(ra,t,*R2); k=ease((t-.75)/.4); fc(wa,'worry'); look_at(wa,LV((5.75,22,7),tuple(headw(ra)),k),1.0,maxyaw=80)
+        standp(wa,t,*W2); standp(ra,t,*R2); k=ease((t-.75)/.4); fc(wa,'worry'); wa['head'].rotation_euler=(R(-16*(1-k)),0,R(38-66*k))
         what_pose(wa,1-k,t,.5); ear(ra,1,1); fc(ra,'worry')
         c1(t,wa,yaw=-12,dist=3.1,lens=40,ref=90)
     return dict(upd=upd)
@@ -579,8 +582,8 @@ SHOTS['MAMUQ']=MAMUQ
 def MAMU_():
     office(False); FILLE[0]=30; m=mk(MAMU,0,2.35,0,'mamu'); m['home']=(0,2.35,0); ph=phone_of(m,1); cu=cup_of(m,-1)
     def upd(t):
-        sitp(m,t,seat=.68); ear(m,1,1); fc(m,'calm'); speak(m,t,272,278,gesture=False); hold_chai(m,cu,-1,sip=.95*ease((t-we(278)-.05)/.3))
-        cam2(t,(.6,-3.8,2.05),(.45,-3.0,2.0),(0,2.3,1.85),36)
+        sitp(m,t,seat=.68); phone_up(m,1,1,h=3.75,fw=1.2,sx=.4); m['head'].rotation_euler[0]=R(7); fc(m,'calm'); speak(m,t,272,278,gesture=False); hold_chai(m,cu,-1,sip=.95*ease((t-we(278)-.05)/.3))
+        cam2(t,(.1,-2.1,1.95),(.05,-1.6,1.9),(-.15,2.3,1.9),36)
     return dict(upd=upd)
 SHOTS['MAMU']=MAMU_
 def MONSTER():

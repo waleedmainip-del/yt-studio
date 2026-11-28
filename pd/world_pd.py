@@ -306,7 +306,7 @@ def office(meeting=True):
         for k in range(6): a=k*1.05; B.box((-4.3+.35*math.cos(a),3.3+.35*math.sin(a),1.3),(.05,.22,.6),M(GRN[k%4],.8,kind='leaves'),.02,rot=(R(18)*math.sin(a),R(18)*math.cos(a),a))
         for k in range(3): B.box((-4.0+k*1.5,4.17,3.0),(.5,.03,.38),M('#F4F1EA',.6),0); B.box((-4.0+k*1.5,4.15,3.0),(.42,.03,.3),M(('#8FB8D8','#C9B48A','#A8C8B0')[k],.6),0)
         B.box((4.3,2.5,.45),(.5,1.3,.08),M('#27365A',.8,kind='fabric'),.05); B.box((4.72,2.5,.9),(.1,1.3,.45),M('#27365A',.8,kind='fabric'),.06)
-        point((1.0,-1.5,3.6),380,(1,.93,.82),r=.4,shadow=False); point((2,3.2,3.9),120,(1,.5,.45),r=.3,shadow=False)
+        point((1.2,-2.2,2.6),420,(1,.93,.82),r=.4,shadow=False); point((2,3.0,4.3),22,(1,.5,.45),r=.3,shadow=False)
     else:
         B.box((0,.6,1.0),(3.6,1.15,.06),wd2,.04); B.box((0,.6,.5),(3.0,.7,.5),wd,.03)
         for k in range(-2,3):
