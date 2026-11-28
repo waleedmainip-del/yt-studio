@@ -127,10 +127,10 @@ SHOTS['STRANGER']=STRANGER
 def KIS():
     n,u,a=stranger(); FILLE[0]=150; PU=(9.9,4.35,73); PA=(10.1,2.55,106); CP=(13.5,3.45,2.0)
     def upd(t):
-        standp(n,t,*SP['n']); n['root'].location[2]=-40; standp(u,t,*PU); standp(a,t,*PA); crossed(u); fc(a,'firm'); fc(u,'firm'); speak(a,t,49,52,gesture=False); speak(u,t,53,56,gesture=False)
+        standp(n,t,*SP['n']); n['root'].location[2]=-40; standp(u,t,*PU); standp(a,t,*PA); fc(a,'firm'); fc(u,'firm'); speak(a,t,49,52,gesture=False); speak(u,t,53,56,gesture=False)
         ka=ease(t/.25)*(1-ease((t-we(52)-.05)/.3)); ku=ease((t-ws(53)+.1)/.25); a['root'].rotation_euler[0]=R(7*ka); u['root'].rotation_euler[0]=R(8*ku)
         a['arm'][1].rotation_euler=(R(-78*ka+5*math.sin(t*9)*ka),0,R(6)); look_at(u,CP,.9); look_at(a,CP,.9)
-        cam2(t,(13.8,3.45,2.0),(13.5,3.45,2.0),(10.0,3.47,1.72),24)
+        cam2(t,(13.8,3.45,2.0),(13.5,3.45,2.0),(10.0,3.47,1.72),21.5)
     return dict(upd=upd)
 SHOTS['KIS']=KIS
 def redlight():
