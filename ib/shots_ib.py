@@ -93,14 +93,14 @@ def EVEN():
     sector('ib_night',1.0); FILLE[0]=120; d=vamp(2,0,0,'drac'); BT=bats(7); lamp((2.6,-2.6,3.2),260,(.6,.7,1.0))
     def upd(t):
         vstand(d,t,2,0,0,flap=1.6); fc(d,'smug'); d['head'].rotation_euler[0]=R(-6); claws(d,t,.25); bats_fly(BT,t,(-6,26,10),(5.5,-3,.4),spread=4)
-        cam2(t,(2.5,-3.6,1.05),(2.4,-2.9,1.2),(2,0,2.75),30)
+        cam2(t,(2.5,-3.6,1.05),(2.4,-2.9,1.2),(2,0,2.2),30)
     return dict(upd=upd)
 SHOTS['EVEN']=EVEN
 def AREFROM():
     sector('ib_night',1.0); FILLE[0]=120; d=vamp(2,0,0,'drac'); cu=cup_of(d,1); lamp((2.6,-2.6,3.2),260,(.6,.7,1.0))
     def upd(t):
         vstand(d,t,2,0,0); k=ease((t-.25)/.35); hold_chai(d,cu,1,sip=.95*k*(1-ease((t-1.05)/.25))); fc(d,'happy' if t>1.05 else 'calm'); d['arm'][-1].rotation_euler=(R(-6),0,0)
-        cam2(t,(2.2,-3.9,2.3),(2.2,-3.5,2.3),(2,0,2.45),32)
+        cam2(t,(2.2,-3.9,2.3),(2.2,-3.5,2.3),(2,0,2.05),32)
     return dict(upd=upd)
 SHOTS['AREFROM']=AREFROM
 # ================================================================ the rules of this world
@@ -125,11 +125,12 @@ def STRANGER():
     return dict(upd=upd)
 SHOTS['STRANGER']=STRANGER
 def KIS():
-    n,u,a=stranger()
+    n,u,a=stranger(); FILLE[0]=150; PU=(9.9,4.35,73); PA=(10.1,2.55,106); CP=(13.5,3.45,2.0)
     def upd(t):
-        for k,H in zip('nua',(n,u,a)): standp(H,t,*SP[k])
-        crossed(u); fc(a,'firm'); fc(u,'firm'); speak(a,t,49,52,gesture=False); speak(u,t,53,56,gesture=False); a['arm'][1].rotation_euler=(R(-70+8*math.sin(t*9)),0,R(8)); look_at(u,headw(n),.6); look_at(a,headw(n),.6)
-        c2(t,a,u,frm=(.55,-1),lens=34,pad=1.5,tz=-.5)
+        standp(n,t,*SP['n']); n['root'].location[2]=-40; standp(u,t,*PU); standp(a,t,*PA); crossed(u); fc(a,'firm'); fc(u,'firm'); speak(a,t,49,52,gesture=False); speak(u,t,53,56,gesture=False)
+        ka=ease(t/.25)*(1-ease((t-we(52)-.05)/.3)); ku=ease((t-ws(53)+.1)/.25); a['root'].rotation_euler[0]=R(7*ka); u['root'].rotation_euler[0]=R(8*ku)
+        a['arm'][1].rotation_euler=(R(-78*ka+5*math.sin(t*9)*ka),0,R(6)); look_at(u,CP,.9); look_at(a,CP,.9)
+        cam2(t,(13.8,3.45,2.0),(13.5,3.45,2.0),(10.0,3.47,1.72),24)
     return dict(upd=upd)
 SHOTS['KIS']=KIS
 def redlight():
