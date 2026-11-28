@@ -17,6 +17,8 @@ if job.get('video_url'):
 size = os.path.getsize(path); print('video', path, size, 'bytes')
 meta = dict(snippet=dict(title=job['title'][:100], description=job.get('description', ''), tags=job.get('tags', []), categoryId=str(job.get('category', 24))),
             status=dict(privacyStatus=job.get('privacy', 'private'), selfDeclaredMadeForKids=False))
+if job.get('publish_at'):  # scheduled publish: YouTube needs privacy 'private' plus an RFC3339 publishAt time
+    meta['status']['privacyStatus'] = 'private'; meta['status']['publishAt'] = job['publish_at']
 auth = {'Authorization': 'Bearer ' + tok}
 try:
     r = post('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status', json.dumps(meta).encode(),
@@ -26,5 +28,5 @@ try:
     out = json.load(urllib.request.urlopen(req, timeout=3600))
 except urllib.error.HTTPError as e:
     print('UPLOAD ERROR', e.code, e.read().decode()[:600]); sys.exit(3)
-print('UPLOADED id=%s privacy=%s url=https://youtu.be/%s' % (out['id'], out['status']['privacyStatus'], out['id']))
+print('UPLOADED id=%s privacy=%s publishAt=%s url=https://youtu.be/%s' % (out['id'], out['status']['privacyStatus'], out['status'].get('publishAt'), out['id']))
 print('channel', out['snippet'].get('channelTitle'), out['snippet'].get('channelId'))
