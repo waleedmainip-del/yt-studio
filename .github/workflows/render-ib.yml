@@ -1,12 +1,12 @@
-name: Render Pindi Dino
+name: Render Islamabad Vampire
 on:
   push:
-    branches: [pd-film]
-    paths: ["pd/jobs.json"]
+    branches: [ib-film]
+    paths: ["ib/jobs.json"]
 permissions:
   contents: write
 concurrency:
-  group: pd-render-r15
+  group: ib-render-r1
   cancel-in-progress: false
 jobs:
   render:
@@ -39,14 +39,14 @@ jobs:
       - name: Render pieces
         env:
           SAMPLES: '24'
-        run: python3 tools/gh_render_pd.py ${{ matrix.job }}
+        run: python3 tools/gh_render_ib.py ${{ matrix.job }}
       - name: Push results branch
         if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          B=render/pd-${{ github.run_id }}-j${{ matrix.job }}
+          B=render/ib-${{ github.run_id }}-j${{ matrix.job }}
           mkdir -p gh_out && cd gh_out
           git init -q && git checkout -q -b $B && git add -A
-          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "pd render job ${{ matrix.job }}" --allow-empty
+          git -c user.name="github-actions[bot]" -c user.email="41898283+github-actions[bot]@users.noreply.github.com" commit -qm "ib render job ${{ matrix.job }}" --allow-empty
           git push -q --force "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/$B

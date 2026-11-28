@@ -1,0 +1,31 @@
+# Cast for "Everyone is from Islamabad" (the vampire film). Waleed keeps his fixed look (WALEED from cast_kz). Everyone else is new.
+# Night palette: the vampire is black / crimson / pale blue skin so he reads against the blue night. Locals are warm pastels.
+DRAC=dict(skin='#C9D2E8',hair='#0B0B10',hairstyle='neat',neat=True,oily=True,jacket='#16171C',top='#F4F1EA',trim='#7A1420',tie='#B8232E',emblem='#E6B93A',pants='#16171C',
+        shoes='#0E0F14',sole='#2A2C34',accent='#B8232E',eye='#D8202A',brow_t=1.7,brow_c='#0B0B10',h=1.1,wide=.98)
+DRAC2=dict(skin='#C9D2E8',hair='#0B0B10',hairstyle='neat',neat=True,oily=True,top='#DCE6F4',trim='#B8C8E0',tie='#B8232E',glasses=True,pants='#3A3D47',
+        shoes='#0E0F14',sole='#2A2C34',accent='#16171C',eye='#D8202A',brow_t=1.7,brow_c='#0B0B10',watch=True,h=1.1,wide=.98)
+AUNTY=dict(skin='#D9A074',hair='#2A1B14',hairstyle='bun',top='#6A4C93',trim='#E6B53A',kurta=True,pants='#F4F1EA',dupatta='#E6B53A',dupatta_trim='#6A4C93',lashes=True,earrings=True,
+        glasses=True,shoes='#C9A27A',sole='#3A2A1E',accent='#E6B53A',eye='#2A1A12',brow_t=1.3,h=.93,wide=1.05)
+UNCLE=dict(skin='#C08A5C',hair='#5A5A62',hairstyle='short',receding=True,mustache='#5A5A62',top='#1E3A6A',trim='#F4F1EA',stripe='#F4F1EA',jacket='#1E3A6A',pants='#1E3A6A',cuff=True,
+        shoes='#F4F5FA',sole='#F0F1F5',accent='#C8372D',towel='#F4F1EA',eye='#2A1A12',brow_t=1.5,brow_c='#5A5A62',h=1.0,wide=1.16)
+UNCLE2=dict(skin='#B07A50',hair='#D8D8DC',hairstyle='cap',cap='#7A1F2E',beard='#D8D8DC',top='#7A1F2E',trim='#F2C14E',hoodie=True,strings='#F2C14E',pants='#3A3D47',
+        shoes='#16171C',sole='#F0F1F5',accent='#F2C14E',eye='#2A1A12',brow_t=1.4,brow_c='#C8C8CC',h=.95,wide=1.2)
+UNCLE3=dict(skin='#D0996A',hair='#2A2A30',hairstyle='short',headband='#C8372D',glasses=True,mustache='#2A2A30',top='#F4F1EA',trim='#2E8A4A',pants='#2E8A4A',short=True,
+        shoes='#2B58C9',sole='#F0F1F5',accent='#F2C14E',watch=True,eye='#2A1A12',brow_t=1.2,h=1.06,wide=1.0)
+WALKA=dict(skin='#E0AE84',hair='#3B2314',hairstyle='ponytail',top='#F28AA0',trim='#D86A84',kurta=True,pants='#F4F1EA',dupatta='#8FB8D8',dupatta_trim='#F4F1EA',lashes=True,
+        shoes='#F4F5FA',sole='#F0F1F5',accent='#F28AA0',eye='#2A1A12',h=.92,wide=.98)
+WALKB=dict(skin='#C98F62',hair='#15120F',hairstyle='quiff',top='#F2C14E',trim='#16171C',pants='#16171C',short=True,shoes='#C8372D',sole='#F0F1F5',accent='#16171C',phones='#16171C',
+        eye='#2A1A12',brow_t=1.1,h=1.05,wide=.94)
+CLERK=dict(skin='#B98A62',hair='#3A3A42',hairstyle='short',receding=True,mustache='#3A3A42',shades='up',shade_c='#C9CED8',top='#E8E2D0',trim='#C9C0A8',waistcoat='#6B5A3A',
+        pants='#5A4A3A',shoes='#3A2A1E',sole='#2A2C34',accent='#3A2A1E',eye='#2A1A12',brow_t=1.4,h=.97,wide=1.14)
+NEWBOY=dict(skin='#D9A273',hair='#1E1A18',hairstyle='curly',top='#8FD0C0',trim='#5FA898',pants='#4A4E5A',shoes='#F4F5FA',sole='#F0F1F5',accent='#E8554D',pack='#E8554D',
+        eye='#2A1A12',brow_t=1.0,h=1.0,wide=.95)
+UNCLEQ=dict(skin='#C58C5E',hair='#D8D8DC',hairstyle='old',mustache='#D8D8DC',top='#F4F1EA',trim='#DAD6CC',kurta=True,shalwar=True,pants='#F4F1EA',waistcoat='#4A3D32',
+        sandals='#3A2A1E',glasses=True,eye='#2A1A12',brow_t=1.3,brow_c='#C8C8CC',h=.98,wide=1.12)
+SUPER=dict(skin='#C58C5E',hair='#15120F',hairstyle='quiff',top='#F26A1E',trim='#16909E',pants='#16909E',emblem='#F2C14E',belt='#F2C14E',buckle='#F4F1EA',boots='#F2C14E',
+        gloves='#F2C14E',eye='#2A1A12',brow_t=1.3,h=1.08,wide=1.12)
+PIRATE=dict(skin='#B07A50',hair='#2A1B14',hairstyle='long',beard='#2A1B14',top='#F4F1EA',trim='#C8372D',stripe='#C8372D',waistcoat='#3A2A22',pants='#2A2C34',belt='#C8372D',
+        buckle='#E6B93A',boots='#3A2A1E',earrings=True,eye='#2A1A12',brow_t=1.6,h=1.04,wide=1.12)
+WOLF=dict(skin='#8A6240',hair='#4A3220',hairstyle='curly',beard='#4A3220',top='#5A6B7A',trim='#46545F',pants='#3A3D47',short=True,shoes='#8A6240',sole='#6E4C2A',accent='#8A6240',
+        eye='#F2C14E',brow_t=1.9,brow_c='#3A2618',h=1.14,wide=1.22)
+DRIVER=dict(skin='#D0996A',hair='#15110E',hairstyle='neat',neat=True,glasses=True,top='#DCE6F4',trim='#B8C8E0',tie='#27365A',pants='#3A3D47',shoes='#16171C',eye='#2A1A12',h=1.0,wide=1.0)
