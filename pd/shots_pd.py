@@ -67,11 +67,10 @@ def ISB():
     return dict(upd=upd)
 SHOTS['ISB']=ISB
 def CLEAN():
-    isb('pd_gold',0.0); FILLE[0]=40; J=mk(ISBP[1],-11.6,36,0,'jog'); Aw=mk(ISBP[0],-10.3,45,0,'wk'); St=mk(ISBP[3],-13.7,27.4,90,'st'); ph=phone_of(St,1)
+    isb('pd_gold',0.0); FILLE[0]=40; J=mk(ISBP[1],-11.2,44,0,'jog'); St=mk(ISBP[3],-13.6,35.2,90,'st'); ph=phone_of(St,1)
     def upd(t):
-        runp(J,t,-11.6,36,0,v=2.6); fc(J,'calm'); Aw['root'].location[1]=45-1.2*t; walk(Aw,1.2*t,step=.5); blink(Aw,t); fc(Aw,'calm')
-        standp(St,t,-13.7,27.4,90); phone_up(St,1); St['head'].rotation_euler[0]=R(12); fc(St,'calm')
-        cam2(t,(-9.9,21.0,1.35),(-10.2,22.4,1.5),(-11.3,31,2.4),28,(-11.4,31,2.3))
+        runp(J,t,-11.2,44,0,v=2.6); fc(J,'calm'); standp(St,t,-13.6,35.2,90); phone_up(St,1); St['head'].rotation_euler[0]=R(12); fc(St,'calm')
+        cam2(t,(-9.95,29.5,1.35),(-10.1,30.5,1.5),(-11.2,38.5,2.4),28,(-11.2,38.5,2.3))
     return dict(upd=upd)
 SHOTS['CLEAN']=CLEAN
 WP=(-11.6,-4.0,135); RP=(-11.6,-1.2,45)
@@ -102,7 +101,7 @@ def WOKE():
         k=ease((t-.35)/1.7); D['root'].location[2]=7.5-9.5*(1-k); dino_pose(D,t,pitch=-14+22*k,neck=6+30*k,head=-8+10*k,jaw=.55*ease((t-1.9)/.5)); dino_face(D,'shut' if k<.45 else 'angry')
         for i,(e,x,y,z,vx,dl) in enumerate(BR):
             q=max(0,t-.3-dl); e.location=(x+vx*q,y-2*q,z+4.5*q+.3*math.sin(q*9+i)) if q>0 else (0,0,-50); e.rotation_euler=(0,R(18*math.sin(q*16+i)),R(i*40))
-        cam2(t,(20,138,7.5),(20.4,141.5,8.0),(22,176,14.5),58,(22,176,16.0))
+        cam2(t,(20.5,138,7.5),(20.8,141,8.0),(22,176,13.6),88,(22,176,15.6))
     return dict(upd=upd)
 SHOTS['WOKE']=WOKE
 def FORTY():
@@ -148,10 +147,11 @@ def CALLED():
     return dict(upd=upd)
 SHOTS['CALLED']=CALLED
 def EVERYONE():
-    isb('pd_dusk',.4); FILLE[0]=90; G=[mk(RAYYAN if k==0 else ISBP[k-1],-10.8,6.0+2.3*k,90,'e%d'%k) for k in range(5)]; PH=[phone_of(H,1) for H in G]
+    isb('pd_dusk',.4); FILLE[0]=90; EP=[(-10.2,7.4),(-11.0,8.95),(-10.2,10.5),(-11.0,12.05),(-10.2,13.6)]
+    G=[mk(RAYYAN if k==0 else ISBP[k-1],x,y,0,'e%d'%k) for k,(x,y) in enumerate(EP)]; PH=[phone_of(H,1) for H in G]
     def upd(t):
-        for k,H in enumerate(G): standp(H,t,-10.8,6.0+2.3*k,90); fc(H,'calm' if k%2==0 else 'flat'); ear(H,1,1); H['head'].rotation_euler[2]=R(-18)
-        cam2(t,(-6.2,-2.0,2.0),(-6.4,-1.3,2.0),(-11.0,11,2.1),35)
+        for k,H in enumerate(G): standp(H,t,EP[k][0],EP[k][1],0); fc(H,'calm' if k%2==0 else 'flat'); ear(H,1,1); H['head'].rotation_euler[2]=R(10 if k%2 else -10)
+        cam2(t,(-8.6,1.2,2.5),(-8.7,1.9,2.5),(-10.6,10.5,1.9),40)
     return dict(upd=upd)
 SHOTS['EVERYONE']=EVERYONE
 def SAHAB():
@@ -177,7 +177,7 @@ def COMMITTEE():
         for k,H in enumerate(G): standp(H,t,-7.75+2*k,9.1,0); fc(H,'firm' if k!=1 else 'calm')
         hold_chai(G[1],CU[0],1,sip=ease((t-.3)/.4)); crossed(G[0]); G[2]['arm'][1].rotation_euler=(R(-95+8*math.sin(t*9)),0,R(10)); look_at(G[0],headw(G[1]),.5); look_at(G[2],headw(G[1]),.5)
         runp(Rn[0],t,-9.0,17,-4,v=4.2); runp(Rn[1],t,-2.7,21,2,v=4.2,ph=.5); fc(Rn[0],'scream'); fc(Rn[1],'scream'); arms_up(Rn[1],1,t,spread=22,jig=14)
-        cam2(t,(-5.75,.2,2.5),(-5.75,.9,2.5),(-5.75,8,2.45),30)
+        cam2(t,(-5.75,1.9,1.3),(-5.75,2.5,1.35),(-5.75,8,2.6),24)
     return dict(upd=upd)
 SHOTS['COMMITTEE']=COMMITTEE
 GP=(5.75,13.2,180)
@@ -317,9 +317,9 @@ def swarm_upd(V,FB,t,y0,v=9.0,wh=None):
         w=0.0 if wh is None else wh(k,t); bike_roll(vv,SF[k][0]+.12*math.sin(t*1.7+k),y0+SF[k][1]+v*t,90,v*t,wheelie=w); bike_sit(vv,t,lean=-6); fc(vv['rider'],'smug' if k%2==0 else 'happy')
     for k,(e,x,y) in enumerate(FB): e.location=(x+.15*math.sin(t*2+k),y+v*t,0)
 def ALONE():
-    V,FB=swarm(9,22)
+    V,FB=swarm(9,24)
     def upd(t):
-        swarm_upd(V,FB,t,22); cam2(t,(1.3,44,.8),(1.3,46,.85),(0,26,1.8),40,(0,33,1.8))
+        swarm_upd(V,FB,t,24); cam2(t,(1.2,47,.6),(1.2,48.6,.65),(0,28,1.9),60,(0,36,2.0))
     return dict(upd=upd)
 SHOTS['ALONE']=ALONE
 def BIKES():
@@ -442,8 +442,8 @@ def CHAKKAR():
     A=insp(who='s'); D=A['D']; sh=A['sh']
     def upd(t):
         park(A); dino_pose(D,t,pitch=4,neck=14,head=-30,hyaw=-30,jaw=.1,tail=.25); dino_face(D,'curious'); dino_eyes(D,dx=-.8,dz=-.6)
-        standp(sh,t,2.9,26.6,90); fc(sh,'smug'); speak(sh,t,203,207,gesture=False); sh['arm'][-1].rotation_euler=(R(-82+7*math.sin(t*11)),0,0); sh['head'].rotation_euler[0]=R(-24); sh['head'].rotation_euler[2]=R(-25)
-        c1(t,sh,yaw=-62,dist=3.3,lens=34,ref=90,dz=-.2)
+        standp(sh,t,2.9,26.6,90); fc(sh,'smug'); speak(sh,t,203,207,gesture=False); sh['arm'][1].rotation_euler=(R(-74+7*math.sin(t*11)),0,0); sh['head'].rotation_euler[0]=R(-24); sh['head'].rotation_euler[2]=R(-25)
+        c1(t,sh,yaw=-62,dist=3.9,lens=34,ref=90,dz=-.2,tz=-.35)
     return dict(upd=upd)
 SHOTS['CHAKKAR']=CHAKKAR
 def NOBODY():
